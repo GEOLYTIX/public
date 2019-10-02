@@ -92,14 +92,7 @@ function init(_xyz) {
           if (e.target.status !== 200) return;
                           
           _xyz.mapview.interaction.draw.layer.reload();
-                          
-          // Select polygon when post request returned 200.
-          _xyz.locations.select({
-            layer: _xyz.mapview.interaction.draw.layer,
-            table: _xyz.mapview.interaction.draw.layer.table,
-            id: e.target.response,
-          });
-            
+                                      
         };
                   
         // Send path geometry to endpoint.
