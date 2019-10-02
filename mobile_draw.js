@@ -2,7 +2,7 @@ _xyz({
   host: document.head.dataset.dir || new String(''),
   callback: init,
   hooks: true,
-  locale: 'GB'
+  locale: 'Drawful'
 });
 
 function init(_xyz) {
@@ -17,7 +17,7 @@ function init(_xyz) {
     view: {
       lat: _xyz.hooks.current.lat,
       lng: _xyz.hooks.current.lng,
-      z: _xyz.hooks.current.z
+      z: _xyz.hooks.current.z || 2
     },
     scrollWheelZoom: true,
     showScaleBar: 'never'
