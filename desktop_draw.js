@@ -2,7 +2,7 @@ _xyz({
   host: document.head.dataset.dir || new String(''),
   callback: init,
   hooks: true,
-  locale: 'GB'
+  locale: 'Drawful'
 });
 
 function init(_xyz) {
@@ -17,16 +17,20 @@ function init(_xyz) {
     view: {
       lat: _xyz.hooks.current.lat,
       lng: _xyz.hooks.current.lng,
-      z: _xyz.hooks.current.z
+      z: _xyz.hooks.current.z || 2,
     },
     scrollWheelZoom: true,
     showScaleBar: 'never'
   });
 
   _xyz.layers.list['Mapbox Base'].show();
+  _xyz.layers.list['TILES'].show();
   _xyz.layers.list['Draw'].show();
 
-  setInterval(_xyz.layers.list['Draw'].reload, 3000);
+  setInterval(() => {
+    _xyz.layers.list['TILES'].reload();
+    _xyz.layers.list['Draw'].reload();
+  }, 3000);
 
   document.getElementById('Magic').onclick = e => {
 
