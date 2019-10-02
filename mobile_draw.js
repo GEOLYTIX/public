@@ -17,14 +17,20 @@ function init(_xyz) {
     view: {
       lat: _xyz.hooks.current.lat,
       lng: _xyz.hooks.current.lng,
-      z: _xyz.hooks.current.z || 2
+      z: _xyz.hooks.current.z || 2,
     },
     scrollWheelZoom: true,
     showScaleBar: 'never'
   });
 
   _xyz.layers.list['Mapbox Base'].show();
+  _xyz.layers.list['TILES'].show();
   _xyz.layers.list['Draw'].show();
+
+  setInterval(() => {
+    _xyz.layers.list['TILES'].reload();
+    _xyz.layers.list['Draw'].reload();
+  }, 3000);
 
   document.getElementById('Magic').onclick = e => {
 
@@ -36,7 +42,7 @@ function init(_xyz) {
 
       return e.target.classList.remove('active');
     }
-  
+
     e.target.classList.add('active');
 
     const cArr = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462','#b3de69','#fccde5','#d9d9d9','#bc80bd','#ccebc5','#ffed6f']
@@ -86,9 +92,9 @@ function init(_xyz) {
           if (e.target.status !== 200) return;
                           
           _xyz.mapview.interaction.draw.layer.reload();
-          
+                                      
         };
-
+                  
         // Send path geometry to endpoint.
         xhr.send(JSON.stringify({
           geometry: feature.geometry,
