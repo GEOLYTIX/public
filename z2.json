@@ -10,6 +10,7 @@
                 "south": -90,
                 "west": -180
             },
+            "view":{},
             "layers": {
                 "OSM": {
                     "key": "OSM",
