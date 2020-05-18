@@ -1,76 +1,74 @@
 {
   "templates": {
     "wellbeing": {
-      "_template": "http://localhost:3000/coop/views/wellbeing.html",
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/wellbeing.html"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/wellbeing.html"
     },
     "delineo": {
-      "_template": "http://localhost:3000/coop/views/delineo.html",
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/delineo.html"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/delineo.html"
     },
     "community wellbeing - index": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_index.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index.sql"
     },
     "community wellbeing - index compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_index_compare.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_compare.sql"
     },
     "community wellbeing - index lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_index_lad.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_lad.sql"
     },
     "community wellbeing - index constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_index_constituency.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_constituency.sql"
     },
     "community wellbeing - people": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_people.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people.sql"
     },
     "community wellbeing - people compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_people_compare.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_compare.sql"
     },
     "community wellbeing - people lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_people_lad.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_lad.sql"
     },
     "community wellbeing - people constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_people_constituency.sql"
-    },
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_constituency.sql"
+    },    
     "community wellbeing - place": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_place.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place.sql"
     },
     "community wellbeing - place compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_place_compare.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_compare.sql"
     },
     "community wellbeing - place lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_place_lad.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_lad.sql"
     },
     "community wellbeing - place constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_place_constituency.sql"
-    },
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_constituency.sql"
+    },    
     "community wellbeing - relationships": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_relationships.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships.sql"
     },
     "community wellbeing - relationships compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_relationships_compare.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_compare.sql"
     },
     "community wellbeing - relationships lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_relationships_lad.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_lad.sql"
     },
     "community wellbeing - relationships constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_relationships_constituency.sql"
-    },
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_constituency.sql"
+    },    
     "community wellbeing - chart": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/community_wellbeing_chart.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_chart.sql"
     },
     "get_lad_from_region": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/get_lad_from_region.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_lad_from_region.sql"
     },
     "get_constituency_from_region": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/get_constituency_from_region.sql"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_constituency_from_region.sql"
     },
     "select_ll": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/select_ll.sql",
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/select_ll.sql",
       "dbs": "XYZ"
     },
     "nnearest_from_ll": {
-      "template": "https://api.github.com/repos/GEOLYTIX/coop/contents/query/nnearest_from_ll.sql",
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/nnearest_from_ll.sql",
       "dbs": "XYZ"
     }
   },
@@ -79,7 +77,7 @@
       "gazetteer": {
         "provider": "GOOGLE",
         "code": "GB",
-        "placeholder": "eg. South Tottenham",
+        "placeholder": "Search postcode, locale, constituency, local authority, town, county, region or country",
         "datasets": [
           {
             "source": "lad",
@@ -145,7 +143,7 @@
         "Zoomstack": {
           "group": "Maps",
           "attribution": {
-            "© Ordanance Survey": "https://ordnancesurvey.co.uk"
+              "© Ordanance Survey": "https://ordnancesurvey.co.uk"
           },
           "format": "tiles",
           "URI": "https://api.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/EPSG%3A3857/Light%203857/{z}/{x}/{y}.png?key=4vmpYY1uFdimsAkyGwuaFbbHEyfvA5Gy"
@@ -382,30 +380,30 @@
                   "title": "ECONOMY",
                   "columns": [
                     {
-                      "title": "Proximity of work to home",
-                      "field": "eco_proximity_work_home"
-                    },
-                    {
-                      "title": "Hours worked",
-                      "field": "eco_hours_worked"
-                    },
-                    {
-                      "title": "Household Income",
-                      "field": "eco_household_income"
-                    },
-                    {
-                      "title": "Vacant commercial units",
-                      "field": "eco_vacant_commercial_units"
-                    },
-                    {
-                      "title": "Free school meals",
-                      "field": "eco_free_school_meals"
-                    },
-                    {
-                      "title": "Unemployment",
-                      "field": "eco_unemployment"
-                    }
-                  ]
+                    "title": "Proximity of work to home",
+                    "field": "eco_proximity_work_home"
+                  },
+                  {
+                    "title": "Hours worked",
+                    "field": "eco_hours_worked"
+                  },
+                  {
+                    "title": "Household Income",
+                    "field": "eco_household_income"
+                  },
+                  {
+                    "title": "Vacant commercial units",
+                    "field": "eco_vacant_commercial_units"
+                  },
+                  {
+                    "title": "Free school meals",
+                    "field": "eco_free_school_meals"
+                  },
+                  {
+                    "title": "Unemployment",
+                    "field": "eco_unemployment"
+                  }
+                ]
                 }
               ]
             },
@@ -1493,7 +1491,7 @@
         "Zoomstack": {
           "display": true,
           "attribution": {
-            "© Ordanance Survey": "https://ordnancesurvey.co.uk"
+              "© Ordanance Survey": "https://ordnancesurvey.co.uk"
           },
           "format": "tiles",
           "URI": "https://api.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/EPSG%3A3857/Light%203857/{z}/{x}/{y}.png?key=4vmpYY1uFdimsAkyGwuaFbbHEyfvA5Gy"
