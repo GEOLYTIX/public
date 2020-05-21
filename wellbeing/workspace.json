@@ -4,7 +4,7 @@
       "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/wellbeing.html"
     },
     "delineo": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/delineo.html"
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/sample.html"
     },
     "community wellbeing - index": {
       "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index.sql"
