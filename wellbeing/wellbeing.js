@@ -342,6 +342,7 @@ function init(_xyz) {
   const table_index = Object.assign(layer_wellbeing.dataviews.Index, {
     target: document.getElementById('table_index'),
     layer: layer_wellbeing,
+    table: 'coop.uk_coop_restrict_wellbeing',
     active: true,
     center: true,
     query: 'community wellbeing - index compare',
@@ -355,6 +356,7 @@ function init(_xyz) {
   const table_people = Object.assign(layer_wellbeing.dataviews.People, {
     target: document.getElementById('table_people'),
     layer: layer_wellbeing,
+    table: 'coop.uk_coop_restrict_wellbeing',
     active: true,
     center: true,
     query: 'community wellbeing - people compare',
@@ -368,6 +370,7 @@ function init(_xyz) {
   const table_place = Object.assign(layer_wellbeing.dataviews.Place, {
     target: document.getElementById('table_place'),
     layer: layer_wellbeing,
+    table: 'coop.uk_coop_restrict_wellbeing',
     active: true,
     center: true,
     query: 'community wellbeing - place compare',
@@ -381,6 +384,7 @@ function init(_xyz) {
   const table_relationships = Object.assign(layer_wellbeing.dataviews.Relationships, {
     target: document.getElementById('table_relationships'),
     layer: layer_wellbeing,
+    table: 'coop.uk_coop_restrict_wellbeing',
     active: true,
     center: true,
     query: 'community wellbeing - relationships compare',
