@@ -67,6 +67,10 @@
       "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/select_ll.sql",
       "dbs": "XYZ"
     },
+    "national_average": {
+      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/national_average.sql",
+      "dbs": "XYZ"
+    },
     "nnearest_from_ll": {
       "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/nnearest_from_ll.sql",
       "dbs": "XYZ"
