@@ -183,6 +183,8 @@
 
       locale.appendChild(location.view);
 
+      _xyz.map.updateSize();
+
       location.removeCallback = () => setTimeout(function () {
 
         if (locale.innerHTML === '') {
