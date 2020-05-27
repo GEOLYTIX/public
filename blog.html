@@ -25,14 +25,14 @@
     #Grid {
       height: 100%;
       display: grid;
-      grid-gap: 20px;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 0 1fr;
       grid-template-rows: 1fr;
     }
 
     #Locale {
       grid-row: 1;
       grid-column: 1;
+      margin-right: 10px;
     }
 
     #Map {
@@ -136,9 +136,13 @@
       }
     });
 
+    const grid = document.getElementById('Grid');
+
     const locale = document.getElementById('Locale');
 
     _xyz.locations.selectCallback = location => {
+
+      grid.style['grid-template-columns'] = '300px 1fr';
 
       location.draw();
 
@@ -164,6 +168,12 @@
       location.view = _xyz.locations.view.infoj(location);
 
       locale.appendChild(location.view);
+
+      location.removeCallback = () => setTimeout(function(){
+
+        if (locale.innerHTML === '') grid.style['grid-template-columns'] = '0 1fr';
+
+      }, 1000);
     }
 
     _xyz.hooks.current.locations.forEach(_hook => {
