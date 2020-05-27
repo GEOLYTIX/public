@@ -115,12 +115,22 @@
 
 <script>
 
-  window.onload = () => _xyz({
-    host: '/zeit',
-    locale: 'uk',
-    callback: init,
-    hooks: true,
-  })
+  window.onload = () => {
+
+    const params = {};
+
+    // Take hooks from URL and store as current hooks.
+    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (match, key, value) => {
+      params[key] = decodeURI(value);
+    });
+
+    _xyz({
+      host: params.host,
+      locale: params.locale,
+      callback: init,
+      hooks: true,
+    })
+  }
 
   function init(_xyz) {
 
@@ -147,21 +157,21 @@
       location.draw();
 
       location.Marker = _xyz.mapview.geoJSON({
-    geometry: {
-      type: 'Point',
-      coordinates: location.marker,
-    },
-    zIndex: 2000,
-    style: new _xyz.mapview.lib.style.Style({
-      image: _xyz.mapview.icon({
-        type: 'markerColor',
-        colorMarker: '#64dd17',
-        colorDot: '#33691e',
-        scale: 0.05,
-        anchor: [0.5, 1],
-      })
-    })
-  });
+        geometry: {
+          type: 'Point',
+          coordinates: location.marker,
+        },
+        zIndex: 2000,
+        style: new _xyz.mapview.lib.style.Style({
+          image: _xyz.mapview.icon({
+            type: 'markerColor',
+            colorMarker: '#64dd17',
+            colorDot: '#33691e',
+            scale: 0.05,
+            anchor: [0.5, 1],
+          })
+        })
+      });
 
       locale.innerHTML = '';
 
@@ -169,7 +179,7 @@
 
       locale.appendChild(location.view);
 
-      location.removeCallback = () => setTimeout(function(){
+      location.removeCallback = () => setTimeout(function () {
 
         if (locale.innerHTML === '') grid.style['grid-template-columns'] = '0 1fr';
 
