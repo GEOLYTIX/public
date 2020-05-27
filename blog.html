@@ -32,7 +32,14 @@
     #Locale {
       grid-row: 1;
       grid-column: 1;
-      margin-right: 10px;
+      margin: 0;
+      padding: 0 10px;
+      transform: rotateY(180deg);
+      overflow-x: auto;
+    }
+
+    #Locale > * {
+      transform: rotateY(180deg);
     }
 
     #Map {
@@ -65,10 +72,6 @@
       height: 1.5em;
       width: 1.5em;
       background-color: #fff;
-    }
-
-    .location-view {
-      margin: 0;
     }
 
     .location-view-grid {
