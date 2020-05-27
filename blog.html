@@ -157,6 +157,7 @@
     _xyz.locations.selectCallback = location => {
 
       grid.style['grid-template-columns'] = '300px 1fr';
+      grid.style['column-gap'] = '10px';
 
       location.draw();
 
@@ -185,7 +186,10 @@
 
       location.removeCallback = () => setTimeout(function () {
 
-        if (locale.innerHTML === '') grid.style['grid-template-columns'] = '0 1fr';
+        if (locale.innerHTML === '') {
+          grid.style['grid-template-columns'] = '0 1fr';
+          grid.style['column-gap'] = '0';
+        }
 
       }, 1000);
     }
