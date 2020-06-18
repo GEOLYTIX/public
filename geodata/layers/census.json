@@ -1,0 +1,27 @@
+{
+  "format": "grid",
+  "dbs": "XYZ",
+  "tables": {
+    "12": "geodata.uk_glx_geodata_hex_1k",
+    "13": "geodata.uk_glx_geodata_hex_1k",
+    "14": "geodata.uk_glx_geodata_hex_1k",
+    "15": "geodata.uk_glx_geodata_hex_1k"
+  },
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "grid_fields": {
+    "Population 2011": "pop__11",
+    "Employed": "eac_employed__11"
+  },
+  "grid_color": "pop__11",
+  "style": {
+    "range": [
+      "#15773f",
+      "#66bd63",
+      "#a6d96a",
+      "#fdae61",
+      "#f46d43",
+      "#d73027"
+    ]
+  }
+}
