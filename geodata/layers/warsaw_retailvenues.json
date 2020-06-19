@@ -1,0 +1,119 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "mvt_cache": "website.vw_warsaw_glx_geodata_retail_venue__mvts",
+  "tables": {
+    "9": null,
+    "10": "website.vw_warsaw_glx_geodata_retail_venue"
+  },
+  "qID": "id",
+  "infoj": [
+    {
+      "title": "Venue ID",
+      "field": "id",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "title": "Venue Name",
+      "field": "venue_name",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "Local Name",
+      "field": "venuelocal",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "Address",
+      "field": "local_add",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "City",
+      "field": "city",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "Type",
+      "field": "venue_type",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "Local Type",
+      "field": "local_type",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "title": "GFA sqm",
+      "field": "gfa_sqm",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "title": "Notes",
+      "field": "notes",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "type": "streetview"
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#4747d1",
+      "fillColor": "#4747d1",
+      "fillOpacity": 0.3
+    },
+    "highlight": {
+      "strokeColor": "#e91e63",
+      "fillOpacity": 0.3
+    },
+    "themes": {
+      "Retail Place Type": {
+        "type": "categorized",
+        "field": "venue_type",
+        "other": true,
+        "cat": {
+          "Shopping Mall": {
+            "label": "Shopping Mall",
+            "style": {
+              "strokeColor": "#005824",
+              "fillColor": "#66c2a4"
+            }
+          },
+          "High Street": {
+            "label": "Retail Street",
+            "style": {
+              "strokeColor": "#6e016b",
+              "fillColor": "#8c96c6"
+            }
+          },
+          "Department Store": {
+            "label": "Department Store",
+            "style": {
+              "strokeColor": "#990000",
+              "fillColor": "#fc8d59"
+            }
+          },
+          "Retail Park": {
+            "label": "Supermarket",
+            "style": {
+              "colstrokeColoror": "#8c510a",
+              "fillColor": "#d8b365"
+            }
+          }
+        }
+      }
+    }
+  }
+}
