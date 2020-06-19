@@ -1,0 +1,45 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_london_glx_geodata_postal_sector__mvts",
+  "tables": {
+    "14": null,
+    "15": "website.vw_london_glx_geodata_postal_sector"
+  },
+  "geom": "geom_3857_50m",
+  "srid": "3857",
+  "qID": "id",
+  "hover": {
+    "field": "rm_sect"
+  },
+  "infoj": [
+    {
+      "field": "post_area",
+      "title": "Postal Area",
+      "inline": true,
+      "type": "text"
+    },
+    {
+      "field": "post_dist",
+      "title": "Postal District",
+      "inline": true,
+      "type": "text"
+    },
+    {
+      "field": "rm_sect",
+      "title": "Postal Sector",
+      "inline": true,
+      "type": "text"
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#c6dbef",
+      "fillOpacity": 0.1,
+      "fillColor": "#ffffff"
+    },
+    "highlight": {
+      "strokeColor": "#090"
+    }
+  }
+}
