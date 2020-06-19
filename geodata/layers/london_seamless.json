@@ -1,0 +1,39 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_london_glx_geodata_seamless_combined__mvts",
+  "table": "website.vw_london_glx_geodata_seamless_combined",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "hover": {
+    "field": "town_name"
+  },
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "town_name",
+      "title": "Town name",
+      "inline": true
+    },
+    {
+      "field": "sub_name",
+      "title": "Suburb Name",
+      "inline": true
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "town_name"
+    },
+    "default": {
+      "strokeColor": "#4F7CAC",
+      "fillColor": "#EEE",
+      "fillOpacity": 0
+    },
+    "highlight": {
+      "strokeColor": "#4F7CAC",
+      "fillOpacity": 0,
+      "strokeWidth": 3
+    }
+  }
+}
