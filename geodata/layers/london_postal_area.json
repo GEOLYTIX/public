@@ -3,8 +3,6 @@
   "dbs": "XYZ",
   "mvt_cache": "website.vw_london_glx_geodata_postal_area__mvts",
   "tables": {
-    "11": null,
-    "12": "website.vw_london_glx_geodata_postal_area",
     "13": "website.vw_london_glx_geodata_postal_area",
     "14": null
   },
