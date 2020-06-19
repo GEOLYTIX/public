@@ -1,0 +1,85 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_london_glx_geodata_education_uni_building__mvts",
+  "tables": {
+    "11": null,
+    "12": "website.vw_london_glx_geodata_education_uni_building"
+  },
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "ubuildtype",
+      "title": "Building type",
+      "inline": true
+    },
+    {
+      "field": "uni_name",
+      "title": "University name",
+      "inline": true
+    },
+    {
+      "field": "ubuildname",
+      "title": "Building name",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#FFAE03",
+      "fillColor": "#FFAE03",
+      "fillOpacity": 0.3
+    },
+    "highlight": {
+      "strokeColor": "#bdbdbd",
+      "fillOpacity": 0.6
+    },
+    "themes": {
+      "Building Type": {
+        "type": "categorized",
+        "field": "ubuildtype",
+        "other": true,
+        "cat": {
+          "Campus Boundary": {
+            "label": "Campus Boundary",
+            "style": {
+              "weight": 1,
+              "color": "#238b45",
+              "fillColor": "#238b45",
+              "fillOpacity": 0.3
+            }
+          },
+          "Academic": {
+            "label": "Academic",
+            "style": {
+              "weight": 1,
+              "color": "#cb181d",
+              "fillColor": "#cb181d",
+              "fillOpacity": 0.3
+            }
+          },
+          "Residential": {
+            "label": "Residential",
+            "style": {
+              "weight": 1,
+              "color": "#fd8d3c",
+              "fillColor": "#fd8d3c",
+              "fillOpacity": 0.3
+            }
+          },
+          "Services": {
+            "label": "Services",
+            "style": {
+              "weight": 1,
+              "color": "#fed976",
+              "fillColor": "#fed976",
+              "fillOpacity": 0.3
+            }
+          }
+        }
+      }
+    }
+  }
+}
