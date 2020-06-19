@@ -1,0 +1,94 @@
+{
+  "format": "cluster",
+  "dbs": "XYZ",
+  "table": "website.vw_shanghai_glx_geodata_transport_station",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "name_local",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.01,
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "name_local",
+      "title": "Name",
+      "type": "text"
+    },
+    {
+      "field": "name_en",
+      "title": "Name (English)",
+      "type": "text"
+    },
+    {
+      "field": "trans_type",
+      "title": "Location Type",
+      "type": "text"
+    }
+  ],
+  "style": {
+    "marker": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.5": "#ffffff"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.75": "#ffffff",
+        "0.5": "#3366ff"
+      }
+    },
+    "themes": {
+      "Location Type": {
+        "type": "categorized",
+        "field": "trans_type",
+        "other": true,
+        "cat": {
+          "Airport": {
+            "label": "Airport",
+            "style": {
+              "fillColor": "#0019a8",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0019a8"
+              }
+            }
+          },
+          "Coach Station": {
+            "label": "Coach station",
+            "style": {
+              "fillColor": "#00afad",
+              "layers": {
+                "0.75": "#FFFFFF",
+                "0.50": "#00afad"
+              }
+            }
+          },
+          "Metro": {
+            "label": "Metro",
+            "style": {
+              "fillColor": "#DC241F",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#DC241F"
+              }
+            }
+          },
+          "Train Station": {
+            "label": "Train station",
+            "style": {
+              "fillColor": "#0f8415",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0f8415"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
