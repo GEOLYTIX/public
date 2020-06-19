@@ -1,0 +1,89 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_tokyo_glx_geodata_census_chomoku__mvts",
+  "table": "website.vw_tokyo_glx_geodata_census_chomoku",
+  "geom": "geom_3857_10m",
+  "srid": "3857",
+  "qID": "chomoku_cd",
+  "infoj": [
+    {
+      "field": "chomoku_cd",
+      "title": "Chomoku Code",
+      "inline": true
+    },
+    {
+      "field": "totalpop",
+      "title": "Population",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#ffffff",
+      "fillColor": "#ffffff",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeColor": "#56A3A6",
+      "fillColor": "#DBD56E",
+      "fillOpacity": 0.3
+    },
+    "themes": {
+      "Population": {
+        "type": "graduated",
+        "field": "totalpop",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "0 to 1k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#f2f0f7"
+            }
+          },
+          {
+            "value": "1000",
+            "label": "1 to 2k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#dadaeb"
+            }
+          },
+          {
+            "value": "2000",
+            "label": "2 to 3k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#bcbddc"
+            }
+          },
+          {
+            "value": "3000",
+            "label": "3 to 4k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#9e9ac8"
+            }
+          },
+          {
+            "value": "4000",
+            "label": "4 - 5k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#756bb1"
+            }
+          },
+          {
+            "value": "5000",
+            "label": "Over 5k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#54278f"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
