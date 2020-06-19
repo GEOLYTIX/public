@@ -1,0 +1,36 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_london_glx_geodata_admin_outputarea__mvts",
+  "tables": {
+    "13": null,
+    "14": "website.vw_london_glx_geodata_admin_outputarea"
+  },
+  "geom": "geom_3857_5m",
+  "srid": "3857",
+  "qID": "id",
+  "hover": {
+    "field": "oa_code"
+  },
+  "infoj": [
+    {
+      "title": "OA Code",
+      "field": "oa_code",
+      "type": "text",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#1ab2ff",
+      "fillColor": "#cccccc",
+      "fillOpacity": 0.3
+    },
+    "highlight": {
+      "strokeWidth": 2,
+      "strokeColor": "#009900",
+      "fillColor": "#ccff99",
+      "fillOpacity": 0.3
+    }
+  }
+}
