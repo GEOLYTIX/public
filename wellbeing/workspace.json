@@ -1,78 +1,78 @@
 {
   "templates": {
     "wellbeing": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/wellbeing.html"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/wellbeing.html"
     },
-    "delineo": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/sample.html"
+    "sample": {
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/sample.html"
     },
     "community wellbeing - index": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index.sql"
     },
     "community wellbeing - index compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_compare.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_compare.sql"
     },
     "community wellbeing - index lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_lad.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_lad.sql"
     },
     "community wellbeing - index constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_constituency.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_index_constituency.sql"
     },
     "community wellbeing - people": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people.sql"
     },
     "community wellbeing - people compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_compare.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_compare.sql"
     },
     "community wellbeing - people lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_lad.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_lad.sql"
     },
     "community wellbeing - people constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_constituency.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_people_constituency.sql"
     },    
     "community wellbeing - place": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place.sql"
     },
     "community wellbeing - place compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_compare.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_compare.sql"
     },
     "community wellbeing - place lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_lad.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_lad.sql"
     },
     "community wellbeing - place constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_constituency.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_place_constituency.sql"
     },    
     "community wellbeing - relationships": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships.sql"
     },
     "community wellbeing - relationships compare": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_compare.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_compare.sql"
     },
     "community wellbeing - relationships lad": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_lad.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_lad.sql"
     },
     "community wellbeing - relationships constituency": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_constituency.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_relationships_constituency.sql"
     },    
     "community wellbeing - chart": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_chart.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/community_wellbeing_chart.sql"
     },
     "get_lad_from_region": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_lad_from_region.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_lad_from_region.sql"
     },
     "get_constituency_from_region": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_constituency_from_region.sql"
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/get_constituency_from_region.sql"
     },
     "select_ll": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/select_ll.sql",
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/select_ll.sql",
       "dbs": "XYZ"
     },
     "national_average": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/national_average.sql",
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/national_average.sql",
       "dbs": "XYZ"
     },
     "nnearest_from_ll": {
-      "template": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/nnearest_from_ll.sql",
+      "src": "https://api.github.com/repos/GEOLYTIX/public/contents/wellbeing/query/nnearest_from_ll.sql",
       "dbs": "XYZ"
     }
   },
@@ -192,11 +192,11 @@
           "qID": "id",
           "infoj": [
             {
-              "label": "Locale name",
+              "title": "Locale name",
               "field": "dd_name"
             },
             {
-              "label": "Community Wellbeing Score",
+              "title": "Community Wellbeing Score",
               "field": "ind_wellb",
               "fieldfx": "ROUND(ind_wellb * 100)",
               "class": "score_value",
@@ -1506,7 +1506,6 @@
           "srid": "3857",
           "geom": "geom_3857",
           "dbs": "XYZ",
-          "__table": "coop.uk_coop_restrict_wellbeing",
           "tables": {
             "8": null,
             "9": "coop.uk_coop_restrict_wellbeing"
@@ -1514,102 +1513,102 @@
           "qID": "id",
           "infoj": [
             {
-              "label": "id",
+              "title": "id",
               "field": "id",
               "inline": true
             },
             {
-              "label": "localename",
+              "title": "localename",
               "field": "localename",
               "inline": true
             },
             {
-              "label": "dd_name",
+              "title": "dd_name",
               "field": "dd_name",
               "inline": true
             },
             {
-              "label": "region",
+              "title": "region",
               "field": "region",
               "inline": true
             },
             {
-              "label": "country",
+              "title": "country",
               "field": "country",
               "inline": true
             },
             {
-              "label": "census11pop",
+              "title": "census11pop",
               "field": "census11pop",
               "inline": true
             },
             {
-              "label": "census11dwelling",
+              "title": "census11dwelling",
               "field": "census11dwelling",
               "inline": true
             },
             {
-              "label": "urban",
+              "title": "urban",
               "field": "urban",
               "inline": true
             },
             {
-              "label": "rural",
+              "title": "rural",
               "field": "rural",
               "inline": true
             },
             {
-              "label": "area_sqm",
+              "title": "area_sqm",
               "field": "area_sqm",
               "inline": true
             },
             {
-              "label": "indrelat",
+              "title": "indrelat",
               "field": "indrelat",
               "inline": true
             },
             {
-              "label": "indequal",
+              "title": "indequal",
               "field": "indequal",
               "inline": true
             },
             {
-              "label": "indvoice",
+              "title": "indvoice",
               "field": "indvoice",
               "inline": true
             },
             {
-              "label": "indecono",
+              "title": "indecono",
               "field": "indecono",
               "inline": true
             },
             {
-              "label": "indhealt",
+              "title": "indhealt",
               "field": "indhealt",
               "inline": true
             },
             {
-              "label": "indeduca",
+              "title": "indeduca",
               "field": "indeduca",
               "inline": true
             },
             {
-              "label": "indcultu",
+              "title": "indcultu",
               "field": "indcultu",
               "inline": true
             },
             {
-              "label": "indhousi",
+              "title": "indhousi",
               "field": "indhousi",
               "inline": true
             },
             {
-              "label": "indtrans",
+              "title": "indtrans",
               "field": "indtrans",
               "inline": true
             },
             {
-              "label": "ind_wellb",
+              "title": "ind_wellb",
               "field": "ind_wellb",
               "inline": true
             }
