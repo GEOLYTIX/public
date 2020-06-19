@@ -1,0 +1,70 @@
+{
+  "format": "mvt",
+  "dbs": "XYZ",
+  "mvt_cache": "website.vw_london_glx_geodata_transport_line__mvts",
+  "table": "website.vw_london_glx_geodata_transport_line",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "line_name",
+      "title": "Line Name",
+      "type": "text"
+    },
+    {
+      "field": "line_type",
+      "title": "Line Type",
+      "type": "text"
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#000000",
+      "fillColor": "#bdbdbd",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeColor": "#56A3A6",
+      "fillColor": "#DBD56E",
+      "fillOpacity": 0.3
+    },
+    "themes": {
+      "Line Type": {
+        "type": "categorized",
+        "field": "line_type",
+        "cat": {
+          "Light Rail Line": {
+            "label": "Light Rail Line",
+            "style": {
+              "strokeColor": "#1BCBD1",
+              "fillColor": "#1BCBD1"
+            }
+          },
+          "Planned Rail Line": {
+            "label": "Planned Rail Line",
+            "style": {
+              "strokeColor": "#9D9FA0",
+              "fillColor": "#9D9FA0"
+            }
+          },
+          "Rail Line": {
+            "label": "Rail Line",
+            "style": {
+              "strokeWidth": 3,
+              "strokeColor": "#5448DB",
+              "fillColor": "#5448DB"
+            }
+          },
+          "Underground Line": {
+            "label": "Underground Line",
+            "style": {
+              "strokeColor": "#F70C0C",
+              "fillColor": "#F70C0C"
+            }
+          }
+        }
+      }
+    }
+  }
+}
