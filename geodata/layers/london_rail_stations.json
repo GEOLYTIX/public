@@ -1,0 +1,89 @@
+{
+  "format": "cluster",
+  "dbs": "XYZ",
+  "table": "website.vw_london_glx_geodata_transport_station",
+  "geom": "geom_4326",
+  "srid": "4326",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.01,
+  "cluster_label": "stat_name",
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "glx_town",
+      "title": "Town",
+      "type": "text"
+    },
+    {
+      "field": "stat_name",
+      "title": "Station Name",
+      "type": "text"
+    },
+    {
+      "field": "stat_type",
+      "title": "Station Type",
+      "type": "text"
+    },
+    {
+      "field": "pass_ly",
+      "title": "2017 Passenger Numbers",
+      "type": "integer"
+    }
+  ],
+  "style": {
+    "marker": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.5": "#ffffff"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.75": "#ffffff",
+        "0.5": "#3366ff"
+      }
+    },
+    "themes": {
+      "Station Type": {
+        "type": "categorized",
+        "field": "stat_type",
+        "other": true,
+        "cat": {
+          "Rail Station": {
+            "label": "Rail",
+            "style": {
+              "fillColor": "#0019a8",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0019a8"
+              }
+            }
+          },
+          "Light Rail Station": {
+            "label": "Light Rail",
+            "style": {
+              "fillColor": "#00afad",
+              "layers": {
+                "0.75": "#FFFFFF",
+                "0.50": "#00afad"
+              }
+            }
+          },
+          "Underground Station": {
+            "label": "Underground",
+            "style": {
+              "fillColor": "#0019A8",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#DC241F"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
