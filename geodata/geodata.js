@@ -14,7 +14,7 @@ document.querySelectorAll('#geodata__select > div').forEach(function(el){
         document.getElementById('geodata__faq').style.display = 'none';
 
         _xyz({
-            host: 'http://localhost:3000/geodata',
+            host: '/geodata',
             locale: el.dataset.locale,
             callback: function(_xyz) {
        
