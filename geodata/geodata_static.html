@@ -48,6 +48,17 @@
           width: 100%;
           height: 100%;
         }
+        
+        .geodata__info {
+          height: 100%;
+          overflow-y: auto;
+          overflow-x: hidden;
+          transform: rotateY(180deg);
+        }
+
+        #geodata__info {
+          transform: rotateY(180deg);
+        }
 
     </style>
 </head>
@@ -55,7 +66,8 @@
 
   <div style="height: 100%; width: 100%; display: grid; grid-template-columns: 300px 1fr;">
 
-    <div id="geodata__info" class="geodata__info" style="grid-column: 1; background-color: #f0f0f0; padding: 10px;">
+    <div class="geodata__info" style="grid-column: 1; background-color: #f0f0f0; padding: 10px;">
+        <div id="geodata__info"></div>
     </div>
 
     <div class="geodata__content" style="height: 100%; grid-column: 2; position: relative;">
@@ -67,9 +79,6 @@
         <button class="btn-zoomout enabled" disabled>
           <div class="xyz-icon icon-remove"></div>
         </button>
-        <a class="btn-fullscreen enabled" target="_blank">
-          <div class="xyz-icon icon-fullscreen"></div>
-        </a>
       </div>
       <div id="map_geodata" class="map"></div>
     </div>
