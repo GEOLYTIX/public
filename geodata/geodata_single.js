@@ -6,11 +6,11 @@ window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (match, key, value) => {
 });
 
 const xyz = _xyz({
-  host: 'http://localhost:3000/geodata'
+  host: params.host
 })
 
 xyz.workspace.get.locale({
-  locale: params.locale || 'London'
+  locale: params.locale
 }).then(createMap)
 
 function createMap(locale) {
