@@ -77,11 +77,11 @@ function createMap(locale) {
       xyz.layers.list[layer.key] = layer;
 
       if (layer.groupmeta) {
-        document.querySelector('.geodata__info').innerHTML = layer.groupmeta;
+        document.getElementById('geodata__info').innerHTML = layer.groupmeta;
       }
 
       if (layer.style && layer.style.theme || layer.format === 'grid') {
-        document.querySelector('.geodata__info').appendChild(xyz.layers.view.style.legend(layer));
+        document.getElementById('geodata__info').appendChild(xyz.layers.view.style.legend(layer));
       }
 
     })
