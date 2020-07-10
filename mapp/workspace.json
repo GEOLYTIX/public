@@ -44,73 +44,73 @@
       "template": "select id, city_name, country, pop_ghs, area, pop_den from geodata.global_glx_open_citiesoftheworld WHERE true ${viewport} ${filter} limit 99;"
     },
     "global_cities": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/global_cities.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/global_cities.json"
     },
     "global_airports_query": {
       "template": "select id, full_name, main_city, country, iata, icao, rank_group, rank from geodata.global_glx_geodata_transport_airport WHERE true ${viewport} ${filter} limit 99;"
     },
     "global_airports": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/global_airports.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/global_airports.json"
     },
     "aus_states": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/states.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/states.json"
     },
     "aus_demographics": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/demographics.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/demographics.json"
     },
     "aus_workers": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/workers.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/workers.json"
     },
     "aus_schools": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/schools.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/schools.json"
     },
     "aus_universities": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/universities.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/universities.json"
     },
     "aus_railways": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/railways.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/railways.json"
     },
     "aus_railstations": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/railstations.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/railstations.json"
     },
     "aus_retail_places": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_places.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_places.json"
     },
     "aus_retail_venues": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_venues.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_venues.json"
     }, 
     "aus_retail_pitch": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_pitch.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_pitch.json"
     },
     "aus_retail_diy": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_diy.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_diy.json"
     },
     "aus_retail_diy_query": {
       "template": "select id, retailer, fascia, store_name, town from geodata.vw_aus_glx_geodata_retail_locations_diy WHERE true ${viewport} ${filter} limit 99;"
     },
     "aus_retail_grocery": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_grocery.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_grocery.json"
     },
     "aus_retail_grocery_query": {
       "template": "select id, retailer, fascia, store_name, town from geodata.vw_aus_glx_geodata_retail_locations_grocery WHERE true ${viewport} ${filter} limit 99;"
     },
     "aus_retail_department_stores": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_department_stores.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_department_stores.json"
     },
     "aus_retail_department_stores_query": {
       "template": "select id, retailer, fascia, store_name, town from geodata.vw_aus_glx_geodata_retail_locations_deptstore WHERE true ${viewport} ${filter} limit 99;"
     },
     "aus_retail_dds": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/australia/retail_dds.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/australia/retail_dds.json"
     },
     "aus_retail_dds_query": {
       "template": "select id, retailer, fascia, store_name, town from geodata.vw_aus_glx_geodata_retail_locations_dds WHERE true ${viewport} ${filter} limit 99;"
     },
     "uk_seamless_town_and_suburb": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/seamless_town_and_suburb.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/seamless_town_and_suburb.json"
     },
     "uk_seamless_shopper_town": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/seamless_shopper_town.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/seamless_shopper_town.json"
     },
     "uk_seamless_shopper_town population growth": {
       "template": "SELECT pop_11, pop_15, pop_16, pop_17, pop_18, pop_19, pop_20, pop_21, pop_22, pop_23 FROM geodata.uk_glx_geodata_seamless_shopper_town_metrics WHERE id = ${id};"
@@ -122,10 +122,10 @@
       "template": "SELECT id, shop_town, pop_19, 100*pop_11_19 as pop_11_19 FROM geodata.uk_glx_geodata_seamless_shopper_town_metrics WHERE true ${viewport} ${filter} limit 99;"
     },
     "uk_demography_grid": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/demography_grid.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/demography_grid.json"
     },
     "uk_output_area": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/output_area.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/output_area.json"
     },
     "uk_output_area age": {
       "template": "SELECT age0to18, age18to24, age25to44, age45to59, age60plus FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
@@ -140,145 +140,145 @@
       "template": "SELECT housetype_houses, housetype_flats, housetype_other, age45to59, age60plus FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
     },
     "uk_workers": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/workers.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/workers.json"
     },
     "uk_workers splits": {
       "template": "SELECT agriculture, mining, manufacturing, electricity, water, construction, wholesale, transport, accommodation, it, finance, real_estate, professional, administrative, public_admin, education, human_health, arts, other, households, extraterritorial FROM geodata.uk_glx_geodata_workers_hybrid_zone WHERE id = ${id};"
     },
     "uk_university_building": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/university_building.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/university_building.json"
     },
     "uk_schools": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/schools.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/schools.json"
     },
     "uk_university_poi": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/university_poi.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/university_poi.json"
     },
     "uk_rail_stations": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/rail_stations.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/rail_stations.json"
     },
     "uk_railways": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/railways.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/railways.json"
     },
     "uk_roads": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/roads.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/roads.json"
     },
     "uk_traffic": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/traffic.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/traffic.json"
     },
     "uk_retail_places": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/retail_places.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places.json"
     },
     "uk_retail_places profile": {
       "template": "SELECT comp_pct, conv_pct, fbl_pct, serv_pct, classbrass FROM geodata.uk_glx_geodata_retail_place WHERE id = ${id};"
     },
     "uk_retail_places_pitch": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/retail_places_pitch.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places_pitch.json"
     },
     "uk_retail_places_shopping_centre": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/retail_places_shopping_centre.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places_shopping_centre.json"
     },    
     "uk_pizza": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/pizza.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/pizza.json"
     },
     "uk_pizza table": {
       "template": "SELECT takeaway_id as id, restaurant_name, fascia, competitor_category, price FROM geodata.glx_pizza_places WHERE true ${viewport} ${filter} limit 99;"
     },
     "uk_grocery": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/grocery.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/grocery.json"
     },
     "uk_grocery table": {
       "template": "SELECT id as id, store_name, retailer, fascia, size_sqft FROM geodata.uk_glx_open_retail_points WHERE true ${viewport} ${filter} limit 99;"
     },
     "uk_fashion": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/fashion.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/fashion.json"
     },
     "uk_health": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/health.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/health.json"
     },
     "uk_leisure_poi": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/uk/leisure_poi.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/leisure_poi.json"
     },
     "china_demography_grid": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/china/demography_grid.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
     },
     "china_retail_venues": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/china/retail_places.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/china/retail_places.json"
     },
     "china_retail_places": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/china/retail_venues.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/china/retail_venues.json"
     },
     "china_transport_stations": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/china/transport_stations.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/china/transport_stations.json"
     },
     "china_house_price_paid": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/china/house_price_paid.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/china/house_price_paid.json"
     },
     "japan_chomoku": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/japan/chomoku.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/japan/chomoku.json"
     },
     "japan_restaurants": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/japan/restaurants.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/japan/restaurants.json"
     },
     "japan_retail_place": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/japan/retail_place.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/japan/retail_place.json"
     },
     "japan_retail_venues": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/japan/retail_venues.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/japan/retail_venues.json"
     },
     "rok_dong": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/dong.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/dong.json"
     },
     "rok_road_connectivity": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/road_connectivity.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/road_connectivity.json"
     },
     "rok_traffic_counts": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/traffic_counts.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/traffic_counts.json"
     },
     "rok_traffic_counts_actual": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/traffic_counts_actual.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/traffic_counts_actual.json"
     },
     "rok_petrol_stations": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/petrol_stations.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/petrol_stations.json"
     },
     "rok_transport_hubs": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/transport_hubs.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/transport_hubs.json"
     },
     "rok_subways": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/subways.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/subways.json"
     },
     "rok_retail_place": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/retail_place.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/retail_place.json"
     },
     "rok_retail_venues": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/retail_venues.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/retail_venues.json"
     },
     "rok_visitor_centres": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/south_korea/visitor_centres.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/south_korea/visitor_centres.json"
     },
     "eu_country_borders": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/country_borders.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/country_borders.json"
     },
     "eu_cities": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/cities.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/cities.json"
     },
     "eu_cities table": {
       "template": "SELECT id, city_name, country, pop_ghs, area, pop_den FROM mapp.vw_eu_glx_open_citiesofeurope WHERE true ${viewport} ${filter} limit 99;"
     },
     "eu_indicators": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/indicators.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/indicators.json"
     },
     "eu_demography_grid": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/demography_grid.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/demography_grid.json"
     },
     "eu_fashion": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/fashion.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/fashion.json"
     },
     "eu_fashion table": {
       "template": "SELECT id, retailer, fascia, store_name, town FROM mapp.vw_eu_glx_geodata_retail_locations_fashion WHERE true ${viewport} ${filter} limit 99;"
     },
     "eu_sport": {
-      "src": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/layers/europe/sport.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/europe/sport.json"
     },
     "eu_sport table": {
       "template": "SELECT id, retailer, fascia, store_name, town FROM mapp.vw_eu_glx_geodata_retail_locations_sport WHERE true ${viewport} ${filter} limit 99;"
