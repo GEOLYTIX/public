@@ -1,0 +1,66 @@
+{
+  "meta": "Building for 164 universities in the UK.",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "qID": "id",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "tables": {
+    "9": null,
+    "10": "geodata.uk_glx_geodata_education_uni_building"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "ubuildtype",
+      "title": "Building type",
+      "inline": true
+    },
+    {
+      "field": "uni_name",
+      "title": "University name",
+      "inline": true
+    },
+    {
+      "field": "ubuildname",
+      "title": "Building name",
+      "inline": true
+    },
+    {
+      "field": "fac_serv",
+      "title": "Faculty served",
+      "inline": true
+    },
+    {
+      "field": "uni_add",
+      "title": "Address"
+    },
+    {
+      "field": "uni_pcode",
+      "title": "Postcode",
+      "inline": true
+    },
+    {
+      "field": "town",
+      "title": "Town",
+      "inline": true
+    },
+    {
+      "field": "country",
+      "title": "Country",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#FFAE03",
+      "fillColor": "#FFAE03",
+      "fillOpacity": 0.3
+    },
+    "highlight": {
+      "fillOpacity": 0.6
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.uk_glx_geodata_poi_health",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "poi_name",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "poi_type",
+      "title": "Category",
+      "inline": true
+    },
+    {
+      "field": "poi_name",
+      "title": "Name"
+    },
+    {
+      "field": "brand",
+      "title": "Brand",
+      "inline": true
+    },
+    {
+      "title": "Address",
+      "type": "label"
+    },
+    {
+      "field": "add_one"
+    },
+    {
+      "field": "add_two"
+    },
+    {
+      "field": "locality"
+    },
+    {
+      "field": "town"
+    },
+    {
+      "field": "postcode"
+    },
+    {
+      "type": "streetview"
+    }
+  ],
+  "cluster_kmeans": 0.02,
+  "style": {
+    "hidden": true,
+    "highlight": {
+      "scale": 0.2
+    },
+    "themes": {
+      "POI Type": {
+        "field": "poi_type",
+        "type": "categorized",
+        "other": true,
+        "cat": {
+          "Hospital": {
+            "label": "Hospital",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_health_hospital.svg?sanitize=true",
+            "scale": 0.2
+          },
+          "Pharmacy": {
+            "label": "Pharmacy",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_health_pharmacy.svg?sanitize=true",
+            "scale": 0.2
+          }
+        }
+      }
+    }
+  }
+}

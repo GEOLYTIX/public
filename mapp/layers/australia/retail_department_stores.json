@@ -1,0 +1,143 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.vw_aus_glx_geodata_retail_locations_deptstore",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "fascia",
+  "cluster_cat": "retailer",
+  "cluster_kmeans": 0.05,
+  "cluster_dbscan": 0.1,
+  "hover": {
+    "field": "store_name"
+  },
+  "dataviews": {
+    "Retail Locations - Department Stores": {
+      "display": true,
+      "table": "geodata.vw_aus_glx_geodata_retail_locations_deptstore",
+      "query": "aus_retail_department_stores_query",
+      "selectable": true,
+      "columns": [
+        {
+          "field": "id",
+          "title": "ID",
+          "type": "numeric"
+        },
+        {
+          "field": "retailer",
+          "title": "Retailer"
+        },
+        {
+          "field": "fascia",
+          "title": "Fascia"
+        },
+        {
+          "field": "store_name",
+          "title": "Store Name"
+        },
+        {
+          "field": "town",
+          "title": "Town"
+        }
+      ]
+    }
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "retailer",
+      "title": "Retailer",
+      "inline": true
+    },
+    {
+      "field": "fascia",
+      "title": "Fascia",
+      "inline": true
+    },
+    {
+      "field": "store_name",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "address",
+      "title": "Address",
+      "inline": true
+    },
+    {
+      "field": "size_sqft",
+      "title": "Size (sq ft)"
+    },
+    {
+      "field": "size_sqm",
+      "title": "Size (sq m)"
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "store_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "marker": {
+      "type": "square",
+      "fillColor": "#993366"
+    },
+    "markerMulti": {
+      "type": "square",
+      "fillColor": "#993366"
+    },
+    "themes": {
+      "Retailers": {
+        "type": "categorized",
+        "field": "retailer",
+        "cat": {
+          "DEBENHAMS": {
+            "label": "Debenhams",
+            "style": {
+              "fillColor": "#000000",
+              "layers": {
+                "0.75": "#00ffbf",
+                "0.5": "#000000"
+              }
+            }
+          },
+          "DAVID JONES": {
+            "label": "David Jones",
+            "style": {
+              "fillColor": "#000000",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#000000"
+              }
+            }
+          },
+          "HARRIS SCARFE": {
+            "label": "Harris Scarfe",
+            "style": {
+              "fillColor": "#40bf40",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#40bf40"
+              }
+            }
+          },
+          "MYER": {
+            "label": "Myer",
+            "style": {
+              "fillColor": "#83b923",
+              "layers": {
+                "0.75": "#ffff33",
+                "0.5": "#fdb839"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

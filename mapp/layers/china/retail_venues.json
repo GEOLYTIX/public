@@ -1,0 +1,96 @@
+{
+  "format": "mvt",
+  "dbs": "MAPP",
+  "table": "geodata.cn_glx_geodata_retail_venue",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "hover": {
+    "field": "venue_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "title": "Name",
+      "field": "venue_name",
+      "inline": true
+    },
+    {
+      "title": "Local Name",
+      "field": "venuelocal",
+      "inline": true
+    },
+    {
+      "title": "Venue Type",
+      "field": "venue_type",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "label": {
+      "field": "venue_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeColor": "#004d1a",
+      "strokeWidth": 0.8,
+      "fillColor": "#009933",
+      "fillOpacity": 0.6
+    },
+    "highlight": {
+      "strokeColor": "#e65c00",
+      "strokeWidth": 0.8,
+      "fillColor": "#ffff66",
+      "fillOpacity": 0.6
+    },
+    "themes": {
+      "Retail Venue type": {
+        "type": "categorized",
+        "field": "venue_type",
+        "other": true,
+        "cat": {
+          "Department Store": {
+            "label": "Department Store",
+            "style": {
+              "strokeColor": "#e41a1c",
+              "fillColor": "#e41a1c"
+            }
+          },
+          "Outlet": {
+            "label": "Outlet",
+            "style": {
+              "strokeColor": "#377eb8",
+              "fillColor": "#377eb8"
+            }
+          },
+          "Retail Street": {
+            "label": "Retail Street",
+            "style": {
+              "strokeColor": "#4daf4a",
+              "fillColor": "#4daf4a"
+            }
+          },
+          "Shopping Mall": {
+            "label": "Shopping Mall",
+            "style": {
+              "strokeColor": "#984ea3",
+              "fillColor": "#984ea3"
+            }
+          },
+          "Supermarket": {
+            "label": "Supermarket",
+            "style": {
+              "strokeColor": "#ff7f00",
+              "fillColor": "#ff7f00"
+            }
+          }
+        }
+      }
+    }
+  }
+}

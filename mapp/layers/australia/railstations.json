@@ -1,0 +1,53 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.aus_glx_geodata_transport_railstation",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "qID": "id",
+  "hover": {
+    "field": "rstat_name"
+  },
+  "cluster_label": "rstat_name",
+  "cluster_kmeans": 0.02,
+  "cluster_dbscan": 0.01,
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "rstat_type",
+      "title": "Type",
+      "inline": true
+    },
+    {
+      "field": "rstat_name",
+      "title": "Station name"
+    },
+    {
+      "field": "sp_ufi",
+      "title": "SP UFI",
+      "inline": true
+    },
+    {
+      "field": "mifcode",
+      "title": "MIF Code",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "marker": {
+      "type": "target",
+      "fillColor": "#777",
+      "layers": {
+        "0.75": "#EEE",
+        "0.50": "#777"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#777"
+    }
+  }
+}

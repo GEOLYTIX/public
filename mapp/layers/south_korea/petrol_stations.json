@@ -1,0 +1,54 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.sk_glx_geodata_poi_petrolstations",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "name",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.1,
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "name",
+      "title": "Name",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "brand",
+      "title": "Brand",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "address",
+      "title": "Address",
+      "type": "text",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "label": {
+      "field": "count",
+      "display": true,
+      "fillColor": "#fff",
+      "font": "bold 10px sans-serif"
+    },
+    "marker": {
+      "type": "target",
+      "fillColor": "#2ECC71",
+      "layers": {
+        "0.5": "#ffffff"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#2ECC71",
+      "layers": {
+        "0.7": "#1c7d44"
+      }
+    }
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "format": "mvt",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "dbs": "MAPP",
+  "qID": "sa1_code",
+  "mvt_cache": "mapp.aus_glx_geodata_demographics_sa1__mvts",
+  "table": "geodata.aus_glx_geodata_demographics_sa1",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "gcc_name16",
+      "title": "GCC",
+      "inline": true
+    },
+    {
+      "field": "sa4_name16",
+      "title": "Level 4 Name",
+      "inline": true
+    },
+    {
+      "field": "sa3_name16",
+      "title": "Level 3 Name",
+      "inline": true
+    },
+    {
+      "field": "sa2_name16",
+      "title": "Level 2 Name",
+      "inline": true
+    },
+    {
+      "field": "sa1_main16",
+      "title": "Level 1",
+      "inline": true
+    },
+    {
+      "field": "areasqkm16",
+      "title": "Area (sq km)",
+      "inline": true,
+      "type": "numeric"
+    },
+    {
+      "group": "Demographics",
+      "expanded": true,
+      "field": "tot_pop",
+      "title": "Population",
+      "inline": true,
+      "type": "numeric",
+      "filter": "numeric"
+    },
+    {
+      "group": "Demographics",
+      "field": "_pop_den",
+      "fieldfx": "tot_pop / areasqkm16",
+      "title": "Population Density",
+      "inline": true,
+      "type": "numeric"
+    },
+    {
+      "group": "Demographics",
+      "field": "pct_kids_0_14",
+      "fieldfx": "pct_kids_0_14 * 100",
+      "title": "% Children (0-14)",
+      "inline": true,
+      "type": "numeric"
+    },
+    {
+      "group": "Demographics",
+      "field": "_pct_students_15_24",
+      "fieldfx": "pct_students_15_24 * 100",
+      "title": "% Students (15-24)",
+      "inline": true,
+      "type": "numeric"
+    },
+    {
+      "group": "Demographics",
+      "field": "_pct_eth_china_resp_parents",
+      "fieldfx": "pct_eth_china_resp_parents * 100",
+      "title": "% Chinese Ethnicity",
+      "inline": true,
+      "type": "numeric"
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#ffffff",
+      "fillColor": "#EEE",
+      "fillOpacity": 0.8
+    },
+    "themes": {
+      "Population": {
+        "type": "graduated",
+        "field": "tot_pop",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "Less than 250",
+            "style": {
+              "fillColor": "#f1eef6"
+            }
+          },
+          {
+            "value": "250",
+            "label": "250 - 500",
+            "style": {
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "500",
+            "label": "500 - 750",
+            "style": {
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "750",
+            "label": "750 - 1000",
+            "style": {
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "1000",
+            "label": "1 to 5k",
+            "style": {
+              "fillColor": "#3690c0"
+            }
+          },
+          {
+            "value": "5000",
+            "label": "5 to 10k",
+            "style": {
+              "fillColor": "#0570b0"
+            }
+          },
+          {
+            "value": "10000",
+            "label": "Over 10k",
+            "style": {
+              "fillColor": "#034e7b"
+            }
+          }
+        ]
+      },
+      "Population Density": {
+        "type": "graduated",
+        "field": "pop_den",
+        "fieldfx": "tot_pop / areasqkm16",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "Less than 100",
+            "style": {
+              "fillColor": "#f1eef6"
+            }
+          },
+          {
+            "value": "100",
+            "label": "100 - 500",
+            "style": {
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "500",
+            "label": "500 - 1k",
+            "style": {
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "1000",
+            "label": "1 - 2k",
+            "style": {
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "2000",
+            "label": "2 to 3k",
+            "style": {
+              "strokeColor": "#ffffff",
+              "fillColor": "#3690c0"
+            }
+          },
+          {
+            "value": "3000",
+            "label": "3 to 4k",
+            "style": {
+              "fillColor": "#0570b0"
+            }
+          },
+          {
+            "value": "4000",
+            "label": "Over 4k",
+            "style": {
+              "fillColor": "#034e7b"
+            }
+          }
+        ]
+      },
+      "% Children (0-14)": {
+        "type": "graduated",
+        "field": "pct_kids_0_14",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "None",
+            "style": {
+              "fillColor": "#f1eef6"
+            }
+          },
+          {
+            "value": "0.001",
+            "label": "Less then 10%",
+            "style": {
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "0.1",
+            "label": "10 - 15%",
+            "style": {
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "0.15",
+            "label": "15 - 20%",
+            "style": {
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "0.2",
+            "label": "20 to 25%",
+            "style": {
+              "fillColor": "#3690c0"
+            }
+          },
+          {
+            "value": "0.25",
+            "label": "25 to 30%",
+            "style": {
+              "fillColor": "#0570b0"
+            }
+          },
+          {
+            "value": "0.3",
+            "label": "Over 30%",
+            "style": {
+              "fillColor": "#034e7b"
+            }
+          }
+        ]
+      },
+      "% Students (15-24)": {
+        "type": "graduated",
+        "field": "pct_students_15_24",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "None",
+            "style": {
+              "fillColor": "#f1eef6"
+            }
+          },
+          {
+            "value": "0.001",
+            "label": "Less then 10%",
+            "style": {
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "0.1",
+            "label": "10 - 15%",
+            "style": {
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "0.15",
+            "label": "15 - 20%",
+            "style": {
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "0.2",
+            "label": "20 to 25%",
+            "style": {
+              "fillColor": "#3690c0"
+            }
+          },
+          {
+            "value": "0.25",
+            "label": "25 to 30%",
+            "style": {
+              "fillColor": "#0570b0"
+            }
+          },
+          {
+            "value": "0.3",
+            "label": "Over 30%",
+            "style": {
+              "fillColor": "#034e7b"
+            }
+          }
+        ]
+      },
+      "% Chinese Ethnicity": {
+        "type": "graduated",
+        "field": "pct_eth_china_resp_parents",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "None",
+            "style": {
+              "fillColor": "#f1eef6"
+            }
+          },
+          {
+            "value": "0.001",
+            "label": "Less then 2%",
+            "style": {
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "0.02",
+            "label": "2 - 4%",
+            "style": {
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "0.04",
+            "label": "4 - 6%",
+            "style": {
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "0.06",
+            "label": "6 to 8%",
+            "style": {
+              "fillColor": "#3690c0"
+            }
+          },
+          {
+            "value": "0.08",
+            "label": "8 to 10%",
+            "style": {
+              "fillColor": "#0570b0"
+            }
+          },
+          {
+            "value": "0.1",
+            "label": "Over 10%",
+            "style": {
+              "fillColor": "#034e7b"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

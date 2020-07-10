@@ -1,0 +1,42 @@
+{
+  "format": "mvt",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "dbs": "MAPP",
+  "qID": "id",
+  "mvt_cache": "mapp.aus_glx_geodata_admin_states",
+  "table": "geodata.aus_glx_geodata_admin_states",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "state_code",
+      "title": "Code",
+      "inline": true
+    },
+    {
+      "field": "ste_name16",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "ste_code16",
+      "title": "Code",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "default": {
+      "strokeWidth": 1,
+      "strokeColor": "#0E5E13",
+      "fillColor": "#EEE",
+      "fillOpacity": 0.2
+    },
+    "highlight": {
+      "fillOpacity": 0.4,
+      "strokeWidth": 3
+    }
+  }
+}

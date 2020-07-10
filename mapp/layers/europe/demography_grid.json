@@ -1,0 +1,26 @@
+{
+  "format": "grid",
+  "dbs": "MAPP",
+  "geom": "geom_p_4326",
+  "grid_color": "pop__14",
+  "tables": {
+    "7": "geodata.eu_glx_geodata_hex_128k",
+    "8": "geodata.eu_glx_geodata_hex_64k",
+    "9": "geodata.eu_glx_geodata_hex_32k",
+    "10": "geodata.eu_glx_geodata_hex_16k",
+    "11": "geodata.eu_glx_geodata_hex_8k"
+  },
+  "grid_fields": {
+    "Population": "pop__14",
+    "Female Population": "gen_f__14",
+    "Male Population": "gen_m__14",
+    "Age 20 to 29": "age_20to29__14",
+    "Age 30 to 39": "age_30to39__14",
+    "Age 40 to 49": "age_40to49__14",
+    "Age 50 to 59": "age_50to59__14",
+    "Age 60 to 69": "age_60to69__14",
+    "Age 70 plus": "age_70pl__14",
+    "Births": "births__14",
+    "Deaths": "deaths__14"
+  }
+}

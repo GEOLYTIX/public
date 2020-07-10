@@ -1,0 +1,75 @@
+{
+  "format": "mvt",
+  "dbs": "MAPP",
+  "mvt_cache": "mapp.sk_glx_geodata_roads_k25_edge_centrality",
+  "tables": {
+    "13": null,
+    "14": "geodata.sk_glx_geodata_roads_k25_edge_centrality"
+  },
+  "geom": "geom_l_3857",
+  "srid": "3857",
+  "style": {
+    "default": {
+      "fillColor": "#bdbdbd",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeColor": "#56A3A6",
+      "fillColor": "#DBD56E",
+      "fillOpacity": 0.3
+    },
+    "themes": {
+      "average": {
+        "type": "graduated",
+        "field": "average",
+        "cat_arr": [
+          {
+            "value": "0",
+            "label": "Less connected",
+            "style": {
+              "strokeColor": "#4747ff",
+              "fillColor": "#4747ff",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "value": "100000",
+            "label": " ",
+            "style": {
+              "strokeColor": "#6e3bc7",
+              "fillColor": "#6e3bc7",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "value": "400000",
+            "label": " ",
+            "style": {
+              "strokeColor": "#95308e",
+              "fillColor": "#95308e",
+              "strokeWidth": 2
+            }
+          },
+          {
+            "value": "1110000",
+            "label": " ",
+            "style": {
+              "strokeColor": "#bc2555",
+              "fillColor": "#bc2555",
+              "strokeWidth": 2
+            }
+          },
+          {
+            "value": "3500000",
+            "label": "More connected",
+            "style": {
+              "strokeColor": "#e31a1c",
+              "fillColor": "#e31a1c",
+              "strokeWidth": 3
+            }
+          }
+        ]
+      }
+    }
+  }
+}

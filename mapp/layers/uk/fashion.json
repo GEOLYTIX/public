@@ -1,0 +1,1636 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "mapp.uk_glx_restrict_fashion_points",
+  "qID": "branch_id",
+  "geom": "geom_4326",
+  "srid": "4326",
+  "cluster_label": "fascia",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.1,
+  "dataview": {
+    "Fashion Retail Points": {
+      "display": true,
+      "layout": "fitColumns",
+      "from": "mapp.uk_glx_restrict_fashion_points",
+      "type": "table",
+      "columns": [
+        {
+          "field": "branch_id",
+          "title": "ID",
+          "type": "numeric"
+        },
+        {
+          "field": "retailer",
+          "title": "Retailer"
+        },
+        {
+          "field": "fascia",
+          "title": "Fascia"
+        },
+        {
+          "field": "brand_affluence",
+          "title": "Brand Affluence"
+        }
+      ]
+    }
+  },
+  "infoj": [
+    {
+      "type": "key",
+      "class": "_report"
+    },
+    {
+      "type": "report",
+      "class": "_report",
+      "report": {
+        "template": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/mapp/report_fashion/fashion.html"
+      }
+    },
+    {
+      "field": "retailer",
+      "title": "Retailer",
+      "inline": true
+    },
+    {
+      "field": "fascia",
+      "title": "Fascia",
+      "inline": true
+    },
+    {
+      "field": "address",
+      "title": "Address",
+      "inline": true
+    },
+    {
+      "field": "town",
+      "title": "Town",
+      "inline": true
+    },
+    {
+      "field": "postcode",
+      "title": "Postcode",
+      "inline": true
+    },
+    {
+      "field": "category",
+      "title": "Category",
+      "inline": true
+    },
+    {
+      "field": "brand_affluence",
+      "title": "Brand Affluence",
+      "inline": true
+    },
+    {
+      "field": "shopping_centre_name",
+      "title": "Shopping Centre",
+      "inline": true
+    },
+    {
+      "title": "Drivetimes",
+      "type": "label",
+      "class": "_report"
+    },
+    {
+      "name": "HERE Catchment 5min",
+      "field": "isoline_5min",
+      "display": true,
+      "fieldfx": "ST_asGeoJson(isoline_5min)",
+      "type": "geometry",
+      "class": "_report",
+      "edit": {
+        "isoline_here": {
+          "minutes": 5
+        }
+      },
+      "style": {
+        "strokeColor": "#BB0A21",
+        "fillColor": "#BB0A21",
+        "strokeWidth": 2,
+        "fillOpacity": 0.2
+      }
+    },
+    {
+      "title": "Population within 5min",
+      "type": "group",
+      "chart": {
+        "type": "bar",
+        "unit": "k",
+        "beginAtZero": true,
+        "backgroundColor": [
+          "#E6A5AE",
+          "#E08F9A",
+          "#D97985",
+          "#D36371",
+          "#CD4C5D",
+          "#C73649",
+          "#C12035",
+          "#BB0A21"
+        ],
+        "borderColor": [
+          "#E6A5AE",
+          "#E08F9A",
+          "#D97985",
+          "#D36371",
+          "#CD4C5D",
+          "#C73649",
+          "#C12035",
+          "#BB0A21"
+        ]
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2011",
+      "field": "_pop__11_5min",
+      "fieldfx": "SUM(b.pop__11)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2012",
+      "field": "_pop__12_5min",
+      "fieldfx": "SUM(b.pop__12)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2013",
+      "field": "_pop__13_5min",
+      "fieldfx": "SUM(b.pop__13)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2014",
+      "field": "_pop__14_5min",
+      "fieldfx": "SUM(b.pop__14)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2015",
+      "field": "_pop__15_5min",
+      "fieldfx": "SUM(b.pop__15)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2016",
+      "field": "_pop__16_5min",
+      "fieldfx": "SUM(b.pop__16)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 5min",
+      "title": "2017",
+      "field": "_pop__17_5min",
+      "fieldfx": "SUM(b.pop__17)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_5min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "name": "HERE Catchment 10min",
+      "field": "isoline_10min",
+      "fieldfx": "ST_asGeoJson(isoline_10min)",
+      "type": "geometry",
+      "display": true,
+      "class": "_report",
+      "edit": {
+        "isoline_here": {
+          "minutes": 10
+        }
+      },
+      "style": {
+        "stokeColor": "#F49D37",
+        "fillColor": "#F49D37",
+        "fillOpacity": 0.2,
+        "strokeWidth": 2
+      }
+    },
+    {
+      "title": "Population within 10min",
+      "type": "group",
+      "chart": {
+        "type": "bar",
+        "unit": "k",
+        "beginAtZero": true,
+        "backgroundColor": [
+          "#FBDBB6",
+          "#FAD2A4",
+          "#F9C991",
+          "#F8C07F",
+          "#F7B76D",
+          "#F6AE5B",
+          "#F5A549",
+          "#F49D37"
+        ],
+        "borderColor": [
+          "#FBDBB6",
+          "#FAD2A4",
+          "#F9C991",
+          "#F8C07F",
+          "#F7B76D",
+          "#F6AE5B",
+          "#F5A549",
+          "#F49D37"
+        ]
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2011",
+      "field": "_pop__11_10min",
+      "fieldfx": "SUM(b.pop__11)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2012",
+      "field": "_pop__12_10min",
+      "fieldfx": "SUM(b.pop__12)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2013",
+      "field": "_pop__13_10min",
+      "fieldfx": "SUM(b.pop__13)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2014",
+      "field": "_pop__14_10min",
+      "fieldfx": "SUM(b.pop__14)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2015",
+      "field": "_pop__15_10min",
+      "fieldfx": "SUM(b.pop__15)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2016",
+      "field": "_pop__16_10min",
+      "fieldfx": "SUM(b.pop__16)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 10min",
+      "title": "2017",
+      "field": "_pop__17_10min",
+      "fieldfx": "SUM(b.pop__17)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_10min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "name": "HERE Catchment 15min",
+      "field": "isoline_15min",
+      "fieldfx": "ST_asGeoJson(isoline_15min)",
+      "type": "geometry",
+      "display": true,
+      "class": "_report",
+      "edit": {
+        "isoline_here": {
+          "minutes": 15
+        }
+      },
+      "style": {
+        "strokeColor": "#FFF05A",
+        "fillColor": "#FFF05A",
+        "strokeWidth": 2,
+        "fillOpacity": 0.2
+      }
+    },
+    {
+      "title": "Population within 15min",
+      "type": "group",
+      "chart": {
+        "type": "bar",
+        "unit": "k",
+        "beginAtZero": true,
+        "backgroundColor": [
+          "#FFF9C3",
+          "#FFF8B4",
+          "#FFF6A5",
+          "#FFF596",
+          "#FFF487",
+          "#FFF278",
+          "#FFF169",
+          "#FFF05A"
+        ],
+        "borderColor": [
+          "#FFF9C3",
+          "#FFF8B4",
+          "#FFF6A5",
+          "#FFF596",
+          "#FFF487",
+          "#FFF278",
+          "#FFF169",
+          "#FFF05A"
+        ]
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2011",
+      "field": "_pop__11_15min",
+      "fieldfx": "SUM(b.pop__11)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2012",
+      "field": "_pop__12_15min",
+      "fieldfx": "SUM(b.pop__12)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2013",
+      "field": "_pop__13_15min",
+      "fieldfx": "SUM(b.pop__13)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2014",
+      "field": "_pop__14_15min",
+      "fieldfx": "SUM(b.pop__14)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2015",
+      "field": "_pop__15_15min",
+      "fieldfx": "SUM(b.pop__15)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2016",
+      "field": "_pop__16_15min",
+      "fieldfx": "SUM(b.pop__16)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "group": "Population within 15min",
+      "title": "2017",
+      "field": "_pop__17_15min",
+      "fieldfx": "SUM(b.pop__17)",
+      "level": 1,
+      "type": "integer",
+      "lookup": {
+        "table_a": "mapp.uk_glx_restrict_fashion_points",
+        "table_b": "geodata.uk_glx_geodata_hex_1k",
+        "geom_a": "isoline_15min",
+        "geom_b": "geom_p_4326"
+      }
+    },
+    {
+      "title": "Available dataviews",
+      "type": "label",
+      "class": "_report"
+    },
+    {
+      "type": "tableDefinition",
+      "title": "Population Summary",
+      "display": true,
+      "class": "_report",
+      "target_id": "xyz_fashion_pop",
+      "layout": "fitColumns",
+      "columns": [
+        {
+          "type": "integer",
+          "title": "0-5 mins",
+          "field": "min5",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_5min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "integer",
+          "title": "0-10 mins",
+          "field": "min10",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_10min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "integer",
+          "title": "0-15 mins",
+          "field": "min15",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_15min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        }
+      ],
+      "rows": [
+        {
+          "field": "pop__17",
+          "fieldfx": "SUM(b.pop__17)",
+          "title": "Current Population"
+        },
+        {
+          "field": "pop__11",
+          "fieldfx": "SUM(b.pop__11)",
+          "title": "Population 2011"
+        },
+        {
+          "field": "pop_growth",
+          "fieldfx": "SUM(b.pop__17 - b.pop__11) * 100 / SUM(b.pop__11)",
+          "title": "Population Growth"
+        },
+        {
+          "field": "students",
+          "fieldfx": "SUM(eac_student__11) + SUM(ein_student__11)",
+          "title": "Students"
+        },
+        {
+          "field": "non_white",
+          "fieldfx": "100*(SUM(pop__11) - SUM(ret_white_tot__11))/SUM(pop__11)",
+          "title": "% Non-White"
+        },
+        {
+          "field": "own_home",
+          "fieldfx": "100*SUM(own)/SUM(own+rent+social)",
+          "title": "Own Home"
+        },
+        {
+          "field": "private_rented",
+          "fieldfx": "100*SUM(rent)/SUM(own+rent+social)",
+          "title": "Private Rented"
+        },
+        {
+          "field": "social_rented",
+          "fieldfx": "100*SUM(social)/SUM(own+rent+social)",
+          "title": "Social Rented"
+        },
+        {
+          "field": "single_hhds",
+          "fieldfx": "100*SUM(pers1hhd)/SUM(pers1hhd+pers2hhd+pers2plushhd)",
+          "title": "Single Hhds"
+        },
+        {
+          "field": "hhds_two_ppl",
+          "fieldfx": "100*SUM(pers2hhd)/SUM(pers1hhd+pers2hhd+pers2plushhd)",
+          "title": "2 Person Hhds"
+        },
+        {
+          "field": "hhds_3plus",
+          "fieldfx": "100*SUM(pers2plushhd)/SUM(pers1hhd+pers2hhd+pers2plushhd)",
+          "title": "3+ Hhds"
+        }
+      ]
+    },
+    {
+      "type": "tableDefinition",
+      "title": "Workers Summary",
+      "display": true,
+      "class": "_report",
+      "layout": "fitColumns",
+      "target_id": "xyz_fashion_workers",
+      "columns": [
+        {
+          "type": "integer",
+          "title": "Total Workers",
+          "field": "workers",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_15min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        }
+      ],
+      "rows": [
+        {
+          "field": "workers_250",
+          "fieldfx": "SUM(case when ST_distance(ST_Transform(a.geom_4326,27700),ST_transform(b.geom_p_4326,27700))<=250 then b.workers else 0 end)",
+          "title": "Workers 250m"
+        },
+        {
+          "field": "workers_500",
+          "fieldfx": "SUM(case when ST_distance(ST_Transform(a.geom_4326,27700),ST_transform(b.geom_p_4326,27700))<=500 then b.workers else 0 end)",
+          "title": "Workers 500m"
+        }
+      ]
+    },
+    {
+      "type": "tableDefinition",
+      "title": "OAC Profile",
+      "display": true,
+      "target_id": "xyz_fashion_oac",
+      "class": "_report",
+      "columns": [
+        {
+          "type": "integer",
+          "title": "0-5 mins",
+          "group": "Population (2018)",
+          "field": "min5",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_5min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "integer",
+          "title": "0-10 mins",
+          "group": "Population (2018)",
+          "field": "min10",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_10min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "title": "0-15 mins",
+          "group": "Population (2018)",
+          "field": "min15",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_15min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "field": "uk",
+          "aspatial": "oac_1a, oac_1b, oac_1c, oac_2a, oac_2b, oac_2c, oac_2d, oac_3a, oac_3b, oac_3c, oac_3d, oac_4a, oac_4b, oac_4c, oac_5a, oac_5b, oac_6a, oac_6b, oac_7a, oac_7b, oac_7c, oac_7d, oac_8a, oac_8b, oac_8c, oac_8d, oac_total FROM geodata.mv_uk_glx_geodata_demographics_uk_regions where region = 'UK_avg'",
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        }
+      ],
+      "rows": [
+        {
+          "field": "oac_1a",
+          "fieldfx": "round(SUM(CASE WHEN oac_group=1 THEN pop__18 ELSE 0 END))",
+          "title": "1a - Farming communities"
+        },
+        {
+          "field": "oac_1b",
+          "fieldfx": "round(sum(case when oac_group=2 then pop__18 else 0 end))",
+          "title": "1b - Rural tenants"
+        },
+        {
+          "field": "oac_1c",
+          "fieldfx": "round(sum(case when oac_group=3 then pop__18 else 0 end))",
+          "title": "1c - Ageing rural dwellers"
+        },
+        {
+          "field": "oac_2a",
+          "fieldfx": "round(sum(case when oac_group=4 then pop__18 else 0 end))",
+          "title": "2a - Students around campus"
+        },
+        {
+          "field": "oac_2b",
+          "fieldfx": "round(sum(case when oac_group=5 then pop__18 else 0 end))",
+          "title": "2b - Inner city students"
+        },
+        {
+          "field": "oac_2c",
+          "fieldfx": "round(sum(case when oac_group=6 then pop__18 else 0 end))",
+          "title": "2c - Comforable cosmopolitans"
+        },
+        {
+          "field": "oac_2d",
+          "fieldfx": "round(sum(case when oac_group=7 then pop__18 else 0 end))",
+          "title": "2d - Aspiring and affluent"
+        },
+        {
+          "field": "oac_3a",
+          "fieldfx": "round(sum(case when oac_group=8 then pop__18 else 0 end))",
+          "title": "3a - Ethnic family life"
+        },
+        {
+          "field": "oac_3b",
+          "fieldfx": "round(sum(case when oac_group=9 then pop__18 else 0 end))",
+          "title": "3b - Endeavouring ethnic mix"
+        },
+        {
+          "field": "oac_3c",
+          "fieldfx": "round(sum(case when oac_group=10 then pop__18 else 0 end))",
+          "title": "3c - Ethnic dynamics"
+        },
+        {
+          "field": "oac_3d",
+          "fieldfx": "round(sum(case when oac_group=11 then pop__18 else 0 end))",
+          "title": "3d - Aspirational techies"
+        },
+        {
+          "field": "oac_4a",
+          "fieldfx": "round(sum(case when oac_group=12 then pop__18 else 0 end))",
+          "title": "4a - Rented family living"
+        },
+        {
+          "field": "oac_4b",
+          "fieldfx": "round(sum(case when oac_group=13 then pop__18 else 0 end))",
+          "title": "4b - Challenged Asian terraces"
+        },
+        {
+          "field": "oac_4c",
+          "fieldfx": "round(sum(case when oac_group=14 then pop__18 else 0 end))",
+          "title": "4c - Asian traits"
+        },
+        {
+          "field": "oac_5a",
+          "fieldfx": "round(sum(case when oac_group=15 then pop__18 else 0 end))",
+          "title": "5a - Urban professionals and families"
+        },
+        {
+          "field": "oac_5b",
+          "fieldfx": "round(sum(case when oac_group=16 then pop__18 else 0 end))",
+          "title": "5b - Ageing urban living"
+        },
+        {
+          "field": "oac_6a",
+          "fieldfx": "round(sum(case when oac_group=17 then pop__18 else 0 end))",
+          "title": "6a - Suburban achievers"
+        },
+        {
+          "field": "oac_6b",
+          "fieldfx": "round(sum(case when oac_group=18 then pop__18 else 0 end))",
+          "title": "6b - Semi-detached suburbia"
+        },
+        {
+          "field": "oac_7a",
+          "fieldfx": "round(sum(case when oac_group=19 then pop__18 else 0 end))",
+          "title": "7a - Challenged diversity"
+        },
+        {
+          "field": "oac_7b",
+          "fieldfx": "round(sum(case when oac_group=20 then pop__18 else 0 end))",
+          "title": "7b - Constrained flat dwellers"
+        },
+        {
+          "field": "oac_7c",
+          "fieldfx": "round(sum(case when oac_group=21 then pop__18 else 0 end))",
+          "title": "7c - White communities"
+        },
+        {
+          "field": "oac_7d",
+          "fieldfx": "round(sum(case when oac_group=22 then pop__18 else 0 end))",
+          "title": "7d - Ageing city dwellers"
+        },
+        {
+          "field": "oac_8a",
+          "fieldfx": "round(sum(case when oac_group=23 then pop__18 else 0 end))",
+          "title": "8a - Industrious communities"
+        },
+        {
+          "field": "oac_8b",
+          "fieldfx": "round(sum(case when oac_group=24 then pop__18 else 0 end))",
+          "title": "8b - Challenged terraced workers"
+        },
+        {
+          "field": "oac_8c",
+          "fieldfx": "round(sum(case when oac_group=25 then pop__18 else 0 end))",
+          "title": "8c - Hard-pressed ageing workers"
+        },
+        {
+          "field": "oac_8d",
+          "fieldfx": "round(sum(case when oac_group=26 then pop__18 else 0 end))",
+          "title": "8d - Migration and churn"
+        },
+        {
+          "field": "oac_total",
+          "fieldfx": "round(sum(case when oac_group>0 then pop__18 else 0 end))",
+          "title": "Total"
+        }
+      ],
+      "agg": {
+        "share15": {
+          "title": "% with 15 min",
+          "rows": [
+            "100*min15.oac_1a/min15.oac_total",
+            "100*min15.oac_1b/min15.oac_total",
+            "100*min15.oac_1c/min15.oac_total",
+            "100*min15.oac_2a/min15.oac_total",
+            "100*min15.oac_2b/min15.oac_total",
+            "100*min15.oac_2c/min15.oac_total",
+            "100*min15.oac_2d/min15.oac_total",
+            "100*min15.oac_3a/min15.oac_total",
+            "100*min15.oac_3b/min15.oac_total",
+            "100*min15.oac_3c/min15.oac_total",
+            "100*min15.oac_3d/min15.oac_total",
+            "100*min15.oac_4a/min15.oac_total",
+            "100*min15.oac_4b/min15.oac_total",
+            "100*min15.oac_4c/min15.oac_total",
+            "100*min15.oac_5a/min15.oac_total",
+            "100*min15.oac_5b/min15.oac_total",
+            "100*min15.oac_6a/min15.oac_total",
+            "100*min15.oac_6b/min15.oac_total",
+            "100*min15.oac_7a/min15.oac_total",
+            "100*min15.oac_7b/min15.oac_total",
+            "100*min15.oac_7c/min15.oac_total",
+            "100*min15.oac_7d/min15.oac_total",
+            "100*min15.oac_8a/min15.oac_total",
+            "100*min15.oac_8b/min15.oac_total",
+            "100*min15.oac_8c/min15.oac_total",
+            "100*min15.oac_8d/min15.oac_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "oac_uk_total": {
+          "title": "UK %",
+          "class": "_report",
+          "type": "numeric",
+          "rows": [
+            "uk.oac_1a*100/uk.oac_total",
+            "uk.oac_1b*100/uk.oac_total",
+            "uk.oac_1c*100/uk.oac_total",
+            "uk.oac_2a*100/uk.oac_total",
+            "uk.oac_2b*100/uk.oac_total",
+            "uk.oac_2c*100/uk.oac_total",
+            "uk.oac_2d*100/uk.oac_total",
+            "uk.oac_3a*100/uk.oac_total",
+            "uk.oac_3b*100/uk.oac_total",
+            "uk.oac_3c*100/uk.oac_total",
+            "uk.oac_3d*100/uk.oac_total",
+            "uk.oac_4a*100/uk.oac_total",
+            "uk.oac_4b*100/uk.oac_total",
+            "uk.oac_4c*100/uk.oac_total",
+            "uk.oac_5a*100/uk.oac_total",
+            "uk.oac_5b*100/uk.oac_total",
+            "uk.oac_6a*100/uk.oac_total",
+            "uk.oac_6b*100/uk.oac_total",
+            "uk.oac_7a*100/uk.oac_total",
+            "uk.oac_7b*100/uk.oac_total",
+            "uk.oac_7c*100/uk.oac_total",
+            "uk.oac_7d*100/uk.oac_total",
+            "uk.oac_8a*100/uk.oac_total",
+            "uk.oac_8b*100/uk.oac_total",
+            "uk.oac_8c*100/uk.oac_total",
+            "uk.oac_8d*100/uk.oac_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "oac_under_indexer": {
+          "title": "Under",
+          "group": "Index",
+          "type": "integer",
+          "class": "_report",
+          "align": "right",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#C0392B"
+            ],
+            "min": 0,
+            "max": 200
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.oac_total*(100*min15.oac_1a/min15.oac_total)/uk.oac_1a <100 then 100 - (uk.oac_total*(100*min15.oac_1a/min15.oac_total)/uk.oac_1a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_1b/min15.oac_total)/uk.oac_1b <100 then 100 - (uk.oac_total*(100*min15.oac_1b/min15.oac_total)/uk.oac_1b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_1c/min15.oac_total)/uk.oac_1c <100 then 100 - (uk.oac_total*(100*min15.oac_1c/min15.oac_total)/uk.oac_1c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2a/min15.oac_total)/uk.oac_2a <100 then 100 - (uk.oac_total*(100*min15.oac_2a/min15.oac_total)/uk.oac_2a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2b/min15.oac_total)/uk.oac_2b <100 then 100 - (uk.oac_total*(100*min15.oac_2b/min15.oac_total)/uk.oac_2b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2c/min15.oac_total)/uk.oac_2c <100 then 100 - (uk.oac_total*(100*min15.oac_2c/min15.oac_total)/uk.oac_2c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2d/min15.oac_total)/uk.oac_2d <100 then 100 - (uk.oac_total*(100*min15.oac_2d/min15.oac_total)/uk.oac_2d) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3a/min15.oac_total)/uk.oac_3a <100 then 100 - (uk.oac_total*(100*min15.oac_3a/min15.oac_total)/uk.oac_3a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3b/min15.oac_total)/uk.oac_3b <100 then 100 - (uk.oac_total*(100*min15.oac_3b/min15.oac_total)/uk.oac_3b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3c/min15.oac_total)/uk.oac_3c <100 then 100 - (uk.oac_total*(100*min15.oac_3c/min15.oac_total)/uk.oac_3c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3d/min15.oac_total)/uk.oac_3d <100 then 100 - (uk.oac_total*(100*min15.oac_3d/min15.oac_total)/uk.oac_3d) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4a/min15.oac_total)/uk.oac_4a <100 then 100 - (uk.oac_total*(100*min15.oac_4a/min15.oac_total)/uk.oac_4a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4b/min15.oac_total)/uk.oac_4b <100 then 100 - (uk.oac_total*(100*min15.oac_4b/min15.oac_total)/uk.oac_4b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4c/min15.oac_total)/uk.oac_4c <100 then 100 - (uk.oac_total*(100*min15.oac_4c/min15.oac_total)/uk.oac_4c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_5a/min15.oac_total)/uk.oac_5a <100 then 100 - (uk.oac_total*(100*min15.oac_5a/min15.oac_total)/uk.oac_5a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_5b/min15.oac_total)/uk.oac_5b <100 then 100 - (uk.oac_total*(100*min15.oac_5b/min15.oac_total)/uk.oac_5b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_6a/min15.oac_total)/uk.oac_6a <100 then 100 - (uk.oac_total*(100*min15.oac_6a/min15.oac_total)/uk.oac_6a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_6b/min15.oac_total)/uk.oac_6b <100 then 100 - (uk.oac_total*(100*min15.oac_6b/min15.oac_total)/uk.oac_6b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7a/min15.oac_total)/uk.oac_7a <100 then 100 - (uk.oac_total*(100*min15.oac_7a/min15.oac_total)/uk.oac_7a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7b/min15.oac_total)/uk.oac_7b <100 then 100 - (uk.oac_total*(100*min15.oac_7b/min15.oac_total)/uk.oac_7b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7c/min15.oac_total)/uk.oac_7c <100 then 100 - (uk.oac_total*(100*min15.oac_7c/min15.oac_total)/uk.oac_7c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7d/min15.oac_total)/uk.oac_7d <100 then 100 - (uk.oac_total*(100*min15.oac_7d/min15.oac_total)/uk.oac_7d) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8a/min15.oac_total)/uk.oac_8a <100 then 100 - (uk.oac_total*(100*min15.oac_8a/min15.oac_total)/uk.oac_8a) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8b/min15.oac_total)/uk.oac_8b <100 then 100 - (uk.oac_total*(100*min15.oac_8b/min15.oac_total)/uk.oac_8b) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8c/min15.oac_total)/uk.oac_8c <100 then 100 - (uk.oac_total*(100*min15.oac_8c/min15.oac_total)/uk.oac_8c) else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8d/min15.oac_total)/uk.oac_8d <100 then 100 - (uk.oac_total*(100*min15.oac_8d/min15.oac_total)/uk.oac_8d) else 0 end"
+          ]
+        },
+        "oac_over_indexer": {
+          "title": "Over",
+          "group": "Index",
+          "type": "integer",
+          "class": "_report",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#16A085"
+            ],
+            "min": 0,
+            "max": 200,
+            "align": "left"
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.oac_total*(100*min15.oac_1a/min15.oac_total)/uk.oac_1a >=100 then (uk.oac_total*(100*min15.oac_1a/min15.oac_total)/uk.oac_1a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_1b/min15.oac_total)/uk.oac_1b >=100 then (uk.oac_total*(100*min15.oac_1b/min15.oac_total)/uk.oac_1b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_1c/min15.oac_total)/uk.oac_1c >=100 then (uk.oac_total*(100*min15.oac_1c/min15.oac_total)/uk.oac_1c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2a/min15.oac_total)/uk.oac_2a >=100 then (uk.oac_total*(100*min15.oac_2a/min15.oac_total)/uk.oac_2a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2b/min15.oac_total)/uk.oac_2b >=100 then (uk.oac_total*(100*min15.oac_2b/min15.oac_total)/uk.oac_2b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2c/min15.oac_total)/uk.oac_2c >=100 then (uk.oac_total*(100*min15.oac_2c/min15.oac_total)/uk.oac_2c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_2d/min15.oac_total)/uk.oac_2d >=100 then (uk.oac_total*(100*min15.oac_2d/min15.oac_total)/uk.oac_2d)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3a/min15.oac_total)/uk.oac_3a >=100 then (uk.oac_total*(100*min15.oac_3a/min15.oac_total)/uk.oac_3a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3b/min15.oac_total)/uk.oac_3b >=100 then (uk.oac_total*(100*min15.oac_3b/min15.oac_total)/uk.oac_3b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3c/min15.oac_total)/uk.oac_3c >=100 then (uk.oac_total*(100*min15.oac_3c/min15.oac_total)/uk.oac_3c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_3d/min15.oac_total)/uk.oac_3d >=100 then (uk.oac_total*(100*min15.oac_3d/min15.oac_total)/uk.oac_3d)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4a/min15.oac_total)/uk.oac_4a >=100 then (uk.oac_total*(100*min15.oac_4a/min15.oac_total)/uk.oac_4a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4b/min15.oac_total)/uk.oac_4b >=100 then (uk.oac_total*(100*min15.oac_4b/min15.oac_total)/uk.oac_4b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_4c/min15.oac_total)/uk.oac_4c >=100 then (uk.oac_total*(100*min15.oac_4c/min15.oac_total)/uk.oac_4c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_5a/min15.oac_total)/uk.oac_5a >=100 then (uk.oac_total*(100*min15.oac_5a/min15.oac_total)/uk.oac_5a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_5b/min15.oac_total)/uk.oac_5b >=100 then (uk.oac_total*(100*min15.oac_5b/min15.oac_total)/uk.oac_5b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_6a/min15.oac_total)/uk.oac_6a >=100 then (uk.oac_total*(100*min15.oac_6a/min15.oac_total)/uk.oac_6a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_6b/min15.oac_total)/uk.oac_6b >=100 then (uk.oac_total*(100*min15.oac_6b/min15.oac_total)/uk.oac_6b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7a/min15.oac_total)/uk.oac_7a >=100 then (uk.oac_total*(100*min15.oac_7a/min15.oac_total)/uk.oac_7a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7b/min15.oac_total)/uk.oac_7b >=100 then (uk.oac_total*(100*min15.oac_7b/min15.oac_total)/uk.oac_7b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7c/min15.oac_total)/uk.oac_7c >=100 then (uk.oac_total*(100*min15.oac_7c/min15.oac_total)/uk.oac_7c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_7d/min15.oac_total)/uk.oac_7d >=100 then (uk.oac_total*(100*min15.oac_7d/min15.oac_total)/uk.oac_7d)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8a/min15.oac_total)/uk.oac_8a >=100 then (uk.oac_total*(100*min15.oac_8a/min15.oac_total)/uk.oac_8a)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8b/min15.oac_total)/uk.oac_8b >=100 then (uk.oac_total*(100*min15.oac_8b/min15.oac_total)/uk.oac_8b)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8c/min15.oac_total)/uk.oac_8c >=100 then (uk.oac_total*(100*min15.oac_8c/min15.oac_total)/uk.oac_8c)-100 else 0 end",
+            "case when uk.oac_total*(100*min15.oac_8d/min15.oac_total)/uk.oac_8d >=100 then (uk.oac_total*(100*min15.oac_8d/min15.oac_total)/uk.oac_8d)-100 else 0 end"
+          ]
+        },
+        "oac_index_value": {
+          "title": "Score",
+          "group": "Index",
+          "type": "integer",
+          "align": "center",
+          "class": "_report",
+          "width": 100,
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          },
+          "rows": [
+            "uk.oac_total*(100*min15.oac_1a/min15.oac_total)/uk.oac_1a",
+            "uk.oac_total*(100*min15.oac_1b/min15.oac_total)/uk.oac_1b",
+            "uk.oac_total*(100*min15.oac_1c/min15.oac_total)/uk.oac_1c",
+            "uk.oac_total*(100*min15.oac_2a/min15.oac_total)/uk.oac_2a",
+            "uk.oac_total*(100*min15.oac_2b/min15.oac_total)/uk.oac_2b",
+            "uk.oac_total*(100*min15.oac_2c/min15.oac_total)/uk.oac_2c",
+            "uk.oac_total*(100*min15.oac_2d/min15.oac_total)/uk.oac_2d",
+            "uk.oac_total*(100*min15.oac_3a/min15.oac_total)/uk.oac_3a",
+            "uk.oac_total*(100*min15.oac_3b/min15.oac_total)/uk.oac_3b",
+            "uk.oac_total*(100*min15.oac_3c/min15.oac_total)/uk.oac_3c",
+            "uk.oac_total*(100*min15.oac_3d/min15.oac_total)/uk.oac_3d",
+            "uk.oac_total*(100*min15.oac_4a/min15.oac_total)/uk.oac_4a",
+            "uk.oac_total*(100*min15.oac_4b/min15.oac_total)/uk.oac_4b",
+            "uk.oac_total*(100*min15.oac_4c/min15.oac_total)/uk.oac_4c",
+            "uk.oac_total*(100*min15.oac_5a/min15.oac_total)/uk.oac_5a",
+            "uk.oac_total*(100*min15.oac_5b/min15.oac_total)/uk.oac_5b",
+            "uk.oac_total*(100*min15.oac_6a/min15.oac_total)/uk.oac_6a",
+            "uk.oac_total*(100*min15.oac_6b/min15.oac_total)/uk.oac_6b",
+            "uk.oac_total*(100*min15.oac_7a/min15.oac_total)/uk.oac_7a",
+            "uk.oac_total*(100*min15.oac_7b/min15.oac_total)/uk.oac_7b",
+            "uk.oac_total*(100*min15.oac_7c/min15.oac_total)/uk.oac_7c",
+            "uk.oac_total*(100*min15.oac_7d/min15.oac_total)/uk.oac_7d",
+            "uk.oac_total*(100*min15.oac_8a/min15.oac_total)/uk.oac_8a",
+            "uk.oac_total*(100*min15.oac_8b/min15.oac_total)/uk.oac_8b",
+            "uk.oac_total*(100*min15.oac_8c/min15.oac_total)/uk.oac_8c",
+            "uk.oac_total*(100*min15.oac_8d/min15.oac_total)/uk.oac_8d"
+          ]
+        }
+      }
+    },
+    {
+      "type": "tableDefinition",
+      "title": "Age Profile",
+      "display": true,
+      "target_id": "xyz_fashion_age",
+      "class": "_report",
+      "columns": [
+        {
+          "type": "integer",
+          "title": "0-5 mins",
+          "group": "Population (2011 census)",
+          "field": "min5",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_5min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "integer",
+          "title": "0-10 mins",
+          "group": "Population (2011 census)",
+          "field": "min10",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_10min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "title": "0-15 mins",
+          "group": "Population (2011 census)",
+          "field": "min15",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_15min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "field": "uk",
+          "aspatial": "age_under_18, age_18to24, age_25to29, age_30to44, age_45to59, age_60plus, age_profile_total FROM geodata.mv_uk_glx_geodata_demographics_uk_regions where region = 'UK_avg'"
+        }
+      ],
+      "rows": [
+        {
+          "field": "age_under_18",
+          "title": "< 18",
+          "fieldfx": "round(SUM(pop__11 - age_18to19__11 - age_20to24__11 - age_25to29__11 - age_30to44__11 - age_45to59__11 - age60plus))"
+        },
+        {
+          "field": "age_18to24",
+          "fieldfx": "round(SUM(age_18to19__11 + age_20to24__11))",
+          "title": "18 to 24"
+        },
+        {
+          "field": "age_25to29",
+          "fieldfx": "round(SUM(age_25to29__11))",
+          "title": "25 to 29"
+        },
+        {
+          "field": "age_30to44",
+          "fieldfx": "round(SUM(age_30to44__11))",
+          "title": "30 to 44"
+        },
+        {
+          "field": "age_45to59",
+          "fieldfx": "round(SUM(age_45to59__11))",
+          "title": "45 to 59"
+        },
+        {
+          "field": "age_60plus",
+          "fieldfx": "round(SUM(age60plus))",
+          "title": "60+"
+        },
+        {
+          "field": "age_profile_total",
+          "fieldfx": "round(SUM(pop__11))",
+          "title": "Total"
+        }
+      ],
+      "agg": {
+        "share15": {
+          "title": "% with 15 min",
+          "rows": [
+            "100*min15.age_under_18/min15.age_profile_total",
+            "100*min15.age_18to24/min15.age_profile_total",
+            "100*min15.age_25to29/min15.age_profile_total",
+            "100*min15.age_30to44/min15.age_profile_total",
+            "100*min15.age_45to59/min15.age_profile_total",
+            "100*min15.age_60plus/min15.age_profile_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "age_uk_total": {
+          "title": "UK %",
+          "rows": [
+            "uk.age_under_18*100/uk.age_profile_total",
+            "uk.age_18to24*100/uk.age_profile_total",
+            "uk.age_25to29*100/uk.age_profile_total",
+            "uk.age_30to44*100/uk.age_profile_total",
+            "uk.age_45to59*100/uk.age_profile_total",
+            "uk.age_60plus*100/uk.age_profile_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "age_under_indexer": {
+          "title": "Under",
+          "group": "Index",
+          "type": "integer",
+          "align": "right",
+          "class": "_report",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#C0392B"
+            ],
+            "min": 0,
+            "max": 200
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.age_profile_total*(100*min15.age_under_18/min15.age_profile_total)/uk.age_under_18 < 100 then 100 - uk.age_profile_total*(100*min15.age_under_18/min15.age_profile_total)/uk.age_under_18 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_18to24/min15.age_profile_total)/uk.age_18to24 < 100 then 100 - uk.age_profile_total*(100*min15.age_18to24/min15.age_profile_total)/uk.age_18to24 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_25to29/min15.age_profile_total)/uk.age_25to29 < 100 then 100 - uk.age_profile_total*(100*min15.age_25to29/min15.age_profile_total)/uk.age_25to29 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_30to44/min15.age_profile_total)/uk.age_30to44 < 100 then 100 - uk.age_profile_total*(100*min15.age_30to44/min15.age_profile_total)/uk.age_30to44 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_45to59/min15.age_profile_total)/uk.age_45to59 < 100 then 100 - uk.age_profile_total*(100*min15.age_45to59/min15.age_profile_total)/uk.age_45to59 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_60plus/min15.age_profile_total)/uk.age_60plus < 100 then 100 - uk.age_profile_total*(100*min15.age_60plus/min15.age_profile_total)/uk.age_60plus else 0 end"
+          ]
+        },
+        "age_over_indexer": {
+          "title": "Over",
+          "group": "Index",
+          "type": "integer",
+          "align": "left",
+          "class": "_report",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#16A085"
+            ],
+            "min": 0,
+            "max": 200
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.age_profile_total*(100*min15.age_under_18/min15.age_profile_total)/uk.age_under_18 >= 100 then (uk.age_profile_total*(100*min15.age_under_18/min15.age_profile_total)/uk.age_under_18) - 100 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_18to24/min15.age_profile_total)/uk.age_18to24 >= 100 then (uk.age_profile_total*(100*min15.age_18to24/min15.age_profile_total)/uk.age_18to24) - 100 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_25to29/min15.age_profile_total)/uk.age_25to29 >= 100 then (uk.age_profile_total*(100*min15.age_25to29/min15.age_profile_total)/uk.age_25to29) - 100 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_30to44/min15.age_profile_total)/uk.age_30to44 >= 100 then (uk.age_profile_total*(100*min15.age_30to44/min15.age_profile_total)/uk.age_30to44) - 100 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_45to59/min15.age_profile_total)/uk.age_45to59 >= 100 then (uk.age_profile_total*(100*min15.age_45to59/min15.age_profile_total)/uk.age_45to59) - 100 else 0 end",
+            "case when uk.age_profile_total*(100*min15.age_60plus/min15.age_profile_total)/uk.age_60plus >= 100 then (uk.age_profile_total*(100*min15.age_60plus/min15.age_profile_total)/uk.age_60plus) - 100 else 0 end"
+          ]
+        },
+        "age_index_value": {
+          "title": "Score",
+          "group": "Index",
+          "type": "integer",
+          "align": "center",
+          "class": "_report",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          },
+          "width": 100,
+          "sorter": "number",
+          "rows": [
+            "uk.age_profile_total*(100*min15.age_under_18/min15.age_profile_total)/uk.age_under_18",
+            "uk.age_profile_total*(100*min15.age_18to24/min15.age_profile_total)/uk.age_18to24",
+            "uk.age_profile_total*(100*min15.age_25to29/min15.age_profile_total)/uk.age_25to29",
+            "uk.age_profile_total*(100*min15.age_30to44/min15.age_profile_total)/uk.age_30to44",
+            "uk.age_profile_total*(100*min15.age_45to59/min15.age_profile_total)/uk.age_45to59",
+            "uk.age_profile_total*(100*min15.age_60plus/min15.age_profile_total)/uk.age_60plus"
+          ]
+        }
+      }
+    },
+    {
+      "type": "tableDefinition",
+      "title": "Social Grade",
+      "display": true,
+      "target_id": "xyz_fashion_socialgrade",
+      "class": "_report",
+      "columns": [
+        {
+          "type": "integer",
+          "title": "0-5 mins",
+          "group": "Households (2011 census)",
+          "field": "min5",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_5min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "integer",
+          "title": "0-10 mins",
+          "group": "Households (2011 census)",
+          "field": "min10",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_10min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "title": "0-15 mins",
+          "group": "Households (2011 census)",
+          "field": "min15",
+          "lookup": {
+            "table_a": "mapp.uk_glx_restrict_fashion_points",
+            "table_b": "geodata.uk_glx_geodata_hex_1k",
+            "geom_a": "isoline_15min",
+            "geom_b": "geom_p_4326"
+          },
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "type": "numeric",
+          "field": "uk",
+          "aspatial": "sg_ab, sg_c1, sg_c2, sg_de, sg_total  FROM geodata.mv_uk_glx_geodata_demographics_uk_regions where region = 'UK_avg'"
+        }
+      ],
+      "rows": [
+        {
+          "field": "sg_ab",
+          "fieldfx": "round(SUM(ski_ab__11))",
+          "title": "AB"
+        },
+        {
+          "field": "sg_c1",
+          "fieldfx": "round(SUM(ski_c1__11))",
+          "title": "C1"
+        },
+        {
+          "field": "sg_c2",
+          "fieldfx": "round(SUM(ski_c2__11))",
+          "title": "C2"
+        },
+        {
+          "field": "sg_de",
+          "fieldfx": "round(SUM(ski_de__11))",
+          "title": "DE"
+        },
+        {
+          "field": "sg_total",
+          "fieldfx": "round(SUM(ski_hrp_base__11))",
+          "title": "Total"
+        }
+      ],
+      "agg": {
+        "share15": {
+          "title": "% with 15 min",
+          "rows": [
+            "100*min15.sg_ab/min15.sg_total",
+            "100*min15.sg_c1/min15.sg_total",
+            "100*min15.sg_c2/min15.sg_total",
+            "100*min15.sg_de/min15.sg_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "sg_uk_total": {
+          "title": "UK %",
+          "rows": [
+            "uk.sg_ab*100/uk.sg_total",
+            "uk.sg_c1*100/uk.sg_total",
+            "uk.sg_c2*100/uk.sg_total",
+            "uk.sg_de*100/uk.sg_total"
+          ],
+          "align": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        "sg_under_indexer": {
+          "title": "Under",
+          "group": "Index",
+          "type": "integer",
+          "class": "_report",
+          "align": "right",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#C0392B"
+            ],
+            "min": 0,
+            "max": 200
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_ab <100 then 100 - (uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_ab) else 0 end",
+            "case when uk.sg_total*(100*min15.sg_c1/min15.sg_total)/uk.sg_c1 <100 then 100 - (uk.sg_total*(100*min15.sg_c1/min15.sg_total)/uk.sg_c1) else 0 end",
+            "case when uk.sg_total*(100*min15.sg_c2/min15.sg_total)/uk.sg_c2 <100 then 100 - (uk.sg_total*(100*min15.sg_c2/min15.sg_total)/uk.sg_c2) else 0 end",
+            "case when uk.sg_total*(100*min15.sg_de/min15.sg_total)/uk.sg_de <100 then 100 - (uk.sg_total*(100*min15.sg_de/min15.sg_total)/uk.sg_de) else 0 end"
+          ]
+        },
+        "sg_over_indexer": {
+          "title": "Over",
+          "group": "Index",
+          "type": "integer",
+          "class": "_report",
+          "formatter": "progress",
+          "formatterParams": {
+            "color": [
+              "#16A085"
+            ],
+            "min": 0,
+            "max": 200,
+            "align": "left"
+          },
+          "width": 150,
+          "sorter": "number",
+          "rows": [
+            "case when uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_ab >=100 then (uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_ab)-100 else 0 end",
+            "case when uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_c1 >=100 then (uk.sg_total*(100*min15.sg_c1/min15.sg_total)/uk.sg_c1)-100 else 0 end",
+            "case when uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_c2 >=100 then (uk.sg_total*(100*min15.sg_c2/min15.sg_total)/uk.sg_c2)-100 else 0 end",
+            "case when uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_de >=100 then (uk.sg_total*(100*min15.sg_de/min15.sg_total)/uk.sg_de)-100 else 0 end"
+          ]
+        },
+        "sg_index_value": {
+          "title": "Score",
+          "group": "Index",
+          "type": "integer",
+          "class": "_report",
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          },
+          "width": 100,
+          "rows": [
+            "uk.sg_total*(100*min15.sg_ab/min15.sg_total)/uk.sg_ab",
+            "uk.sg_total*(100*min15.sg_c1/min15.sg_total)/uk.sg_c1",
+            "uk.sg_total*(100*min15.sg_c2/min15.sg_total)/uk.sg_c2",
+            "uk.sg_total*(100*min15.sg_de/min15.sg_total)/uk.sg_de"
+          ]
+        }
+      }
+    },
+    {
+      "type": "orderedList",
+      "title": "Nearest competitors",
+      "display": true,
+      "target_id": "xyz_fashion_nearestcomp",
+      "class": "_report",
+      "layout": "fitColumns",
+      "from": "mapp.uk_glx_restrict_fashion_points a, mapp.uk_glx_restrict_fashion_points b",
+      "where": "a.branch_id = $1 AND a.branch_id <> b.branch_id",
+      "orderby": "ST_DistanceSphere(a.geom_4326, b.geom_4326)",
+      "limit": 10,
+      "columns": [
+        {
+          "title": "Competitor",
+          "field": "fascia",
+          "fieldfx": "b.fascia"
+        },
+        {
+          "title": "Category",
+          "field": "category",
+          "fieldfx": "b.category"
+        },
+        {
+          "title": "Postcode",
+          "field": "postcode",
+          "fieldfx": "b.postcode"
+        },
+        {
+          "title": "Distance",
+          "field": "dist",
+          "fieldfx": "ST_DistanceSphere(a.geom_4326, b.geom_4326) / 1000",
+          "align": "center",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1,
+            "symbol": " km",
+            "symbolAfter": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "streetview",
+      "class": "_report"
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "fascia",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "marker": {
+      "type": "target",
+      "fillColor": "#6065c4"
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#93827F"
+    },
+    "themes": {
+      "Retailers": {
+        "type": "categorized",
+        "field": "retailer",
+        "other": true,
+        "cat": {
+          "PRIMARK": {
+            "label": "Primark",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#fdb839"
+              }
+            }
+          },
+          "PANDORA": {
+            "label": "Pandora",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#a12629"
+              }
+            }
+          },
+          "T K MAXX": {
+            "label": "TK Maxx",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#cccb01"
+              }
+            }
+          },
+          "TOPSHOP": {
+            "label": "Topshop",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#a3d227"
+              }
+            }
+          },
+          "NEXT": {
+            "label": "Next",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#9900ff"
+              }
+            }
+          },
+          "CLARKS": {
+            "label": "Clarks",
+            "style": {
+              "fillColor": "#b5b5b5",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#3333ff"
+              }
+            }
+          },
+          "LUSH": {
+            "fillColor": "#000000",
+            "label": "Lush",
+            "layers": {
+              "0.75": "#ffffff",
+              "0.5": "#000000"
+            }
+          }
+        }
+      }
+    }
+  }
+}

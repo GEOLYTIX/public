@@ -1,0 +1,72 @@
+{
+  "format": "mvt",
+  "dbs": "MAPP",
+  "table": "geodata.aus_glx_geodata_retail_venue",
+  "mvt_cache": "mapp.aus_glx_geodata_retail_venue__mvts",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "hover": {
+    "field": "venue_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "title": "Name",
+      "field": "venue_name",
+      "inline": true
+    },
+    {
+      "title": "Type",
+      "field": "venue_type",
+      "inline": true
+    },
+    {
+      "title": "Local Type",
+      "field": "local_type",
+      "inline": true
+    },
+    {
+      "title": "Developer",
+      "field": "developer",
+      "inline": true
+    },
+    {
+      "title": "Open Date",
+      "field": "open_date",
+      "inline": true,
+      "type": "integer"
+    },
+    {
+      "title": "Status",
+      "field": "status",
+      "inline": true
+    },
+    {
+      "title": "MAT",
+      "field": "mat",
+      "inline": true
+    },
+    {
+      "title": "GLAR",
+      "field": "glar",
+      "inline": true
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "venue_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeColor": "#ffcc00",
+      "strokeWidth": 1,
+      "fillColor": "#ffcc00",
+      "fillOpacity": 0.6
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.jpn_glx_geodata_retail_locations_restaurants",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "chain_name",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.1,
+  "hover": {
+    "field": "local_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "local_name",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "chain_name",
+      "title": "Chain",
+      "inline": true
+    },
+    {
+      "field": "info",
+      "title": "Info",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "label": {
+      "field": "local_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "marker": {
+      "type": "target",
+      "fillColor": "#990000"
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#990000"
+    },
+    "themes": {
+      "Chain": {
+        "type": "categorized",
+        "field": "chain_name",
+        "cat": {
+          "Burger King": {
+            "style": {
+              "fillColor": "#0000b3",
+              "layers": {
+                "0.75": "#cc0000",
+                "0.4": "#0000b3"
+              }
+            }
+          },
+          "First Kitchen": {
+            "style": {
+              "fillColor": "#ff8000",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.4": "#ff8000"
+              }
+            }
+          },
+          "Freshness Burger": {
+            "style": {
+              "fillColor": "#339966",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.4": "#339966"
+              }
+            }
+          },
+          "KFC": {
+            "style": {
+              "fillColor": "#cc0000",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.4": "#cc0000"
+              }
+            }
+          },
+          "Lotteria": {
+            "style": {
+              "fillColor": "#cc0000",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.4": "#206040"
+              }
+            }
+          },
+          "McDonalds": {
+            "style": {
+              "fillColor": "#206040",
+              "layers": {
+                "0.75": "#ffff80",
+                "0.4": "#206040"
+              }
+            }
+          },
+          "Mos Burger": {
+            "style": {
+              "fillColor": "#339966",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.4": "#cc0000"
+              }
+            }
+          },
+          "Subway": {
+            "style": {
+              "fillColor": "#339966",
+              "layers": {
+                "0.75": "#ffff80",
+                "0.4": "#339966"
+              }
+            }
+          },
+          "Matsuya": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#e6e600"
+            }
+          },
+          "Nakau": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#26734d"
+            }
+          },
+          "Sukiya": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#cc0000"
+            }
+          },
+          "Sutadonya": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#000000"
+            }
+          },
+          "Tendon Tenya": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#0000e6"
+            }
+          },
+          "Yoshinoya": {
+            "style": {
+              "type": "triangle",
+              "fillColor": "#e65c00"
+            }
+          }
+        }
+      }
+    }
+  }
+}

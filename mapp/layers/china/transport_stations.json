@@ -1,0 +1,107 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.vw_cn_glx_geodata_transport_station",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "name_local",
+  "cluster_kmeans": 0.1,
+  "cluster_dbscan": 0.03,
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "name_local",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "name_en",
+      "title": "Name (English)",
+      "inline": true
+    },
+    {
+      "field": "trans_type",
+      "title": "Location Type",
+      "inline": true
+    },
+    {
+      "field": "pass_daily",
+      "title": "Passenger Count (Daily)",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "field": "pass_year",
+      "title": "Passenger Count (Year)",
+      "type": "integer",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "marker": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.5": "#ffffff"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.75": "#ffffff",
+        "0.5": "#3366ff"
+      }
+    },
+    "themes": {
+      "Location Type": {
+        "type": "categorized",
+        "field": "trans_type",
+        "other": true,
+        "cat": {
+          "Airport": {
+            "label": "Airport",
+            "style": {
+              "fillColor": "#0019a8",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0019a8"
+              }
+            }
+          },
+          "Coach Station": {
+            "label": "Coach station",
+            "style": {
+              "fillColor": "#00afad",
+              "layers": {
+                "0.75": "#FFFFFF",
+                "0.50": "#00afad"
+              }
+            }
+          },
+          "Metro": {
+            "label": "Metro",
+            "style": {
+              "fillColor": "#DC241F",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#DC241F"
+              }
+            }
+          },
+          "Train Station": {
+            "label": "Train station",
+            "style": {
+              "fillColor": "#0f8415",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0f8415"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

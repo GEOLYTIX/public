@@ -1,0 +1,175 @@
+{
+  "meta": "Urban agglomerations with a population greater than 100,000.",
+  "format": "mvt",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "dbs": "MAPP",
+  "qID": "id",
+  "hover": {
+    "field": "city_name"
+  },
+  "mvt_cache": "mapp.vw_eu_glx_open_citiesofeurope__mvts",
+  "table": "mapp.vw_eu_glx_open_citiesofeurope",
+  "dataviews": {
+    "European Cities": {
+      "display": true,
+      "query": "eu_cities table",
+      "selectable": true,
+      "viewport": true,
+      "table": "mapp.vw_eu_glx_open_citiesofeurope",
+      "columns": [
+        {
+          "field": "city_name",
+          "title": "City"
+        },
+        {
+          "field": "country",
+          "title": "Country"
+        },
+        {
+          "field": "pop_ghs",
+          "title": "Population (ghs)",
+          "hozAlign": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "field": "area",
+          "title": "Area (km2)",
+          "hozAlign": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        },
+        {
+          "field": "pop_den",
+          "title": "Population Density",
+          "hozAlign": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1
+          }
+        }
+      ]
+    }
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "city_name",
+      "title": "City",
+      "inline": true
+    },
+    {
+      "field": "country",
+      "title": "Country",
+      "filter": "like",
+      "inline": true
+    },
+    {
+      "field": "pop_ghs",
+      "title": "Population (ghs)",
+      "type": "integer",
+      "filter": "numeric",
+      "inline": true
+    },
+    {
+      "field": "area",
+      "title": "Area (km2)",
+      "type": "integer",
+      "filter": "numeric",
+      "inline": true
+    },
+    {
+      "field": "pop_den",
+      "title": "Density",
+      "type": "integer",
+      "filter": "numeric",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "label": {
+      "field": "city_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeColor": "#004d1a",
+      "strokeWidth": 1,
+      "opacity": 1,
+      "fillColor": "#009933",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeColor": "#e65c00",
+      "strokeWidth": 1,
+      "opacity": 1,
+      "fillColor": "#ffff66",
+      "fillOpacity": 0.8
+    },
+    "themes": {
+      "Population Density": {
+        "type": "graduated",
+        "field": "pop_den",
+        "cat_arr": [
+          {
+            "value": 0,
+            "label": "up to 5,000 per km2 square",
+            "style": {
+              "fillColor": "#20908d",
+              "strokeColor": "#29788e"
+            }
+          },
+          {
+            "value": 5000,
+            "label": "10,000",
+            "style": {
+              "fillColor": "#29788e",
+              "strokeColor": "#345f8d"
+            }
+          },
+          {
+            "value": 10000,
+            "label": "15,000",
+            "style": {
+              "fillColor": "#345f8d",
+              "strokeColor": "#404387"
+            }
+          },
+          {
+            "value": 15000,
+            "label": "20,000",
+            "style": {
+              "fillColor": "#404387",
+              "strokeColor": "#482475"
+            }
+          },
+          {
+            "value": 20000,
+            "label": "25,000",
+            "style": {
+              "fillColor": "#482475",
+              "strokeColor": "#440154"
+            }
+          },
+          {
+            "value": 25000,
+            "label": "30,000",
+            "style": {
+              "fillColor": "#440154",
+              "strokeColor": "#140019"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

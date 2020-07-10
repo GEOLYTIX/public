@@ -1,0 +1,133 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "mapp.vw_eu_glx_geodata_retail_locations_fashion",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "fascia",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.01,
+  "hover": {
+    "field": "store_name"
+  },
+  "dataviews": {
+    "Retail Locations - Fashion": {
+      "display": true,
+      "query": "eu_sport table",
+      "table": "mapp.vw_eu_glx_geodata_retail_locations_fashion",
+      "selectable": true,
+      "viewport": true,
+      "columns": [
+        {
+          "field": "id",
+          "label": "ID",
+          "type": "numeric"
+        },
+        {
+          "field": "retailer",
+          "label": "Retailer"
+        },
+        {
+          "field": "fascia",
+          "label": "Fascia"
+        },
+        {
+          "field": "store_name",
+          "label": "Store Name"
+        },
+        {
+          "field": "town",
+          "label": "Town"
+        }
+      ]
+    }
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "retailer",
+      "title": "Retailer",
+      "inline": true
+    },
+    {
+      "field": "fascia",
+      "title": "Fascia",
+      "inline": true
+    },
+    {
+      "field": "store_name",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "address",
+      "title": "Address",
+      "inline": true
+    },
+    {
+      "field": "size_sqft",
+      "title": "Size (sq ft)"
+    },
+    {
+      "field": "size_sqm",
+      "title": "Size (sq m)"
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "count",
+      "display": true,
+      "fillColor": "#fff",
+      "font": "bold 16px sans-serif"
+    },
+    "marker": {
+      "type": "target",
+      "fillColor": "#800040"
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#800040"
+    },
+    "themes": {
+      "Retailers": {
+        "type": "categorized",
+        "field": "retailer",
+        "cat": {
+          "UNITED COLORS OF BENETTON": {
+            "label": "United Colors of Benetton",
+            "style": {
+              "fillColor": "#339966",
+              "layers": {
+                "0.6": "#ffffff",
+                "0.5": "#339966"
+              }
+            }
+          },
+          "ZARA": {
+            "label": "Zara",
+            "style": {
+              "fillColor": "#000000",
+              "layers": {
+                "0.6": "#ffffff",
+                "0.5": "#000000"
+              }
+            }
+          },
+          "H AND M": {
+            "label": "H&M",
+            "style": {
+              "fillColor": "#e60000",
+              "layers": {
+                "0.6": "#ffffff",
+                "0.5": "#e60000"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

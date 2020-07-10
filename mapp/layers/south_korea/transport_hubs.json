@@ -1,0 +1,60 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.sk_glx_geodata_transport_top10hubs",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "stat_name",
+  "cluster_kmeans": 0.05,
+  "cluster_dbscan": 0.01,
+  "qID": "id",
+  "infoj": [
+    {
+      "field": "stat_name",
+      "title": "Station Name",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "local_name",
+      "title": "Local Name",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "pass_board",
+      "title": "Boarding",
+      "type": "integer"
+    },
+    {
+      "field": "pass_alite",
+      "title": "Alighting",
+      "type": "integer"
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "label": {
+      "field": "count",
+      "display": true,
+      "fillColor": "#fff",
+      "font": "bold 10px sans-serif"
+    },
+    "markerMin": 15,
+    "markerMax": 25,
+    "marker": {
+      "type": "target",
+      "fillColor": "#002080",
+      "layers": {
+        "0.5": "#ffffff"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#3366ff",
+      "layers": {
+        "0.7": "#002080"
+      }
+    }
+  }
+}

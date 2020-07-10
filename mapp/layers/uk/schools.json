@@ -1,0 +1,128 @@
+{
+  "meta": "School locations within the UK.",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "qID": "id",
+  "table": "geodata.uk_glx_geodata_education_schools_early_ed",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "edu_name",
+  "cluster_kmeans": 0.02,
+  "cluster_dbscan": 0.01,
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "urn",
+      "title": "URN",
+      "inline": true
+    },
+    {
+      "field": "edu_name",
+      "title": "Name",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "edu_type",
+      "title": "Education Type",
+      "inline": true
+    },
+    {
+      "field": "add_one",
+      "title": "Address",
+      "inline": true
+    },
+    {
+      "field": "add_two",
+      "inline": true
+    },
+    {
+      "field": "town",
+      "title": "Town",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "postcode",
+      "title": "Postcode",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "capacity",
+      "title": "Capacity",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "field": "deprivatio",
+      "title": "Deprivation",
+      "inline": true
+    },
+    {
+      "field": "inspect_ra",
+      "title": "Inspection rating",
+      "inline": true
+    },
+    {
+      "field": "inspect_da",
+      "title": "Date of Inspection",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "marker": {
+      "type": "target",
+      "fillColor": "#F4EF88",
+      "layers": {
+        "0.6": "#0090C1"
+      }
+    },
+    "markerMulti": {
+      "type": "target",
+      "fillColor": "#F4EF88",
+      "layers": {
+        "0.6": "#0090C1"
+      }
+    },
+    "themes": {
+      "Education Type": {
+        "type": "categorized",
+        "field": "edu_type",
+        "other": true,
+        "cat": {
+          "Early Years": {
+            "title": "Early Years",
+            "style": {
+              "fillColor": "#F4EF88",
+              "layers": {
+                "0.8": "#177BB5"
+              }
+            }
+          },
+          "School": {
+            "title": "School",
+            "style": {
+              "fillColor": "#F4EF88",
+              "layers": {
+                "0.8": "#1B8758"
+              }
+            }
+          },
+          "Further Education": {
+            "title": "Further Education",
+            "style": {
+              "fillColor": "#F4EF88",
+              "layers": {
+                "0.8": "#D32A49"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

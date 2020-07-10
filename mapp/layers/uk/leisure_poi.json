@@ -1,0 +1,86 @@
+{
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.uk_glx_geodata_poi_leisure",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "poi_name",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "poi_type",
+      "title": "Category",
+      "inline": true
+    },
+    {
+      "field": "poi_name",
+      "title": "Name"
+    },
+    {
+      "field": "brand",
+      "title": "Brand",
+      "inline": true
+    },
+    {
+      "field": "flag",
+      "title": "Type",
+      "inline": true
+    },
+    {
+      "title": "Address",
+      "type": "label"
+    },
+    {
+      "field": "add_one"
+    },
+    {
+      "field": "add_two"
+    },
+    {
+      "field": "locality"
+    },
+    {
+      "field": "town"
+    },
+    {
+      "field": "postcode"
+    },
+    {
+      "type": "streetview"
+    }
+  ],
+  "cluster_kmeans": 0.02,
+  "style": {
+    "hidden": true,
+    "highlight": {
+      "scale": 0.2
+    },
+    "themes": {
+      "POI Type": {
+        "field": "poi_type",
+        "type": "categorized",
+        "other": true,
+        "cat": {
+          "Cinema": {
+            "label": "Cinema",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_entertainment_cinema.svg",
+            "scale": 0.2
+          },
+          "Sport and Leisure": {
+            "label": "Sport and Leisure",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_sports_leisure_sports_centre.svg",
+            "scale": 0.2
+          },
+          "Stadium": {
+            "label": "Stadium",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_entertainment_stadium.svg",
+            "scale": 0.2
+          }
+        }
+      }
+    }
+  }
+}

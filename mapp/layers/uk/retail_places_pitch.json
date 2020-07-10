@@ -1,0 +1,78 @@
+{
+  "meta": "Comparitive strength within Retail Place area. Hex grid created using Retail Place to determine ranking of each cell within the centre.",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "tables": {
+    "12": null,
+    "13": "geodata.uk_glx_geodata_retail_place_pitch"
+  },
+  "mvt_cache": "mapp.uk_glx_geodata_retail_place_pitch__mvts",
+  "style": {
+    "hidden": true,
+    "default": {
+      "fillColor": "#000",
+      "fillOpacity": 0.4
+    },
+    "themes": {
+      "Retail pitch rank in decimal scale": {
+        "type": "categorized",
+        "field": "pitch_dec",
+        "label": "Retail pitch rank in decimal scale",
+        "cat": {
+          "1": {
+            "style": {
+              "fillColor": "#ca0020"
+            }
+          },
+          "2": {
+            "style": {
+              "fillColor": "#dd494b"
+            }
+          },
+          "3": {
+            "style": {
+              "fillColor": "#f09377"
+            }
+          },
+          "4": {
+            "style": {
+              "fillColor": "#f5c1a9"
+            }
+          },
+          "5": {
+            "style": {
+              "fillColor": "#f7e5dd"
+            }
+          },
+          "6": {
+            "style": {
+              "fillColor": "#e1ecf2"
+            }
+          },
+          "7": {
+            "style": {
+              "fillColor": "#b4d6e7"
+            }
+          },
+          "8": {
+            "style": {
+              "fillColor": "#82bcd9"
+            }
+          },
+          "9": {
+            "style": {
+              "fillColor": "#4396c5"
+            }
+          },
+          "10": {
+            "style": {
+              "fillColor": "#0571b0"
+            }
+          }
+        }
+      }
+    }
+  }
+}

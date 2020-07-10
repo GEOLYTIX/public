@@ -1,0 +1,281 @@
+{
+  "meta": "Traffic Count within the United Kingdom.",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.uk_glx_geodata_road_volume_trafficcount",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "qID": "id",
+  "cluster_label": "road_num",
+  "cluster_kmeans": 0.01,
+  "cluster_dbscan": 0.1,
+  "infoj": [
+    {
+      "field": "cp_type",
+      "title": "Count Point Type",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "late_year",
+      "title": "Year",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "road_num",
+      "title": "Road Number",
+      "type": "text"
+    },
+    {
+      "field": "road_class",
+      "title": "Road Class",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "area_cat",
+      "title": "Area Category",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "start_junc",
+      "title": "Start Junction",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "end_junc",
+      "title": "End Junction",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "len_km",
+      "title": "Length (km)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "len_mi",
+      "title": "Length (Mi)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "cycles_ly",
+      "title": "Non-motorised Cycles",
+      "group": "Light Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "mbike_ly",
+      "title": "Motorised Cycles",
+      "group": "Light Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "car_ly",
+      "title": "Cars",
+      "group": "Light Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "bus_ly",
+      "title": "Busses",
+      "group": "Light Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "lgv_ly",
+      "title": "Light Goods Vehicles",
+      "group": "Light Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "hgv_2ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus)",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "hgv_3ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus) with three axles",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "hgv_4ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus) with four axles",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_3ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus)",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_5ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus) with five axles",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_6ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus) with six or more axles",
+      "group": "Heavy Vehicles",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "all_mv_14",
+      "title": "All Motor Vehicles (2014)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "all_mv_15",
+      "title": "All Motor Vehicles (2015)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "all_mv_16",
+      "title": "All Motor Vehicles (2016)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "all_mv_17",
+      "title": "All Motor Vehicles (2017)",
+      "type": "text",
+      "inline": true
+    },
+    {
+      "field": "all_mv_18",
+      "title": "All Motor Vehicles (2018)",
+      "type": "text",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "marker": {
+      "type": "square",
+      "fillColor": "#777"
+    },
+    "markerMulti": {
+      "type": "square",
+      "fillColor": "#777"
+    },
+    "themes": {
+      "All Vehicles 2017": {
+        "type": "graduated",
+        "field": "all_mv_17",
+        "cat_arr": [
+          {
+            "value": 0,
+            "label": "Up to 20,000 Motor Vehicles",
+            "style": {
+              "strokeColor": "#bcdf27",
+              "fillColor": "#fde725"
+            }
+          },
+          {
+            "value": 20000,
+            "label": "40,000",
+            "style": {
+              "strokeColor": "#7ad251",
+              "fillColor": "#bcdf27"
+            }
+          },
+          {
+            "value": 40000,
+            "label": "60,000",
+            "style": {
+              "strokeColor": "#43bf70",
+              "fillColor": "#7ad251"
+            }
+          },
+          {
+            "value": 60000,
+            "label": "80,000",
+            "style": {
+              "strokeColor": "#22a884",
+              "fillColor": "#43bf70"
+            }
+          },
+          {
+            "value": 80000,
+            "label": "100,000",
+            "style": {
+              "strokeColor": "#20908d",
+              "fillColor": "#22a884"
+            }
+          },
+          {
+            "value": 100000,
+            "label": "120,000",
+            "style": {
+              "strokeColor": "#29788e",
+              "fillColor": "#20908d"
+            }
+          },
+          {
+            "value": 120000,
+            "label": "140,000",
+            "style": {
+              "strokeColor": "#345f8d",
+              "fillColor": "#29788e"
+            }
+          },
+          {
+            "value": 140000,
+            "label": "160,000",
+            "style": {
+              "strokeColor": "#404387",
+              "fillColor": "#345f8d"
+            }
+          },
+          {
+            "value": 160000,
+            "label": "180,000",
+            "style": {
+              "strokeColor": "#482475",
+              "fillColor": "#404387"
+            }
+          },
+          {
+            "value": 180000,
+            "label": "200,000",
+            "style": {
+              "strokeColor": "#440154",
+              "fillColor": "#482475"
+            }
+          },
+          {
+            "value": 200000,
+            "label": "200,000 or more",
+            "style": {
+              "strokeColor": "#000",
+              "fillColor": "#440154"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

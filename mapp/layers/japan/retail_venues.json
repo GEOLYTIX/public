@@ -1,0 +1,77 @@
+{
+  "format": "mvt",
+  "dbs": "MAPP",
+  "mvt_cache": "mapp.jpn_glx_geodata_retail_venue__mvts",
+  "table": "geodata.jpn_glx_geodata_retail_venue",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "infoj": [
+    {
+      "title": "Name",
+      "field": "venue_name",
+      "inline": true
+    },
+    {
+      "title": "Local Name",
+      "field": "venuelocal",
+      "inline": true
+    },
+    {
+      "title": "Venue Type",
+      "field": "venue_type",
+      "inline": true
+    }
+  ],
+  "style": {
+    "hidden": true,
+    "default": {
+      "strokeColor": "#890815",
+      "fillColor": "#890815",
+      "fillOpacity": 0.6
+    },
+    "highlight": {
+      "strokeWidth": 2,
+      "strokeColor": "#009900",
+      "fillColor": "#ccff99",
+      "fillOpacity": 0.6
+    },
+    "themes": {
+      "Retail Venue Type": {
+        "type": "categorized",
+        "field": "venue_type",
+        "other": true,
+        "cat": {
+          "Shopping Mall": {
+            "label": "Shopping Mall",
+            "style": {
+              "strokeColor": "#005824",
+              "fillColor": "#66c2a4"
+            }
+          },
+          "Retail Street": {
+            "label": "Retail Street",
+            "style": {
+              "strokeColor": "#6e016b",
+              "fillColor": "#8c96c6"
+            }
+          },
+          "Department Store": {
+            "label": "Department Store",
+            "style": {
+              "strokeColor": "#990000",
+              "fillColor": "#fc8d59"
+            }
+          },
+          "Supermarket": {
+            "label": "Supermarket",
+            "style": {
+              "strokeColor": "#8c510a",
+              "fillColor": "#d8b365"
+            }
+          }
+        }
+      }
+    }
+  }
+}
