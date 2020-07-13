@@ -325,6 +325,114 @@
         }
       }
     },
+    "Southeast Asia": {
+      "gazetteer": {
+        "provider": "MAPBOX",
+        "placeholder": "e.g. Bangkok"
+      },
+      "minZoom": 4,
+      "maxZoom": 15,
+      "bounds": {
+        "north": 28,
+        "south": -5,
+        "east": 85,
+        "west": 118
+
+      },
+      "view": {
+        "lat": 11,
+        "lng": 100,
+        "z": 5
+      },
+      "maskBounds": true,
+      "showScaleBar": true,
+      "layers": {
+        "Mapbox Base": {
+          "group": "Base maps",
+          "display": true,
+          "template": "Mapbox Base"
+        },
+        "Mapbox Colour": {
+          "group": "Base maps",
+          "template": "Mapbox Colour"
+        },
+        "Mapbox Label": {
+          "group": "Base maps",
+          "display": true,
+          "template": "Mapbox Label"
+        },
+        "HERE Imagery": {
+          "group": "Base maps",
+          "template": "HERE Imagery"
+        },
+        "HERE Hybrid": {
+          "group": "Base maps",
+          "template": "HERE Hybrid"
+        },
+        "Tesco": {
+          "format": "cluster",
+          "display": true,
+          "dbs": "MAPP",
+          "table": "mapp.vw_asia_glx_geodata_retail_locations_tesco",
+          "qID": "id",
+          "geom": "geom_p_3857",
+          "srid": "3857",
+          "cluster_label": "store_name",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "store_name",
+              "title": "Name"
+            },
+            {
+              "field": "fascia",
+              "title": "Fascia"
+            },
+            {
+              "field": "address",
+              "title": "Address"
+            },
+            {
+              "field": "add_local"
+            }
+          ],
+          "cluster_kmeans": 0.03,
+          "cluster_dbscan": 0.04,
+          "hover": {
+            "field": "store_name"
+          },
+          "style": {
+            "hidden": true,
+            "label": {
+              "field": "store_name",
+              "declutter": true
+            },
+            "marker": {
+              "type": "target",
+              "fillColor": "#0055a8",
+              "label": "Tesco",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.325": "#f02f26"
+              },
+              "scale": 0.05
+            },
+            "markerMulti": {
+              "type": "target",
+              "fillColor": "#0055a8",
+              "label": "Tesco",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.325": "#f02f26"
+              },
+              "scale": 0.05
+            }
+          }
+        }
+      }
+    },
     "Australia": {
       "gazetteer": {
         "provider": "MAPBOX",
