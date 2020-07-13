@@ -76,6 +76,37 @@
       }
     }
   ],
+  "dataviews": {
+    "Retail Places": {
+      "display": true,
+      "query": "uk_retail_places table",
+      "selectable": true,
+      "viewport": true,
+      "table": "geodata.uk_glx_geodata_retail_place",
+      "columns": [
+        {
+          "field": "id",
+          "title": "ID"
+        },
+        {
+          "field": "rp_name",
+          "title": "Name"
+        },
+        {
+          "field": "rp_type",
+          "title": "Type"
+        },
+        {
+          "field": "comp_strgh",
+          "title": "Competition Strength"
+        },
+        {
+          "field": "est_brands",
+          "title": "Estimate Brands"
+        }
+      ]
+    }
+  },
   "style": {
     "label": {
       "field": "rp_name",

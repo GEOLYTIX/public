@@ -169,6 +169,9 @@
     "uk_retail_places": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places.json"
     },
+    "uk_retail_places table": {
+      "template": "select id, rp_name, rp_type, comp_strgh, est_brands from geodata.uk_glx_geodata_retail_place WHERE true ${viewport} ${filter} limit 99;"
+    },
     "uk_retail_places profile": {
       "template": "SELECT comp_pct, conv_pct, fbl_pct, serv_pct, classbrass FROM geodata.uk_glx_geodata_retail_place WHERE id = ${id};"
     },
