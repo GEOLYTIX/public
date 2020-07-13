@@ -180,7 +180,10 @@
     },
     "uk_retail_places_shopping_centre": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places_shopping_centre.json"
-    },    
+    },
+    "uk_retailpoints": {
+      "src": "https://geolytix.github.io/public/geodata/layers/london_retailpoints.json"
+    }, 
     "uk_pizza": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/pizza.json"
     },
@@ -1142,6 +1145,10 @@
         "Retail Place Shopping Centre": {
           "group": "Retail Places",
           "template": "uk_retail_places_shopping_centre"
+        },
+        "Retail Points": {
+          "group": "Retail Points",
+          "template": "uk_retailpoints"
         },
         "Pizza Places": {
           "group": "Retail Points",
