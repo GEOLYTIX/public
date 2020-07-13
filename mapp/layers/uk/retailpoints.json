@@ -44,12 +44,16 @@
       "field": "town"
     },
     {
-      "field": "size_sqft",
-      "title": "Size in sqft"
-    },
-    {
-      "field": "size_sqm",
-      "title": "Size in sqm"
+      "field": "size_band",
+      "title": "Size in sqft",
+      "filter": {
+        "in": [
+          "30,138 ft2 > (2,800 m2)",
+          "15,069 < 30,138 ft2 (1,400 < 2,800 m2)",
+          "< 3,013 ft2 (280m2)",
+          "3,013 < 15,069 ft2 (280 < 1,400 m2)"
+        ]
+      }
     },
     {
       "field": "pqi",

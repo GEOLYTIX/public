@@ -182,7 +182,7 @@
       "src": "https://geolytix.github.io/public/mapp/layers/uk/retail_places_shopping_centre.json"
     },
     "uk_retailpoints": {
-      "src": "https://geolytix.github.io/public/geodata/layers/london_retailpoints.json"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/retailpoints.json"
     }, 
     "uk_pizza": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/pizza.json"
