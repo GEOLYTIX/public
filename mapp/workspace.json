@@ -112,6 +112,9 @@
     "uk_seamless_shopper_town": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/seamless_shopper_town.json"
     },
+    "shopper_town_retailpoints_chart": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/shopper_town_retailpoints_chart.sql"
+    },
     "uk_seamless_shopper_town population growth": {
       "template": "SELECT pop_11, pop_15, pop_16, pop_17, pop_18, pop_19, pop_20, pop_21, pop_22, pop_23 FROM geodata.uk_glx_geodata_seamless_shopper_town_metrics WHERE id = ${id};"
     },
