@@ -1,0 +1,169 @@
+{
+  "templates": {
+    "NE Countries table1": {
+      "template": "SELECT name, pop_est, gdp_md_est FROM dev.natural_earth_countries WHERE true ${viewport} ${filter} ORDER BY id ASC FETCH FIRST 99 ROW ONLY;",
+      "dbs": "XYZ"
+    },
+    "NE GDP/Population Layer Table": {
+      "template": "SELECT id, name, gdp_md_est, pop_est FROM dev.natural_earth_countries WHERE true ${viewport} ${filter} ORDER BY id ASC FETCH FIRST 99 ROW ONLY;",
+      "dbs": "XYZ"
+    },
+    "Random Data Series": {
+      "template": "SELECT id AS id, random1 AS random1, random2 AS random2, random3 AS random3, random4 AS random4, random5 AS random5, random5 AS rev_random1, random4 AS rev_random2, random3 AS rev_random3, random2 AS rev_random4, random1 AS rev_random5 FROM dev.uk_glx_sites WHERE id = ${id};",
+      "dbs": "XYZ"
+    },
+    "Population Summary Sites": {
+      "template": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/dev/queries/population_summary.txt",
+      "dbs": "XYZ"
+    },
+    "Worker Summary Sites": {
+      "template": "WITH workers AS (SELECT (SUM(case when ST_distance(ST_Transform(a.geom_4326,27700),ST_transform(b.geom_p_4326,27700))<=250 then b.workers else 0 end))::integer AS workers_250,(SUM(case when ST_distance(ST_Transform(a.geom_4326,27700),ST_transform(b.geom_p_4326,27700))<=500 then b.workers else 0 end))::integer AS workers_500 FROM dev.uk_glx_sites a, geodata.uk_glx_geodata_hex_1k b WHERE a.id = ${id} AND ST_INTERSECTS(a.isoline_15min, b.geom_p_4326)) SELECT UNNEST(ARRAY['Workers 250m','Workers 500m']) AS rows,UNNEST(ARRAY[workers.workers_250,workers.workers_500]) AS workers FROM workers;",
+      "dbs": "XYZ"
+    },
+    "Nearest competitors Sites": {
+      "template": "SELECT (ROUND(((ST_Transform(a.geom_4326, 3857) <#> ST_Transform(b.geom_p_4326, 3857))/1000)::numeric, 2))::text AS dist,(b.fascia)::text AS fascia,(b.postcode)::text AS postcode FROM dev.uk_glx_sites a, geodata.uk_glx_open_retail_points b WHERE a.id = ${id} ORDER BY ST_Transform(a.geom_4326, 3857) <#> ST_Transform(b.geom_p_4326, 3857) NULLS LAST LIMIT 5;",
+      "dbs": "XYZ"
+    },
+    "Dev sites report": {
+      "template": "https://api.github.com/repos/GEOLYTIX/xyz_resources/contents/dev/report_sites/sites.html"
+    },
+    "Sites Local Report": {
+      "template": "http://localhost:3000/views/report_location.html"
+    },
+    "aga_isoline_5min": {
+      "template": "SELECT ROUND(sum(b.pop__11)) as _pop__11_5min, ROUND(sum(b.pop__12)) as _pop__12_5min, ROUND(sum(b.pop__13)) as _pop__13_5min, ROUND(sum(b.pop__14)) as _pop__14_5min, ROUND(sum(b.pop__15)) as _pop__15_5min, ROUND(sum(b.pop__16)) as _pop__16_5min, ROUND(sum(b.pop__17)) as _pop__17_5min, ROUND(sum(b.pop__18)) as _pop__18_5min FROM dev.uk_glx_sites a, geodata.uk_glx_geodata_hex_1k b WHERE a.id = ${id} AND st_intersects(a.isoline_5min, b.geom_p_4326);",
+      "dbs": "XYZ"
+    },
+    "UK Retail Places Layer Table": {
+      "template": "SELECT tid AS qID, id, dev_date ,rp_type, comp_strgh, est_units, est_brands FROM dev.retailplaces WHERE true ${viewport} ORDER BY tid ASC FETCH FIRST 99 ROW ONLY;",
+      "dbs": "XYZ"
+    },
+    "UK Retail Places Profile": {
+      "template": "SELECT ROUND(comparison::numeric, 2) AS comparison, ROUND(conv::numeric, 2) AS conv, ROUND(fbl::numeric, 2) AS fbl, ROUND(services::numeric, 2) AS services, ROUND(classbrass::numeric, 2) AS classbrass FROM dev.retailplaces WHERE tid = ${id};",
+      "dbs": "XYZ"
+    },
+    "UK Retail Points Layer Table": {
+      "template": "SELECT id, retailpoint_id, retailer, fascia FROM dev.retailpoints ORDER BY id ASC FETCH FIRST 99 ROW ONLY;",
+      "dbs": "XYZ"
+    },
+    "UK Shops with catchments all catchments": {
+      "template": "SELECT jsonb_build_object('type', 'FeatureCollection','features', b.features) AS collection FROM (SELECT jsonb_build_array(jsonb_build_object('type', 'Feature','properties', jsonb_build_object('catchment', 'primary', 'id', id),'geometry', ST_AsGeoJson(catchment_primary)::jsonb),jsonb_build_object('type', 'Feature','properties', jsonb_build_object('catchment', 'secondary', 'id', id),'geometry', ST_AsGeoJson(catchment_secondary)::jsonb),jsonb_build_object('type', 'Feature','properties', jsonb_build_object('catchment', 'tertiary', 'id', id),'geometry', ST_AsGeoJson(catchment_tertiary)::jsonb)) AS features FROM (SELECT * FROM dev.storelist_1507__19 where id = ${id}) a) b",
+      "dbs": "XYZ"
+    }
+  },
+  "locales": {
+    "UK": {
+      "name": "United Kingdom",
+      "bounds": {
+        "north": 62,
+        "east": 5,
+        "south": 49,
+        "west": -13
+      },
+      "minZoom": 2,
+      "maxZoom": 17,
+      "showScaleBar": true,
+      "layers": {
+        "Mapbox": {
+          "group": "Maps",
+          "display": true,
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          },
+          "format": "tiles",
+          "URI": "/styles/v1/dbauszus/ciozrimi3002bdsm8bjtn2v1y/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com"
+        },
+        "dev.uk_dev_scratch": {
+          "format": "mvt",
+          "dbs": "DEV",
+          "table": "dev.uk_dev_scratch",
+          "srid": "3857",
+          "geom": "geom_3857",
+          "qID": "id",
+          "edit": {
+            "polygon": {
+              "metric": "length"
+            },
+            "freehand": true,
+            "circle": {
+              "metric": "distance"
+            },
+            "rectangle": {
+              "metric": "area"
+            },
+            "line": {
+              "metric": "length"
+            },
+            "isoline_mapbox": true,
+            "isoline_here": true,
+            "delete": true,
+            "geometry": true
+          },
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "title": "ID",
+              "field": "id",
+              "inline": true
+            },
+            {
+              "title": "Area Name",
+              "field": "area_name",
+              "edit": true,
+              "inline": true
+            },
+            {
+              "title": "Description",
+              "field": "description",
+              "edit": true
+            },
+            {
+              "title": "Number of Food Stores",
+              "field": "_store_count",
+              "fieldfx": "(SELECT sum(1) FROM dev.uk_dev_scratch a, dev.uk_glx_open_retail_points_food_stores b  WHERE st_intersects(st_transform(a.geom_3857, 4326), b.geom_p_4326) AND a.id =$1)",
+              "inline": true
+            },
+            {
+              "title": "Date last edited",
+              "field": "edited",
+              "type": "date",
+              "inline": true
+            }
+          ],
+          "style": {
+            "hidden": true,
+            "default": {
+              "strokeColor": "#083D77",
+              "fillColor": "#083D77",
+              "fillOpacity": 0.3,
+              "marker": {
+                "type": "circle",
+                "strokeColor": "#083D77"
+              },
+              "_marker": {
+                "url": "https://cdn.jsdelivr.net/gh/GEOLYTIX/gla/icon-pin.svg",
+                "anchor": [
+                  0.5,
+                  1
+                ]
+              }
+            },
+            "highlight": {
+              "strokeColor": "#F78764",
+              "fillColor": "#F78764",
+              "fillOpacity": 0.3,
+              "marker": {
+                "type": "dot",
+                "fillColor": "#F78764",
+                "scale": 0.05
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
