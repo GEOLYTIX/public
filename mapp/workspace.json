@@ -208,6 +208,9 @@
     "uk_leisure_poi": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/leisure_poi.json"
     },
+    "uk_sites_population_summary": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_summary.sql"
+    },
     "china_demography_grid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
     },
@@ -1271,6 +1274,47 @@
               "title": "Available dataviews",
               "type": "title",
               "class": "_report"
+            },
+            {
+              "type": "dataview",
+              "title": "Population Summary",
+              "target": "population_summary",
+              "layout": "fitColumns",
+              "query": "uk_sites_population_summary",
+              "columns": [
+                {
+                  "field": "rows",
+                  "title": "Population Summary",
+                  "hozAlign": "left"
+                },
+                {
+                  "title": "0-5 mins",
+                  "field": "min5",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-10 mins",
+                  "field": "min10",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-15 mins",
+                  "field": "min15",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                }
+              ]
             },
             {
               "type": "streetview",
