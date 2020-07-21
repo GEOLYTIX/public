@@ -1194,8 +1194,8 @@
           "qID": "id",
           "table": "mapp.uk_glx_sites",
           "cluster_label": "site_name",
-          "cluster_kmeans": 0.1,
-          "cluster_dbscan": 0.1,
+          "cluster_kmeans": 0.03,
+          "cluster_dbscan": 0.03,
           "infoj": [
             {
               "type": "key",
