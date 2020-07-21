@@ -8,7 +8,7 @@ min5 AS (
         (round(SUM(abhrp + c1hrp + c2hrp + c2hrp)))::integer AS sg_total
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_5min, b.geom_p_4326)
 ),
 
@@ -20,7 +20,7 @@ min10 AS (
         (round(SUM(abhrp + c1hrp + c2hrp + dehrp)))::integer AS sg_total
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_10min, b.geom_p_4326)
 ),
 
@@ -36,7 +36,7 @@ min15 AS (
         SUM(dehrp)/SUM(abhrp + c1hrp + c2hrp + dehrp)::numeric AS sg_de_p
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_15min, b.geom_p_4326)
 ),
 

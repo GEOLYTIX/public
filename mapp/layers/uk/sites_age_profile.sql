@@ -10,7 +10,7 @@ min5 AS (
         (round(SUM(pop_11))) AS age_profile_total
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_5min, b.geom_p_4326)
 ),
 
@@ -24,7 +24,7 @@ min10 AS (
         (round(SUM(pop_11))) AS age_profile_total
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_10min, b.geom_p_4326)
 ),
 
@@ -44,7 +44,7 @@ min15 AS (
         SUM(age60plus)/SUM(pop_11)::numeric AS age_60plus_p
     FROM mapp.uk_glx_sites a,
         geodata.uk_glx_geodata_demog_oa b
-    WHERE a.id = 93
+    WHERE a.id = ${id}
         AND ST_INTERSECTS(a.isoline_15min, b.geom_p_4326)
 ),
 
