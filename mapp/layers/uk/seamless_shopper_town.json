@@ -36,39 +36,64 @@
       "filter": "numeric"
     },
     {
+      "group": "Store Counts",
+      "expanded": true,
+      "field": "grocers_discount",
+      "title": "Discounter",
+      "type": "integer",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "group": "Store Counts",
+      "field": "grocers_big4",
+      "title": "Big 4",
+      "type": "integer",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "group": "Store Counts",
+      "field": "grocers_premium",
+      "title": "Premium",
+      "type": "integer",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
       "title": "Population growth",
       "type": "dataview",
       "target": "location",
       "query": "uk_seamless_shopper_town population growth",
       "chart": {
-          "labels": [
-            "'11",
-            "'15",
-            "'16",
-            "'17",
-            "'18",
-            "'19",
-            "'20",
-            "'21",
-            "'22",
-            "'23"
-          ],
-          "datasets": [
-            {
-              "fields": [
-                "pop_11",
-                "pop_15",
-                "pop_16",
-                "pop_17",
-                "pop_18",
-                "pop_19",
-                "pop_20",
-                "pop_21",
-                "pop_22",
-                "pop_23"
-              ]
-            }
-          ]
+        "labels": [
+          "'11",
+          "'15",
+          "'16",
+          "'17",
+          "'18",
+          "'19",
+          "'20",
+          "'21",
+          "'22",
+          "'23"
+        ],
+        "datasets": [
+          {
+            "fields": [
+              "pop_11",
+              "pop_15",
+              "pop_16",
+              "pop_17",
+              "pop_18",
+              "pop_19",
+              "pop_20",
+              "pop_21",
+              "pop_22",
+              "pop_23"
+            ]
+          }
+        ]
       }
     },
     {
@@ -330,6 +355,18 @@
             "symbol": "%",
             "symbolAfter": true
           }
+        },
+        {
+          "field": "grocers_big4",
+          "title": "Big 4"
+        },
+        {
+          "field": "grocers_discount",
+          "title": "Discounter"
+        },
+        {
+          "field": "grocers_premium",
+          "title": "Premium"
         }
       ]
     }
