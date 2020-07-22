@@ -1202,7 +1202,6 @@
             {
               "field": "site_type",
               "title": "Site Type",
-              "inline": true,
               "edit": {
                 "options": [
                   "New Store",
