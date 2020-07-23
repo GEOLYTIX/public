@@ -921,10 +921,6 @@
           "group": "Demography",
           "template": "eu_demography_grid"
         },
-        "Workers Hybrid Zones": {
-          "group": "Demography",
-          "template": "uk_workers"
-        },
         "Fashion": {
           "group": "Retail Locations",
           "template": "eu_fashion"
