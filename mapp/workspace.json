@@ -145,7 +145,7 @@
     "uk_workers": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/workers.json"
     },
-    "uk_workers splits": {
+    "uk_workers_occupation_split": {
       "template": "SELECT agriculture, mining, manufacturing, electricity, water, construction, wholesale, transport, accommodation, it, finance, real_estate, professional, administrative, public_admin, education, human_health, arts, other, households, extraterritorial FROM geodata.uk_glx_geodata_workers_hybrid_zone WHERE id = ${id};"
     },
     "uk_university_building": {
