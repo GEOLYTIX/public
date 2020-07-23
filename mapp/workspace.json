@@ -1123,6 +1123,10 @@
           "group": "Demography",
           "template": "uk_demography_grid"
         },
+        "Worker Hybrid Zones": {
+          "group": "Demography",
+          "template": "uk_workers"
+        },
         "University building": {
           "group": "Education",
           "template": "uk_university_building"
