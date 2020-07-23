@@ -1070,12 +1070,18 @@
         "placeholder": "eg. London"
       },
       "bounds": {
-        "north": 48,
-        "east": -13,
-        "south": 62,
-        "west": 5
+        "north": 62,
+        "east": 9,
+        "south": 48,
+        "west": -17
       },
-      "minZoom": 6,
+      "maskBounds": true,
+      "view": {
+        "lat":54.3,
+        "lng":-4,
+        "z": 4
+      },
+      "minZoom": 4,
       "maxZoom": 17,
       "showScaleBar": true,
       "layers": {
@@ -1164,6 +1170,25 @@
         "Grocery": {
           "group": "Retail Points",
           "template": "uk_grocery"
+        },
+        "Cook": {
+          "group": "Retail Points",
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "MAPP",
+          "qID": "id",
+          "table": "mapp.uk_glx_cook_locations",
+          "cluster_label": "name",
+          "cluster_kmeans": 0.02,
+          "cluster_dbscan": 0.02,
+          "infoj": [
+            {
+              "field": "name",
+              "title": "Name",
+              "inline": true
+            }
+          ]
         },
         "Leisure POI": {
           "group": "POI",
