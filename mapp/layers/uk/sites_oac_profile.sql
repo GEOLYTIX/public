@@ -30,7 +30,7 @@ uk AS (
 
 SELECT UNNEST( ARRAY ['Min 15', 'UK'] ) AS rows,
 
-       UNNEST( ARRAY [min15.oac_sg_1::double, uk.oac_sg_1::double ] ) AS oac_sg_1,
+       UNNEST( ARRAY [min15.oac_sg_1, uk.oac_sg_1 ] ) AS oac_sg_1,
 
        UNNEST( ARRAY [min15.oac_sg_2, uk.oac_sg_2 ] ) AS oac_sg_2,
 
