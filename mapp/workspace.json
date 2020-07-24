@@ -241,6 +241,9 @@
     "uk_sites_social_grade_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
     },
+    "uk_sites_social_grade_breakdown": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_breakdown.sql"
+    },
     "uk_sites_keystats": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_keystats.sql"
     },
