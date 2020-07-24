@@ -211,8 +211,20 @@
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
+    "uk_sites_oac_profile": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
+    },
     "uk_sites_social_grade_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
+    },
+    "uk_sites_keystats": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_keystats.sql"
+    },
+    "uk_sites_grade_profile": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
+    },
+    "uk_sites_report": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/site_report.html"
     },
     "china_demography_grid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
