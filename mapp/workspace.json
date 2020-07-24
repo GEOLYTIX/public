@@ -208,14 +208,17 @@
     "uk_sites_population_summary": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_summary.sql"
     },
-    "uk_sites_age_profile_vs_uk": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
-    },
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
     "uk_sites_oac_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
+    },
+    "uk_sites_age_profile_vs_uk": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_vs_uk.sql"
+    },
+    "uk_sites_social_grade_vs_uk": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
     },
     "uk_sites_social_grade_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
@@ -1333,6 +1336,60 @@
             {
               "type": "dataview",
               "title": "OAC Profile",
+              "target": "social_grade",
+              "query": "uk_sites_social_grade_vs_uk",
+              "chart": {
+                "type": "horizontalBar",
+                "labels": [
+                  "ab",
+                  "ab",
+                  "c1",
+                  "de"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "ab",
+                      "ab",
+                      "c1",
+                      "de"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "dataview",
+              "title": "Age Profile Chart",
+              "query": "uk_sites_age_profile_vs_uk",
+              "target": "age_profile",
+              "chart": {
+                "type": "horizontalBar",
+                "labels": [
+                  "< 18",
+                  "18 to 24",
+                  "25 to 29",
+                  "30 to 44",
+                  "45 to 59",
+                  "60+"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "age_under_18",
+                      "age_18_24",
+                      "age_25_29",
+                      "age_30_44",
+                      "age_45_59",
+                      "age_over_60"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "dataview",
+              "title": "OAC Profile",
               "target": "oac_profile",
               "query": "uk_sites_oac_profile",
               "chart": {
@@ -1439,178 +1496,6 @@
                   "formatterParams": {
                     "precision": 0
                   }
-                }
-              ]
-            },
-            {
-              "type": "dataview",
-              "title": "Age Profile Chart",
-              "query": "uk_sites_age_profile",
-              "target": "age_profile",
-              "columns": [
-                {
-                  "field": "rows",
-                  "title": "Age Profile"
-                },
-                {
-                  "title": "0-15 mins",
-                  "group": "Population",
-                  "field": "min15",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "field": "age_under_indexer",
-                  "title": "Under",
-                  "hozAlign": "right",
-                  "formatter": "progress",
-                  "formatterParams": {
-                    "color": [
-                      "#C0392B"
-                    ],
-                    "min": 0,
-                    "max": 100
-                  },
-                  "width": 150,
-                  "sorter": "number"
-                },
-                {
-                  "field": "age_over_indexer",
-                  "title": "Over",
-                  "hozAlign": "left",
-                  "formatter": "progress",
-                  "formatterParams": {
-                    "color": [
-                      "#16A085"
-                    ],
-                    "min": 0,
-                    "max": 100
-                  },
-                  "width": 200,
-                  "sorter": "number"
-                },
-                {
-                  "field": "age_index_value",
-                  "title": "Score",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  },
-                  "width": 80,
-                  "sorter": "number"
-                }
-              ]
-            },
-            {
-              "type": "dataview",
-              "title": "Age Profile",
-              "query": "uk_sites_age_profile",
-              "columns": [
-                {
-                  "field": "rows",
-                  "title": "Age Profile"
-                },
-                {
-                  "title": "0-5 mins",
-                  "group": "Population",
-                  "field": "min5",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "title": "0-10 mins",
-                  "group": "Population",
-                  "field": "min10",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "title": "0-15 mins",
-                  "group": "Population",
-                  "field": "min15",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "field": "share15",
-                  "title": "Within 15 min",
-                  "hozAlign": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0,
-                    "symbol": " %",
-                    "symbolAfter": true
-                  }
-                },
-                {
-                  "field": "age_uk_total",
-                  "title": "Within UK",
-                  "align": "right",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0,
-                    "symbol": " %",
-                    "symbolAfter": true
-                  }
-                },
-                {
-                  "title": "Index",
-                  "columns": [
-                    {
-                      "field": "age_under_indexer",
-                      "title": "Under",
-                      "hozAlign": "right",
-                      "formatter": "progress",
-                      "formatterParams": {
-                        "color": [
-                          "#C0392B"
-                        ],
-                        "min": 0,
-                        "max": 100
-                      },
-                      "width": 150,
-                      "sorter": "number"
-                    },
-                    {
-                      "field": "age_over_indexer",
-                      "title": "Over",
-                      "hozAlign": "left",
-                      "formatter": "progress",
-                      "formatterParams": {
-                        "color": [
-                          "#16A085"
-                        ],
-                        "min": 0,
-                        "max": 100
-                      },
-                      "width": 200,
-                      "sorter": "number"
-                    },
-                    {
-                      "field": "age_index_value",
-                      "title": "Score",
-                      "hozAlign": "right",
-                      "formatter": "money",
-                      "formatterParams": {
-                        "precision": 0
-                      },
-                      "width": 80,
-                      "sorter": "number"
-                    }
-                  ]
                 }
               ]
             },
