@@ -8,7 +8,7 @@ select
 from mapp.uk_glx_sites sit
 left join geodata.uk_glx_geodata_workers_postcode wor
 on st_dwithin(sit.geom_4326, wor.geom_p_4326, 1000, true)
-where sit.id=${id})
+where sit.id=${id}
 )
 
 select

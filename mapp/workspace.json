@@ -247,6 +247,9 @@
     "uk_sites_workers_radial_count": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
     },
+    "uk_sites_workers_split": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split.sql"
+    },
     "uk_sites_report": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/site_report.html"
     },
