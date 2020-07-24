@@ -211,6 +211,9 @@
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
+    "uk_sites_disposable_income": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_disposable_income.sql"
+    },
     "uk_sites_home_ownership": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_home_ownership.sql"
     },
