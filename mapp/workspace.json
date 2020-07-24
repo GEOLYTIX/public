@@ -214,6 +214,9 @@
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
+    "uk_sites_home_ownership": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_home_ownership.sql"
+    },
     "uk_sites_oac_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
     },
