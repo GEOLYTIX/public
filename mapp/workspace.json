@@ -211,6 +211,9 @@
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
+    "uk_sites_age_profile_breakdown": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_breakdown.sql"
+    },
     "uk_sites_disposable_income": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_disposable_income.sql"
     },
@@ -240,6 +243,9 @@
     },
     "uk_sites_grade_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
+    },
+    "uk_sites_workers_radial_count": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
     },
     "uk_sites_report": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/site_report.html"
