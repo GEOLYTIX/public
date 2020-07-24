@@ -208,6 +208,9 @@
     "uk_sites_population_summary": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_summary.sql"
     },
+    "uk_sites_age_profile_vs_uk": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
+    },
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
     },
