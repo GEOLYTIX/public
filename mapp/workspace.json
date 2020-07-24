@@ -1228,12 +1228,25 @@
           "cluster_dbscan": 0.03,
           "infoj": [
             {
-              "type": "key",
-              "class": "_report"
+              "type": "report",
+              "class": "_report",
+              "report": {
+                "template": "uk_sites_report"
+              }
             },
             {
               "field": "site_name",
               "title": "Site Name",
+              "edit": true
+            },
+            {
+              "field": "location",
+              "title": "Location",
+              "edit": true
+            },
+            {
+              "field": "postcode",
+              "title": "Postcode",
               "edit": true
             },
             {
@@ -1316,8 +1329,79 @@
             },
             {
               "type": "dataview",
+              "title": "OAC Profile",
+              "target": "oac_profile",
+              "query": "uk_sites_oac_profile",
+              "chart": {
+                "type": "radar",
+                "labels": [
+                      "Rural residents",
+                      "Cosmopolitans",
+                      "Ethinicity Central",
+                      "Multicultural Metrop.",
+                      "Urbanites",
+                      "Suburbanites",
+                      "Constr. City Dwellers",
+                      "Hard-pressed living"
+                    ],
+                "datasets": [
+                  {
+                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
+                    "borderColor": "#e91e63",
+                    "fill": false
+                  },
+                  {
+                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
+                    "borderColor": "#2196f3",
+                    "fill": false
+                  }
+                ]
+              }
+            },
+            {
+              "type": "dataview",
+              "title": "Key Statistics",
+              "layout": "fitColumns",
+              "query": "uk_sites_keystats",
+              "target": "key_statistics",
+              "columns": [
+                {
+                  "field": "rows",
+                  "title": "Metric",
+                  "hozAlign": "left"
+                },
+                {
+                  "title": "0-5 mins",
+                  "field": "min5",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-10 mins",
+                  "field": "min10",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-15 mins",
+                  "field": "min15",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                }
+              ]
+            },
+            {
+              "type": "dataview",
               "title": "Population Summary",
-              "target": "population_summary",
               "layout": "fitColumns",
               "query": "uk_sites_population_summary",
               "columns": [
@@ -1357,8 +1441,70 @@
             },
             {
               "type": "dataview",
-              "title": "Age Profile",
+              "title": "Age Profile Chart",
+              "query": "uk_sites_age_profile",
               "target": "age_profile",
+              "columns": [
+                {
+                  "field": "rows",
+                  "title": "Age Profile"
+                },
+                {
+                  "title": "0-15 mins",
+                  "group": "Population",
+                  "field": "min15",
+                  "hozAlign": "right",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "field": "age_under_indexer",
+                  "title": "Under",
+                  "hozAlign": "right",
+                  "formatter": "progress",
+                  "formatterParams": {
+                    "color": [
+                      "#C0392B"
+                    ],
+                    "min": 0,
+                    "max": 100
+                  },
+                  "width": 150,
+                  "sorter": "number"
+                },
+                {
+                  "field": "age_over_indexer",
+                  "title": "Over",
+                  "hozAlign": "left",
+                  "formatter": "progress",
+                  "formatterParams": {
+                    "color": [
+                      "#16A085"
+                    ],
+                    "min": 0,
+                    "max": 100
+                  },
+                  "width": 200,
+                  "sorter": "number"
+                },
+                {
+                  "field": "age_index_value",
+                  "title": "Score",
+                  "hozAlign": "right",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  },
+                  "width": 80,
+                  "sorter": "number"
+                }
+              ]
+            },
+            {
+              "type": "dataview",
+              "title": "Age Profile",
               "query": "uk_sites_age_profile",
               "columns": [
                 {
@@ -1468,7 +1614,6 @@
             {
               "type": "dataview",
               "title": "Social Grade",
-              "target": "social_grade",
               "layout": "fitColumns",
               "query": "uk_sites_social_grade_profile",
               "columns": [
