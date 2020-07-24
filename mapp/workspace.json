@@ -212,7 +212,7 @@
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
     },
     "uk_overview_report": {
-      "src": "http://geolytix.github.io/public/mapp/views/overview_report.html"
+      "src": "https://geolytix.github.io/public/mapp/layers/overview_report.html"
     },
     "uk_sites_keystats": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_keystats.sql"
@@ -227,7 +227,7 @@
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
     },
     "uk_demographics_report": {
-      "src": "http://geolytix.github.io/public/mapp/layers/uk/demographics_report.html"
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/demographics_report.html"
     },
     "uk_sites_age_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_breakdown.sql"
