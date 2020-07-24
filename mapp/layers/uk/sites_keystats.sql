@@ -64,7 +64,7 @@ min10 AS (
 		coalesce(sum(case when retailer in ('Waitrose', 'Marks and Spencer', 'Booths') then 1 else 0 end),0 ) as count_premium
 	from mapp.uk_glx_sites sit
 	left join geodata.uk_glx_open_retail_points orp
-	on st_intersects(sit.isoline_5min, orp.geom_p_4326)
+	on st_intersects(sit.isoline_10min, orp.geom_p_4326)
 	group by sit.id
 	) ret
 	on ret.id = demo.id
@@ -89,7 +89,7 @@ min15 AS (
 		ROUND(coalesce(sum(demand_total),0)) as grocery_demand
 	from mapp.uk_glx_sites sit
 	left join geodata.uk_glx_geodata_oa_metrics oa
-	on st_intersects(sit.isoline_5min, oa.geom_p_4326)
+	on st_intersects(sit.isoline_15min, oa.geom_p_4326)
 	 group by sit.id
 	) demo
 	left join (
