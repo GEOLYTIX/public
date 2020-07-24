@@ -220,6 +220,9 @@
     "uk_sites_oac_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
     },
+    "uk_sites_population_growth": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_growth.sql"
+    },
     "uk_sites_social_grade_vs_uk": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
     },
