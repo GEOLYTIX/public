@@ -8,7 +8,7 @@ select
 from mapp.uk_glx_sites sit
 inner join  geodata.uk_glx_geodata_retail_place rp
 on st_dwithin(sit.geom_4326, rp.geom_p_4326, 50000, true)
-where sit.id = ${id};
+where sit.id = ${id}
 order by st_distance(sit.geom_4326, rp.geom_4326, true)
 limit 5;
 
