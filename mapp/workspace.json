@@ -208,56 +208,44 @@
     "uk_sites_population_summary": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_summary.sql"
     },
-    "uk_sites_age_profile": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile.sql"
-    },
-    "uk_sites_age_profile_breakdown": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_breakdown.sql"
-    },
-    "uk_sites_disposable_income": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_disposable_income.sql"
-    },
-    "uk_sites_ethnicity": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_ethnicity.sql"
-    },
-    "uk_sites_home_ownership": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_home_ownership.sql"
-    },
-    "uk_sites_oac_profile": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
-    },
-    "uk_sites_age_profile_vs_uk": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_vs_uk.sql"
-    },
-    "uk_sites_population_growth": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_growth.sql"
-    },
-    "uk_sites_retail_places_nearby": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_retail_places_nearby.sql"
-    },
-    "uk_sites_social_grade_vs_uk": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
-    },
     "uk_sites_social_grade_profile": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
     },
-    "uk_sites_social_grade_breakdown": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_breakdown.sql"
+    "uk_overview_report": {
+      "src": "http://geolytix.github.io/public/mapp/views/overview_report.html"
     },
     "uk_sites_keystats": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_keystats.sql"
     },
-    "uk_sites_grade_profile": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_profile.sql"
+    "uk_sites_social_grade_vs_uk": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_vs_uk.sql"
     },
-    "uk_sites_workers_radial_count": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
+    "uk_sites_age_profile_vs_uk": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_vs_uk.sql"
     },
-    "uk_sites_workers_split": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split.sql"
+    "uk_sites_oac_profile": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_oac_profile.sql"
     },
-    "uk_sites_report": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/site_report.html"
+    "uk_demographics_report": {
+      "src": "http://geolytix.github.io/public/mapp/views/demographics_report.html"
+    },
+    "uk_sites_age_profile": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_age_profile_breakdown.sql"
+    },
+    "uk_sites_home_ownership": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_home_ownership.sql"
+    },
+    "uk_sites_ethnicity": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_ethnicity.sql"
+    },
+    "uk_sites_population_growth": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_population_growth.sql"
+    },
+    "uk_sites_disposable_income": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_disposable_income.sql"
+    },
+    "uk_sites_social_grade_breakdown": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_breakdown.sql"
     },
     "china_demography_grid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
@@ -1262,9 +1250,16 @@
           "infoj": [
             {
               "type": "report",
-              "class": "_report",
               "report": {
-                "template": "uk_sites_report"
+                "name": "Overview Report",
+                "template": "uk_overview_report"
+              }
+            },
+            {
+              "type": "report",
+              "report": {
+                "name": "Demographics Report",
+                "template": "uk_demographics_report"
               }
             },
             {
@@ -1280,6 +1275,12 @@
             {
               "field": "postcode",
               "title": "Postcode",
+              "edit": true
+            },
+            {
+              "field": "comments",
+              "title": "Comments",
+              "type": "textarea",
               "edit": true
             },
             {
@@ -1350,143 +1351,7 @@
               }
             },
             {
-              "field": "comments",
-              "title": "Comments",
-              "type": "textarea",
-              "edit": true
-            },
-            {
-              "title": "Available dataviews",
-              "type": "title",
-              "class": "_report"
-            },
-            {
-              "type": "dataview",
-              "title": "OAC Profile",
-              "target": "social_grade",
-              "query": "uk_sites_social_grade_vs_uk",
-              "chart": {
-                "type": "horizontalBar",
-                "labels": [
-                  "ab",
-                  "ab",
-                  "c1",
-                  "de"
-                ],
-                "datasets": [
-                  {
-                    "fields": [
-                      "ab",
-                      "ab",
-                      "c1",
-                      "de"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "type": "dataview",
-              "title": "Age Profile Chart",
-              "query": "uk_sites_age_profile_vs_uk",
-              "target": "age_profile",
-              "chart": {
-                "type": "horizontalBar",
-                "labels": [
-                  "< 18",
-                  "18 to 24",
-                  "25 to 29",
-                  "30 to 44",
-                  "45 to 59",
-                  "60+"
-                ],
-                "datasets": [
-                  {
-                    "fields": [
-                      "age_under_18",
-                      "age_18_24",
-                      "age_25_29",
-                      "age_30_44",
-                      "age_45_59",
-                      "age_over_60"
-                    ]
-                  }
-                ]
-              }
-            },
-            {
-              "type": "dataview",
-              "title": "OAC Profile",
-              "target": "oac_profile",
-              "query": "uk_sites_oac_profile",
-              "chart": {
-                "type": "radar",
-                "labels": [
-                      "Rural residents",
-                      "Cosmopolitans",
-                      "Ethinicity Central",
-                      "Multicultural Metrop.",
-                      "Urbanites",
-                      "Suburbanites",
-                      "Constr. City Dwellers",
-                      "Hard-pressed living"
-                    ],
-                "datasets": [
-                  {
-                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
-                    "borderColor": "#e91e63",
-                    "fill": false
-                  },
-                  {
-                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
-                    "borderColor": "#2196f3",
-                    "fill": false
-                  }
-                ]
-              }
-            },
-            {
-              "type": "dataview",
-              "title": "Key Statistics",
-              "layout": "fitColumns",
-              "query": "uk_sites_keystats",
-              "target": "key_statistics",
-              "columns": [
-                {
-                  "field": "rows",
-                  "title": "Metric",
-                  "hozAlign": "left"
-                },
-                {
-                  "title": "0-5 mins",
-                  "field": "min5",
-                  "hozAlign": "center",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "title": "0-10 mins",
-                  "field": "min10",
-                  "hozAlign": "center",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                },
-                {
-                  "title": "0-15 mins",
-                  "field": "min15",
-                  "hozAlign": "center",
-                  "formatter": "money",
-                  "formatterParams": {
-                    "precision": 0
-                  }
-                }
-              ]
-            },
-            {
+              "group": "Dataviews",
               "type": "dataview",
               "title": "Population Summary",
               "layout": "fitColumns",
@@ -1527,6 +1392,7 @@
               ]
             },
             {
+              "group": "Dataviews",
               "type": "dataview",
               "title": "Social Grade",
               "layout": "fitColumns",
@@ -1571,8 +1437,392 @@
               ]
             },
             {
-              "type": "streetview",
-              "class": "_report"
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Key Statistics",
+              "layout": "fitColumns",
+              "query": "uk_sites_keystats",
+              "target": "key_statistics",
+              "columns": [
+                {
+                  "field": "rows",
+                  "title": "Metric",
+                  "hozAlign": "left"
+                },
+                {
+                  "title": "0-5 mins",
+                  "field": "min5",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-10 mins",
+                  "field": "min10",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                },
+                {
+                  "title": "0-15 mins",
+                  "field": "min15",
+                  "hozAlign": "center",
+                  "formatter": "money",
+                  "formatterParams": {
+                    "precision": 0
+                  }
+                }
+              ]
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Age Profile Chart",
+              "query": "uk_sites_age_profile_vs_uk",
+              "target": "age_profile_uk",
+              "chart": {
+                "type": "horizontalBar",
+                "options": {
+                  "legend": {
+                    "display": false                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "labels": [
+                  "< 18",
+                  "18 to 24",
+                  "25 to 29",
+                  "30 to 44",
+                  "45 to 59",
+                  "60+"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "age_under_18",
+                      "age_18_24",
+                      "age_25_29",
+                      "age_30_44",
+                      "age_45_59",
+                      "age_over_60"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Social Grade / UK",
+              "target": "social_grade",
+              "query": "uk_sites_social_grade_vs_uk",
+              "chart": {
+                "type": "horizontalBar",
+                "options": {
+                  "legend": {
+                    "display": false                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "labels": [
+                  "ab",
+                  "ab",
+                  "c1",
+                  "de"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "ab",
+                      "ab",
+                      "c1",
+                      "de"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Geodemographic profile (15mins)",
+              "target": "oac_profile",
+              "query": "uk_sites_oac_profile",
+              "chart": {
+                "type": "radar",
+                "options": {
+                  "legend": {
+                    "display": true,
+                    "position": "top"
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "labels": [
+                      "Rural residents",
+                      "Cosmopolitans",
+                      "Ethinicity Central",
+                      "Multicultural Metrop.",
+                      "Urbanites",
+                      "Suburbanites",
+                      "Constr. City Dwellers",
+                      "Hard-pressed living"
+                    ],
+                "datasets": [
+                  {
+                    "label": "15min",
+                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
+                    "borderColor": "#e91e63",
+                    "fill": false
+                  },
+                  {
+                    "label": "UK",
+                    "fields": ["oac_sg_1", "oac_sg_2", "oac_sg_3", "oac_sg_4", "oac_sg_5", "oac_sg_6", "oac_sg_7", "oac_sg_8"],
+                    "borderColor": "#2196f3",
+                    "fill": false
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Age Profile",
+              "query": "uk_sites_age_profile",
+              "target": "age_profile",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": false
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 20,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "bar",
+                "labels": [
+                  "< 18 yrs",
+                  "18 to 24 yrs",
+                  "30 to 44 yrs",
+                  "30 to 44 yrs",
+                  "45 to 59 yrs",
+                  "60 yrs +"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "< 18 yrs",
+                      "18 to 24 yrs",
+                      "30 to 44 yrs",
+                      "30 to 44 yrs",
+                      "45 to 59 yrs",
+                      "60 yrs +"
+                    ],
+                    "backgroundColor": "#ff6d00"
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Home ownership",
+              "query": "uk_sites_home_ownership",
+              "target": "home_ownership",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": true,
+                    "position": "left"
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "doughnut",
+                "labels": ["Owner Occupied", "Renting", "Social", "Rent Free"],
+                "datasets": [
+                  {
+                    "borderWidth": 0,
+                    "fields": ["Owner Occupied", "Renting", "Social", "Rent Free"],
+                    "backgroundColor": ["#cddc39","#00bcd4","#ffc107","#33691e"]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Ethnicity",
+              "query": "uk_sites_ethnicity",
+              "target": "ethnicity",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": true,
+                    "position": "left"
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "doughnut",
+                "labels": ["White", "Mixed", "Black", "Asian", "Other"],
+                "datasets": [
+                  {
+                    "borderWidth": 0,
+                    "fields": ["White", "Mixed", "Black", "Asian", "Other"],
+                    "backgroundColor": ["#ffebee","#bcaaa4", "#795548", "#ffc107","#2196f3"]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Population Growth",
+              "query": "uk_sites_population_growth",
+              "target": "pop_growth",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": false
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 20,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "line",
+                "labels": ["15", "16", "17", "18", "19", "20", "21"],
+                "datasets": [
+                  {
+                    "fill": false,
+                    "borderColor": "#ff9800",
+                    "fields": ["15", "16", "17", "18", "19", "20", "21"]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Disposable Income",
+              "target": "disposable_income",
+              "query": "uk_sites_disposable_income",
+              "chart": {
+                "type": "horizontalBar",
+                "options": {
+                  "legend": {
+                    "display": false
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "labels": [
+                  "£5000+",
+                  "£4000-5000",
+                  "£3000-4000",
+                  "£2000-3000",
+                  "£1000-2000",
+                  "<£1000"
+                ],
+                "datasets": [
+                  {
+                    "backgroundColor": "#1a237e",
+                    "fields": [
+                      "£5000+",
+                      "£4000-5000",
+                      "£3000-4000",
+                      "£2000-3000",
+                      "£1000-2000",
+                      "<£1000"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Social grade",
+              "query": "uk_sites_social_grade_breakdown",
+              "target": "social_grade_pie",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": true,
+                    "position": "bottom"
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "pie",
+                "labels": ["AB", "C1", "C2", "DE"],
+                "datasets": [
+                  {
+                    "borderWidth": 0,
+                    "fields": ["ab", "c1", "c2", "de"],
+                    "backgroundColor": ["#cddc39","#00bcd4","#ffc107","#33691e"]
+                  }
+                ]
+              }
+            },
+            {
+              "type": "streetview"
             }
           ],
           "style": {
