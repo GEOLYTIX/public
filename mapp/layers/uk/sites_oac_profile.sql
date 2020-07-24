@@ -1,7 +1,7 @@
 WITH
 
 min15 AS (
-    SELECT round((sum(oac_sg_1)/sum(pop_11)),2)::numeric oac_sg_1,
+    SELECT round((sum(oac_sg_1)/sum(pop_11)),2) oac_sg_1,
         round((sum(oac_sg_2)/sum(pop_11)),2) oac_sg_2,
         round((sum(oac_sg_3)/sum(pop_11)),2) oac_sg_3,
         round((sum(oac_sg_4)/sum(pop_11)),2) oac_sg_4,
@@ -16,7 +16,7 @@ min15 AS (
 ),
 
 uk AS (
-    SELECT round((sum(oac_sg_1)/sum(pop_11)),2)::numeric oac_sg_1,
+    SELECT round((sum(oac_sg_1)/sum(pop_11)),2) oac_sg_1,
         round((sum(oac_sg_2)/sum(pop_11)),2) oac_sg_2,
         round((sum(oac_sg_3)/sum(pop_11)),2) oac_sg_3,
         round((sum(oac_sg_4)/sum(pop_11)),2) oac_sg_4,
@@ -30,7 +30,7 @@ uk AS (
 
 SELECT UNNEST( ARRAY ['Min 15', 'UK'] ) AS rows,
 
-       UNNEST( ARRAY [min15.oac_sg_1, uk.oac_sg_1 ] )::numeric AS oac_sg_1,
+       UNNEST( ARRAY [min15.oac_sg_1::double, uk.oac_sg_1::double ] ) AS oac_sg_1,
 
        UNNEST( ARRAY [min15.oac_sg_2, uk.oac_sg_2 ] ) AS oac_sg_2,
 
