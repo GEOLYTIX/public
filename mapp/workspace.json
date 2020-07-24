@@ -247,6 +247,21 @@
     "uk_sites_social_grade_breakdown": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_breakdown.sql"
     },
+    "uk_sites_stores_supermarkets": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_supermarkets.sql"
+    },
+    "uk_sites_stores_convenience": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_convenience.sql"
+    },
+        "uk_sites_workers_radial_count": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
+    },
+    "uk_sites_workers_split": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split.sql"
+    },
+    "uk_sites_retail_places_nearby": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_retail_places_nearby.sql"
+    },
     "china_demography_grid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
     },
