@@ -22,6 +22,9 @@
       "attribution": {
         "© Mapbox": "https://www.mapbox.com/about/maps",
         "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      },
+      "style": {
+        "zIndex": 20
       }
     },
     "HERE Imagery": {
