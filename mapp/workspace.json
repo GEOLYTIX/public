@@ -137,7 +137,7 @@
       "template": "SELECT dwelling_ownhome, dwelling_socialrented, dwelling_privaterented, dwelling_rentfree FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
     },
     "uk_output_area growth": {
-      "template": "SELECT pop_15, pop_16, pop_17, pop_18, pop_19, pop_20, pop_21 FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
+      "template": "SELECT pop_15, pop_16, pop_17, pop_18, pop_19, pop_20, pop_21, pop_22, pop_23, pop_24 FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
     },
     "uk_output_area property": {
       "template": "SELECT housetype_houses, housetype_flats, housetype_other, age45to59, age60plus FROM geodata.uk_glx_geodata_oa_metrics WHERE id = ${id};"
