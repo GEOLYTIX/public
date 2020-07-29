@@ -75,10 +75,7 @@
       20,
       40
     ],
-    "marker": {
-      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg"
-    },
-    "markerMulti": {
+    "default": {
       "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg"
     }
   },

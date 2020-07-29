@@ -36,13 +36,9 @@
   ],
   "style": {
     "hidden": true,
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#999999"
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#333333"
     },
     "themes": {
       "Average": {

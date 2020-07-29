@@ -37,17 +37,13 @@
   ],
   "style": {
     "hidden": true,
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#777",
       "layers": {
         "0.75": "#EEE",
         "0.50": "#777"
       }
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#777"
     }
   }
 }

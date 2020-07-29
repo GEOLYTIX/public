@@ -74,14 +74,7 @@
   ],
   "style": {
     "hidden": true,
-    "marker": {
-      "type": "target",
-      "fillColor": "#F4EF88",
-      "layers": {
-        "0.6": "#0090C1"
-      }
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#F4EF88",
       "layers": {

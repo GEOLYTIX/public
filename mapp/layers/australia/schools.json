@@ -91,14 +91,7 @@
     },
     "markerMin": 20,
     "markerMax": 40,
-    "marker": {
-      "type": "target",
-      "fillColor": "#F4EF88",
-      "layers": {
-        "0.6": "#999999"
-      }
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#F4EF88",
       "layers": {

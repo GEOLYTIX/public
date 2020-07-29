@@ -83,11 +83,7 @@
       "strokeColor": "#fff",
       "strokeWidth": 3
     },
-    "marker": {
-      "type": "square",
-      "fillColor": "#993366"
-    },
-    "markerMulti": {
+    "default": {
       "type": "square",
       "fillColor": "#993366"
     },

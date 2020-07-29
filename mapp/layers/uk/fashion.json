@@ -1547,13 +1547,9 @@
       "strokeColor": "#fff",
       "strokeWidth": 3
     },
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#6065c4"
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#93827F"
     },
     "themes": {
       "Retailers": {

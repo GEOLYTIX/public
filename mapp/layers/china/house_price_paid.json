@@ -48,11 +48,7 @@
   ],
   "style": {
     "hidden": true,
-    "marker": {
-      "type": "target",
-      "fillColor": "#009688"
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#009688"
     },

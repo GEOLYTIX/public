@@ -83,11 +83,7 @@
       "strokeColor": "#fff",
       "strokeWidth": 3
     },
-    "marker": {
-      "type": "triangle",
-      "fillColor": "#93827F"
-    },
-    "markerMulti": {
+    "default": {
       "type": "triangle",
       "fillColor": "#93827F"
     },

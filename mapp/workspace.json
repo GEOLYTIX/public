@@ -1077,15 +1077,7 @@
           ],
           "style": {
             "hidden": true,
-            "marker": {
-              "type": "target",
-              "fillColor": "#2364AA",
-              "layers": {
-                "0.75": "#EEE",
-                "0.50": "#2364AA"
-              }
-            },
-            "markerMulti": {
+            "default": {
               "type": "target",
               "fillColor": "#2364AA",
               "layers": {
@@ -1833,15 +1825,7 @@
           ],
           "style": {
             "hidden": true,
-            "marker": {
-              "type": "target",
-              "fillColor": "#2364AA",
-              "layers": {
-                "0.75": "#EEE",
-                "0.50": "#2364AA"
-              }
-            },
-            "markerMulti": {
+            "default": {
               "type": "target",
               "fillColor": "#2364AA",
               "layers": {

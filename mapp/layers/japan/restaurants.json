@@ -39,11 +39,7 @@
       "strokeColor": "#fff",
       "strokeWidth": 3
     },
-    "marker": {
-      "type": "target",
-      "fillColor": "#990000"
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#990000"
     },

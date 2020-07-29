@@ -36,18 +36,11 @@
       "fillColor": "#fff",
       "font": "bold 10px sans-serif"
     },
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#2ECC71",
       "layers": {
         "0.5": "#ffffff"
-      }
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#2ECC71",
-      "layers": {
-        "0.7": "#1c7d44"
       }
     }
   }

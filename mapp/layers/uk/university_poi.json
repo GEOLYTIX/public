@@ -41,14 +41,7 @@
     }
   ],
   "style": {
-    "marker": {
-      "type": "target",
-      "fillColor": "#D8D8F6",
-      "layers": {
-        "0.6": "#A37871"
-      }
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#D8D8F6",
       "layers": {

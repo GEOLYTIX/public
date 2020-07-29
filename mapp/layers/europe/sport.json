@@ -84,14 +84,7 @@
       "fillColor": "#404040",
       "font": "bold 16px sans-serif"
     },
-    "marker": {
-      "type": "target",
-      "fillColor": "#404040",
-      "layers": {
-        "0.8": "#cddc39"
-      }
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#404040",
       "layers": {

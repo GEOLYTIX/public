@@ -173,11 +173,7 @@
   ],
   "style": {
     "hidden": true,
-    "marker": {
-      "type": "square",
-      "fillColor": "#777"
-    },
-    "markerMulti": {
+    "default": {
       "type": "square",
       "fillColor": "#777"
     },

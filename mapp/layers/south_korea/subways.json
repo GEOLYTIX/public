@@ -47,18 +47,11 @@
       "fillColor": "#fff",
       "font": "bold 10px sans-serif"
     },
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#8c8c8c",
       "layers": {
         "0.5": "#ffffff"
-      }
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#8c8c8c",
-      "layers": {
-        "0.7": "#000000"
       }
     },
     "themes": {
