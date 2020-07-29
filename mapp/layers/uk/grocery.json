@@ -100,6 +100,9 @@
       "type": "target",
       "fillColor": "#006666"
     },
+    "highlight": {
+      "scale": 2.1
+    },
     "themes": {
       "Retail - Logos": {
         "type": "categorized",
