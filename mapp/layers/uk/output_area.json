@@ -11,10 +11,6 @@
   "qID": "id",
   "infoj": [
     {
-      "title": "test",
-      "type": "label"
-    },
-    {
       "field": "oa_code",
       "title": "OA code",
       "inline": true
