@@ -108,6 +108,7 @@
         "cat": {
           "Aldi": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/aldi.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -115,6 +116,7 @@
           },
           "Asda": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/asda.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -122,6 +124,7 @@
           },
           "Booths": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/booths.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -129,6 +132,7 @@
           },
           "Budgens": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/budgens.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -136,6 +140,7 @@
           },
           "Co-op": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/coop.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -143,6 +148,7 @@
           },
           "Iceland": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/iceland.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -150,6 +156,7 @@
           },
           "Lidl": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/lidl.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -157,6 +164,7 @@
           },
           "Morrisons": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/morrisons.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -165,6 +173,7 @@
           "Sainsburys": {
             "label": "Sainsbury's",
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/sainsbury.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -172,6 +181,7 @@
           },
           "Tesco": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/tesco.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -179,6 +189,7 @@
           },
           "Waitrose": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/waitrose.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
@@ -186,6 +197,7 @@
           },
           "Whole Foods Market": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/whole_foods.svg",
+            "scale": 2,
             "anchor": [
               0.5,
               0.95
