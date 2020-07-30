@@ -256,7 +256,7 @@
     "uk_sites_stores_convenience": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_convenience.sql"
     },
-        "uk_sites_workers_radial_count": {
+    "uk_sites_workers_radial_count": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
     },
     "uk_sites_workers_split": {
