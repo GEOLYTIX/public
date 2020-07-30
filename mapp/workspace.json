@@ -1540,16 +1540,16 @@
                 },
                 "labels": [
                   "ab",
-                  "ab",
                   "c1",
+                  "c2",
                   "de"
                 ],
                 "datasets": [
                   {
                     "fields": [
                       "ab",
-                      "ab",
                       "c1",
+                      "c2",
                       "de"
                     ]
                   }
