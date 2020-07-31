@@ -1,15 +1,15 @@
 {
   "templates": {
     "select_ll": {
-      "src": "https://geolytix.github.io/public/coop/query/select_ll.sql",
+      "src": "https://geolytix.github.io/public/wellbeing/query/select_ll.sql",
       "dbs": "MAPP"
     },
     "national_average": {
-      "src": "https://geolytix.github.io/public/coop/query/national_average.sql",
+      "src": "https://geolytix.github.io/public/wellbeing/query/national_average.sql",
       "dbs": "MAPP"
     },
     "nnearest_from_ll": {
-      "src": "https://geolytix.github.io/public/coop/query/nnearest_from_ll.sql",
+      "src": "https://geolytix.github.io/public/wellbeing/query/nnearest_from_ll.sql",
       "dbs": "MAPP"
     }
   },
