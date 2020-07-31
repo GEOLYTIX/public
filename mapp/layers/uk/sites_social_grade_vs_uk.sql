@@ -1,8 +1,8 @@
  select 
- 	round(dat.ab / (uk.social_grade_ab_uk / cast(social_grade_total_uk as numeric))  *100, 2) as ab,
-	round(dat.c1 / (uk.social_grade_c1_uk / cast(social_grade_total_uk as numeric))  *100, 2) as c1,
-	round(dat.c2 / (uk.social_grade_c2_uk / cast(social_grade_total_uk as numeric))  *100, 2) as c2,
-	round(dat.de / (uk.social_grade_de_uk / cast(social_grade_total_uk as numeric))  *100, 2) as de
+ 	round(dat.ab / (uk.social_grade_ab_uk / cast(social_grade_total_uk as numeric))  *100, 0) as ab,
+	round(dat.c1 / (uk.social_grade_c1_uk / cast(social_grade_total_uk as numeric))  *100, 0) as c1,
+	round(dat.c2 / (uk.social_grade_c2_uk / cast(social_grade_total_uk as numeric))  *100, 0) as c2,
+	round(dat.de / (uk.social_grade_de_uk / cast(social_grade_total_uk as numeric))  *100, 0) as de
 from 
  (select  
  	COALESCE(sum(abhrp) / nullif(cast(sum(abhrp + c1hrp + c2hrp + dehrp) as numeric),0),0) as ab,
