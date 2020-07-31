@@ -1628,6 +1628,7 @@
                 "labels": [
                   "< 18 yrs",
                   "18 to 24 yrs",
+                  "25 to 29 yrs",
                   "30 to 44 yrs",
                   "30 to 44 yrs",
                   "45 to 59 yrs",
@@ -1638,6 +1639,7 @@
                     "fields": [
                       "< 18 yrs",
                       "18 to 24 yrs",
+                      "25 to 29 yrs",
                       "30 to 44 yrs",
                       "30 to 44 yrs",
                       "45 to 59 yrs",
