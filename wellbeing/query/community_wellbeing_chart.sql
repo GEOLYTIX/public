@@ -1,4 +1,3 @@
-
 SELECT
   round(indeduca * 100) as indeduca,
   round(indhealt * 100) as indhealt,

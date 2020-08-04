@@ -20,15 +20,11 @@ SELECT
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
 FROM coop.uk_coop_restrict_wellbeing
-WHERE dd_name LIKE '${loc}'
+WHERE dd_name = '${loc}'
 
 UNION ALL
 
-SELECT y.* FROM (SELECT st_setsrid(st_point(${lng}, ${lat}), 4326) geom_p) a
-
-CROSS JOIN lateral
-
-(SELECT 
+SELECT 
   id,
   dd_name,
   null AS backgroundcolour,
@@ -49,6 +45,5 @@ CROSS JOIN lateral
   round(eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
-FROM coop.uk_coop_restrict_wellbeing w
-ORDER BY w.geom_p_4326 <-> a.geom_p
-LIMIT 9) y
+FROM coop.uk_coop_restrict_wellbeing
+WHERE rm_format = '${postcode}';

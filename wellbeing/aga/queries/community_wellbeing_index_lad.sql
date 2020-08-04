@@ -1,6 +1,7 @@
-SELECT
+SELECT 
   id,
   dd_name,
+  null AS backgroundcolour,
   round(ind_wellb * 100) AS ind_wellb,
   round(indeduca * 100) AS indeduca,
   round(indhealt * 100) AS indhealt,
@@ -12,4 +13,4 @@ SELECT
   round(indequal * 100) AS indequal,
   round(indvoice * 100) AS indvoice
 FROM coop.uk_coop_restrict_wellbeing
-WHERE true ${viewport} ${filter} FETCH FIRST 9 ROW ONLY;
+WHERE lad_search = '${id}' ORDER BY dd_name;
