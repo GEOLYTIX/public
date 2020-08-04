@@ -159,22 +159,25 @@
         "Offices Edit": {
           "template": "geolytix_offices",
           "edit": {
-            "point": true
+            "point": true,
+            "delete": true
           },
           "infoj": [
             {
-              "type": "key"
+              "title": "address",
+              "field": "address",
+              "type": "textarea",
+              "edit": true
             },
             {
-              "title": "Address HTML",
-              "field": "address_html",
-              "fieldfx": "address",
-              "type": "html",
+              "title": "website",
+              "field": "website",
+              "type": "textarea",
               "edit": true
             }
           ],
           "roles": {
-            "glx": true
+            "glx": null
           }
         },
         "Label": {
