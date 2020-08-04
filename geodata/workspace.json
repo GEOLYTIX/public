@@ -172,7 +172,10 @@
               "type": "html",
               "edit": true
             }
-          ]
+          ],
+          "roles": {
+            "glx": true
+          }
         },
         "Label": {
           "display": true,

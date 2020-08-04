@@ -48,10 +48,6 @@
       "title": "Size in sqft"
     },
     {
-      "field": "size_sqm",
-      "title": "Size in sqm"
-    },
-    {
       "field": "pqi",
       "title": "Accuracy"
     }
