@@ -2,11 +2,8 @@
   "format": "geojson",
   "dbs": "WEBSITE",
   "table": "website.global_glx_open_geolytix_offices",
-  "geom": "geom",
+  "geom": "geom_p_4326",
   "srid": "4326",
-  "edit": {
-    "point": true
-  },
   "style": {
     "default": {
       "marker": {
@@ -54,8 +51,7 @@
       "title": "Address HTML",
       "field": "address_html",
       "fieldfx": "address",
-      "type": "html",
-      "edit": true
+      "type": "html"
     }
   ]
 }

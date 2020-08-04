@@ -156,6 +156,24 @@
           "display": true,
           "template": "geolytix_offices"
         },
+        "Offices Edit": {
+          "template": "geolytix_offices",
+          "edit": {
+            "point": true
+          },
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "title": "Address HTML",
+              "field": "address_html",
+              "fieldfx": "address",
+              "type": "html",
+              "edit": true
+            }
+          ]
+        },
         "Label": {
           "display": true,
           "template": "Mapbox Label"
