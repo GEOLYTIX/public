@@ -1709,7 +1709,7 @@
                   {
                     "borderWidth": 0,
                     "fields": ["White", "Mixed", "Black", "Asian", "Other"],
-                    "backgroundColor": ["#ffebee","#bcaaa4", "#795548", "#ffc107","#2196f3"]
+                    "backgroundColor": ["#cddc39","#e91e63", "#00bcd4", "#33691e","#ffc107"]
                   }
                 ]
               }
