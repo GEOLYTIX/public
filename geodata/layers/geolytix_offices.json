@@ -45,12 +45,7 @@
   "qID": "id",
   "infoj": [
     {
-      "type": "key"
-    },
-    {
-      "title": "Address HTML",
-      "field": "address_html",
-      "fieldfx": "address",
+      "field": "website",
       "type": "html"
     }
   ]
