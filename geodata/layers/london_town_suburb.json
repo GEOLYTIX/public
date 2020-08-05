@@ -1,8 +1,8 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
-  "mvt_cache": "website.vw_london_glx_geodata_townsuburb_combined__mvts",
+  "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_townsuburb_combined",
+  "mvt_cache": "website.townsuburb_combined__mvts",
   "geom": "geom_3857",
   "srid": "3857",
   "qID": "id",
