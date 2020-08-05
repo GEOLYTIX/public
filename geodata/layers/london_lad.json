@@ -2,6 +2,7 @@
   "format": "mvt",
   "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_admin_lad_5m",
+  "mvt_cache": "website.vw_london_glx_geodata_admin_lad_5m__mvts",
   "geom": "geom_3857",
   "srid": "3857",
   "qID": "id",

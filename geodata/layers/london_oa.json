@@ -5,6 +5,7 @@
     "13": null,
     "14": "website.vw_london_glx_geodata_admin_outputarea"
   },
+  "mvt_cache": "website.vw_london_glx_geodata_admin_outputarea__mvts",
   "geom": "geom_3857_5m",
   "srid": "3857",
   "qID": "id",
