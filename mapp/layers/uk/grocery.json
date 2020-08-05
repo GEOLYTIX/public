@@ -107,7 +107,7 @@
       "Retail - Logos": {
         "type": "categorized",
         "field": "retailer",
-        "other": false,
+        "other": true,
         "cat": {
           "Aldi": {
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/aldi.svg",
