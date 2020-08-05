@@ -1,8 +1,8 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
-  "mvt_cache": "website.vw_london_glx_geodata_demand_grocery_oa__mvts",
+  "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_demand_grocery_oa",
+  "mvt_cache": "website.london_demand_grocery_oa__mvts",
   "geom": "geom_3857_5m",
   "srid": "3857",
   "qID": "oa_code",
