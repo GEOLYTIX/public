@@ -55,6 +55,9 @@
       "type": "target",
       "fillColor": "#C2095A"
     },
+    "highlight": {
+      "scale": 3
+    },
     "themes": {
       "POI Type": {
         "field": "poi_type",
