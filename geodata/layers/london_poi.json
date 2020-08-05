@@ -2,7 +2,7 @@
   "format": "cluster",
   "dbs": "XYZ",
   "table": "website.vw_london_glx_geodata_poi",
-  "geom": "geom_4326",
+  "geom": "geom_p_4326",
   "srid": "4326",
   "cluster_label": "poi_name",
   "cluster_kmeans": 0.01,
