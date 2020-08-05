@@ -1,7 +1,6 @@
 {
   "format": "mvt",
   "dbs": "GEODATA",
-  "mvt_cache": "website._mvts__vw_london_glx_geodata_urbanity_oa",
   "table": "website.vw_london_glx_geodata_urbanity_oa",
   "geom": "geom_3857_5m",
   "srid": "3857",
