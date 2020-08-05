@@ -3,8 +3,8 @@
   "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_transport_line",
   "mvt_cache": "website.transport_line__mvts",
-  "geom": "geom_l_4326",
-  "srid": "4326",
+  "geom": "geom_l_3857",
+  "srid": "3857",
   "qID": "id",
   "infoj": [
     {
