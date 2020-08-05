@@ -1,7 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
-  "mvt_cache": "website.vw_london_glx_geodata_admin_outputarea__mvts",
+  "dbs": "WEBSITE",
   "tables": {
     "13": null,
     "14": "website.vw_london_glx_geodata_admin_outputarea"
