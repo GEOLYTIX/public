@@ -1,11 +1,11 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
-  "mvt_cache": "website.vw_london_glx_geodata_retail_place_pitch__mvts",
+  "dbs": "WEBSITE",
   "tables": {
     "14": null,
     "15": "website.vw_london_glx_geodata_retail_place_pitch"
   },
+  "mvt_cache": "website.london_retail_place_pitch__mvts",
   "geom": "geom_3857",
   "srid": "3857",
   "style": {
