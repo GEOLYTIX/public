@@ -1,7 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
-  "mvt_cache": "website.vw_london_glx_geodata_postal_sector__mvts",
+  "dbs": "WEBSITE",
   "tables": {
     "14": null,
     "15": "website.vw_london_glx_geodata_postal_sector"
