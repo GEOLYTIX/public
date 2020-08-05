@@ -1,6 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "mvt_cache": "website.vw_london_glx_geodata_retail_place_pitch__mvts",
   "tables": {
     "14": null,

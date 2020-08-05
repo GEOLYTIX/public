@@ -1,6 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "mvt_cache": "website.vw_london_glx_geodata_education_uni_building__mvts",
   "tables": {
     "11": null,

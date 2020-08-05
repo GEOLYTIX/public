@@ -1,6 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "mvt_cache": "website.vw_london_glx_geodata_demand_grocery_oa__mvts",
   "table": "website.vw_london_glx_geodata_demand_grocery_oa",
   "geom": "geom_3857_5m",

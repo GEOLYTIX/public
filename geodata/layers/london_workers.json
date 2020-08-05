@@ -1,6 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "mvt_cache": "website.vw_london_glx_geodata_workers_hybrid_zone__mvts",
   "table": "website.vw_london_glx_geodata_workers_hybrid_zone",
   "geom": "geom_3857",

@@ -1,6 +1,6 @@
 {
   "format": "grid",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "table": "geodata.uk_glx_geodata_hex_1k",
   "geom": "geom_p_4326",
   "srid": "4326",

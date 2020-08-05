@@ -1,0 +1,50 @@
+{
+  "bounds": {
+    "north": 35.9,
+    "east": 139.9,
+    "south": 35.4,
+    "west": 139.55
+  },
+  "minZoom": 12,
+  "maxZoom": 18,
+  "view": {
+    "lat": 35.7,
+    "lng": 139.7
+  },
+  "layers": {
+    "HERE Imagery": {
+      "group": "Base maps",
+      "template": "HERE Imagery"
+    },
+    "HERE Hybrid": {
+      "group": "Base maps",
+      "template": "HERE Hybrid"
+    },
+    "Mapbox Baselayer": {
+      "group": "Base maps",
+      "display": true,
+      "template": "Mapbox Base"
+    },
+    "Demographics": {
+      "group": "Demographics",
+      "template": "tokyo_demographics"
+    },
+    "Retail Places": {
+      "group": "Retail Places",
+      "template": "tokyo_retailplaces"
+    },
+    "Retail Venues": {
+      "group": "Retail Places",
+      "template": "tokyo_retailvenues"
+    },
+    "Urbanity": {
+      "group": "Urbanity",
+      "template": "tokyo_urbanity"
+    },
+    "Mapbox Labels": {
+      "group": "Base maps",
+      "display": true,
+      "template": "Mapbox Label"
+    }
+  }
+}

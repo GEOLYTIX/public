@@ -1,6 +1,6 @@
 {
   "format": "mvt",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "table": "website.vw_london_glx_geodata_road_detail",
   "geom": "geom_3857",
   "srid": "3857",

@@ -1,6 +1,6 @@
 {
   "format": "cluster",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "table": "website.vw_london_glx_geodata_transport_station",
   "geom": "geom_4326",
   "srid": "4326",

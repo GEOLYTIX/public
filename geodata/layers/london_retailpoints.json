@@ -1,6 +1,6 @@
 {
   "format": "cluster",
-  "dbs": "XYZ",
+  "dbs": "GEODATA",
   "table": "geodata.uk_glx_open_retail_points",
   "geom": "geom_p_4326",
   "srid": "4326",
