@@ -1,7 +1,8 @@
 {
   "format": "mvt",
-  "dbs": "GEODATA",
+  "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_road_detail",
+  "mvt_cache": "website.london_road_detail__mvts",
   "geom": "geom_3857",
   "srid": "3857",
   "style": {
