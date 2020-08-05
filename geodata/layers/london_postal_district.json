@@ -8,7 +8,8 @@
     "15": "website.vw_london_glx_geodata_postal_district",
     "16": null
   },
-  "geom": "geom_3857_50m",
+  "mvt_cache": "website.vw_london_glx_geodata_postal_district__mvts",
+  "geom": "geom_3857",
   "srid": "3857",
   "qID": "id",
   "hover": {
