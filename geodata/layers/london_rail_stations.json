@@ -1,8 +1,8 @@
 {
   "format": "cluster",
-  "dbs": "GEODATA",
+  "dbs": "WEBSITE",
   "table": "website.vw_london_glx_geodata_transport_station",
-  "geom": "geom_4326",
+  "geom": "geom_p_4326",
   "srid": "4326",
   "cluster_kmeans": 0.01,
   "cluster_dbscan": 0.01,
@@ -31,19 +31,11 @@
     }
   ],
   "style": {
-    "marker": {
+    "default": {
       "type": "target",
       "fillColor": "#3366ff",
       "layers": {
         "0.5": "#ffffff"
-      }
-    },
-    "markerMulti": {
-      "type": "target",
-      "fillColor": "#3366ff",
-      "layers": {
-        "0.75": "#ffffff",
-        "0.5": "#3366ff"
       }
     },
     "themes": {
