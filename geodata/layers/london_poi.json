@@ -51,13 +51,7 @@
     }
   ],
   "style": {
-    "marker": {
-      "type": "target",
-      "fillColor": "#C2095A",
-      "markerMin": 50,
-      "markerMax": 50
-    },
-    "markerMulti": {
+    "default": {
       "type": "target",
       "fillColor": "#C2095A"
     },
@@ -69,26 +63,32 @@
         "cat": {
           "Airport": {
             "label": "Airport",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_transport_airport.svg"
           },
           "Cinema": {
             "label": "Cinema",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_entertainment_cinema.svg"
           },
           "Hospital": {
             "label": "Hospital",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_health_hospital.svg"
           },
           "Pharmacy": {
             "label": "Pharmacy",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_health_pharmacy.svg"
           },
           "Sport and Leisure": {
             "label": "Sport and Leisure",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_sports_leisure_sports_centre.svg"
           },
           "Stadium": {
             "label": "Stadium",
+            "scale": 2,
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_entertainment_stadium.svg"
           }
         }
