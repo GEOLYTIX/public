@@ -28,7 +28,7 @@
         {
           "field": "pop_ghs",
           "title": "Population (ghs)",
-          "align": "right",
+          "hozAlign": "right",
           "formatter": "money",
           "formatterParams": {
             "precision": 0
@@ -37,7 +37,7 @@
         {
           "field": "area",
           "title": "Area (km2)",
-          "align": "right",
+          "hozAlign": "right",
           "formatter": "money",
           "formatterParams": {
             "precision": 1
@@ -46,7 +46,7 @@
         {
           "field": "pop_den",
           "title": "Population Density",
-          "align": "right",
+          "hozAlign": "right",
           "formatter": "money",
           "formatterParams": {
             "precision": 1

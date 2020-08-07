@@ -42,7 +42,7 @@
         {
           "field": "rank_group",
           "title": "Rank group",
-          "align": "right",
+          "hozAlign": "right",
           "formatter": "money",
           "formatterParams": {
             "precision": 0
@@ -51,7 +51,7 @@
         {
           "field": "rank",
           "title": "Rank",
-          "align": "right",
+          "hozAlign": "right",
           "formatter": "money",
           "formatterParams": {
             "precision": 0
@@ -69,12 +69,6 @@
       "strokeColor": "#fff",
       "strokeWidth": 3
     },
-    "markerMin": 40,
-    "markerMax": 60,
-    "anchor": [
-      20,
-      40
-    ],
     "default": {
       "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg"
     }
