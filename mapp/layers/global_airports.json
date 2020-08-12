@@ -70,7 +70,15 @@
       "strokeWidth": 3
     },
     "default": {
-      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg"
+      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg",
+      "scale": 0.05
+    },
+    "cluster": {
+      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_transport_airport.svg",
+      "scale": 0.1
+    },
+    "highlight": {
+      "scale": 1.3
     }
   },
   "filter": {

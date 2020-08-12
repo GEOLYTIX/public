@@ -359,6 +359,9 @@
       "minZoom": 2,
       "maxZoom": 15,
       "showScaleBar": true,
+      "modules": {
+        "cluster": "/mapp/queries/cluster.js"
+      },
       "layers": {
         "Mapbox Base": {
           "group": "Base maps",
@@ -387,7 +390,8 @@
           "template": "global_cities"
         },
         "Global Airports": {
-          "template": "global_airports"
+          "template": "global_airports",
+          "modules": ["cluster"]
         }
       }
     },
