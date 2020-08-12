@@ -46,7 +46,7 @@
     },
     "community wellbeing - people locale": {
       "src": "https://geolytix.github.io/public/wellbeing/aga/queries/community_wellbeing_people_locale.sql"
-    },    
+    },
     "community wellbeing - place": {
       "src": "https://geolytix.github.io/public/wellbeing/query/community_wellbeing_place.sql"
     },
@@ -61,7 +61,7 @@
     },
     "community wellbeing - place locale": {
       "src": "https://geolytix.github.io/public/wellbeing/aga/queries/community_wellbeing_place_locale.sql"
-    },    
+    },
     "community wellbeing - relationships": {
       "src": "https://geolytix.github.io/public/wellbeing/query/community_wellbeing_relationships.sql"
     },
@@ -76,7 +76,7 @@
     },
     "community wellbeing - relationships locale": {
       "src": "https://geolytix.github.io/public/wellbeing/aga/queries/community_wellbeing_relationships_locale.sql"
-    },    
+    },
     "community wellbeing - chart": {
       "src": "https://geolytix.github.io/public/wellbeing/query/community_wellbeing_chart.sql"
     },
@@ -186,7 +186,7 @@
         "Zoomstack": {
           "group": "Maps",
           "attribution": {
-              "© Ordanance Survey": "https://ordnancesurvey.co.uk"
+            "© Ordanance Survey": "https://ordnancesurvey.co.uk"
           },
           "format": "tiles",
           "URI": "https://api.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/EPSG%3A3857/Light%203857/{z}/{x}/{y}.png?key=4vmpYY1uFdimsAkyGwuaFbbHEyfvA5Gy"
@@ -205,7 +205,9 @@
           },
           "qID": "id",
           "infoj": [
-            {"field": "lsoa_code"}
+            {
+              "field": "lsoa_code"
+            }
           ],
           "table": "coop.vw_uk_glx_geodata_admin_lsoa",
           "mvt_cache": "coop.vw_uk_glx_geodata_admin_lsoa__mvts",
@@ -524,30 +526,30 @@
                   "title": "ECONOMY",
                   "columns": [
                     {
-                    "title": "Proximity of work to home",
-                    "field": "eco_proximity_work_home"
-                  },
-                  {
-                    "title": "Hours worked",
-                    "field": "eco_hours_worked"
-                  },
-                  {
-                    "title": "Household Income",
-                    "field": "eco_household_income"
-                  },
-                  {
-                    "title": "Vacant commercial units",
-                    "field": "eco_vacant_commercial_units"
-                  },
-                  {
-                    "title": "Free school meals",
-                    "field": "eco_free_school_meals"
-                  },
-                  {
-                    "title": "Unemployment",
-                    "field": "eco_unemployment"
-                  }
-                ]
+                      "title": "Proximity of work to home",
+                      "field": "eco_proximity_work_home"
+                    },
+                    {
+                      "title": "Hours worked",
+                      "field": "eco_hours_worked"
+                    },
+                    {
+                      "title": "Household Income",
+                      "field": "eco_household_income"
+                    },
+                    {
+                      "title": "Vacant commercial units",
+                      "field": "eco_vacant_commercial_units"
+                    },
+                    {
+                      "title": "Free school meals",
+                      "field": "eco_free_school_meals"
+                    },
+                    {
+                      "title": "Unemployment",
+                      "field": "eco_unemployment"
+                    }
+                  ]
                 }
               ]
             },
@@ -1700,23 +1702,23 @@
                   ]
                 },
                 {
-                    "title": "RELATIONSHIPS",
-                    "columns": [
-                      {
-                        "title": "Relationships",
-                        "field": "indrelat"
-                      },
-                      {
-                         "title": "Equality",
-                         "field": "indequal"
-                      },
-                      {
-                         "title": "Voice",
-                         "field": "indvoice"
-                      }
-                    ]
-                  }
-                ]
+                  "title": "RELATIONSHIPS",
+                  "columns": [
+                    {
+                      "title": "Relationships",
+                      "field": "indrelat"
+                    },
+                    {
+                      "title": "Equality",
+                      "field": "indequal"
+                    },
+                    {
+                      "title": "Voice",
+                      "field": "indvoice"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "dataview",
@@ -1786,30 +1788,30 @@
                   "title": "ECONOMY",
                   "columns": [
                     {
-                    "title": "Proximity of work to home",
-                    "field": "eco_proximity_work_home"
-                  },
-                  {
-                    "title": "Hours worked",
-                    "field": "eco_hours_worked"
-                  },
-                  {
-                    "title": "Household Income",
-                    "field": "eco_household_income"
-                  },
-                  {
-                    "title": "Vacant commercial units",
-                    "field": "eco_vacant_commercial_units"
-                  },
-                  {
-                    "title": "Free school meals",
-                    "field": "eco_free_school_meals"
-                  },
-                  {
-                    "title": "Unemployment",
-                    "field": "eco_unemployment"
-                  }
-                ]
+                      "title": "Proximity of work to home",
+                      "field": "eco_proximity_work_home"
+                    },
+                    {
+                      "title": "Hours worked",
+                      "field": "eco_hours_worked"
+                    },
+                    {
+                      "title": "Household Income",
+                      "field": "eco_household_income"
+                    },
+                    {
+                      "title": "Vacant commercial units",
+                      "field": "eco_vacant_commercial_units"
+                    },
+                    {
+                      "title": "Free school meals",
+                      "field": "eco_free_school_meals"
+                    },
+                    {
+                      "title": "Unemployment",
+                      "field": "eco_unemployment"
+                    }
+                  ]
                 }
               ]
             },
@@ -2053,7 +2055,7 @@
         "Zoomstack": {
           "display": true,
           "attribution": {
-              "© Ordanance Survey": "https://ordnancesurvey.co.uk"
+            "© Ordanance Survey": "https://ordnancesurvey.co.uk"
           },
           "format": "tiles",
           "URI": "https://api.ordnancesurvey.co.uk/mapping_api/v1/service/zxy/EPSG%3A3857/Light%203857/{z}/{x}/{y}.png?key=4vmpYY1uFdimsAkyGwuaFbbHEyfvA5Gy"
