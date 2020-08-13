@@ -867,6 +867,70 @@
               "title": "Address Local"
             }
           ]
+        },
+        "Office Locations": {
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "GEODATA",
+          "qID": "id",
+          "table": "geodata.cn_glx_geodata_property_office",
+          "cluster_label": "name_local",
+          "cluster_kmeans": 0.2,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "field": "name_local",
+              "title": "Name"
+            },
+            {
+              "field": "add_local",
+              "title": "Address"
+            },
+            {
+              "field": "type_local",
+              "title": "Type",
+              "inline": true
+            },
+            {
+              "field": "grade_loca",
+              "title": "Grade",
+              "inline": true
+            },
+            {
+              "field": "area_local",
+              "title": "Area",
+              "inline": true
+            },
+            {
+              "field": "floors",
+              "title": "Floors",
+              "inline": true
+            },
+            {
+              "field": "dvlp_local",
+              "title": "Developer",
+              "inline": true
+            },
+            {
+              "field": "servicefee",
+              "title": "Fee",
+              "inline": true
+            },
+            {
+              "field": "pk_space",
+              "title": "Parking Space",
+              "inline": true
+            },
+            {
+              "fieldfx": "'<a target=\"_blank\" href=\"' || url || '\">Link</a>'",
+              "type": "html"
+            },
+            {
+              "field": "cmt_local",
+              "title": "Comment"
+            }
+          ]
         }
       }
     },
