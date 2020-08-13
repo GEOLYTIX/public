@@ -707,10 +707,15 @@
     },
     "China": {
       "bounds": {
-        "north": 54,
-        "east": 143,
-        "south": 15,
-        "west": 77
+        "north": 60,
+        "east": 145,
+        "south": 10,
+        "west": 70
+      },
+      "view": {
+        "lat": 30,
+        "lng": 110,
+        "z": 4
       },
       "gazetteer": {
         "provider": "MAPBOX",
@@ -719,6 +724,7 @@
       "minZoom": 3,
       "maxZoom": 15,
       "showScaleBar": true,
+      "maskBounds": true,
       "layers": {
         "Mapbox Base": {
           "group": "Base maps",
@@ -759,6 +765,47 @@
         },
         "House Price Paid": {
           "template": "china_house_price_paid"
+        },
+        "Metro Stations": {
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "GEODATA",
+          "qID": "id",
+          "table": "geodata.cn_glx_geodata_transport_metro",
+          "cluster_label": "name_en",
+          "cluster_kmeans": 0.2,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "field": "name_en",
+              "title": "Name"
+            },
+            {
+              "field": "name_local",
+              "title": "Local"
+            },
+            {
+              "field": "line",
+              "title": "Line(s)",
+              "inline": true
+            },
+            {
+              "field": "transfer",
+              "title": "Transfer",
+              "inline": true
+            },
+            {
+              "field": "city_en",
+              "title": "City",
+              "inline": true
+            },
+            {
+              "field": "pass_daily",
+              "title": "Daily passenger",
+              "inline": true
+            }
+          ]
         }
       }
     },
