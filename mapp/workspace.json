@@ -837,6 +837,36 @@
               "inline": true
             }
           ]
+        },
+        "Coffee Stores": {
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "GEODATA",
+          "qID": "id",
+          "table": "geodata.cn_glx_geodata_retail_site",
+          "cluster_label": "store_name",
+          "cluster_kmeans": 0.2,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "field": "store_name",
+              "title": "Name"
+            },
+            {
+              "field": "city",
+              "title": "City",
+              "inline": true
+            },
+            {
+              "field": "address_en",
+              "title": "Address"
+            },
+            {
+              "field": "address_cn",
+              "title": "Address Local"
+            }
+          ]
         }
       }
     },
