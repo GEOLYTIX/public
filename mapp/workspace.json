@@ -923,6 +923,7 @@
               "inline": true
             },
             {
+              "field": "url",
               "fieldfx": "'<a target=\"_blank\" href=\"' || url || '\">Link</a>'",
               "type": "html"
             },
