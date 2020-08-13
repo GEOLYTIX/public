@@ -55,7 +55,7 @@
     "themes": {
       "Price per SqM": {
         "type": "graduated",
-        "field": "rmb_sqm",
+        "field": "price_sqm",
         "cat_arr": [
           {
             "value": 0,

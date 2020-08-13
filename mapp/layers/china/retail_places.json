@@ -14,8 +14,7 @@
     },
     {
       "title": "Name",
-      "field": "rp_name",
-      "inline": true
+      "field": "rp_name"
     },
     {
       "title": "Local Name",

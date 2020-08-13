@@ -14,8 +14,7 @@
     },
     {
       "title": "Name",
-      "field": "venue_name",
-      "inline": true
+      "field": "venue_name"
     },
     {
       "title": "Local Name",
