@@ -274,9 +274,6 @@
     "china_retail_places": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/retail_venues.json"
     },
-    "china_transport_stations": {
-      "src": "https://geolytix.github.io/public/mapp/layers/china/transport_stations.json"
-    },
     "china_house_price_paid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/house_price_paid.json"
     },
@@ -760,9 +757,6 @@
           "group": "Retail",
           "template": "china_retail_places"
         },
-        "Transport Stations": {
-          "template": "china_transport_stations"
-        },
         "House Price Paid": {
           "template": "china_house_price_paid"
         },
@@ -803,6 +797,43 @@
             {
               "field": "pass_daily",
               "title": "Daily passenger",
+              "inline": true
+            }
+          ]
+        },
+        "Transport Stations": {
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "GEODATA",
+          "qID": "id",
+          "table": "geodata.cn_glx_geodata_transport_station",
+          "cluster_label": "name_en",
+          "cluster_kmeans": 0.2,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "field": "name_en",
+              "title": "Name"
+            },
+            {
+              "field": "city_en",
+              "title": "City",
+              "inline": true
+            },
+            {
+              "field": "name_local",
+              "title": "Local",
+              "inline": true
+            },
+            {
+              "field": "city_local",
+              "title": "City Local",
+              "inline": true
+            },
+            {
+              "field": "add_local",
+              "title": "Address",
               "inline": true
             }
           ]
