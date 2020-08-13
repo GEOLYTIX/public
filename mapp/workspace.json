@@ -757,6 +757,63 @@
           "group": "Retail",
           "template": "china_retail_places"
         },
+        "Opportunity Scan": {
+          "group": "Retail",
+          "format": "mvt",
+          "dbs": "MAPP",
+          "table": "geodata.cn_glx_geodata_retail_opportunity_scan",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "style": {
+            "hidden": true,
+            "default": {
+              "fillOpacity": 0.5
+            },
+            "themes": {
+              "Score": {
+                "type": "graduated",
+                "field": "score",
+                "cat_arr": [
+                  {
+                    "value": 300,
+                    "label": "300 to 350",
+                    "style": {
+                      "fillColor": "#fee5d9"
+                    }
+                  },
+                  {
+                    "value": 350,
+                    "label": "350 to 375",
+                    "style": {
+                      "fillColor": "#fcae91"
+                    }
+                  },
+                  {
+                    "value": 375,
+                    "label": "375 to 400",
+                    "style": {
+                      "fillColor": "#fb6a4a"
+                    }
+                  },
+                  {
+                    "value": 400,
+                    "label": "400 to 450",
+                    "style": {
+                      "fillColor": "#de2d26"
+                    }
+                  },
+                  {
+                    "value": 450,
+                    "label": "Over 450",
+                    "style": {
+                      "fillColor": "#a50f15"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
         "House Price Paid": {
           "template": "china_house_price_paid"
         },
