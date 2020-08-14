@@ -823,6 +823,75 @@
             }
           }
         },
+        "Network Blueprint": {
+          "group": "Retail",
+          "dbs": "GEODATA",
+          "table": "geodata.cn_glx_geodata_retail_network_blueprint",
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.1,
+          "cluster_dbscan": 0.1,
+          "qID": "id",
+          "cluster_label": "id",
+          "infoj": [
+            {
+              "field": "score",
+              "title": "Score"
+            }
+          ],
+          "style": {
+            "hidden": true,
+            "default": {
+              "type": "dot",
+              "fillColor": "#999999"
+            },
+            "themes": {
+              "Score": {
+                "type": "graduated",
+                "field": "score",
+                "aggregate": "avg",
+                "cat_arr": [
+                  {
+                    "value": 250,
+                    "label": "300 to 350",
+                    "style": {
+                      "fillColor": "#fee5d9"
+                    }
+                  },
+                  {
+                    "value": 275,
+                    "label": "350 to 375",
+                    "style": {
+                      "fillColor": "#fcae91"
+                    }
+                  },
+                  {
+                    "value": 300,
+                    "label": "375 to 400",
+                    "style": {
+                      "fillColor": "#fb6a4a"
+                    }
+                  },
+                  {
+                    "value": 325,
+                    "label": "400 to 450",
+                    "style": {
+                      "fillColor": "#de2d26"
+                    }
+                  },
+                  {
+                    "value": 350,
+                    "label": "Over 450",
+                    "style": {
+                      "fillColor": "#a50f15"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
         "Trade Zones": {
           "group": "Retail",
           "format": "mvt",
