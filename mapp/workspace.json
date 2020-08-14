@@ -823,6 +823,63 @@
             }
           }
         },
+        "Trade Zones": {
+          "group": "Retail",
+          "format": "mvt",
+          "dbs": "MAPP",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "table": "geodata.cn_glx_geodata_retail_trade_zone_hex",
+          "style": {
+            "hidden": true,
+            "default": {
+              "fillOpacity": 0.5
+            },
+            "themes": {
+              "Score": {
+                "type": "graduated",
+                "field": "score",
+                "cat_arr": [
+                  {
+                    "value": 0,
+                    "label": "0 to 5000",
+                    "style": {
+                      "fillColor": "#fee5d9"
+                    }
+                  },
+                  {
+                    "value": 5000,
+                    "label": "5000 to 10000",
+                    "style": {
+                      "fillColor": "#fcae91"
+                    }
+                  },
+                  {
+                    "value": 10000,
+                    "label": "10000 to 50000",
+                    "style": {
+                      "fillColor": "#fb6a4a"
+                    }
+                  },
+                  {
+                    "value": 50000,
+                    "label": "50000 to 100000",
+                    "style": {
+                      "fillColor": "#de2d26"
+                    }
+                  },
+                  {
+                    "value": 100000,
+                    "label": "Over 100000",
+                    "style": {
+                      "fillColor": "#a50f15"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
         "House Price Paid": {
           "template": "china_house_price_paid"
         },
