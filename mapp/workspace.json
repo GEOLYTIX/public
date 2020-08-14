@@ -706,7 +706,7 @@
       "bounds": {
         "north": 60,
         "east": 145,
-        "south": 10,
+        "south": 0,
         "west": 70
       },
       "view": {
@@ -744,6 +744,15 @@
         "HERE Hybrid": {
           "group": "Base maps",
           "template": "HERE Hybrid"
+        },
+        "Sea Borders": {
+          "group": "Base maps",
+          "display": true,
+          "format": "mvt",
+          "dbs": "MAPP",
+          "table": "geodata.cn_glx_geodata_admin_sealines",
+          "geom": "geom_l_3857",
+          "srid": "3857"
         },
         "Demography Grid": {
           "template": "china_demography_grid"
