@@ -31,6 +31,11 @@
       background-color: #f0f0f0;
     }
 
+    #pageformat {
+      float: right;
+      text-decoration: underline;
+    }
+
     .a4 {
       width: 297mm;
       height: 209mm;
@@ -287,20 +292,13 @@
 
   </div>
 
-  <a id="pageformat" href="">Print Layout</div>
+  <a id="pageformat">Print Layout</div>
 
 </body>
 
 <script>
 
   window.onload = () => {
-
-    // document.getElementById('pageformat').onclick = e => {
-    //   // document.body.classList.toggle('a4')
-    //   window.print()
-    // }
-
-    console.log(window.location)
 
     document.getElementById('date_attrib').textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 
@@ -313,9 +311,12 @@
       params[key] = decodeURI(value);
     })
 
-    console.log(params)
-
-    if (params.layout === 'a4') document.body.classList.add('a4')
+    if (params.layout === 'a4') {
+      document.body.classList.add('a4')
+      document.getElementById('pageformat').remove()
+    } else {
+      document.getElementById('pageformat').href = window.location.href + '&layout=a4'
+    }
 
     const xyz = _xyz({
       host: params.host,
