@@ -1616,6 +1616,58 @@
             }
           ]
         },
+        "Post Offices": {
+          "group": "Retail Points",
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "geodata.uk_glx_open_locations_postoffice",
+          "qID": "id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "branchname",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "branchname",
+              "title": "Branch"
+            },
+            {
+              "title": "Address",
+              "type": "title"
+            },
+            {
+              "field": "add_one"
+            },
+            {
+              "field": "add_two"
+            },
+            {
+              "field": "add_three"
+            },
+            {
+              "field": "add_four"
+            },
+            {
+              "field": "postcode"
+            },
+            {
+              "field": "googlelink",
+              "fieldfx": "'<a style=\"font-weight: 800\" target=\"_blank\" href=\"' || googlelink || '\">Google Maps</a>'",
+              "type": "html"
+            }
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#E51636",
+              "scale": 1
+            }
+          }
+        },
         "Leisure POI": {
           "group": "POI",
           "template": "uk_leisure_poi"
