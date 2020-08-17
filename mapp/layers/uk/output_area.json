@@ -311,7 +311,6 @@
     }
   ],
   "style": {
-    "hidden": true,
     "default": {
       "strokeWidth": 0.5,
       "strokeColor": "#000000",
@@ -566,6 +565,47 @@
             }
           }
         }
+      },
+      "Age 10 to 14": {
+        "type": "graduated",
+        "field": "age10to14",
+        "cat_arr": [
+          {
+            "value": 0,
+            "label": "0 to 5",
+            "style": {
+              "fillColor": "#edf8fb"
+            }
+          },
+          {
+            "value": 5,
+            "label": "5 to 10",
+            "style": {
+              "fillColor": "#b2e2e2"
+            }
+          },
+          {
+            "value": 10,
+            "label": "10 to 25",
+            "style": {
+              "fillColor": "#66c2a4"
+            }
+          },
+          {
+            "value": 25,
+            "label": "25 to 50",
+            "style": {
+              "fillColor": "#2ca25f"
+            }
+          },
+          {
+            "value": 50,
+            "label": "50 and over",
+            "style": {
+              "fillColor": "#006d2c"
+            }
+          }
+        ]
       }
     }
   }
