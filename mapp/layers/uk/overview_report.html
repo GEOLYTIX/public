@@ -269,7 +269,7 @@
 
     <div id="Map"></div>
 
-    <div id="key_statistics" class="panel">
+    <div id="key_statistics">
       <div class="panel_header">Key Statistics</div>
     </div>
 
@@ -285,9 +285,9 @@
       <div class="panel_header chart">Geodemographic profile (15mins)</div>
     </div>
 
-    <div id="pageformat">Layout: Screen</div>
-
   </div>
+
+  <!-- <div id="pageformat">Layout: Screen</div> -->
 
 </body>
 
@@ -295,9 +295,9 @@
 
   window.onload = () => {
 
-    document.getElementById('pageformat').onclick = e => {
-      document.body.classList.toggle('a4')
-    }
+    // document.getElementById('pageformat').onclick = e => {
+    //   document.body.classList.toggle('a4')
+    // }
 
     document.getElementById('date_attrib').textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 
@@ -309,6 +309,8 @@
     window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, (match, key, value) => {
       params[key] = decodeURI(value);
     })
+
+    if (params.layout === 'a4') document.body.classList.add('a4')
 
     const xyz = _xyz({
       host: params.host,
