@@ -1150,6 +1150,31 @@
               "title": "Comment"
             }
           ]
+        },
+        "Grade A Office Locations": {
+          "format": "cluster",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "dbs": "GEODATA",
+          "qID": "id",
+          "table": "geodata.cn_glx_geodata_property_office_gradea",
+          "cluster_label": "name_local",
+          "cluster_kmeans": 0.2,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "field": "city",
+              "title": "City"
+            },
+            {
+              "field": "name_local",
+              "title": "Name"
+            },
+            {
+              "field": "add_local",
+              "title": "Address"
+            }
+          ]
         }
       }
     },
