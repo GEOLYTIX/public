@@ -287,7 +287,7 @@
 
   </div>
 
-  <!-- <div id="pageformat">Layout: Screen</div> -->
+  <a id="pageformat" href="">Print Layout</div>
 
 </body>
 
@@ -296,8 +296,11 @@
   window.onload = () => {
 
     // document.getElementById('pageformat').onclick = e => {
-    //   document.body.classList.toggle('a4')
+    //   // document.body.classList.toggle('a4')
+    //   window.print()
     // }
+
+    console.log(window.location)
 
     document.getElementById('date_attrib').textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
 
