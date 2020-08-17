@@ -757,6 +757,65 @@
         "Demography Grid": {
           "template": "china_demography_grid"
         },
+        "Ambient Population": {
+          "format": "mvt",
+          "dbs": "MAPP",
+          "tables": {
+            "8": null,
+            "9": "geodata.cn_glx_geodata_demographics_ambient_pop"
+          },
+          "geom": "geom_3857",
+          "srid": "3857",
+          "style": {
+            "hidden": true,
+            "default": {
+              "fillOpacity": 0.5
+            },
+            "themes": {
+              "Ambient Population": {
+                "type": "graduated",
+                "field": "g08_18",
+                "cat_arr": [
+                  {
+                    "value": 0,
+                    "label": "300 to 350",
+                    "style": {
+                      "fillColor": "#fee5d9"
+                    }
+                  },
+                  {
+                    "value": 10,
+                    "label": "350 to 375",
+                    "style": {
+                      "fillColor": "#fcae91"
+                    }
+                  },
+                  {
+                    "value": 100,
+                    "label": "375 to 400",
+                    "style": {
+                      "fillColor": "#fb6a4a"
+                    }
+                  },
+                  {
+                    "value": 1000,
+                    "label": "400 to 450",
+                    "style": {
+                      "fillColor": "#de2d26"
+                    }
+                  },
+                  {
+                    "value": 10000,
+                    "label": "Over 450",
+                    "style": {
+                      "fillColor": "#a50f15"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
         "Retail Places": {
           "group": "Retail",
           "template": "china_retail_venues"
