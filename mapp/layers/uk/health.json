@@ -50,9 +50,6 @@
   "cluster_kmeans": 0.02,
   "style": {
     "hidden": true,
-    "highlight": {
-      "scale": 0.2
-    },
     "themes": {
       "POI Type": {
         "field": "poi_type",
@@ -62,12 +59,12 @@
           "Hospital": {
             "label": "Hospital",
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_health_hospital.svg?sanitize=true",
-            "scale": 0.2
+            "scale": 0.1
           },
           "Pharmacy": {
             "label": "Pharmacy",
             "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/poi_pin_filled/poi_health_pharmacy.svg?sanitize=true",
-            "scale": 0.2
+            "scale": 0.1
           }
         }
       }
