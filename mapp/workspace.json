@@ -492,7 +492,7 @@
       "gazetteer": {
         "provider": "MAPBOX",
         "placeholder": "e.g. Melbourne",
-        "code": "AU"
+        "country": "AU"
       },
       "minZoom": 3,
       "maxZoom": 20,
@@ -1221,7 +1221,7 @@
       },
       "gazetteer": {
         "provider": "GOOGLE",
-        "code": "KR",
+        "country": "KR",
         "placeholder": "e.g. Seoul Square",
         "optional": true
       },
@@ -1488,7 +1488,7 @@
       "name": "United Kingdom",
       "gazetteer": {
         "provider": "GOOGLE",
-        "code": "GB",
+        "country": "GB",
         "placeholder": "eg. London"
       },
       "bounds": {
