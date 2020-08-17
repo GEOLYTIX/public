@@ -37,8 +37,9 @@
     }
 
     #pageformat {
-      float: right;
+      right: 10px;
       text-decoration: underline;
+      position: absolute;
     }
 
     #Grid {
@@ -156,7 +157,7 @@
 
       body:not(.a4) #Grid {
         grid-auto-columns: 100%;
-        grid-template-rows: min-content minmax(500px, auto) repeat(6,min-content) 75px;
+        grid-template-rows: min-content minmax(500px, auto) repeat(6, min-content) 75px;
       }
 
       body:not(.a4) #report_header {
