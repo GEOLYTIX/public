@@ -616,7 +616,7 @@
         {
           "field": "non_white",
           "fieldfx": "100*(SUM(pop__11) - SUM(ret_white_tot__11))/SUM(pop__11)",
-          "title": "% Non-White"
+          "title": "% BAME"
         },
         {
           "field": "own_home",
