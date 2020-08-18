@@ -250,17 +250,23 @@
     "uk_sites_social_grade_breakdown": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_social_grade_breakdown.sql"
     },
-    "uk_sites_stores_supermarkets": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_supermarkets.sql"
-    },
-    "uk_sites_stores_convenience": {
-      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_convenience.sql"
+    "uk_worker_report": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/worker_report.html"
     },
     "uk_sites_workers_radial_count": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_radial_count.sql"
     },
     "uk_sites_workers_split": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split.sql"
+    },
+    "uk_sites_workers_split_labels": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split_labels.sql"
+    },
+    "uk_sites_stores_supermarkets": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_supermarkets.sql"
+    },
+    "uk_sites_stores_convenience": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_convenience.sql"
     },
     "uk_sites_retail_places_nearby": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_retail_places_nearby.sql"
@@ -273,6 +279,9 @@
     },
     "china_retail_places": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/retail_venues.json"
+    },
+    "china_transport_stations": {
+      "src": "https://geolytix.github.io/public/mapp/layers/china/transport_stations.json"
     },
     "china_house_price_paid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/house_price_paid.json"
@@ -1792,6 +1801,13 @@
               }
             },
             {
+              "type": "report",
+              "report": {
+                "name": "Worker Report",
+                "template": "uk_worker_report"
+              }
+            },
+            {
               "field": "site_name",
               "title": "Site Name",
               "edit": true
@@ -1820,6 +1836,32 @@
                   "New Store",
                   "Replacement"
                 ]
+              }
+            },
+            {
+              "name": "250m buffer",
+              "field": "buffer_250",
+              "fieldfx": "ST_asGeoJson(st_buffer(geom_4326::geography,250)::geometry)",
+              "type": "geometry",
+              "style": {
+                "strokeColor": "#333",
+                "fillColor": "#fff",
+                "strokeWidth": 2,
+                "fillOpacity": 0,
+                "lineDash": [8, 8]
+              }
+            },
+            {
+              "name": "500m buffer",
+              "field": "buffer_500",
+              "fieldfx": "ST_asGeoJson(st_buffer(geom_4326::geography,500)::geometry)",
+              "type": "geometry",
+              "style": {
+                "strokeColor": "#333",
+                "fillColor": "#fff",
+                "strokeWidth": 2,
+                "fillOpacity": 0,
+                "lineDash": [8, 8]
               }
             },
             {
@@ -2161,6 +2203,7 @@
                   "18 to 24 yrs",
                   "25 to 29 yrs",
                   "30 to 44 yrs",
+                  "30 to 44 yrs",
                   "45 to 59 yrs",
                   "60 yrs +"
                 ],
@@ -2170,6 +2213,7 @@
                       "< 18 yrs",
                       "18 to 24 yrs",
                       "25 to 29 yrs",
+                      "30 to 44 yrs",
                       "30 to 44 yrs",
                       "45 to 59 yrs",
                       "60 yrs +"
@@ -2349,6 +2393,73 @@
                   }
                 ]
               }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Workers Radial Count",
+              "target": "workers_radial_count",
+              "layout": "fitColumns",
+              "query": "uk_sites_workers_radial_count",
+              "columns": [
+                {
+                  "title": "Distance",
+                  "field": "distance"
+                },
+                {
+                  "title": "Workers",
+                  "field": "workers"
+                }
+              ]
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Workers Split",
+              "query": "uk_sites_workers_split",
+              "target": "occupation_split",
+              "chart": {
+                "options": {
+                  "legend": {
+                    "display": false
+                  },
+                  "layout": {
+                    "padding": {
+                      "left": 5,
+                      "right": 5,
+                      "top": 10,
+                      "bottom": 15
+                    }
+                  }
+                },
+                "type": "pie",
+                "labels": ["Agriculture", "Mining", "Manufacturing", "Electricity", "Water", "Construction", "Wholesale", "Transport", "Accommodation", "IT", "Finance", "Real Estate", "Professional", "Administrative", "Public Admin", "Education", "Human Health", "Arts", "Other"],
+                "datasets": [
+                  {
+                    "borderWidth": 0,
+                    "fields": ["Agriculture", "Mining", "Manufacturing", "Electricity", "Water", "Construction", "Wholesale", "Transport", "Accommodation", "IT", "Finance", "Real Estate", "Professional", "Administrative", "Public Admin", "Education", "Human Health", "Arts", "Other"],
+                    "backgroundColor": ["#FF6600", "#FF8300", "#FF9F00", "#FED800", "#EBFE00", "#B1FD00", "#78FD00", "#06FB00", "#00F869", "#00F6A0", "#00F4D6", "#00DAF2", "#00A2F0", "#006BED", "#0035EA", "#3300E3", "#6500E0", "#9500DC", "#C300D9"]
+                  }
+                ]
+              }
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Workers Split Breakdown",
+              "target": "occupation_split_breakdown",
+              "layout": "fitColumns",
+              "query": "uk_sites_workers_split_labels",
+              "columns": [
+                {
+                  "title": "Metric",
+                  "field": "label"
+                },
+                {
+                  "title": "Value",
+                  "field": "val"
+                }
+              ]
             },
             {
               "type": "streetview"
