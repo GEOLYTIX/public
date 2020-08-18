@@ -65,7 +65,7 @@ where sit.id = ${id})
 
 SELECT 
     UNNEST( ARRAY [
-        'Agriculture, forestry and fishing',
+    'Agriculture, forestry and fishing',
 		'Mining and quarrying',
 		'Manufacturing',
 		'Electricity, gas, steam and air conditioning supply',
@@ -86,25 +86,25 @@ SELECT
 		'Other service activities'] ) AS label,
 
     UNNEST( ARRAY [
-		tab.agriculture,
-		tab.mining,
-		tab.manufacturing,
-		tab.electricity,
-		tab.water,
-		tab.construction,
-		tab.wholesale,
-		tab.transport,
-		tab.accommodation,
-		tab.it,
-		tab.finance,
-		tab.real_estate,
-		tab.professional,
-		tab.administrative,
-		tab.public_admin,
-		tab.education,
-		tab.human_health,
-		tab.arts,
-		tab.other
-        ] ) AS val
+		tab.agriculture || '%',
+		tab.mining || '%',
+		tab.manufacturing || '%',
+		tab.electricity || '%',
+		tab.water || '%',
+		tab.construction || '%',
+		tab.wholesale || '%',
+		tab.transport || '%',
+		tab.accommodation || '%',
+		tab.it || '%',
+		tab.finance || '%',
+		tab.real_estate || '%',
+		tab.professional || '%',
+		tab.administrative || '%',
+		tab.public_admin || '%',
+		tab.education || '%',
+		tab.human_health || '%',
+		tab.arts || '%',
+		tab.other || '%'
+    ] ) AS val
         
 FROM tab;
