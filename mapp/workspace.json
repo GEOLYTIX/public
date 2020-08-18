@@ -1102,6 +1102,36 @@
           "cluster_label": "name_en",
           "cluster_kmeans": 0.2,
           "cluster_dbscan": 0.2,
+          "style": {
+            "hidden": true,
+            "themes": {
+              "Type": {
+                "type": "categorized",
+                "field": "trans_type",
+                "other": true,
+                "cat": {
+                  "Airport": {
+                    "label": "Airport",
+                    "style": {
+                      "svg": "https://geolytix.github.io/public/icons/plane.svg"
+                    }
+                  },
+                  "Train Station": {
+                    "label": "Train Station",
+                    "style": {
+                      "svg": "https://geolytix.github.io/public/icons/metro.svg"
+                    }
+                  },
+                  "Coach Station": {
+                    "label": "Coach Station",
+                    "style": {
+                      "svg": "https://geolytix.github.io/public/icons/bus.svg"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "infoj": [
             {
               "field": "name_en",
