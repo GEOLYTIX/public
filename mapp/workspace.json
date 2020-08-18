@@ -1056,6 +1056,11 @@
           "cluster_label": "name_en",
           "cluster_kmeans": 0.2,
           "cluster_dbscan": 0.2,
+          "style": {
+            "default": {
+              "svg": "https://geolytix.github.io/public/icons/metro.svg"
+            }
+          },
           "infoj": [
             {
               "field": "name_en",
