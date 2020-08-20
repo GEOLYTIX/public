@@ -1,5 +1,8 @@
 {
   "templates": {
+    "blog": {
+      "src": "https://geolytix.github.io/public/blog.html"
+    },
     "Mapbox Base": {
       "format": "tiles",
       "URI": "/styles/v1/dbauszus/ciozrimi3002bdsm8bjtn2v1y/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com",
