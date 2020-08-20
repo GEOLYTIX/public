@@ -54,7 +54,6 @@
     "Riverford": {
       "minZoom": 3,
       "maxZoom": 15,
-      "showScaleBar": true,
       "layers": {
         "Mapbox Base": {
           "template": "Mapbox Base",
