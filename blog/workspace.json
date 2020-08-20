@@ -195,12 +195,6 @@
               "title": "Organic pepper farmer"
             },
             {
-              "type": "geometry",
-              "field": "geom_4326",
-              "fieldfx": "ST_asGeoJson(geom_4326)",
-              "name": "Country of origin"
-            },
-            {
               "field": "updated",
               "title": "Offer valid on",
               "inline": true,
