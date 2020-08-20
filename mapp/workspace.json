@@ -271,6 +271,9 @@
     "uk_sites_retail_places_nearby": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_retail_places_nearby.sql"
     },
+    "china_district_boundaries": {
+      "src": "https://geolytix.github.io/public/mapp/layers/china/district_boundaries.json"
+    },
     "china_demography_grid": {
       "src": "https://geolytix.github.io/public/mapp/layers/china/demography_grid.json"
     },
@@ -762,6 +765,9 @@
           "table": "geodata.cn_glx_geodata_admin_sealines",
           "geom": "geom_l_3857",
           "srid": "3857"
+        },
+        "District Boundaries": {
+          "template": "china_district_boundaries"
         },
         "Demography Grid": {
           "template": "china_demography_grid"
