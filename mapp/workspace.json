@@ -262,6 +262,9 @@
     "uk_sites_workers_split_labels": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_workers_split_labels.sql"
     },
+    "uk_competition_report": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/competition_report.html"
+    },
     "uk_sites_stores_supermarkets": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/sites_stores_supermarkets.sql"
     },
@@ -1846,6 +1849,13 @@
               "report": {
                 "name": "Worker Report",
                 "template": "uk_worker_report"
+              }
+            },
+            {
+              "type": "report",
+              "report": {
+                "name": "Competition Report",
+                "template": "uk_competition_report"
               }
             },
             {
