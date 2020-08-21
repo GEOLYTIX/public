@@ -13,5 +13,4 @@ left join geodata.uk_glx_open_retail_points sto
 on st_intersects(sit.isoline_15min, sto.geom_p_4326)
 and sto.store_type = 'Supermarket'
 where sit.id =  ${id}
-and sto.size_band <>'< 3,013 ft2 (280m2)'
 order by st_distance(sit.geom_4326, sto.geom_p_4326, true);
