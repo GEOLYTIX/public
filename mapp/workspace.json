@@ -2503,6 +2503,66 @@
               ]
             },
             {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Supermarkets within 15min",
+              "target": "supermarkets_15min",
+              "layout": "fitColumns",
+              "query": "uk_sites_stores_supermarkets",
+              "columns": [
+                {
+                  "title": "Name",
+                  "field": "store_name"
+                },
+                {
+                  "title": "Fascia",
+                  "field": "fascia"
+                },
+                {
+                  "title": "Size (sqft)",
+                  "field": "size_sqft"
+                },
+                {
+                  "title": "Distance (mi)",
+                  "field": "distance"
+                },
+                {
+                  "title": "DT Band",
+                  "field": "band"
+                }
+              ]
+            },
+            {
+              "group": "Dataviews",
+              "type": "dataview",
+              "title": "Convenience within 15min",
+              "target": "convenience_15min",
+              "layout": "fitColumns",
+              "query": "uk_sites_stores_convenience",
+              "columns": [
+                {
+                  "title": "Name",
+                  "field": "store_name"
+                },
+                {
+                  "title": "Fascia",
+                  "field": "fascia"
+                },
+                {
+                  "title": "Size (sqft)",
+                  "field": "size_sqft"
+                },
+                {
+                  "title": "Distance (mi)",
+                  "field": "distance"
+                },
+                {
+                  "title": "DT Band",
+                  "field": "band"
+                }
+              ]
+            },
+            {
               "type": "streetview"
             }
           ],
