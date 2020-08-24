@@ -43,6 +43,30 @@
       "type": "integer"
     },
     {
+      "name": "Primary Catchment",
+      "field": "geom_4326_prim",
+      "fieldfx": "ST_asGeoJson(geom_4326_prim)",
+      "type": "geometry",
+      "style": {
+        "strokeColor": "#e65100",
+        "fillColor": "#e65100",
+        "strokeWidth": 2,
+        "fillOpacity": 0.2
+      }
+    },
+    {
+      "name": "Secondary Catchment",
+      "field": "geom_4326_second",
+      "fieldfx": "ST_asGeoJson(geom_4326_second)",
+      "type": "geometry",
+      "style": {
+        "strokeColor": "#ffd54f",
+        "fillColor": "#ffd54f",
+        "strokeWidth": 2,
+        "fillOpacity": 0.2
+      }
+    },
+    {
       "title": "Profile",
       "type": "dataview",
       "target": "location",
