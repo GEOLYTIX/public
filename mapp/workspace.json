@@ -151,6 +151,15 @@
     "uk_workers_occupation_split": {
       "template": "SELECT agriculture, mining, manufacturing, electricity, water, construction, wholesale, transport, accommodation, it, finance, real_estate, professional, administrative, public_admin, education, human_health, arts, other, households, extraterritorial FROM geodata.uk_glx_geodata_workers_hybrid_zone WHERE id = ${id};"
     },
+    "uk_polygon_worker": {
+      "template": "select sum(workers) from mapp.uk_polygons, geodata.uk_glx_geodata_workers_hybrid_zone where st_intersects(mapp.uk_polygons.geom_3857, geodata.uk_glx_geodata_workers_hybrid_zone.geom_3857) and mapp.uk_polygons.id = ${id}"
+    },
+    "uk_polygon_workerkm2": {
+      "template": "select round(avg(workerskm2),2) from mapp.uk_polygons, geodata.uk_glx_geodata_workers_hybrid_zone where st_intersects(mapp.uk_polygons.geom_3857, geodata.uk_glx_geodata_workers_hybrid_zone.geom_3857) and mapp.uk_polygons.id = ${id}"
+    },
+    "uk_polygon_workers_split": {
+      "src": "https://geolytix.github.io/public/mapp/layers/uk/polygon_workers_split.sql"
+    },
     "uk_university_building": {
       "src": "https://geolytix.github.io/public/mapp/layers/uk/university_building.json"
     },
@@ -1685,6 +1694,125 @@
         "Worker Hybrid Zones": {
           "group": "Demography",
           "template": "uk_workers"
+        },
+        "Polygon Statistics": {
+          "group": "Demography",
+          "format": "mvt",
+          "dbs": "MAPP",
+          "table": "mapp.uk_polygons",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "edit": {
+            "polygon": true,
+            "circle": true,
+            "delete": true
+          },
+          "qID": "id",
+          "infoj": [
+            {
+              "title": "Workers",
+              "query": "uk_polygon_worker",
+              "inline": true
+            },
+            {
+              "title": "Workers KM2",
+              "query": "uk_polygon_workerkm2",
+              "inline": true
+            },
+            {
+              "type": "dataview",
+              "target": "location",
+              "query": "uk_polygon_workers_split",
+              "chart": {
+                "type": "doughnut",
+                "cutoutPercentage": 36,
+                "options": {
+                  "title": {
+                    "display": true,
+                    "text": "Occupation Splits",
+                    "position": "top"
+                  },
+                  "legend": {
+                    "display": false
+                  },
+                  "plugins": {
+                    "datalabels": {
+                      "display": false
+                    }
+                  }
+                },
+                "labels": [
+                  "Agriculture, forestry and fishing",
+                  "Mining and quarrying",
+                  "Manufacturing",
+                  "Electricity, gas, steam and air conditioning supply",
+                  "Water supply; Sewerage, waste management and remediation activities",
+                  "Construction",
+                  "Wholesale and retail trade; Repair of motor vehicles and motorcycles",
+                  "Transportation and storage",
+                  "Accommodation and food service activities",
+                  "Information and communication",
+                  "Financial and insurance activities",
+                  "Real estate activities",
+                  "Professional, scientific and technical activities",
+                  "Administrative and support service activities",
+                  "Public administration and defence; Compulsory social security",
+                  "Education",
+                  "Human health and social work activities",
+                  "Arts, entertainment and recreation",
+                  "Other service activities"
+                ],
+                "datasets": [
+                  {
+                    "fields": [
+                      "Agriculture",
+                      "Mining",
+                      "Manufacturing",
+                      "Electricity",
+                      "Water",
+                      "Construction",
+                      "Wholesale",
+                      "Transport",
+                      "Accommodation",
+                      "IT",
+                      "Finance",
+                      "Real Estate",
+                      "Professional",
+                      "Administrative",
+                      "Public Admin",
+                      "Education",
+                      "Human Health",
+                      "Arts",
+                      "Other"
+                    ],
+                    "backgroundColor": [
+                      "#a6cee3",
+                      "#1f78b4",
+                      "#b2df8a",
+                      "#33a02c",
+                      "#fb9a99",
+                      "#e31a1c",
+                      "#fdbf6f",
+                      "#ff7f00",
+                      "#cab2d6",
+                      "#6a3d9a",
+                      "#ffff99",
+                      "#b15928",
+                      "#8dd3c7",
+                      "#ffffb3",
+                      "#bebada",
+                      "#fb8072",
+                      "#80b1d3",
+                      "#fdb462",
+                      "#b3de69"
+                    ],
+                    "borderColor": "#C0B4A7",
+                    "spanGaps": true
+                  }
+                ]
+              }
+            }
+          ]
         },
         "University building": {
           "group": "Education",
