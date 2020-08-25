@@ -52,8 +52,11 @@
             "display": false
           },
           "plugins": {
+            "annotation": {
+              "display": false
+            },
             "datalabels": {
-                "display": false
+              "display": false
             }
           }
         },
