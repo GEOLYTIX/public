@@ -50,6 +50,11 @@
           },
           "legend": {
             "display": false
+          },
+          "plugins": {
+            "datalabels": {
+                "display": false
+            }
           }
         },
         "labels": [
