@@ -791,6 +791,14 @@
                       0.95
                     ]
                   },
+                  "Spar": {
+                    "svg": "https://geolytix.github.io/MapIcons/brands/spar.svg",
+                    "scale": 0.1,
+                    "anchor": [
+                      0.5,
+                      0.95
+                    ]
+                  },
                   "Tesco": {
                     "svg": "https://geolytix.github.io/MapIcons/brands/tesco.svg",
                     "scale": 0.1,
