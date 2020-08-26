@@ -307,7 +307,6 @@
     }
   ],
   "style": {
-    "hidden": true,
     "default": {
       "stroke": false,
       "fillColor": "#5A9367",
