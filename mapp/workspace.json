@@ -2715,6 +2715,35 @@
               }
             }
           }
+        },
+        "Area Stats": {
+          "format": "mvt",
+          "dbs": "MAPP",
+          "table": "mapp.uk_area_stats",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "edit": {
+            "polygon": true,
+            "delete": true,
+            "geometry": true
+          },
+          "qID": "id",
+          "infoj": [
+            {
+              "title": "Total Area (m2)",
+              "field": "area",
+              "fieldfx": "st_area(geom_3857)",
+              "inline": true,
+              "type": "numeric"
+            },
+            {
+              "title": "Total Length (m)",
+              "field": "perimeter",
+              "fieldfx": "st_perimeter(geom_3857)",
+              "inline": true,
+              "type": "numeric"
+            }
+          ]
         }
       }
     }
