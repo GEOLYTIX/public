@@ -1,5 +1,7 @@
 # London
 
+I live in London, UK.
+
 <script>
 map.getView().animate({
   center: ol.proj.fromLonLat([-0.2416802, 51.5287718]),
