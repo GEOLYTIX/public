@@ -1,6 +1,6 @@
 # London
 
-I live in London, UK.
+I live in London and work for [GEOLYTIX](https://geolytix.co.uk/).
 
 Each *stanza* is a markdown file with a hidden script tag.
 
