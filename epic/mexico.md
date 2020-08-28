@@ -10,6 +10,6 @@ The map data is from [OpenStreetMap contributors](https://www.openstreetmap.org/
 map.getView().animate({
   center: ol.proj.fromLonLat([-99.4238064,19.390519]),
   zoom: 10,
-  duration: 1000
+  duration: 3000
 });
 </script>
