@@ -1,7 +1,8 @@
 # This text has a script
 
 <script>
-
-console.log('foo');
-
+map.getView().animate({
+      center: [0, 51],
+      duration: 100
+});
 </script>
