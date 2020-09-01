@@ -128,10 +128,6 @@
             },
             {
               "field": "url",
-              "title": "URL"
-            },
-            {
-              "field": "url",
               "fieldfx": "'<a style=\"font-weight: 800\" target=\"_blank\" href=\"' || url || '\">URL</a>'",
               "type": "html"
             }
