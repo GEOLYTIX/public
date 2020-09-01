@@ -143,7 +143,7 @@
         "Competitors": {
           "format": "cluster",
           "dbs": "MAPP",
-          "table": "herm.hebe_mapp_competitor ",
+          "table": "herm.hebe_mapp_competitors",
           "qID": "id",
           "geom": "geom_p_4326",
           "srid": "4326",
