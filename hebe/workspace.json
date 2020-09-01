@@ -103,12 +103,37 @@
               "type": "key"
             },
             {
-              "field": "store_name",
-              "title": "Store Name"
+              "field": "retailer",
+              "title": "Retailer"
+            },
+            {
+              "field": "fascia",
+              "title": "Fascia"
             },
             {
               "field": "store_name",
               "title": "Store Name"
+            },
+            {
+              "field": "address",
+              "title": "Address"
+            },
+            {
+              "field": "town",
+              "title": "Town"
+            },
+            {
+              "field": "postcode",
+              "title": "Postcode"
+            },
+            {
+              "field": "url",
+              "title": "URL"
+            },
+            {
+              "field": "url",
+              "fieldfx": "'<a style=\"font-weight: 800\" target=\"_blank\" href=\"' || url || '\">URL</a>'",
+              "type": "html"
             }
           ],
           "style": {
