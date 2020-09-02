@@ -1,0 +1,282 @@
+{
+  "templates": {
+    "Mapbox Base": {
+      "format": "tiles",
+      "URI": "/styles/v1/dbauszus/ciozrimi3002bdsm8bjtn2v1y/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com",
+      "attribution": {
+        "© Mapbox": "https://www.mapbox.com/about/maps",
+        "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      }
+    },
+    "Mapbox Colour": {
+      "format": "tiles",
+      "URI": "/styles/v1/dbauszus/ck440h6990nii1co520go20i2/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com",
+      "attribution": {
+        "© Mapbox": "https://www.mapbox.com/about/maps",
+        "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      }
+    },
+    "Mapbox Label": {
+      "format": "tiles",
+      "URI": "/styles/v1/dbauszus/cj9puo8pr5o0c2sovhdwhkc7z/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com",
+      "attribution": {
+        "© Mapbox": "https://www.mapbox.com/about/maps",
+        "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      },
+      "style": {
+        "zIndex": 20
+      }
+    },
+    "HERE Imagery": {
+      "format": "tiles",
+      "URI": "/maptile/2.1/maptile/newest/satellite.day/{z}/{x}/{y}/256/png8?&provider=HERE&host=https://1.aerial.maps.api.here.com",
+      "attribution": {
+        "© Here": "https://www.here.com/",
+        "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      }
+    },
+    "HERE Hybrid": {
+      "format": "tiles",
+      "URI": "/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?&provider=HERE&host=https://1.aerial.maps.api.here.com",
+      "attribution": {
+        "© Here": "https://www.here.com/",
+        "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+      }
+    }
+  },
+  "locales": {
+    "UK": {
+      "name": "United Kingdom",
+      "gazetteer": {
+        "provider": "GOOGLE",
+        "code": "GB",
+        "placeholder": "eg. London"
+      },
+      "bounds": {
+        "north": 62,
+        "east": -15,
+        "south": 48,
+        "west": 7
+      },
+      "view": {
+        "lat": 50,
+        "lng": 0
+      },
+      "minZoom": 5,
+      "maxZoom": 16,
+      "showScaleBar": true,
+      "layers": {
+        "Mapbox Base": {
+          "group": "Base maps",
+          "display": true,
+          "template": "Mapbox Base"
+        },
+        "Mapbox Colour": {
+          "group": "Base maps",
+          "template": "Mapbox Colour"
+        },
+        "Mapbox Label": {
+          "group": "Base maps",
+          "display": true,
+          "template": "Mapbox Label"
+        },
+        "HERE Imagery": {
+          "group": "Base maps",
+          "template": "HERE Imagery"
+        },
+        "HERE Hybrid": {
+          "group": "Base maps",
+          "template": "HERE Hybrid"
+        },
+        "Affinity": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "herm.hebe_mapp_affinity ",
+          "qID": "id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "store_name",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "retailer",
+              "title": "Retailer"
+            },
+            {
+              "field": "fascia",
+              "title": "Fascia"
+            },
+            {
+              "field": "store_name",
+              "title": "Store Name"
+            },
+            {
+              "field": "address",
+              "title": "Address"
+            },
+            {
+              "field": "town",
+              "title": "Town"
+            },
+            {
+              "field": "postcode",
+              "title": "Postcode"
+            },
+            {
+              "field": "url",
+              "type": "Site URL"
+            }
+          ],
+          "style": {
+            "label": {
+              "field": "store_name",
+              "declutter": true
+            },
+            "default": {
+              "type": "dot",
+              "fillColor": "#E51636",
+              "scale": 1
+            }
+          }
+        },
+        "Competitors": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "herm.hebe_mapp_competitors",
+          "qID": "id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "store_name",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "store_name",
+              "title": "Store Name"
+            },
+            {
+              "field": "address",
+              "title": "Address"
+            }
+          ],
+          "style": {
+            "label": {
+              "field": "store_name",
+              "declutter": true
+            },
+            "default": {
+              "type": "dot",
+              "fillColor": "#0FA05A",
+              "scale": 1
+            }
+          }
+        },
+        "Customers": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "herm.hebe_mapp_customers",
+          "qID": "customer_id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "customer_id",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "customer_id",
+              "title": "Customer ID"
+            },
+            {
+              "field": "age",
+              "title": "Age"
+            },
+            {
+              "field": "age_bracket",
+              "title": "Age Bracket"
+            },
+            {
+              "field": "gender",
+              "title": "Gender"
+            },
+            {
+              "field": "attended_sessions",
+              "title": "Attended Sessions"
+            },
+            {
+              "field": "status",
+              "title": "Status"
+            },
+            {
+              "field": "address",
+              "title": "Address"
+            },
+            {
+              "field": "suburb_name",
+              "title": "Suburb"
+            },
+            {
+              "field": "postcode",
+              "title": "Postcode"
+            }
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#0F70A0",
+              "scale": 1
+            }
+          }
+        },
+        "Store Locations": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "herm.hebe_store_location_geom",
+          "qID": "store_id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "store_name",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "store_id",
+              "title": "Store ID"
+            },
+            {
+              "field": "store_address",
+              "title": "Address"
+            },
+            {
+              "field": "store_url",
+              "title": "URL"
+            },
+            {
+              "field": "store_postcode",
+              "title": "Postcode"
+            }
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#600FA0",
+              "scale": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}
