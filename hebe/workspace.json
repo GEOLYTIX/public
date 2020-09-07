@@ -122,7 +122,8 @@
           "style": {
             "default": {
               "showInHeader": true,
-              "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/mapicons/sports/hebe.svg"
+              "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/mapicons/sports/hebe.svg",
+              "scale": 1
             }
           }
         },
