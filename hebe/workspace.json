@@ -121,9 +121,8 @@
           ],
           "style": {
             "default": {
-              "type": "dot",
-              "fillColor": "#600FA0",
-              "scale": 1
+              "showInHeader": true,
+              "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/mapicons/sports/hebe.svg"
             }
           }
         },
