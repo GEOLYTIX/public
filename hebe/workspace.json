@@ -428,7 +428,7 @@
             },
             "default": {
               "type": "dot",
-              "fillColor": "#4534D4",
+              "fillColor": "#000000",
               "scale": 1
             }
           }
