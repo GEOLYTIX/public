@@ -487,7 +487,8 @@
           "style": {
             "default": {
               "type": "dot",
-              "fillColor": "#0F70A0"
+              "fillColor": "#0F70A0",
+              "scale": 0.5
             },
             "themes": {
               "Status": {
