@@ -489,6 +489,33 @@
               "type": "dot",
               "fillColor": "#0F70A0",
               "scale": 1
+            },
+            "themes": {
+              "Status": {
+                "type": "categorized",
+                "field": "status",
+                "other": true,
+                "cat": {
+                  "Post-Covid": {
+                    "label": "Post-Covid",
+                    "style": {
+                      "fillColor": "#52BE80"
+                    }
+                  },
+                  "Pre-Covid Active": {
+                    "label": "Pre-Covid Active",
+                    "style": {
+                      "fillColor": "#EC7063"
+                    }
+                  },
+                  "Pre-Covid Inactive": {
+                    "label": "Pre-Covid Inactive",
+                    "style": {
+                      "fillColor": "#F4D03F"
+                    }
+                  }
+                }
+              }
             }
           }
         }
