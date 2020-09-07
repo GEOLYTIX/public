@@ -88,6 +88,45 @@
           "group": "Base maps",
           "template": "HERE Hybrid"
         },
+        "POWMAK Studio": {
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "herm.hebe_store_location_geom",
+          "qID": "store_id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_kmeans": 0.01,
+          "cluster_dbscan": 0.01,
+          "cluster_label": "store_name",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "store_id",
+              "title": "Store ID"
+            },
+            {
+              "field": "store_address",
+              "title": "Address"
+            },
+            {
+              "field": "store_url",
+              "title": "URL"
+            },
+            {
+              "field": "store_postcode",
+              "title": "Postcode"
+            }
+          ],
+          "style": {
+            "default": {
+              "type": "dot",
+              "fillColor": "#600FA0",
+              "scale": 1
+            }
+          }
+        },
         "Affinity": {
           "format": "cluster",
           "dbs": "MAPP",
@@ -137,9 +176,225 @@
               "declutter": true
             },
             "default": {
-              "type": "dot",
+              "type": "target",
               "fillColor": "#E51636",
               "scale": 1
+            },
+            "themes": {
+              "Retailer": {
+                "type": "categorized",
+                "field": "retailer",
+                "other": true,
+                "cat": {
+                  "Aesop": {
+                    "label": "Aesop",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.5": "#FFFF",
+                        "0.25": "#000000"
+                      }
+                    }
+                  },
+                  "Barrecore": {
+                    "label": "Barrecore",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.5": "#FFFF",
+                        "0.375": "#000000"
+                      }
+                    }
+                  },
+                  "Bootcamp Pilates": {
+                    "label": "Bootcamp Pilates",
+                    "style": {
+                      "fillColor": "#C5236F",
+                      "layers": {
+                        "0.5": "#4C8831",
+                        "0.25": "#FFFF"
+                      }
+                    }
+                  },
+                  "Booths": {
+                    "label": "Booths",
+                    "style": {
+                      "fillColor": "#a12629",
+                      "layers": {
+                        "0.5": "#ffffff",
+                        "0.375": "#a12629"
+                      }
+                    }
+                  },
+                  "Chilli Pilates": {
+                    "label": "Chilli Pilates",
+                    "style": {
+                      "fillColor": "#BF2126",
+                      "layers": {
+                        "0.5": "#000000",
+                        "0.375": "#BF2126"
+                      }
+                    }
+                  },
+                  "Coppa Club": {
+                    "label": "Coppa Club",
+                    "style": {
+                      "fillColor": "#027089",
+                      "layers": {
+                        "0.625": "#ffffff",
+                        "0.5": "#027089"
+                      }
+                    }
+                  },
+                  "FACEGYM": {
+                    "label": "FACEGYM",
+                    "style": {
+                      "fillColor": "#ED2636",
+                      "layers": {
+                        "0.875": "#000000",
+                        "0.625": "#ffffff"
+                      }
+                    }
+                  },
+                  "Frame": {
+                    "label": "Frame",
+                    "style": {
+                      "fillColor": "#E6353C",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#E6353C"
+                      }
+                    }
+                  },
+                  "Heartcore": {
+                    "label": "Heartcore",
+                    "style": {
+                      "fillColor": "#364146",
+                      "layers": {
+                        "0.75": "#EEEFEF",
+                        "0.25": "#364146"
+                      }
+                    }
+                  },
+                  "Lululemon": {
+                    "label": "Lululemon",
+                    "style": {
+                      "fillColor": "#D31334",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.25": "#000000"
+                      }
+                    }
+                  },
+                  "Plaent Organic": {
+                    "label": "Planet Organic",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.25": "#000000"
+                      }
+                    }
+                  },
+                  "Soho House": {
+                    "label": "Soho House",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.325": "#ffe811"
+                      }
+                    }
+                  },
+                  "Space NK": {
+                    "label": "Space NK",
+                    "style": {
+                      "fillColor": "#0a0d10",
+                      "layers": {
+                        "0.5": "#F795AE",
+                        "0.25": "#ffffff"
+                      }
+                    }
+                  },
+                  "Studio Lagree": {
+                    "label": "Studio Lagree",
+                    "style": {
+                      "fillColor": "#F7141C",
+                      "layers": {
+                        "0.75": "#000000",
+                        "0.25": "#ffffff"
+                      }
+                    }
+                  },
+                  "Sweaty Betty": {
+                    "label": "Sweaty Betty",
+                    "style": {
+                      "fillColor": "#EF5233",
+                      "layers": {
+                        "0.625": "#ffffff",
+                        "0.325": "#EF5233"
+                      }
+                    }
+                  },
+                  "Ten Health & Fitness": {
+                    "label": "Ten Health & Fitness",
+                    "style": {
+                      "fillColor": "#06B085",
+                      "layers": {
+                        "0.75": "#5F6366",
+                        "0.325": "#06B085"
+                      }
+                    }
+                  },
+                  "The Pig": {
+                    "label": "The Pig",
+                    "style": {
+                      "fillColor": "#e09f9f",
+                      "layers": {
+                        "0.325": "#ffffff"
+                      }
+                    }
+                  },
+                  "Trib3": {
+                    "label": "Trib3",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.875": "#ffffff",
+                        "0.5": "#00674b"
+                      }
+                    }
+                  },
+                  "Waitrose": {
+                    "label": "Waitrose",
+                    "style": {
+                      "fillColor": "#81ae37",
+                      "layers": {
+                        "0.325": "#ffffff"
+                      }
+                    }
+                  },
+                  "Whole Foods Market": {
+                    "label": "Whole Foods Market",
+                    "style": {
+                      "fillColor": "#00674b",
+                      "layers": {
+                        "0.875": "#ffffff",
+                        "0.5": "#00674b"
+                      }
+                    }
+                  },
+                  "Zero Gravity Pilates": {
+                    "label": "Zero Gravity Pilates",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.875": "#ffffff",
+                        "0.5": "#2b65ad"
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         },
@@ -233,46 +488,34 @@
             "default": {
               "type": "dot",
               "fillColor": "#0F70A0",
-              "scale": 1
-            }
-          }
-        },
-        "Store Locations": {
-          "format": "cluster",
-          "dbs": "MAPP",
-          "table": "herm.hebe_store_location_geom",
-          "qID": "store_id",
-          "geom": "geom_p_4326",
-          "srid": "4326",
-          "cluster_kmeans": 0.01,
-          "cluster_dbscan": 0.01,
-          "cluster_label": "store_name",
-          "infoj": [
-            {
-              "type": "key"
+              "scale": 0.5
             },
-            {
-              "field": "store_id",
-              "title": "Store ID"
-            },
-            {
-              "field": "store_address",
-              "title": "Address"
-            },
-            {
-              "field": "store_url",
-              "title": "URL"
-            },
-            {
-              "field": "store_postcode",
-              "title": "Postcode"
-            }
-          ],
-          "style": {
-            "default": {
-              "type": "dot",
-              "fillColor": "#600FA0",
-              "scale": 1
+            "themes": {
+              "Status": {
+                "type": "categorized",
+                "field": "status",
+                "other": true,
+                "cat": {
+                  "Post-Covid": {
+                    "label": "Post-Covid",
+                    "style": {
+                      "fillColor": "#52BE80"
+                    }
+                  },
+                  "Pre-Covid Active": {
+                    "label": "Pre-Covid Active",
+                    "style": {
+                      "fillColor": "#EC7063"
+                    }
+                  },
+                  "Pre-Covid Inactive": {
+                    "label": "Pre-Covid Inactive",
+                    "style": {
+                      "fillColor": "#F4D03F"
+                    }
+                  }
+                }
+              }
             }
           }
         }
