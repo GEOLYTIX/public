@@ -189,20 +189,20 @@
                   "Aesop": {
                     "label": "Aesop",
                     "style": {
-                      "fillColor": "#0000",
+                      "fillColor": "#000000",
                       "layers": {
                         "0.5": "#FFFF",
-                        "0.25": "#0000"
+                        "0.25": "#000000"
                       }
                     }
                   },
                   "Barrecore": {
                     "label": "Barrecore",
                     "style": {
-                      "fillColor": "#0000",
+                      "fillColor": "#000000",
                       "layers": {
                         "0.5": "#FFFF",
-                        "0.375": "#0000"
+                        "0.375": "#000000"
                       }
                     }
                   },
@@ -212,7 +212,7 @@
                       "fillColor": "#C5236F",
                       "layers": {
                         "0.5": "#4C8831",
-                        "0.375": "#FFFF"
+                        "0.25": "#FFFF"
                       }
                     }
                   },
