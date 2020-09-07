@@ -87,6 +87,9 @@
     {
       "field": "pqi",
       "title": "PQI"
+    },
+    {
+      "type": "streetview"
     }
   ],
   "style": {
