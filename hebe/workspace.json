@@ -176,36 +176,43 @@
               "declutter": true
             },
             "default": {
-              "type": "dot",
+              "type": "target",
               "fillColor": "#E51636",
               "scale": 1
             },
             "themes": {
-              "Retail - Simple": {
+              "Retailer": {
                 "type": "categorized",
                 "field": "retailer",
                 "other": true,
                 "cat": {
-                  "Aldi": {
-                    "label": "Aldi",
+                  "Aesop": {
+                    "label": "Aesop",
                     "style": {
-                      "fillColor": "#ffbf45",
+                      "fillColor": "#0000",
                       "layers": {
-                        "0.875": "#fa6f08",
-                        "0.75": "#ef3c11",
-                        "0.625": "#001f79",
-                        "0.5": "#02bee3",
-                        "0.25": "ffffff"
+                        "0.5": "#FFFF",
+                        "0.25": "#0000"
                       }
                     }
                   },
-                  "Asda": {
-                    "label": "Asda",
+                  "Barrecore": {
+                    "label": "Barrecore",
                     "style": {
-                      "fillColor": "#83b923",
+                      "fillColor": "#0000",
                       "layers": {
-                        "0.5": "#ffffff",
-                        "0.375": "#fdb839"
+                        "0.5": "#FFFF",
+                        "0.375": "#0000"
+                      }
+                    }
+                  },
+                  "Bootcamp Pilates": {
+                    "label": "Bootcamp Pilates",
+                    "style": {
+                      "fillColor": "#C5236F",
+                      "layers": {
+                        "0.5": "#4C8831",
+                        "0.375": "#FFFF"
                       }
                     }
                   },
@@ -219,123 +226,141 @@
                       }
                     }
                   },
-                  "Budgens": {
-                    "label": "Budgens",
+                  "Chilli Pilates": {
+                    "label": "Chilli Pilates",
                     "style": {
-                      "fillColor": "#EEEEE0",
+                      "fillColor": "#BF2126",
                       "layers": {
-                        "0.5": "#679a00",
-                        "0.375": "#cccb01"
+                        "0.5": "#0000",
+                        "0.375": "#BF2126"
                       }
                     }
                   },
-                  "Co-op": {
-                    "label": "The Co-Operative",
+                  "Coppa Club": {
+                    "label": "Coppa Club",
                     "style": {
-                      "fillColor": "#0b1e60",
+                      "fillColor": "#027089",
                       "layers": {
-                        "0.625": "#ffffff",
-                        "0.5": "#a3d227"
+                        "0.625": "#FFFF",
+                        "0.5": "#027089"
                       }
                     }
                   },
-                  "Costco": {
-                    "label": "Costco",
+                  "FACEGYM": {
+                    "label": "FACEGYM",
                     "style": {
-                      "fillColor": "#005daa",
+                      "fillColor": "#ED2636",
                       "layers": {
-                        "0.875": "#ffffff",
-                        "0.625": "#e31837"
+                        "0.875": "#0000",
+                        "0.625": "#FFFF"
                       }
                     }
                   },
-                  "Farmfoods": {
-                    "label": "Farm Foods",
+                  "Frame": {
+                    "label": "Frame",
                     "style": {
-                      "fillColor": "#77a632",
+                      "fillColor": "#E6353C",
                       "layers": {
-                        "0.75": "#f7f900",
-                        "0.5": "#ff0000"
+                        "0.75": "#FFFF",
+                        "0.5": "#E6353C"
                       }
                     }
                   },
-                  "Heron": {
-                    "label": "Heron",
+                  "Heartcore": {
+                    "label": "Heartcore",
                     "style": {
-                      "fillColor": "#ffffff",
+                      "fillColor": "#364146",
                       "layers": {
-                        "0.75": "#313590",
-                        "0.25": "#ffcf00"
+                        "0.75": "#EEEFEF",
+                        "0.25": "#364146"
                       }
                     }
                   },
-                  "Iceland": {
-                    "label": "Iceland",
+                  "Lululemon": {
+                    "label": "Lululemon",
                     "style": {
-                      "fillColor": "#ed1b2d",
+                      "fillColor": "#D31334",
                       "layers": {
-                        "0.75": "#f2552b",
-                        "0.5": "#f89128",
-                        "0.25": "#ffffff"
+                        "0.75": "#FFFF",
+                        "0.25": "#0000"
                       }
                     }
                   },
-                  "Lidl": {
-                    "label": "Lidl",
+                  "Plaent Organic": {
+                    "label": "Planet Organic",
                     "style": {
-                      "fillColor": "#d61408",
+                      "fillColor": "#0000",
                       "layers": {
-                        "0.875": "#ffe502",
-                        "0.5": "#002d7a",
-                        "0.25": "#d61408"
+                        "0.75": "#FFFF",
+                        "0.25": "#0000"
                       }
                     }
                   },
-                  "Makro": {
-                    "label": "Makro",
+                  "Soho House": {
+                    "label": "Soho House",
                     "style": {
-                      "fillColor": "#00457a",
+                      "fillColor": "#0000",
                       "layers": {
                         "0.325": "#ffe811"
                       }
                     }
                   },
-                  "Marks and Spencer": {
-                    "label": "Marks & Spencer",
+                  "Space NK": {
+                    "label": "Space NK",
                     "style": {
                       "fillColor": "#0a0d10",
                       "layers": {
-                        "0.5": "#def036",
-                        "0.25": "#0a0d10"
+                        "0.5": "#F795AE",
+                        "0.25": "#FFFF"
                       }
                     }
                   },
-                  "Morrisons": {
-                    "label": "Morrisons",
+                  "Studio Lagree": {
+                    "label": "Studio Lagree",
                     "style": {
-                      "fillColor": "#ffe133",
+                      "fillColor": "#F7141C",
                       "layers": {
-                        "0.5": "#00614e"
+                        "0.75": "#0000",
+                        "0.25": "#FFFF"
                       }
                     }
                   },
-                  "Sainsburys": {
-                    "label": "Sainsbury's",
+                  "Sweaty Betty": {
+                    "label": "Sweaty Betty",
                     "style": {
-                      "fillColor": "#ee8a00",
+                      "fillColor": "#EF5233",
                       "layers": {
                         "0.625": "#ffffff",
-                        "0.325": "#ee8a00"
+                        "0.325": "#EF5233"
                       }
                     }
                   },
-                  "Tesco": {
-                    "label": "Tesco",
+                  "Ten Health & Fitness": {
+                    "label": "Ten Health & Fitness",
                     "style": {
-                      "fillColor": "#0055a8",
+                      "fillColor": "#06B085",
                       "layers": {
-                        "0.75": "#ffffff",
-                        "0.325": "#f02f26"
+                        "0.75": "#5F6366",
+                        "0.325": "#06B085"
+                      }
+                    }
+                  },
+                  "The Pig": {
+                    "label": "The Pig",
+                    "style": {
+                      "fillColor": "#e09f9f",
+                      "layers": {
+                        "0.325": "#ffffff"
+                      }
+                    }
+                  },
+                  "Trib3": {
+                    "label": "Trib3",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.875": "#ffffff",
+                        "0.5": "#00674b"
                       }
                     }
                   },
@@ -355,6 +380,16 @@
                       "layers": {
                         "0.875": "#ffffff",
                         "0.5": "#00674b"
+                      }
+                    }
+                  },
+                  "Zero Gravity Pilates": {
+                    "label": "Zero Gravity Pilates",
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.875": "#ffffff",
+                        "0.5": "#2b65ad"
                       }
                     }
                   }
