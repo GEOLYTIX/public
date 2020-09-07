@@ -231,7 +231,7 @@
                     "style": {
                       "fillColor": "#BF2126",
                       "layers": {
-                        "0.5": "#0000",
+                        "0.5": "#000000",
                         "0.375": "#BF2126"
                       }
                     }
@@ -241,7 +241,7 @@
                     "style": {
                       "fillColor": "#027089",
                       "layers": {
-                        "0.625": "#FFFF",
+                        "0.625": "#ffffff",
                         "0.5": "#027089"
                       }
                     }
@@ -251,8 +251,8 @@
                     "style": {
                       "fillColor": "#ED2636",
                       "layers": {
-                        "0.875": "#0000",
-                        "0.625": "#FFFF"
+                        "0.875": "#000000",
+                        "0.625": "#ffffff"
                       }
                     }
                   },
@@ -261,7 +261,7 @@
                     "style": {
                       "fillColor": "#E6353C",
                       "layers": {
-                        "0.75": "#FFFF",
+                        "0.75": "#ffffff",
                         "0.5": "#E6353C"
                       }
                     }
@@ -281,25 +281,25 @@
                     "style": {
                       "fillColor": "#D31334",
                       "layers": {
-                        "0.75": "#FFFF",
-                        "0.25": "#0000"
+                        "0.75": "#ffffff",
+                        "0.25": "#000000"
                       }
                     }
                   },
                   "Plaent Organic": {
                     "label": "Planet Organic",
                     "style": {
-                      "fillColor": "#0000",
+                      "fillColor": "#000000",
                       "layers": {
-                        "0.75": "#FFFF",
-                        "0.25": "#0000"
+                        "0.75": "#ffffff",
+                        "0.25": "#000000"
                       }
                     }
                   },
                   "Soho House": {
                     "label": "Soho House",
                     "style": {
-                      "fillColor": "#0000",
+                      "fillColor": "#000000",
                       "layers": {
                         "0.325": "#ffe811"
                       }
@@ -311,7 +311,7 @@
                       "fillColor": "#0a0d10",
                       "layers": {
                         "0.5": "#F795AE",
-                        "0.25": "#FFFF"
+                        "0.25": "#ffffff"
                       }
                     }
                   },
@@ -320,8 +320,8 @@
                     "style": {
                       "fillColor": "#F7141C",
                       "layers": {
-                        "0.75": "#0000",
-                        "0.25": "#FFFF"
+                        "0.75": "#000000",
+                        "0.25": "#ffffff"
                       }
                     }
                   },
