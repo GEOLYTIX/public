@@ -440,8 +440,8 @@
           "qID": "customer_id",
           "geom": "geom_p_4326",
           "srid": "4326",
-          "cluster_kmeans": 0.01,
-          "cluster_dbscan": 0.01,
+          "cluster_kmeans": 0.02,
+          "cluster_dbscan": 0.02,
           "cluster_label": "customer_id",
           "infoj": [
             {
@@ -488,7 +488,7 @@
             "default": {
               "type": "dot",
               "fillColor": "#0F70A0",
-              "scale": 0.5
+              "scale": 0.75
             },
             "themes": {
               "Status": {
