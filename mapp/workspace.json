@@ -369,6 +369,15 @@
     },
     "eu_sport table": {
       "template": "SELECT id, retailer, fascia, store_name, town FROM mapp.vw_eu_glx_geodata_retail_locations_sport WHERE true ${viewport} ${filter} limit 99;"
+    },
+    "pl_population": {
+      "module": "https://geolytix.github.io/public/mapp/layers/poland/pl_population.js"
+    },
+    "pl_age_profile": {
+      "module": "https://geolytix.github.io/public/mapp/layers/poland/pl_age_profile.js"
+    },
+    "pl_admin_layer": {
+      "src": "https://geolytix.github.io/public/mapp/layers/poland/pl_admin_layer.json"
     }
   },
   "locales": {
@@ -2796,6 +2805,1269 @@
               "type": "numeric"
             }
           ]
+        }
+      }
+    },
+    "Polska": {
+      "gazetteer": {
+        "provider": "GOOGLE",
+        "placeholder": "np. Wrocław",
+        "country": "PL"
+      },
+      "minZoom": 6,
+      "maxZoom": 20,
+      "bounds": {
+        "north": 64,
+        "east": 32,
+        "south": 46,
+        "west": 10
+      },
+      "showScaleBar": true,
+      "layers": {
+        "Mapbox": {
+          "group": "Maps",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          },
+          "format": "tiles",
+          "URI": "/styles/v1/dbauszus/ciozrimi3002bdsm8bjtn2v1y/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com"
+        },
+        "Mapbox Labels": {
+          "group": "Maps",
+          "display": true,
+          "template": "Mapbox Label"
+        },
+        "HERE Imagery": {
+          "group": "Maps",
+          "template": "HERE Imagery"
+        },
+        "Województwa": {
+          "template": "pl_admin_layer",
+          "group": "Administracyjne",
+          "qID": "id",
+          "geom": "geom_3857_50m",
+          "srid": "3857",
+          "tables": {
+            "5": null,
+            "6": "geodata.pol_glx_geodata_demographics_counties",
+            "7": "geodata.pol_glx_geodata_demographics_counties",
+            "8": "geodata.pol_glx_geodata_demographics_counties",
+            "9": "geodata.pol_glx_geodata_demographics_counties",
+            "10": null
+          },
+          "style": {
+            "hidden": true,
+            "default": {
+              "strokeColor": "#455a64",
+              "fillColor": "#FFFFFF",
+              "fillOpacity": 0.1,
+              "strokeWidth": 2
+            },
+            "highlight": {
+              "fillOpacity": 0.3,
+              "strokeWidth": 3
+            }
+          }
+        },
+        "Powiaty": {
+          "template": "pl_admin_layer",
+          "group": "Administracyjne",
+          "qID": "id",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "tables": {
+            "7": null,
+            "8": "geodata.pol_glx_geodata_demographics_powiaty"
+          },
+          "style": {
+            "hidden": true,
+            "default": {
+              "strokeColor": "#ff7043",
+              "fillColor": "#ff7043",
+              "fillOpacity": 0,
+              "strokeWidth": 2
+            },
+            "highlight": {
+              "fillOpacity": 0.3,
+              "strokeWidth": 3
+            }
+          }
+        },
+        "Gminy": {
+          "template": "pl_admin_layer",
+          "group": "Administracyjne",
+          "tables": {
+            "9": null,
+            "10": "geodata.pol_glx_geodata_demographics_municipality"
+          },
+          "geom": "geom_3857",
+          "srid": "3857",
+          "qID": "id",
+          "style": {
+            "hidden": true,
+            "default": {
+              "strokeColor": "#415A77",
+              "fillColor": "#415A77",
+              "fillOpacity": 0.1
+            },
+            "highlight": {
+              "fillOpacity": 0.3,
+              "strokeWidth": 2
+            }
+          }
+        },
+        "Dzielnice miast": {
+          "group": "Administracyjne",
+          "format": "mvt",
+          "dbs": "MAPP",
+          "qID": "id",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "tables": {
+            "5": null,
+            "6": "geodata.pol_glx_geodata_demographics_district"
+          },
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "name_local",
+              "title": "Name",
+              "inline": true
+            },
+            {
+              "title": "Expenditure 2018"
+            },
+            {
+              "field": "di_pc_2018",
+              "title": "Disposable income pc",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": " PLN"
+            },
+            {
+              "field": "conexp_per",
+              "fieldfx": "ROUND(100*conexp_per)",
+              "title": "Consumer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "retexp_per",
+              "fieldfx": "ROUND(100*retexp_per)",
+              "title": "Retail",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "fmcg_per",
+              "fieldfx": "ROUND(100*fmcg_per)",
+              "title": "FMCG",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "v1clot",
+              "fieldfx": "ROUND(100*v1clot)",
+              "title": "Clothing",
+              "type": "integer",
+              "inline": true,
+              "suffix": "%",
+              "level": 1
+            },
+            {
+              "title": "Age profile 2018"
+            },
+            {
+              "title": "Age",
+              "type": "dataview",
+              "query": "pl_age_profile",
+              "target": "location",
+              "chart": {
+                "type": "doughnut",
+                "labels": [
+                  "Under 4",
+                  "4-11 years",
+                  "12-16 years",
+                  "17-64 years",
+                  "65+ years"
+                ],
+                "datasets": [{
+                  "fields": [
+                    "age_under_4",
+                    "age_4_to_11",
+                    "age_12_to_16",
+                    "age_17_to_64",
+                    "age_65_plus"
+                  ],
+                  "backgroundColor": [
+                    "#083D77",
+                    "#F05D5E",
+                    "#F4D35E",
+                    "#cae0b8",
+                    "#D1BCE3"
+                  ],
+                  "borderColor": "#EBEBD3"
+                }]
+              }
+            },
+            {
+              "field": "age_under_4",
+              "fieldfx": "ROUND(100*age_under_4/pop2018dec)",
+              "title": "Under 4 years old",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "age_4_to_11",
+              "fieldfx": "ROUND(100*age_4_to_11/pop2018dec)",
+              "title": "4-11 years old",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "age_12_to_16",
+              "fieldfx": "ROUND(100*age_12_to_16/pop2018dec)",
+              "title": "12-16 years old",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "age_17_to_64",
+              "fieldfx": "ROUND(100*age_17_to_64/pop2018dec)",
+              "title": "17-64 years old",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "field": "age_65_plus",
+              "fieldfx": "ROUND(100*age_65_plus/pop2018dec)",
+              "title": "65+ years old",
+              "type": "integer",
+              "inline": true,
+              "level": 1,
+              "suffix": "%"
+            },
+            {
+              "title": "Population"
+            },
+            {
+              "title": "Population Change",
+              "type": "dataview",
+              "query": "pl_population",
+              "target": "location",
+              "chart": {
+                "type": "bar",
+                "labels": ["2012", "2013", "2014", "2015", "2016", "2017", "2018"],
+                "datasets": [{
+                  "fields": ["pop2012dec", "pop2013dec", "pop2014dec", "pop2015dec", "pop2016dec", "pop2017dec", "pop2018dec"],
+                  "backgroundColor": "rgba(8, 61, 199, 0.3)",
+                  "borderColor": "#F05D5E"
+                }],
+                "options": {
+                  "legend": {
+                    "display": false
+                  },
+                  "scales": {
+                    "yAxes": [{
+                      "ticks": {
+                        "display": false
+                      }
+                    }]
+                  }
+                }
+              }
+            },
+            {
+              "field": "pop2018dec",
+              "title": "2018",
+              "type": "numeric",
+              "inline": true,
+              "level": 1
+            },
+            {
+              "field": "pop2017dec",
+              "title": "2017",
+              "type": "numeric",
+              "inline": true,
+              "level": 1
+            },
+            {
+              "field": "pop2016dec",
+              "title": "2016",
+              "type": "numeric",
+              "inline": true,
+              "level": 1
+            },
+            {
+              "title": "2015",
+              "field": "pop2015dec",
+              "type": "numeric",
+              "level": 1
+            },
+            {
+              "title": "2014",
+              "field": "pop2014dec",
+              "type": "numeric",
+              "level": 1
+            },
+            {
+              "title": "2013",
+              "field": "pop2013dec",
+              "type": "numeric",
+              "level": 1
+            },
+            {
+              "title": "2012",
+              "field": "pop2012dec",
+              "type": "numeric",
+              "level": 1
+            }
+          ],
+          "style": {
+            "hidden": true,
+            "default": {
+              "strokeColor": "#ef5350",
+              "fillColor": "#ef5350",
+              "fillOpacity": 0,
+              "strokeWidth": 1
+            },
+            "highlight": {
+              "fillOpacity": 0.3,
+              "strokeWidth": 2
+            }
+          }
+        },
+        "Demografia": {
+          "format": "grid",
+          "dbs": "MAPP",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "grid_color": "pop__11",
+          "tables": {
+            "6": "geodata.pol_glx_geodata_hex_128k",
+            "7": "geodata.pol_glx_geodata_hex_64k",
+            "8": "geodata.pol_glx_geodata_hex_32k",
+            "9": "geodata.pol_glx_geodata_hex_16k",
+            "10": "geodata.pol_glx_geodata_hex_8k",
+            "11": "geodata.pol_glx_geodata_hex_4k",
+            "12": "geodata.pol_glx_geodata_hex_2k",
+            "13": "geodata.pol_glx_geodata_hex_1k",
+            "14": "geodata.pol_glx_geodata_hex_500"
+          },
+          "style": {
+            "range": [
+              "#15773f",
+              "#66bd63",
+              "#a6d96a",
+              "#fdae61",
+              "#f46d43",
+              "#d73027"
+            ]
+          },
+          "grid_fields": {
+            "Population 2018": "pop__18",
+            "Average household 2018": "avg_hh__18",
+            "Average disposable income per capita 2018": "disinc_pc__18",
+            "Retail budget total 2018": "retail__18",
+            "FMCG budget total 2018": "fmcg__18",
+            "Population 2011": "pop__11",
+            "Households 2011": "hhu__total__11",
+            "Communal Population 2011": "pop_comune",
+            "Aged Under 4": "ageunder4",
+            "Aged 4 to 11": "age4to11",
+            "Aged 12 to 16": "age12to16",
+            "Aged 17 to 21": "age17to21",
+            "Aged 22 to 35": "age22to35",
+            "Aged 36 to 45": "age36to45",
+            "Aged 46 to 55": "age46to55",
+            "Aged 56 to 65": "age56to65",
+            "Aged 65 to 75": "age65to75",
+            "Aged 75 Plus": "age75plus",
+            "Economically Active Population": "eac__total__11",
+            "Economically Inactive Population": "ein__total__11",
+            "Employed Population": "eac_employed__11",
+            "Unemployed Population": "eac_unemployed__11",
+            "Employed Agriculture": "eac_in_a__11",
+            "Employed Construction": "eac_in_construction__11",
+            "Employed Distribution": "eac_in_distributive__11",
+            "Employed Finance": "eac_in_finance__11",
+            "Employed Information Technology": "eac_in_ict__11",
+            "Employed Manufacturing": "eac_in_manufacturing__11",
+            "Employed Property": "eac_in_property__11",
+            "Employed Public Services": "eac_in_public_service__11",
+            "Employed Administration": "eac_in_tech_admin__11",
+            "Employed Other": "eac_in_other__11",
+            "Education Level None": "edu_none__11",
+            "Education Level 1": "edu_isced_1__11",
+            "Education Level 2": "edu_isced_2__11",
+            "Education Level 3": "edu_isced_3__11",
+            "Education Level 4": "edu_isced_4__11",
+            "Education Level 5": "edu_isced_5__11",
+            "Pensioner Population": "ein_pensioner__11",
+            "Student Population": "ein_student__11",
+            "Female Population": "gen_female__11",
+            "Male Population": "gen_male__11",
+            "Households with Children": "hhu_child",
+            "Households With No Children": "hhu_no_child",
+            "Households Couple": "hhu_couple",
+            "Households Single": "hhu_single"
+          }
+        },
+        "POI": {
+          "meta": "© OpenStreetMap",
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "geodata.pol_glx_geodata_poi",
+          "qID": "id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_label": "name",
+          "cluster_kmeans": 0.02,
+          "cluster_dbscan": 0.2,
+          "hover": {
+            "field": "poi_name"
+          },
+          "style": {
+            "default": {
+              "showInHeader": true,
+              "type": "target",
+              "fillColor": "#90a4ae",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0d47a1"
+              }
+            },
+            "cluster": {
+              "type": "target",
+              "fillColor": "#90a4ae",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#0d47a1"
+              }
+            },
+            "themes": {
+              "POI Type": {
+                "field": "poi_name",
+                "type": "categorized",
+                "other": true,
+                "cat": {
+                  "Apteka": {
+                    "style": {
+                      "fillColor": "#e31a1c",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#e31a1c"
+                      }
+                    }
+                  },
+                  "Bank": {
+                    "style": {
+                      "fillColor": "#1f78b4",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#1f78b4"
+                      }
+                    }
+                  },
+                  "Dworzec kolejowy": {
+                    "style": {
+                      "fillColor": "#6a3d9a",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#6a3d9a"
+                      }
+                    }
+                  },
+                  "Gabinet kosmetyczny": {
+                    "style": {
+                      "fillColor": "#cab2d6",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#cab2d6"
+                      }
+                    }
+                  },
+                  "Fryzjer": {
+                    "style": {
+                      "fillColor": "#b2df8a",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#b2df8a"
+                      }
+                    }
+                  },
+                  "Lekarz": {
+                    "style": {
+                      "fillColor": "#fb9a99",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#fb9a99"
+                      }
+                    }
+                  },
+                  "Poczta": {
+                    "style": {
+                      "fillColor": "#ccebc5",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#ccebc5"
+                      }
+                    }
+                  },
+                  "Przystanek autobusowy": {
+                    "style": {
+                      "fillColor": "#a6cee3",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#a6cee3"
+                      }
+                    }
+                  },
+                  "Sad": {
+                    "label": "Sąd",
+                    "style": {
+                      "fillColor": "#33a02c",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#33a02c"
+                      }
+                    }
+                  },
+                  "Starostwo Powiatowe": {
+                    "style": {
+                      "fillColor": "#ffff99",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#ffff99"
+                      }
+                    }
+                  },
+                  "Szpital": {
+                    "style": {
+                      "fillColor": "#ff7f00",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#ff7f00"
+                      }
+                    }
+                  },
+                  "Urzad Miasta": {
+                    "style": {
+                      "label": "Urząd Miasta",
+                      "fillColor": "#fdb462",
+                      "layers": {
+                        "0.75": "#ffffff",
+                        "0.5": "#fdb462"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Retail Venues": {
+          "group": "Retail",
+          "format": "mvt",
+          "dbs": "MAPP",
+          "table": "geodata.pol_glx_geodata_retail_venue",
+          "geom": "geom_3857",
+          "srid": "3857",
+          "qID": "id",
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "venuelocal",
+              "title": "Name",
+              "inline": true
+            },
+            {
+              "field": "add_local",
+              "title": "Address"
+            },
+            {
+              "field": "town",
+              "title": "Town",
+              "inline": true
+            },
+            {
+              "field": "venue_type",
+              "title": "Venue type",
+              "inline": true
+            },
+            {
+              "field": "gla_sqm",
+              "title": "GLA",
+              "inline": true,
+              "suffix": " sqm"
+            }
+          ],
+          "style": {
+            "default": {
+              "strokeColor": "#ffff66",
+              "fillColor": "#ffff66",
+              "fillOpacity": 0.3
+            },
+            "highlight": {
+              "strokeColor": "#e91e63",
+              "fillOpacity": 0.5
+            },
+            "themes": {
+              "Venue Type": {
+                "type": "categorized",
+                "field": "venue_type",
+                "other": true,
+                "cat": {
+                  "Cash & Carry": {
+                    "style": {
+                      "strokeColor": "#6e016b",
+                      "fillColor": "#6e016b"
+                    }
+                  },
+                  "Department Store": {
+                    "style": {
+                      "strokeColor": "#8c96c6",
+                      "fillColor": "#8c96c6"
+                    }
+                  },
+                  "DIY": {
+                    "style": {
+                      "strokeColor": "#9ebcda",
+                      "fillColor": "#9ebcda"
+                    }
+                  },
+                  "Furniture Centre": {
+                    "style": {
+                      "strokeColor": "#016450",
+                      "fillColor": "#016450"
+                    }
+                  },
+                  "High Street": {
+                    "style": {
+                      "strokeColor": "#02818a",
+                      "fillColor": "#02818a"
+                    }
+                  },
+                  "Hypermarket": {
+                    "style": {
+                      "strokeColor": "#3690c0",
+                      "fillColor": "#3690c0"
+                    }
+                  },
+                  "Mixed-use": {
+                    "style": {
+                      "strokeColor": "#67a9cf",
+                      "fillColor": "#67a9cf"
+                    }
+                  },
+                  "Outlet": {
+                    "style": {
+                      "strokeColor": "#a6bddb",
+                      "fillColor": "#a6bddb"
+                    }
+                  },
+                  "Retail Park": {
+                    "style": {
+                      "fillColor": "#303036",
+                      "strokeColor": "#303036"
+                    }
+                  },
+                  "Shopping Mall": {
+                    "style": {
+                      "strokeColor": "#8c2d04",
+                      "fillColor": "#8c2d04"
+                    }
+                  },
+                  "Specialist Centre": {
+                    "style": {
+                      "strokeColor": "#f16913",
+                      "fillColor": "#f16913"
+                    }
+                  },
+                  "Supermarket": {
+                    "style": {
+                      "strokeColor": "#fdae6b",
+                      "fillColor": "#fdae6b"
+                    }
+                  }
+                }
+              },
+              "Typ lokalny": {
+                "type": "categorized",
+                "field": "local_type",
+                "cat": {
+                  "Cash & Carry": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#ff5959"
+                      }
+                    }
+                  },
+                  "Centrum Meblowe": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#ff7352"
+                      }
+                    }
+                  },
+                  "Centrum Specjalistyczne": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#ff904c"
+                      }
+                    }
+                  },
+                  "Centrum Tradycyjne": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#ffd13e"
+                      }
+                    }
+                  },
+                  "Dom i Ogród": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#e2ff33"
+                      }
+                    }
+                  },
+                  "Dom Towarowy": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#90ff29"
+                      }
+                    }
+                  },
+                  "Hipermarket": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#37ff21"
+                      }
+                    }
+                  },
+                  "Mieszany": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#1bff5b"
+                      }
+                    }
+                  },
+                  "Outlet": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#17ffb0"
+                      }
+                    }
+                  },
+                  "Park Handlowy": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#14f6ff"
+                      }
+                    }
+                  },
+                  "Supermarket": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#129bff"
+                      }
+                    }
+                  },
+                  "Ulica Handlowa": {
+                    "style": {
+                      "fillColor": "#686875",
+                      "layers": {
+                        "0.7": "#fff",
+                        "0.4": "#1040ff"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Retail Points": {
+          "group": "Retail",
+          "format": "cluster",
+          "dbs": "MAPP",
+          "table": "geodata.pol_glx_geodata_retail_points",
+          "qID": "id",
+          "geom": "geom_p_4326",
+          "srid": "4326",
+          "cluster_label": "st_fascia",
+          "cluster_kmeans": 0.02,
+          "cluster_dbscan": 0.2,
+          "infoj": [
+            {
+              "type": "key"
+            },
+            {
+              "field": "st_fascia",
+              "title": "Fascia",
+              "inline": true
+            },
+            {
+              "field": "st_branch",
+              "title": "Branch",
+              "inline": true
+            },
+            {
+              "field": "st_operator",
+              "title": "Operator",
+              "inline": true
+            },
+            {
+              "field": "st_address1",
+              "title": "Address"
+            },
+            {
+              "field": "st_town",
+              "title": "Town",
+              "inline": true
+            },
+            {
+              "field": "st_postcode",
+              "title": "Postcode",
+              "inline": true
+            },
+            {
+              "field": "st_netarea",
+              "title": "Net Area",
+              "inline": true
+            }
+          ],
+          "style": {
+            "label": {
+              "field": "st_fascia",
+              "display": true,
+              "declutter": true,
+              "strokeColor": "#fff",
+              "strokeWidth": 3
+            },
+            "default": {
+              "showInHeader": true,
+              "type": "square",
+              "fillColor": "#778DA9",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#000000"
+              }
+            },
+            "cluster": {
+              "type": "square",
+              "fillColor": "#778DA9",
+              "layers": {
+                "0.75": "#ffffff",
+                "0.5": "#000000"
+              }
+            },
+            "themes": {
+              "Food Retailers": {
+                "type": "categorized",
+                "field": "st_fascia",
+                "other": true,
+                "cat": {
+                  "Aldi": {
+                    "fillColor": "#ef3c11",
+                    "layers": {
+                      "0.8": "#001f79",
+                      "0.4": "#02bee3"
+                    }
+                  },
+                  "Auchan": {
+                    "style": {
+                      "fillColor": "#44995A",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#E63631"
+                      }
+                    }
+                  },
+                  "Biedronka": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#FFEE4F",
+                        "0.5": "#E43630"
+                      }
+                    }
+                  },
+                  "Carrefour": {
+                    "style": {
+                      "fillColor": "#E63631",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#1459A6"
+                      }
+                    }
+                  },
+                  "Dino": {
+                    "style": {
+                      "fillColor": "#459A4A",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#E63631"
+                      }
+                    }
+                  },
+                  "Kaufland": {
+                    "style": {
+                      "fillColor": "#E13530",
+                      "layers": {
+                        "0.7": "#FFFFFF",
+                        "0.5": "#E13530"
+                      }
+                    }
+                  },
+                  "Kik": {
+                    "style": {
+                      "fillColor": "#002E79",
+                      "layers": {
+                        "0.7": "#FDE44D",
+                        "0.5": "#ED3833"
+                      }
+                    }
+                  },
+                  "Lidl": {
+                    "style": {
+                      "fillColor": "#d61408",
+                      "layers": {
+                        "0.7": "#ffe502",
+                        "0.5": "#002E79"
+                      }
+                    }
+                  },
+                  "Netto": {
+                    "style": {
+                      "fillColor": "#CCCCCC",
+                      "layers": {
+                        "0.7": "#FFFFFF",
+                        "0.5": "#FAD85B"
+                      }
+                    }
+                  },
+                  "Tesco": {
+                    "style": {
+                      "fillColor": "#0055a8",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#f02f26"
+                      }
+                    }
+                  }
+                }
+              },
+              "Fashion & Home Retailers": {
+                "type": "categorized",
+                "field": "st_fascia",
+                "other": true,
+                "cat": {
+                  "50 Style": {
+                    "fillColor": "#d81b60",
+                    "layers": {
+                      "0.7": "#ffffff",
+                      "0.4": "#d81b60"
+                    }
+                  },
+                  "Action": {
+                    "fillColor": "#052389",
+                    "layers": {
+                      "0.7": "#62B5E5",
+                      "0.4": "#ffffff"
+                    }
+                  },
+                  "CCC": {
+                    "style": {
+                      "fillColor": "#EF7F3A",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#EF7F3A"
+                      }
+                    }
+                  },
+                  "CroppTown": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#ED3833"
+                      }
+                    }
+                  },
+                  "Decathlon": {
+                    "style": {
+                      "fillColor": "#3298F1",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#3298F1"
+                      }
+                    }
+                  },
+                  "Deichmann": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#006837",
+                        "0.4": "#ffffff"
+                      }
+                    }
+                  },
+                  "Diverse": {
+                    "style": {
+                      "fillColor": "#546e7a",
+                      "layers": {
+                        "0.8": "#ffffff",
+                        "0.6": "#f4511e"
+                      }
+                    }
+                  },
+                  "Empik": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#000000"
+                      }
+                    }
+                  },
+                  "H_and_M": {
+                    "label": "H&M",
+                    "style": {
+                      "fillColor": "#cc0000",
+                      "layers": {
+                        "0.65": "#ffffff",
+                        "0.4": "#cc0000"
+                      }
+                    }
+                  },
+                  "Hebe": {
+                    "style": {
+                      "fillColor": "#E23F85",
+                      "layers": {
+                        "0.7": "#EC3B5A",
+                        "0.4": "#F2923D"
+                      }
+                    }
+                  },
+                  "House": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#ffffff"
+                      }
+                    }
+                  },
+                  "KS Sport": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.9": "#ffffff",
+                        "0.7": "#000000"
+                      }
+                    }
+                  },
+                  "Martes Sport": {
+                    "style": {
+                      "fillColor": "#CC2F2A",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#CC2F2A"
+                      }
+                    }
+                  },
+                  "Mohito": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.4": "#ffffff"
+                      }
+                    }
+                  },
+                  "Pepco": {
+                    "style": {
+                      "fillColor": "#E23530",
+                      "layers": {
+                        "0.7": "#EEEEEE",
+                        "0.5": "#FCDD4B"
+                      }
+                    }
+                  },
+                  "Reserved": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.5": "#ffffff"
+                      }
+                    }
+                  },
+                  "Rossmann": {
+                    "style": {
+                      "fillColor": "#EB9486",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#EB9486"
+                      }
+                    }
+                  },
+                  "SinSay": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#673ab7"
+                      }
+                    }
+                  },
+                  "TEDI": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.8": "#FFEE4F",
+                        "0.4": "#277BC4"
+                      }
+                    }
+                  }
+                }
+              },
+              "DIY & Home Retailers": {
+                "type": "categorized",
+                "field": "st_fascia",
+                "other": true,
+                "cat": {
+                  "Bricomarche": {
+                    "style": {
+                      "fillColor": "#E43630",
+                      "layers": {
+                        "0.7": "#F4EB4D",
+                        "0.4": "#000000"
+                      }
+                    }
+                  },
+                  "Castorama": {
+                    "style": {
+                      "fillColor": "#FCDE4C",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#2372BB"
+                      }
+                    }
+                  },
+                  "Dealz": {
+                    "style": {
+                      "fillColor": "#317977",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.4": "#F7B744"
+                      }
+                    }
+                  },
+                  "RTV Euro AGD": {
+                    "style": {
+                      "fillColor": "#0C4FA1",
+                      "layers": {
+                        "0.75": "#FDF350",
+                        "0.5": "#ED3833"
+                      }
+                    }
+                  },
+                  "Leroy Merlin": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.5": "#71BF44"
+                      }
+                    }
+                  },
+                  "Media Markt": {
+                    "style": {
+                      "fillColor": "#D9322E",
+                      "layers": {
+                        "0.7": "#ffffff",
+                        "0.3": "#D9322E"
+                      }
+                    }
+                  },
+                  "MediaExpert": {
+                    "style": {
+                      "fillColor": "#CCCCCC",
+                      "layers": {
+                        "0.7": "#F7ED4E",
+                        "0.4": "000000"
+                      }
+                    }
+                  },
+                  "Neonet RTV-AGD": {
+                    "style": {
+                      "fillColor": "#CCCCCC",
+                      "layers": {
+                        "0.7": "#FFFFFF",
+                        "0.5": "#ED3F4B"
+                      }
+                    }
+                  },
+                  "Netto": {
+                    "style": {
+                      "fillColor": "#CCCCCC",
+                      "layers": {
+                        "0.7": "#FFFFFF",
+                        "0.5": "#FAD85B"
+                      }
+                    }
+                  },
+                  "Obi": {
+                    "style": {
+                      "fillColor": "#000000",
+                      "layers": {
+                        "0.8": "#F07238",
+                        "0.4": "#ffffff"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
