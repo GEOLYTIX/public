@@ -2826,6 +2826,7 @@
       "layers": {
         "Mapbox": {
           "group": "Maps",
+          "display": true,
           "attribution": {
             "© Mapbox": "https://www.mapbox.com/about/maps",
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
@@ -3626,7 +3627,7 @@
             }
           }
         },
-        "Retail Points": {
+        "Grocery": {
           "group": "Retail",
           "format": "cluster",
           "dbs": "MAPP",
