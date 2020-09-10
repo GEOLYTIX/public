@@ -223,8 +223,7 @@
     },
     {
         "title": "Population change",
-        "field": "pop_change",
-        "fieldfx": "pop2012dec - pop2018dec",
+        "field": "pop_change_2012_18",
         "type": "numeric",
         "level": 1,
         "filter": "numeric"
