@@ -3687,20 +3687,10 @@
             },
             "default": {
               "showInHeader": true,
-              "type": "square",
-              "fillColor": "#778DA9",
-              "layers": {
-                "0.75": "#ffffff",
-                "0.5": "#000000"
-              }
+              "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/brands/default_grocery.svg"
             },
             "cluster": {
-              "type": "square",
-              "fillColor": "#778DA9",
-              "layers": {
-                "0.75": "#ffffff",
-                "0.5": "#000000"
-              }
+              "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/brands/default_grocery.svg"
             },
             "themes": {
               "Food Retailers": {
@@ -3709,92 +3699,44 @@
                 "other": true,
                 "cat": {
                   "Aldi": {
-                    "fillColor": "#ef3c11",
-                    "layers": {
-                      "0.8": "#001f79",
-                      "0.4": "#02bee3"
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/aldi.svg",
+                    "scale": 0.07
                   },
                   "Auchan": {
-                    "style": {
-                      "fillColor": "#44995A",
-                      "layers": {
-                        "0.7": "#ffffff",
-                        "0.5": "#E63631"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/auchan.svg",
+                    "scale": 0.07
                   },
                   "Biedronka": {
-                    "style": {
-                      "fillColor": "#000000",
-                      "layers": {
-                        "0.7": "#FFEE4F",
-                        "0.5": "#E43630"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/biedronka.svg",
+                    "scale": 0.07
                   },
                   "Carrefour": {
-                    "style": {
-                      "fillColor": "#E63631",
-                      "layers": {
-                        "0.7": "#ffffff",
-                        "0.5": "#1459A6"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/carrefour.svg",
+                    "scale": 0.07
                   },
                   "Dino": {
-                    "style": {
-                      "fillColor": "#459A4A",
-                      "layers": {
-                        "0.7": "#ffffff",
-                        "0.5": "#E63631"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/dino.svg",
+                    "scale": 0.07
                   },
                   "Kaufland": {
-                    "style": {
-                      "fillColor": "#E13530",
-                      "layers": {
-                        "0.7": "#FFFFFF",
-                        "0.5": "#E13530"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/kaufland.svg",
+                    "scale": 0.07
                   },
                   "Kik": {
-                    "style": {
-                      "fillColor": "#002E79",
-                      "layers": {
-                        "0.7": "#FDE44D",
-                        "0.5": "#ED3833"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/kik.svg",
+                    "scale": 0.07
                   },
                   "Lidl": {
-                    "style": {
-                      "fillColor": "#d61408",
-                      "layers": {
-                        "0.7": "#ffe502",
-                        "0.5": "#002E79"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/lidl.svg",
+                    "scale": 0.07
                   },
                   "Netto": {
-                    "style": {
-                      "fillColor": "#CCCCCC",
-                      "layers": {
-                        "0.7": "#FFFFFF",
-                        "0.5": "#FAD85B"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/netto.svg",
+                    "scale": 0.07
                   },
                   "Tesco": {
-                    "style": {
-                      "fillColor": "#0055a8",
-                      "layers": {
-                        "0.7": "#ffffff",
-                        "0.5": "#f02f26"
-                      }
-                    }
+                    "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons@master/brands/tesco.svg",
+                    "scale": 0.07
                   }
                 }
               },
