@@ -2832,16 +2832,15 @@
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
           },
           "format": "tiles",
-          "URI": "/styles/v1/dbauszus/ciozrimi3002bdsm8bjtn2v1y/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com"
-        },
-        "Mapbox Labels": {
-          "group": "Maps",
-          "display": true,
-          "template": "Mapbox Label"
+          "URI": "/styles/v1/dbauszus/ck440h6990nii1co520go20i2/tiles/256/{z}/{x}/{y}?&provider=MAPBOX&host=https://api.mapbox.com"
         },
         "HERE Imagery": {
           "group": "Maps",
           "template": "HERE Imagery"
+        },
+        "Mapbox Labels": {
+          "group": "Maps",
+          "template": "Mapbox Label"
         },
         "Województwa": {
           "template": "pl_admin_layer",
