@@ -2838,10 +2838,6 @@
           "group": "Maps",
           "template": "HERE Imagery"
         },
-        "Mapbox Labels": {
-          "group": "Maps",
-          "template": "Mapbox Label"
-        },
         "Województwa": {
           "template": "pl_admin_layer",
           "group": "Administracyjne",
