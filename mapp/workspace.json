@@ -3112,6 +3112,44 @@
                     }
                   }
                 ]
+              },
+              "Unemployment": {
+                "type": "graduated",
+                "field": "unemp_2018",
+                "cat_arr": [
+                  {
+                    "value": 0,
+                    "label": "less than 3%",
+                    "style": {
+                      "fillColor": "#4db6ac",
+                      "strokeColor": "#4db6ac"
+                    }
+                  },
+                  {
+                    "value": 0.03,
+                    "label": "3 - 5%",
+                    "style": {
+                      "fillColor": "#29b6f6",
+                      "strokeColor": "#29b6f6"
+                    }
+                  },
+                  {
+                    "value": 0.05,
+                    "label": "5 - 10%",
+                    "style": {
+                      "fillColor": "#ff8a65",
+                      "strokeColor": "#ff8a65"
+                    }
+                  },
+                  {
+                    "value": 0.1,
+                    "label": "over 10%",
+                    "style": {
+                      "fillColor": "#d32f2f",
+                      "strokeColor": "#d32f2f"
+                    }
+                  }
+                ]
               }
             }
           }
