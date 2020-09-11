@@ -2998,10 +2998,10 @@
             "default": {
               "strokeColor": "#415A77",
               "fillColor": "#415A77",
-              "fillOpacity": 0.1
+              "fillOpacity": 0.4
             },
             "highlight": {
-              "fillOpacity": 0.3,
+              "fillOpacity": 0.5,
               "strokeWidth": 2
             },
             "themes": {
@@ -3063,6 +3063,52 @@
                     "style": {
                       "fillColor": "#f0f921",
                       "strokeColor": "#f0f921"
+                    }
+                  }
+                ]
+              },
+              "Disposable Income per capita": {
+                "type": "graduated",
+                "field": "di_pc_2018",
+                "cat_arr": [
+                  {
+                    "value": 0,
+                    "label": "less than 1,500",
+                    "style": {
+                      "fillColor": "#3f51b5",
+                      "strokeColor": "#3f51b5"
+                    }
+                  },
+                  {
+                    "value": 1500,
+                    "label": "1,500 - 2,000",
+                    "style": {
+                      "fillColor": "#4fc3f7",
+                      "strokeColor": "#4fc3f7"
+                    }
+                  },
+                  {
+                    "value": 2000,
+                    "label": "2,000 - 3,000",
+                    "style": {
+                      "fillColor": "#ffeb3b",
+                      "strokeColor": "#ffeb3b"
+                    }
+                  },
+                  {
+                    "value": 3000,
+                    "label": "3,000 - 5,000",
+                    "style": {
+                      "fillColor": "#ffa726",
+                      "strokeColor": "#ffa726"
+                    }
+                  },
+                  {
+                    "value": 5000,
+                    "label": "over 5,000",
+                    "style": {
+                      "fillColor": "#f4511e",
+                      "strokeColor": "#f4511e"
                     }
                   }
                 ]
