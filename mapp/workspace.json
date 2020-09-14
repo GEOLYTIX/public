@@ -525,7 +525,7 @@
         },
         "pl_store_auto_id_count":
         {
-            "template": "SELECT COUNT(b.id) FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_retail_points b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id} AND b.st_fascia IN ('50 Style','Action','CCC','CroppTown','Dealz','Deichmann','Diverse''Empik','H&M','Hebe','House','Kik','KS Sport','Martes Sport','Mohito','Pepco','Reserved','Rossmann','SinSay','TEDI','Aldi','Auchan','Biedronka','Carrefour','Dino','Kaufland','Lidl','Netto','Tesco','Bricomarche','Castorama','Decathlon','RTV Euro AGD','Leroy Merlin','MediaExpert','Media Markt','Neonet RTV-AGD','Obi')"
+            "template": "SELECT COUNT(b.id) FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_retail_points b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id} AND b.st_fascia IN ('ABC','Aldi', 'Auchan', 'Biedronka', 'Carrefour', 'Delikatesy Centrum', 'Dino', 'Groszek', 'Kaufland', 'Lidl', 'Lewiatan', 'Netto',  'Odido', 'Społem', 'Stokrotka', 'Tesco', 'Żabka');"
         },
         "pl_population_2018":
         {
