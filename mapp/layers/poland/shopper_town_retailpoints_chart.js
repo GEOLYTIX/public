@@ -56,8 +56,7 @@ module.exports = {
        sum(case
                when rpp.st_fascia='Żabka' then 1
                else 0
-           end) as "Żabka",
-        sum(case when rpp.st_fascia not in ('Aldi', 'Biedronka', 'Kaufland', 'Lidl', 'Netto', 'Żabka') then 1 else 0 end) as "Other"
+           end) as "Żabka"
       FROM geodata.pol_glx_geodata_retail_points rpp
       inner join ${table(_)} sst on st_intersects(sst.geom_4326, rpp.geom_p_4326)
       where sst.${qID(_)}=${id(_)};`;
