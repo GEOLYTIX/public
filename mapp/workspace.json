@@ -514,6 +514,10 @@
         "pl_sites_competitors":
         {
             "src": "https://geolytix.github.io/public/mapp/layers/poland/sites_competitors.sql"
+        },
+        "pl_shopper_town_retailpoints_chart":
+        {
+            "module": "https://geolytix.github.io/public/mapp/layers/poland/shopper_town_retailpoints_chart.js"
         }
     },
     "locales":

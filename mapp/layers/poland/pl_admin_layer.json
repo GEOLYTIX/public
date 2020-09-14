@@ -309,5 +309,55 @@
         "inline": true,
         "type": "numeric",
         "level": 1
+    },
+    {
+      "title": "Retail Points",
+      "type": "dataview",
+      "target": "location",
+      "query": "pl_shopper_town_retailpoints_chart",
+      "chart": {
+        "type": "horizontalBar",
+        "options": {
+          "legend": {
+            "display": false
+          },
+          "plugins": {
+            "datalabels": {
+              "display": false
+            }
+          }
+        },
+        "labels": [
+          "Aldi",
+          "Biedronka",
+          "Kaufland",
+          "Lidl",
+          "Netto",
+          "Żabka",
+          "Other"
+        ],
+        "datasets": [
+          {
+            "fields": [
+              "Aldi",
+              "Biedronka",
+              "Kaufland",
+              "Lidl",
+              "Netto",
+              "Żabka",
+              "Other"
+            ],
+            "backgroundColor": [
+              "#ffb300",
+              "#d81b60",
+              "#8e24aa",
+              "#5e35b1",
+              "#3949ab",
+              "#1e88e5",
+              "#039be5"
+            ]
+          }
+        ]
+      }
     }]
 }
