@@ -9,7 +9,7 @@ WITH min5 AS (
            ROUND(sum(age12to16))                                                 AS age_12_to_16,
            ROUND(sum(age17to21 + age22to35 + age36to45 + age46to55 + age56to65)) AS age_17_to_65,
            ROUND(sum(age65to75 + age75plus))                                     AS age_65_plus
-    FROM smiles.sites a,
+    FROM mapp.pol_mapp_sites a,
          geodata.pol_glx_geodata_hex_1k b
     WHERE ST_INTERSECTS(a.isoline_5min, b.geom_p_4326)
       AND a.id = ${id}),
@@ -24,7 +24,7 @@ WITH min5 AS (
                 ROUND(sum(age12to16))                                                 AS age_12_to_16,
                 ROUND(sum(age17to21 + age22to35 + age36to45 + age46to55 + age56to65)) AS age_17_to_65,
                 ROUND(sum(age65to75 + age75plus))                                     AS age_65_plus
-         FROM smiles.sites a,
+         FROM mapp.pol_mapp_sites a,
               geodata.pol_glx_geodata_hex_1k b
          WHERE ST_INTERSECTS(a.isoline_10min, b.geom_p_4326)
            AND a.id = ${id}),
@@ -39,7 +39,7 @@ WITH min5 AS (
                 ROUND(sum(age12to16))                                                 AS age_12_to_16,
                 ROUND(sum(age17to21 + age22to35 + age36to45 + age46to55 + age56to65)) AS age_17_to_65,
                 ROUND(sum(age65to75 + age75plus))                                     AS age_65_plus
-         FROM smiles.sites a,
+         FROM mapp.pol_mapp_sites a,
               geodata.pol_glx_geodata_hex_1k b
          WHERE ST_INTERSECTS(a.isoline_15min, b.geom_p_4326)
            AND a.id = ${id})
