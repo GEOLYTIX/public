@@ -518,6 +518,58 @@
         "pl_sites_competitors":
         {
             "src": "https://geolytix.github.io/public/mapp/layers/poland/sites_competitors.sql"
+        },
+        "pl_auto_id_count":
+        {
+            "template": "SELECT COUNT(b.id) FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_retail_venue b WHERE ST_INTERSECTS(a.geom_4326, b.geom_4326) AND a.id = ${id}"
+        },
+        "pl_store_auto_id_count":
+        {
+            "template": "SELECT COUNT(b.id) FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_retail_points b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id} AND b.st_fascia IN ('50 Style','Action','CCC','CroppTown','Dealz','Deichmann','Diverse''Empik','H&M','Hebe','House','Kik','KS Sport','Martes Sport','Mohito','Pepco','Reserved','Rossmann','SinSay','TEDI','Aldi','Auchan','Biedronka','Carrefour','Dino','Kaufland','Lidl','Netto','Tesco','Bricomarche','Castorama','Decathlon','RTV Euro AGD','Leroy Merlin','MediaExpert','Media Markt','Neonet RTV-AGD','Obi')"
+        },
+        "pl_population_2018":
+        {
+            "template": "SELECT ROUND(SUM(b.pop__18)) as population_2018 FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_hex_500 b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_households_2018":
+        {
+            "template": "SELECT ROUND(SUM(b.hholds__18)) as households_2018 FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_hex_500 b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_disosable_income_2018":
+        {
+            "template": "SELECT ROUND(SUM(b.disinc__18)/sum(b.pop__18)) as disosable_income_2018 FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_hex_500 b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_retail_spend_2018":
+        {
+            "template": "SELECT ROUND(SUM(b.retail__18)) as retail_spend_2018 FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_hex_500 b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_food_spend_2018":
+        {
+            "template": "SELECT ROUND(SUM(b.fmcg__18)) as food_spend_2018 FROM mapp.pol_mapp_notepad a, geodata.pol_glx_geodata_hex_500 b WHERE ST_Intersects(a.geom_4326, b.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_ageunder4_perc":
+        {
+            "template": "SELECT round(sum(ageunder4)*100/sum(pop__11)) || '%' as ageunder4_perc FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_age4to11_perc":
+        {
+            "template": "SELECT round(sum(age4to11)*100/sum(pop__11)) || '%' as age4to11_perc FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_age12to16_perc":
+        {
+            "template": "SELECT round(sum(age12to16)*100/sum(pop__11)) || '%' as age12to16_perc FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_age17to65_perc":
+        {
+            "template": "SELECT round(sum(age17to21+age22to35+age36to45+age46to55+age56to65)*100/sum(pop__11)) || '%' as age17to65_perc FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_age65plus_perc":
+        {
+            "template": "SELECT round(sum(age65to75+age75plus)*100/sum(pop__11)) || '%' as age65plus_perc FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
+        },
+        "pl_notepad_age_profile":
+        {
+            "template": "SELECT round(sum(ageunder4)*100/sum(pop__11)) as age_under_4, round(sum(age4to11)*100/sum(pop__11)) as age_4_to_11, round(sum(age12to16)*100/sum(pop__11)) as age_12_to_16, round(sum(age17to21+age22to35+age36to45+age46to55+age56to65)*100/sum(pop__11)) as age_17_to_64, round(sum(age65to75+age75plus)*100/sum(pop__11)) as age_65_plus FROM geodata.pol_glx_geodata_hex_500 h, mapp.pol_mapp_notepad a where ST_Intersects(a.geom_4326, h.geom_p_4326) AND a.id = ${id}"
         }
     },
     "locales":
@@ -5378,7 +5430,7 @@
                         "columns": [
                         {
                             "field": "rows",
-                            "title": "Retail"
+                            "title": "Brand"
                         },
                         {
                             "field": "min5",
@@ -5430,6 +5482,176 @@
                                 "0.75": "#EEE",
                                 "0.50": "#2364AA"
                             }
+                        }
+                    }
+                },
+                "Notepad":
+                {
+                    "meta": "<div style='padding:10px;align:centre;font-size:95%;'><p>Click on <i>Add new features</i> section to reveal available shapes. <BR><BR>Once you have clicked on the option you want to use, left click anywhere on the map to draw your shape.  Move the cursor and click again.  For the Polygon tool only, right click to finish drawing.</p></div>",
+                    "format": "mvt",
+                    "dbs": "MAPP",
+                    "table": "mapp.pol_mapp_notepad",
+                    "srid": "4326",
+                    "geom": "geom_4326",
+                    "qID": "id",
+                    "edit":
+                    {
+                        "properties": true,
+                        "polygon": true,
+                        "rectangle": true,
+                        "isoline_here": true,
+                        "delete": true,
+                        "geometry": true
+                    },
+                    "infoj": [
+                    {
+                        "type": "key"
+                    },
+                    {
+                        "title": "Retail places within reach",
+
+                        "query": "pl_auto_id_count",
+                        "inline": true
+                    },
+                    {
+                        "title": "Retail points within reach",
+
+                        "query": "pl_store_auto_id_count",
+                        "inline": true
+                    },
+                    {
+                        "title": "Expenditure 2018",
+                        "type": "title"
+                    },
+                    {
+                        "title": "Population",
+
+                        "query": "pl_population_2018",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Households",
+
+                        "query": "pl_households_2018",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Disposable Income Per Capita",
+
+                        "query": "pl_disosable_income_2018",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Retail Spend",
+
+                        "query": "pl_retail_spend_2018",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Food Spend",
+
+                        "query": "pl_food_spend_2018",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Age Profile"
+                    },
+                    {
+                        "title": "Under 4 years",
+
+                        "query": "pl_ageunder4_perc",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "4-11 year",
+
+                        "query": "pl_age4to11_perc",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "12-16 years",
+
+                        "query": "pl_age12to16_perc",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "17-65 years",
+
+                        "query": "pl_age17to65_perc",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "65+ years",
+
+                        "query": "pl_age65plus_perc",
+                        "inline": true,
+                        "class": "lv-1"
+                    },
+                    {
+                        "title": "Age",
+                        "type": "dataview",
+                        "query": "pl_notepad_age_profile",
+                        "target": "location",
+                        "chart":
+                        {
+                            "type": "doughnut",
+                            "labels": [
+                                "Under 4",
+                                "4-11 years",
+                                "12-16 years",
+                                "17-64 years",
+                                "65+ years"
+                            ],
+                            "datasets": [
+                            {
+                                "fields": [
+                                    "age_under_4",
+                                    "age_4_to_11",
+                                    "age_12_to_16",
+                                    "age_17_to_64",
+                                    "age_65_plus"
+                                ],
+                                "backgroundColor": [
+                                    "#083D77",
+                                    "#F05D5E",
+                                    "#F4D35E",
+                                    "#cae0b8",
+                                    "#D1BCE3"
+                                ],
+                                "borderColor": "#EBEBD3"
+                            }]
+                        }
+                    },
+                    {
+                        "field": "notes",
+                        "title": "Notes",
+                        "type": "textarea",
+                        "edit": true
+                    },
+                    {
+                        "field": "lastupdated",
+                        "title": "Created on",
+                        "type": "datetime",
+                        "class": "lv-1"
+                    }],
+                    "style":
+                    {
+                        "hidden": true,
+                        "default":
+                        {
+                            "strokeColor": "#FCE694",
+                            "strokeWidth": 2,
+                            "fillColor": "#FCE694",
+                            "fillOpacity": 0.3
                         }
                     }
                 }
