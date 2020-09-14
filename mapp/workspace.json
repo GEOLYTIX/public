@@ -506,6 +506,14 @@
         "pl_retail_places profile":
         {
             "template": "SELECT comparison, convenience, food, home,  (1 - comparison + convenience + food + home) as other FROM geodata.pol_glx_geodata_retail_place WHERE id = ${id};"
+        },
+        "pl_sites_demography":
+        {
+            "src": "https://geolytix.github.io/public/mapp/layers/poland/sites_demography.sql"
+        },
+        "pl_sites_competitors":
+        {
+            "src": "https://geolytix.github.io/public/mapp/layers/poland/sites_competitors.sql"
         }
     },
     "locales":
@@ -5206,6 +5214,217 @@
                                         }
                                     }
                                 }
+                            }
+                        }
+                    }
+                },
+                "Sites":
+                {
+                    "edit":
+                    {
+                        "properties": true,
+                        "point": true,
+                        "delete": true,
+                        "geometry": true
+                    },
+                    "format": "cluster",
+                    "geom": "geom_p_4326",
+                    "srid": "4326",
+                    "dbs": "MAPP",
+                    "qID": "id",
+                    "table": "mapp.pol_mapp_sites",
+                    "cluster_label": "name",
+                    "cluster_kmeans": 0.02,
+                    "cluster_dbscan": 0.2,
+                    "infoj": [
+                    {
+                        "type": "key"
+                    },
+                    {
+                        "type": "streetview"
+                    },
+                    {
+                        "field": "name",
+                        "title": "Name",
+                        "edit": true,
+                        "inline": true
+                    },
+                    {
+                        "field": "address",
+                        "title": "Address",
+                        "edit": true
+                    },
+                    {
+                        "title": "HERE Drivetimes"
+                    },
+                    {
+                        "name": "Catchment 5min",
+                        "field": "isoline_5min",
+                        "display": true,
+                        "fieldfx": "ST_asGeoJson(isoline_5min)",
+                        "type": "geometry",
+                        "class": "lv-2",
+                        "edit":
+                        {
+                            "isoline_here":
+                            {
+                                "minutes": 5
+                            }
+                        },
+                        "style":
+                        {
+                            "strokeColor": "#BB0A21",
+                            "fillColor": "#BB0A21",
+                            "strokeWidth": 2,
+                            "fillOpacity": 0.2
+                        }
+                    },
+                    {
+                        "name": "Catchment 10min",
+                        "field": "isoline_10min",
+                        "fieldfx": "ST_asGeoJson(isoline_10min)",
+                        "display": true,
+                        "class": "lv-2",
+                        "type": "geometry",
+                        "edit":
+                        {
+                            "isoline_here":
+                            {
+                                "minutes": 10
+                            }
+                        },
+                        "style":
+                        {
+                            "strokeColor": "#F49D37",
+                            "fillColor": "#F49D37",
+                            "strokeWidth": 2,
+                            "fillOpacity": 0.2
+                        }
+                    },
+                    {
+                        "name": "Catchment 15min",
+                        "field": "isoline_15min",
+                        "fieldfx": "ST_asGeoJson(isoline_15min)",
+                        "type": "geometry",
+                        "display": true,
+                        "class": "lv-2",
+                        "edit":
+                        {
+                            "isoline_here":
+                            {
+                                "minutes": 15
+                            }
+                        },
+                        "style":
+                        {
+                            "strokeColor": "#FFF05A",
+                            "fillColor": "#FFF05A",
+                            "strokeWidth": 2,
+                            "fillOpacity": 0.2
+                        }
+                    },
+                    {
+                        "type": "dataview",
+                        "target": "tab",
+                        "query": "pl_sites_demography",
+                        "title": "Demography",
+                        "layout": "fitColumns",
+                        "columns": [
+                        {
+                            "field": "rows",
+                            "title": "Demography"
+                        },
+                        {
+                            "field": "min5",
+                            "title": "5 min",
+                            "hozAlign": "center",
+                            "formatter": "money",
+                            "formatterParams":
+                            {
+                                "precision": 0
+                            }
+                        },
+                        {
+                            "field": "min10",
+                            "title": "10 min",
+                            "hozAlign": "center",
+                            "formatter": "money",
+                            "formatterParams":
+                            {
+                                "precision": 0
+                            }
+                        },
+                        {
+                            "field": "min15",
+                            "title": "15 min",
+                            "hozAlign": "center",
+                            "formatter": "money",
+                            "formatterParams":
+                            {
+                                "precision": 0
+                            }
+                        }]
+                    },
+                    {
+                        "type": "dataview",
+                        "target": "tab",
+                        "query": "pl_sites_competitors",
+                        "title": "Retail",
+                        "layout": "fitColumns",
+                        "columns": [
+                        {
+                            "field": "rows",
+                            "title": "Retail"
+                        },
+                        {
+                            "field": "min5",
+                            "title": "5 min",
+                            "hozAlign": "center"
+                        },
+                        {
+                            "field": "min10",
+                            "title": "10 min",
+                            "hozAlign": "center"
+                        },
+                        {
+                            "field": "min15",
+                            "title": "15 min",
+                            "hozAlign": "center"
+                        }]
+                    },
+                    {
+                        "field": "comments",
+                        "title": "Comments",
+                        "type": "textarea",
+                        "edit": true
+                    },
+                    {
+                        "field": "images",
+                        "title": "Images",
+                        "type": "images",
+                        "edit": true
+                    }],
+                    "style":
+                    {
+                        "hidden": true,
+                        "default":
+                        {
+                            "type": "target",
+                            "fillColor": "#2364AA",
+                            "layers":
+                            {
+                                "0.75": "#EEE",
+                                "0.50": "#2364AA"
+                            }
+                        },
+                        "cluster":
+                        {
+                            "type": "target",
+                            "fillColor": "#2364AA",
+                            "layers":
+                            {
+                                "0.75": "#EEE",
+                                "0.50": "#2364AA"
                             }
                         }
                     }
