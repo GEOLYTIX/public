@@ -32,7 +32,7 @@ module.exports = {
         return _.id;
       }
 
-    return `SELECT ,
+    return `SELECT
         sum(case
                when rpp.st_fascia='Aldi' then 1
                else 0
