@@ -5373,7 +5373,7 @@
                         "type": "dataview",
                         "target": "tab",
                         "query": "pl_sites_competitors",
-                        "title": "Retail",
+                        "title": "Groceries",
                         "layout": "fitColumns",
                         "columns": [
                         {
