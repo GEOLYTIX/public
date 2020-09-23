@@ -1,0 +1,33 @@
+{
+  "locales": {
+    "Mapbox": {
+      "layers": {
+        "OSM": {
+          "display": true,
+          "format": "tiles",
+          "attribution": {
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          },
+          "URI": "https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        },
+        "Mapbox Tiles": {
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/dbauszus/ckffabng112e619o9bnfnrffu",
+          "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          }
+        },
+        "Mapbox Static": { 
+          "format": "tiles",
+          "URI": "https://api.mapbox.com/styles/v1/dbauszus/ckffabng112e619o9bnfnrffu/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          }
+        }
+      }
+    }
+  }
+}
