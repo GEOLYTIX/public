@@ -12,7 +12,8 @@
         },
         "Mapbox Tiles": {
           "format": "mbtiles",
-          "mbStyle": "mapbox://styles/dbauszus/ckffabng112e619o9bnfnrffu?access_token=pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
+          "mbStyle": "mapbox://styles/dbauszus/ckffabng112e619o9bnfnrffu",
+          "accessToken": "pk.eyJ1IoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
           "attribution": {
             "© Mapbox": "https://www.mapbox.com/about/maps",
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
@@ -20,7 +21,8 @@
         },
         "Mapbox Tiles Colour": {
           "format": "mbtiles",
-          "mbStyle": "mapbox://styles/dbauszus/ck440h6990nii1co520go20i2?access_token=pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
+          "mbStyle": "mapbox://styles/dbauszus/ck440h6990nii1co520go20i2",
+          "accessToken": "pk.eyJ1IoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
           "attribution": {
             "© Mapbox": "https://www.mapbox.com/about/maps",
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
@@ -29,6 +31,7 @@
         "Maptiler Streets": {
           "format": "mbtiles",
           "mbStyle": "https://api.maptiler.com/maps/streets/style.json?key=IRlOP5OepagswcVAP3D3",
+          "accessToken": "pk.eyJ1IoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
           "attribution": {
             "© Maptiler": "https://www.maptiler.com/terms",
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
