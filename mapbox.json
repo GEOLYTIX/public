@@ -19,6 +19,15 @@
             "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
           }
         },
+        "Mapbox Tiles Colour": {
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/dbauszus/ck440h6990nii1co520go20i2",
+          "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
+          "attribution": {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
+          }
+        },
         "Mapbox Static": { 
           "format": "tiles",
           "URI": "https://api.mapbox.com/styles/v1/dbauszus/ckffabng112e619o9bnfnrffu/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tmY25oa2thMWhoMDJzbGNldmF2ZzYzcCJ9.IWcezkYm8mipsGXygnYbNw",
