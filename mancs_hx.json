@@ -42,7 +42,7 @@
             "default": {
               "strokeWidth": 0,
               "fillColor": "#fff",
-              "fillOpacity": 0.8
+              "fillOpacity": 1
             },
             "highlight": {
               "fillOpacity": 0.4
@@ -58,21 +58,24 @@
                     "value": "0",
                     "label": "less than 5 devices",
                     "style": {
-                      "fillColor": "#FCFDFF"
+                      "fillColor": "#FCFDFF",
+                      "fillOpacity": 0.4
                     }
                   },
                   {
                     "value": "5",
                     "label": "5 to 10",
                     "style": {
-                      "fillColor": "#E1EFFE"
+                      "fillColor": "#E1EFFE",
+                      "fillOpacity": 0.6
                     }
                   },
                   {
                     "value": "10",
                     "label": "10 to 20",
                     "style": {
-                      "fillColor": "#C6E6FD"
+                      "fillColor": "#C6E6FD",
+                      "fillOpacity": 0.8
                     }
                   },
                   {
@@ -141,7 +144,8 @@
                     "value": "0",
                     "label": "less than 100 devices",
                     "style": {
-                      "fillColor": "#FFF2FC"
+                      "fillColor": "#FFF2FC",
+                      "fillOpacity": 0.4
                     }
                   },
                   {
@@ -224,7 +228,8 @@
                     "value": "0",
                     "label": "less than 100 devices",
                     "style": {
-                      "fillColor": "#FFF2FC"
+                      "fillColor": "#FFF2FC",
+                      "fillOpacity": 0.4
                     }
                   },
                   {
@@ -307,7 +312,8 @@
                     "value": "0",
                     "label": "less than 100 devices",
                     "style": {
-                      "fillColor": "#FFF2FC"
+                      "fillColor": "#FFF2FC",
+                      "fillOpacity": 0.4
                     }
                   },
                   {
