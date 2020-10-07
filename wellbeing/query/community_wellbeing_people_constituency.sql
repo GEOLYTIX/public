@@ -19,7 +19,7 @@ SELECT
   round(eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name = '${loc}'
 
 UNION ALL
@@ -45,5 +45,5 @@ SELECT
   round(eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE constituency_name = '${constituency}';

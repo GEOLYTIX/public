@@ -19,7 +19,7 @@ SELECT
   round(eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name LIKE '${loc}'
 
 UNION ALL
@@ -49,6 +49,6 @@ CROSS JOIN lateral
   round(eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(eco_free_school_meals * 100) AS eco_free_school_meals,
   round(eco_unemployment * 100) AS eco_unemployment
-FROM coop.uk_coop_restrict_wellbeing w
+FROM coop.uk_coop_restrict_wellbeing_2020_oct w
 ORDER BY w.geom_p_4326 <-> a.geom_p
 LIMIT 9) y
