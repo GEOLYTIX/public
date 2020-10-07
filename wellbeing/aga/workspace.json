@@ -637,7 +637,7 @@
                     },
                     {
                       "field": "hou_air_quality",
-                      "title": "Pollution"
+                      "title": "Air pollution"
                     }
                   ]
                 }
