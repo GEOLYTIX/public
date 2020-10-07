@@ -11,5 +11,5 @@ SELECT
   round(indrelat * 100) AS indrelat,
   round(indequal * 100) AS indequal,
   round(indvoice * 100) AS indvoice
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE true ${viewport} ${filter} FETCH FIRST 9 ROW ONLY;
