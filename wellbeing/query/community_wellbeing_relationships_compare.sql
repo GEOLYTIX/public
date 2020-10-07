@@ -19,8 +19,9 @@ SELECT
   round(equ_lt_security * 100) AS equ_lt_security,
   round(voi_voter_turnout * 100) AS voi_voter_turnout,
   round(voi_coop_member_engagement * 100) AS voi_coop_member_engagement,
-  round(voi_signing_petitions * 100) AS voi_signing_petitions
-FROM coop.uk_coop_restrict_wellbeing
+  round(voi_signing_petitions * 100) AS voi_signing_petitions,
+  round(rel_neigh_watchschemes_per10k * 100) AS rel_neigh_watchschemes_per10k
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name LIKE '${loc}'
 
 UNION ALL
@@ -50,7 +51,8 @@ CROSS JOIN lateral
   round(equ_lt_security * 100) AS equ_lt_security,
   round(voi_voter_turnout * 100) AS voi_voter_turnout,
   round(voi_coop_member_engagement * 100) AS voi_coop_member_engagement,
-  round(voi_signing_petitions * 100) AS voi_signing_petitions
-FROM coop.uk_coop_restrict_wellbeing w
+  round(voi_signing_petitions * 100) AS voi_signing_petitions,
+  round(rel_neigh_watchschemes_per10k * 100) AS rel_neigh_watchschemes_per10k
+FROM coop.uk_coop_restrict_wellbeing_2020_oct w
 ORDER BY w.geom_p_4326 <-> a.geom_p
 LIMIT 9) y

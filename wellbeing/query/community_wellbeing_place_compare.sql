@@ -15,7 +15,7 @@ SELECT
   round(hou_public_spaces * 100) AS hou_public_spaces,
   round(hou_pollution * 100) AS hou_pollution,
   round(hou_air_quality * 100) AS hou_air_quality
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name LIKE '${loc}'
 
 UNION ALL
@@ -41,6 +41,6 @@ CROSS JOIN lateral
   round(hou_public_spaces * 100) AS hou_public_spaces,
   round(hou_pollution * 100) AS hou_pollution,
   round(hou_air_quality * 100) AS hou_air_quality
-FROM coop.uk_coop_restrict_wellbeing w
+FROM coop.uk_coop_restrict_wellbeing_2020_oct w
 ORDER BY w.geom_p_4326 <-> a.geom_p
 LIMIT 9) y

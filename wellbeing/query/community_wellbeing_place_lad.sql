@@ -15,7 +15,7 @@ SELECT
   round(hou_public_spaces * 100) AS hou_public_spaces,
   round(hou_pollution * 100) AS hou_pollution,
   round(hou_air_quality * 100) AS hou_air_quality
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name = '${loc}'
 
 UNION ALL
@@ -37,5 +37,5 @@ SELECT
   round(hou_public_spaces * 100) AS hou_public_spaces,
   round(hou_pollution * 100) AS hou_pollution,
   round(hou_air_quality * 100) AS hou_air_quality
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE lad_name = '${lad}';
