@@ -12,7 +12,7 @@ SELECT
   round(a.indrelat * 100) AS indrelat,
   round(a.indequal * 100) AS indequal,
   round(a.indvoice * 100) AS indvoice
-FROM coop.uk_coop_restrict_wellbeing a, geodata.uk_glx_geodata_postal_postcode b
+FROM coop.uk_coop_restrict_wellbeing_2020_oct a, geodata.uk_glx_geodata_postal_postcode b
 WHERE b.rm_format = '${id}'
 AND ST_INTERSECTS(a.geom_4326, b.geom_p_4326)
 ORDER BY a.dd_name;
