@@ -18,7 +18,10 @@ SELECT
   round(a.eco_household_income * 100) AS eco_household_income,
   round(a.eco_vacant_commercial_units * 100) AS eco_vacant_commercial_units,
   round(a.eco_free_school_meals * 100) AS eco_free_school_meals,
-  round(a.eco_unemployment * 100) AS eco_unemployment
+  round(a.eco_unemployment * 100) AS eco_unemployment,
+  round(eco_dist_nearest_shop * 100) AS eco_dist_nearest_shop,
+  round(eco_dist_nearest_po * 100) AS eco_dist_nearest_po,
+  round(eco_coop_se_co_per10k * 100) AS eco_coop_se_co_per10k
 FROM coop.uk_coop_restrict_wellbeing_2020_oct a, geodata.uk_glx_geodata_postal_postcode b
 WHERE b.rm_format = '${id}'
 AND ST_INTERSECTS(a.geom_4326, b.geom_p_4326)
