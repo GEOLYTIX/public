@@ -9,4 +9,4 @@ SELECT
   n_indhousi,
   n_indtrans,
   n_ind_wellb
-FROM coop.uk_coop_national_wellbeing;
+FROM coop.uk_coop_national_wellbeing_2020_oct;
