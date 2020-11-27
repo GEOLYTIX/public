@@ -15,7 +15,7 @@ SELECT
   round(a.hou_public_spaces * 100) AS hou_public_spaces,
   round(a.hou_pollution * 100) AS hou_pollution,
   round(a.hou_air_quality * 100) AS hou_air_quality
-FROM coop.uk_coop_restrict_wellbeing a, geodata.uk_glx_geodata_postal_postcode b
+FROM coop.uk_coop_restrict_wellbeing_2020_oct a, geodata.uk_glx_geodata_postal_postcode b
 WHERE b.rm_format = '${id}'
 AND ST_INTERSECTS(a.geom_4326, b.geom_p_4326)
 ORDER BY a.dd_name;

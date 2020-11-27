@@ -7,11 +7,11 @@
     },
     "get_constituency_from_region2": {
       "template": "SELECT id, constituency_name, constituency_search FROM coop.uk_open_admin_constituencies_regions WHERE regionname = '${region}' ORDER BY constituency_name;",
-      "dbs": "XYZ"
+      "dbs": "MAPP"
     },
     "get_lad_from_region2": {
       "template": "  SELECT id, lad_name, lad_search FROM coop.vw_uk_glx_geodata_admin_lad WHERE regionname = '${region}' ORDER BY lad_name;",
-      "dbs": "XYZ"
+      "dbs": "MAPP"
     },
     "delineo": {
       "_template": "http://localhost:3000/coop/views/delineo.html",
@@ -82,15 +82,15 @@
     },
     "select_ll": {
       "src": "https://geolytix.github.io/public/wellbeing/query/select_ll.sql",
-      "dbs": "XYZ"
+      "dbs": "MAPP"
     },
     "national_average": {
       "src": "https://geolytix.github.io/public/wellbeing/query/national_average.sql",
-      "dbs": "XYZ"
+      "dbs": "MAPP"
     },
     "nnearest_from_ll": {
       "src": "https://geolytix.github.io/public/wellbeing/query/nnearest_from_ll.sql",
-      "dbs": "XYZ"
+      "dbs": "MAPP"
     }
   },
   "locales": {
@@ -104,7 +104,7 @@
             "label": "region_search",
             "leading_wildcard": true,
             "geom": "bbox_4326",
-            "dbs": "XYZ"
+            "dbs": "MAPP"
           },
           {
             "_source": "postcode",
@@ -113,7 +113,7 @@
             "label": "rm_format",
             "leading_wildcard": true,
             "geom": "geom_p_4326",
-            "dbs": "XYZ"
+            "dbs": "MAPP"
           },
           {
             "_source": "lad",
@@ -121,7 +121,7 @@
             "table": "coop.vw_uk_glx_geodata_admin_lad_new",
             "label": "lad_search",
             "geom": "geom_4326",
-            "dbs": "XYZ",
+            "dbs": "MAPP",
             "leading_wildcard": true
           },
           {
@@ -130,15 +130,15 @@
             "table": "coop.uk_open_admin_constituencies_regions",
             "label": "constituency_search",
             "geom": "geom_4326",
-            "dbs": "XYZ",
+            "dbs": "MAPP",
             "leading_wildcard": true
           },
           {
             "layer": "Community Wellbeing",
-            "table": "coop.uk_coop_restrict_wellbeing",
+            "table": "coop.uk_coop_restrict_wellbeing_2020_oct",
             "label": "locale_search",
             "geom": "geom_4326",
-            "dbs": "XYZ",
+            "dbs": "MAPP",
             "leading_wildcard": true
           }
         ]
@@ -195,7 +195,7 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857_10m",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "hover": {
             "field": "lsoa_code"
           },
@@ -228,7 +228,7 @@
         },
         "Postal Code": {
           "format": "cluster",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "qID": "id",
           "geom": "geom_p_4326",
           "srid": "4326",
@@ -266,7 +266,7 @@
           "format": "mvt",
           "geom": "geom_3857_1000m",
           "srid": "3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "table": "coop.vw_uk_glx_geodata_admin_region",
           "infoj": [
             {
@@ -300,13 +300,12 @@
           "display": true,
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "__tables": {
             "8": null,
-            "9": "coop.uk_coop_restrict_wellbeing"
+            "9": "coop.uk_coop_restrict_wellbeing_2020_oct"
           },
-          "table": "coop.uk_coop_restrict_wellbeing",
-          "mvt_cache": "coop.uk_coop_restrict_wellbeing__mvt",
+          "table": "coop.uk_coop_restrict_wellbeing_2020_oct",
           "qID": "id",
           "infoj": [
             {
@@ -548,6 +547,18 @@
                     {
                       "title": "Unemployment",
                       "field": "eco_unemployment"
+                    },
+                    {
+                      "field": "eco_dist_nearest_shop",
+                      "title": "Distance to Nearest Shop"
+                    },
+                    {
+                      "field": "eco_dist_nearest_po",
+                      "title": "Distance to Nearest Post Office"
+                    },
+                    {
+                      "field": "eco_coop_se_co_per10k",
+                      "title": "Presence of Coop/SE/CO per 10,000 population"
                     }
                   ]
                 }
@@ -626,7 +637,7 @@
                     },
                     {
                       "field": "hou_air_quality",
-                      "title": "Pollution"
+                      "title": "Air pollution"
                     }
                   ]
                 }
@@ -676,6 +687,10 @@
                     {
                       "field": "rel_crime_tc",
                       "title": "Crime in town centre"
+                    },
+                    {
+                      "field": "rel_neigh_watchschemes_per10k",
+                      "title": "Neighbourhood Watch Schemes per 10,000"
                     }
                   ]
                 },
@@ -1115,7 +1130,7 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "__tables": {
             "8": "coop.vw_uk_glx_geodata_admin_lad_new",
             "9": null
@@ -1519,8 +1534,8 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
-          "table": "coop.uk_coop_restrict_wellbeing",
+          "dbs": "MAPP",
+          "table": "coop.uk_coop_restrict_wellbeing_2020_oct",
           "qID": "id",
           "infoj": [
             {
@@ -1571,7 +1586,7 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "qID": "id",
           "table": "coop.vw_uk_glx_geodata_admin_lad_new",
           "infoj": [
@@ -1627,7 +1642,7 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "table": "coop.uk_open_admin_constituencies_regions",
           "mvt_cache": "coop.uk_open_admin_constituencies_regions__mvts",
           "qID": "id",
@@ -2065,10 +2080,10 @@
           "format": "mvt",
           "srid": "3857",
           "geom": "geom_3857",
-          "dbs": "XYZ",
+          "dbs": "MAPP",
           "tables": {
             "8": null,
-            "9": "coop.uk_coop_restrict_wellbeing"
+            "9": "coop.uk_coop_restrict_wellbeing_2020_oct"
           },
           "qID": "id",
           "infoj": [

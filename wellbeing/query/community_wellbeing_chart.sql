@@ -8,4 +8,4 @@ SELECT
   round(indrelat * 100) as indrelat,
   round(indequal * 100) as indequal,
   round(indvoice * 100) as indvoice
-FROM coop.uk_coop_restrict_wellbeing WHERE id = ${id};
+FROM coop.uk_coop_restrict_wellbeing_2020_oct WHERE id = ${id};

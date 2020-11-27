@@ -12,7 +12,7 @@ SELECT
  round(indrelat * 100) AS indrelat,
  round(indequal * 100) AS indequal,
  round(indvoice * 100) AS indvoice
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE dd_name LIKE '${loc}'
 
 UNION ALL
@@ -35,6 +35,6 @@ CROSS JOIN lateral
   round(indrelat * 100) AS indrelat,
   round(indequal * 100) AS indequal,
   round(indvoice * 100) AS indvoice
-FROM coop.uk_coop_restrict_wellbeing w
+FROM coop.uk_coop_restrict_wellbeing_2020_oct w
 ORDER BY w.geom_p_4326 <-> a.geom_p
 LIMIT 9) y

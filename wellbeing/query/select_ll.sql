@@ -21,5 +21,5 @@ SELECT
   indhousi,
   indtrans,
   ind_wellb
-FROM coop.uk_coop_restrict_wellbeing
+FROM coop.uk_coop_restrict_wellbeing_2020_oct
 WHERE st_dwithin(geom_4326, st_setsrid(st_point(${lng}, ${lat}), 4326),0);

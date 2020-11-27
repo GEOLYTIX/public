@@ -19,8 +19,9 @@ SELECT
   round(a.equ_lt_security * 100) AS equ_lt_security,
   round(a.voi_voter_turnout * 100) AS voi_voter_turnout,
   round(a.voi_coop_member_engagement * 100) AS voi_coop_member_engagement,
-  round(a.voi_signing_petitions * 100) AS voi_signing_petitions
-FROM coop.uk_coop_restrict_wellbeing a, geodata.uk_glx_geodata_postal_postcode b
+  round(a.voi_signing_petitions * 100) AS voi_signing_petitions,
+  round(rel_neigh_watchschemes_per10k * 100) AS rel_neigh_watchschemes_per10k
+FROM coop.uk_coop_restrict_wellbeing_2020_oct a, geodata.uk_glx_geodata_postal_postcode b
 WHERE b.rm_format = '${id}'
 AND ST_INTERSECTS(a.geom_4326, b.geom_p_4326)
 ORDER BY a.dd_name;
