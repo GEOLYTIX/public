@@ -130,6 +130,14 @@
               0.95
             ]
           },
+          "Marks and Spencer": {
+            "svg": "https://geolytix.github.io/MapIcons/brands/mns.svg",
+            "scale": 0.1,
+            "anchor": [
+              0.5,
+              0.95
+            ]
+          },
           "Morrisons": {
             "svg": "https://geolytix.github.io/MapIcons/brands/morrisons.svg",
             "scale": 0.1,
