@@ -31,16 +31,15 @@
   ],
   "style": {
     "label": {
-      "field": "rp_name"
-    },
-    "default": {
-      "strokeColor": "#ffff66",
-      "fillColor": "#ffff66",
-      "fillOpacity": 0.7
+      "field": "rp_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
     },
     "highlight": {
-      "strokeColor": "#e91e63",
-      "fillOpacity": 0.3
+      "strokeColor": "#f5c52c",
+      "fillOpacity": 0.3,
+      "strokeWidth": 2
     },
     "themes": {
       "Retail Place Type": {
@@ -50,80 +49,86 @@
         "cat": {
           "City Centre": {
             "style": {
-              "strokeColor": "#6e016b",
-              "fillColor": "#6e016b"
+              "strokeColor": "#a93226",
+              "fillColor": "#a93226",
+              "fillOpacity": 0.4,
+              "strokeWidth": 3
             }
           },
           "Town Centre": {
             "style": {
-              "strokeColor": "#88419d",
-              "fillColor": "#88419d"
+              "strokeColor": "#b03a2e",
+              "fillColor": "#b03a2e",
+              "fillOpacity": 0.4
             }
           },
           "Urban Centre": {
             "style": {
-              "strokeColor": "#8c6bb1",
-              "fillColor": "#8c6bb1"
+              "strokeColor": "#af601a",
+              "fillColor": "#af601a"
             }
           },
           "Village Centre": {
             "style": {
-              "strokeColor": "#8c96c6",
-              "fillColor": "#8c96c6"
+              "strokeColor": "#e74c3c",
+              "fillColor": "#e74c3c",
+              "strokeWidth": 3
             }
           },
           "Parade": {
             "style": {
-              "strokeColor": "#9ebcda",
-              "fillColor": "#9ebcda"
+              "strokeColor": "#239b56",
+              "fillColor": "#239b56"
             }
           },
           "Shopping Centre": {
             "style": {
-              "strokeColor": "#016450",
-              "fillColor": "#016450"
+              "strokeColor": "#2874a6",
+              "fillColor": "#2874a6"
             }
           },
           "Leisure Park": {
             "style": {
-              "strokeColor": "#02818a",
-              "fillColor": "#02818a"
+              "strokeColor": "#f1c40f",
+              "fillColor": "#f1c40f"
             }
           },
           "Outlet Centre": {
             "style": {
-              "strokeColor": "#3690c0",
-              "fillColor": "#3690c0"
+              "strokeColor": "#6c3483",
+              "fillColor": "#6c3483"
             }
           },
           "Retail Park": {
             "style": {
-              "strokeColor": "#67a9cf",
-              "fillColor": "#67a9cf"
+              "strokeColor": "#2e86c1",
+              "fillColor": "#2e86c1"
             }
           },
           "Trade Park": {
             "style": {
-              "strokeColor": "#a6bddb",
-              "fillColor": "#a6bddb"
+              "strokeColor": "#797d7f",
+              "fillColor": "#797d7f"
             }
           },
           "Airport": {
             "style": {
-              "strokeColor": "#8c2d04",
-              "fillColor": "#8c2d04"
+              "strokeColor": "#f7dc6f",
+              "fillColor": "#f7dc6f",
+              "fillOpacity": 0.4
             }
           },
           "Service Area": {
             "style": {
-              "strokeColor": "#f16913",
-              "fillColor": "#f16913"
+              "strokeColor": "#515a5a",
+              "fillColor": "#515a5a",
+              "strokeWidth": 3
             }
           },
           "Rail Station": {
             "style": {
-              "strokeColor": "#fdae6b",
-              "fillColor": "#fdae6b"
+              "strokeColor": "#34495e",
+              "fillColor": "#34495e"
             }
           }
         }
