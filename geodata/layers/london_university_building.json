@@ -28,54 +28,38 @@
   ],
   "style": {
     "default": {
-      "strokeColor": "#FFAE03",
-      "fillColor": "#FFAE03",
-      "fillOpacity": 0.3
+      "strokeColor": "black",
+      "fillOpacity": 0.8
     },
     "highlight": {
-      "strokeColor": "#bdbdbd",
-      "fillOpacity": 0.6
+      "strokeWidth": 3
     },
     "themes": {
-      "Building Type": {
-        "type": "categorized",
+      "University Buildings": {
         "field": "ubuildtype",
-        "other": true,
+        "type": "categorized",
         "cat": {
-          "Campus Boundary": {
-            "label": "Campus Boundary",
+          "Academic": {
             "style": {
-              "weight": 1,
-              "color": "#238b45",
-              "fillColor": "#238b45",
-              "fillOpacity": 0.3
+              "fillColor": "#43a9d4"
             }
           },
-          "Academic": {
-            "label": "Academic",
+          "Campus Boundary": {
             "style": {
-              "weight": 1,
-              "color": "#cb181d",
-              "fillColor": "#cb181d",
-              "fillOpacity": 0.3
+              "fillColor": "#5f1b92",
+              "strokeColor": "#1a237e",
+              "strokeWidth": 2,
+              "fillOpacity": 0
             }
           },
           "Residential": {
-            "label": "Residential",
             "style": {
-              "weight": 1,
-              "color": "#fd8d3c",
-              "fillColor": "#fd8d3c",
-              "fillOpacity": 0.3
+              "fillColor": "#b71c3a"
             }
           },
           "Services": {
-            "label": "Services",
             "style": {
-              "weight": 1,
-              "color": "#fed976",
-              "fillColor": "#fed976",
-              "fillOpacity": 0.3
+              "fillColor": "#3ca341"
             }
           }
         }
