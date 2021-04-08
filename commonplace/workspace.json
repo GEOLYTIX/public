@@ -238,7 +238,7 @@
         "bounds": "location=51.4,-0.1&radius=30000"
       },
       "plugins": {
-        "array_pills": "/commonplace/api/provider/cloudfront?url={CDN}/commonplace/array_pills.js"
+        "array_pills": "https://geolytix.github.io/public/commonplace/array_pills.js"
       },
       "layers": {
         "Mapbox Base": {
