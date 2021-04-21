@@ -27,7 +27,7 @@
     },
     {
       "title": "Address",
-      "type": "label"
+      "type": "title"
     },
     {
       "field": "add_one"
