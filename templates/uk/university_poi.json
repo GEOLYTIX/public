@@ -1,0 +1,52 @@
+{
+  "meta": "Points of interest at each university including gyms, catering outlets, access points, receptions and porters lodges.",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "table": "geodata.uk_glx_geodata_education_uni_poi",
+  "cluster_label": "upoi_name",
+  "cluster_kmeans": 0.1,
+  "cluster_dbscan": 0.01,
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "upoi_type",
+      "title": "POI type",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "upoi_name",
+      "title": "POI Name",
+      "inline": true
+    },
+    {
+      "field": "uni_name",
+      "title": "University name",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "town",
+      "title": "Town",
+      "inline": true
+    },
+    {
+      "field": "country",
+      "title": "Country",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/university_poi.svg"
+    },
+    "cluster": {
+      "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/university_poi.svg"
+    }
+  }
+}

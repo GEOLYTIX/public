@@ -1,0 +1,292 @@
+{
+  "name": "Workers",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "tables": {
+    "11": null,
+    "12": "geodata.uk_glx_geodata_workers_hybrid_zone"
+  },
+  "__mvt_cache": "mapp.uk_glx_geodata_workers_hybrid_zone__mvts",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "oa_code",
+      "title": "OA Code",
+      "inline": true
+    },
+    {
+      "field": "wz_code",
+      "title": "WZ Code",
+      "inline": true
+    },
+    {
+      "field": "workers",
+      "title": "Workers",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "field": "workerskm2",
+      "title": "Workers km2",
+      "type": "integer",
+      "inline": true
+    },
+    {
+      "group": "Occupation Split",
+      "group_css": "grid-template-columns: 3fr 1fr;",
+      "type": "dataview",
+      "target": "location",
+      "query": "uk_workers_occupation_split",
+      "chart": {
+        "type": "doughnut",
+        "options": {
+          "plugins": {
+            "legend": {
+              "display": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "group": "Occupation Split",
+      "title": "Agriculture & fishing",
+      "css_title": "padding-left: 6px; border-left: 3px solid #a6cee3; font-size: 90%; font-weight: 400;",
+      "field": "agriculture",
+      "type": "integer",
+      "suffix": "%"      
+    },
+    {
+      "group": "Occupation Split",
+      "field": "mining",
+      "title": "Mining & quarrying",
+      "css_title": "padding-left: 6px; border-left: 3px solid #1f78b4; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "manufacturing",
+      "title": "Manufacturing",
+      "css_title": "padding-left: 6px; border-left: 3px solid #b2df8a; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "electricity",
+      "title": "Electricity & gas",
+      "css_title": "padding-left: 6px; border-left: 3px solid #33a02c; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "water",
+      "title": "Water supply & management",
+      "css_title": "padding-left: 6px; border-left: 3px solid #fb9a99; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "construction",
+      "title": "Construction",
+      "css_title": "padding-left: 6px; border-left: 3px solid #e31a1c; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "wholesale",
+      "title": "Wholesale & retail trade",
+      "css_title": "padding-left: 6px; border-left: 3px solid #fdbf6f; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "transport",
+      "title": "Transportation & storage",
+      "css_title": "padding-left: 6px; border-left: 3px solid #ff7f00; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "accommodation",
+      "title": "Accommodation & food services",
+      "css_title": "padding-left: 6px; border-left: 3px solid #cab2d6; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "title": "Information & communication",
+      "css_title": "padding-left: 6px; border-left: 3px solid #6a3d9a; font-size: 90%; font-weight: 400;",
+      "field": "it",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "finance",
+      "title": "Financial & insurance",
+      "css_title": "padding-left: 6px; border-left: 3px solid #ffff99; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "real_estate",
+      "title": "Real estate",
+      "css_title": "padding-left: 6px; border-left: 3px solid #b15928; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "professional",
+      "title": "Professional",
+      "css_title": "padding-left: 6px; border-left: 3px solid #8dd3c7; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "administrative",
+      "title": "Administrative",
+      "css_title": "padding-left: 6px; border-left: 3px solid #ffffb3; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "public_admin",
+      "title": "Public administration & defence",
+      "css_title": "padding-left: 6px; border-left: 3px solid #bebada; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "education",
+      "title": "Education",
+      "css_title": "padding-left: 6px; border-left: 3px solid #fb8072; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "human_health",
+      "title": "Human health & social services",
+      "css_title": "padding-left: 6px; border-left: 3px solid #80b1d3; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "arts",
+      "title": "Arts & entertainment",
+      "css_title": "padding-left: 6px; border-left: 3px solid #fdb462; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "other",
+      "title": "Other services",
+      "css_title": "padding-left: 6px; border-left: 3px solid #b3de69; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "households",
+      "title": "Domestic workers",
+      "css_title": "padding-left: 6px; border-left: 3px solid #fccde5; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    },
+    {
+      "group": "Occupation Split",
+      "field": "extraterritorial",
+      "title": "Extraterritorial organisations",
+      "css_title": "padding-left: 6px; border-left: 3px solid #d9d9d9; font-size: 90%; font-weight: 400;",
+      "type": "integer",
+      "suffix": "%"
+    }
+  ],
+  "style": {
+    "default": {
+      "stroke": false,
+      "fillColor": "#5A9367",
+      "fillOpacity": 0.3
+    },
+    "highlight": {
+      "fillOpacity": 0.6
+    },
+    "themes": {
+      "Workers km2": {
+        "type": "graduated",
+        "field": "workerskm2",
+        "cat_arr": [
+          {
+            "value": 0,
+            "label": "1,000 or less per km2",
+            "style": {
+              "fillColor": "#1e88e5"
+            }
+          },
+          {
+            "value": 1000,
+            "label": "1,000 per km2",
+            "style": {
+              "fillColor": "#00897b"
+            }
+          },
+          {
+            "value": 5000,
+            "label": "5,000 per km2",
+            "style": {
+              "fillColor": "#43a047"
+            }
+          },
+          {
+            "value": 10000,
+            "label": "10,000 per km2",
+            "style": {
+              "fillColor": "#c0ca33"
+            }
+          },
+          {
+            "value": 20000,
+            "label": "20,000 per km2",
+            "style": {
+              "fillColor": "#fdd835"
+            }
+          },
+          {
+            "value": 50000,
+            "label": "50,000 per km2",
+            "style": {
+              "fillColor": "#fb8c00"
+            }
+          },
+          {
+            "value": 100000,
+            "label": "over 100,000 per km2",
+            "style": {
+              "fillColor": "#f4511e"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

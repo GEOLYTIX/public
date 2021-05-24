@@ -1,0 +1,48 @@
+{
+  "name": "Roads",
+  "meta": "The UK’s motorways including all junctions, slip roads, stubs and spurs. All non-primary UK roads (trunk roads or otherwise, A-road). B-roads designated as carrying significant local traffic. Minor roads that are generally local. Minor roads that provide the most satisfactory route for through traffic between places of traffic importance, they are often but not always trunk roads.",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "geom": "geom_l_3857",
+  "srid": "3857",
+  "tables": {
+    "9": null,
+    "10": "geodata.uk_glx_geodata_road_detail"
+  },
+  "__mvt_cache": "mapp.uk_glx_geodata_road_detail__mvts",
+  "style": {
+    "default": {
+      "strokeColor": "#780116"
+    },
+    "highlight": {
+      "strokeColor": "#780116"
+    },
+    "themes": {
+      "Road Type": {
+        "type": "categorized",
+        "field": "road_type",
+        "other": true,
+        "cat": {
+          "SingleCW": {
+            "label": "Single Carriageway",
+            "style": {
+              "strokeColor": "#D1B21B"
+            }
+          },
+          "DualCW": {
+            "label": "Dual Carriageway",
+            "style": {
+              "strokeColor": "#0FBF73"
+            }
+          },
+          "MainMway": {
+            "label": "Motorway",
+            "style": {
+              "strokeColor": "#2615DB"
+            }
+          }
+        }
+      }
+    }
+  }
+}

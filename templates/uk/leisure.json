@@ -1,0 +1,87 @@
+{
+  "format": "cluster",
+  "table": "geodata.uk_glx_geodata_poi_leisure",
+  "geom": "geom_p_4326",
+  "dbs": "MAPP",
+  "cluster_kmeans": 0.02,
+  "cluster_label": "poi_type",
+  "srid": "4326",
+  "qID": "id",
+  "hover": {
+    "field": "poi_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "poi_type",
+      "title": "Type",
+      "inline": true
+    },
+    {
+      "field": "poi_name",
+      "title": "Name"
+    },
+    {
+      "field": "add_one",
+      "title": "Address"
+    },
+    {
+      "field": "add_two"
+    },
+    {
+      "field": "town"
+    },
+    {
+      "field": "locality"
+    },
+    {
+      "field": "postcode"
+    },
+    {
+      "field": "brand",
+      "inline": true,
+      "title": "Brand"
+    },
+    {
+      "field": "facilities",
+      "title": "Facilities"
+    }
+  ],
+  "style": {
+    "default": {
+      "showInHeader": true,
+      "type": "target",
+      "fillColor": "#251351",
+      "layers": {
+        "0.6": "#FFFD98"
+      }
+    },
+    "cluster": {
+      "type": "target",
+      "fillColor": "#251351",
+      "layers": {
+        "0.6": "#FFFD98"
+      }
+    },
+    "themes": {
+      "POI Type": {
+        "type": "categorized",
+        "field": "poi_type",
+        "cat": {
+          "Cinema": {
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/services/cinema_alt.svg"
+          },
+          "Stadia": {
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/services/stadia_alt.svg"
+          },
+          "Sport and Leisure Facility": {
+            "label": "Sport & Leisure Facility",
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/services/sports_alt.svg"
+          }
+        }
+      }
+    }
+  }
+}

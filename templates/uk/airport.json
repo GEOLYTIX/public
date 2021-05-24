@@ -1,0 +1,70 @@
+{
+    "format": "cluster",
+    "table": "geodata.uk_glx_geodata_poi_airports",
+    "geom": "geom_p_4326",
+    "srid": "4326",
+    "dbs": "MAPP",
+    "cluster_kmeans": 0.02,
+    "cluster_label": "poi_name",
+    "qID": "id",
+    "hover": {
+      "field": "poi_name"
+    },
+    "infoj": [
+      {
+        "type": "key"
+      },
+      {
+        "field": "poi_name",
+        "title": "Airport"
+      },
+      {
+        "field": "town",
+        "title": "Town",
+        "inline": true
+      },
+      {
+        "field": "country",
+        "title": "Country",
+        "inline": true
+      },
+      {
+        "field": "atco_code",
+        "title": "ATCO Code",
+        "inline": true
+      },
+      {
+        "field": "iata_code",
+        "title": "IATA Code",
+        "inline": true
+      },
+      {
+        "field": "icao_code",
+        "title": "ICAO Code",
+        "inline": true
+      },
+      {
+        "field": "pass_cy",
+        "title": "Passengers yearly",
+        "type": "integer",
+        "inline": true
+      },
+      {
+        "field": "figures",
+        "title": "Year",
+        "class": "lv-2",
+        "inline": true
+      }
+    ],
+    "style": {
+      "default": {
+        "showInHeader": true,
+        "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_transport_airport.svg",
+        "scale": 0.05
+      },
+      "cluster": {
+        "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/poi_pin_filled/poi_transport_airport.svg",
+        "scale": 0.1
+      }
+    }
+  }

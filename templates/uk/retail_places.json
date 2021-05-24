@@ -1,0 +1,368 @@
+{
+    "name": "Retail Places",
+    "meta": "Polygon representing a Retail Place.",
+    "format": "mvt",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "dbs": "MAPP",
+    "qID": "id",
+    "hover":
+    {
+        "field": "rp_name"
+    },
+    "tables":
+    {
+        "10": null,
+        "11": "geodata.uk_glx_geodata_retail_place"
+    },
+    "mvt_cache": "geodata_mvt.uk_glx_geodata_retail_place__mvts",
+    "infoj": [
+    {
+        "type": "key"
+    },
+    {
+        "field": "rp_name",
+        "title": "Name",
+        "filter": "like"
+    },
+    {
+        "field": "rp_type",
+        "title": "Type",
+        "filter":
+        {
+            "options": [
+                "Airport",
+                "Business Park",
+                "City Centre",
+                "F&B",
+                "Leisure Park",
+                "Outlet Centre",
+                "Parade",
+                "Rail Station",
+                "Retail Park",
+                "Service Area",
+                "Shopping Centre",
+                "Town Centre",
+                "Trade Park",
+                "Urban Centre",
+                "Village Centre"
+            ]
+        }
+    },
+    {
+        "field": "ref_pc",
+        "title": "Reference Postcode",
+        "inline": true
+    },
+    {
+        "field": "comp_strgh",
+        "title": "Wkly Comp Spend",
+        "type": "integer"
+    },
+    {
+        "field": "rp_rank",
+        "title": "Rank",
+        "type": "integer"
+    },
+    {
+        "field": "rp_type_rank_outof",
+        "fieldfx": "select rp.rp_type_rank|| ' of '|| tot.count_type as rp_type_rank_outof from geodata.uk_glx_geodata_retail_place  rp inner join (select rp_typeid, count(*) as count_type from geodata.uk_glx_geodata_retail_place  group by rp_typeid) tot on tot.rp_typeid = rp.rp_typeid where rp.id =$1",
+        "title": "Type Rank"
+    },
+    {
+        "field": "est_units",
+        "title": "Estimate Units",
+        "type": "integer"
+    },
+    {
+        "field": "est_brands",
+        "title": "Estimate Brands",
+        "type": "integer"
+    },
+    {
+        "title": "Retail Recovery",
+        "plugin": "retail_places_recovery_history"
+    },
+    {
+        "name": "Primary Catchment",
+        "field": "geom_4326_prim",
+        "fieldfx": "ST_asGeoJson(geom_4326_prim)",
+        "type": "geometry",
+        "style":
+        {
+            "strokeColor": "#e65100",
+            "fillColor": "#e65100",
+            "strokeWidth": 2,
+            "fillOpacity": 0.2
+        }
+    },
+    {
+        "name": "Secondary Catchment",
+        "field": "geom_4326_second",
+        "fieldfx": "ST_asGeoJson(geom_4326_second)",
+        "type": "geometry",
+        "style":
+        {
+            "strokeColor": "#ffd54f",
+            "fillColor": "#ffd54f",
+            "strokeWidth": 2,
+            "fillOpacity": 0.2
+        }
+    },
+    {
+        "title": "Profile",
+        "type": "dataview",
+        "target": "location",
+        "query": "uk_retail_places_profile",
+        "chart":
+        {
+            "options":
+            {
+                "plugins":
+                {
+                    "legend":
+                    {
+                        "display": false
+                    }
+                },
+                "scales":
+                {
+                    "xAxes": [
+                    {
+                        "ticks":
+                        {
+                            "maxRotation": 90,
+                            "minRotation": 90
+                        }
+                    }],
+                    "yAxes": [
+                    {
+                        "ticks":
+                        {
+                            "beginAtZero": true
+                        }
+                    }]
+                }
+            },
+            "labels": [
+                "Comparison",
+                "Convenience",
+                "F/B/L",
+                "Services"
+            ],
+            "datasets": [
+            {
+                "backgroundColor": [
+                    "#FFA630",
+                    "#C6DEA6",
+                    "#7EBDC3",
+                    "#7A6263"
+                ]
+            }]
+        }
+    }],
+    "dataviews":
+    {
+        "Retail Places":
+        {
+            "display": true,
+            "query": "uk_retail_places_table",
+            "selectable": true,
+            "viewport": true,
+            "table": "geodata.uk_glx_geodata_retail_place",
+            "columns": [
+            {
+                "field": "id",
+                "title": "ID"
+            },
+            {
+                "field": "rp_name",
+                "title": "Name"
+            },
+            {
+                "field": "rp_type",
+                "title": "Type"
+            },
+            {
+                "field": "comp_strgh",
+                "title": "Weekly Comparison Spend"
+            },
+            {
+                "field": "est_brands",
+                "title": "Estimate Brands"
+            }]
+        }
+    },
+    "style":
+    {
+        "default":
+        {
+            "fillOpacity": 0,
+            "fillColor": "white",
+            "strokeColor": "#373737",
+            "strokeWidth": 2
+        },
+        "label":
+        {
+            "field": "rp_name",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 3
+        },
+        "highlight":
+        {
+            "strokeColor": "#f5c52c",
+            "fillOpacity": 0.3,
+            "strokeWidth": 2
+        },
+        "themes":
+        {
+            "Retail Place Type":
+            {
+                "type": "categorized",
+                "field": "rp_type",
+                "other": true,
+                "cat":
+                {
+                    "City Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#a93226",
+                            "fillColor": "#a93226",
+                            "fillOpacity": 0.4,
+                            "strokeWidth": 3
+                        }
+                    },
+                    "Town Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#b03a2e",
+                            "fillColor": "#b03a2e",
+                            "fillOpacity": 0.4
+                        }
+                    },
+                    "Urban Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#af601a",
+                            "fillColor": "#af601a",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Village Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#e74c3c",
+                            "fillColor": "#e74c3c",
+                            "strokeWidth": 3,
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Parade":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#239b56",
+                            "fillColor": "#239b56",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Shopping Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#2874a6",
+                            "fillColor": "#2874a6",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Leisure Park":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#f1c40f",
+                            "fillColor": "#f1c40f",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Outlet Centre":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#6c3483",
+                            "fillColor": "#6c3483",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Retail Park":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#2e86c1",
+                            "fillColor": "#2e86c1",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Trade Park":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#797d7f",
+                            "fillColor": "#797d7f",
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Airport":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#f7dc6f",
+                            "fillColor": "#f7dc6f",
+                            "fillOpacity": 0.4
+                        }
+                    },
+                    "Service Area":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#515a5a",
+                            "fillColor": "#515a5a",
+                            "strokeWidth": 3,
+                            "fillOpacity": 0.1
+                        }
+                    },
+                    "Rail Station":
+                    {
+                        "style":
+                        {
+                            "strokeColor": "#34495e",
+                            "fillColor": "#34495e",
+                            "fillOpacity": 0.1
+                        }
+                    }
+                }
+            },
+            "Boundary Only":
+            {
+                "type": "graduated",
+                "field": "rp_type",
+                "cat_arr": [
+                {
+                    "value": 0,
+                    "label": "Boundary",
+                    "style":
+                    {
+                        "fillOpacity": 0,
+                        "fillColor": "white",
+                        "strokeColor": "#373737",
+                        "strokeWidth": 2
+                    }
+                }]
+            }
+        }
+    }
+}

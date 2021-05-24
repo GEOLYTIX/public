@@ -1,0 +1,225 @@
+{
+    "meta": "Postal Districts",
+    "format": "mvt",
+    "tables": {
+        "8": null,
+        "9": "geodata.vw_uk_postal_district_lv9_and_lv11",
+        "10": "geodata.vw_uk_postal_district_lv9_and_lv11",
+        "11": "geodata.vw_uk_postal_district_lv9_and_lv11",
+        "12": "geodata.vw_uk_postal_district_lv12_and_lv13",
+        "13": "geodata.vw_uk_postal_district_lv12_and_lv13",
+        "14": "geodata.vw_uk_postal_district_lv14_and_lv15",
+        "15": "geodata.vw_uk_postal_district_lv14_and_lv15",
+        "16": null
+    },
+    "mvt_cache": "geodata_mvt.uk_glx_geodata_postal_district__mvts",
+    "qID": "id",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "hover": {
+        "field": "post_dist"
+      },
+    "infoj": [
+        {
+            "type": "key"
+        },
+        {
+            "field": "post_dist",
+            "title": "Postal District",
+            "inline": true,
+            "filter":"like"
+        },
+        {
+            "title": "Data & Charts",
+            "type": "title"
+        },
+        {
+            "title": "Demographics",
+            "type": "dataview",
+            "query": "uk_postal_district_demographics",
+            "layout": "fitColumns",
+            "columns": [{
+                    "field": "measure",
+                    "title": "Demographics"
+                },
+                {
+                    "field": "catchment",
+                    "title": "Postal District"
+                },
+                {
+                    "title": "Index (UK Base)",
+                    "columns": [{
+                            "field": "underindex",
+                            "title": "Under",
+                            "hozAlign": "right",
+                            "formatter": "progress",
+                            "formatterParams": {
+                                "color": [
+                                    "#C0392B"
+                                ],
+                                "min": 0,
+                                "max": 100
+                            },
+                            "width": 100
+                        },
+                        {
+                            "field": "overindex",
+                            "title": "Over",
+                            "hozAlign": "left",
+                            "formatter": "progress",
+                            "formatterParams": {
+                                "color": [
+                                    "#16A085"
+                                ],
+                                "min": 0,
+                                "max": 100
+                            },
+                            "width": 100
+                        },
+                        {
+                            "field": "index",
+                            "title": "Score",
+                            "hozAlign": "center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+          "title": "Grocery Summary",
+          "type": "dataview",
+          "query": "uk_postal_district_grocery_summary",
+          "toolbar": {
+            "download_csv": true
+          },
+          "layout": "fitColumns",
+          "columns": [{
+              "field": "retailer",
+              "title": "Retailer"
+            },
+            {
+              "field": "total",
+              "title": "Total"
+            },
+            {
+              "field": "convenience",
+              "title": "Convenience"
+            },
+            {
+              "field": "small_supermarket",
+              "title": "Small Supermarket"
+            },
+            {
+              "field": "medium_supermarket",
+              "title": "Medium Supermarket"
+            },
+            {
+              "field": "large_supermarket",
+              "title": "Large Supermarket"
+            }]
+        }
+    ],
+    "style": {
+        "default": {
+            "fillOpacity": 0,
+            "fillColor": "white",
+            "strokeColor": "#373737",
+            "strokeWidth": 2
+        },
+        "highlight": {
+            "strokeColor": "#f5c52c",
+            "strokeWidth": 3
+        },
+        "label": {
+            "field": "post_dist",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 2
+        },
+        "themes": {
+            "Boundary Only": {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [{
+                    "value": 0,
+                    "label": "Boundary",
+                    "style": {
+                        "fillOpacity": 0,
+                        "fillColor": "white",
+                        "strokeColor": "#373737",
+                        "strokeWidth": 2
+                    }
+                }]
+            },
+            "Current Population": {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [{
+                        "value": 0,
+                        "label": "0 to 8k",
+                        "style": {
+                            "fillColor": "#053061",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 8000,
+                        "label": "8 to 15k",
+                        "style": {
+                            "fillColor": "#2166ac",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 15000,
+                        "label": "15 to 25k",
+                        "style": {
+                            "fillColor": "#92c5de",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 25000,
+                        "label": "25 to 35k",
+                        "style": {
+                            "fillColor": "#d1e5f0",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 35000,
+                        "label": "35 to 50k",
+                        "style": {
+                            "fillColor": "#fddbc7",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 50000,
+                        "label": "50 to 60k",
+                        "style": {
+                            "fillColor": "#f4a582",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 60000,
+                        "label": "60 to 100k",
+                        "style": {
+                            "fillColor": "#d73027",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    {
+                        "value": 100000,
+                        "label": "100k and over",
+                        "style": {
+                            "fillColor": "#67001f",
+                            "fillOpacity": 0.5
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

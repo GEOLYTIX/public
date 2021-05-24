@@ -1,0 +1,61 @@
+{
+    "format": "cluster",
+    "qID": "id",
+    "dbs": "MAPP",
+    "geom": "geom_p_4326",
+    "srid": "4326",
+    "table": "geodata.uk_glx_geodata_education_uni_student_numbers",
+    "cluster_label": "university_name",
+    "cluster_kmeans": 0.1,
+    "cluster_dbscan": 0.01,
+    "infoj": [
+    {
+        "type": "key"
+    },
+    {
+        "field": "university_name",
+        "title": "POI Name",
+        "inline": true
+    },
+    {
+        "field": "total_students",
+        "title": "Total Students",
+        "inline": true,
+        "type": "integer"
+    },
+    {
+        "field": "total_undergraduates",
+        "title": "Total Undergraduates",
+        "inline": true,
+        "type": "integer"
+    },
+    {
+        "field": "total_postgraduates",
+        "title": "Total Postgraduates",
+        "inline": true,
+        "type": "integer"
+    }
+  ],
+    "style":
+    {
+        "label":
+        {
+            "field": "university_name",
+            "declutter": true,
+            "display": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 3,
+            "minZoom": 11
+        },
+        "default":
+        {
+            "type": "dot",
+            "fillColor": "#8DA7BE"
+        },
+        "cluster":
+        {
+            "type": "dot",
+            "fillColor": "#8DA7BE"
+        }
+    }
+}

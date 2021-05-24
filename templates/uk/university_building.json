@@ -1,0 +1,99 @@
+{
+  "meta": "Building for 164 universities in the UK.",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "qID": "id",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "tables": {
+    "9": null,
+    "10": "geodata.uk_glx_geodata_education_uni_building"
+  },
+  "mvt_cache": "geodata_mvt.uk_glx_geodata_education_uni_building__mvts",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "ubuildtype",
+      "title": "Building type",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "uni_name",
+      "title": "University name",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "ubuildname",
+      "title": "Building name",
+      "inline": true
+    },
+    {
+      "field": "fac_serv",
+      "title": "Faculty served",
+      "inline": true
+    },
+    {
+      "field": "uni_add",
+      "title": "Address"
+    },
+    {
+      "field": "uni_pcode",
+      "title": "Postcode",
+      "inline": true
+    },
+    {
+      "field": "town",
+      "title": "Town",
+      "inline": true
+    },
+    {
+      "field": "country",
+      "title": "Country",
+      "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "black",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeWidth": 3
+    },
+    "themes": {
+      "University Buildings": {
+        "field": "ubuildtype",
+        "type": "categorized",
+        "cat": {
+          "Academic": {
+            "style": {
+              "fillColor": "#43a9d4"
+            }
+          },
+          "Campus Boundary": {
+            "style": {
+              "fillColor": "#5f1b92",
+              "strokeColor": "#1a237e",
+              "strokeWidth": 2,
+              "fillOpacity": 0
+            }
+          },
+          "Residential": {
+            "style": {
+              "fillColor": "#b71c3a"
+            }
+          },
+          "Services": {
+            "style": {
+              "fillColor": "#3ca341"
+            }
+          }
+        }
+      }
+    }
+  }
+}

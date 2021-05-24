@@ -1,0 +1,251 @@
+{
+    "meta": "Local Authority Districts",
+    "format": "mvt",
+    "tables":
+    {
+        "6": null,
+        "7": "geodata.vw_uk_lad_lv9_and_below",
+        "8": "geodata.vw_uk_lad_lv9_and_below",
+        "9": "geodata.vw_uk_lad_lv9_and_below",
+        "10": "geodata.vw_uk_lad_lv10_and_lv11",
+        "11": "geodata.vw_uk_lad_lv10_and_lv11",
+        "12": "geodata.vw_uk_lad"
+    },
+    "mvt_cache": "geodata_mvt.uk_glx_geodata_admin_lad__mvts",
+    "qID": "id",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "hover": {
+        "field": "lad_name"
+    },
+    "infoj": [
+    {
+        "type": "key"
+    },
+    {
+        "field": "lad_code",
+        "title": "Code",
+        "inline": true,
+        "filter":"like"
+    },
+    {
+        "field": "lad_name",
+        "title": "LAD",
+        "inline": true,
+        "filter":"like"
+    },
+    {
+        "field": "lad2_name",
+        "inline": true
+    },
+    {
+        "title": "Data & Charts",
+        "type": "title"
+    },
+    {
+        "title": "Demographics",
+        "type": "dataview",
+        "query": "uk_lad_demographics",
+        "layout": "fitColumns",
+        "columns": [{
+                "field": "measure",
+                "title": "Demographics"
+            },
+            {
+                "field": "catchment",
+                "title": "Local Authority"
+            },
+            {
+                "title": "Index (UK Base)",
+                "columns": [{
+                        "field": "underindex",
+                        "title": "Under",
+                        "hozAlign": "right",
+                        "formatter": "progress",
+                        "formatterParams": {
+                            "color": [
+                                "#C0392B"
+                            ],
+                            "min": 0,
+                            "max": 100
+                        },
+                        "width": 100
+                    },
+                    {
+                        "field": "overindex",
+                        "title": "Over",
+                        "hozAlign": "left",
+                        "formatter": "progress",
+                        "formatterParams": {
+                            "color": [
+                                "#16A085"
+                            ],
+                            "min": 0,
+                            "max": 100
+                        },
+                        "width": 100
+                    },
+                    {
+                        "field": "index",
+                        "title": "Score",
+                        "hozAlign": "center"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+      "title": "Grocery Summary",
+      "type": "dataview",
+      "query": "uk_lad_grocery_summary",
+      "toolbar": {
+        "download_csv": true
+      },
+      "layout": "fitColumns",
+      "columns": [{
+          "field": "retailer",
+          "title": "Retailer"
+        },
+        {
+          "field": "total",
+          "title": "Total"
+        },
+        {
+          "field": "convenience",
+          "title": "Convenience"
+        },
+        {
+          "field": "small_supermarket",
+          "title": "Small Supermarket"
+        },
+        {
+          "field": "medium_supermarket",
+          "title": "Medium Supermarket"
+        },
+        {
+          "field": "large_supermarket",
+          "title": "Large Supermarket"
+        }]
+    }
+   ],
+    "style":
+    {
+        "default":
+        {
+            "fillOpacity": 0,
+            "fillColor": "white",
+            "strokeColor": "#373737",
+            "strokeWidth": 2
+        },
+        "highlight":
+        {
+            "strokeColor": "#f5c52c",
+            "strokeWidth": 3
+        },
+        "label":
+        {
+            "field": "lad_name",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 2
+        },
+        "themes":
+        {
+            "Boundary Only":
+            {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [
+                {
+                    "value": 0,
+                    "label": "Boundary",
+                    "style":
+                    {
+                        "fillOpacity": 0,
+                        "fillColor": "white",
+                        "strokeColor": "#373737",
+                        "strokeWidth": 2
+                    }
+                }]
+            },
+            "Current Population":
+            {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [
+                {
+                    "value": 0,
+                    "label": "0 to 50k",
+                    "style":
+                    {
+                        "fillColor": "#053061",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 50000,
+                    "label": "50 to 100k",
+                    "style":
+                    {
+                        "fillColor": "#2166ac",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 100000,
+                    "label": "100 to 150k",
+                    "style":
+                    {
+                        "fillColor": "#92c5de",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 150000,
+                    "label": "150 to 200k",
+                    "style":
+                    {
+                        "fillColor": "#d1e5f0",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 200000,
+                    "label": "200 to 300k",
+                    "style":
+                    {
+                        "fillColor": "#fddbc7",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 300000,
+                    "label": "300 to 400k",
+                    "style":
+                    {
+                        "fillColor": "#f4a582",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 400000,
+                    "label": "400 to 800k",
+                    "style":
+                    {
+                        "fillColor": "#d73027",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 800000,
+                    "label": "800k and over",
+                    "style":
+                    {
+                        "fillColor": "#67001f",
+                        "fillOpacity": 0.5
+                    }
+                }]
+            }
+        }
+    }
+}

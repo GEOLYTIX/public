@@ -1,0 +1,174 @@
+{
+  "meta": "Polygons of all shopping centres within the UK.",
+  "format": "mvt",
+  "geom": "geom_3857",
+  "srid": "3857",
+  "qID": "id",
+  "mvt_cache": "geodata_mvt.uk_glx_geodata_retail_place_shopcent__mvts",
+  "table": "geodata.uk_glx_geodata_retail_place_shopcent",
+  "hover": {
+    "field": "sc_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "rp_id",
+      "title": "Retail place ID",
+      "inline": true
+    },
+    {
+      "field": "sc_name",
+      "title": "Shopping centre name"
+    },
+    {
+      "field": "rp_name",
+      "title": "Retail place name"
+    },
+    {
+      "field": "rp_type",
+      "title": "Retail place type",
+      "filter": "like"
+    },
+    {
+      "field": "unit_count",
+      "title": "Unit count",
+      "inline": true
+    },
+    {
+      "field": "sc_type",
+      "title": "Shopping centre type",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "area_curt",
+      "title": "Area",
+      "type": "integer",
+      "inline": true
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "sc_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeWidth": 1,
+      "strokeColor": "#444",
+      "fillColor": "#444",
+      "fillOpacity": 0
+    },
+    "highlight": {
+      "strokeColor": "#e91e63",
+      "fillOpacity": 0.3
+    },
+    "themes": {
+      "Shopping Centre Type": {
+        "label": "Shopping Centre type",
+        "field": "sc_type",
+        "type": "categorized",
+        "other": true,
+        "cat": {
+          "Arcades/Buildings": {
+            "style": {
+              "strokeColor": "#D90368",
+              "fillColor": "#D90368",
+              "fillOpacity": 0.3
+            }
+          },
+          "Aspirational Brand": {
+            "style": {
+              "strokeColor": "#541388",
+              "fillColor": "#541388",
+              "fillOpacity": 0.3
+            }
+          },
+          "City Centre Monsters": {
+            "style": {
+              "strokeColor": "#1F487E",
+              "fillColor": "#1F487E",
+              "fillOpacity": 0.3
+            }
+          },
+          "Large Classics": {
+            "style": {
+              "strokeColor": "#08B2E3",
+              "fillColor": "#08B2E3",
+              "fillOpacity": 0.3
+            }
+          },
+          "New Town Centres": {
+            "style": {
+              "strokeColor": "#32746D",
+              "fillColor": "#32746D",
+              "fillOpacity": 0.3
+            }
+          },
+          "Outlet Centres": {
+            "style": {
+              "strokeColor": "#074F57",
+              "fillColor": "#074F57",
+              "fillOpacity": 0.3
+            }
+          },
+          "Planned Urban Centre": {
+            "style": {
+              "strokeColor": "#7DDF64",
+              "fillColor": "#7DDF64",
+              "fillOpacity": 0.3
+            }
+          },
+          "Regional Mall": {
+            "style": {
+              "strokeColor": "#8ED081",
+              "fillColor": "#8ED081",
+              "fillOpacity": 0.3
+            }
+          },
+          "Small Classics": {
+            "style": {
+              "strokeColor": "#FFE74C",
+              "fillColor": "#FFE74C",
+              "fillOpacity": 0.3
+            }
+          },
+          "Standalone Shopping": {
+            "style": {
+              "strokeColor": "#FADF63",
+              "fillColor": "#FADF63",
+              "fillOpacity": 0.3
+            }
+          },
+          "Urban Entertainment Centre": {
+            "style": {
+              "strokeColor": "#E2711D",
+              "fillColor": "#E2711D",
+              "fillOpacity": 0.3
+            }
+          }
+        }
+      },
+      "Boundary Only":
+      {
+          "type": "graduated",
+          "field": "rp_type",
+          "cat_arr": [
+          {
+              "value": 0,
+              "label": "Boundary",
+              "style":
+              {
+                  "fillOpacity": 0,
+                  "fillColor": "white",
+                  "strokeColor": "#373737",
+                  "strokeWidth": 2
+              }
+          }]
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "name": "Towns and Suburbs",
+  "meta": "Seamless boundaries for towns, shopper towns and suburbs in the UK.",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "tables": {
+    "7": null,
+    "8": "geodata.uk_glx_geodata_seamless_combined"
+  },
+  "geoms": {
+    "8": "geom_3857_100m",
+    "9": "geom_3857_50m",
+    "10": "geom_3857_50m",
+    "11": "geom_3857_5m",
+    "12": "geom_3857_5m",
+    "13": "geom_3857"
+  },
+  "geom": "geom_3857_5m",
+  "srid": "3857",
+  "qID": "id",
+  "hover": {
+    "field": "sub_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "town_name",
+      "title": "Town name",
+      "inline": true
+    },
+    {
+      "field": "sub_name",
+      "title": "Locale name",
+      "inline": true
+    },
+    {
+      "field": "shop_town",
+      "title": "Shop town",
+      "inline": true
+    },
+    {
+      "field": "pop",
+      "title": "Population",
+      "type": "numeric",
+      "inline": true
+    }
+  ],
+  "style": {
+    "label": {
+      "field": "sub_name",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeColor": "#4F7CAC",
+      "fillColor": "#EEE",
+      "fillOpacity": 0.6
+    },
+    "highlight": {
+      "strokeColor": "#4F7CAC",
+      "fillColor": "#EEE",
+      "fillOpacity": 0.6,
+      "strokeWidth": 2
+    }
+  }
+}

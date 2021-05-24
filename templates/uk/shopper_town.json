@@ -1,0 +1,344 @@
+{
+  "name": "Shopper Towns",
+  "format": "mvt",
+  "geom": "geom_3857_5m",
+  "srid": "3857",
+  "dbs": "MAPP",
+  "qID": "id",
+  "table": "geodata.uk_glx_geodata_seamless_shopper_town_metrics",
+  "hover": {
+    "field": "shop_town"
+  },
+  "style": {
+    "label": {
+      "field": "shop_town",
+      "declutter": true,
+      "strokeColor": "#fff",
+      "strokeWidth": 3
+    },
+    "default": {
+      "strokeWidth": 1,
+      "strokeColor": "#ce1256",
+      "fillColor": "#B8C0BE",
+      "fillOpacity": 0.8
+    },
+    "highlight": {
+      "strokeColor": "#ce1256",
+      "fillOpacity": 0.6,
+      "strokeWidth": 2
+    },
+    "themes": {
+      "Population": {
+        "type": "graduated",
+        "field": "pop_17",
+        "other": true,
+        "cat_arr": [{
+            "value": "0",
+            "label": "Less than 40k",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#d0d1e6"
+            }
+          },
+          {
+            "value": "40000",
+            "label": "40-60k",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#a6bddb"
+            }
+          },
+          {
+            "value": "60000",
+            "label": "60-80k",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#74a9cf"
+            }
+          },
+          {
+            "value": "80000",
+            "label": "80-120k",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#2b8cbe"
+            }
+          },
+          {
+            "value": "120000",
+            "label": "120k or more",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#045a8d"
+            }
+          }
+        ]
+      },
+      "Population Growth (2011 to 2019)": {
+        "type": "graduated",
+        "field": "pop_11_19",
+        "other": true,
+        "cat_arr": [{
+            "value": "-10",
+            "label": "Less than 1%",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#ffffcc"
+            }
+          },
+          {
+            "value": "0.01",
+            "label": "1-2%",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#d9f0a3"
+            }
+          },
+          {
+            "value": "0.02",
+            "label": "2-3%",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#addd8e"
+            }
+          },
+          {
+            "value": "0.03",
+            "label": "3-4%",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#78c679"
+            }
+          },
+          {
+            "value": "0.04",
+            "label": "4-5%",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#31a354"
+            }
+          },
+          {
+            "value": "0.05",
+            "label": "5% or more",
+            "style": {
+              "strokeColor": "#FCFCFC",
+              "fillColor": "#006837"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "dataviews": {
+    "Shopper Town": {
+      "display": true,
+      "query": "uk_shopper_town table",
+      "table": "geodata.uk_glx_geodata_seamless_shopper_town_metrics",
+      "viewport": true,
+      "selectable": true,
+      "columns": [{
+          "field": "shop_town",
+          "title": "Shopper Town"
+        },
+        {
+          "field": "pop_19",
+          "title": "Population",
+          "hozAlign": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 0
+          }
+        },
+        {
+          "field": "pop_11_19",
+          "title": "Population growth 2011 to 19",
+          "hozAlign": "right",
+          "formatter": "money",
+          "formatterParams": {
+            "precision": 1,
+            "symbol": "%",
+            "symbolAfter": true
+          }
+        },
+        {
+          "field": "grocers_big4",
+          "title": "Big 4"
+        },
+        {
+          "field": "grocers_discount",
+          "title": "Discounter"
+        },
+        {
+          "field": "grocers_premium",
+          "title": "Premium"
+        }
+      ]
+    }
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "shop_town",
+      "title": "Shop town",
+      "inline": true,
+      "filter": "like"
+    },
+    {
+      "field": "pop_19",
+      "title": "Population 2019",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "field": "pop_11_19",
+      "fieldfx": "round(100 * pop_11_19::numeric, 2) || '%'",
+      "title": "Pop. growth 2011/2019",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "title": "Population growth",
+      "type": "title"
+    },
+    {
+      "type": "dataview",
+      "target": "location",
+      "query": "uk_shopper_town population_growth",
+      "chart": {
+        "labels": [
+          "2011",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023"
+        ],
+        "datasets": [{
+          "backgroundColor": "#009688"
+        }],
+        "options": {
+          "plugins": {
+            "legend": {
+              "display": false
+            }
+          },
+          "scales": {
+            "xAxes": [{
+              "ticks": {
+                "maxRotation": 90,
+                "minRotation": 90
+              }
+            }]
+          }
+        }
+      }
+    },
+    {
+      "title": "OAC Profile",
+      "type": "title"
+    },
+    {
+      "type": "dataview",
+      "target": "location",
+      "query": "uk_shopper_town oac_profile",
+      "chart": {
+        "labels": [
+          "Rural residents",
+          "Cosmopolitans",
+          "Ethinicity central",
+          ["Multicultural", "metropolitans"],
+          "Urbanites",
+          "Suburbanites",
+          ["Constrained", "City Dwellers"],
+          "Hard-pressed living"
+        ],
+        "options": {
+          "plugins": {
+            "legend": {
+              "display": false
+            }
+          },
+          "scales": {
+            "xAxes": [{
+              "ticks": {
+                "display": false
+              }
+            }]
+          }
+        },
+        "height": 300
+      }
+    },
+    {
+      "field": "grocery_demand_total",
+      "title": "Total Grocery Demand",
+      "type": "numeric",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "type": "dataview",
+      "target": "location",
+      "query": "uk_shopper_town grocery_demand",
+      "chart": {
+        "type": "doughnut",
+        "height": 250
+      }
+    },
+    {
+      "group": "Store Counts",
+      "expanded": true,
+      "field": "grocers_discount",
+      "title": "Discounter",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "group": "Store Counts",
+      "field": "grocers_big4",
+      "title": "Big 4",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "group": "Store Counts",
+      "field": "grocers_premium",
+      "title": "Premium",
+      "inline": true,
+      "filter": "numeric"
+    },
+    {
+      "title": "Retail Points",
+      "type": "title"
+    },
+    {
+      "type": "dataview",
+      "target": "location",
+      "query": "uk_shopper_town retail_points",
+      "chart": {
+        "options": {
+          "plugins": {
+            "legend": {
+              "display": false
+            }
+          },
+          "scales": {
+            "xAxes": [{
+              "ticks": {
+                "beginAtZero": true,
+                "stepSize": 1
+              }
+            }]
+          }
+        }
+      }
+    }
+  ]
+}

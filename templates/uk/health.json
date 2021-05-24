@@ -1,0 +1,93 @@
+{
+  "name": "Health POI",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.uk_glx_geodata_poi_health",
+  "qID": "id",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "cluster_label": "poi_name",
+  "cluster_kmeans": 0.02,
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "poi_type",
+      "title": "Category",
+      "inline": true
+    },
+    {
+      "field": "poi_name",
+      "title": "Name"
+    },
+    {
+      "field": "brand",
+      "title": "Brand",
+      "inline": true
+    },
+    {
+      "title": "Address",
+      "type": "title"
+    },
+    {
+      "field": "add_one"
+    },
+    {
+      "field": "add_two"
+    },
+    {
+      "field": "locality"
+    },
+    {
+      "field": "town"
+    },
+    {
+      "field": "postcode"
+    },
+    {
+      "type": "streetview"
+    }
+  ],
+  "style": {
+    "default": {
+      "showInHeader": true,
+      "type": "target",
+      "fillColor": "#539987",
+      "layers": {
+        "0.6": "#F1F1E1"
+      }
+    },
+    "cluster": {
+      "type": "target",
+      "fillColor": "#539987",
+      "layers": {
+        "0.6": "#F1F1E1"
+      }
+    },
+    "themes": {
+      "POI Type": {
+        "field": "poi_type",
+        "type": "categorized",
+        "other": true,
+        "cat": {
+          "Dental surgery": {
+            "svg": "https://geolytix.github.io/MapIcons/services/dentist_alt.svg"
+          }, 
+          "GP Practice": {
+            "svg": "https://geolytix.github.io/MapIcons/services/doctor_gp_alt.svg"
+          },
+          "Hospital": {
+            "svg": "https://geolytix.github.io/MapIcons/services/hospital_alt.svg"
+          },
+          "Pharmacy": {
+            "svg": "https://geolytix.github.io/MapIcons/services/pharmacy_alt.svg"
+          },
+          "Opticians": {
+            "svg": "https://geolytix.github.io/MapIcons/services/glasses_alt.svg"
+          }
+        }
+      }
+    }
+  }
+}

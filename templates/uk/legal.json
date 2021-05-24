@@ -1,0 +1,80 @@
+{
+  "format": "cluster",
+   "table": "geodata.uk_glx_geodata_poi_legal",
+  "geom": "geom_p_4326",
+  "dbs": "MAPP",
+  "cluster_kmeans": 0.02,
+  "cluster_label": "poi_name",
+  "srid": "4326",
+  "qID": "id",
+  "hover": {
+    "field": "poi_name"
+  },
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "poi_type",
+      "title": "Type",
+      "inline": true
+    },
+    {
+      "field": "poi_name",
+      "title": "Name"
+    },
+    {
+      "field": "add_one",
+      "title": "Address"
+    },
+    {
+      "field": "add_two"
+    },
+    {
+      "field": "town"
+    },
+    {
+      "field": "locality"
+    },
+    {
+      "field": "postcode"
+    },
+    {
+      "field": "court_type",
+      "inline": true,
+      "title": "Court type",
+      "class": "lv-1"
+    }
+  ],
+  "style": {
+    "default": {
+      "showInHeader": true,
+      "type": "target",
+      "fillColor": "#1E526C",
+      "layers": {
+        "0.6": "#FFFFFF"
+      }
+    },
+    "cluster": {
+      "type": "target",
+      "fillColor": "#1E526C",
+      "layers": {
+        "0.6": "#FFFFFF"
+      }
+    },
+    "themes": {
+      "POI Type": {
+        "type": "categorized",
+        "field": "poi_type",
+        "cat": {
+          "Prison": {
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/services/prison_alt.svg"
+          },
+          "Court": {
+            "svg": "https://cdn.jsdelivr.net/gh/GEOLYTIX/MapIcons/services/court_alt.svg"
+          }
+        }
+      }
+    }
+  }
+}

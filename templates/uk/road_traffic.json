@@ -1,0 +1,104 @@
+{
+  "name": "Road Traffic",
+  "meta": "UK modelled road traffic volumes",
+  "format": "mvt",
+  "dbs": "MAPP",
+  "qID": "id",
+  "geom": "geom_l_3857",
+  "srid": "3857",
+  "tables": {
+    "8": null,
+    "9": "geodata.uk_glx_geodata_road_traffic_merged"
+  },
+  "mvt_cache": "geodata_mvt.uk_glx_geodata_road_traffic_merged__mvts",
+  "infoj": [
+    {
+      "type": "key"
+    },
+    {
+      "field": "glx_mv_label",
+      "title": "Traffic volume (average daily)",
+      "type": "numeric"
+    }
+  ],
+  "style": {
+    "default": {
+      "strokeColor": "#780116"
+    },
+    "highlight": {
+      "strokeColor": "#780116"
+    },
+    "themes": {
+      "Traffic (average daily)": {
+        "type": "graduated",
+        "field": "glx_mv",
+        "cat_arr": [
+          {
+            "value": 0,
+            "label": "0 - 5,000",
+            "style": {
+              "strokeColor": "#5a3fde",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "value": 5000,
+            "label": "5,000 - 10,000",
+            "style": {
+              "strokeColor": "#5e3dd9",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "value": 10000,
+            "label": "10,000 - 15,000",
+            "style": {
+              "strokeColor": "#7436bf",
+              "strokeWidth": 1
+            }
+          },
+          {
+            "value": 15000,
+            "label": "15,000 - 20,000",
+            "style": {
+              "strokeColor": "#8c2fa2",
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "value": 20000,
+            "label": "20,000 - 30,000",
+            "style": {
+              "strokeColor": "#a42786",
+              "strokeWidth": 1.5
+            }
+          },
+          {
+            "value": 30000,
+            "label": "30,000 - 50,000",
+            "style": {
+              "strokeColor": "#bc2069",
+              "strokeWidth": 2
+            }
+          },
+          {
+            "value": 50000,
+            "label": "50,000 - 75,000",
+            "style": {
+              "strokeColor": "#ca1b58",
+              "strokeWidth": 2
+            }
+          },
+          {
+            "value": 75000,
+            "label": "75,000 - 100,000",
+            "style": {
+              "strokeColor": "#cc1a55",
+              "strokeWidth": 2.5
+            }
+          }
+        ]
+      }
+    }
+  }
+}

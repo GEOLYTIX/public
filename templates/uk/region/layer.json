@@ -1,0 +1,341 @@
+{
+    "meta": "ONS Regions (former Government Office Regions)",
+    "format": "mvt",
+    "tables":
+    {
+        "5": "geodata.vw_uk_region_lv8_and_below",
+        "6": "geodata.vw_uk_region_lv8_and_below",
+        "7": "geodata.vw_uk_region_lv8_and_below",
+        "8": "geodata.vw_uk_region_lv8_and_below",
+        "9": "geodata.vw_uk_region_lv9_lv10",
+        "10": "geodata.vw_uk_region_lv9_lv10",
+        "11": "geodata.vw_uk_region_lv11_and_above"
+    },
+    "mvt_cache": "geodata_mvt.uk_glx_geodata_admin_region__mvts",
+    "qID": "id",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "hover": {
+        "field": "regionname"
+    },
+    "infoj": [
+    {
+        "type": "key"
+    },
+    {
+        "field": "regioncode",
+        "title": "Code",
+        "inline": true,
+        "filter":"like"
+    },
+    {
+        "field": "regionname",
+        "title": "Region",
+        "inline": true,
+        "filter":"like"
+    },
+    {
+        "title": "Data & Charts",
+        "type": "title"
+    },
+    {
+        "title": "Demographics",
+        "type": "dataview",
+        "query": "uk_region_demographics",
+        "layout": "fitColumns",
+        "columns": [
+        {
+            "field": "measure",
+            "title": "Demographics"
+        },
+        {
+            "field": "catchment",
+            "title": "Region"
+        },
+        {
+            "title": "Index (UK Base)",
+            "columns": [
+            {
+                "field": "underindex",
+                "title": "Under",
+                "hozAlign": "right",
+                "formatter": "progress",
+                "formatterParams":
+                {
+                    "color": [
+                        "#C0392B"
+                    ],
+                    "min": 0,
+                    "max": 100
+                },
+                "width": 100
+            },
+            {
+                "field": "overindex",
+                "title": "Over",
+                "hozAlign": "left",
+                "formatter": "progress",
+                "formatterParams":
+                {
+                    "color": [
+                        "#16A085"
+                    ],
+                    "min": 0,
+                    "max": 100
+                },
+                "width": 100
+            },
+            {
+                "field": "index",
+                "title": "Score",
+                "hozAlign": "center"
+            }]
+        }]
+    },
+    {
+      "title": "Grocery Summary",
+      "type": "dataview",
+      "query": "uk_region_grocery_summary",
+      "toolbar": {
+        "download_csv": true
+      },
+      "layout": "fitColumns",
+      "columns": [{
+          "field": "retailer",
+          "title": "Retailer"
+        },
+        {
+          "field": "total",
+          "title": "Total"
+        },
+        {
+          "field": "convenience",
+          "title": "Convenience"
+        },
+        {
+          "field": "small_supermarket",
+          "title": "Small Supermarket"
+        },
+        {
+          "field": "medium_supermarket",
+          "title": "Medium Supermarket"
+        },
+        {
+          "field": "large_supermarket",
+          "title": "Large Supermarket"
+        }]
+    }],
+    "style":
+    {
+        "default":
+        {
+            "fillOpacity": 0,
+            "fillColor": "white",
+            "strokeColor": "#373737",
+            "strokeWidth": 2
+        },
+        "highlight":
+        {
+            "strokeColor": "#f5c52c",
+            "strokeWidth": 3
+        },
+        "label":
+        {
+            "field": "regionname",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 2
+        },
+        "themes":
+        {
+            "Regions":
+            {
+                "type": "categorized",
+                "field": "regionname",
+                "cat":
+                {
+                    "East Midlands":
+                    {
+                        "style": {
+                            "fillColor": "#DA2C38",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "Eastern":
+                    {
+                        "style": {
+                            "fillColor": "#006666",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "London":
+                    {
+                        "style": {
+                            "fillColor": "#87C38F",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "North East":
+                    {
+                        "style": {
+                            "fillColor": "#F4F0BB",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "North West":
+                    {
+                        "style": {
+                            "fillColor": "#43291F",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "Northern Ireland":
+                    {
+                        "style": {
+                            "fillColor": "#7D53DE",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "Scotland":
+                    {
+                        "style": {
+                            "fillColor": "#DE8F6E",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "South East":
+                    {
+                        "style": {
+                            "fillColor": "#8C8A93",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "South West":
+                    {
+                        "style": {
+                            "fillColor": "#29339B",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "Wales":
+                    {
+                        "style": {
+                            "fillColor": "#7B2D26",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "West Midlands":
+                    {
+                        "style": {
+                            "fillColor": "#E85F5C",
+                            "fillOpacity": 0.5
+                        }
+                    },
+                    "Yorkshire and The Humber":
+                    {
+                        "style": {
+                            "fillColor": "#C08497",
+                            "fillOpacity": 0.5
+                        }
+                    }
+
+                }
+            },
+            "Boundary Only":
+            {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [
+                {
+                    "value": 0,
+                    "label": "Boundary",
+                    "style":
+                    {
+                        "fillOpacity": 0,
+                        "fillColor": "white",
+                        "strokeColor": "#373737",
+                        "strokeWidth": 2
+                    }
+                }]
+            },
+            "Current Population":
+            {
+                "type": "graduated",
+                "field": "pop_19",
+                "cat_arr": [
+                {
+                    "value": 0,
+                    "label": "0 to 1m",
+                    "style":
+                    {
+                        "fillColor": "#053061",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 1000000,
+                    "label": "1 to 2m",
+                    "style":
+                    {
+                        "fillColor": "#2166ac",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 2000000,
+                    "label": "2 to 3m",
+                    "style":
+                    {
+                        "fillColor": "#92c5de",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 3000000,
+                    "label": "3 to 5m",
+                    "style":
+                    {
+                        "fillColor": "#d1e5f0",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 5000000,
+                    "label": "5 to 5.5m",
+                    "style":
+                    {
+                        "fillColor": "#fddbc7",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 5500000,
+                    "label": "5.5 to 6m",
+                    "style":
+                    {
+                        "fillColor": "#f4a582",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 6000000,
+                    "label": "6 to 7m",
+                    "style":
+                    {
+                        "fillColor": "#d73027",
+                        "fillOpacity": 0.5
+                    }
+                },
+                {
+                    "value": 7000000,
+                    "label": "7m and over",
+                    "style":
+                    {
+                        "fillColor": "#67001f",
+                        "fillOpacity": 0.5
+                    }
+                }]
+            }
+        }
+    }
+}

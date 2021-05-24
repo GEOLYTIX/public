@@ -1,0 +1,220 @@
+{
+    "format": "mvt",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "qID": "id",
+    "mvt_cache": "geodata_mvt.uk_glx_mobility_retail_place_hex_grid_12_jenks__mvts",
+    "tables": {
+      "14": null,
+      "15": "geodata.uk_glx_mobility_retail_place_hex_grid_12_jenks"
+    },
+    "style": {
+      "default": {
+        "strokeWidth": 0,
+        "fillColor": "#fff",
+        "fillOpacity": 1
+      },
+      "highlight": {
+        "fillOpacity": 0.4
+      },
+      "label": {
+        "field": "rp_rank",
+        "title": "Retail Place Rank",
+        "minZoom": 17
+      },
+      "themes": {
+        "By Hour": {
+          "type": "graduated",
+          "theme_slider": true,
+          "field": "unique_dev",
+          "fields": "unique_dev, unique_dev_0, unique_dev_1, unique_dev_2, unique_dev_3, unique_dev_4, unique_dev_5, unique_dev_6, unique_dev_7, unique_dev_8, unique_dev_9, unique_dev_10, unique_dev_11, unique_dev_12, unique_dev_13, unique_dev_14, unique_dev_15, unique_dev_16, unique_dev_17, unique_dev_18, unique_dev_19, unique_dev_20, unique_dev_21, unique_dev_22, unique_dev_23",
+          "cat_arr": [
+            {
+              "value": "1",
+              "style": {
+                "fillColor": "#FCFDFF",
+                "fillOpacity": 0.4
+              }
+            },
+            {
+              "value": "2",
+              "style": {
+                "fillColor": "#C6E6FD",
+                "fillOpacity": 0.8
+              }
+            },
+            {
+              "value": "3",
+              "style": {
+                "fillColor": "#92E3F9"
+              }
+            },
+            {
+              "value": "4",
+              "style": {
+                "fillColor": "#15CD60"
+              }
+            },
+            {
+              "value": "5",
+              "style": {
+                "fillColor": "#1B8700"
+              }
+            }
+          ]
+        },
+        "Day total": {
+          "type": "graduated",
+          "field": "unique_dev",
+          "cat_arr": [
+            {
+              "value": "1",
+              "style": {
+                "fillColor": "#FCFDFF",
+                "fillOpacity": 0.4
+              }
+            },
+            {
+              "value": "2",
+              "style": {
+                "fillColor": "#C6E6FD",
+                "fillOpacity": 0.8
+              }
+            },
+            {
+              "value": "3",
+              "style": {
+                "fillColor": "#92E3F9"
+              }
+            },
+            {
+              "value": "4",
+              "style": {
+                "fillColor": "#15CD60"
+              }
+            },
+            {
+              "value": "5",
+              "style": {
+                "fillColor": "#1B8700"
+              }
+            }
+          ]
+        },
+        "Day Total - Proportional": {
+          "type": "graduated",
+          "field": "hex7_pings_jenks",
+          "cat_arr": [
+            {
+              "value": "1",
+              "style": {
+                "fillColor": "#FCFDFF",
+                "fillOpacity": 0.4
+              }
+            },
+            {
+              "value": "2",
+              "style": {
+                "fillColor": "#C6E6FD",
+                "fillOpacity": 0.8
+              }
+            },
+            {
+              "value": "3",
+              "style": {
+                "fillColor": "#92E3F9"
+              }
+            },
+            {
+              "value": "4",
+              "style": {
+                "fillColor": "#15CD60"
+              }
+            },
+            {
+              "value": "5",
+              "style": {
+                "fillColor": "#1B8700"
+              }
+            }
+          ]
+        },
+        "Weekday total": {
+          "type": "graduated",
+          "field": "unique_dev_weekday",
+          "cat_arr": [
+            {
+              "value": "1",
+              "style": {
+                "fillColor": "#FCFDFF",
+                "fillOpacity": 0.4
+              }
+            },
+            {
+              "value": "2",
+              "style": {
+                "fillColor": "#C6E6FD",
+                "fillOpacity": 0.8
+              }
+            },
+            {
+              "value": "3",
+              "style": {
+                "fillColor": "#92E3F9"
+              }
+            },
+            {
+              "value": "4",
+              "style": {
+                "fillColor": "#15CD60"
+              }
+            },
+            {
+              "value": "5",
+              "style": {
+                "fillColor": "#1B8700"
+              }
+            }
+          ]
+        },
+        "Weekend total": {
+          "type": "graduated",
+          "field": "unique_dev_weekend",
+          "cat_arr": [
+            {
+              "value": "1",
+              "style": {
+                "fillColor": "#FCFDFF",
+                "fillOpacity": 0.4
+              }
+            },
+            {
+              "value": "2",
+              "style": {
+                "fillColor": "#C6E6FD",
+                "fillOpacity": 0.8
+              }
+            },
+            {
+              "value": "3",
+              "style": {
+                "fillColor": "#92E3F9"
+              }
+            },
+            {
+              "value": "4",
+              "style": {
+                "fillColor": "#15CD60"
+              }
+            },
+            {
+              "value": "5",
+              "style": {
+                "fillColor": "#1B8700"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }

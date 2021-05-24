@@ -1,0 +1,48 @@
+{
+  "name": "Demography Grid",
+  "format": "grid",
+  "dbs": "MAPP",
+  "geom": "geom_p_4326",
+  "grid_color": "pop__11",
+  "tables": {
+    "5": null,
+    "6": "geodata.uk_glx_geodata_hex_64k",
+    "7": "geodata.uk_glx_geodata_hex_32k",
+    "8": "geodata.uk_glx_geodata_hex_16k",
+    "9": "geodata.uk_glx_geodata_hex_8k",
+    "10": "geodata.uk_glx_geodata_hex_4k",
+    "11": "geodata.uk_glx_geodata_hex_2k",
+    "12": "geodata.uk_glx_geodata_hex_1k"
+  },
+  "style": {
+    "range": [
+      "#15773f",
+      "#66bd63",
+      "#a6d96a",
+      "#fdae61",
+      "#f46d43",
+      "#d73027"
+    ]
+  },
+  "grid_fields": {
+    "Population 2017": "pop__17",
+    "Population 2011": "pop__11",
+    "Age 18 to 24": "age18_24",
+    "Age 25 to 44": "age25_44",
+    "Age 45 to 59": "age45_59",
+    "Age 60 plus": "age60plus",
+    "AB": "abhrp",
+    "C1C2": "c1c2hrp",
+    "DE": "dehrp",
+    "Employed": "employed",
+    "Unemployed": "eaunemp",
+    "White Total Population": "whitetot",
+    "Non White Population": "nonwhite",
+    "Household - single": "pers1hhd",
+    "Household - 2 persons": "pers2hhd",
+    "Household - 2+ persons": "pers2plushhd",
+    "Dwelling - own home (mortgaged/outright)": "own",
+    "Social": "social",
+    "Private renters": "rent"
+  }
+}

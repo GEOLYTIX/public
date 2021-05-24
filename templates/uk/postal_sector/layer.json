@@ -1,0 +1,235 @@
+{
+    "meta": "Postal Sectors",
+    "format": "mvt",
+    "tables":
+    {
+        "9": null,
+        "10": "geodata.vw_uk_postal_sector_lv10_and_lv11",
+        "11": "geodata.vw_uk_postal_sector_lv10_and_lv11",
+        "12": "geodata.vw_uk_postal_sector_lv12_and_lv13",
+        "13": "geodata.vw_uk_postal_sector_lv12_and_lv13",
+        "14": "geodata.vw_uk_postal_sector_lv14_and_lv15",
+        "15": "geodata.vw_uk_postal_sector_lv14_and_lv15",
+        "16": "geodata.vw_uk_postal_sector_lv16_and_lv18",
+        "17": "geodata.vw_uk_postal_sector_lv16_and_lv18"
+    },
+    "mvt_cache": "geodata_mvt.uk_glx_geodata_postal_sector__mvts",
+    "qID": "id",
+    "geom": "geom_3857",
+    "srid": "3857",
+    "hover": {
+      "field": "rm_sect"
+    },
+    "infoj": [
+    {
+        "type": "key"
+    },
+    {
+        "field": "rm_sect",
+        "title": "Postal Sector",
+        "inline": true,
+        "filter":"like"
+    },
+    {
+        "title": "Data & Charts",
+        "type": "title"
+    },
+    {
+        "title": "Demographics",
+        "type": "dataview",
+        "query": "uk_postal_sector_demographics",
+        "layout": "fitColumns",
+        "columns": [
+        {
+            "field": "measure",
+            "title": "Demographics"
+        },
+        {
+            "field": "catchment",
+            "title": "Postal Sector"
+        },
+        {
+            "title": "Index (UK Base)",
+            "columns": [
+            {
+                "field": "underindex",
+                "title": "Under",
+                "hozAlign": "right",
+                "formatter": "progress",
+                "formatterParams":
+                {
+                    "color": [
+                        "#C0392B"
+                    ],
+                    "min": 0,
+                    "max": 100
+                },
+                "width": 100
+            },
+            {
+                "field": "overindex",
+                "title": "Over",
+                "hozAlign": "left",
+                "formatter": "progress",
+                "formatterParams":
+                {
+                    "color": [
+                        "#16A085"
+                    ],
+                    "min": 0,
+                    "max": 100
+                },
+                "width": 100
+            },
+            {
+                "field": "index",
+                "title": "Score",
+                "hozAlign": "center"
+            }]
+        }]
+    },
+    {
+      "title": "Grocery Summary",
+      "type": "dataview",
+      "query": "uk_postal_sector_grocery_summary",
+      "toolbar": {
+        "download_csv": true
+      },
+      "layout": "fitColumns",
+      "columns": [{
+          "field": "retailer",
+          "title": "Retailer"
+        },
+        {
+          "field": "total",
+          "title": "Total"
+        },
+        {
+          "field": "convenience",
+          "title": "Convenience"
+        },
+        {
+          "field": "small_supermarket",
+          "title": "Small Supermarket"
+        },
+        {
+          "field": "medium_supermarket",
+          "title": "Medium Supermarket"
+        },
+        {
+          "field": "large_supermarket",
+          "title": "Large Supermarket"
+        }]
+    }
+    ],
+   "style":
+    {
+        "default":
+        {
+            "fillOpacity": 0,
+            "fillColor": "white",
+            "strokeColor": "#373737",
+            "strokeWidth": 2
+        },
+        "highlight":
+        {
+            "strokeColor": "#f5c52c",
+			"strokeWidth": 3
+        },
+        "label":
+        {
+            "field": "rm_sect",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 2
+        },
+		"themes": {
+				"Boundary Only": {
+				"type": "graduated",
+				"field": "pop_19",
+				"cat_arr": [
+				{
+							"value": 0,
+							"label": "Boundary",
+							"style": {
+								"fillOpacity": 0,
+								"fillColor": "white",
+								"strokeColor": "#373737",
+								"strokeWidth": 2
+							}
+				}
+				]
+					},
+			"Current Population": {
+				"type": "graduated",
+				"field": "pop_19",
+				"cat_arr": [
+						  {
+							"value": 0,
+							"label": "0 to 2k",
+							"style": {
+							  "fillColor": "#053061",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 2000,
+							"label": "2 to 4k",
+							"style": {
+							  "fillColor": "#2166ac",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 4000,
+							"label": "4 to 6k",
+							"style": {
+							  "fillColor": "#92c5de",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 6000,
+							"label": "6 to 8k",
+							"style": {
+							  "fillColor": "#d1e5f0",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 8000,
+							"label": "8 to 10k",
+							"style": {
+							  "fillColor": "#fddbc7",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 10000,
+							"label": "10 to 13k",
+							"style": {
+							  "fillColor": "#f4a582",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 13000,
+							"label": "13 to 16k",
+							"style": {
+							  "fillColor": "#d73027",
+							  "fillOpacity": 0.5
+							}
+						  },
+						  {
+							"value": 16000,
+							"label": "16k and over",
+							"style": {
+							  "fillColor": "#67001f",
+							  "fillOpacity": 0.5
+							}
+						  }
+						]
+					}
+		}
+    }
+}

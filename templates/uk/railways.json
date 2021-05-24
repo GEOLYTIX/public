@@ -1,0 +1,53 @@
+{
+	"meta": "The rail and light rail systems within the United Kingdom.",
+	"format": "mvt",
+	"dbs": "MAPP",
+	"qID": "id",
+	"geom": "geom_l_3857",
+	"srid": "3857",
+	"tables": {
+		"7": null,
+		"8": "geodata.uk_glx_geodata_transport_rail_line"
+	},
+	"hover": {
+		"field": "line_type"
+	},
+	"style": {
+		"default": {
+			"strokeColor": "#3C7A89",
+			"strokeWidth": 2
+		},
+		"highlight": {
+			"strokeWidth": 3
+		},
+		"themes": {
+			"Rail Type": {
+				"field": "line_type",
+				"label": "Rail type",
+				"type": "categorized",
+				"other": true,
+				"cat": {
+					"Rail Line": {
+						"label": "Rail",
+						"style": {
+							"strokeColor": "#129490"
+						}
+					},
+					"Light Rail Line": {
+						"label": "Rail",
+						"style": {
+							"strokeColor": "#C1B098",
+							"strokeWidth": 1
+						}
+					},
+					"Underground Line": {
+						"label": "Underground",
+						"style": {
+							"strokeColor": "#ad1717"
+						}
+					}
+				}
+			}
+		}
+	}
+}

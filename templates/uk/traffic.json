@@ -1,0 +1,173 @@
+{
+  "name": "Traffic Counts",
+  "meta": "Traffic Count within the United Kingdom.",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "tables":
+  {
+      "12": null,
+      "13": "geodata.uk_glx_geodata_road_volume_trafficcount"
+  },
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "qID": "id",
+  "cluster_label": "road_num",
+  "cluster_kmeans": 0.03,
+  "cluster_dbscan": 0.03,
+  "infoj": [
+    {
+      "field": "cp_type",
+      "title": "Count Point Type",
+      "inline": true
+    },
+    {
+      "field": "late_year",
+      "title": "Year",
+      "inline": true
+    },
+    {
+      "field": "road_num",
+      "title": "Road Number"
+    },
+    {
+      "field": "road_class",
+      "title": "Road Class",
+      "inline": true
+    },
+    {
+      "field": "area_cat",
+      "title": "Area Category",
+      "inline": true
+    },
+    {
+      "field": "start_junc",
+      "title": "Start Junction",
+      "inline": true
+    },
+    {
+      "field": "end_junc",
+      "title": "End Junction",
+      "inline": true
+    },
+    {
+      "field": "len_km",
+      "title": "Length (km)",
+      "inline": true
+    },
+    {
+      "field": "len_mi",
+      "title": "Length (Mi)",
+      "inline": true
+    },
+    {
+      "field": "cycles_ly",
+      "title": "Non-motorised Cycles",
+      "group": "Light Vehicles",
+      "inline": true
+    },
+    {
+      "field": "mbike_ly",
+      "title": "Motorised Cycles",
+      "group": "Light Vehicles",
+      "inline": true
+    },
+    {
+      "field": "car_ly",
+      "title": "Cars",
+      "group": "Light Vehicles",
+      "inline": true
+    },
+    {
+      "field": "bus_ly",
+      "title": "Busses",
+      "group": "Light Vehicles",
+      "inline": true
+    },
+    {
+      "field": "lgv_ly",
+      "title": "Light Goods Vehicles",
+      "group": "Light Vehicles",
+      "inline": true
+    },
+    {
+      "field": "hgv_2ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus)",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "hgv_3ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus) with three axles",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "hgv_4ly",
+      "title": "Rigid Heavy Goods Vehicles (3.5 tonnes plus) with four axles",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_3ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus)",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_5ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus) with five axles",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "ar_hgv_6ly",
+      "title": "Articulated Heavy Goods Vehicle (3.5 tonnes plus) with six or more axles",
+      "group": "Heavy Vehicles",
+      "inline": true
+    },
+    {
+      "field": "all_mv_14",
+      "title": "All Motor Vehicles (2014)",
+      "inline": true
+    },
+    {
+      "field": "all_mv_15",
+      "title": "All Motor Vehicles (2015)",
+      "inline": true
+    },
+    {
+      "field": "all_mv_16",
+      "title": "All Motor Vehicles (2016)",
+      "inline": true
+    },
+    {
+      "field": "all_mv_17",
+      "title": "All Motor Vehicles (2017)",
+      "inline": true
+    },
+    {
+      "field": "all_mv_18",
+      "title": "All Motor Vehicles (2018)",
+      "inline": true
+    }
+  ],
+  "style":
+  {
+      "label": {
+          "field": "count_label",
+          "display": true,
+          "declutter": true,
+          "strokeColor": "#FFF",
+          "strokeWidth": 2
+      },
+      "default":
+      {
+          "type": "diamond",
+          "fillColor": "#1976d2"
+      },
+      "cluster": {
+          "type": "diamond",
+          "fillColor": "#1976d2"
+      }
+    }
+}

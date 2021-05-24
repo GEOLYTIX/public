@@ -1,0 +1,98 @@
+{
+  "name": "Rail Stations",
+  "meta": "The stations that service underground lines, are part of the National Rail network or the Northern Ireland rail stations and support thirteen light rail systems within the United Kingdom.",
+  "format": "cluster",
+  "dbs": "MAPP",
+  "table": "geodata.uk_glx_geodata_transport_rail_station",
+  "geom": "geom_p_4326",
+  "srid": "4326",
+  "qID": "id",
+  "cluster_kmeans": 0.02,
+  "cluster_dbscan": 0.2,
+  "cluster_label": "stat_name",
+  "infoj": [{
+      "type": "key"
+    },
+    {
+      "field": "atco_code",
+      "title": "ATCO Code",
+      "inline": true
+    },
+    {
+      "field": "stat_type",
+      "title": "Type",
+      "inline": true
+    },
+    {
+      "field": "stat_name",
+      "title": "Name",
+      "inline": true
+    },
+    {
+      "field": "network",
+      "title": "Network",
+      "inline": true
+    },
+    {
+      "field": "line",
+      "title": "Lines"
+    },
+    {
+      "field": "glx_town",
+      "title": "Town",
+      "inline": true
+    },
+    {
+      "field": "country",
+      "title": "Country",
+      "inline": true
+    },
+    {
+        "field": "pass_2019",
+        "title": "Passengers yearly",
+        "type": "integer",
+        "inline": true
+    }
+  ],
+  "style": {
+    "default": {
+      "type": "target",
+      "fillColor": "#000",
+      "layers": {
+        "0.75": "#EEE",
+        "0.5": "#000"
+      }
+    },
+    "cluster": {
+      "type": "target",
+      "fillColor": "#000",
+      "layers": {
+        "0.75": "#EEE",
+        "0.5": "#D6231E"
+      }
+    },
+    "themes": {
+      "Rail Type": {
+        "field": "stat_type",
+        "type": "categorized",
+        "cat": {
+          "Light Rail Station": {
+            "svg": "https://geolytix.github.io/MapIcons/public_transport/dlr.svg",
+            "label": "Light Rail"
+          },
+          "Rail Station": {
+            "svg": "https://geolytix.github.io/MapIcons/public_transport/national_rail.svg",
+            "label": "Rail"
+          },
+          "Underground Station": {
+            "svg": "https://geolytix.github.io/MapIcons/public_transport/london_tube.svg",
+            "label": "Underground"
+          },
+          "Rail Station Non ATOC": {
+            "svg": "https://geolytix.github.io/MapIcons/public_transport/national_rail_grey.svg"
+          }
+        }
+      }
+    }
+  }
+}
