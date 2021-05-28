@@ -4822,7 +4822,7 @@
 
     const clusterLayer = new ol.layer.Vector({
       source: clusterSource,
-      //style: Style
+      style: Style
     });
 
     const map = new ol.Map({
