@@ -1,9 +1,0 @@
-{
-  "meta": "The rail and light rail systems within the United Kingdom.",
-  "format": "mvt",
-  "dbs": "MAPP",
-  "geom": "geom_l_3857",
-  "srid": "3857",
-  "mvt_cache": "mapp.uk_glx_geodata_transport_rail_line__mvts",
-  "table": "geodata.uk_glx_geodata_transport_rail_line"
-}
