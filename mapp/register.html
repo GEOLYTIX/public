@@ -39,15 +39,15 @@
 
             <div class="form-field">
               <label>Email address</label>
-              <input id="auth_user_email" name="email" type="email" autocomplete="off" required maxlength="50" value="">
+              <input name="email" type="email" autocomplete="off" required maxlength="50" value="">
             </div>
 
             <div class="form-field">
               <label>Password</label>
-              <input id="auth_user_password" name="password" type="password" autocomplete="off" required pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{10,}$" value="">
+              <input name="password" type="password" autocomplete="off" required pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{10,}$" value="">
             </div>
 
-            <button class="button" id="btnRegister" type="submit" formaction="register" disabled>
+            <button class="button" type="submit" formaction="register">
               Sign up
             </button>
 
