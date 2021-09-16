@@ -24,5 +24,11 @@
   },
   "new_account_registered": {
     "en": "https://geolytix.github.io/public/mapp/confirm.html"
+  },
+  "admin_email": {
+    "en": "https://geolytix.github.io/public/mapp/admin_email.html"
   }
 }
+
+
+
