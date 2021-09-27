@@ -10,37 +10,105 @@
     "cluster_dbscan": 0.02,
     "qID": "id",
     "infoj": [
-      {
+    {
         "field": "status",
         "title": "Status",
         "inline": true
-      },
-      {
+    },
+    {
         "field": "trading_hours",
         "title": "Total Trading Hours",
         "inline": true
-      },
-      {
+    },
+    {
         "field": "brand_full",
         "title": "Brand",
         "inline": true
-      }
-    ],
-    "style": {
-      "label": {
-        "field": "brand_full",
-        "declutter": true,
-        "strokeColor": "#fff",
-        "strokeWidth": 3
-      },
-      "default": {
-        "type": "target",
-        "fillColor": "#48BD6D"
-      },
-      "cluster": {
-        "type": "target",
-        "fillColor": "#48BD6D"
-      },
-      "themes": {}
+    }],
+    "style":
+    {
+        "label":
+        {
+            "field": "brand_full",
+            "declutter": true,
+            "strokeColor": "#fff",
+            "strokeWidth": 3
+        },
+        "default":
+        {
+            "svg": "https://geolytix.github.io/MapIcons/brands/banks/default.svg"
+        },
+        "cluster":
+        {
+            "type": "target",
+            "fillColor": "#48BD6D"
+        },
+        "themes":
+        {
+            "Brand":
+            {
+                "field": "brand_full",
+                "type": "categorized",
+                "cat":
+                {
+                    "Bank of Scotland":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/bank_of_scotland.svg"
+                    },
+                    "Barclays":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/barclays.svg"
+                    },
+                    "Clydesdale Bank":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/clydesdale_bank.svg"
+                    },
+                    "Co-op":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/coop_24px.svg"
+                    },
+                    "HSBC":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/hsbc.svg"
+                    },
+                    "Halifax":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/halifax.svg"
+                    },
+                    "Handelsbanken":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/handelsbanken.svg"
+                    },
+                    "Lloyds":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/lloyds.svg"
+                    },
+                    "NatWest":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/natwest.svg"
+                    },
+                    "Nationwide":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/nationwide.svg"
+                    },
+                    "Royal Bank of Scotland":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/rbs.svg"
+                    },
+                    "Santander":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/santander.svg"
+                    },
+                    "TSB":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/tsb.svg"
+                    },
+                    "Yorkshire Bank":
+                    {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/yorkshire_bank.svg"
+                    }
+                }
+            }
+        }
     }
-  }
+}
