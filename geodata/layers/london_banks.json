@@ -11,19 +11,22 @@
     "qID": "id",
     "infoj": [
     {
-        "field": "status",
-        "title": "Status",
-        "inline": true
-    },
-    {
-        "field": "trading_hours",
-        "title": "Total Trading Hours",
-        "inline": true
-    },
-    {
         "field": "brand_full",
         "title": "Brand",
         "inline": true
+    },
+    {
+        "field": "status",
+        "title": "Status",
+        "inline": true,
+        "css_title": "font-weight: 400;"
+    },
+    {
+        "field": "trading_hours",
+        "fieldfx": "ROUND(trading_hours, 1)",
+        "title": "Total Trading Hours",
+        "inline": true,
+        "css_title": "font-weight: 400;"
     }],
     "style":
     {
