@@ -103,6 +103,9 @@
                     {
                       "svg": "https://geolytix.github.io/MapIcons/brands/banks/tsb.svg"
                     },
+                    "Virgin Money": {
+                      "svg": "https://geolytix.github.io/MapIcons/brands/banks/virgin.svg"
+                    },
                     "Yorkshire Bank":
                     {
                       "svg": "https://geolytix.github.io/MapIcons/brands/banks/yorkshire_bank.svg"
