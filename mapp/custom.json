@@ -1,69 +1,69 @@
 {
   "register_view": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/register.html"
+    "en": "https://geolytix.github.io/public/mapp/register.html"
   },
   "password_reset_view": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/reset.html"
+    "en": "https://geolytix.github.io/public/mapp/reset.html"
   },
   "login_view": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/login.html"
+    "en": "https://geolytix.github.io/public/mapp/login.html"
   },
   "verify_password_reset": {
     "en": {
       "subject": "Please verify your password reset for ${host}",
       "text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/reset_password.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/reset_password.html"
     }
   },
   "verify_account": {
     "en": {
       "subject": "Please verify your account on ${host}",
       "text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/verify_registration.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/verify_registration.html"
     }
   },
   "new_account_registered": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/confirm.html"
+    "en": "https://geolytix.github.io/public/mapp/confirm.html"
   },
   "admin_email": {
     "en": {
       "subject": "A new account has been verified on ${host}",
       "text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/admin_email.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/admin_email.html"
     }
   },
   "account_await_approval": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/msgs/account_await_approval.html"
+    "en": "https://geolytix.github.io/public/mapp/msgs/account_await_approval.html"
   },
   "password_reset_verification": {
-    "en": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/msgs/password_reset_verification.html"
+    "en": "https://geolytix.github.io/public/mapp/msgs/password_reset_verification.html"
   },
   "approved_account": {
     "en": {
       "subject": "This account has been approved on ${host}.",
       "text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/approved_account.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/approved_account.html"
     }
   },
   "deleted_account": {
     "en": {
       "subject": "This ${host} account has been deleted.",
       "text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/account_deleted.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/account_deleted.html"
     }
   },
   "login_incorrect": {
   	"en": {
   		"subject": "A failed login attempt was made on ${host}",
   		"text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/login_incorrect.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/login_incorrect.html"
   	}
   },
   "locked_account": {
     "en": {
   		"subject": "Too many failed login attempts occured on ${host}",
   		"text": null,
-      "html": "cloudfront:dev.geolytix.io/mapp_uk/custom_views/mails/locked_account.html"
+      "html": "https://geolytix.github.io/public/mapp/mails/locked_account.html"
   	}
   }
 }
