@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Admin email</title>
+    <title>Failed Login</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -353,7 +352,7 @@
     </style>
   </head>
   <body class="">
-    <span class="preheader">A new account has been verified on ${host}.</span>
+    <span class="preheader">A failed login attempt was made on ${host}. An incorrect password was entered.</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -370,23 +369,8 @@
         <tr>
           <td>
             <p>Hello,</p>
-            <p>A new account has been verified on ${host}. Please login to the admin panel to approve ${email}.</p>
-            <p>You can also approve the account by clicking the link below!</p>
-            <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
-              <tbody>
-                <tr>
-                  <td align="left">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
-                      <tbody>
-                        <tr>
-                          <td><a href="${protocol}${host}/api/user/approve/${approvaltoken}" target="_blank">Approve account</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <p>A failed login attempt was made on ${host}. An incorrect password was entered:</p>
+            <p> This wasn't you? Please let your manager know.
             <p>
               Best wishes,<br />
               Team MAPP

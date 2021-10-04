@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Reset</title>
+    <title>Verify</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -352,7 +352,7 @@
     </style>
   </head>
   <body class="">
-    <span class="preheader">A new password has been set for your Geolytix MAPP account.</span>
+    <span class="preheader">Your account has now been approved on Geolytix MAPP. You can log in here:</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -369,7 +369,7 @@
         <tr>
           <td>
             <p>Hello,</p>
-            <p>A new password has been set for ${host}. To resume access to your account, please confirm your email address using the button below.</p>
+            <p>Your account has now been approved on ${host}. You can log in here:</p>
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
               <tbody>
                 <tr>
@@ -377,7 +377,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
                         <tr>
-                          <td><a href="${link}" target="_blank">Confirm email address</a></td>
+                          <td><a href="${protocol}${host}" target="_blank">Log in</a></td>
                         </tr>
                       </tbody>
                     </table>
@@ -385,7 +385,6 @@
                 </tr>
               </tbody>
             </table>
-            <p>If you didn’t request a new password, you can ignore this email.</p>
             <p>
               Best wishes,<br />
               Team MAPP
