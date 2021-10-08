@@ -940,7 +940,7 @@ a {
   left: 50%;
   bottom: calc(100% + 5px); /* 5px is the size of the arrow */
   pointer-events: none;
-  transition: 5s;
+  transition: 2s;
   will-change: transform;
 }
 
@@ -988,15 +988,15 @@ a {
 }
 /* Scales from 0.5 to 1 -> grow effect */
 [data-tooltip]:hover:before {
-  transition-delay: 5s;
+  transition-delay: 2s;
   transform: translate(-50%, -5px) scale(1);
 }
 /* 
   Arrow slide down effect only on mouseenter (NOT on mouseleave)
 */
 [data-tooltip]:hover:after {
-  transition-delay: 5s; /* Starting after the grow effect */
-  transition-duration: 5s;
+  transition-delay: 2s; /* Starting after the grow effect */
+  transition-duration: 2s;
   transform: translateX(-50%) scaleY(1);
 }
 /*
