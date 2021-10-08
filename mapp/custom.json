@@ -70,8 +70,6 @@
     "en": "https://geolytix.github.io/public/mapp/msgs/admin_approved.html"
   },
   "auth_failed": {
-    "en": {
-      "text": "Your account or password is incorrect. If you don’t remember your password, reset it now."
-    }
+    "en": "Your account or password is incorrect. If you don’t remember your password, reset it now."
   }
 }
