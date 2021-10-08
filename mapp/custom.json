@@ -65,5 +65,8 @@
   		"text": null,
       "html": "https://geolytix.github.io/public/mapp/mails/locked_account.html"
   	}
+  },
+  "admin_approved": {
+    "en": "https://geolytix.github.io/public/mapp/msgs/admin_approved.html"
   }
 }
