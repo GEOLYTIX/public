@@ -940,7 +940,7 @@ a {
   left: 50%;
   bottom: calc(100% + 5px); /* 5px is the size of the arrow */
   pointer-events: none;
-  transition: 2s;
+  transition: 1s;
   will-change: transform;
 }
 
@@ -980,23 +980,23 @@ a {
   transform: translateX(-50%) scaleY(0);
 }
 
-/* Tooltip becomes visible at hover */
-[data-tooltip]:focus:before,
-[data-tooltip]:focus:after {
+/* Tooltip becomes visible at Focus */
+[data-tooltip]:focus-within:before,
+[data-tooltip]:focus-within:after {
   visibility: visible;
   opacity: 1;
 }
 /* Scales from 0.5 to 1 -> grow effect */
-[data-tooltip]:focus:before {
-  transition-delay: 2s;
+[data-tooltip]:focus-within:before {
+  transition-delay: 1s;
   transform: translate(-50%, -5px) scale(1);
 }
 /* 
-  Arrow slide down effect only on mouseenter (NOT on mouseleave)
+  Arrow slide down effect only on focus (NOT on unfocus)
 */
-[data-tooltip]:focus:after {
-  transition-delay: 2s; /* Starting after the grow effect */
-  transition-duration: 2s;
+[data-tooltip]:focus-within:after {
+  transition-delay: 1s; /* Starting after the grow effect */
+  transition-duration: 1s;
   transform: translateX(-50%) scaleY(1);
 }
 /*
