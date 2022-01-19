@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+  <head data-dir="${dir}">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:site_name" content="Geolytix MAPP" />
+  <meta property="og:title" content="Home | Geolytix MAPP" />
+  <meta property="og:type" content="website" />
+
+  <title>Home | Geolytix MAPP</title>
+
+  <link rel="icon" type="image/x-icon" href="https://geolytix.github.io/xyz/public/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
+</head>
+
+<body>
+  <main>
+
+    <div class="form-container">
+      <div class="form-container__inner">
+        <div class="flow">
+          <div class="text-align-center">
+            <div class="gap-bottom-600">
+              <img src="https://geolytix.github.io/public/mapp/mapp_logo.svg" class="logo" alt="Geolytix logo">
+            </div>
+
+            <h1 class="form-container__title">Login to your account</h1>
+          </div>
+
+          <form action="{{dir}}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
+
+            <input style="display: none;" name="redirect" value="{{redirect}}">
+    
+            <input style="display: none;" name="login" value=true>
+
+            <div class="form-field">
+              <label>Email address</label>
+              <input name="email" type="email" required maxlength="50">
+            </div>
+
+            <div class="form-field">
+              <label>Password</label>
+              <input name="password" type="password" required minlength="10">
+            </div>
+
+            <button type="submit" class="button">Login</button>
+            <p class="gap-top-700"><a href="{{dir}}/api/user/register?register=true">New to Geolytix MAPP? Sign up &rarr;</a></p>
+          </form>
+
+          <p class="msg">{{msg}}</p>
+
+          <div class="text-align-center">
+            <p class="text-300"><a href="{{dir}}/api/user/register?reset=true">Forgot your password?</a></p>
+          </div>
+          <div class="text-align-center">
+            <p class="text-300"><a href="https://github.com/GEOLYTIX/xyz">Powered By XYZ</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
