@@ -12,7 +12,7 @@
     "en": {
       "subject": "Please verify your password reset for ${host}",
       "text": null,
-      "html": "https://geolytix.github.io/public/mapp_v4_v4/mails/reset_password.html"
+      "html": "https://geolytix.github.io/public/mapp_v4/mails/reset_password.html"
     }
   },
   "verify_account": {
