@@ -44,7 +44,11 @@ function callback(_xyz) {
             })
         })
 
-        let view = JSON.parse(state.els[0].dataset.story) // initialize map view
+        let el = state.els.find(el => isInFocus(el)) // initialize map view
+        let idx = state.els.indexOf(el)
+        state.prev = state.current
+        state.current = idx
+        let view = JSON.parse(state.els[idx].dataset.story)
         setView(view)
     })
 
