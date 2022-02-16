@@ -11,17 +11,6 @@
                 "© Mapbox": "https://www.mapbox.com/about/maps",
                 "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
             }
-        },
-        "Mapbox Label":
-        {
-            "format": "mbtiles",
-            "mbStyle": "mapbox://styles/dbauszus/ckjk91u8b1da319o7dhpdhqln",
-            "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tvdmxxNDUwMDN3aDJ3bGsweWExMGR1eCJ9.bd_rwXZDhk184-0M7ojsqg",
-            "attribution":
-            {
-                "© Mapbox": "https://www.mapbox.com/about/maps",
-                "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
-            }
         }
     },
     "locales":
@@ -42,10 +31,6 @@
                 {
                     "template": "Mapbox Streets",
                     "display": true
-                },
-                "Mapbox Label":
-                {
-                    "template": "Mapbox Label"
                 }
             }
         }
