@@ -10,6 +10,8 @@ window.onload = () => {
 
 function callback(_xyz) {
 
+    const state = {}
+
     const layers = ["Mapbox"]
 
     _xyz.mapview.create({
@@ -24,9 +26,7 @@ function callback(_xyz) {
         }
     })    
 
-    const state = {
-        els: Array.from(document.querySelectorAll('.stories div'))
-    }
+    createStories()
 
     _xyz.layers.load(layers).then(layers => {
 
@@ -44,13 +44,47 @@ function callback(_xyz) {
             })
         })
 
-        let el = state.els.find(el => isInFocus(el)) // initialize map view
-        let idx = state.els.indexOf(el)
-        state.prev = state.current
-        state.current = idx
-        let view = JSON.parse(state.els[idx].dataset.story)
-        setView(view)
     })
+
+    function createStories(){
+        
+        const hash = window.location.hash ? window.location.hash.substring(1) : false
+
+        const xhr = new XMLHttpRequest()
+
+        xhr.open('GET', 'https://geolytix.github.io/public/stories/data/stories.json')
+
+        xhr.onload = e => {
+
+            if(!e.target) return
+
+            if(!e.target.response) return
+
+            let json = JSON.parse(e.target.response),
+                stories = hash ? json[hash] : json[Object.keys(json)[0]]
+
+            document.querySelector('.stories').innerHTML = ''
+            state.els = null
+
+            stories.map((story, i) => {
+                let el = _xyz.utils.html.node`<div class="${i%2 ? 'dark' : 'lite'}" data-story='${JSON.stringify(story.location)}'>
+                <h1>${story.title}</h1><h3>${story.address}</h3><br><p>${story.description}`
+                document.querySelector('.stories').appendChild(el)
+            })
+
+            state.els = Array.from(document.querySelectorAll('.stories div'))
+
+            let el = state.els.find(el => isInFocus(el)) // initialize map view
+            let idx = state.els.indexOf(el)
+            state.prev = state.current
+            if(idx < 0) return
+            state.current = idx
+            let view = JSON.parse(state.els[idx].dataset.story)
+            setView(view)
+        }
+
+        xhr.send()
+    }
 
 
     function isInFocus(el) {
@@ -93,6 +127,15 @@ function callback(_xyz) {
         }
 
     }, { passive: true })
+
+
+    window.addEventListener('hashchange', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+        createStories()
+    }, false)
 
 
 }
