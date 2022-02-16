@@ -1,0 +1,30 @@
+{
+    "story1": [
+    {
+        "title": "Lipari Castle",
+        "address": "Castello di Lipari, 98050 Lipari ME, Italy",
+        "location": {
+        	"lat": 38.4669697,
+        	"lng": 14.9485563,
+        },
+        "description": "there's a secret entrance here from the port walk towards tall rocky outcrop following the waters edge till the end and around as far as you can go and you'll find a small stone staircase leading up to the belvedere then up a rampart through a stone archway and into the castel grounds, continue to the other side and make a grand exit down the main broad staircase"
+    },
+    {
+    	"title": "Balcón del Mediterráneo",
+    	"address": "Plaça de Castelar, 1, 03501 Benidorm, Alicante, Spain",
+    	"location": {
+    		"lat": 38.5374023,
+    	    "lng": 0.165015
+    	},
+    	"description": "One of my favourite places in Benidorm Old Town! It's so peaceful here and sometimes you'll even get to hear musicians play. The views are incredible and the story behind it is beautiful."
+    },
+    {
+    	"title": "Musée de Bastia",
+    	"address": "Citadelle de Bastia, Pl. du Donjon, 20200 Bastia, France",
+    	"location": {
+    		"lat": 42.686128,
+    	    "lng": 9.3889962
+    	},
+    	"description": "Exciting exhibition on the origin and history of the Corsican bandit with a very interesting study of the notion of bandit d'honneur. To see without hesitation."
+    }]
+}
