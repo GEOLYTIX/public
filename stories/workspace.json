@@ -11,6 +11,9 @@
                 "© Mapbox": "https://www.mapbox.com/about/maps",
                 "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
             }
+        },
+        "stories": {
+            "src": "https://geolytix.github.io/public/stories/view/stories.html"
         }
     },
     "locales":
