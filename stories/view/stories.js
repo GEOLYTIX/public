@@ -90,8 +90,7 @@ function callback(_xyz) {
             let el = state.els.find(el => isInFocus(el)) // initialize map view
             let idx = state.els.indexOf(el)
             state.prev = state.current
-            if(idx < 0) return
-            state.current = idx
+            state.current = idx < 0 ? 0 : idx
             let view = JSON.parse(state.els[idx].dataset.story)
             setView(view)
         }
