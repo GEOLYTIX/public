@@ -20,7 +20,7 @@
     {
         "Stories":
         {
-            "view":
+            "_view":
             {
                 "lat": 51.52,
                 "lng": -0.17,
