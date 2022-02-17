@@ -69,7 +69,7 @@ function callback(_xyz) {
             if(!e.target.response) return
 
             let json = JSON.parse(e.target.response),
-                stories = hash ? json[hash] : json[Object.keys(json)[0]]
+                stories = hash && json[hash] ? json[hash] : json[Object.keys(json)[0]]
 
             document.querySelector('.stories').innerHTML = ''
             state.els = null
