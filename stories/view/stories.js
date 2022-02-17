@@ -103,7 +103,7 @@ function callback(_xyz) {
 
         const rect = el.getBoundingClientRect()
         
-        return rect.top > 0 && rect.top < window.innerHeight/3 // one third to support mobile view
+        return rect.top > 0 && rect.top < window.innerHeight/4 // one third to support mobile view
     }
 
     function setView(story) {
