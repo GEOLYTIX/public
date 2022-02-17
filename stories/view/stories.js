@@ -129,13 +129,26 @@ function callback(_xyz) {
     }, { passive: true })
 
 
-    window.addEventListener('hashchange', function() {
+    window.addEventListener('hashchange', () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         })
         createStories()
     }, false)
+
+    document.querySelector('.select-story').addEventListener('click', e => {
+        e.stopPropagation()
+        let el = document.querySelector('.stories-list')
+        el.style.display = el.style.display == 'block' ? 'none' : 'block'
+    })
+
+    Array.from(document.querySelectorAll('.stories-list li a')).map(el => {
+        el.addEventListener('click', e => {
+            e.stopPropagation()
+            document.querySelector('.stories-list').style.display = 'none'
+        })
+    })
 
 
 }
