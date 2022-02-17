@@ -28,6 +28,7 @@ function callback(_xyz) {
 
     createStories()
 
+
     _xyz.layers.load(layers).then(layers => {
 
         layers.forEach(layer => {
@@ -45,6 +46,13 @@ function callback(_xyz) {
         })
 
     })
+
+    function createStoriesList(){
+        if(!state.stories) return
+        state.stories.map(name => {
+            document.querySelector('.stories-list').appendChild(_xyz.utils.html.node`<li><a href="${`#${name}`}">${name}`)
+        })
+    }
 
     function createStories(){
         
@@ -65,6 +73,11 @@ function callback(_xyz) {
 
             document.querySelector('.stories').innerHTML = ''
             state.els = null
+
+            if(!state.stories) {
+                state.stories = Object.keys(json)
+                createStoriesList()
+            }
 
             stories.map((story, i) => {
                 let el = _xyz.utils.html.node`<div class="${i%2 ? 'dark' : 'lite'}" data-story='${JSON.stringify(story.location)}'>
@@ -135,19 +148,15 @@ function callback(_xyz) {
             behavior: 'smooth'
         })
         createStories()
+        let el = document.querySelector('.stories-list')
+        if(el.style.display == 'block') el.style.display = 'none'
+    
     }, false)
 
     document.querySelector('.select-story').addEventListener('click', e => {
         e.stopPropagation()
         let el = document.querySelector('.stories-list')
         el.style.display = el.style.display == 'block' ? 'none' : 'block'
-    })
-
-    Array.from(document.querySelectorAll('.stories-list li a')).map(el => {
-        el.addEventListener('click', e => {
-            e.stopPropagation()
-            document.querySelector('.stories-list').style.display = 'none'
-        })
     })
 
 
