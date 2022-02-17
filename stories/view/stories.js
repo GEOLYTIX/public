@@ -91,7 +91,7 @@ function callback(_xyz) {
             let idx = state.els.indexOf(el)
             state.prev = state.current
             state.current = idx < 0 ? 0 : idx
-            let view = JSON.parse(state.els[idx].dataset.story)
+            let view = JSON.parse(state.els[state.current].dataset.story)
             setView(view)
         }
 
@@ -103,7 +103,7 @@ function callback(_xyz) {
 
         const rect = el.getBoundingClientRect()
         
-        return rect.top > 0 && rect.top < window.innerHeight/4 // one third to support mobile view
+        return rect.top > 0 && rect.top < window.innerHeight/3 // one third to support mobile view
     }
 
     function setView(story) {
