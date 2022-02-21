@@ -107,15 +107,31 @@ function callback(_xyz) {
     }
 
     function setView(story) {
+
+        if(state.layer) _xyz.map.removeLayer(state.layer)
+
+        if(!story.pin) story.pin = "https://geolytix.github.io/MapIcons/aga/me_teal.svg"
+        
         let pnt = new ol.Feature({
             geometry: new ol.geom.Point([story.lng, story.lat]).transform('EPSG:4326', 'EPSG:'+_xyz.mapview.srid)
         })
 
-        const sourceVector = new ol.source.Vector()
+        const source = new ol.source.Vector()
 
-        sourceVector.addFeatures([pnt])
+        source.addFeatures([pnt])
 
-        _xyz.mapview.flyToBounds(sourceVector.getExtent())
+        state.layer = new ol.layer.Vector({
+            source: source,
+            style: _xyz.utils.style({
+                icon: {
+                    svg: story.pin
+                }
+            })
+        })
+
+        _xyz.map.addLayer(state.layer)
+
+        _xyz.mapview.flyToBounds(source.getExtent())
 
     }
 
