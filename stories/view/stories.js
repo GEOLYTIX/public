@@ -80,8 +80,10 @@ function callback(_xyz) {
             }
 
             stories.map((story, i) => {
-                let el = _xyz.utils.html.node`<div class="${i%2 ? 'dark' : 'lite'}" data-story='${JSON.stringify(story.location)}'>
-                <h1>${story.title}</h1><h3>${story.address}</h3><br><p>${story.description}`
+                let el = _xyz.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
+                ${story.profile ? _xyz.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
+                <h1>${story.title}</h1>
+                <h3>${story.address}</h3><br><p class="align_l">${story.description}`
                 document.querySelector('.stories').appendChild(el)
             })
 
