@@ -84,7 +84,7 @@ function callback(_xyz) {
                 ${story.profile ? _xyz.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
                 <h1>${story.title}</h1>
                 <h3>${story.address}</h3><br><p class="align_l">${story.description}</p>
-                ${story.img ? `<div style="padding: 1em;"><img style="border-radius: 1.5%; width:100%;" src="${story.img}">`: ``}`
+                ${story.img ? _xyz.utils.html.node`<div style="padding: 1em;"><img style="border-radius: 1.5%; width:100%;" src="${story.img}">`: ``}`
                 document.querySelector('.stories').appendChild(el)
             })
 
