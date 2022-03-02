@@ -1,10 +1,10 @@
 {
     "templates":
     {
-        "Mapbox Streets":
+        "Mapbox Outdoor":
         {
             "format": "mbtiles",
-            "mbStyle": "mapbox://styles/dbauszus/cktlnrkf99aoh17p5ojd91c8w",
+            "mbStyle": "mapbox://styles/dbauszus/cl09sxx2a001c15s1ujqeey11",
             "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tvdmxxNDUwMDN3aDJ3bGsweWExMGR1eCJ9.bd_rwXZDhk184-0M7ojsqg",
             "attribution":
             {
@@ -32,7 +32,7 @@
             {
                 "Mapbox":
                 {
-                    "template": "Mapbox Streets",
+                    "template": "Mapbox Outdoor",
                     "display": true
                 }
             }
