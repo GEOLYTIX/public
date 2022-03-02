@@ -83,7 +83,7 @@ function callback(_xyz) {
                 let el = _xyz.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
                 ${story.profile ? _xyz.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
                 <h1>${story.title}</h1>
-                <h3>${story.address}</h3><br>${_xyz.utils.html.node`<p class="align_l">${story.description}</p>`}
+                <h3>${story.address}</h3><br><p class="align_l">${_xyz.utils.html.node`${story.description}`}</p>
                 ${story.img ? _xyz.utils.html.node`<div style="padding: 1em;"><img style="border-radius: 1.5%; width:100%;" src="${story.img}">`: ``}`
                 document.querySelector('.stories').appendChild(el)
             })
