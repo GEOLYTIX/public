@@ -66,6 +66,58 @@
         "description": "I also enjoy travelling further afield when I can. At the start of this year, I visited Rome for the first time with my partner (which I loved). Whilst I was there, I was also able to tick off a new country at the same time (Vatican City). I look forward to many more trips abroad throughout the course of 2022 (and maybe, just maybe another marathon...).",
         "img": "https://res.cloudinary.com/geolytix/image/upload/v1646037102/mappstories/jasmin_vatican_cropped.jpg"
     }],
+    "Lou": [
+        {
+            "title": "Hi, I'm Lou",
+            "address": "Product Owner of Data at Geolytix",
+            "location": {
+                "lat": 53.3791036,
+                "lng": -1.466009248
+            },
+            "description": "I love geography, I'm a keen walker and have a passion for travel. I'm a South Yorkshire lass, originally from Doncaster. I've lived in Sheffield since 2008 when I started studying BSc Geography at Sheffield Hallam University. I continued on to gain my MSc in Geographical Information Systems. In 2013 I joined Geolytix, my role is Product Owner of Data.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646229341/mappstories/Lou-MeersbrookPark-Sheffield.jpg"
+        },
+        {
+            "title": "Walking",
+            "address": "Sheffield & Peak District",
+            "location": {
+                "lat": 53.34930378,
+                "lng": -1.567240056
+            },
+            "description": "I absolutely love walking and discovering new routes. Sheffield is the perfect location to live for this hobby, I'm right on the doorstep of the Peak District National Park. Apps like <a target='_blank' href='https://www.strava.com/'>Strava</a> and <a target='_blank' href='https://www.sports-tracker.com/'>Sports Tracker</a> are brilliant for tracking exercise. Here are 3 long local walks I loved completeing in the last 2 years and highly recommend:<ul><li>Sheffield Round Walk - 15 miles</li><li>Edale Skyline, Peak District - 20 miles</li><li>Don Valley Way, Sheffield-Doncaster - 28 miles</li></ul><br>I'm really interested in the <a target='_blank' href='https://beta.slowways.org/'>Slow Ways</a> initative who are creating a network of walking routes that connect all of Great Britain’s towns and cities.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646229678/mappstories/Lou_Walking.png"
+        },
+        {
+            "title": "Gigs & Festivals",
+            "address": "You can't beat live music",
+            "location": {
+                "lat": 51.15371543,
+                "lng": -2.591915178
+            },
+            "description": "I played piano for 8 years when I was younger and although I'm slowly trying to teach myself the ukulele I prefer to leave it to the professionals. My first concert was Spice Girls at Don Valley in 1997. My music taste has evolved and I've been to over 150 gigs. In 2006 I went to my first festival and loved the experience. Since then I have been to Leeds Festival (UK) 5 times, Glastonbury (UK) 3 times, Isle of Wight (UK), Bestival (UK), Secret Garden Party (UK), Benicassim (Spain), Super Bock Super Rock (Portugal).",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230381/mappstories/lou_Glastonbury.jpg"
+        },
+        {
+            "title": "Travel",
+            "address": "Patagonia - Argentina & Chile",
+            "location": {
+                "lat": -51.25001859,
+                "lng":  -72.3585735
+            },
+            "description": "I travel as much as I can. One of my favourite trips was in 2018 when myself and my friend & colleague Jazz went to Argentina and Chile. We had a fantastic few days exploring Buenos Aires then flew down to discover Patagonia (both the Argentinian and Chilean sides) followed by a few final days in the beautiful city of Santiago. Buenos Aires > El Calafete > El Chalten > Puerto Natales > Torres Del Paine > Punta Arenas > Santiago",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230399/mappstories/Lou_Patagonia.png"
+        },
+        {
+            "title": "Do the things which scare you",
+            "address": "Hang gliding in Brazil",
+            "location": {
+                "lat": -22.90458207,
+                "lng": -43.21871095
+            },
+            "description": "One of the best things I have ever done is hang gliding over Rio de Janeiro, Brazil.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230415/mappstories/Lou_Brazil.jpg"
+        }
+    ],
     "story1": [
     {
         "title": "Lipari Castle",
