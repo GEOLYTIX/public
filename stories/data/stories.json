@@ -127,8 +127,8 @@
             "lat": 51.27138586,
             "lng": 0.522141688
         },
-        "description": "I'm a Location Planning Partner at Geolytix and based in the London Office. I'm originally from Maidstone, Kent and called here home for the first 18 years of my life. This is where my love of dance started - a hobby that I'm still passionate about!"
-"img": "https://res.cloudinary.com/geolytix/image/upload/v1646329161/mappstories/1._rachel_ballet.jpg"
+        "description": "I'm a Location Planning Partner at Geolytix and based in the London Office. I'm originally from Maidstone, Kent and called here home for the first 18 years of my life. This is where my love of dance started - a hobby that I'm still passionate about!",
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646329161/mappstories/1._rachel_ballet.jpg"
     },
     {
         "title": "University of Leicester 2014-2017",
@@ -184,5 +184,5 @@
         },
         "description": "At the start of this year I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
         "img": "https://res.cloudinary.com/geolytix/image/upload/v1646329220/mappstories/6._rachel_northern_lights.jpg"
-    }],
+    }]
 }
