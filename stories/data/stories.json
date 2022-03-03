@@ -195,7 +195,7 @@
             "lng": 113.3034
         },
         "description": "I was born and grown up in Sichuan, West China, and now living in Guangzhou, the warm and humid South China. I travelled to Shanghai frequently, where Geolytix China office is located. However since 2020 I've been spending most time in Guangzhou - on this island... I've identified the top 3 biggest trees on the island now, which I wouldn't have noticed in the previous years...;-p",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332208/mappstories/1._Hi_from_China.jpg"
     },
     {
         "title": "CNY Event in London",
@@ -206,7 +206,7 @@
             "lng": -0.17512
         },
         "description": "Team, partners, and clients gathering in the Royal Geographical Society. It was the CNY of the year of the dog. We dressed up in Chinese red. Everyone got red packet(s)…",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332208/mappstories/2._CNY_Event.jpg"
     },
     {
         "title": "Around our First Office in Shanghai",
@@ -217,7 +217,7 @@
             "lng": 121.4601
         },
         "description": "My first year in Geolytix Shanghai. Lots of new things to learn. All exciting! Still remember the chilly and smelly wind whenever Lifan and I got out from the 'Naked Hub' office during the evenings - there were lots of restaurants around our office, and every evening around 9pm the cleaning men would come to collect the left-over of the day... Therefore smelly:) A nice little pedestrian walk out there, leading you directly to the biggest Starbucks Flaship in the country...",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332208/mappstories/3._Around_our_first_office_in_Shanghai.jpg"
     },
     {
         "title": "Christmas 2018 in Xiamen",
@@ -228,7 +228,7 @@
             "lng":118.0705
         },
         "description": "After a sucessful project delivery in Xiamen. Lifan and I went hiking on Gu Lang Yu island to celebrate both the delivery and the Christmas",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332208/mappstories/4._Christmas_2018_in_Xiamen.jpg"
     },
     {
         "title": "Team Building in Shanghai",
@@ -239,7 +239,7 @@
             "lng": 121.4825
         },
         "description": "Room Escape. I was the 'victim' in that game, and my colleagues saved me successfully with team efforts. The game was designed as 90 mins, wherease we successfully 'escaped' with less than 60 mins.",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332208/mappstories/5._Team_Building_in_SH.jpg"
     },
     {
         "title": "Market Visit in Taipei",
@@ -250,7 +250,7 @@
             "lng": 121.5668
         },
         "description": "As the city experts, we make sure we understand the city not just from data and map, but also on feet and with heart.",
-        "img": ""
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332209/mappstories/6._Market_Visit_in_Taipei.jpg"
     }]    
     
 }
