@@ -117,5 +117,72 @@
             "description": "One of the best things I have ever done is hang gliding over Rio de Janeiro, Brazil.",
             "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230415/mappstories/Lou_Brazil.jpg"
         }
-    ]
+    ],
+     "Rachel": [
+    {
+        "title": "Hey, I'm Rachel!",
+        "address": "Location Planning Partner at Geolytix",
+        "location":
+        {
+            "lat": 51.27138586,
+            "lng": 0.522141688
+        },
+        "description": "I'm a Location Planning Partner at Geolytix and based in the London Office. I'm originally from Maidstone, Kent and called here home for the first 18 years of my life. This is where my love of dance started - a hobby that I'm still passionate about!"
+"img": "https://res.cloudinary.com/geolytix/image/upload/v1646329161/mappstories/1._rachel_ballet.jpg"
+    },
+    {
+        "title": "University of Leicester 2014-2017",
+        "address": "",
+        "location":
+        {
+            "lat": 52.62172549,
+            "lng": -1.124546669
+        },
+        "description": "Back in 2014 I accepted a place at the Univeristy of Leicester to study BSc Geography. I had the best three years here, exploring the city (I was lucky enough to be in the City when they won the Premier League!!), competing with my dance society in competitions and  going on lots of different field trips (one of the many perks of studing Geography)!",
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646329172/mappstories/2._rachel_graduation.jpgx"
+    },
+    {
+        "title": "Inírida, Colombia",
+        "address": "Exploring the Amazon",
+        "location":
+        {
+            "lat": 3.868593512,
+            "lng": 3.868593512
+        },
+        "description": "As part of my Degree I was extremely lucky to travel to Colombia and the Amazon basin. Along with studying the ecology and biodiveristy, I also swam with river dolphins, climbed Cerros de Mavecure and ate A LOT of pineapple!",
+        "img": "xx"
+    },
+    {
+        "title": "My spare time",
+        "address": "Bake off anyone?!",
+        "location":
+        {
+            "lat": 51.42918709,
+            "lng": 51.42918709
+        },
+        "description": "Outside of work, if I haven't got my nose stuck in a book or I'm not attending an exercise class you'll find me in the kitchen. I absolutely LOVE to bake! The Great British Bake Off is probably a bit out of my reach, but, my friend and I did come second when we went to the 'The Big London Bake'! (Would 100% recommend if you fancy pretending you are in the Bake Off tent!)",
+        "img": "xx"
+    },
+    {
+        "title": "Cyprus",
+        "address": "Exploring & diving",
+        "location":
+        {
+            "lat": 34.75620849,
+            "lng": 32.40827873
+        },
+        "description": "I have developed a soft spot for Cyprus and it seems to be my go to place for a bit of R&R (I've even sussed out the holiday home I'd love to own!). When I'm on holiday I love to explore nature and wildlife… I've taken to scuba diving and would love to work towards my PADI liscene.",
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646329215/mappstories/5._rachel_scuba.png"
+    },
+    {
+        "title": "Iceland 2022",
+        "address": "",
+        "location":
+        {
+            "lat": 64.14748737,
+            "lng": -21.94376643
+        },
+        "description": "At the start of this year I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646329220/mappstories/6._rachel_northern_lights.jpg"
+    }],
 }
