@@ -252,6 +252,62 @@
         },
         "description": "As the city experts, we make sure we understand the city not just from data and map, but also on feet and with heart.",
         "img": "https://res.cloudinary.com/geolytix/image/upload/v1646332209/mappstories/6._Market_Visit_in_Taipei.jpg"
-    }]    
-    
+    }],
+    "Lisa": [
+        {
+            "title": "Hi, I'm Lisa",
+            "address": "Director of Data and Product at Geolytix",
+            "location":
+            {
+                "lat": 52.76437075,
+                "lng": -1.723845304
+            },
+            "description": "I live in Staffordshire, right in the middle of the country and an equal commute to both our London and Leeds offices.  I joined Geolytix 3 years ago just after having my first son and love the flexibility you get when working for a small company.  Work and home life can definitely feel like a juggle at times but I've been so supported by Geolytix and couldn't ask for more from colleagues",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387643/mappstories/Lisa_me.jpg"
+        },
+        {
+            "title": "Growing up by the sea",
+            "address": "Cornwall",
+            "location":
+            {
+                "lat": 50.11879911,
+                "lng": -5.537209701
+            },
+            "description": "Not sure I really appreciated how fortunate I was to grow up by the sea.  With an outdoor bathing pool and the beach a short walk from home, I could often be found in or on the water.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387689/mappstories/Lisa_cornwall.jpg"
+        },
+        {
+            "title": "University",
+            "address": "Cardiff",
+            "location":
+            {
+                "lat": 51.48426446,
+                "lng": -3.167629657
+            },
+            "description": "A BSc in Mathematics, Operational Research and Statistics saw me up sticks from Cornwall and spend 3 years in Cardiff.  It was the time of Wales hosting the rugby world cup and to this day I can't decide whether the Welsh or Cornish are more passionate about their rugby! My degree included a year in industry which provided me invaluable work experience between my second and final year at university. I'm a huge fan of placements and am delighted that Geolytix has just created a placement opportunity for students.  You can find out more <a target='_blank' href='https://geolytix.co.uk/blog/data-analyst-year-in-industry/'>here</a>",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387765/mappstories/cardiff_castle.jpg"
+        },
+        {
+            "title": "A Special City",
+            "address": "London",
+            "location":
+            {
+                "lat": 51.50807574,
+                "lng": -0.09770064041
+            },
+            "description": "London will always be a special place for me. I started my career with roles at the Home Office and Sainsburys, bought my first home, got married and started my family here.  A special city full of memories and I’m glad I regularly go back for work.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387817/mappstories/Lisa_london.jpg"
+        },
+        {
+            "title": "Travel",
+            "address": "South Africa",
+            "location":
+            {
+                "lat": -33.95984288,
+                "lng": 18.43617414
+            },
+            "description": "It's not surprising that so many of us at Geolytix love to travel - a shared love of data and maps is a must for anyone joining the team. I'm no different, more so before children but my love of exploring new places has seen me visit a few far flung locations as many closer to home.  Finding these guys in South Africa was a definite highlight",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387853/mappstories/Lisa_sa_elephants.jpg"
+        }
+    ]  
 }
