@@ -309,5 +309,73 @@
             "description": "It's not surprising that so many of us at Geolytix love to travel - a shared love of data and maps is a must for anyone joining the team. I'm no different, more so before children but my love of exploring new places has seen me visit a few far flung locations as many closer to home.  Finding these guys in South Africa was a definite highlight",
             "img": "https://res.cloudinary.com/geolytix/image/upload/v1646387853/mappstories/Lisa_sa_elephants.jpg"
         }
-    ]  
+    ],
+    "Sarah": [
+        {
+            "title": "Hello! I'm Sarah",
+            "address": "Co-founder and COO",
+            "location":
+            {
+                "lat": 51.64821633109159,
+                "lng": -0.06809752623016278
+            },
+            "description": "Hello, I'm Sarah, a Yorkshire lass originally from Brighouse but live in Enfield. I've been around at Geolytix since the beginning. I can't believe we celebrated our 10th birthday recently. I'm so proud of the journey we've been on and excited about what is to come.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646389805/mappstories/sarah_and_blair_-_10_years.jpg"
+        },
+        {
+            "title": "Nottingham",
+            "address": "University, Boots D90 and trips back to visit friends",
+            "location":
+            {
+                "lat": 52.93983440607589,
+                "lng": -1.1928064831843779
+            },
+            "description": "I spent 6 years in Nottingham, at University and then working in the Customer Insights team at Boots in D90. I still have some wonderful friends in the Midlands - here is my daughter at a friend's wedding held at Nottingham university, it was a blast from the past.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646389844/mappstories/Sarah_esme_at_nottingham_uni.jpg"
+        },
+        {
+            "title": "Plymouth",
+            "address": "Visiting Family and a Geolytix trip to remember",
+            "location":
+            {
+                "lat": 50.32097860492939,
+                "lng": -3.9822896865413906
+            },
+            "description": "Whilst I grew up miles from the sea, my husband grew up next to it in Plymouth. We're lucky that we can visit family often. In 2019 we had a Geolytix trip to remember in Alston Hall. I love this photo of our murder mystery evening.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646390041/mappstories/Sarah_Alston_hall_murder_mystery.jpg"
+        },
+        {
+            "title": "Whitby",
+            "address": "Runswick Bay to Robin Hoods Bay",
+            "location":
+            {
+                "lat": 54.533564839622684,
+                "lng": -0.7526146940809034
+            },
+            "description": "Whitby is one of my favourite places. The coastal walks are simply stunning. Last year I walked the same walk with a friend that I had 20 years earlier. It was as good as the memories.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646390063/mappstories/Sarah_whitby.jpg"
+        },
+        {
+            "title": "South Africa",
+            "address": "Climbing Table Mountain is a day I won't forget",
+            "location":
+            {
+                "lat": -33.964419076641406, 
+                "lng": 18.425138310653224
+            },
+            "description": "It was hard to pick my favourite destination but a holiday to South Africa in 2009 has to be up in the top few. Lockdown has delayed a trip out to see Rob, one of our developers, so I can visit the country again.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646390090/mappstories/Sarah_table_mountain.jpg"
+        },
+        {
+            "title": "My guilty pleasure",
+            "address": "I love a casino and a visit to the roulette table",
+            "location":
+            {
+                "lat": 43.73917647351742, 
+                "lng": 7.428048444966478
+            },
+            "description": "If you've been on a few nights out with me, you'll know I love to end the night in a casino. I've been to a fair few in my time. Las Vegas and Monte Carlo are the stand outs so far...",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646390106/mappstories/Sarah_casino.jpg"
+        }
+    ]
 }
