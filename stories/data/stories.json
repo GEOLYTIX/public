@@ -388,7 +388,7 @@
                 "lng": -1.493109
             },
             "description": "Hi, I'm Catherine, a Data Analyst and relatively new Geolytixer! Originally from the south coast of England, but predominantly raised in Derby, I now call Leeds home. I moved to Leeds in 2016 for university and never looked back (if you ignore a brief spell in Coventry for my industrial placement year).",
-            "img": ""
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646396008/mappstories/catherine_roundhay_swans.jpg"
         },
         {
             "title": "Growing up a Girl Guide",
@@ -399,7 +399,7 @@
                 "lng": 131.371658
             },
             "description": "As a child, I wanted to try every club and activity going, but coming from a family of Scout and Guide leaders, being a Girl Guide was a given. Thankfully, I loved my time in Guides and the movement gave me some amazing opportunities, the most notable being a place at the 23rd World Scout Jamboree in Yamaguchi, Japan when I was 17. The 12-day camp was attended by around 35,000 Scouts and Guides from over 150 countries and included a day trip to the Hiroshima Peace Memorial Museum.",
-            "img": ""
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646396039/mappstories/catherine_peace_cranes_hiroshima.jpg"
         },
         {
             "title": "University of Leeds",
@@ -410,7 +410,7 @@
                 "lng": 4.535132
             },
             "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds. After 4 years, including a year working for Sainsbury's Property Data Analytics team and a field trip to the south of France, I decided I hadn't had enough of uni and signed up for a Masters in Data Science and Analytics. I graduated from this course in November 2021; however, I can't include a graduation photo here because both of my ceremonies were postponed due to COVID-19! Instead you can have a smiley picture of me in front of the Pont du Gard, in easier times.",
-            "img": ""
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646396060/mappstories/catherine_pont_du_gard.jpg"
         },
         {
             "title": "Outdoor Adventures",
@@ -421,6 +421,26 @@
                 "lng": 7.69694
             },
             "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and embarking on an interrailing adventure with a stop at the 'Our Chalet' World Guiding Centre in Adelboden, Switzerland. Whilst there, I (part-bungee jump, part-) abseiled off a bridge, swam in a glacial lake and took a toboggan down a mountain!",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646396115/mappstories/catherine_kandersteg_adelboden.jpg"
+        },
+        {
+            "title": "Travelling pre-Covid",
+            "address": "Seoul, Taipei and Northern Taiwan, Shanghai",
+            "location": {
+                "lat": 25.033796,
+                "lng": 121.564555
+            },
+            "description": "I also try to get lots of travelling of my own done, and managed to perfectly time a trip to Seoul, Taipei and Shanghai in January 2020. My two weeks in Seoul were my first experience of solo travel and hostelling (although I did meet up with a friend who lives there most days). I am really hoping to get back out to Taiwan someday, as it is definitely a hidden gem and I'd love to travel more of the country!",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646396236/mappstories/catherine_taiwan_collage.jpg"
+        },
+        {
+            "title": "Where am I now?",
+            "address": "Park House",
+            "location": {
+                "lat": 53.798494,
+                "lng": -1.553191
+            },
+            "description": "Over the past two years, I have discovered a love of board games, rediscovered my love of books, finished two degrees and started my job at Geolytix. It's been a crazy couple of years! Now you'll often find me at our Leeds office in Park House, leading the Beavers group I set up in January 2022 or hanging out with my local book and board game club.",
             "img": ""
         }
     ],
