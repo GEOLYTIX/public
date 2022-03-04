@@ -80,7 +80,7 @@ function callback(_xyz) {
             }
 
             stories.map((story, i) => {
-                console.log(story.description)
+                
                 let el = _xyz.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
                 ${story.profile ? _xyz.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
                 <h1>${story.title}</h1>
