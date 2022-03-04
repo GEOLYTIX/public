@@ -80,7 +80,7 @@ function callback(_xyz) {
             }
 
             stories.map((story, i) => {
-                
+
                 let el = _xyz.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
                 ${story.profile ? _xyz.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
                 <h1>${story.title}</h1>
@@ -161,7 +161,8 @@ function callback(_xyz) {
             //no moving
         } else {
             if(!el) return
-            // move the map
+            if(!state.els[idx]?.dataset?.story) return
+            
             let view = JSON.parse(state.els[idx].dataset.story)
             setView(view)
         }
