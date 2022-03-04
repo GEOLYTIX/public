@@ -480,5 +480,73 @@
             "description": "As much as I love visiting other countries, getting out for a long walk somewhere local is something I also love to do, and I might be biased, but Yorkshire has some beautiful places to explore. I have fond memories of walking my childhood dog at Otley Chevin Forest Park which is still one of my favourite spots to go for a lunchtime walk.",
             "img": "https://res.cloudinary.com/geolytix/image/upload/v1646392798/mappstories/Becca_Otley_Chevin_from_Unsplash.jpg"
         }
+    ],
+    "Alison": [
+        {
+            "title": "Hi, I'm Alison",
+            "address": "Location Planning Partner at GEOLYTIX",
+            "location":
+            {
+                "lat": 51.53078309,
+                "lng": -0.1198216064
+            },
+            "description": "I live in North London near Finsbury Park and work in the GEOLYTIX London office in Clerkenwell, so I regularly pass through the Kings Cross area.  I love dynamic areas of cities and Kings Cross is certainly one of those. It's been completely transformed over the past 20 years and there's always something new and interesting to check out (alongside the old haunts like the Scala that are thankfully still standing).  It's also the scene of many a GEOLYTIX night out. This photo of Sarah and me was taken at the recent 10 year anniversary celebration at the Big Chill.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393393/mappstories/Alison_1.jpg"
+        },
+        {
+            "title": "Mumbai",
+            "address": "Living and working in India",
+            "location":
+            {
+                "lat": 19.057643258347237,
+                "lng": 72.83153767
+            },
+            "description": "",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393451/mappstories/Alison_Mumbai.png"
+        },
+        {
+            "title": "Los Angeles",
+            "address": "Being part of a new business launch on the West Coast of America",
+            "location":
+            {
+                "lat": 33.86200045,
+                "lng": -118.4017086
+            },
+            "description": "",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393493/mappstories/Alison_Los_Angeles.png"
+        },
+        {
+            "title": "Bolivia",
+            "address": "Volunteering with Communidad Inti Wara Yassi",
+            "location":
+            {
+                "lat": -16.97173048,
+                "lng": -65.41170872
+            },
+            "description": "",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393684/mappstories/Alison_Bolivia.png"
+        },
+        {
+            "title": "Rochdale",
+            "address": "",
+            "location":
+            {
+                "lat": 53.61581157,
+                "lng": -2.159168713
+            },
+            "description": "",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393766/mappstories/Alison_5.jpg"
+        },
+        {
+            "title": "The Lake District",
+            "address": "I'm at my happiest when I'm climbing a big hill",
+            "location":
+            {
+                "lat": 54.45765916,
+                "lng": -3.221755596
+            },
+            "description": "",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646393803/mappstories/Alison_6.jpg"
+        }
     ]
 }
