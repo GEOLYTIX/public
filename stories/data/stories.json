@@ -423,5 +423,62 @@
             "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and embarking on an interrailing adventure with a stop at the 'Our Chalet' World Guiding Centre in Adelboden, Switzerland. Whilst there, I (part-bungee jump, part-) abseiled off a bridge, swam in a glacial lake and took a toboggan down a mountain!",
             "img": ""
         }
+    ],
+    "Becca": [
+        {
+            "title": "Becca",
+            "address": "Data Analyst at Geolytix",
+            "location":
+            {
+                "lat": 53.79855149,
+                "lng": -1.553168765
+            },
+            "description": "Hi, my name is Becca and I am a Data Analyst based in the Leeds office in Park Square. In 2019, soon after finishing my A-Levels, I decided to join Geolytix through an apprenticeship in Data Analytics. I am now a year into my permanent role after achieving a Distinction in 2021!",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646392658/mappstories/1._Becca.jpg"
+        },
+        {
+            "title": "Kirkstall Abbey, Leeds",
+            "address": "",
+            "location":
+            {
+                "lat": 53.82079092,
+                "lng": -1.60683893
+            },
+            "description": "I grew up in Kirkstall, Leeds. With Kirkstall Abbey on my doorstep, every evening after school was spent playing there with my friends until the sun went down. The lockdown in 2020 definitely made me reappreciate living so close to lots of green spaces.",
+            "img": ""
+        },
+        {
+            "title": "Travelling",
+            "address": "Fuerteventura - July 2004",
+            "location":
+            {
+                "lat": 28.72829336,
+                "lng": -13.85479954
+            },
+            "description": "I'm lucky enough to have grown up in a family that were able to take me on holiday abroad every year since I can remember. The earliest memory I have was a trip to Corralejo, Fuerteventura in 2004. My love for travelling has grown since and I'm hoping to go further afield to Mexico this year, which will be my first trip outside of Europe! ",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646392707/mappstories/Becca_Fuerteventura_2004.jpg"
+        },
+        {
+            "title": "Barcelona - December 2019",
+            "address": "",
+            "location":
+            {
+                "lat": 41.41388955,
+                "lng": 2.15265621
+            },
+            "description": "I joined Geolytix as an apprentice, which meant that I continued living in my family home and started to put money aside to fulfil my love of travelling. A few months into life at Geolytix, I managed to go to Barcelona with my best friend - we had the best time visiting all the tourist spots and eating our body weights in tapas.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646392754/mappstories/Becca_Barcelona.jpg"
+        },
+        {
+            "title": "Chevin Forest Park, Otley",
+            "address": "",
+            "location":
+            {
+                "lat": 53.89496711,
+                "lng": -1.672445839
+            },
+            "description": "As much as I love visiting other countries, getting out for a long walk somewhere local is something I also love to do, and I might be biased, but Yorkshire has some beautiful places to explore. I have fond memories of walking my childhood dog at Otley Chevin Forest Park which is still one of my favourite spots to go for a lunchtime walk.",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646392798/mappstories/Becca_Otley_Chevin_from_Unsplash.jpg"
+        }
     ]
 }
