@@ -94,6 +94,10 @@ function callback(_xyz) {
 
                 if(story.img) el.appendChild(_xyz.utils.html.node`<div style="padding: 1em;"><img style="border-radius: 1.5%; width:100%;" src="${story.img}">`)
 
+                if(story.video) el.appendChild(_xyz.utils.html.node`<div style="padding: 1em;">
+                    <video controls style="border-radius: 1.5%; width:100%;">
+                    <source src="${story.video}">`)
+
                 document.querySelector('.stories').appendChild(el)
             })
 
