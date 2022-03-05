@@ -96,7 +96,7 @@ function callback(_xyz) {
 
                 if(story.video) el.appendChild(_xyz.utils.html.node`<div style="padding: 1em;">
                     <video controls style="border-radius: 1.5%; width:100%;">
-                    <source src="${story.video}">`)
+                    <source src="${story.video}" type="${story.video_type || 'video/mp4'}">`)
 
                 document.querySelector('.stories').appendChild(el)
             })
