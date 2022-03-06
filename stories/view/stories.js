@@ -126,7 +126,7 @@ function callback(_xyz) {
 
         if(state.layer) _xyz.map.removeLayer(state.layer)
 
-        if(!story.pin) story.pin = "https://geolytix.github.io/MapIcons/aga/me_teal.svg"
+        if(!story.pin) story.pin = "https://geolytix.github.io/MapIcons/aga/story_pin.svg"
         
         let pnt = new ol.Feature({
             geometry: new ol.geom.Point([story.lng, story.lat]).transform('EPSG:4326', 'EPSG:'+_xyz.mapview.srid)
