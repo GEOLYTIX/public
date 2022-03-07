@@ -822,13 +822,13 @@
         {
             "title": "Imogen",
             "address": "Location Planning Partner at Geolytix",
-            "profile": "https://res.cloudinary.com/geolytix/image/upload/v1646650341/mappstories/Imogen_little.png",
+            "_profile": "https://res.cloudinary.com/geolytix/image/upload/v1646650341/mappstories/Imogen_little.png",
             "location": {
                 "lat": 53.36721368,
                 "lng": -1.500470664
             },
             "description": "Hello, I'm Imogen, a Location Planning Partner and still a bit of newbie to Geolytix, having joined in September 2021 (and loving it so far!). I am based in the Leeds office but visit London quite regularly too. I'm originally from Sheffield and lived there until leaving for university in 2016, I often go back to visit family and have gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and buzzing local neighbourhoods, my favourite spot has to be Sharrowvale Road -  a little haven of independent shops, cafes and pubs.",
-            "img": ""
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646653146/mappstories/Imogen_little_sq.jpg"
         },
         {
             "title": "Manchester",
