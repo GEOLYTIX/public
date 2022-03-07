@@ -822,6 +822,7 @@
         {
             "title": "Imogen",
             "address": "Location Planning Partner at Geolytix",
+            "profile": "https://res.cloudinary.com/geolytix/image/upload/v1646650341/mappstories/Imogen_little.png",
             "location": {
                 "lat": 53.36721368,
                 "lng": -1.500470664
