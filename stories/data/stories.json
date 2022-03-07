@@ -12,8 +12,8 @@
         "description": "Hello, I'm Jasmin. Most people call me 'Jazz'. I'm Product Owner of MAPP at Geolytix. I'm a born and bred East Londonder and still live here today..."
     },
     {
-        "title": "Epping Forest, Essex",
-        "address": "",
+        "title": "Run, Forrest Run!",
+        "address": "Epping Forest, Essex",
         "location":
         {
             "lat": 51.69381959513246,
