@@ -870,5 +870,77 @@
             "description": "I also love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy, I was lucky enough to interrail there for 2 weeks, staying in a real mix of city and more rural locations. My favourite place is definitely Lake Garda, which I have been to on several occasions now, so much of it is very unspoilt and traditionally Italian. Whilst staying there I visited Malcesine on the eastern shore and got a cable car up to the mountains which is where this photo was taken.",
             "img": "https://res.cloudinary.com/geolytix/image/upload/v1646647952/mappstories/Imogen_Italy.jpg"
         }
+    ],
+    "Agata": [
+        {
+            "title": "Agata",
+            "profile": "https://res.cloudinary.com/geolytix/image/upload/v1646591965/mappstories/aga_profile.png",
+            "address": "Writing between { brackets } and <tags/> for Geolytix since 2017 👩‍💻",
+            "location": {
+                "lat": 51.5041986,
+                "lng": -0.2098185
+            },
+            "description": "I am based in West London's Holland Park. It's a picturesque area full of blooming trees in spring 🌸 <br/>Peacocks are usual residents here 🦚 <br/>Ever since covid era started I often come to Central London by bicycle 🚲",
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646592199/mappstories/aga_hp.jpg"
+        },
+        {
+            "title": "Nice 06000",
+            "address": "Provence-Alpes-Côte d'Azur, France 🇫🇷",
+            "location": {
+                "lat": 43.6967007,
+                "lng": 7.2643308
+            },
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649787/mappstories/aga_nice_4.jpg",
+            "description": "Nice in French Côte d'Azur is one of the best places I know. In summer 2021 as soon as I sorted what I would call 'transit letters' I hopped on a one way flight as crossing borders was still uncertain at the time 😷💉<br/>I ended up staying in Nice for a month going for a swim in the Bay of Angels every morning before city beaches would get busy 🏖️"
+        },
+        {
+            "title": "Naples",
+            "address": "Metropolitan City of Naples, Italy 🇮🇹",
+            "location": {
+                "lat": 40.8513963,
+                "lng": 14.2399615
+            },
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646594716/mappstories/aga_naples.jpg",
+            "description": "Travelling was still complicated so several weeks of digital nomadism followed.<br/> I hopped on another one way flight to a place I had been curious about for a long time. <br/>I heard so many contradictory opinions I had to see Naples myself. <br/>And it was crazy! Crossing streets was stressful. In the historic centre full of pedestrians locals would easily speed on their vespas 🛵<br/>You are warned about shady quarters and there's the notorious problem with rubbish.<br/> Yet they have truly amazing food 🍕🍝 and plenty of cultural gems 🎭 <br/>Can't deny certain exciting dark magic of this city."
+        },
+        {
+            "title": "Lipari",
+            "address": "98050 Metropolitan City of Messina 🇮🇹",
+            "location": {
+                "lat": 38.4649144,
+                "lng": 14.9467159
+            },
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649880/mappstories/aga_lipari.jpg",
+            "description": "Eventually I was relieved to be leaving Naples. <br/>I went further south to the east of Sicily. Life was different there again. In Catania in the morning the fish market 🐟 attracts people to the centre. Later in the day streets are empty as the sun is strong. After sunset the squares come to life again 🌙<br/>While staying there I discovered this little paradise Lipari which once happened to appear in Homer's Odyssey 🤩"
+        },
+        {
+            "title": "Bergamo",
+            "address": "Province of Bergamo, Lombardy, Italy 🇮🇹",
+            "location": {
+                "lat": 45.703585,
+                "lng": 9.6621651
+            },
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646650652/mappstories/aga_bergamo_3.jpg",
+            "description": "By mid-August I started planning return to the north of Europe. I needed to change flights somewhere in Italy and I chose Milan ✈️ <br/>Yet flights didn't fall into place as expected and I stayed in Milan for 9 days eventually departing from nearby Bergamo 🤔"
+        },
+        {
+            "title": "Warsaw",
+            "address": "Capital City of Warsaw, Poland 🇵🇱",
+            "location": {
+                "lat": 52.232855,
+                "lng": 20.9211114
+            },
+            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649973/mappstories/aga_food_4.jpg",
+            "description": "It's fun to make dishes which we tasted in different countries.<br/> In September 2021 in Warsaw I did a specialist cooking training and now I am a certified chef in 'frutti di mare nel piatto' 👩‍🍳"
+        },
+        {
+            "title": "As of International Women's Day 2022",
+            "address": "London W14, Holland Park 🇬🇧",
+            "location": {
+                "lat": 51.5041986,
+                "lng": -0.2098185
+            },
+            "description": "<iframe src='https://giphy.com/embed/3mIQz6yw1iGKXnCOhC' width='360' height='240' frameBorder='0' class='giphy-embed'></iframe><p></p><br>At the moment I am determined to improve my serve 🎾<br/> I make plenty of errors but who doesn't. <br/>Serve on 🎾🎾"
+        }
     ]
 }
