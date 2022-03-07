@@ -3,12 +3,13 @@
     {
         "title": "Hello, I'm Jasmin!",
         "address": "Product Owner of MAPP at Geolytix",
-        "profile": "https://res.cloudinary.com/geolytix/image/upload/v1645449941/mappstories/Jasmin_headshot_circle.png",
+        "_profile": "https://res.cloudinary.com/geolytix/image/upload/v1645449941/mappstories/Jasmin_headshot_circle.png",
         "location":
         {
             "lat": 51.5808204674407,
             "lng": -0.013817046406572648
         },
+        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646655029/mappstories/jasmin_welcome_v2.jpg",
         "description": "Hello, I’m Jasmin. Most people call me ‘Jazz’. I’m a born and bred East Londoner and still live here today. Apart from 3 years studying Geography at the University of Leeds, I have lived here all my life. I joined Geolytix back in 2015, when it was a company of 7! I’ve been involved in many aspects of the business, but today I look after MAPP, our online mapping and marketing intelligence tool."
     },
     {
