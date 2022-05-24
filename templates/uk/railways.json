@@ -14,13 +14,90 @@
 	},
 	"style": {
 		"default": {
-			"strokeColor": "#3C7A89",
+			"strokeColor": "lightgrey",
 			"strokeWidth": 2
 		},
 		"highlight": {
 			"strokeWidth": 3
 		},
 		"themes": {
+			"Transport for London": {
+				"field": "line_name",
+				"type": "categorized",
+				"cat": {
+					"Central": {
+						"style": {
+							"strokeColor": "rgb(220, 36, 31)"
+						}
+					},
+					"Circle": {
+						"style": {
+							"strokeColor": "rgb(255, 206, 0)"
+						}
+					},
+					"District": {
+						"style": {
+							"strokeColor": "rgb(0, 114, 41)"
+						}
+					},
+					"DLR": {
+						"style": {
+							"strokeColor": "rgb(0, 175, 173)"
+						}
+					},
+					"Elizabeth": {
+						"style": {
+							"strokeColor": "rgb(147, 100, 204)"
+						}
+					},
+					"Hammersmith and City": {
+						"label": "Hammersmith & City",
+						"style": {
+							"strokeColor": "rgb(244, 169, 190)"
+						}
+					},
+					"Jubilee": {
+						"style": {
+							"strokeColor": "rgb(161, 165, 167)"
+						}
+					},
+					"Metropolitan": {
+						"style": {
+							"strokeColor": "rgb(155, 0, 88)"
+						}
+					},
+					"Northern": {
+						"style": {
+							"strokeColor": "black"
+						}
+					},
+					"Piccadilly": {
+						"style": {
+							"strokeColor": "rgb(0, 25, 168)"
+						}
+					},
+					"Victoria": {
+						"style": {
+							"strokeColor": "rgb(0, 160, 226)"
+						}
+					},
+					"Waterloo & City": {
+						"style": {
+							"strokeColor": "rgb(147, 206, 186)"
+						}
+					},
+					"Overground": {
+						"style": {
+							"strokeColor": "rgb(239, 123, 16)"
+						}
+					},
+					"Tramlink": {
+						"style": {
+							"strokeColor": "rgb(0, 189, 25)"
+						}
+					}
+				}
+			},
 			"Rail Type": {
 				"field": "line_type",
 				"label": "Rail type",
