@@ -14,10 +14,28 @@ export default (function(){
 
     let F = feature.getProperties()
 
+    // const icon = mapp.utils.svg.node`
+    // <svg width=24 height=24 viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+    //   <circle cx=12 cy=12 r=10 fill=${sentimentColour[F.properties.sentiment] || '#fff'}></circle>`
+
     const icon = mapp.utils.svg.node`
-    <svg width=24 height=24 viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-      <circle cx=13 cy=13 r=10 fill='#333'></circle>
-      <circle cx=12 cy=12 r=10 fill=${sentimentColour[F.properties.sentiment] || '#fff'}></circle>`
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#a)">
+          <circle cx="15" cy="15" r="10" fill=${sentimentColour[F.properties.sentiment] || '#fff'}></circle>
+        </g>
+        <defs>
+          <filter id="a" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dx="2" dy="2"/>
+            <feGaussianBlur stdDeviation="1"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_64_3"/>
+            <feBlend in="SourceGraphic" in2="effect1_dropShadow_64_3" result="shape"/>
+          </filter>
+        </defs>
+      </svg>`
 
     return `data:image/svg+xml,${encodeURIComponent(xmlSerializer.serializeToString(icon))}`
 
