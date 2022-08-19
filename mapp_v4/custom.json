@@ -6,7 +6,8 @@
     "en": "https://geolytix.github.io/public/mapp_v4/reset.html"
   },
   "login_view": {
-    "en": "file:../public/mapp_v4/login/login_en.html"
+    "en": "file:../public/mapp_v4/login/login_en.html",
+    "pl": "file:../public/mapp_v4/login/login_pl.html"
   },
   "verify_password_reset": {
     "en": {
