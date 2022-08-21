@@ -51,6 +51,26 @@ export default (function(){
 
     }
 
+    const sourceLocations = new ol.source.Vector();
+
+    const layerLocations = new ol.layer.Vector({
+      source: sourceLocations
+    });
+
+    layer.mapview.Map.addLayer(layerLocations);
+
+    layer.hover = {
+      show: (F) => {
+        sourceLocations.clear();
+  
+        let features = F.get("features");
+          
+        if (features.length > 1) {
+          features.forEach((f) => sourceLocations.addFeature(f.clone()));
+        }
+      }
+    }
+
     layer.L.setStyle(layer.styleFunction)
   }
 
