@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="{{language}}">
+
+<head data-dir="{{dir}}">
+    <title>Summer Mapp Stories</title>
+
+    <!--<meta property="og:title" content="Mapp Stories">
+    <meta name="twitter:title" content="Mapp Stories">
+  
+    <meta name="description" content="Mapp Stories by Women of Geolytix">
+    <meta property="og:description" content="Mapp Stories by Women of Geolytix">
+    <meta name="twitter:description" content="Mapp Stories by Women of Geolytix">
+  
+    <meta property="og:image" content="https://res.cloudinary.com/geolytix/image/upload/v1647855358/mappstories/mappstories_1200x627.png">
+    <meta name="twitter:image" content="https://res.cloudinary.com/geolytix/image/upload/v1647855358/mappstories/mappstories_1200x627.png">-->
+    
+    <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <!-- <script src="${dir}/js/mapbox-gl.js" defer></script> -->
+
+   <script
+      src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.js"
+      defer
+    ></script>
+
+     <!-- Load XYZ / MAPP stylesheet and library. -->
+    <link rel="stylesheet" href="{{dir}}/css/mapp.css" />
+    <link rel="stylesheet" href="{{dir}}/css/ui.css" />
+    <script type="module" src="{{dir}}/js/lib/mapp.js" defer></script>
+    <script type="module" src="{{dir}}/js/lib/ui.js" defer></script>
+
+
+    <!--<script type="application/javascript" src="${dir}/views/stories.js" defer></script>-->
+
+    <!--<script type="application/javascript"
+    src="https://geolytix.github.io/public/stories/view/stories.js"
+    defer></script>-->
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #F8F7F9;
+        }
+
+        h1, h3, p, .header {
+            font-family: 'Caveat', cursive;
+        }
+
+        .viewport {
+            height: 100vh;
+        }
+
+        #map {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        .dark {
+            background-color: #30343F;
+            color: #F8F7F9;
+        }
+
+        .lite {
+            color: #30343F;
+            background-color: #F8F7F9;
+        }
+
+        .header {
+            display: block;
+            padding: 0.3em;
+            height: 2em;
+            position: fixed;
+            z-index: 10001;
+        }
+
+        .align_c {
+            text-align:  center;
+        }
+
+        .align_l {
+            text-align: left;
+        }
+
+        .align_r {
+            text-align: right;
+        }
+
+        #mappribution {
+            font-size: 10px;
+            width: 50vw;
+            background: #F8F7F9AA;
+            position: fixed;
+            bottom: 2em;
+            right: 0;
+            z-index: 1001;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+        }
+
+        #mappribution * {
+            margin: 2px;
+        }
+
+        #mappribution div:nth-child(1) {
+            position: absolute;
+            right: 0;
+        }
+
+        .glx-logo > img {
+            height: 10px;
+        }
+
+        #stories {
+            overflow-y: scroll;
+            border: solid 1px orange;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .half {
+            width: 50vw;
+        }
+
+        .story {
+            min-height: 100vh;
+            padding: 1em;
+            font-size: 1.5em;
+            height:  10em;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            
+            #map {
+                position: fixed;
+                height: 30vh;
+                width: 100vw;
+                top: 2em;
+                left: 0;
+                box-shadow: 0 3px 3px rgb(0 0 0 / 30%);
+            }
+
+            .half {
+                width: 100vw;
+            }
+
+            .story {
+                min-height: 70vh;
+            }
+
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <div class="viewport">
+
+        
+        <div class="header half align_c lite">
+            <img height=14 src="https://geolytix.github.io/public/mapp_v4/emblem.svg">
+        </div>
+    
+
+        <div id="stories" class="half">
+            <div class="story">story 1</div>
+            <div class="story">story 2</div>
+            <div class="story">story 3</div>
+            <div class="story">story 4</div>
+            <div class="story">story 5</div>
+            <div class="story">story 6</div>
+            <div class="story">story 7</div>
+            <div class="story">story 8</div>
+        </div>
+
+        <div id="map" class="half">
+            <div id="mappribution">
+                <div><a class="glx-logo" target="_blank" href="https://geolytix.co.uk">
+                    <img src="https://geolytix.github.io/public/mapp_v4/emblem.svg">
+                    <img src="https://geolytix.github.io/public/geolytix.svg">
+                </a></div>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!--<script type="application/javascript" async defer src="{{dir}}/views/index.js"></script>-->
+    <script type="application/javascript" async defer src="https://geolytix.github.io/public/summer_2022/index.js"></script>
+
+
+</body>
+
+</html>
