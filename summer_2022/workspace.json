@@ -13,8 +13,8 @@
             }
         },
         "index": {
-            "_src": "https://geolytix.github.io/public/summer_2022/view/index.html",
-            "src": "file://../public/summer_2022/index.html"
+            "src": "https://geolytix.github.io/public/summer_2022/view/index.html",
+            "_src": "file://../public/summer_2022/index.html"
 
         }
     },
