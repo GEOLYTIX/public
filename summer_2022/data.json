@@ -1,0 +1,313 @@
+[
+	{
+		"name": "Lou",
+		"title": "Seven Bays for Seven Days",
+		"description": "Greetings from Cornwall... A heatwave week enjoying the 7 bays centred around St Merryn. Trevone, Harlyn, Mother Ivey's, Booby's, Constantine, Treyarnon and Porthcothan. Swimming, walking, drinking, eating ...Wish you were here",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263370/mappstories/postcards2022/Lou_in_Cornwall_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263365/mappstories/postcards2022/Lou_in_Cornwall_2.jpg"
+		],
+		"place": "St Merryn, Cornwall",
+		"lat": 50.5257228,
+		"lng": -4.9903659
+	},
+	{
+		"name": "Rachel",
+		"title": "Beach Days at Watergate Bay",
+		"description": "Hello from Cornwall! A sun filled week of lounging on the beach, walking dogs and eating ice cream! As inviting as the sea looked, it did take a bit of aclimatising, but was definitely needed to cool off from the heat!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263358/mappstories/postcards2022/Rachel_Cornwall_2..jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263345/mappstories/postcards2022/Rachel_Corwnwall_1..jpg"
+		],
+		"place": "Watergate Bay, Cornwall",
+		"lat": 50.4448113,
+		"lng": -5.04282018
+	},
+	{
+		"name": "Josh",
+		"title": "A Taste of Village Life",
+		"description": "As a bit of a break from London, I headed home to rural Oxfordshire to housesit for my parents for a couple of weeks. The tiny village of Wootton-by-Woodstock is within walking distance of Blenheim Palace, is surrounded by beautiful countryside and wildlife, and has some of my favourite spots in the world to just sit and relax for a while.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263349/mappstories/postcards2022/Josh_in_Oxfordshire_2.png",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263347/mappstories/postcards2022/Josh_in_Oxfordshire_1.jpg"
+		],
+		"place": "Wootton-by-Woodstock, Oxfordshire",
+		"lat": 51.8751708,
+		"lng": -1.36422073
+	},
+	{
+		"name": "Aimee",
+		"title": "French GP 2022",
+		"description": "Hello from Circuit Paul Ricard!! A far too hot weekend (not the greatest idea as a ginger) but nevertheless, an exciting race in the South of France - topped off with another win for Verstappen & Red Bull!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263341/mappstories/postcards2022/Aimee_-_French_GP_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263337/mappstories/postcards2022/Aimee_-_French_GP.jpg"
+		],
+		"place": "Circuit Paul Ricard, Le Castellet.",
+		"lat": 43.25126855,
+		"lng": 5.792988069
+	},
+	{
+		"name": "Alison",
+		"title": "Neck craning at the Sagrada Familia",
+		"description": "Greetings from Catalunya! A family trip to Barcelona wouldn't be complete without a visit to the awe-inspiring Basilica de Sagrada Familia.  If we think some of our projects take a long time, let's take solace from the fact that this one started 140 years ago and still isn't finished.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263364/mappstories/postcards2022/Alison_Barcelona_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/Alison_Barcelona.jpg"
+		],
+		"place": "Barcelona, Spain",
+		"lat": 41.40380694,
+		"lng": 2.1743558
+	},
+	{
+		"name": "Freddie",
+		"title": "Impromptu Poznań Trip",
+		"description": "A search for the cheapest flights availiable within Europe in the next week led us to Poznań (for £7.20!!), we weren't really sure what to expect but the striking churches and inner city beach bars made for an interesting week in the sun.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/Freddie_Poznan_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263354/mappstories/postcards2022/Freddie_Poznan_2.jpg"
+		],
+		"place": "Poznań, Poland",
+		"lat": 52.40673092,
+		"lng": 16.93311052
+	},
+	{
+		"name": "Luke",
+		"title": "Bikepacking the North York Moors",
+		"description": "Bank holiday weekend was spent cycling the pubduroNYM route, which starts in Kilburn and wiggles over 140km through the moors to Robin Hood's Bay. Sold on the idea that it was a relatively flat route, we actually ended up completing two of the UK's steepest road climbs - Carlton Bank & Rosedale Chimney - as well as the lung-busting Ingleby Incline, a 1.6km gravel ascent with a 20% gradient. Highlights include wild camping, descending fast on forest tracks, and getting to meet other bikepacking enthusiasts.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263358/mappstories/postcards2022/Luke_-_Bikepacking_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263357/mappstories/postcards2022/Luke_-_Bikepacking_1.jpg"
+		],
+		"place": "North York Moors National Park",
+		"lat": 54.20999406,
+		"lng": -1.214421675
+	},
+	{
+		"name": "Catherine",
+		"title": "Tales of the Dales",
+		"description": "Hello from my new friends in the Yorkshire Dales! I've had a fabulous break in God's Own Country, exploring walking trails, market towns, quaint villages and plenty of tea rooms! Of course, a trip to the limestone pavement at Malham Cove is a must for geographers, and the view from the top was worth the steep climb in the midday sun!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263341/mappstories/postcards2022/Catherine_Dales.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263336/mappstories/postcards2022/Catherine_Dales_2.jpg"
+		],
+		"place": "Yorkshire Dales National Park",
+		"lat": 54.073257,
+		"lng": -2.158285
+	},
+	{
+		"name": "Blair",
+		"title": "Loving the Lakes",
+		"description": "A week with friends old and new walking the lakes and Wainwrights around Ambleside",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263339/mappstories/postcards2022/blair_lakes_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263336/mappstories/postcards2022/blair_lakes_2.jpg"
+		],
+		"place": "Ambleside Lake District",
+		"lat": 54.4983195,
+		"lng": -2.992437
+	},
+	{
+		"name": "Sarah",
+		"title": "Legotastic in Billund",
+		"description": "A trip to the Lego House in Billund where adults become children for the day! A chance to immerse yourself in building Lego creations and then bring them to life in a digital world.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263360/mappstories/postcards2022/Sarah_H_Lego_House_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263358/mappstories/postcards2022/Sarah_H_Lego_House_1.jpg"
+		],
+		"place": "Lego House, Billund",
+		"lat": 55.730654,
+		"lng": 9.1149215
+	},
+	{
+		"name": "Matt",
+		"title": "Resting in Rouen",
+		"description": "After many years driving through Rouen en-route to family in Normandy, this year we took the plunge and decided to stop over and see what the city had to offer. On a hot summers day we took to the cobbled streets, seeing the famous cathedral and the site where Joan of Arc was burned at the stake (not sure geotagging was around in 1431, so how precise the spot was I'm not too sure!!).  We finished the trip as we normally do in France having desert at a local Crêperie (a personal favourite).",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263355/mappstories/postcards2022/Matt_M_Image_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263344/mappstories/postcards2022/Matt_M_Image_2.jpg"
+		],
+		"place": "Rouen, France",
+		"lat": 49.44062174,
+		"lng": 1.094604777
+	},
+	{
+		"name": "Kim",
+		"title": "Kraków 2022",
+		"description": "Cześć from Poland! My partner and I booked this for 2020 and after multiple delays we finally got there. We spent the week exploring the history of Krakow in the hottest weather, and I introduced her to my childhood favourite foods (well, I'm Ukrainian but the food is similar enough!). We visited Auschwitz, the salt mines, and a really cool pinball museum hidden underground!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263356/mappstories/postcards2022/Kim_-_Krakow_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263355/mappstories/postcards2022/Kim_-_Krakow_2.jpg"
+		],
+		"place": "Kraków, Poland",
+		"lat": 50.06101,
+		"lng": 19.93689
+	},
+	{
+		"name": "Lisa",
+		"title": "There's no place like home!",
+		"description": "A trip back to Cornwall for me this year - making the most of being able to get down there outside of school holidays.  I'll have to get used to there being a few more tourists around on future trips!  An absolutely fabulous week in the sunshine seeing my kids enjoy all the beaches I grew up around",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263366/mappstories/postcards2022/Lisa_Cornwall_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263352/mappstories/postcards2022/Lisa_Cornwall_2.jpg"
+		],
+		"place": "Marazion, Cornwal",
+		"lat": 50.12359609,
+		"lng": -5.475907867
+	},
+	{
+		"name": "Sam",
+		"title": "Not quite the Orient Express",
+		"description": "Ever since overdosing on Agatha Christie's at the age of 12 I've dreamt of taking the Orient Express across Europe...ahh the glamour.  While not quite as glamorous, taking the Eurostar and ICE trains across France and Germany this summer holidays did have some of the same romance!  Aside from the journey itself, highlights were racing my children up the Eiffel Tower and seeing my brother and his family in Germany.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/Sam__Elizabeth_Sacre_Coeur.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263347/mappstories/postcards2022/Sam_-_Eiffel_tower.jpg"
+		],
+		"place": "Eiffel Tower, France",
+		"lat": 48.85873715,
+		"lng": 2.294266723
+	},
+	{
+		"name": "Lizzie",
+		"title": "Ciao from Cinque Terre!",
+		"description": "After an incredible week in Lago Maggiore for a family wedding, my partner and I travelled down to the coast to the Ligure region of Italy. We fully embraced all that Italy's food and drink had to offer- a particular favourite was the day we train hopped through the Cinque Terre (Five Towns). These towns are a string of five old fishing villages perched high on the Italian Riviera, which until recently were linked only by mule tracks and accessible only by rail or water. Safe to say the views for lunch that day were a particular highlight!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263834/mappstories/postcards2022/Lizzie_Italy_1.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263358/mappstories/postcards2022/Lizzie_Italy_2.jpg"
+		],
+		"place": "Cinque Terre, Ligure, Italy",
+		"lat": 44.10759132,
+		"lng": 9.726125943
+	},
+	{
+		"name": "Chris",
+		"title": "Crying at the disco-tent",
+		"description": "The highlight of the summer was a euphoric couple of days at Mighty Hoopla music festival in Brockwell Park. In the sunshine with an excellent gang of friends I got to dance away to some mega pop bangers from Blue, Macy Gray, Kate Nash, Confidence Man, Self Esteem and of course STEPS(!). By day two it all got a bit too much and I sobbed through the entirety of the Sugababes' set (original line up!!!) - talk about going out with a bang, or should I say a blub😭!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/chris_hoopla_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263360/mappstories/postcards2022/chris_hoopla_1.jpg"
+		],
+		"place": "Brockwell Park, London, UK",
+		"lat": 51.45224673,
+		"lng": -0.104392695
+	},
+	{
+		"name": "Luke W",
+		"title": "Amami Island Break",
+		"description": "We rounded out the summer with a few days down in idylic Amami - tropical islands 380kms South West of the Japanese mainland. We kayaked mangrove swamps, snorkeled and swam, and generally enjoyed the slow pace of island life. There was an abundance of amazing sashimi and I developed a taste for the local firewater, kokuto (black sugar) shochu.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263359/mappstories/postcards2022/Luke_W_-_Amami_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263357/mappstories/postcards2022/Luke_W_-_Amami_1.jpg"
+		],
+		"place": "Amami Oshima, Kagoshima, Japan",
+		"lat": 28.28639767,
+		"lng": 129.3551418
+	},
+	{
+		"name": "Coco Lin",
+		"title": "Travelling in Music",
+		"description": "Still had to curb my travel ambition for the 3rd summer, due to the Covid control measures in China. Fortunately I found a way out… well it’s hard (embarrassing) to tell people that I’m learning Guitar. Just a lesson every (other) week and 5 lessons so far, I’m moving so slowly… And clearly I won’t be able to reach my childhood dream of working in a band (don’t laugh haha!), but it has definitely lighted up my world. The music carries me from Liverpool to Champs-Élysées, from Sicily to Hotel California…",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263356/mappstories/postcards2022/Coco-Summer_2022.jpg"
+		],
+		"place": "Panyu, Guangzhou, China",
+		"lat": 23.04455926,
+		"lng": 113.3065952
+	},
+	{
+		"name": "Matt S",
+		"title": "Pottering about in Porto",
+		"description": "A lovely few mid-summer days in Porto, Portugal's second city, skillfully avoiding the UK's record heatwave! We explored it's stunning streets, indulging in Pastel de Nata and Sangria as we went. An unforgettable highlight was watching the sunset over the Douro river - and of course checking out the \"the world's most beautiful Mcdonald's\"!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263345/mappstories/postcards2022/Matt_S_-_Porto.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263344/mappstories/postcards2022/Matt_S_-_Porto_2.jpg"
+		],
+		"place": "Porto, Portugal",
+		"lat": 41.14128557,
+		"lng": -8.601678801
+	},
+	{
+		"name": "Agata, Alessandro, Chris & Lou",
+		"title": "From Ramsgate to Margate!",
+		"description": "On a sunshiny day in June a troop of Geolytixers got the train down to Ramsgate and took the coastal walk to Margate. The beaches were beautiful and we stopped at a pub overlooking the stunning Kingsgate Bay for some well earned lunch. As inviting as the sea looked we had to press on and continue around past Botany Bay to Margate. When we arrived, Margate was in it's element with lots of people out and about enjoying everything the British seaside has to offer. We finished with some beers on Margate beach watching the sun slowly fall as we awaited our train back to the city.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263361/mappstories/postcards2022/Walking_Ramsgate_to_Margate_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263345/mappstories/postcards2022/Walking_Ramsgate_to_Margate.jpg"
+		],
+		"place": "Kent",
+		"lat": 51.3895497,
+		"lng": 1.429871
+	},
+	{
+		"name": "Imogen",
+		"title": "A weekend in the Wilderness!",
+		"description": "One of the highlights of my summer was a lovely sunny weekend at Wilderness festival in The Cotswolds. A fab few days with lots of glitter, dancing (Jungle headlining the Friday night were defo the favourites along with some late night disco!), eating some lovely food, wild swimming in the lake, taking part in mass yoga and listening to live podcasts and book talks. My favourite of the UK festivals so far!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263366/mappstories/postcards2022/Imogen_Wilderness_2.heic",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263366/mappstories/postcards2022/Imogen_Wilderness_1.heic"
+		],
+		"place": "Cornbury Park, Oxfordshire",
+		"lat": 51.85784198,
+		"lng": -1.48560735
+	},
+	{
+		"name": "Becca",
+		"title": "24 hours in Paris",
+		"description": "My final trip of the summer consisted of 2 nights in Fort-Mahon-Plage, a quiet commune in northern France, where my friends and I enjoyed lots of walking. Then 1 night in Paris, which was spent riding electric bicycles along the river Seine, getting dressed up for a nice dinner and catching the Eiffel Tower being lit up in the evening.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263685/mappstories/postcards2022/Becca_-_Fort_Mahon_Plage.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263360/mappstories/postcards2022/Becca_-_Paris.jpg"
+		],
+		"place": "Paris, France",
+		"lat": 48.8583565,
+		"lng": 2.294483389
+	},
+	{
+		"name": "Sarah T",
+		"title": "An ambitious first ever hike",
+		"description": "Earlier in the summer, I went on a 10-day road trip around the beautiful south-west coast of Norway. The highlight of the trip and a massive tick off the bucket list was hiking up Trolltunga. The day consisted of a 4am wake-up followed by a challenging 1,100m elevation and a 28km round trip through the snow (yes, the trail was still covered in snow in June!), but was absolutely worth it for the stunning views at the top. Not too bad for a days work, especially considering I had never been on a proper hike before this trip!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263360/mappstories/postcards2022/Sarah_T_Norway_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263359/mappstories/postcards2022/Sarah_T_Norway_1.webp"
+		],
+		"place": "Trolltunga, Norway",
+		"lat": 60.132927,
+		"lng": 6.75406
+	},
+	{
+		"name": "Kate",
+		"title": "Liverpool from the sky! (Sort of)",
+		"description": "Earlier this summer I had a lovely weekend away with my mum in Liverpool - we had a brilliant time making the most of all the city has to offer, from a ferry ride to a trip to the Cavern Club! To get a birds eye view of Liverpool, we had a go on the Ferris Wheel near the Royal Albert Dock. I'm very scared of heights (especially in Ferris Wheel form - the smile in the picture is a little forced), but the fab views were worth it! ",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263353/mappstories/postcards2022/Kate_Liverpool_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263352/mappstories/postcards2022/Kate_Liverpool_1.jpg"
+		],
+		"place": "Keel Wharf, Liverpool",
+		"lat": 53.398317,
+		"lng": -2.990724
+	},
+	{
+		"name": "Lou, Matt S, Imogen, Becca & Simon L",
+		"title": "Geolytix Wanderers",
+		"description": "The first weekend of September saw a few Geolytixers from Manchester, Leeds and Sheffield meet in the middle to hike the Crowden to Black Hill loop - the highest peak in West Yorkshire! A 14km walk with stunning views, quite a lot of incline(!), a picnic at the top and an ice cream to finish made for a perfect end to the summer. ",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263364/mappstories/postcards2022/Crowden_hike2.heic",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263349/mappstories/postcards2022/Crowden_hike.jpg"
+		],
+		"place": "Crowden, Derbyshire",
+		"lat": 53.53869296,
+		"lng": -1.883793041
+	},
+	{
+		"name": "Jasmin",
+		"title": "Hiking Sierra de Mijas",
+		"description": "We ambitiously packed our trainers and activewear during a week's trip to the south of Spain this summer. I checked out my All-Trails app for some nearby walking routes and stumbled across Sierra de Mijas. Without fully checking the elevation profile we set off at 7:30am on a 10k ‘moderate’ hike. It turned out to be a very steep ascent(!) which was rather tough in the heat but the views from the top were breath-taking. The mountain goats made it look so easy!",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263357/mappstories/postcards2022/Jasmin_Spain_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263351/mappstories/postcards2022/Jasmin_Spain_1.jpg"
+		],
+		"place": "Sierra de Mijas, Spain",
+		"lat": 36.61329396,
+		"lng": -4.650426853
+	}
+]
