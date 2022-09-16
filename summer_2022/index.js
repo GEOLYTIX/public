@@ -45,14 +45,14 @@ window.onload = async () => {
 
                 let el = mapp.utils.html.node`<div class="story" data-lat=${story.lat} data-lng=${story.lng}>`
 
-                let div = mapp.utils.html.node`<div>`
+                let div = mapp.utils.html.node`<div style="text-align:right;">`
 
                 story.images.map((image, j) => {
                     let img = mapp.utils.html.node`<img src="${image}" class="${j%2 === 0 ? `bottom` : `top`}">`
                     div.appendChild(img)
                 })
 
-                let card = mapp.utils.html.node`<div class="card">
+                let card = mapp.utils.html.node`<div class="${story.card_on_top ? `card on_top` : `card`}">
                 <h4>${story.place}</h4>
                 <h2>${story.title}</h2>
                 <p>${story.description}</p>

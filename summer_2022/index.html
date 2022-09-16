@@ -50,16 +50,16 @@
 
         h4 {
             font-family: 'EB Garamond', cursive;
+            font-weight: bold;
         }
 
         h3 {
             font-family: 'Zeyada', cursive;
+            text-align: right;
+            margin-right: 100px;
         }
 
         p {
-            text-decoration-line: underline;
-            text-decoration-style: solid;
-            /*font-family: 'Zeyada', cursive;*/
             font-family: 'EB Garamond', cursive;
             font-size: 1em;
         }
@@ -153,6 +153,7 @@
             display: grid;
             grid-template-columns: 1fr;
             overflow: hidden;
+            border-bottom: solid 2px white;
         }
 
         .story img {
@@ -178,7 +179,7 @@
             z-index: 10001;
             background: rgba(255, 255, 255, 0.7);
             border-radius: 5px;
-            padding: 10px;
+            padding: 6px;
             margin: 10px;
         }
 
@@ -221,22 +222,29 @@
                 min-height: 70vh;
             }
 
-            .story .card {
+            .story .card.on_top {
                 position: absolute;
-                bottom: 2em;
-                /*bottom: unset;*/
+                bottom:  unset;
+                top: 0;
                 left:  0;
                 font-size: 0.7em;
-                width: 55vw;
+                width: auto;
+            }
+
+            .story .card {
+                position: absolute;
+                bottom: 1em;
+                left:  0;
+                font-size: 0.7em;
+                width: auto;
             }
 
             .story img {
                 position: absolute;
                 top: 0;
                 left: 0;
-                object-fit: cover;
-                align-items: right;
-                width: 100%
+                object-fit: scale-down;
+                height: 100%
             }
 
         }
