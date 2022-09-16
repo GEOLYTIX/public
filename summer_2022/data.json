@@ -54,8 +54,9 @@
 		"title": "Neck craning at the Sagrada Familia",
 		"description": "Greetings from Catalunya! A family trip to Barcelona wouldn't be complete without a visit to the awe-inspiring Basilica de Sagrada Familia.  If we think some of our projects take a long time, let's take solace from the fact that this one started 140 years ago and still isn't finished.",
 		"images": [
-			"https://res.cloudinary.com/geolytix/image/upload/v1663335253/mappstories/postcards2022/Alison_Barcelona_2_b3fece.jpg",
-			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/Alison_Barcelona.jpg"
+			"https://res.cloudinary.com/geolytix/image/upload/v1663263363/mappstories/postcards2022/Alison_Barcelona.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1663335253/mappstories/postcards2022/Alison_Barcelona_2_b3fece.jpg"
+			
 		],
 		"place": "Barcelona, Spain",
 		"lat": 41.40380694,
