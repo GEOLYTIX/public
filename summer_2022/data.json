@@ -145,7 +145,8 @@
 		],
 		"place": "Kraków, Poland",
 		"lat": 50.06101,
-		"lng": 19.93689
+		"lng": 19.93689,
+		"card_on_top": true
 	},
 	{
 		"name": "Lisa",
