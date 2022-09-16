@@ -30,16 +30,11 @@
     <script type="module" src="{{dir}}/js/lib/mapp.js" defer></script>
     <script type="module" src="{{dir}}/js/lib/ui.js" defer></script>
 
-
-    <!--<script type="application/javascript" src="${dir}/views/stories.js" defer></script>-->
-
-    <!--<script type="application/javascript"
-    src="https://geolytix.github.io/public/stories/view/stories.js"
-    defer></script>-->
-
     <style>
 
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
 
         html {
             scroll-behavior: smooth;
@@ -49,8 +44,24 @@
             background-color: #F8F7F9;
         }
 
-        h1, h3, p, .header {
-            font-family: 'Caveat', cursive;
+        h2 {
+            font-family: 'Zeyada', cursive;
+        }
+
+        h4 {
+            font-family: 'EB Garamond', cursive;
+        }
+
+        h3 {
+            font-family: 'Zeyada', cursive;
+        }
+
+        p {
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            /*font-family: 'Zeyada', cursive;*/
+            font-family: 'EB Garamond', cursive;
+            font-size: 1em;
         }
 
         .viewport {
@@ -62,6 +73,7 @@
             position: fixed;
             top: 0;
             right: 0;
+            z-index: 10001;
         }
 
         .dark {
@@ -79,11 +91,8 @@
             padding: 0.3em;
             height: 2em;
             position: fixed;
-            z-index: 10001;
-            background: rgb(248,247,249); 
-background: -moz-linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1) 100%);
-background: -webkit-linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1) 100%);
-background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1) 100%);
+            z-index: 10003;
+            background: #F8F7F9;
         }
 
         .align_c {
@@ -105,7 +114,7 @@ background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1)
             position: fixed;
             bottom: 2em;
             right: 0;
-            z-index: 1001;
+            z-index: 10002;
             display: flex;
             flex-direction: row;
             align-items: stretch;
@@ -126,7 +135,6 @@ background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1)
 
         #stories {
             overflow-y: scroll;
-            border: solid 1px orange;
             position: relative;
             top: 0;
             left: 0;
@@ -141,6 +149,52 @@ background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1)
             padding: 1em;
             font-size: 1.5em;
             height:  10em;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr;
+            overflow: hidden;
+        }
+
+        .story img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            object-fit: contain;
+            height: 100vh;
+        }
+
+        .story img.top {
+            animation-name: fade;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-duration: 4s;
+            animation-direction: alternate;
+        }
+
+        .story .card {
+            position: absolute;
+            bottom: 0;
+            left:  0;
+            z-index: 10001;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
         }
 
 
@@ -159,8 +213,30 @@ background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1)
                 width: 100vw;
             }
 
+            #stories {
+                top: 30vh;
+            }
+
             .story {
                 min-height: 70vh;
+            }
+
+            .story .card {
+                position: absolute;
+                bottom: 2em;
+                /*bottom: unset;*/
+                left:  0;
+                font-size: 0.7em;
+                width: 55vw;
+            }
+
+            .story img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                object-fit: cover;
+                align-items: right;
+                width: 100%
             }
 
         }
@@ -178,16 +254,7 @@ background: linear-gradient(0deg, rgba(248,247,249,0.8) 30%, rgba(248,247,249,1)
         </div>
     
 
-        <div id="stories" class="half">
-            <div class="story">story 1</div>
-            <div class="story">story 2</div>
-            <div class="story">story 3</div>
-            <div class="story">story 4</div>
-            <div class="story">story 5</div>
-            <div class="story">story 6</div>
-            <div class="story">story 7</div>
-            <div class="story">story 8</div>
-        </div>
+        <div id="stories" class="half"></div>
 
         <div id="map" class="half">
             <div id="mappribution">
