@@ -14,7 +14,11 @@ window.onload = async () => {
         host: host,
         target: "map",
         locale: locale,
-        scrollWheelZoom: true
+        scrollWheelZoom: true,
+        attribution: {
+            "© Mapbox": "https://www.mapbox.com/about/maps",
+            "© OpenStreetMap contributors": "http://www.openstreetmap.org/copyright"
+        }
     })
 
     await map.addLayer(
