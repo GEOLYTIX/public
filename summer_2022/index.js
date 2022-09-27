@@ -117,7 +117,11 @@ window.onload = async () => {
             })
         }
 
-        if(idx === 0 && state.current === 0) map.Map.getView().setZoom(locale.view.z)
+        if(idx === 0 && state.current === 0) {
+            map.Map.getView().setCenter(ol.proj.transform([locale.view.lng, locale.view.lat], 'EPSG:4326', 'EPSG:3857'))
+            map.Map.getView().setZoom(locale.view.z)
+            //map.Map.getView().setZoom(locale.view.z)
+        }
 
     }, { passive: true })
 
