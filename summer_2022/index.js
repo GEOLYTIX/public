@@ -84,7 +84,7 @@ window.onload = async () => {
                 lng: parseFloat(dataset.lng)
             })
 
-            if(idx < 1) map.Map.getView().setZoom(locale.view.z)
+            if(idx === 0) map.Map.getView().setZoom(locale.view.z)
         }
 
         xhr.send()
@@ -117,13 +117,13 @@ window.onload = async () => {
             })
         }
 
-        //if(idx < 1) map.Map.getView().setZoom(locale.view.z)
+        if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
 
     }, { passive: true })
 
     function isInFocus(el) {
         const rect = el.getBoundingClientRect()
-        return rect.top > 0 && rect.top < window.innerHeight/3
+        return rect.top > -1 && rect.top < window.innerHeight/3
     }
 
     function setView(location) {
