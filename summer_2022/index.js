@@ -84,7 +84,7 @@ window.onload = async () => {
                 lng: parseFloat(dataset.lng)
             })
 
-            if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
+            if(idx < 1) map.Map.getView().setZoom(locale.view.z)
         }
 
         xhr.send()
@@ -115,7 +115,7 @@ window.onload = async () => {
             })
         }
 
-        if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
+        if(idx < 1) map.Map.getView().setZoom(locale.view.z)
 
     }, { passive: true })
 
