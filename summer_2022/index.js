@@ -77,6 +77,12 @@ window.onload = async () => {
             state.prev = state.current
             state.current = idx < 0 ? 0 : idx
 
+            if(state.current === 0) return map.Map.setView(new ol.View({ 
+                projection: `EPSG:${map.srid}`,
+                zoom: locale.view.z,
+                center: ol.proj.fromLonLat([locale.view.lng, locale.view.lat])
+            }))
+
             let dataset = state.els[state.current].dataset
             
             setView({
@@ -105,6 +111,7 @@ window.onload = async () => {
             if(!el) return
             let dataset = state.els[idx].dataset;
             if(!dataset) return;
+            if(!dataset.lat || !dataset.lng) return 
             
             setView({
                 lat: parseFloat(dataset.lat),
