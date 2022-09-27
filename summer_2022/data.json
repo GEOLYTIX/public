@@ -8,8 +8,9 @@
 			"https://res.cloudinary.com/geolytix/image/upload/v1664308195/mappstories/postcards2022/Image_20220927_203720.jpg",
 			"https://res.cloudinary.com/geolytix/image/upload/v1664308038/mappstories/postcards2022/Image_20220927_204439.jpg"
 		],
-		"lat": "",
-		"lng": ""
+		"lat": 51.52,
+		"lng": -0.17,
+		"z": 6
 	},
 	{
 		"name": "Lou",
