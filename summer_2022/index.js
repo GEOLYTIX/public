@@ -101,6 +101,8 @@ window.onload = async () => {
 
         state.current = idx
 
+        console.log(idx)
+
         if(state.current === state.prev) {
             //no moving
         } else {
@@ -115,7 +117,7 @@ window.onload = async () => {
             })
         }
 
-        if(idx < 1) map.Map.getView().setZoom(locale.view.z)
+        //if(idx < 1) map.Map.getView().setZoom(locale.view.z)
 
     }, { passive: true })
 
