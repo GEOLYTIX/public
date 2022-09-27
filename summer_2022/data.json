@@ -4,7 +4,10 @@
 		"title": "Postcards from Geolytix, Summer 2022",
 		"description": "",
 		"place": "The World",
-		"images": [],
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1664308195/mappstories/postcards2022/Image_20220927_203720.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1664308038/mappstories/postcards2022/Image_20220927_204439.jpg"
+		],
 		"lat": "",
 		"lng": "",
 		"card_on_top": true
