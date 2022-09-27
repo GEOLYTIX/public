@@ -84,7 +84,7 @@ window.onload = async () => {
                 lng: parseFloat(dataset.lng)
             })
 
-            if(idx === 0) map.Map.getView().setZoom(locale.view.z)
+            if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
         }
 
         xhr.send()
@@ -101,7 +101,7 @@ window.onload = async () => {
 
         state.current = idx
 
-        console.log(idx)
+        console.log([idx, state.prev, state.current])
 
         if(state.current === state.prev) {
             //no moving
