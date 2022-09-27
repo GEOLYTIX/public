@@ -77,7 +77,7 @@ window.onload = async () => {
             state.prev = state.current
             state.current = idx < 0 ? 0 : idx
 
-            if(state.current === 0) return map.Map.setView(new ol.View({ 
+            if(idx < 1) return map.Map.setView(new ol.View({ 
                 projection: `EPSG:${map.srid}`,
                 zoom: locale.view.z,
                 center: ol.proj.fromLonLat([locale.view.lng, locale.view.lat])
