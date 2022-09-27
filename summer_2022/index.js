@@ -17,7 +17,8 @@ window.onload = async () => {
         scrollWheelZoom: true,
         attribution: {
             "© Mapbox": "https://www.mapbox.com/about/maps",
-            "© OpenStreetMap contributors": "http://www.openstreetmap.org/copyright"
+            "© OpenStreetMap contributors": "http://www.openstreetmap.org/copyright",
+            "Geolytix MAPP 2022": "https://geolytix.co.uk/#mapp"
         }
     })
 
