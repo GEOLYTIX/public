@@ -71,11 +71,11 @@ window.onload = async () => {
             
             })
 
-            state.els = Array.from(document.querySelectorAll('#stories div.story'))
-            let elm = state.els.find(el => isInFocus(el)) // initialize map view
-            let idx = state.els.indexOf(elm)
+            //state.els = Array.from(document.querySelectorAll('#stories div.story'))
+            //let elm = state.els.find(el => isInFocus(el)) // initialize map view
+            //let idx = state.els.indexOf(elm)
             state.prev = state.current
-            state.current = idx < 0 ? 0 : idx
+            state.current = 0 //idx < 0 ? 0 : idx
 
             let dataset = state.els[state.current].dataset
             
@@ -84,7 +84,7 @@ window.onload = async () => {
                 lng: parseFloat(dataset.lng)
             })
 
-            if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
+            map.Map.getView().setZoom(locale.view.z)
         }
 
         xhr.send()
@@ -101,7 +101,7 @@ window.onload = async () => {
 
         state.current = idx
 
-        console.log([idx, state.prev, state.current])
+        //console.log([idx, state.prev, state.current])
 
         if(state.current === state.prev) {
             //no moving
@@ -117,7 +117,7 @@ window.onload = async () => {
             })
         }
 
-        if(state.current === 0) map.Map.getView().setZoom(locale.view.z)
+        if(idx === 0 && state.current === 0) map.Map.getView().setZoom(locale.view.z)
 
     }, { passive: true })
 
