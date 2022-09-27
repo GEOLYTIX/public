@@ -6,7 +6,8 @@
 		"place": "The World",
 		"images": [],
 		"lat": "",
-		"lng": ""
+		"lng": "",
+		"card_on_top": true
 	},
 	{
 		"name": "Lou",
