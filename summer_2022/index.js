@@ -120,6 +120,7 @@ window.onload = async () => {
 
     function setView(location) {
         if(state.layer) map.Map.removeLayer(state.layer)
+        if(!location.lat || !location.lng) return
         if(!location.pin) location.pin = "https://geolytix.github.io/public/summer_2022/postcard_pin.svg"
 
         let pnt = new ol.Feature({
