@@ -113,9 +113,9 @@ window.onload = async () => {
                 lat: parseFloat(dataset.lat),
                 lng: parseFloat(dataset.lng)
             })
-
-            if(state.current === 0) map.getView().setZoom(locale.view.z)
         }
+
+        if(state.current === 0) map.getView().setZoom(locale.view.z)
 
     }, { passive: true })
 
