@@ -71,7 +71,7 @@ window.onload = async () => {
             
             })
 
-            //state.els = Array.from(document.querySelectorAll('#stories div.story'))
+            state.els = Array.from(document.querySelectorAll('#stories div.story'))
             //let elm = state.els.find(el => isInFocus(el)) // initialize map view
             //let idx = state.els.indexOf(elm)
             state.prev = state.current
