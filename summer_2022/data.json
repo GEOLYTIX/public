@@ -333,5 +333,18 @@
 		"lat": 36.61329396,
 		"lng": -4.650426853,
 		"card_on_top": true
+	},
+	{
+		"name": "Alessandro",
+		"title": "In the middle of the ocean",
+		"description": "Spent two amazing weeks in the Azores on August. Visited 5 different islands surrounded by an amazing nature with vulcans, geysers, dolphines, loads of hydrangeas and a lot of good food.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1664551047/mappstories/postcards2022/Alessandro_-_Azores2_410b85.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1664550942/mappstories/postcards2022/Alessandro_-_Azores1.jpg"
+		],
+		"place": "São Miguel, Portugal",
+		"lat": 37.8658195,
+		"lng": -25.7731188,
+		"card_on_top": true
 	}
 ]
