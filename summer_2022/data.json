@@ -346,5 +346,17 @@
 		"lat": 37.8658195,
 		"lng": -25.7731188,
 		"card_on_top": true
+	},
+	{
+		"name": "Simon D",
+		"title": "Perfect Pembrokeshire",
+		"description": "Pembrokeshire is my favourite far flung corner of the UK. The kids can't get enough of the outdoor activities - standup paddleboarding, coasteering, and just general hanging out by the sea at our favourite beaches of Marloes, Barafundle and Freshwater West. Other highlights include cooling down with a Pointz Castle Farm ice cream along the coastal path at Solva, and washing down a lobster roll at Cafe Môr with a well-earned beer from The Old Point House 👌",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1664558903/mappstories/postcards2022/Simon_D_Pembrokeshire_2.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1664558944/mappstories/postcards2022/Simon_D_Pembrokeshire_1_e19baa.jpg"
+		],
+		"place": "Pembrokeshire, Wales",
+		"lat": 51.72322164,
+		"lng": -5.212404062
 	}
 ]
