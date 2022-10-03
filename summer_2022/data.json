@@ -295,7 +295,8 @@
 		],
 		"place": "Trolltunga, Norway",
 		"lat": 60.132927,
-		"lng": 6.75406
+		"lng": 6.75406,
+		"card_on_top": true
 	},
 	{
 		"name": "Kate",
