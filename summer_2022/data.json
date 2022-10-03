@@ -358,5 +358,18 @@
 		"place": "Pembrokeshire, Wales",
 		"lat": 51.72322164,
 		"lng": -5.212404062
+	},
+	{
+		"name": "Agata",
+		"title": "Watching champions at Court Philippe-Chatrier 🎾",
+		"description": "Summer starts for good when big tennis comes to Europe. Court Philippe-Chatrier is a very special place when silence suddenly breaks under a storm of applause and your hands start clapping before you know it.",
+		"images": [
+			"https://res.cloudinary.com/geolytix/image/upload/v1664828401/mappstories/postcards2022/Image_20221003_204642.jpg",
+			"https://res.cloudinary.com/geolytix/image/upload/v1664828377/mappstories/postcards2022/Image_20221003_211702.jpg"
+		],
+		"place": "Stade Roland Garros, Paris, France 🇫🇷",
+		"lat": 48.847134,
+		"lng": 2.2470599,
+		"card_on_top": true
 	}
 ]
