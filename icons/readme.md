@@ -1,0 +1,1 @@
+for favicon.ico
