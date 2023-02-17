@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head data-dir="${dir}">
+<head data-dir="{{dir}}">
     <title>Mapp Stories</title>
 
     <meta property="og:title" content="Mapp Stories">
@@ -14,21 +14,18 @@
     <meta property="og:image" content="https://res.cloudinary.com/geolytix/image/upload/v1647855358/mappstories/mappstories_1200x627.png">
     <meta name="twitter:image" content="https://res.cloudinary.com/geolytix/image/upload/v1647855358/mappstories/mappstories_1200x627.png">
     
-    <link rel="icon" type="image/x-icon" href="${dir}/icons/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <!-- <script src="${dir}/js/mapbox-gl.js" defer></script> -->
-    <script src="${dir}/js/maplibre-gl.js" defer></script>
-    <link rel="stylesheet" href="${dir}/css/ol.css" />
-    <script src="${dir}/js/ol.js" defer></script>
-    <link rel="stylesheet" href="${dir}/css/mapp.css" />
-    <script src="${dir}/js/mapp.js" defer></script>
-
-    <!--<script type="application/javascript" src="${dir}/views/stories.js" defer></script>-->
-
-    <script type="application/javascript"
-    src="https://geolytix.github.io/public/stories/view/stories.js"
+    
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@main/dist/en/v7.0.0/legacy/ol.js"
     defer></script>
+    <!-- Load XYZ / MAPP stylesheet and library. -->
+    <link rel="stylesheet" href="{{dir}}/css/mapp.css" />
+    <link rel="stylesheet" href="{{dir}}/css/ui.css" />
+    <script type="module" src="{{dir}}/js/lib/mapp.js" defer></script>
+    <script type="module" src="{{dir}}/js/lib/ui.js" defer></script>
+
 
     <style>
 
@@ -247,6 +244,164 @@
         </div>
 
     </div>
+
+    <script>
+
+        window.onload = async () => {
+            
+            mapp.host = document.head.dataset.dir;
+            
+            const locale = await mapp.utils.xhr(`${mapp.host}/api/workspace/locale?locale=stories`);
+
+            const state = {};
+
+            const mapbox = await mapp.utils.xhr(`${mapp.host}/api/workspace/layer?locale=${locale.key}&layer=mapbox`);
+
+            const target = document.querySelector("#map");
+
+            const mapview = mapp.Mapview({
+              host: mapp.host,
+              target,
+              locale: locale,
+              scrollWheelZoom: true
+            });
+
+            await mapview.addLayer([mapbox]);
+
+            createStories();
+
+            function createStoriesList() {
+                if(!state.stories) return
+                state.stories.map(i => document.querySelector('.stories-list').appendChild(mapp.utils.html.node`<li><a href="${`#${i}`}">${i}`));
+            }
+
+            function isInFocus(el) {
+                const rect = el.getBoundingClientRect()
+                return rect.top > 0 && rect.top < window.innerHeight/3; // one third to support mobile view
+            }
+
+            function setView(story) {
+
+                if(state.layer) mapview.Map.removeLayer(state.layer)
+                if(!story.pin) story.pin = "https://geolytix.github.io/MapIcons/aga/story_pin.svg"
+
+                let pnt = new ol.Feature({
+                    geometry: new ol.geom.Point([story.lng, story.lat]).transform('EPSG:4326', 'EPSG:'+ mapview.srid)
+                });
+
+                const source = new ol.source.Vector();
+                source.addFeatures([pnt]);
+
+                state.layer = new ol.layer.Vector({
+                    source: source,
+                    style: mapp.utils.style({
+                        icon: {
+                            svg: story.pin
+                        }
+                    })
+                })
+
+                mapview.addLayer(state.layer);
+                mapview.fitView(source.getExtent());
+            }
+
+            function createStories(){
+
+                const hash = window.location.hash ? window.location.hash.substring(1) : false;
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://geolytix.github.io/public/stories/data/stories.json');
+
+                xhr.onload = e => {
+                    if(!e.target) return;
+
+                    if(!e.target.response) return;
+
+                    let json = JSON.parse(e.target.response),
+                    stories = hash && json[hash] ? json[hash] : json[Object.keys(json)[0]];
+
+                    document.querySelector('.stories').innerHTML = '';
+                    state.els = null;
+
+                    if(!state.stories) {
+                        state.stories = Object.keys(json);
+                        createStoriesList();
+                    }
+
+                    stories.map((story, i) => {
+                        let el = mapp.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
+                        ${story.profile ? mapp.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
+                        <h1>${story.title}</h1>
+                        <h3>${story.address}</h3><br>`;
+
+                        let p = mapp.utils.html.node`<p class="align_l">`;
+
+                        p.innerHTML = story.description;
+
+                        el.appendChild(p);
+
+                        if(story.img) el.appendChild(mapp.utils.html.node`<div style="padding: 1em;"><img style="border-radius: 1.5%; width:100%;" 
+                        src="${story.img}">`);
+
+                        if(story.video) el.appendChild(mapp.utils.html.node`<div style="padding: 1em;">
+                            <video controls style="border-radius: 1.5%; width:100%;">
+                            <source src="${story.video}" type="${story.video_type || 'video/mp4'}">`);
+
+                        document.querySelector('.stories').appendChild(el);
+                    
+                    });
+
+                    state.els = Array.from(document.querySelectorAll('.stories div'));
+                    let el = state.els.find(el => isInFocus(el)); // initialize map view
+                    let idx = state.els.indexOf(el);
+                    state.prev = state.current;
+                    state.current = idx < 0 ? 0 : idx;
+                    let view = JSON.parse(state.els[state.current].dataset.story);
+                    setView(view);
+
+                };
+
+                xhr.send();
+            }
+
+            document.addEventListener('scroll', () => {
+
+                const el = state.els.find(el => isInFocus(el));
+                const idx = state.els.indexOf(el);
+                state.prev = state.current;
+                state.current = idx;
+
+                if(state.current === state.prev) {
+                //no moving
+                } else {
+                    if(!el) return;
+                    if(!state.els[idx]?.dataset?.story) return;
+                    let view = JSON.parse(state.els[idx].dataset.story);
+                    setView(view);
+                };
+            }, { passive: true });
+
+            window.addEventListener('hashchange', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                createStories();
+                let el = document.querySelector('.stories-list');
+                if(el.style.display == 'block') el.style.display = 'none';
+
+            }, false);
+
+            document.querySelector('.select-story').addEventListener('click', e => {
+                e.stopPropagation();
+                let el = document.querySelector('.stories-list');
+                el.style.display = el.style.display == 'block' ? 'none' : 'block';
+            })
+
+
+        }
+        
+
+    </script>
 
 </body>
 

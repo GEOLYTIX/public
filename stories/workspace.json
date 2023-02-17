@@ -1,39 +1,38 @@
 {
     "templates":
     {
-        "Mapbox Outdoor":
+        "stories":
         {
-            "format": "mbtiles",
-            "mbStyle": "mapbox://styles/dbauszus/cl09sxx2a001c15s1ujqeey11",
-            "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tvdmxxNDUwMDN3aDJ3bGsweWExMGR1eCJ9.bd_rwXZDhk184-0M7ojsqg",
-            "attribution":
-            {
-                "© Mapbox": "https://www.mapbox.com/about/maps",
-                "© OpenStreetMap": "http://www.openstreetmap.org/copyright"
-            }
-        },
-        "stories": {
             "src": "https://geolytix.github.io/public/stories/view/stories.html"
         }
     },
     "locales":
     {
-        "Stories":
+        "stories":
         {
-            "_view":
+            "name": "Stories",
+            "minZoom": 6,
+            "maxZoom": 14,
+             "view":
             {
                 "lat": 51.52,
                 "lng": -0.17,
                 "z": 6
             },
-            "minZoom": 6,
-            "maxZoom": 14,
             "layers":
             {
-                "Mapbox":
+                "mapbox":
                 {
-                    "template": "Mapbox Outdoor",
-                    "display": true
+                    "name": "Mapbox Outdoor",
+                    "display": true,
+                    "format": "mbtiles",
+                    "mbStyle": "mapbox://styles/dbauszus/cl09sxx2a001c15s1ujqeey11",
+                    "accessToken": "pk.eyJ1IjoiZGJhdXN6dXMiLCJhIjoiY2tvdmxxNDUwMDN3aDJ3bGsweWExMGR1eCJ9.bd_rwXZDhk184-0M7ojsqg",
+                    "attribution":
+                    {
+                        "© Mapbox": "https://www.mapbox.com/about/maps",
+                        "© OpenStreetMap contributors": "http://www.openstreetmap.org/copyright"
+                    }
                 }
             }
         }
