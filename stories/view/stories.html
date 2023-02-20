@@ -284,8 +284,7 @@
 
             function setView(story) {
 
-                if(state.layer) mapview.Map.removeLayer(state.layer)
-                if(!story.pin) story.pin = "https://geolytix.github.io/MapIcons/aga/story_pin.svg"
+                if(state.layer) mapview.Map.removeLayer(state.layer);
 
                 let pnt = new ol.Feature({
                     geometry: new ol.geom.Point([story.lng, story.lat]).transform('EPSG:4326', 'EPSG:'+ mapview.srid)
@@ -296,14 +295,15 @@
 
                 state.layer = new ol.layer.Vector({
                     source: source,
-                    style: mapp.utils.style({
-                        icon: {
-                            svg: story.pin
-                        }
+                    style: new ol.style.Style({
+                        image: new ol.style.Icon({
+                            src: story.pin || "https://geolytix.github.io/MapIcons/aga/story_pin.svg",
+                            scale: 1
+                        })
                     })
-                })
+                });
 
-                mapview.addLayer(state.layer);
+                mapview.Map.addLayer(state.layer);
                 mapview.fitView(source.getExtent());
             }
 
