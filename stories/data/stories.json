@@ -1012,5 +1012,67 @@
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_5.jpg",
             "description": "Growing up with a family who loves Formula One, it was hard for me not to take interest too. In 2017, I went to my first GP at Silverstone and more recently, Circuit Paul Ricard in France. With the upcoming season, I hope the Leeds Office are ready to hear all about it!"
         }
+    ],
+    "Khrish": [
+        {
+            "title": "Hey, I'm Khrish",
+            "address": "Data Scientist at Geolytix",
+            "location": {
+                "lat": 52.9362746,
+                "lng": -1.13797021
+            },
+            "description": "Hey I'm Khrish, a Data Scientist at Geolytix. I live in Nottingham with my partner Tom and our lovely cat, Ronnie. I graduated from the University of Nottingham in 2013 with an MMath in Maths & Statistics, and loved the city so much that I never left! I've worked at Experian, Boots and Oakbrook Finance here, lived in house/flat shares before buying a flat by myself in 2017, and now a house with Tom. I think Nottingham has something for everyone and I feel fortunate to have found my place here.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20221225-WA0013.jpg"
+        },
+        {
+            "title": "The Gym",
+            "address": "Bodybuilding, BodyAttack, HIIT… I love training!",
+            "location": {
+                "lat": 52.9479688,
+                "lng": -1.13847968
+            },
+            "description": "My lifestyle is centred around health and fitness but I actually did almost no exercise until I discovered HIIT in 2014, then I realised I wanted a lean, muscular physique so I learnt about strength training with a PT for a year, and now you will find me at the gym most weekday evenings and weekend mornings! If I don't train, I can't feel like myself - in the good times, training is fun and I set myself different goals to reach, and in the difficult times, gym sessions are my therapy.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_20230224_095640661.jpg"
+        },
+        {
+            "title": "Narborough, Leicester",
+            "address": "My hometown",
+            "location": {
+                "lat": 52.5737388,
+                "lng": -1.20854745
+            },
+            "description": "Whilst I now call Nottingham home, my actual hometown is a village called Narborough, just outside of Leicester. Narborough was a lovely place to grow up in (even though I'm not a fan of the city of Leicester!) and it's now become a hub for seeing family and school friends. I have 2 sisters, Danesha and Honali, who I'm very close to but they also live in other cities now, so it's nice for us to have a place in the Midlands for us to get together.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20200802-WA0040.jpg"
+        },
+        {
+            "title": "London",
+            "address": "A tale of love and hate",
+            "location": {
+                "lat": 51.5305576,
+                "lng": -0.12378615
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_InShot_20230223_162606968.jpg",
+            "description": "I'm not a city girl so I often say 'I like visiting London, but I really like leaving again after a day or two'. There is something special and different about this city though, I'm fortunate to have my sister and friends living here to visit, and visiting the Geolytix office gives me an extra reason to see those people! I've travelled to London ever since I can remember because it's my mum's hometown and she loved it. Unfortunately I lost her in 2016 when I was only 24, so this bustling city will always have a special place in my heart."
+        },
+        {
+            "title": "Santorini 2022",
+            "address": "The perfect summer holiday",
+            "location": {
+                "lat": 36.382486,
+                "lng": 25.4821917
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20220702-WA0004.jpg",
+            "description": "Tom and I had been on smaller trips together but Santorini was our first longer summer holiday, and the fact that it was just after Covid travel restrictions eased meant it had a special feeling for us. I loved everything about the island - staying on the beach strip in Kamari, days out to Oia and Fira, watching the beautiful sunset in Imerovigli... Although I'm not very good at properly relaxing so it took me a good few days to get used to more of a beach holiday, where you actually unwind by the beach and don't worry about all these other things you think you should be doing!!"
+        },
+        {
+            "title": "Mediterranean, Canaries, Caribbean",
+            "address": "Cruising with the family",
+            "location": {
+                "lat": 41.1484013,
+                "lng": 5.59737833
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_20171230_130351_710.jpg",
+            "description": "My family and I did our first little cruise from Miami in the summer of 2012, whilst on a trip around America, and we were hooked ever since! I love being able to see several cities in one trip, but all the travel, food and entertainment is organised for you in a huge moving hotel. I've done cruises around the Mediterranean, Canaries and Caribbean, and look forward to doing more - hopefully around Scandinavia and the Greek Isles."
+        }
     ]
 }
