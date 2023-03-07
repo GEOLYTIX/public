@@ -1090,28 +1090,28 @@
             "title": "Growing Up",
             "address": "Lowthers, Christ Church, Barbados",
             "location": {"lat": 13.09603988, "lng": -59.50299869},
-            "img": "",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Growing_Up_therese.jpg",
             "description": "I grew up on the beautiful island of Barbados in a very tight knit family. In fact, almost everyone who lives on my street is my blood relative so I grew up with plenty of playmates and there was always lots of noise and activity. I’ve always loved trying new things and as an energetic kid I dabbled in a bit of everything. I ran track, danced ballet, played the violin and did debate."
         },
         {
             "title": "Moving to the UK",
             "address": "University of Exeter, UK",
             "location": {"lat": 50.73527564, "lng": -3.53370222},
-            "img": "",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Moving_to_the_UK_therese.jpg",
             "description": "I had the opportunity to study abroad at 19 so I left Barbados and moved to Exeter to pursue an undergraduate degree. I was so homesick the first few months that I called my mom one day and she told me to stop calling her so often and go out and make friends. Haha! So I did and I enjoyed myself so much that when it was time to do my masters I returned to the UK."
         },
         {
             "title": "What I'm up to these days",
             "address": "Enterprise Beach, Barbados",
             "location": {"lat": 13.06037031, "lng": -59.53998045},
-            "img": "",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/What_i_m_up_to_these_days_therese.jpg",
             "description": "I enjoy watching sports—especially cycling. I enjoy dancing—on a night out, I’m on the dance floor all night long. I’ll even dance by myself if I must. I’ve recently started Bachata lessons and I fall more in love with this dance style every class. This year, I’m trying to improve my fitness. So far, it’s not going well and JD Gyms is making a huge profit on my membership.  I don’t enjoy the beach as much as you’d think but when I go home I do make sure to get a ‘sea bath’ and my friends usually drag me along since they love beach days."
         },
         {
             "title": "Travels",
             "address": "Paris, France",
             "location": {"lat": 48.8610229, "lng": 2.335858756},
-            "img": "",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Travels_therese.jpg",
             "description": "I’m slowly getting around Europe. Here I am in Paris on the coldest day of their 2021 winter season."
         }
     ],
