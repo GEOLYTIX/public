@@ -898,5 +898,67 @@
             "description": "I also love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy, I was lucky enough to interrail there for 2 weeks, staying in a real mix of city and more rural locations. My favourite place is definitely Lake Garda, which I have been to on several occasions now, so much of it is very unspoilt and traditionally Italian. Whilst staying there I visited Malcesine on the eastern shore and got a cable car up to the mountains which is where this photo was taken.",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215190/iwd_2023/Imogen_Italy.jpg"
         }
+    ],
+    "Kim": [
+        {
+            "title": "Hey, I'm Kim!",
+            "address": "Data Scientist at Geolytix",
+            "location": {
+                "lat": 53.80668125,
+                "lng": -1.55511586
+            },
+            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215985/iwd_2023/KimButterfield-headshot.jpg",
+            "description": "I’m a part-time Data Scientist at Geolytix and a full-time PhD student at the University of Leeds (soon to be a full time DS with a swanky new Dr title!). I’m originally from Halifax but moved to Leeds for university and currently live in Harrogate. I’m excited to kick start my career at this wonderful company with the best team 😊"
+        },
+        {
+            "title": "University of Leeds",
+            "address": "University of Leeds, Leeds",
+            "location": {
+                "lat": 53.80668125,
+                "lng": -1.55511586
+            },
+            "description": "I’ve spent the past decade at the University of Leeds, completing my BA Human Geography, MA Social Research (with data vis), and now my PhD in Geography and spatial modelling. Alongside my studies, I taught spatial planning and GIS to hundreds of students (some even here at Geolytix), and now I get to put my own skills to the test at work!",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/leeds_uni.jpg"
+        },
+        {
+            "title": "Growing up Italian and Ukrainian",
+            "address": "Soliera, Modena, Italy",
+            "location": {
+                "lat": 44.73807305,
+                "lng": 10.92281643
+            },
+            "description": "My family are Italian and Ukrainian and both cultures heavily influenced my upbringing. We often visited my family’s farm in Modena, helping raise animals, processing home-grown tomatoes into canned sauces, and working on the vineyard. I also celebrate 2x every holiday as Ukraine uses the Julian calendar which is always fun! I was brough up speaking a mix of English, Italian and Ukrainian but can’t speak any language that fluently haha.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/italy_ukraine.jpg"
+        },
+        {
+            "title": "Making Halifax Home",
+            "address": "The Piece Hall, Halifax",
+            "location": {
+                "lat": 53.72195588,
+                "lng": -1.856919002
+            },
+            "description": "My grandparents met in Halifax and made this town their home. My Italian nonna was raised in a farming family but migrated for textile work in post-war Britain. My Ukrainian grandad was detained in a working camp in Germany during WW2 and fled to seek refuge in Britain. They made Halifax our home, and our family have been a significant part of the Italian-Ukrainian community. Halifax, or Halifornia, will always have a place in my heart, from visiting Eureka as a child, hiking across its incredible trails with my dad, attending events at Piece Hall, and of course, it is the home of my lord and saviour, Anne Lister of Shibden hall. I'm very grateful for the community that welcomed my grandparents in this town.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/halifax.jpg"
+        },
+        {
+            "title": "Free time?!",
+            "address": "Cold Bath Road, Harrogate",
+            "location": {
+                "lat": 53.99012854,
+                "lng": -1.547698407
+            },
+            "description": "When I’m not studying or working, I’m either playing videogames, baking some sort of bread, or at the gym. I used to be play right-mid for my university football team during my Masters but swapped over Olympic-style weightlifting when I moved to Harrogate. I also love cube-puzzles and can solve the Rubik’s cube in less than 30 seconds. I’m was terrified of heights and speed so I’ve taken up the hobbies of indoor-skydiving and go-karting… No longer terrified, just dizzy!",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/hobbies.jpg"
+        },
+        {
+            "title": "Visiting Toronto",
+            "address": "Bond Street, Hamilton, Toronto",
+            "location": {
+                "lat": 43.65518183049744,
+                "lng": -79.37786774
+            },
+            "description": "In 2019 I visited Toronto, Canada. We celebrated Canada day on Toronto Island Park, visited the CN tower, went to Niagara Falls, and spent a week in Hamilton and explored Dundas Peak. My partner showed me where she studied at McMaster University, and all the places she’d visited. Having a Tim Hortons or Second Cup on every street corner was an absolute dream, but this one small restaurant called Tally Ho was the best secret place, serving their famous roast beef and gravy sandwiches.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/toronto.jpg"
+        }
     ]
 }
