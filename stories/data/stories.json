@@ -784,8 +784,8 @@
                 "lat": 51.52480261,
                 "lng": -0.1071849901
             },
-            "description": "I wasn't sure which job title to put for this slide, I've done so many different things in my 6 years at Geolytix! Which is actually one of the best bits about working for Geolytix, there's always a new challenge!",
-            "profile": "https://res.cloudinary.com/geolytix/image/upload/v1646489309/mappstories/sam_profile.png"
+            "description": "I wasn't sure which job title to put for this slide, I've done so many different things in my 7 years at Geolytix!  Which is actually one of the best bits about working for Geolytix, there's always a new challenge!  Over the last year I've had a brilliant time supporting our clever new product team to develop some very exciting footfall products; giving more insight into human activity in Retail Places.",
+            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214899/iwd_2023/sam_profile.png"
         },
         {
             "title": "Tasmania",
@@ -795,7 +795,7 @@
                 "lng": 147.3230631
             },
             "description": "I've lost the mancunian accent :) so not many people know I'm very orignally from Stockport. That only lasted 9 months before my parents moved back to Tasmania, Australia. My childhood was a little on the hippy side, living in rural Tassie, where my Mum and Dad made and sold wood turnings. We had chickens and goats in the garden and a fully vegetarian household, well before it was fashionable!",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646489490/mappstories/Sam_IMG_8199.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_8199.jpg"
         },
         {
             "title": "Melbourne",
@@ -805,7 +805,7 @@
                 "lng": 144.9517884
             },
             "description": "We became a bit more 'normal' once I started high school and moved to suburban Melbourne.  I went on to study Urban Planning at Melbourne University and there I stumbled across Retail Location Planning. While I finished Uni I had a part time job in the Market Assessment team at Coles Myer, and that's what got me hooked. I learnt my location planning craft forecasting sales for Coles, Bi-Lo, Kmart and Target stores across Australia and New Zealand. Then I did what every 20 something Aussie does...move to London! In London I worked to turn the map orange as the head of the Network Planning team at Sainsbury's. A busy time.",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646489559/mappstories/Sam_Coles_JS_pic.png"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_Coles_JS_pic.png"
         },
         {
             "title": "Stonehenge",
@@ -815,7 +815,7 @@
                 "lng": -1.826043341
             },
             "description": "When I'm not working I'm probably eating cake or out with the family visiting something historic (or often both, I love a good tearoom!). Stonehenge was a favourite outing.",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646489622/mappstories/Sam_IMG_0512.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_0512.jpg"
         },
         {
             "title": "Melbourne",
@@ -825,7 +825,7 @@
                 "lng": 144.5985277
             },
             "description": "Full circle! As our APAC customer base grew we wanted more boots on the ground in the region, and I was keen for my children to experience the Aussie lifestyle. So we upsticks and set up Geolytix in Melbourne.  We enjoyed a visit from Blair and Danny just before Covid hit. A winery tour of the Bellarine Peninsula...does this count as a site visit?!",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646489727/mappstories/Sam_IMG_1852.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_1852.jpg"
         },
         {
             "title": "Windsor",
@@ -835,7 +835,16 @@
                 "lng": -0.6095694961
             },
             "description": "What could be a better return to the UK in 2021 than a royal invitation to celebrate our Queen's Award for International Trade at Windsor Castle! A very proud moment. Six years ago we set ourselves a Big Hairy Audacious Goal to be a global location planning partner for our customers...and here we are, projects completed all over the Americas, Europe and APAC. Can't wait to see where we are in 6 more years!!",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646489774/mappstories/Sam_Queens_Award_Windsor.png"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_Queens_Award_Windsor.png"
+        },
+        {
+            "title": "Melbourne",
+            "address": "Yes it's true...back to Melbourne!",
+            "location": {
+                "lat": -37.81006834,
+                "lng": 144.9517884
+            },
+            "description": "Covid rudely interrupted our time in Australia in 2020, but the allure of sunny shores is too great and we're heading back again!  From Easter 2023 we'll be living back in Melbourne and delighted to be putting our Geolytix Australia t-shirts back on!  Looking forward to lots of in-person coffees with our fabulous Australian customers and partners."
         }
     ],
     "Imogen": [
