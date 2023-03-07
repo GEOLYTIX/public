@@ -29,7 +29,9 @@
 
     <style>
 
-        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+        /*@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');*/
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
 
         html {
             scroll-behavior: smooth;
@@ -40,12 +42,27 @@
         }
 
 
-        h1, h3, p, .header {
-            font-family: 'Caveat', cursive;
+        h1, h3, .header {
+            /*font-family: 'Caveat', cursive;*/
+            font-family: 'Amatic SC', cursive;
         }
 
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+        }
+
+        p, a {
+            font-family: 'EB Garamond', serif;
+        }
+
+
         .stories a {
-            color:  #283593;
+            color:  #30343F;
+            font-weight: bold;
         }
 
 
@@ -87,7 +104,7 @@
             width: 50vw;
         } 
 
-        .stories div {
+        .stories div.container {
             min-height: 100vh;
             padding: 1em;
             font-size: 1.5em;
@@ -100,10 +117,11 @@
             grid-template-columns: repeat(5, auto);
             align-items: center;
             margin-top: 1em;
+            margin-bottom: 2em;
         }
 
         .stories div.team {
-            font-size: 0.75em;
+            font-size: 1em;
             min-height: unset;
             padding: 0;
             margin: auto;
@@ -255,7 +273,7 @@
 
         <div class="stories half"></div>
         
-        <div id="map" class="half">
+        <div id="map" class="container half">
             <div id="_Attribution">
                 <div><a class="glx-logo" target="_blank" href="https://geolytix.co.uk">
                     <img src="https://geolytix.github.io/public/mapp_v4/emblem.svg">
@@ -325,8 +343,8 @@
                     source: source,
                     style: new ol.style.Style({
                         image: new ol.style.Icon({
-                            src: story.pin || "https://geolytix.github.io/MapIcons/aga/story_pin.svg",
-                            scale: 1
+                            src: story.pin || "https://geolytix.github.io/public/stories/img/her.svg",
+                            scale: 3
                         })
                     })
                 });
@@ -360,7 +378,7 @@
 
                     stories.map((story, i) => {
 
-                        let el = mapp.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c'}" data-story='${JSON.stringify(story.location)}'>
+                        let el = mapp.utils.html.node`<div class="${(i%2 ? 'dark' : 'lite') + ' align_c container'}" data-story='${JSON.stringify(story.location)}'>
                         ${story.profile ? mapp.utils.html.node`<img style="height: 8em;" src="${story.profile}">` : ``}
                         <h1>${story.title}</h1>
                         <h3>${story.address}</h3><br>`;
@@ -393,6 +411,10 @@
                             state.links.appendChild(_link);
                         });
                     }
+
+                    document.querySelector('.stories').appendChild(mapp.utils.html.node`<div class="header align_c lite">
+                        <img height=20 src="https://geolytix.github.io/public/mapp_v4/emblem.svg"><br>See more of Mapp&nbsp;Stories
+                        </div>`);
                     
 
                     document.querySelector('.stories').appendChild(state.links);
