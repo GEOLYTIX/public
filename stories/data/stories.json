@@ -960,5 +960,57 @@
             "description": "In 2019 I visited Toronto, Canada. We celebrated Canada day on Toronto Island Park, visited the CN tower, went to Niagara Falls, and spent a week in Hamilton and explored Dundas Peak. My partner showed me where she studied at McMaster University, and all the places she’d visited. Having a Tim Hortons or Second Cup on every street corner was an absolute dream, but this one small restaurant called Tally Ho was the best secret place, serving their famous roast beef and gravy sandwiches.",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/toronto.jpg"
         }
+    ],
+    "Aimee": [
+        {
+            "title": "Aimee",
+            "address": "Data Analyst at Geolytix",
+            "location": {
+                "lat": 53.79855149,
+                "lng": -1.553168765
+            },
+            "description": "Hi, I'm Aimee, a Data Analyst at Geolytix. I joined the Leeds office in March 2022 after finishing my masters degree from the University of Leeds.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_1.jpg"
+        },
+        {
+            "title": "Travelling",
+            "address": "World",
+            "location": {
+                "lat": 9.635273333,
+                "lng": 99.67170181
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_2.jpg",
+            "description": "Like most others at Geolytix, I try to travel as much and as often as I can. One of my most recent trips was in Thailand - going from the craziness of Bangkok to the white sandy beaches and spectacular views (photo taken at the Mu Ko Ang Thong National Marine Park) in Ko Pha Ngan. I'm now looking forward to my next trip in the southeast of Mexico."
+        },
+        {
+            "title": "China",
+            "address": "Summer 2019",
+            "location": {
+                "lat": 29.99876,
+                "lng": 117.9833058
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_3.jpg",
+            "description": "In 2019, my university flatmates invited me to spend the summer at their homes in China. I was lucky enough to visit Beijing, Shanghai, Anhui, Xi an, Chongqing, Chengdu and Suzhou. From the Forbidden City in Beijing, to climbing the Yellow Mountains in Anhui and to eating (or attempting to eat) the spiciest hotpot in Chongqing - it is far too difficult to pick a favourite moment!"
+        },
+        {
+            "title": "Palermo",
+            "address": "Our Second Home",
+            "location": {
+                "lat": 38.12043408,
+                "lng": 13.35733468
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_4.jpg",
+            "description": "With Vincenzo's family being in Palermo, we're lucky to visit so often. Aside from indulging in the most amazing food and spending time with family and friends, you will find us at the beach, going to the football, or spending late nights in the centre of Palermo."
+        },
+        {
+            "title": "Formula One",
+            "address": "",
+            "location": {
+                "lat": 43.25127636,
+                "lng": 5.793009527
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_5.jpg",
+            "description": "Growing up with a family who loves Formula One, it was hard for me not to take interest too. In 2017, I went to my first GP at Silverstone and more recently, Circuit Paul Ricard in France. With the upcoming season, I hope the Leeds Office are ready to hear all about it!"
+        }
     ]
 }
