@@ -1,16 +1,25 @@
 {
+    "Geolytix": [{
+        "title": "Women of GEOLYTIX",
+        "address": "Finsbury Business Centre - our head office",
+        "location": {
+            "lat": 51.5248847,
+            "lng": -0.1071502
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678207428/iwd_2023/Women_of_Geolytix_Cropped.jpg",
+        "description": "We love international women’s day and how it recognises women across the world. We are lucky at Geolytix. We know we have something special – caring for each other, offering a boost when one of us needs it and ready to give someone a push when they need it. Over half our leadership team are female, and we’ve loved building a team of strong, intelligent and fun women."
+    }],
     "Jasmin": [
     {
         "title": "Hello, I'm Jasmin!",
         "address": "Product Owner of MAPP at Geolytix",
-        "_profile": "https://res.cloudinary.com/geolytix/image/upload/v1645449941/mappstories/Jasmin_headshot_circle.png",
         "location":
         {
             "lat": 51.5808204674407,
             "lng": -0.013817046406572648
         },
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646655029/mappstories/jasmin_welcome_v2.jpg",
-        "description": "Hello, I’m Jasmin. Most people call me ‘Jazz’. I’m a born and bred East Londoner and still live here today. Apart from 3 years studying Geography at the University of Leeds, I have lived here all my life. I joined Geolytix back in 2015, when it was a company of 7! I’ve been involved in many aspects of the business, but today I look after MAPP, our online mapping and marketing intelligence tool."
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209913/iwd_2023/jasmin_welcome_v2.jpg",
+        "description": "Hello, I’m Jasmin. I’m a born and bred East Londoner. I joined Geolytix back in 2015, when it was a company of 7. I’ve been involved in many aspects of the business, but today I look after MAPP, our online mapping and marketing intelligence tool."
     },
     {
         "title": "Run Forrest, run!",
@@ -20,8 +29,8 @@
             "lat": 51.69381959513246,
             "lng": 0.06772652645302418
         },
-        "description": "Outside of work, you will often find me running. I am a member of a cross country running club and Epping Forest is a frequent stomping ground of mine. If I’m lucky I may spot a deer whilst out on my run. One of my favourite routes is a 14-mile loop out to Copped Hall (a Georgian mansion under restoration just outside of the M25) and back.",
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1645453473/mappstories/jasmin_Copped_Hall_Epping_Forest.jpg"
+        "description": "Outside of work, you will often find me running. I am a member of a cross country running club and Epping Forest is a frequent stomping ground of mine. One of my favourite routes is a 14-mile loop out to Copped Hall (a Georgian mansion under restoration just outside of the M25) and back.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645443902/iwd_2023/Copped_Hall_Epping_Fores.jpg"
     },
     {
         "title": "London Marathon 2021",
@@ -32,7 +41,7 @@
             "lng": -0.07537795166540881
         },
         "description": "In October 2021, my dream came true of finally being able to run the London Marathon. I know it's cliché, but there's really nothing like the moment you cross Tower Bridge with hundreds of supporters lined up on either side shouting out your name. The second half of the race was super tough, but I loved seeing Sarah & Lou cheering me on at Canary Wharf when the wheels were starting to fall off.",
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1645459272/mappstories/Jasmin_London_Marathon_-_London_Bridge.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645444017/iwd_2023/London_Marathon_-_London_Bridge.jpg"
     },
     {
         "title": "Conquering the highest mountain in Wales",
@@ -43,7 +52,7 @@
             "lng": -4.076319158069835
         },
         "description": "During the pandemic when travel was restricted, I took to exploring more of the UK and learnt to embrace the great outdoors. In May 2021, I spent a week in Wales with a group of friends and successfully climbed Mount Snowdon. We couldn’t believe our luck with the weather, during the week we also visited Portmeirion (a village styled to appear like you were in Italy), cycled through the hills to Cwm Bychan, wild swam in the river Conwy (it was absolutely freezing!) and sunbathed at Harlech beach.",
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1645459346/mappstories/Jasmin_Snowdonia_Wales_V2.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645444099/iwd_2023/Snowdonia_Wales_V2.jpg"
     },
     {
         "title": "On the bonnie bonnie banks of Loch Lomond…",
@@ -54,7 +63,7 @@
             "lng": -4.521196907002455
         },
         "description": "Eager to squeeze one last trip in during 2021 and keen to get that outdoors fix, I ventured up to Scotland with a couple of friends in December. Whilst there we drove to Loch Lomond, stopped off at Glengoyne Whiskey distillery for Christmas gifts and hiked up Conic Hill. It was quite a tough climb - the name is clearly deceptive as it was much more than a ‘hill’ - but the views were breath-taking and were made even better by the glorious sunshine we had that day.",
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646036582/mappstories/Conic_Hill_Scotland.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645443998/iwd_2023/Conic_Hill_Scotland.jpg"
     },
     {
         "title": "When in Rome...",
@@ -64,19 +73,19 @@
             "lat": 41.90229934252658,
             "lng": 12.454192712698315
         },
-        "description": "As well as the UK, I also enjoy travelling further afield when I can. At the start of the year, I visited Rome for the first time with my boyfriend, which we both loved. In addition to marvelling at the ancient sites, we were also able to tick off a new country at the same time (Vatican City). After a few years of limited travel, it was great to experience the European culture of alfresco dining again (even in January) and we certainly enjoyed many an Aperitivo! I am looking forward to more trips abroad soon and already have a few planned for 2022.",
-        "img": "https://res.cloudinary.com/geolytix/image/upload/v1646037102/mappstories/jasmin_vatican_cropped.jpg"
+        "description": "As well as the UK, I also enjoy travelling further afield when I can. At the start of 2022, I visited Rome for the first time with my boyfriend, which we both loved. In addition to marvelling at the ancient sites, we were also able to tick off a new country at the same time (Vatican City!). After a few years of limited travel, it was great to experience the European culture of alfresco dining again (even in January) and we certainly enjoyed many an Aperitivo!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645444208/iwd_2023/Vatican_City.jpg"
     }],
     "Lou": [
         {
             "title": "Hi, I'm Lou",
-            "address": "Product Owner of Data at Geolytix",
+            "address": "How did I get here?",
             "location": {
                 "lat": 53.3791036,
                 "lng": -1.466009248
             },
-            "description": "I love geography, I'm a keen walker and have a passion for travel. I'm a South Yorkshire lass, originally from Doncaster. I've lived in Sheffield since 2008 when I started studying BSc Geography at Sheffield Hallam University. I continued on to gain my MSc in Geographical Information Systems. In 2013 I joined Geolytix, my role is Product Owner of Data.",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646229341/mappstories/Lou-MeersbrookPark-Sheffield.jpg"
+            "description": "I love geography, I'm a keen walker and have a passion for travel. I'm a South Yorkshire lass, originally from Doncaster. I've lived in Sheffield since 2008 when I started studying BSc Geography at Sheffield Hallam University. I continued on to gain my MSc in Geographical Information Systems. In 2013 I joined Geolytix. I'm Product Owner of Data and work across the Business Development and Data teams.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208265/iwd_2023/lou_1_sheffield.jpg"
         },
         {
             "title": "Walking",
@@ -86,7 +95,7 @@
                 "lng": -1.567240056
             },
             "description": "I absolutely love walking and discovering new routes. Sheffield is the perfect location to live for this hobby, I'm right on the doorstep of the Peak District National Park. Apps like <a target='_blank' href='https://www.strava.com/'>Strava</a> and <a target='_blank' href='https://www.sports-tracker.com/'>Sports Tracker</a> are brilliant for tracking exercise. Here are 3 long local walks I loved completeing in the last 2 years and highly recommend:<ul><li>Sheffield Round Walk - 15 miles</li><li>Edale Skyline, Peak District - 20 miles</li><li>Don Valley Way, Sheffield-Doncaster - 28 miles</li></ul><br>I'm really interested in the <a target='_blank' href='https://beta.slowways.org/'>Slow Ways</a> initative who are creating a network of walking routes that connect all of Great Britain’s towns and cities.",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646229678/mappstories/Lou_Walking.png"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208679/iwd_2023/lou_2_walking.png"
         },
         {
             "title": "Gigs & Festivals",
@@ -95,18 +104,18 @@
                 "lat": 51.15371543,
                 "lng": -2.591915178
             },
-            "description": "I played piano for 8 years when I was younger and although I'm slowly trying to teach myself the ukulele I prefer to leave it to the professionals. My first concert was Spice Girls at Don Valley in 1997. My music taste has evolved and I've been to over 150 gigs. In 2006 I went to my first festival and loved the experience. Since then I have been to Leeds Festival (UK) 5 times, Glastonbury (UK) 3 times, Isle of Wight (UK), Bestival (UK), Secret Garden Party (UK), Benicassim (Spain), Super Bock Super Rock (Portugal).",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230381/mappstories/lou_Glastonbury.jpg"
+            "description": "I played piano for 8 years when I was younger and although I'm slowly trying to teach myself the ukulele I prefer to leave it to the professionals. My first concert was Spice Girls at Don Valley in 1997. My music taste has evolved and I've been to hundreds of gigs. In 2006 I went to my first festival and loved the experience. Since then I have been to Leeds Festival (UK), Glastonbury (UK), Isle of Wight (UK), Bestival (UK), Secret Garden Party (UK), Benicassim (Spain), Super Bock Super Rock (Portugal). This year I'm going to Weekender in Warrington and Glastonbury for a 4th time.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208938/iwd_2023/lou_3_glastonbury.jpg"
         },
         {
-            "title": "Travel",
+            "title": "Where's Lou",
             "address": "Patagonia - Argentina & Chile",
             "location": {
                 "lat": -51.25001859,
                 "lng":  -72.3585735
             },
-            "description": "I travel as much as I can. One of my favourite trips was in 2018 when myself and my friend & colleague Jazz went to Argentina and Chile. We had a fantastic few days exploring Buenos Aires then flew down to discover Patagonia (both the Argentinian and Chilean sides) followed by a few final days in the beautiful city of Santiago. Buenos Aires > El Calafete > El Chalten > Puerto Natales > Torres Del Paine > Punta Arenas > Santiago",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230399/mappstories/Lou_Patagonia.png"
+            "description": "I travel as much as I can. I've been to over 40 countries across 6 continents. This year my trips include Bosnia & Herzegovina, Iceland and Canada. One of my favourite trips was in 2018 when myself and my friend & colleague Jazz went to Argentina and Chile to explore Patagonia.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209050/iwd_2023/lou_4_where_s_lou.png"
         },
         {
             "title": "Do the things which scare you",
@@ -116,7 +125,17 @@
                 "lng": -43.21871095
             },
             "description": "One of the best things I have ever done is hang gliding over Rio de Janeiro, Brazil.",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646230415/mappstories/Lou_Brazil.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209205/iwd_2023/lou_5_brazil.jpg"
+        },
+        {
+            "title": "My Philosophy",
+            "address": "Enjoy the passing of time",
+            "location": {
+                "lat": 51.52513313,
+                "lng": -0.1073958347
+            },
+            "description": "We have one life and I intend to live it the best I can. This year I've set myself a few challenges... In January I ran the Sheffield Round Run, February I hosted a Geolytix event for over 100 people, in March I'm starting salsa lessons. I have a few ideas for the rest of the year including travels and long walks to push my comfort levels.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209412/iwd_2023/lou_6_lou.jpg"
         }
     ],
      "Rachel": [
@@ -869,78 +888,6 @@
             },
             "description": "I also love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy, I was lucky enough to interrail there for 2 weeks, staying in a real mix of city and more rural locations. My favourite place is definitely Lake Garda, which I have been to on several occasions now, so much of it is very unspoilt and traditionally Italian. Whilst staying there I visited Malcesine on the eastern shore and got a cable car up to the mountains which is where this photo was taken.",
             "img": "https://res.cloudinary.com/geolytix/image/upload/v1646647952/mappstories/Imogen_Italy.jpg"
-        }
-    ],
-    "Agata": [
-        {
-            "title": "Agata",
-            "profile": "https://res.cloudinary.com/geolytix/image/upload/v1646591965/mappstories/aga_profile.png",
-            "address": "Writing between { brackets } and <tags/> for Geolytix since 2017 👩‍💻",
-            "location": {
-                "lat": 51.5041986,
-                "lng": -0.2098185
-            },
-            "description": "I am based in West London's Holland Park. It's a picturesque area full of blooming trees in spring 🌸 <br/>Peacocks are usual residents here 🦚 <br/>Ever since covid era started I often come to Central London by bicycle 🚲",
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646592199/mappstories/aga_hp.jpg"
-        },
-        {
-            "title": "Nice 06000",
-            "address": "Provence-Alpes-Côte d'Azur, France 🇫🇷",
-            "location": {
-                "lat": 43.6967007,
-                "lng": 7.2643308
-            },
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649787/mappstories/aga_nice_4.jpg",
-            "description": "Nice in French Côte d'Azur is one of the best places I know. In summer 2021 as soon as I sorted what I would call 'transit letters' I hopped on a one way flight as crossing borders was still uncertain at the time 😷💉<br/>I ended up staying in Nice for a month going for a swim in the Bay of Angels every morning before city beaches would get busy 🏖️"
-        },
-        {
-            "title": "Naples",
-            "address": "Metropolitan City of Naples, Italy 🇮🇹",
-            "location": {
-                "lat": 40.8513963,
-                "lng": 14.2399615
-            },
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646594716/mappstories/aga_naples.jpg",
-            "description": "Travelling was still complicated so several weeks of digital nomadism followed.<br/> I hopped on another one way flight to a place I had been curious about for a long time. <br/>I heard so many contradictory opinions I had to see Naples myself. <br/>And it was crazy! Crossing streets was stressful. In the historic centre full of pedestrians locals would easily speed on their vespas 🛵<br/>You are warned about shady quarters and there's the notorious problem with rubbish.<br/> Yet they have truly amazing food 🍕🍝 and plenty of cultural gems 🎭 <br/>Can't deny certain exciting dark magic of this city."
-        },
-        {
-            "title": "Lipari",
-            "address": "98050 Metropolitan City of Messina 🇮🇹",
-            "location": {
-                "lat": 38.4649144,
-                "lng": 14.9467159
-            },
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649880/mappstories/aga_lipari.jpg",
-            "description": "Eventually I was relieved to be leaving Naples. <br/>I went further south to the east of Sicily. Life was different there again. In Catania in the morning the fish market 🐟 attracts people to the centre. Later in the day streets are empty as the sun is strong. After sunset the squares come to life again 🌙<br/>While staying there I discovered this little paradise Lipari which once happened to appear in Homer's Odyssey 🤩"
-        },
-        {
-            "title": "Bergamo",
-            "address": "Province of Bergamo, Lombardy, Italy 🇮🇹",
-            "location": {
-                "lat": 45.703585,
-                "lng": 9.6621651
-            },
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646650652/mappstories/aga_bergamo_3.jpg",
-            "description": "By mid-August I started planning return to the north of Europe. I needed to change flights somewhere in Italy and I chose Milan ✈️ <br/>Yet flights didn't fall into place as expected and I stayed in Milan for 9 days eventually departing from nearby Bergamo 🤔"
-        },
-        {
-            "title": "Warsaw",
-            "address": "Capital City of Warsaw, Poland 🇵🇱",
-            "location": {
-                "lat": 52.232855,
-                "lng": 20.9211114
-            },
-            "img": "https://res.cloudinary.com/geolytix/image/upload/v1646649973/mappstories/aga_food_4.jpg",
-            "description": "It's fun to make dishes which we tasted in different countries.<br/> In September 2021 in Warsaw I did a specialist cooking training and now I am a certified chef in 'frutti di mare nel piatto' 👩‍🍳"
-        },
-        {
-            "title": "As of International Women's Day 2022",
-            "address": "London W14, Holland Park 🇬🇧",
-            "location": {
-                "lat": 51.5041986,
-                "lng": -0.2098185
-            },
-            "description": "<iframe src='https://giphy.com/embed/3mIQz6yw1iGKXnCOhC' width='360' height='240' frameBorder='0' class='giphy-embed'></iframe><p></p><br>At the moment I am determined to improve my serve 🎾<br/> I make plenty of errors but who doesn't. <br/>Serve on 🎾🎾"
         }
     ]
 }
