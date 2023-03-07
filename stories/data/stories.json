@@ -1113,5 +1113,44 @@
             "img": "",
             "description": "I’m slowly getting around Europe. Here I am in Paris on the coldest day of their 2021 winter season."
         }
+    ],
+    "Chloe": [
+        {
+            "title": "Hey, I'm Chloe!",
+            "address": "Data Analyst at Geolytix",
+            "location": {"lat": 53.79889721,   "lng": -1.551897693},
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Cover_Photo_chloe.jpg",
+            "description": "Hey, I'm Chloe, a Data Analyst at Geolytix. I am based at the Leeds office at Park Square and I joined the team at the end of November 2022 so I'm a newbie! Prior to working at Geolytix I worked as a Site Research Analyst at JD Sports which is where I undertook my industrial placement year whilst at university."
+        },
+        {
+            "title": "Growing Up",
+            "address": "Blackburn, Lancashire",
+            "location": {"lat": 53.73859394,  "lng": -2.51974851},
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Blackburn_chloe.jpg",
+            "description": "I grew up in a small village in the town of Blackburn in Lancashire. Whilst I always enjoyed being close to nature growing up I think I've always been a city girl at heart. I still have a lot of family living in Blackburn so I enjoy making regular trips home to catch up with my family and have a detox from the fast paced city life when needed!"
+        },
+        {
+            "title": "Roundhay",
+            "address": "Leeds",
+            "location": {"lat": 53.83514878, "lng": -1.49675853},
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219223/iwd_2023/Roundhay_chloe.jpg",
+            "description": "I am currently living in Roundhay in Leeds after making the decision to return to Leeds after just over a year and a half living in Manchester upon graduating. I am a regular visitor to Roundhay Park and spend many of my lunch breaks here. As well as a gorgeous park, you are spoilt for choice for lovely indpendent coffee shops, bars and restaurants. As a big foodie/coffee lover I am currently on a mission to try them all!"
+        },
+        {
+            "title": "Leeds University",
+            "address": "Years of Study",
+            "location": {"lat": 53.80670424, "lng": -1.554827927},
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219613/iwd_2023/Graduation_chloe.jpg",
+            "description": "Like many others at Geolytix I studied Geography (BA) at the University of Leeds. It was at university where I developed my passion for spatial analysis after undertaking several modules related to retail geography and the applications of spatial data. I thoroughly enjoyed my time living in Leeds as a student and jumped at the opportunity to move back as a graduate."
+        },
+        {
+            "title": "Hobbies",
+            "address": "",
+            "location": {
+                "lat": 46.00925785, "lng": 9.285695783
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Lake_Como_chloe.jpg",
+            "description": "In my spare time I enjoy walking, running, spending time with friends and family, cooking, reading and travelling. I was lucky enough to go on four holidays last year and managed to tick a number of locations off my bucket list, one of which was the beautiful Lake Como. I am keen to explore more of Italy this year and I'm hoping to book a trip in Summer to Rome with my brother who I have done a lot of travelling with over the years."
+        }
     ]
 }
