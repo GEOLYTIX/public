@@ -855,7 +855,7 @@
                 "lat": 53.36721368,
                 "lng": -1.500470664
             },
-            "description": "Hello, I'm Imogen, a Location Planning Partner and still a bit of newbie to Geolytix, having joined in September 2021 (and loving it so far!). I am based in the Leeds office but visit London quite regularly too. I'm originally from Sheffield and lived there until leaving for university in 2016, I often go back to visit family and have gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and buzzing local neighbourhoods, my favourite spot has to be Sharrowvale Road -  a little haven of independent shops, cafes and pubs.",
+            "description": "Hello, I'm Imogen, a Location Planning Partner at Geolytix. I joined the company in September 2021 and am based in the Leeds office, but visit London quite regularly too for meetings, events and site visits. I'm originally from Sheffield and lived there until leaving for university in 2016, since this time I've gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and buzzing local neighbourhoods. My favourite spot has to be Sharrowvale Road, a little haven of independent shops, cafes and pubs - Eve Kitchen is a must for gorg doughnuts!",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_little_sq.jpg"
         },
         {
@@ -865,8 +865,8 @@
                 "lat": 53.48423404,
                 "lng": -2.229067488
             },
-            "description": "Currently I am living in Ancoats, Manchester - which is the best and most interesting area I've had the pleasure to live in yet, at the end of last year <a href='https://www.timeout.com/coolest-neighbourhoods-in-the-world' target='_blank'>TimeOut</a> actually named it as one of the coolest neighbourhoods in the world! There are so many lovely wine and cocktail bars (Flawd and Jane Eyre are favourites), bakeries (Companio is a must for their almond and coffee crosissants) and coffee shops (the best coffee from Ancoats Coffee Co!), each located in some impressive old cotton mills as well as newer developments by New Islington Marina.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_ancoatsmarina.jpg"
+            "description": "I currently live in Ancoats, Manchester - which is the best place I've had the pleasure to live in yet, and has featured several times in TimeOut's coolest neighbourhoods in the world! There are so many lovely wine and cocktail bars (Flawd and Jane Eyre are favourites), bakeries (Companio is a must for their almond and coffee crosissants) and coffee shops (the best coffee from Off The Press!), each located in some impressive old cotton mills as well as newer developments by New Islington Marina. ",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287567/iwd_2023/imogen_IMG_2239.png"
         },
         {
             "title": "Leeds Uni",
@@ -875,28 +875,28 @@
                 "lat": 53.80572993,
                 "lng": -1.554485772
             },
-            "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni! - I am glad to be able to go back regularly now when visiting the Leeds office. Here is a pic of me outside the infamous Parkinson steps just before we all had to head home before the first lockdown in March 2020!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_uni.jpg"
+            "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni. Here is a pic of me and my friends last March finally graduating, only 2 years late thanks to Covid!",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287567/iwd_2023/imogen_IMG_5894.jpg"
         },
         {
             "title": "Walking",
-            "address": "The Lakes July 2021",
+            "address": "Schliersee to Tegernsee, Bavaria",
             "location": {
-                "lat": 54.36882028,
-                "lng": -3.131207003
+                "lat": 47.72621713,
+                "lng": 11.80246008
             },
-            "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk in fact!) from the Peak District, I've always had great appreciation for the countryside and as an adult I now try to ensure walks and hikes are a regular part of my weekend. Since living in Manchester, I've enjoyed exploring more of the Peaks and Cheshire. Further afield, I absolutley love the Lake District - you literally cannot get bored of it! Pictured is a lovely walk near Coniston that I did last summer with some friends whilst staying there for a long weekend (link <a target='_blank' href='https://out.ac/h4pFK'>here</a> if you fancy attempting it!), we even managed to go for a wild swim in a lake half way round!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_Lakes.jpg"
+            "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk!) from the Peak District, I've always loved the countryside and as an adult I now try to ensure runs, walks and hikes are a regular part of my weekend. Back in October, myself and a couple of friends took our walking boots all the way to Munich and did a stunning hike between two Lakes, just a short train ride out of the city - we were able to stop half way at a hütte where we could hydrate with a well-earnt beer.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_1609.png"
         },
         {
             "title": "Travelling",
-            "address": "Interrailing in Italy",
+            "address": "Exploring Italy",
             "location": {
-                "lat": 45.62963852,
-                "lng": 10.6464347
+                "lat": 45.987437,
+                "lng": 9.26156
             },
-            "description": "I also love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy, I was lucky enough to interrail there for 2 weeks, staying in a real mix of city and more rural locations. My favourite place is definitely Lake Garda, which I have been to on several occasions now, so much of it is very unspoilt and traditionally Italian. Whilst staying there I visited Malcesine on the eastern shore and got a cable car up to the mountains which is where this photo was taken.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215190/iwd_2023/Imogen_Italy.jpg"
+            "description": "I love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy (would really recommend interrailing here too!). The scenery is unreal, as well as all the pizza, gelato, wine and aperol!! Last September I headed to the north and explored Milan, Lake Como and the old city of Bergamo. We did a daytrip to Bellagio whilst staying on Como, which is where this photo was taken.",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_0529.png"
         }
     ],
     "Kim": [
