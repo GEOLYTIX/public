@@ -7,7 +7,7 @@
             "lng": -0.1071502
         },
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678207428/iwd_2023/Women_of_Geolytix_Cropped.jpg",
-        "description": "We love International Women’s Day and how it recognises women around the world. This day has never been bigger. <br>We are lucky at Geolytix. We know we have something special – caring for each other, offering a boost when one of us needs it and ready to give someone a push when they need it. <br>Over half our leadership team are female, and we’ve loved building a team with strong, intelligent and fun women who bring in a variety of high skill and expertise. Our female colleagues deliver projects to clients around the world, create products and develop brilliant solutions to location intelligence problems.<br>Get to know them a bit better through our MAPP Stories ⬇️"
+        "description": "We love International Women’s Day and how it recognises women around the world. This day has never been bigger. <br>We are lucky at Geolytix. We know we have something special – caring for each other, offering a boost when one of us needs it or recognising when someone needs encouragement. <br>Over half our leadership team are female, and we’ve loved building a team with strong, intelligent and fun women who bring in a variety of high skill and expertise. Our female colleagues deliver projects to clients around the world, create products and develop brilliant solutions to location intelligence problems.<br>Get to know them a bit better through our MAPP Stories ⬇️"
     }],
     "Jasmin": [
     {
@@ -109,7 +109,7 @@
         },
         {
             "title": "Where's Lou",
-            "address": "Patagonia - Argentina & Chile",
+            "address": "What a Wonderful World",
             "location": {
                 "lat": -51.25001859,
                 "lng":  -72.3585735
@@ -131,8 +131,8 @@
             "title": "My Philosophy",
             "address": "Enjoy the passing of time",
             "location": {
-                "lat": 51.52513313,
-                "lng": -0.1073958347
+                "lat": 53.367607, 
+                "lng": -1.502267
             },
             "description": "We have one life and I intend to live it the best I can. This year I've set myself a few challenges... In January I ran the Sheffield Round Run, February I hosted a Geolytix event for over 100 people, in March I'm starting salsa lessons. I have a few ideas for the rest of the year including travels and long walks to push my comfort levels.",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209412/iwd_2023/lou_6_lou.jpg"
