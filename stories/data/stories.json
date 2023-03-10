@@ -401,13 +401,13 @@
     "Catherine": [
         {
             "title": "Hi, I'm Catherine!",
-            "address": "Data Analyst at Geolytix",
+            "address": "Data Scientist at Geolytix",
             "location":
             {
                 "lat": 53.838219,
                 "lng": -1.493109
             },
-            "description": "Hi, I'm Catherine, a Data Analyst and relatively new Geolytixer! Originally from the south coast of England, but predominantly raised in Derby, I now call Leeds home. I moved to Leeds in 2016 for university and never looked back (if you ignore a brief spell in Coventry for my industrial placement year).",
+            "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from the south coast of England, but predominantly raised in Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine myself living anywhere else.",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_roundhay_swans.jpg"
         },
         {
@@ -422,15 +422,15 @@
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_peace_cranes_hiroshima.jpg"
         },
         {
-            "title": "University of Leeds",
-            "address": "Field trip to Montpellier (and surrounding areas)",
+            "title": "Years of Study",
+            "address": "University of Leeds",
             "location":
             {
-                "lat": 43.947481,
-                "lng": 4.535132
+                "lat": 53.806745,
+                "lng": -1.555458
             },
-            "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds. After 4 years, including a year working for Sainsbury's Property Data Analytics team and a field trip to the south of France, I decided I hadn't had enough of uni and signed up for a Masters in Data Science and Analytics. I graduated from this course in November 2021; however, I can't include a graduation photo here because both of my ceremonies were postponed due to COVID-19! Instead you can have a smiley picture of me in front of the Pont du Gard, in easier times.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_pont_du_gard.jpg"
+            "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds (like many of my Geolytix colleagues!). After 3 years of university and a year gaining invaluable experience as an industrial placement student in Sainsbury's Property Data Analytics team, I started a Masters in Data Science and Analytics to build the fundamental skills needed for a career in data. I graduated from this course in November 2021, whilst working part-time at Geolytix and finally had my undergraduate and postgraduate graduation ceremonies in March and July 2022!",
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678455543/iwd_2023/peace_cranes_hiroshima.jpg"
         },
         {
             "title": "Outdoor Adventures",
@@ -445,22 +445,22 @@
         },
         {
             "title": "Travelling pre-Covid",
-            "address": "Seoul, Taipei and Northern Taiwan, Shanghai",
+            "address": "Seoul and Ganghwa Island, Taipei and Northern Taiwan, Shanghai",
             "location": {
-                "lat": 25.033796,
-                "lng": 121.564555
+                "lat": 25.108562,
+                "lng": 121.843601
             },
             "description": "I also try to get lots of travelling of my own done, and managed to perfectly time a trip to Seoul, Taipei and Shanghai in January 2020. My two weeks in Seoul were my first experience of solo travel and hostelling (although I did meet up with a friend who lives there most days). I am really hoping to get back out to Taiwan someday, as it is definitely a hidden gem and I'd love to travel more of the country!",
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_taiwan_collage.jpg"
         },
         {
             "title": "Where am I now?",
-            "address": "Park House",
+            "address": "Geek Retreat",
             "location": {
-                "lat": 53.798494,
-                "lng": -1.553191
+                "lat": 53.796334,
+                "lng": -1.541428
             },
-            "description": "Over the past two years, I have discovered a love of board games, rediscovered my love of books, finished two degrees and started my job at Geolytix. It's been a crazy couple of years! Now you'll often find me at our Leeds office in Park House, leading the Beavers group I set up in January 2022 or hanging out with my local book and board game club.",
+            "description": "Over the past couple of years, I have finished my studies, passed my first Japanese language proficiency test, discovered a love of board games, rediscovered my loves of reading and roller skating, and of course, started my job at Geolytix! Now you'll often find me at our Leeds office in Park House, leading the Beavers group I set up in Kippax in January 2022, or hanging out at the fantastic bars and nerdy spaces of Leeds with my local book and board game clubs.",
             "img": ""
         }
     ],
