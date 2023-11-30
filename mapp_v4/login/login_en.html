@@ -14,6 +14,20 @@
   <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
   <link rel="stylesheet" href="https://geolytix.github.io/public/mapp_v4/app.css" />
 </head>
+<script>
+  // Get the toggle element and the password input
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  // If the toggle element exists, attach an event listener that toggles the password field
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+  });
+</script>
 
 <body>
   <main>
@@ -54,7 +68,8 @@
 
             <div class="form-field">
               <label>Password</label>
-              <input name="password" type="password" required minlength="10">
+              <input id="password" name="password" type="password" required minlength="10">
+              <i class="fa-solid fa-eye" id="togglePassword"></i>
             </div>
 
             <button type="submit" class="button">Login</button>

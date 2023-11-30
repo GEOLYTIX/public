@@ -71,5 +71,8 @@
   },
   "auth_failed": {
     "en": "Your account or password is incorrect. If you don’t remember your password, reset it now."
+  },
+  "account_approved_no_admin":{
+    "en": "https://geolytix.github.io/public/mapp_v4/mgs/account_no_admin.html"
   }
 }
