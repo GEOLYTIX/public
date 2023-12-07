@@ -1,23 +1,29 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:site_name" content="Geolytix MAPP" />
-    <meta property="og:title" content="Sign Up | Geolytix MAPP" />
-    <meta property="og:type" content="website" />
-  
-    <title>Password reset | Geolytix MAPP</title>
-  
-    <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
-    <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
-    <link rel="stylesheet"
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:site_name" content="Geolytix MAPP" />
+  <meta property="og:title" content="Sign Up | Geolytix MAPP" />
+  <meta property="og:type" content="website" />
+
+  <title>Password reset | Geolytix MAPP</title>
+
+  <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
+  <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  </head>
+</head>
+<style>
+  .button.disabled {
+    pointer-events: none;
+    background-color: var(--color-regular-gray);
+  }
+</style>
 
 <body>
   <main>
@@ -41,6 +47,9 @@
             <input style="display: none;" name="register" value=true>
 
             <div class="form-field">
+              <label>Email address</label>
+              <input name="email" type="email" autocomplete="off" required maxlength="50" value="">
+
               <div class="password-show">
                 <label>Password</label>
                 <span id="toggle_password" class="material-symbols-outlined">
@@ -49,18 +58,18 @@
               <input id="password" name="password" type="password" autocomplete="off" required
                 oninput="checkPassword()">
 
-                <div class="password-show">
-                  <label>Confirm Password</label>
-                  <span id="toggle_confirm_password" class="material-symbols-outlined">
-                    visibility_off</span>
-                </div>
+              <div class="password-show">
+                <label>Confirm Password</label>
+                <span id="toggle_confirm_password" class="material-symbols-outlined">
+                  visibility_off</span>
+              </div>
               <input name="confirm_password" id="confirm_password" type="password" autocomplete="off" required
                 oninput="checkPassword()" title="Passwords must match">
 
               <p id="password_match_message"></p>
             </div>
 
-            <button class="button" type="submit" formaction="register">
+            <button class="button disabled" id="submitbutton" type="submit" formaction="register">
               Reset
             </button>
           </form>
@@ -76,57 +85,62 @@
   <script>
 
     const togglePasswordButton = document.getElementById('toggle_password');
-      const passwordInput = document.getElementById('password');
-    
-      togglePasswordButton.addEventListener('mouseover', function () {
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-          togglePasswordButton.innerText = "visibility";
+    const passwordInput = document.getElementById('password');
+
+    togglePasswordButton.addEventListener('mouseover', function () {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePasswordButton.innerText = "visibility";
+      } else {
+        passwordInput.type = 'password';
+        togglePasswordButton.innerText = "visibility_off";
+      }
+    });
+
+    const toggleConfirmPasswordButton = document.getElementById('toggle_confirm_password');
+    const ConfirmpasswordInput = document.getElementById('confirm_password');
+
+    toggleConfirmPasswordButton.addEventListener('mouseover', function () {
+      if (ConfirmpasswordInput.type === 'password') {
+        ConfirmpasswordInput.type = 'text';
+        toggleConfirmPasswordButton.innerText = "visibility";
+      } else {
+        ConfirmpasswordInput.type = 'password';
+        toggleConfirmPasswordButton.innerText = "visibility_off";
+      }
+    });
+
+    function checkPassword() {
+
+      // Get the password field
+      const password = document.getElementById("password").value;
+
+      // Get the confirm password field
+      const confirmPassword = document.getElementById("confirm_password").value;
+
+      // Get the message element
+      const message = document.getElementById("password_match_message");
+
+      // Define
+      const requiredPattern = new RegExp("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{10,}$");
+
+      // Check the pattern agains the password
+      if (!requiredPattern.test(password)) {
+        message.innerHTML = "Your Password must contain a number, upper and lower case letter and be 10 characters or greater.";
+        message.style.color = "black";
+      }
+      // If the password meets criteria, then check if the passwords match
+      else {
+        if (password === confirmPassword) {
+          message.innerHTML = "";
+          document.getElementById("submitbutton").classList.remove("disabled");
         } else {
-          passwordInput.type = 'password';
-          togglePasswordButton.innerText = "visibility_off";
+          message.innerHTML = "Passwords must match!";
+          message.style.color = "red";
         }
-      });
-    
-      const toggleConfirmPasswordButton = document.getElementById('toggle_confirm_password');
-      const ConfirmpasswordInput = document.getElementById('confirm_password');
-    
-      toggleConfirmPasswordButton.addEventListener('mouseover', function () {
-        if (ConfirmpasswordInput.type === 'password') {
-          ConfirmpasswordInput.type = 'text';
-          toggleConfirmPasswordButton.innerText = "visibility";
-        } else {
-          ConfirmpasswordInput.type = 'password';
-          toggleConfirmPasswordButton.innerText = "visibility_off";
-        }
-      });
-        
-        function checkPassword() {
-    
-          // Get the password field
-          const password = document.getElementById("password").value;
-    
-          // Get the message element
-          const message = document.getElementById("password_match_message");
-    
-          // Check the pattern 
-          const requiredPattern = new RegExp("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{10,}$");
-          if (!requiredPattern.test(password)) {
-            message.innerHTML = "Your Password must contain a number, upper and lower case letter and be 10 characters or greater.";
-            message.style.color = "black";
-          } else {
-            const confirmPassword = document.getElementById("confirm_password").value;
-    
-            if (password === confirmPassword) {
-              message.innerHTML = "Passwords match!";
-              message.style.color = "green";
-            } else {
-              message.innerHTML = "Passwords must match!";
-              message.style.color = "red";
-            }
-          }
-        }
-      </script>
+      }
+    }
+  </script>
 </body>
 
 </html>

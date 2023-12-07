@@ -755,6 +755,11 @@ img:not([alt]) {
   text-align: center
 }
 
+.button.disabled {
+  pointer-events: none;
+  background-color: var(--color-regular-gray);
+}
+
 .button:hover {
   --button-background: var(--color-secondary-dark);
   --button-foreground: var(--color-secondary);
