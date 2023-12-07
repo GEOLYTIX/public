@@ -13,7 +13,12 @@
 
   <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
   <link rel="stylesheet" href="https://geolytix.github.io/public/mapp_v4/app.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body>
   <main>
     <div class="lang-container">
@@ -46,25 +51,28 @@
             </div>
 
             <div class="form-field">
-              <label>Password</label>
-              <input id="password" name="password" type="password" required minlength="10"><label id="toggle_password">Show Password</label>
+              <div class="password-show">
+                <label>Password</label>
+                <span id="toggle_password" class="material-symbols-outlined">
+                  visibility_off</span>
+              </div>
+              <input id="password" name="password" type="password" required minlength="10">
             </div>
 
-            <button type="submit" class="button">Login</button>
-            <p class="gap-top-700"><a href="{{dir}}/api/user/register?register=true">New to Geolytix MAPP? Sign up
-                &rarr;</a></p>
-          </form>
+        <button type="submit" class="button">Login</button>
+        <p class="gap-top-700"><a href="{{dir}}/api/user/register?register=true">New to Geolytix MAPP? Sign up
+            &rarr;</a></p>
+        </form>
 
-          <p class="msg">{{msg}}</p>
-
-          <div class="text-align-center">
-            <p class="text-300"><a href="{{dir}}/api/user/register?reset=true">Forgot your password?</a></p>
-          </div>
-          <div class="text-align-center">
-            <p class="text-300"><a href="https://github.com/GEOLYTIX/xyz">Powered By xyz</a></p>
-          </div>
+        <p class="msg">{{msg}}</p>
+        <div class="text-align-center">
+          <p class="text-300"><a href="{{dir}}/api/user/register?reset=true">Forgot your password?</a></p>
+        </div>
+        <div class="text-align-center">
+          <p class="text-300"><a href="https://github.com/GEOLYTIX/xyz">Powered By xyz</a></p>
         </div>
       </div>
+    </div>
     </div>
   </main>
 </body>
@@ -75,11 +83,12 @@
   togglePasswordButton.addEventListener('mouseover', function () {
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
-      togglePasswordButton.textContent = 'Hide Password';
+      togglePasswordButton.innerText = "visibility";
     } else {
       passwordInput.type = 'password';
-      togglePasswordButton.textContent = 'Show Password';
+      togglePasswordButton.innerText = "visibility_off";
     }
   });
 </script>
+
 </html>
