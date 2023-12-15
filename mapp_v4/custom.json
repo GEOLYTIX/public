@@ -53,18 +53,18 @@
     }
   },
   "login_incorrect": {
-  	"en": {
-  		"subject": "A failed login attempt was made on ${host}",
-  		"text": null,
+    "en": {
+      "subject": "A failed login attempt was made on ${host}",
+      "text": null,
       "html": "file:../public/mapp_v4/mails/login_incorrect.html"
-  	}
+    }
   },
   "locked_account": {
     "en": {
-  		"subject": "Too many failed login attempts occured on ${host}",
-  		"text": null,
+      "subject": "Too many failed login attempts occured on ${host}",
+      "text": null,
       "html": "file:../public/mapp_v4/mails/locked_account.html"
-  	}
+    }
   },
   "admin_approved": {
     "en": "file:../public/mapp_v4/msgs/admin_approved.html"
@@ -72,7 +72,31 @@
   "auth_failed": {
     "en": "Your account or password is incorrect. If you don’t remember your password, reset it now."
   },
-  "account_approved_no_admin":{
+  "account_approved_no_admin": {
     "en": "file:../public/mapp_v4/mgs/account_no_admin.html"
+  },
+  "token_not_found": {
+    "en": "file:../public/mapp_v4/mgs/token_not_found.html"
+  },
+  "no_locale": {
+    "en": "file:../public/mapp_v4/mgs/no_locale.html"
+  },
+  "no_locales": {
+    "en": "file:../public/mapp_v4/mgs/no_locale.html"
+  },
+  "user_not_verified": {
+    "en": "file:../public/mapp_v4/mgs/user_not_verified.html"
+  },
+  "user_locked": {
+    "en": "file:../public/mapp_v4/mgs/user_locked.html"
+  },
+  "user_expired": {
+    "en": "file:../public/mapp_v4/mgs/user_expired.html"
+  },
+  "user_blocked": {
+    "en": "file:../public/mapp_v4/mgs/user_blocked.html"
+  },
+  "password_reset_ok": {
+    "en": "file:../public/mapp_v4/mgs/password_reset_ok.html"
   }
 }
