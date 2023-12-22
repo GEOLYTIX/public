@@ -80,7 +80,7 @@
   const togglePasswordButton = document.getElementById('toggle_password');
   const passwordInput = document.getElementById('password');
 
-  togglePasswordButton.addEventListener('mouseover', function () {
+  togglePasswordButton.addEventListener('click', function () {
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
       togglePasswordButton.innerText = "visibility";
