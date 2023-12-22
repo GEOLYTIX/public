@@ -6,10 +6,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:site_name" content="Geolytix MAPP" />
-  <meta property="og:title" content="No Administrator | Geolytix MAPP" />
+  <meta property="og:title" content="Locked | Geolytix MAPP" />
   <meta property="og:type" content="website" />
 
-  <title>No Administrator | Geolytix MAPP</title>
+  <title>User Locked | Geolytix MAPP</title>
 
   <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
   <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
@@ -26,14 +26,14 @@
               <img src="https://geolytix.github.io/public/mapp/mapp_logo.svg" class="logo" alt="Geolytix logo">
             </div>
 
-            <h1 class="form-container__title">Account Verified</h1>
+            <h1 class="form-container__title">User Locked</h1>
             <p>What happens next?</p>
           </div>
 
           <div class="panel">
-            <p>Your account has been verified but there is no administrator.</p>
-            <p>Please contact GEOLYTIX to resolve this.</p>
-     
+            <p>Your account has been locked due to 3 failed login attempts.</p>
+            <p>Please reset your password to regain access.</p>
+            <p class="gap-top-700"><a href="${dir}/api/user/register?reset=true">Reset your Password</a></p>
           </div>
         </div>
       </div>
