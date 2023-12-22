@@ -73,30 +73,30 @@
     "en": "Your account or password is incorrect. If you don’t remember your password, reset it now."
   },
   "account_approved_no_admin": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/account_no_admin.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/account_no_admin.html"
   },
   "token_not_found": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/token_not_found.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/token_not_found.html"
   },
   "no_locale": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/no_locale.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/no_locale.html"
   },
   "no_locales": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/no_locale.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/no_locale.html"
   },
   "user_not_verified": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/user_not_verified.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_not_verified.html"
   },
   "user_locked": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/user_locked.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_locked.html"
   },
   "user_expired": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/user_expired.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_expired.html"
   },
   "user_blocked": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/user_blocked.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_blocked.html"
   },
   "password_reset_ok": {
-    "en": "https://geolytix.github.io/public/mapp_v4/mgs/password_reset_ok.html"
+    "en": "https://geolytix.github.io/public/mapp_v4/msgs/password_reset_ok.html"
   }
 }
