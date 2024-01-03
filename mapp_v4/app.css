@@ -811,6 +811,31 @@ img:not([alt]) {
   font-size: var(--text-700)
 }
 
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  padding-right: 30px;
+  flex-grow: 1;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
 .logo {
   display: inline-block;
   width: 10rem;

@@ -79,24 +79,24 @@
     "en": "https://geolytix.github.io/public/mapp_v4/msgs/token_not_found.html"
   },
   "no_locale": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/no_locale.html"
+    "en": "Your account has been verified and approved, but you do not have access to any locales. This is likely as an administrator has not given you the required roles. Please contact an administrator or GEOLYTIX to resolve this."
   },
   "no_locales": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/no_locale.html"
+    "en": "Your account has been verified and approved, but you do not have access to any locales. This is likely as an administrator has not given you the required roles. Please contact an administrator or GEOLYTIX to resolve this."
   },
   "user_not_verified": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_not_verified.html"
+    "en": "Your account has either not been verified or has not yet been approved by an administrator."
   },
   "user_locked": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_locked.html"
+    "en": "Your account has been locked due to 3 failed login attempts. Please reset your password to regain access."
   },
   "user_expired": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_expired.html"
+    "en": "Your account has expired. Please re-register to regain access."
   },
   "user_blocked": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/user_blocked.html"
+    "en": "Your account has been blocked. Please contact an administrator or GEOLYTIX if you think this was an error."
   },
   "password_reset_ok": {
-    "en": "https://geolytix.github.io/public/mapp_v4/msgs/password_reset_ok.html"
+    "en": "Your password has been successfully reset. Please login with your new password."
   }
 }
