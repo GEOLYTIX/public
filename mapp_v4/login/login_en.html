@@ -36,7 +36,7 @@
               <img src="https://geolytix.github.io/public/mapp/mapp_logo.svg" class="logo" alt="Geolytix logo">
             </div>
 
-            <h1 class="form-container__title">Login to your account</h1>
+            <h1 class="form-container__title">Login to your account HI</h1>
           </div>
 
           <form action="{{dir}}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
@@ -51,12 +51,11 @@
             </div>
 
             <div class="form-field">
-              <div class="password-show">
+              <input id="password" name="password" type="password" required minlength="10" <div class="password-show">
                 <label>Password</label>
                 <span id="toggle_password" class="material-symbols-outlined">
                   visibility_off</span>
-              </div>
-              <input id="password" name="password" type="password" required minlength="10">
+              </div>>
             </div>
 
             <button type="submit" class="button">Login</button>
