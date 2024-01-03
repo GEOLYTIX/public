@@ -21,13 +21,13 @@
 
 <body>
   <main>
-<!--     <div class="lang-container">
+    <div class="lang-container">
       <label for="language">
         <select id="language" onChange="window.location.href=this.value">
           <option value="{{dir}}?language=en&login=true">English</option>
         </select>
       </label>
-    </div> -->
+    </div>
     <div class="form-container">
       <div class="form-container__inner">
         <div class="flow">
@@ -51,11 +51,12 @@
             </div>
 
             <div class="form-field">
-              <label>Password</label>
-              <div class="password-container">
-                <input type="password" id="password" class="password-input" placeholder="Enter your password">
-                <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
+              <div class="password-show">
+                <label>Password</label>
+                <span id="toggle_password" class="material-symbols-outlined">
+                  visibility_off</span>
               </div>
+              <input id="password" name="password" type="password" required minlength="10">
             </div>
 
             <button type="submit" class="button">Login</button>
