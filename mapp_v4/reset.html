@@ -52,16 +52,23 @@
 
               <div class="password-show">
                 <label>Password</label>
-                <span id="toggle_password" class="material-symbols-outlined">
-                  visibility_off</span>
+                <div class="password-container">
+                  <input type="password" id="password" class="password-input" placeholder="Enter your password" required minlength="10" name="password"
+                    oninput="checkPassword()">
+                  <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
+                </div>
               </div>
               <input id="password" name="password" type="password" autocomplete="off" required
                 oninput="checkPassword()">
 
               <div class="password-show">
                 <label>Confirm Password</label>
-                <span id="toggle_confirm_password" class="material-symbols-outlined">
-                  visibility_off</span>
+                <div class="password-container">
+                  <input type="password" id="confirm_password" class="password-input" placeholder="Enter your password" required minlength="10" name="confirm_password"
+                    oninput="checkPassword()">
+                  <span id="toggle_confirm_password"
+                    class="toggle-password material-symbols-outlined">visibility_off</span>
+                </div>
               </div>
               <input name="confirm_password" id="confirm_password" type="password" autocomplete="off" required
                 oninput="checkPassword()" title="Passwords must match">
