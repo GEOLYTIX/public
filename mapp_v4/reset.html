@@ -12,7 +12,7 @@
   <title>Password reset | Geolytix MAPP</title>
 
   <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
-  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
+  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp_v4/app.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet"
@@ -42,12 +42,12 @@
 
             <div class="form-field">
               <label>Email address</label>
-              <input name="email" type="email" autocomplete="off" required maxlength="50" value="">
+              <input name="email" type="email" autocomplete="off" required maxlength="50" value="" placeholder="Enter email">
 
               <div class="form-field">
                 <label>Password</label>
                 <div class="password-container">
-                  <input type="password" id="password" class="password-input" placeholder="Enter your password" required minlength="10" name="password"
+                  <input type="password" id="password" class="password-input" placeholder="Enter password" required minlength="10" name="password"
                     oninput="checkPassword()">
                   <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
                 </div>
@@ -56,7 +56,7 @@
               <div class="form-field">
                 <label>Confirm Password</label>
                 <div class="password-container">
-                  <input type="password" id="confirm_password" class="password-input" placeholder="Enter your password" required minlength="10" name="confirm_password"
+                  <input type="password" id="confirm_password" class="password-input" placeholder="Enter password" required minlength="10" name="confirm_password"
                     oninput="checkPassword()">
                   <span id="toggle_confirm_password"
                     class="toggle-password material-symbols-outlined">visibility_off</span>
