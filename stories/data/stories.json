@@ -880,7 +880,7 @@
             "lat": 53.36721368,
             "lng": -1.500470664
         },
-        "description": "Hello, I'm Imogen, a Location Planning Partner at Geolytix. I joined the company in September 2021 and am based in the Leeds office, but visit London quite regularly too for meetings, events and site visits. I'm originally from Sheffield and lived there until leaving for university in 2016, since this time I've gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and buzzing local neighbourhoods. My favourite spot has to be Sharrowvale Road, a little haven of independent shops, cafes and pubs - Eve Kitchen is a must for gorg doughnuts!",
+        "description": "Hello, I'm Imogen, a Location Planning Partner at Geolytix. I joined the company in September 2021 and am based in the Leeds office, but visit London quite regularly too for meetings, events and site visits. I'm originally from Sheffield and lived there until leaving for university in 2016, since this time I've gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and lovely local neighbourhoods. My favourite spot has to be Sharrowvale Road, a little haven of independent shops, cafes and pubs - Eve Kitchen is a must for their doughnuts!",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_little_sq.jpg"
     },
     {
@@ -902,30 +902,30 @@
             "lat": 53.80572993,
             "lng": -1.554485772
         },
-        "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni. Here is a pic of me and my friends last March finally graduating, only 2 years late thanks to Covid!",
+        "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni. Here is a pic of me and my friends finally graduating in 2022, only 2 years late thanks to Covid!",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287567/iwd_2023/imogen_IMG_5894.jpg"
     },
     {
         "title": "Walking",
-        "address": "Schliersee to Tegernsee, Bavaria",
+        "address": "Dovestones, Saddleworth",
         "location":
         {
-            "lat": 47.72621713,
-            "lng": 11.80246008
+            "lat": 53.53116971,
+            "lng": -1.974799756
         },
-        "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk!) from the Peak District, I've always loved the countryside and as an adult I now try to ensure runs, walks and hikes are a regular part of my weekend. Back in October, myself and a couple of friends took our walking boots all the way to Munich and did a stunning hike between two Lakes, just a short train ride out of the city - we were able to stop half way at a hütte where we could hydrate with a well-earnt beer.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_1609.png"
+        "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk!) from the Peak District, I've always loved the countryside and as an adult I now try to ensure runs, walks and hikes are a regular part of my weekend. Pictured was a recent tough one I did with a friend above Dovestones Reservoir, Saddleworth.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709762918/iwd_2023/imogen_walking.jpg"
     },
     {
         "title": "Travelling",
-        "address": "Exploring Italy",
+        "address": "Exploring Lisbon",
         "location":
         {
-            "lat": 45.987437,
-            "lng": 9.26156
+            "lat": 38.71204986,
+            "lng": -9.130148565
         },
-        "description": "I love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy (would really recommend interrailing here too!). The scenery is unreal, as well as all the pizza, gelato, wine and aperol!! Last September I headed to the north and explored Milan, Lake Como and the old city of Bergamo. We did a daytrip to Bellagio whilst staying on Como, which is where this photo was taken.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_0529.png"
+        "description": "I love to explore further afield when I can. Portugal has been on my list for a while and last June I travelled to Lisbon, which along with Italy has probably taken the top spot for my fave place to go! It was a week full of (very hilly) walking, gorgeous scenery, a daily Pastel de nata and plenty of Portugese wine, with a couple of day trips to Sintra and Cascais (also lovely locations, would highly recommend).  ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709763026/iwd_2023/imogen_lisbon.jpg"
     }],
     "Kim": [
     {
