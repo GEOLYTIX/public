@@ -1415,5 +1415,62 @@
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709767278/iwd_2023/sonia_185318.jpg",
             "description": "Yoga is a huge part of my life. I started doing yoga 7 years ago and it's now part of my daily life. It's my way to process my thoughts and my emotions on a daily basis but also to meet new people ! When traveling alone, yoga communities are always so welcoming and allow you to find a home away from home. They are often associated with surf retreats which is another passion I have ! "
         }
+    ],
+    "Jess": [
+        {
+            "title": "Hi I'm Jess",
+            "address": "",
+            "location": {
+                "lat": 0,
+                "lng": 0
+            },
+            "img": "https://geolytix.github.io/public/stories/img/her.svg",
+            "description": "Hi I'm Jess, I joined Geolytix in July 2023 as a industrial placement working as a data anaylst based in the Leeds office. I am currently studying for my BA in Human Geography and minoring in GIS at the University of British Columbia."
+
+        },
+        {
+            "title": "Growing up in the Big Mango",
+            "address": "Bangkok, Thailand",
+            "location": {
+                "lat": 13.7243801,
+                "lng": 100.3027616
+            },
+            "img": "",
+            "description": "I grew up in the capital of Thailand in Bangkok. Bangkok was an amazing place to grow up with the amazing street food and beachesnot too far away! It also meant I have some interesting stories from growing up in the tropics like having a rescue snake 'Monty' as our school pet."
+
+        },
+        {
+            "title": "Moving for University",
+            "address": "Vancouver, Canada",
+            "location": {
+                "lat": 49.25736,
+                "lng": -123.4188854
+            },
+            "img": "",
+            "description": "After having my first year of university from Thailand due to COVID I moved to Vancouver, Canada for university to study geography. I have linked a photo of my friends and I embracing the Canadian spirit cheering on the Cancucks at Rogers Arena."
+
+        },
+        {
+            "title": "Moving to Leeds",
+            "address": "Leeds, England",
+            "location": {
+                "lat": 53.8058891,
+                "lng": -1.7008811
+            },
+            "img": "",
+            "description": "After living in Canada for two years I moved to Leeds, I currently live by the Headingley stadium so had to make the most of it and went to watch the rugby. I have also really enjoyed going to gigs and going on a few walks around roundhay park!"
+
+        },
+        {
+            "title": "Solo travel",
+            "address": "Algrave, Portugal",
+            "location": {
+                "lat": 37.2435847,
+                "lng": -8.8559952
+            },
+            "img": "",
+            "description": "Before moving to Leeds, I left my two suitcases at a friends house and went on a solo trip! I've included a picture of me in Lagos, Portugal which was defiently my favourite part of the trip. There were some amazing food, beaches and lots of flix buses!"
+
+        }
     ]
 }
