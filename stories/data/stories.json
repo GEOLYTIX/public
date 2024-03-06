@@ -1300,5 +1300,57 @@
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709759146/iwd_2023/urmi_22.png",
             "description": "During my recent journey back home, we explored the Gir Jungle. Getting up close with lions, cheetahs, and deer was downright mesmerizing, but the real thrill kicked in when we had the chance to feed and spot crocs and monkeys. It was like a mini adventure right in the heart of the jungle!"
         }
+    ],
+    "Lucy": [
+        {
+            "title": "Hi I'm Lucy",
+            "address": "People Manager at Geolytix",
+            "location": {
+                "lat": 50.72386792858243,
+                "lng": -2.8242528491127135
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761247/iwd_2023/Lucy_dorset.jpg",
+            "description": "At Geolytix I try my best to look after the people! I grew up in Dorset in a tiny village called Lower Bockhampton.  Dorest still continues to be a very special place and I try to visit as much as I can, just loving the scenery, the coast and a slower pace of life! This is photo is a of a family walk from West Bay to Seatown (which has one of my most favourite pubs right on the beach - The Anchor Inn)"
+        },
+        {
+            "title": "My Dog",
+            "address": "South Downs",
+            "location": {
+                "lat": 50.90068,
+                "lng": -0.130145
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761307/iwd_2023/Wurzel_South_Downs.jpg",
+            "description": "I'm at my happiest when walking my dog, Wurzel. I try to make time to walk up the South Downs as much as I can, either before or after work.  I feel really fortunate to live so close to the Downs with beauiful views of the countyside and sea."
+        },
+        {
+            "title": "Hobbies",
+            "address": "Skiing",
+            "location": {
+                "lat": 42.52822488705736,
+                "lng": 1.705510622
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761442/iwd_2023/lucy_ski.jpg",
+            "description": "One of my all time favourite hobbies is skiing, unfortunately it only comes around once a year.  I love the fresh mountain air, being active all day, but also very fond of some apre ski! This photo was taken in the Pyrenees with friends and family."
+        },
+        {
+            "title": "Family Holidays",
+            "address": "Skopelos",
+            "location": {
+                "lat": 39.11054056751696,
+                "lng": 23.66367187
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761566/iwd_2023/lucy_skopelos.jpg",
+            "description": "When the children were tiny we took a chance on a holiday to Skopelos and we all loved it.  I'm really not someone who goes back to the same place twice, but we all adored our holidays here. Each time we'd make them slightly different, one year we hopped on a ferry to Alonissos for the night. Lots of very happy memories where made here."
+        },
+        {
+            "title": "Girls Weekends Away!",
+            "address": "Corfu Town",
+            "location": {
+                "lat": 39.62095992,
+                "lng": 19.92105549
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761713/iwd_2023/lucy_corfu.jpg",
+            "description": "I spend a lot of time with my friends. Throughout the year we get up to a lot of crazy stuff, which usually involves, walking, eating, drinking and lots of laughs. Once a year we go off on a girls weekend away somewhere hot and sunny. My most memorable trip was a weekend in Corfu Town, which has the most beautiful Venetian architechture. Here we are a little frazzled from a day in the sun, ready for a night out!"
+        }
     ]
 }
