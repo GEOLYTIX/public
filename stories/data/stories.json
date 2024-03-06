@@ -410,7 +410,7 @@
             "lat": 53.838219,
             "lng": -1.493109
         },
-        "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from the south coast of England, but predominantly raised in Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine myself living anywhere else.",
+        "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine living anywhere else. This photo is just outside the Geolytix office during Leeds Light Night in 2023, which a few of us attended together.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_roundhay_swans.jpg"
     },
     {
@@ -421,7 +421,7 @@
             "lat": 34.005422,
             "lng": 131.371658
         },
-        "description": "As a child, I wanted to try every club and activity going, but coming from a family of Scout and Guide leaders, being a Girl Guide was a given. Thankfully, I loved my time in Guides and the movement gave me some amazing opportunities, the most notable being a place at the 23rd World Scout Jamboree in Yamaguchi, Japan when I was 17. The 12-day camp was attended by around 35,000 Scouts and Guides from over 150 countries and included a day trip to the Hiroshima Peace Memorial Museum.",
+        "description": "Coming from a family of Scout and Guide leaders, growing up in the movements was a given. I loved my time in Guides and it gave me some amazing opportunities, the most notable being a place at the 23rd World Scout Jamboree in Yamaguchi, Japan when I was 17. The 12-day camp was attended by around 35,000 Scouts and Guides from over 150 countries and included a day trip to the Hiroshima Peace Memorial Museum.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_peace_cranes_hiroshima.jpg"
     },
     {
@@ -432,8 +432,8 @@
             "lat": 53.806745,
             "lng": -1.555458
         },
-        "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds (like many of my Geolytix colleagues!). After 3 years of university and a year gaining invaluable experience as an industrial placement student in Sainsbury's Property Data Analytics team, I started a Masters in Data Science and Analytics to build the fundamental skills needed for a career in data. I graduated from this course in November 2021, whilst working part-time at Geolytix and finally had my undergraduate and postgraduate graduation ceremonies in March and July 2022!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678455543/iwd_2023/peace_cranes_hiroshima.jpg"
+        "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds (like many of my Geolytix colleagues!). After 3 years of university and a year gaining invaluable experience as an industrial placement student in Sainsbury's Property Data Analytics team, I started a Masters in Data Science and Analytics to build continue to develop the skills needed for a career in data. I graduated from this course in November 2021, whilst working part-time at Geolytix and finally had my undergraduate and postgraduate graduation ceremonies in March and July 2022 (thanks Covid)!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709764362/iwd_2023/catherine_graduation.jpg"
     },
     {
         "title": "Outdoor Adventures",
@@ -443,18 +443,18 @@
             "lat": 46.50215,
             "lng": 7.69694
         },
-        "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and embarking on an interrailing adventure with a stop at the 'Our Chalet' World Guiding Centre in Adelboden, Switzerland. Whilst there, I (part-bungee jump, part-) abseiled off a bridge, swam in a glacial lake and took a toboggan down a mountain!",
+        "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and visiting the International Scout and Guide Centres in Kandersteg and Adelboden, Switzerland.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_kandersteg_adelboden.jpg"
     },
     {
-        "title": "Travelling pre-Covid",
+        "title": "Taipei and Northern Taiwan",
         "address": "Seoul and Ganghwa Island, Taipei and Northern Taiwan, Shanghai",
         "location":
         {
             "lat": 25.108562,
             "lng": 121.843601
         },
-        "description": "I also try to get lots of travelling of my own done, and managed to perfectly time a trip to Seoul, Taipei and Shanghai in January 2020. My two weeks in Seoul were my first experience of solo travel and hostelling (although I did meet up with a friend who lives there most days). I am really hoping to get back out to Taiwan someday, as it is definitely a hidden gem and I'd love to travel more of the country!",
+        "description": "I also try to get lots of travelling of my own done, with Taiwan being a recent favourite destination. I love picking up or practising skills while travelling - I've recently tried my hand at making kimchi for the first time in a decade after being taught how in Seoul back in 2014, and jumped back into my Japanese language studies, which I started before the Jamboree in 2015 and helped a lot during my homestay in Kanazawa city.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_taiwan_collage.jpg"
     },
     {
@@ -465,8 +465,8 @@
             "lat": 53.796334,
             "lng": -1.541428
         },
-        "description": "Over the past couple of years, I have finished my studies, passed my first Japanese language proficiency test, discovered a love of board games, rediscovered my loves of reading and roller skating, and of course, started my job at Geolytix! Now you'll often find me at our Leeds office in Park House, leading the Beavers group I set up in Kippax in January 2022, or hanging out at the fantastic bars and nerdy spaces of Leeds with my local book and board game clubs.",
-        "img": ""
+        "description": "Other than producing models for our clients at Geolytix, I spend my time reading books, playing board games, helping my partner with his various DIY projects around the house, trawling the internet for bargain furniture and volunteering with the Scouts! I'm currently gearing up for a number of upcoming camps, and am particularly excited to return to the extremely important job of milkshake making at Essex International Jamboree (it's not often I'm given the opportunity to buy this much ice cream at once!).",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709764605/iwd_2023/catherine_iwd_collage.jpg"
     }],
     "Becca": [
     {
