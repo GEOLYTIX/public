@@ -477,7 +477,7 @@
             "lat": 53.79855149,
             "lng": -1.553168765
         },
-        "description": "Hi, I'm Becca and I am a Data Analyst based in our Leeds office in Park Square. I joined Geolytix through a Data Analytics apprenticeship in 2019, soon after finishing my A-Levels. I am now two years into my permanent role after achieving a Distinction in 2021!",
+        "description": "Hi, I'm Becca and I am a Data Analyst based in our Leeds office in Park Square. I joined Geolytix through a Data Analytics apprenticeship in 2019, soon after finishing my A-Levels. I am now three years into my permanent role after achieving a Distinction in 2021!",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/1._Becca.jpg"
     },
     {
@@ -488,7 +488,7 @@
             "lat": 53.82079092,
             "lng": -1.60683893
         },
-        "description": "I grew up in Kirkstall, Leeds and I'm still here 22 years later. It's the perfect place for me to live at the moment, with lots of family and friends living close, so much green space and so many places to go for delicious food! I love having Kirkstall Abbey on my doorstep as it makes a nice place for a lunchtime walk whilst working from home.",
+        "description": "I grew up in Kirkstall and I'm still here 23 years later. It's the perfect place for me to live at the moment, with lots of family and friends living close and so much green space whilst still being close to the city centre. I love having Kirkstall Abbey on my doorstep, it reminds me of my childhood and also makes a nice place for a lunchtime walk whilst working from home.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213484/iwd_2023/2._Kirkstall_Abbey.jpg"
     },
     {
@@ -499,19 +499,19 @@
             "lat": 28.72829336,
             "lng": -13.85479954
         },
-        "description": "I'm lucky enough to have grown up in a family that were able to take me on holiday abroad every year since I can remember. The earliest memory I have was a trip to Corralejo, Fuerteventura in 2004 which is where this photo was taken. My love for travelling continues to grow, last year I explored various places along the Riviera Maya in Mexico with one of my friends which was so much fun!",
+        "description": "I'm lucky enough to have grown up in a family that were able to take me on holiday abroad every year since I can remember. The earliest memory I have was a trip to Corralejo, Fuerteventura in 2004 which is where this photo was taken. I love travelling - my most recent trips have been to the Riviera Maya in Mexico, Sorrento and Marrakesh.",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/3._Fuerteventura_2004.jpg"
     },
     {
-        "title": "Barcelona - December 2019",
-        "address": "",
+        "title": "Travelling",
+        "address": "Morocco - February 2024",
         "location":
         {
-            "lat": 41.41388955,
-            "lng": 2.15265621
+            "lat": 30.54492066,
+            "lng": -9.709719435
         },
-        "description": "I joined Geolytix as an apprentice, which meant that I continued living in my family home and started to put money aside to fulfil my love of travelling. A few months into life at Geolytix, I went to Barcelona with my best friend - we had the best time visiting all the tourist spots and eating our body weights in tapas.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/4._Barcelona.jpg"
+        "description": "I recently got back from a trip to Morocco with Aimee and Matt. Although we were only away for a week, we managed to rent a car and spend a couple of nights by the coast in Taghazout where we went dune surfing and ate lots of great food. We then spent the second half of the week in Marrakesh experiencing the chaos of the medina and sight-seeing.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709763453/iwd_2023/becca_4_Morocco.jpg"
     },
     {
         "title": "Weekends with me",
@@ -521,8 +521,8 @@
             "lat": 53.89496711,
             "lng": -1.672445839
         },
-        "description": "Being born into a family from Leeds, means I had no choice but to support Leeds United. I played in a local girls' football team until I reached high school, and have always enjoyed watching football with my older brother, Adam. If I'm not watching a Leeds game at the weekend, I'm usually either enjoying a long walk in the countryside (Otley Chevin Forest Park being a childhood favourite!), going out for food and drinks with my friends or reading a book.",
-        "img": ""
+        "description": "Being born into a family from Leeds, means I had no choice but to support Leeds United. I played in a local girls' football team until I reached high school, and have always enjoyed watching football with my older brother, Adam. I usually spend my weekends trying to get out for a walk when the weather is nice (Otley Chevin Forest Park being a childhood favourite), going out for food and drinks with my friends or finding a new book to read!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709763575/iwd_2023/becca_5_Weekends.jpg"
     }],
     "Alison": [
     {
