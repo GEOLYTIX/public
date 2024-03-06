@@ -1353,5 +1353,67 @@
             "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709761713/iwd_2023/lucy_corfu.jpg",
             "description": "I spend a lot of time with my friends. Throughout the year we get up to a lot of crazy stuff, which usually involves, walking, eating, drinking and lots of laughs. Once a year we go off on a girls weekend away somewhere hot and sunny. My most memorable trip was a weekend in Corfu Town, which has the most beautiful Venetian architechture. Here we are a little frazzled from a day in the sun, ready for a night out!"
         }
+    ],
+    "Sonia": [
+        {
+            "title": "Hi, I'm Sonia !",
+            "address": "Customer and Delivery Partner",
+            "location": {
+                "lat": 51.54211914,
+                "lng": -0.1888343408
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709766450/iwd_2023/sonia.jpg",
+            "description": "Hi, I'm Sonia and I've joined Geolytix in 2023 as a Customer and Delivery Partner. I am based at the London office and I've been living in London for the past 4 years. I came to London for my studies, initially for 6 months but ended up liking it here too much and decided to stay permanently. I preivously worked as a Growth Manager for a japanese fast casual dining company for 3 years overseeing the property strategy. I was a Geolytix customer for 3 years until I've decided to join the team and help other clients in their location planning questions !"
+        },
+        {
+            "title": "Growing up in France",
+            "address": "In the Loire Valley",
+            "location": {
+                "lat": 47.39505423,
+                "lng": 0.6848758611
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709766500/iwd_2023/tours.jpg",
+            "description": "I was born and grew up in France, in a town called Tours. I've spent the first 18 years of my life there. The region is well-known for its numerous castles and famous Loire river, it's a gorgeous city with many buildings which I've kept their unique character since Medieval times!"
+        },
+        {
+            "title": "Summers in Libreville",
+            "address": "The sound of Afrobeats and the smell of plaintain",
+            "location": {
+                "lat": 0.3889758554,
+                "lng": 9.444864444
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709766622/iwd_2023/libreville.jpg",
+            "description": "My dad lives in Libreville, in Gabon and I was lucky enough to spend a month or two there every summer. The country is extremely humid and hot as it's straight on the Ecuador line but it's an amazing place with beautiful forests, beaches and wildlife. The dance, music and food there are full of joy and spices, I can still smell the delicious scent of plantain in the kitchen !"
+        },
+        {
+            "title": "Studying across Europe",
+            "address": "Using that french passport to the fullest",
+            "location": {
+                "lat": 48.86436005,
+                "lng": 2.381000783
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709766844/iwd_2023/IMG_1606.jpg",
+            "description": "I did a Master in Management with a Renewables Energy and Social Impact Management at the ESCP Business school. This French business school has the specificity to have campus around Europe where you can study. I've chosen to study on the Paris, Madrid and London campuses.  "
+        },
+        {
+            "title": "Solo travel",
+            "address": "As a way to explore the world",
+            "location": {
+                "lat": 11.25906474,
+                "lng": -85.87454159
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709767198/iwd_2023/IMG_6717.jpg",
+            "description": "I've been lucky enough to have traveled extensively in Europe, Asia, America and Africa with family and friends. But my favorite way to travel is Solo ! I went to Costa Rica, Nicaragua, Singapore and Bali twice on my own. I like slow travel and taking my time to get the feel of a new place, a new country. I like leaving my comfort zone and meeting some other female solo travelers. Solo travel is rarely solo and I find it's the best way to meet new people and create new friendships so I always recommend giving it a try if you have never done it !"
+        },
+        {
+            "title": "Yoga",
+            "address": "As a way to explore my inner world",
+            "location": {
+                "lat": -8.654745859,
+                "lng": 115.1253916
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709767278/iwd_2023/sonia_185318.jpg",
+            "description": "Yoga is a huge part of my life. I started doing yoga 7 years ago and it's now part of my daily life. It's my way to process my thoughts and my emotions on a daily basis but also to meet new people ! When traveling alone, yoga communities are always so welcoming and allow you to find a home away from home. They are often associated with surf retreats which is another passion I have ! "
+        }
     ]
 }
