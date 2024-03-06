@@ -1015,7 +1015,7 @@
             "lng": 99.67170181
         },
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_2.jpg",
-        "description": "Like most others at Geolytix, I try to travel as much and as often as I can. One of my most recent trips was in Thailand - going from the craziness of Bangkok to the white sandy beaches and spectacular views (photo taken at the Mu Ko Ang Thong National Marine Park) in Ko Pha Ngan. I'm now looking forward to my next trip in the southeast of Mexico."
+        "description": "Like most others at Geolytix, I try to travel as much and as often as I can. One of my most recent trips was in Thailand - going from the craziness of Bangkok to the white sandy beaches and spectacular views (photo taken at the Mu Ko Ang Thong National Marine Park) in Ko Pha Ngan."
     },
     {
         "title": "China",
@@ -1029,15 +1029,15 @@
         "description": "In 2019, my university flatmates invited me to spend the summer at their homes in China. I was lucky enough to visit Beijing, Shanghai, Anhui, Xi an, Chongqing, Chengdu and Suzhou. From the Forbidden City in Beijing, to climbing the Yellow Mountains in Anhui and to eating (or attempting to eat) the spiciest hotpot in Chongqing - it is far too difficult to pick a favourite moment!"
     },
     {
-        "title": "Palermo",
-        "address": "Our Second Home",
+        "title": "Morocco",
+        "address": "February 2024",
         "location":
         {
-            "lat": 38.12043408,
-            "lng": 13.35733468
+            "lat": 30.54666925,
+            "lng": -9.708868075
         },
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_4.jpg",
-        "description": "With Vincenzo's family being in Palermo, we're lucky to visit so often. Aside from indulging in the most amazing food and spending time with family and friends, you will find us at the beach, going to the football, or spending late nights in the centre of Palermo."
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1709765726/iwd_2023/aimee_44.jpg",
+        "description": "To beat the winter blues, Becca, Matt and I recently got back from a week in Morocco - the perfect combination of Marrakech chaos to a much more chilled vibe in Taghazout!"
     },
     {
         "title": "Formula One",
