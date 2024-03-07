@@ -393,7 +393,7 @@
 
                         let p = mapp.utils.html.node`<p class="align_l">`;
 
-                        p.innerHTML = story.description;
+                        p.innerHTML = story.description || '';
 
                         el.appendChild(p);
 
