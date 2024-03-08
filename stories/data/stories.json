@@ -203,14 +203,25 @@
     },
     {
         "title": "Iceland 2022",
-        "address": "",
+        "address": "Snowy adventure",
         "location":
         {
             "lat": 64.14748737,
             "lng": -21.94376643
         },
-        "description": "At the start of this year I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
+        "description": "At the start of this 2022 I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210421/iwd_2023/6._rachel_northern_lights.jpg"
+    },
+    {
+        "title": "Costa Rica 2023",
+        "address": "Monkeying around",
+        "location":
+        {
+            "lat": 10.301800886037746,
+            "lng": -85.83432043
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892330/iwd_2023/rachel_howler_monkeys.jpg",
+        "description": "About a year ago we decided to tick a bucket list item off the list and visit Costa Rica - and boy did it live up to the hype! We had a dreamy set up and every morning I would do my yoga on the balcony with the sound of the sea in the background and the howler monkeys waking up! We visited a local volcano and also went on a trip down the Tamarindo Estuary in search of wildlife. We were so lucky to spot some crocodiles as well as lots of different types of birds! And to top it all off we managed to get up close to a troop of howler monkeys which was a personal highlight as they are one of my favourtie animals!!"
     }],
     "Coco": [
     {
