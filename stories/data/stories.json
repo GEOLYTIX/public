@@ -412,7 +412,7 @@
             "lng": -1.493109
         },
         "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine living anywhere else. This photo is just outside the Geolytix office during Leeds Light Night in 2023, which a few of us attended together.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213194/iwd_2023/catherine_roundhay_swans.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892332/iwd_2023/catherine_light_night.jpg"
     },
     {
         "title": "Growing up a Girl Guide",
@@ -448,8 +448,8 @@
         "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213194/iwd_2023/catherine_kandersteg_adelboden.jpg"
     },
     {
-        "title": "Taipei and Northern Taiwan",
-        "address": "Seoul and Ganghwa Island, Taipei and Northern Taiwan, Shanghai",
+        "title": "Travelling pre-Covid",
+        "address": "Taipei and Northern Taiwan",
         "location":
         {
             "lat": 25.108562,
