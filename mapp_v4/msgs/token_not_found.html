@@ -33,7 +33,7 @@
           <div class="panel">
             <p>The verification link has already been used.</p>
             <p></p>You are now able to login.</p>
-            <p class="gap-top-700"><a href="{{dir}}/api/user/login">Login Here</a></p>
+            <p class="gap-top-700"><a id="login-link">Login Here</a></p>
           </div>
         </div>
       </div>
@@ -41,4 +41,15 @@
   </main>
 </body>
 
+<script> 
+
+// Update the login link to include the current directory
+let path = window.location.href;
+// Remove anything after api
+path = path.replace(/\/api.*/g, '');
+
+// Update the login link
+document.getElementById('login-link').href = path;
+
+</script>
 </html>
