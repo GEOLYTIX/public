@@ -1,7 +1,7 @@
 {
     "templates": {
         "stories": {
-            "src": "https://geolytix.github.io/public/rob/view/stories.html"
+            "src": "${CDN}/public/rob/view/stories.html"
         }
     },
     "locales": {
