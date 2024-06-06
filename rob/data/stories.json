@@ -1,64 +1,245 @@
 {
     "Rob": [
         {
-            "title": "Hello, I'm Jasmin!",
-            "address": "Product Owner of MAPP at Geolytix",
+            "title": "Hello, my name is Rob!",
+            "address": "Developer at Geolytix",
             "location": {
-                "lat": 51.5808204674407,
-                "lng": -0.013817046406572648
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_health_hospital.svg",
+                "scale": 0.3,
+                "lat": -26.073965379978343,
+                "lng": 28.010582172773884
             },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678209913/iwd_2023/jasmin_welcome_v2.jpg",
-            "description": "Hello, I’m Jasmin. I’m a born and bred East Londoner. I joined Geolytix back in 2015, when it was a company of 7. I’ve been involved in many aspects of the business, but today I look after MAPP, our online mapping and marketing intelligence tool."
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678207428/rob_stories/rob_1.jpg"
         },
         {
-            "title": "Run Forrest, run!",
-            "address": "Epping Forest, Essex",
+            "address": "Redhill School Morning side!",
             "location": {
-                "lat": 51.69381959513246,
-                "lng": 0.06772652645302418
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
             },
-            "description": "Outside of work, you will often find me running. I am a member of a cross country running club and Epping Forest is a frequent stomping ground of mine. One of my favourite routes is a 14-mile loop out to Copped Hall (a Georgian mansion under restoration just outside of the M25) and back.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645443902/iwd_2023/Copped_Hall_Epping_Fores.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_2.webp"
         },
         {
-            "title": "London Marathon 2021",
-            "address": "Crossing Tower Bridge",
+            "address": "Redhill School Morning side!",
             "location": {
-                "lat": 51.50558992068354,
-                "lng": -0.07537795166540881
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
             },
-            "description": "In October 2021, my dream came true of finally being able to run the London Marathon. I know it's cliché, but there's really nothing like the moment you cross Tower Bridge with hundreds of supporters lined up on either side shouting out your name. The second half of the race was super tough, but I loved seeing Sarah & Lou cheering me on at Canary Wharf when the wheels were starting to fall off.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645444017/iwd_2023/London_Marathon_-_London_Bridge.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_3.jpg"
         },
         {
-            "title": "Conquering the highest mountain in Wales",
-            "address": "Mount Snowdon (May 2021)",
+            "address": "Redhill School Morning side!",
             "location": {
-                "lat": 53.0695065972533,
-                "lng": -4.076319158069835
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
             },
-            "description": "During the pandemic when travel was restricted, I took to exploring more of the UK and learnt to embrace the great outdoors. In May 2021, I spent a week in Wales with a group of friends and successfully climbed Mount Snowdon. We couldn’t believe our luck with the weather, during the week we also visited Portmeirion (a village styled to appear like you were in Italy), cycled through the hills to Cwm Bychan, wild swam in the river Conwy (it was absolutely freezing!) and sunbathed at Harlech beach.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645444099/iwd_2023/Snowdonia_Wales_V2.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_4.jpg"
         },
         {
-            "title": "On the bonnie bonnie banks of Loch Lomond…",
-            "address": "Conic Hill, Scotland (December 2021)",
+            "address": "Simons Town",
             "location": {
-                "lat": 56.09912881567106,
-                "lng": -4.521196907002455
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.194621312103905,
+                "lng": 18.431394998840833
             },
-            "description": "Eager to squeeze one last trip in during 2021 and keen to get that outdoors fix, I ventured up to Scotland with a couple of friends in December. Whilst there we drove to Loch Lomond, stopped off at Glengoyne Whiskey distillery for Christmas gifts and hiked up Conic Hill. It was quite a tough climb - the name is clearly deceptive as it was much more than a ‘hill’ - but the views were breath-taking and were made even better by the glorious sunshine we had that day.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645443998/iwd_2023/Conic_Hill_Scotland.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_5.jpg"
         },
         {
-            "title": "When in Rome...",
-            "address": "Vatican City (January 2022)",
+            "address": "Simons Town",
             "location": {
-                "lat": 41.90229934252658,
-                "lng": 12.454192712698315
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.194621312103905,
+                "lng": 18.431394998840833
             },
-            "description": "As well as the UK, I also enjoy travelling further afield when I can. At the start of 2022, I visited Rome for the first time with my boyfriend, which we both loved. In addition to marvelling at the ancient sites, we were also able to tick off a new country at the same time (Vatican City!). After a few years of limited travel, it was great to experience the European culture of alfresco dining again (even in January) and we certainly enjoyed many an Aperitivo!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678221629/iwd_2023/Vatican_City.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_6.jpg"
+        },
+        {
+            "address": "Varsity College Rondebosh",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_8.jpg"
+        },
+        {
+            "address": "Capones Pizza",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.131970164498334,
+                "lng": 18.4210916423284
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_12.jpg"
+        },
+        {
+            "address": "The Lighthouse Café",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.19324719393661,
+                "lng": 18.431345025758635
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_14.jpg"
+        },
+        {
+            "address": "The Lighthouse Café",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.19324719393661,
+                "lng": 18.431345025758635
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_15.jpg"
+        },
+        {
+            "address": "Katchmi Technologies",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.079811548280,
+                "lng": 18.433247030684083
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_11.jpg"
+        },
+        {
+            "address": "Geolytix!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": 51.527494796438006,
+                "lng": -0.1152933048956979
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_616,f_auto/website/about/blair-and-sarah.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_9.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1717656429/rob_stories/rob_18.mov"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -18.789707931785095,
+                "lng": 16.330647715076108
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_21.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -18.789707931785095,
+                "lng": 16.330647715076108
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_19.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.22888206970219,
+                "lng": 27.981793055634554
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_16.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.22888206970219,
+                "lng": 27.981793055634554
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_17.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_29.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_28.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_24.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_26.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_25.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_27.jpg"
         }
     ]
 }
