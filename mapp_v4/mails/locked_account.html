@@ -370,8 +370,7 @@
         <tr>
           <td>
             <p>Hello,</p>
-            <p>Too many failed login attempts occured on ${host}. This account has now been locked until verified.
-<p>To resume access to your account, please verify that you are the account holder:</p>
+            <p>Too many failed login attempts have occurred on ${host}. You must now reset your password to unlock your account.</p>
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
               <tbody>
                 <tr>
@@ -379,7 +378,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                       <tbody>
                         <tr>
-                          <td><a href="${protocol}${host}/api/user/verify/${verificationtoken}" target="_blank">Verify account</a></td>
+                          <td><a href="${protocol}${host}/api/user/register?reset=true" target="_blank">Reset password</a></td>
                         </tr>
                       </tbody>
                     </table>
