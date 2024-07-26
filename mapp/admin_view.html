@@ -603,6 +603,7 @@
       if(user.re_verification) state = {label: mapp.dictionary.admin_view.re_verification, color: '#b71c1c'}
       if(user.verified) state = {label: mapp.dictionary.admin_view.verified, color: '#9c27b0'}
       if(user.approved) state = {label: mapp.dictionary.admin_view.approved, color: '#43a047'}
+      if(user.admin) state = {label: mapp.dictionary.admin_view.admin, color: '#0d47a1'}
       if(user.blocked) state = {label: mapp.dictionary.admin_view.blocked, color: '#263238'}
       let bg = `background-color: ${state.color}`;
       return mapp.utils.html.node`<span class="dot" style=${bg}></span>${state.label}`
