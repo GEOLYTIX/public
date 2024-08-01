@@ -851,7 +851,7 @@
                 }
               })
 
-              const roles_input = mapp.utils.html.node`<input type="hidden" name="roles"/>`;
+              const roles_input = mapp.utils.html.node`<input type="hidden" name="roles" value=${user.roles.join(',')}/>`;
 
               function li(val) {
                 return mapp.utils.html.node`<li class="li-role" onclick=${e => {
