@@ -55,7 +55,7 @@
       position: relative;
       width: 100%;
       border: 1px solid #00000033;
-      border-radius: 3px; 
+      border-radius: 3px;
       background-color: white;
       padding: 0 0.25em;
       display: table;
@@ -64,7 +64,7 @@
     }
 
     table tr {
-      border-bottom: 1px solid #00000011; 
+      border-bottom: 1px solid #00000011;
     }
 
     table tr:hover {
@@ -72,14 +72,14 @@
     }
 
     table tr td {
-      border-bottom: 1px solid #00000011; 
+      border-bottom: 1px solid #00000011;
       padding: 0.2em;
       text-overflow: ellipsis;
     }
 
     table thead {
       text-align: left;
-      font-weight: bold; 
+      font-weight: bold;
       border-bottom: 1px solid #00000011;
     }
 
@@ -106,27 +106,28 @@
       vertical-align: middle;
       transform: rotate(180deg);
     }
-    
+
     table th.desc::after {
       content: "\25be";
     }
-    
-    table th.asc::after, table th.desc::after {
+
+    table th.asc::after,
+    table th.desc::after {
       margin-left: 5px;
     }
-    
+
     /* end table sorting */
 
     /* end agaTable styling */
 
     /* begin form style */
     .mask {
-      position: fixed; 
-      top:0; 
-      left: 0; 
-      width: 100%; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 100%;
-      background-color: #00000033; 
+      background-color: #00000033;
       z-index: 10000;
     }
 
@@ -135,12 +136,12 @@
     }
 
     .form {
-      position: sticky; 
-      z-index: 10001; 
-      border-radius: 3px; 
+      position: sticky;
+      z-index: 10001;
+      border-radius: 3px;
       margin: 1em auto;
-      max-height: 100%; 
-      overflow: auto; 
+      max-height: 100%;
+      overflow: auto;
       background-color: #ffffff;
       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
@@ -150,9 +151,9 @@
     }
 
     .form fieldset {
-     border: none;
+      border: none;
     }
-   
+
     .form form {
       padding: 10px;
     }
@@ -164,7 +165,7 @@
     .form form ul {
       list-style-type: none;
     }
-    
+
     .form form li {
       padding: 0.3em;
     }
@@ -173,7 +174,11 @@
       box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     }
 
-    input[type="email"], input[type="text"], input[type="number"], input[type="date"], input[type="search"] {
+    input[type="email"],
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="search"] {
       width: 100%;
       outline: none;
       border: solid 1px #ccccccee;
@@ -217,7 +222,7 @@
       flex-flow: row wrap;
       padding: 0.2em 0;
     }
-    
+
     .pill-container .pill {
       cursor: default;
       padding: 1px 1px 1px 2px;
@@ -228,7 +233,7 @@
       background-color: #003D57;
       user-select: none;
     }
-    
+
     .pill-container .pill button {
       cursor: pointer;
       font-size: 0.8em;
@@ -243,7 +248,7 @@
       position: absolute;
       width: 100%;
     }
-    
+
     .li-role {
       border-right: solid 1px #ccc;
       border-left: solid 1px #ccc;
@@ -294,7 +299,7 @@
     }
 
     .txt-hl {
-      background-color: #fff9c4; 
+      background-color: #fff9c4;
       font-weight: bold
     }
 
@@ -365,6 +370,7 @@
         width: 70%;
         margin: auto;
       }
+
       .form {
         width: 400px;
       }
@@ -399,37 +405,43 @@
   <div class="mask none"></div>
 
   <div class="flex">
-    
+
     <div><img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"></div>
     <h1>Account Administration</h1>
 
     <p><span id="logged-in-label">Logged in as</span>&nbsp;<b><span id="logged-in"></span></b></p>
 
     <div class="btn-row">
-      
+
       <div>
         <button class="raised primary-colour" id="default-view"
-          onclick="window.location.href = `${window.location.origin}{{dir}}`">&#8592;&nbsp;<span id="back">Back to Mapp</span></button>
+          onclick="window.location.href = `${window.location.origin}{{dir}}`">&#8592;&nbsp;<span id="back">Back to
+            Mapp</span></button>
         <button class="raised primary-colour" id="test-view"
-          onclick="window.location.href = `${window.location.origin}{{dir}}?template=test_view&download=true`"><span id="test-view">Test View</span></button>
-        <button class="raised red" id="logout" onclick="window.location.href = `${window.location.origin}{{dir}}?logout=true`"><span id="logout">Logout</span></button>
+          onclick="window.location.href = `${window.location.origin}{{dir}}?template=test_view&download=true&integrity=true`"><span
+            id="test-view">Test View</span></button>
+        <button class="raised red" id="logout"
+          onclick="window.location.href = `${window.location.origin}{{dir}}?logout=true`"><span
+            id="logout">Logout</span></button>
       </div>
 
     </div>
 
     <div class="btn-row">
       <div class="filtering">
-      <input type="text" id="filterInput">
+        <input type="text" id="filterInput">
 
-      <input type="text" id="filterStatus">
-    </div>
+        <input type="text" id="filterStatus">
+      </div>
       <div>
         <label for="showBlocked">
-          <input id="showBlocked" type="checkbox" style="margin-right: 4px;"><span id="show-blocked-label">Show blocked accounts</span></label>
-          <p style="margin-top: 0.5em;"><span id="top-info">Click on a row in the table to make changes to the users permissions and roles</span></p>
-        </div>
-        <div id="dialog"></div>
-      
+          <input id="showBlocked" type="checkbox" style="margin-right: 4px;"><span id="show-blocked-label">Show blocked
+            accounts</span></label>
+        <p style="margin-top: 0.5em;"><span id="top-info">Click on a row in the table to make changes to the users
+            permissions and roles. <br>Click on a table header to sort.</span></p>
+      </div>
+      <div id="dialog"></div>
+
     </div>
 
     <div id="userTable"></div>
@@ -484,13 +496,13 @@
           lang_label: "Account Language",
           status: "Status",
           status_description: {
-              "Verified": "check the box to verify a user",
-              "Re-verification": "check the box to re-verify after password reset",
-              "Approved": "check the box to approve a user",
-              "Administrator": "check the box to make user an administrator",
-              "API": "check the box to allow the user API privileges",
-              "Blocked": "check the box to block the user"
-            },
+            "Verified": "check the box to verify a user",
+            "Re-verification": "check the box to re-verify after password reset",
+            "Approved": "check the box to approve a user",
+            "Administrator": "check the box to make user an administrator",
+            "API": "check the box to allow the user API privileges",
+            "Blocked": "check the box to block the user"
+          },
           status_info: "Information on Status",
           roles: "Access Roles",
           roles_info: "Information on Access Roles",
@@ -519,7 +531,7 @@
           filter_status: "Filter status",
           unknown: "Unknown",
           show_blocked: "Show blocked accounts",
-          top_info: "Click on a row in the table to make changes to the users permissions and roles"
+          top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort."
         }
       }
     });
@@ -548,8 +560,8 @@
 
     // destroy form and clear selection when mask is clicked
     document.querySelector('.mask').addEventListener('click', e => {
-      let form = document.querySelector('.form');
-      if(form && form.contains(e.target)) return;
+      const form = document.querySelector('.form');
+      if (form && form.contains(e.target)) return;
       document.querySelector('.mask').classList.add('none');
       removeSearch();
     })
@@ -559,9 +571,9 @@
       dialog.close();
     }}><button class="sticky-top"
     onclick=${e => {
-      e.stopPropagation();
-      dialog.close();
-    }}
+        e.stopPropagation();
+        dialog.close();
+      }}
     >&#10005;</button>
     <h4 class="sticky-top">&#8505;${mapp.dictionary.admin_view.info}</h4>
     <p>`
@@ -576,20 +588,20 @@
     <p class="ws-pre"></p>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 0.2em">
     <button class="raised red del" onclick=${e => {
-      e.stopPropagation();
-      confirmDialog.close();
-    }}>${mapp.dictionary.admin_view.delete}</button>
+        e.stopPropagation();
+        confirmDialog.close();
+      }}>${mapp.dictionary.admin_view.delete}</button>
     <button class="raised primary-colour" onclick=${e => {
-      e.stopPropagation();
-      confirmDialog.close();
-    }}>${mapp.dictionary.admin_view.cancel}</button>
+        e.stopPropagation();
+        confirmDialog.close();
+      }}>${mapp.dictionary.admin_view.cancel}</button>
     `;
 
     document.getElementById('dialog').appendChild(confirmDialog);
 
     function clearNode(node) {
-      if(!node) return;
-      while(node.firstChild) {
+      if (!node) return;
+      while (node.firstChild) {
         node.removeChild(node.firstChild)
       }
     }
@@ -598,18 +610,18 @@
     const eqSet = (xs, ys) => xs.size === ys.size && [...xs].every((x) => ys.has(x));
 
     function checkUserStatus(user) {
-      let state = {label: mapp.dictionary.admin_view.new, color: '#e64a19'};
-      if(user.re_verification) state = {label: mapp.dictionary.admin_view.re_verification, color: '#b71c1c'}
-      if(user.verified) state = {label: mapp.dictionary.admin_view.verified, color: '#9c27b0'}
-      if(user.approved) state = {label: mapp.dictionary.admin_view.approved, color: '#43a047'}
-      if(user.admin) state = {label: mapp.dictionary.admin_view.admin, color: '#0d47a1'}
-      if(user.blocked) state = {label: mapp.dictionary.admin_view.blocked, color: '#263238'}
-      let bg = `background-color: ${state.color}`;
+      let state = { label: mapp.dictionary.admin_view.new, color: '#e64a19' };
+      if (user.re_verification) state = { label: mapp.dictionary.admin_view.re_verification, color: '#b71c1c' }
+      if (user.verified) state = { label: mapp.dictionary.admin_view.verified, color: '#9c27b0' }
+      if (user.approved) state = { label: mapp.dictionary.admin_view.approved, color: '#43a047' }
+      if (user.admin) state = { label: mapp.dictionary.admin_view.admin, color: '#0d47a1' }
+      if (user.blocked) state = { label: mapp.dictionary.admin_view.blocked, color: '#263238' }
+      const bg = `background-color: ${state.color}`;
       return mapp.utils.html.node`<span class="dot" style=${bg}></span>${state.label}`
     }
 
     function submit(user) {
-      
+
       fetch(`${document.head.dataset.dir}/api/user/update`, {
         method: "POST",
         body: JSON.stringify(user),
@@ -617,13 +629,13 @@
           "Content-type": "application/json"
         }
       })
-      .then(response => {
-        document.querySelector('.mask').classList.add('none');
-        removeSearch();
-        createUserTable();
+        .then(response => {
+          document.querySelector('.mask').classList.add('none');
+          removeSearch();
+          createUserTable();
 
-        
-      });
+
+        });
 
     }
 
@@ -631,69 +643,69 @@
 
       const form = mapp.utils.html.node`<form
       onreset=${e => {
-        e.preventDefault();
-        document.querySelector('.mask').classList.add('none');
-        removeSearch();
-      }}
+          e.preventDefault();
+          document.querySelector('.mask').classList.add('none');
+          removeSearch();
+        }}
       onchange=${e => {
-        e.preventDefault();
-      }}
+          e.preventDefault();
+        }}
       onsubmit=${e => {
-        // important: overrride default function
-        e.preventDefault();
+          // important: overrride default function
+          e.preventDefault();
 
-        const formData = new FormData(form);
+          const formData = new FormData(form);
 
-        // will store updated user settings
-        const userUpdated = {};
+          // will store updated user settings
+          const userUpdated = {};
 
-        // process form data
-        Object.entries(user).forEach(i => {
+          // process form data
+          Object.entries(user).forEach(i => {
 
-          let updated = [...formData].find(j => j[0] === i[0]);
+            const updated = [...formData].find(j => j[0] === i[0]);
 
-          // skip unchanged fields
-          if(updated === undefined) return;
-          // skip checked options if no change
-          if(updated[1] === 'on' && i[1]) return;
-          // skip unchecked options if no change
-          if(updated[1] === 'no' && !i[1]) return;
-          // check if roles have been edited
-          if(updated[0] === 'roles') {
-            let initial_roles = new Set(user.roles);
-            let new_roles = new Set(updated[1].split(","));
-            // check if roles have been altered
-            let rolesUnchanged = eqSet(initial_roles, new_roles);
-            if(rolesUnchanged) return;
-            userUpdated.roles = `{${updated[1]}}`
-            return;
-          }
-          // process expiry date if it was changed
-          if(updated[0] === 'expires_on') {
-            if(!updated[1]) return;
-            const prevExpiryDate = (new Date(user.expires_on*1000)).toLocaleDateString('fr-CA');
-            if(prevExpiryDate === updated[1]) return;
-            userUpdated[i[0]] = parseInt(new Date(updated[1]).getTime() / 1000);
-            return;
-          }
-          // set changes on user updated payload
-          switch(updated[1]) {
-            case 'on':
-              userUpdated[i[0]] = true; // flags on 
-              break;
-            case 'no': 
-              userUpdated[i[0]] = false; // flags off
-              break;
-            default:
-            userUpdated[i[0]] = updated[1]; // new value
-          }
-        });
+            // skip unchanged fields
+            if (updated === undefined) return;
+            // skip checked options if no change
+            if (updated[1] === 'on' && i[1]) return;
+            // skip unchecked options if no change
+            if (updated[1] === 'no' && !i[1]) return;
+            // check if roles have been edited
+            if (updated[0] === 'roles') {
+              const initial_roles = new Set(user.roles);
+              const new_roles = new Set(updated[1].split(","));
+              // check if roles have been altered
+              const rolesUnchanged = eqSet(initial_roles, new_roles);
+              if (rolesUnchanged) return;
+              userUpdated.roles = `{${updated[1]}}`
+              return;
+            }
+            // process expiry date if it was changed
+            if (updated[0] === 'expires_on') {
+              if (!updated[1]) return;
+              const prevExpiryDate = (new Date(user.expires_on * 1000)).toLocaleDateString('fr-CA');
+              if (prevExpiryDate === updated[1]) return;
+              userUpdated[i[0]] = parseInt(new Date(updated[1]).getTime() / 1000);
+              return;
+            }
+            // set changes on user updated payload
+            switch (updated[1]) {
+              case 'on':
+                userUpdated[i[0]] = true; // flags on 
+                break;
+              case 'no':
+                userUpdated[i[0]] = false; // flags off
+                break;
+              default:
+                userUpdated[i[0]] = updated[1]; // new value
+            }
+          });
 
-        userUpdated.email = user.email;
-        // submit updated user
-        submit(userUpdated);
+          userUpdated.email = user.email;
+          // submit updated user
+          submit(userUpdated);
 
-      }}>
+        }}>
       <div><h2>${mapp.dictionary.admin_view.acc_details}</h2></div>
       <ul>
         <li>
@@ -707,9 +719,9 @@
             <label for="language">${mapp.dictionary.admin_view.lang}</label>
             <select name="language" id="language">
               ${Object.entries(languagesList).map(l => {
-                if(l[0] === user.language) return mapp.utils.html.node`<option selected value=${l[0]}>${l[1]}`
-                return mapp.utils.html.node`<option value=${l[0]}>${l[1]}`
-              })}
+          if (l[0] === user.language) return mapp.utils.html.node`<option selected value=${l[0]}>${l[1]}`
+          return mapp.utils.html.node`<option value=${l[0]}>${l[1]}`
+        })}
             </select>
           </fieldset>  
         </li>
@@ -717,29 +729,29 @@
 
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 0.5em; padding: 0.2em;">
           <div style="grid-column: 1 / span 3;" onclick=${e => {
-            e.stopPropagation();
-            let msg = '';
+          e.stopPropagation();
+          let msg = '';
 
-            Object.keys(mapp.dictionary.admin_view.status_description).map(k => {
-                  msg += `${k} - ${mapp.dictionary.admin_view.status_description[k]}\n`
-                })
-                let dialog = document.querySelector('dialog.alert');
-                let h = document.querySelector('dialog.alert h4');
-                let p = document.querySelector('dialog.alert p');
-                p.classList.add('ws-pre');
-                h.textContent = mapp.dictionary.admin_view.status_info;
-                p.textContent = msg;
-                dialog.showModal();
+          Object.keys(mapp.dictionary.admin_view.status_description).map(k => {
+            msg += `${k} - ${mapp.dictionary.admin_view.status_description[k]}\n`
+          })
+          const dialog = document.querySelector('dialog.alert');
+          const h = document.querySelector('dialog.alert h4');
+          const p = document.querySelector('dialog.alert p');
+          p.classList.add('ws-pre');
+          h.textContent = mapp.dictionary.admin_view.status_info;
+          p.textContent = msg;
+          dialog.showModal();
 
-          }}><a>${mapp.dictionary.admin_view.status}&nbsp;&#8505;</a></div>
+        }}><a>${mapp.dictionary.admin_view.status}&nbsp;&#8505;</a></div>
 
           <fieldset 
           title="${mapp.dictionary.admin_view.status_description["Verified"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input type="checkbox" id="verified" name="verified">`;
-              chk.checked = user.verified;
-              return chk;
-            }}
+          const chk = mapp.utils.html.node`<input type="checkbox" id="verified" name="verified">`;
+          chk.checked = user.verified;
+          return chk;
+        }}
             <label for="verified"><b>${mapp.dictionary.admin_view.verified}</b></label>
             <input type="hidden" name="verified" value="no"/>
           </fieldset>  
@@ -747,10 +759,10 @@
 
           <fieldset title="${mapp.dictionary.admin_view.status_description["Re-verification"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input type="checkbox" id="re_verification" name="re_verification">`;
-              chk.checked = user.re_verification;
-              return chk;
-            }}
+          const chk = mapp.utils.html.node`<input type="checkbox" id="re_verification" name="re_verification">`;
+          chk.checked = user.re_verification;
+          return chk;
+        }}
             <label for="re_verification"><b>${mapp.dictionary.admin_view.re_verification}</b></label>
             <input type="hidden" name="re_verification" value="no"/>
           </fieldset>  
@@ -758,10 +770,10 @@
 
           <fieldset title="${mapp.dictionary.admin_view.status_description["Approved"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input type="checkbox" id="approved" name="approved">`;
-              chk.checked = user.approved;
-              return chk;
-            }}
+          const chk = mapp.utils.html.node`<input type="checkbox" id="approved" name="approved">`;
+          chk.checked = user.approved;
+          return chk;
+        }}
             <label for="approved"><b>${mapp.dictionary.admin_view.approved}</b></label>
             <input type="hidden" name="approved" value="no"/>
           </fieldset>  
@@ -769,10 +781,10 @@
 
           <fieldset title="${mapp.dictionary.admin_view.status_description["Administrator"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input type="checkbox" id="admin" name="admin">`;
-              chk.checked = user.admin;
-              return chk;
-            }}
+          const chk = mapp.utils.html.node`<input type="checkbox" id="admin" name="admin">`;
+          chk.checked = user.admin;
+          return chk;
+        }}
             <label for="admin">${mapp.dictionary.admin_view.admin}</label>
             <input type="hidden" name="admin" value="no"/>
           </fieldset>  
@@ -780,21 +792,21 @@
 
           <fieldset title="${mapp.dictionary.admin_view.status_description["API"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input type="checkbox" id="api" name="api">`;
-              chk.checked = user.api;
-              return chk;
-            }}
+          const chk = mapp.utils.html.node`<input type="checkbox" id="api" name="api">`;
+          chk.checked = user.api;
+          return chk;
+        }}
             <label for="api">${mapp.dictionary.admin_view.api}</label>
             <input type="hidden" name="api" value="no"/>
           </fieldset>  
 
           <fieldset title="${mapp.dictionary.admin_view.status_description["Blocked"]}">
             ${() => {
-              let chk = mapp.utils.html.node`<input 
+          const chk = mapp.utils.html.node`<input 
               type="checkbox" id="blocked" name="blocked">`;
-              chk.checked = user.blocked;
-              return chk;
-            }}
+          chk.checked = user.blocked;
+          return chk;
+        }}
             <label for="blocked"><b><span class="txt-red">${mapp.dictionary.admin_view.blocked}</span></b></label>
             <input type="hidden" name="blocked" value="no"/>
           </fieldset>  
@@ -802,125 +814,122 @@
         </div>
 
         <div style="padding: 0.2em">
-          ${
-          (() => {
-            // check if there are roles 
-            if(!Object.keys(rolesList).length) {
-              return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}`; 
-            }
-            //and if there are description to display
-            if(!Object.values(rolesList).every(r => r.label)) { 
-              return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}` 
-            }
-
-            return mapp.utils.html.node`<div onclick=${
-              e => {
-                e.stopPropagation();
-                let msg = '';
-                Object.entries(rolesList).map(i => {
-                  msg += `${[i[0]]} - ${i[1].label || mapp.dictionary.admin_view.roles_no_info}\n`
-                })
-                let dialog = document.querySelector('dialog.alert');
-                let h = document.querySelector('dialog.alert h4');
-                let p = document.querySelector('dialog.alert p');
-                p.classList.add('ws-pre');
-                h.textContent = mapp.dictionary.admin_view.roles_info;
-                p.textContent = msg;
-                dialog.showModal();
-              }
-            }><a title="${mapp.dictionary.admin_view.roles_view}">${mapp.dictionary.admin_view.roles}&nbsp;&#8505;`
-          })()
+          ${(() => {
+          // check if there are roles 
+          if (!Object.keys(rolesList).length) {
+            return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}`;
           }
-          ${
-            (() => {
+          //and if there are description to display
+          if (!Object.values(rolesList).every(r => r.label)) {
+            return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}`
+          }
 
-              if(!Object.keys(rolesList).length) return mapp.utils.html.node`
+          return mapp.utils.html.node`<div onclick=${e => {
+            e.stopPropagation();
+            let msg = '';
+            Object.entries(rolesList).map(i => {
+              msg += `${[i[0]]} - ${i[1].label || mapp.dictionary.admin_view.roles_no_info}\n`
+            })
+            const dialog = document.querySelector('dialog.alert');
+            const h = document.querySelector('dialog.alert h4');
+            const p = document.querySelector('dialog.alert p');
+            p.classList.add('ws-pre');
+            h.textContent = mapp.dictionary.admin_view.roles_info;
+            p.textContent = msg;
+            dialog.showModal();
+          }
+            }><a title="${mapp.dictionary.admin_view.roles_view}">${mapp.dictionary.admin_view.roles}&nbsp;&#8505;`
+        })()
+        }
+          ${(() => {
+
+          if (!Object.keys(rolesList).length) return mapp.utils.html.node`
               <input type="text" disabled value="${mapp.dictionary.admin_view.roles_no}">`;
 
-              const rolesContainer = mapp.utils.html.node`<div>`
+          const rolesContainer = mapp.utils.html.node`<div>`
 
-              const pills = mapp.ui.elements.pills({
-                target: rolesContainer,
-                pills: user.roles,
-                addCallback: (val, pills) => {
+          const pills = mapp.ui.elements.pills({
+            target: rolesContainer,
+            pills: user.roles,
+            addCallback: (val, pills) => {
 
-                  let roles_input_el = document.querySelector('.form input[type="hidden"][name="roles"]');
-                  if(!roles_input_el) return;
-                  roles_input.value = [...pills].join(',');
+              let roles_input_el = document.querySelector('.form input[type="hidden"][name="roles"]');
+              if (!roles_input_el) return;
+              roles_input.value = [...pills].join(',');
 
-                  // reset searchbox and results
-                  searchbox.list.innerHTML = '';
-                  searchbox.input.value = '';
-                },
-                removeCallback: (val, pills) => {
-                  roles_input.value = [...pills].join(',');
+              // reset searchbox and results
+              searchbox.list.innerHTML = '';
+              searchbox.input.value = '';
+            },
+            removeCallback: (val, pills) => {
+              roles_input.value = [...pills].join(',');
 
-                }
-              })
+            }
+          })
 
-              const roles_input = mapp.utils.html.node`<input type="hidden" name="roles" value=${user.roles.join(',')}/>`;
+          const roles_input = mapp.utils.html.node`<input type="hidden" name="roles" value=${user.roles.join(',')}/>`;
 
-              function li(val) {
-                return mapp.utils.html.node`<li class="li-role" onclick=${e => {
-                  e.stopPropagation();
-                  if(pills.pills.has(val)) return;
-                  pills.add(val);
-                  roles_input.value = [...pills.pills].join(',')
-                }}>${val}`
+          function li(val) {
+            return mapp.utils.html.node`<li class="li-role" onclick=${e => {
+              e.stopPropagation();
+              if (pills.pills.has(val)) return;
+              pills.add(val);
+              roles_input.value = [...pills.pills].join(',')
+            }}>${val}`
+          }
+
+          const searchbox = mapp.ui.elements.searchbox({
+            target: rolesContainer,
+            placeholder: mapp.dictionary.admin_view.roles_search,
+            searchFunction: (e) => {
+
+              searchbox.list.innerHTML = '';
+
+              if (!e.target.value) {
+                // show suggested
+                Object.keys(rolesList)
+                  .filter(val => !pills.pills.has(val))
+                  .filter((val, i) => i < 3)
+                  .forEach(val => (searchbox.list.append(li(val))));
+                return;
               }
 
-              const searchbox = mapp.ui.elements.searchbox({
-                target: rolesContainer,
-                placeholder: mapp.dictionary.admin_view.roles_search,
-                searchFunction: (e) => {
-                  
-                  searchbox.list.innerHTML = '';
-                  
-                  if(!e.target.value) {
-                    // show suggested
-                    Object.keys(rolesList)
-                    .filter(val => !pills.pills.has(val))
-                    .filter((val, i) => i < 3)
-                    .forEach(val => (searchbox.list.append(li(val))));
-                    return;
-                  }
-                  
-                  const pattern = e.target.value;
-                  
-                  let filtered = Object.keys(rolesList).filter(val =>
-                  val.toLowerCase().startsWith(pattern.toLowerCase()))
-                  
-                  if (!filtered.length) {
-                    
-                    searchbox.list.append(mapp.utils.html.node`
+              const pattern = e.target.value;
+
+              let filtered = Object.keys(rolesList).filter(val =>
+                val.toLowerCase().startsWith(pattern.toLowerCase()))
+
+              if (!filtered.length) {
+
+                searchbox.list.append(mapp.utils.html.node`
                     <li class="li-role"
                     onclick=${e => {
-                      e.stopPropagation();
-                      searchbox.list.innerHTML = '';
-                      searchbox.input.value = '';
-                    }}
+                    e.stopPropagation();
+                    searchbox.list.innerHTML = '';
+                    searchbox.input.value = '';
+                  }}
                     ><span>${mapp.dictionary.no_results}`);
-                      
-                    return;
-                  }
-                  
-                  filtered
-                  .filter(val => !pills.pills.has(val))
-                  .filter((val, i) => i < 9)
-                  .forEach(val => (searchbox.list.append(li(val))));
-                }
-              })
 
-              searchbox.input.onblur = e => {
-                setTimeout(() => (searchbox.list.innerHTML = ''), 500);
+                return;
               }
 
-              rolesContainer.appendChild(roles_input)
+              filtered
+                .filter(val => !pills.pills.has(val))
+                .filter((val, i) => i < 9)
+                .forEach(val => (searchbox.list.append(li(val))));
+            }
+          })
 
-              return rolesContainer;
-
-            })()
+          searchbox.input.onblur = e => {
+            setTimeout(() => (searchbox.list.innerHTML = ''), 500);
           }
+
+          rolesContainer.appendChild(roles_input)
+
+          return rolesContainer;
+
+        })()
+        }
         </div>
 
         <ul>
@@ -935,28 +944,28 @@
             <label for="expires_on">${mapp.dictionary.admin_view.expiry}</label>
             <input type="date" id="expires_on" name="expires_on"
             value=${((e) => {
-              if(!user.expires_on) return;
-              const expiryDate = new Date(user.expires_on*1000);
-              return expiryDate.toLocaleDateString('fr-CA')
-            })()}>
+          if (!user.expires_on) return;
+          const expiryDate = new Date(user.expires_on * 1000);
+          return expiryDate.toLocaleDateString('fr-CA')
+        })()}>
           </fieldset>  
         </li>
         <li>
           <fieldset title="${mapp.dictionary.admin_view.access_log_label}">
             <label for="access_log">${mapp.dictionary.admin_view.access_log}&nbsp;<a onclick=${async e => {
-              
-              const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/log?email=${user.email}`);
-              if (response.err) return console.error(response.err);
-              if(!response.access_log) return;
-              let dialog = document.querySelector('dialog.alert');
-              let h = document.querySelector('dialog.alert h4');
-              let p = document.querySelector('dialog.alert p');
-              p.classList.add('ws-pre');
-              h.textContent = 'User Access History';
-              p.textContent = response.access_log.join('\n');
-              dialog.showModal();
 
-            }}>${mapp.dictionary.admin_view.view}</a></label>
+          const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/log?email=${user.email}`);
+          if (response.err) return console.error(response.err);
+          if (!response.access_log) return;
+          const dialog = document.querySelector('dialog.alert');
+          const h = document.querySelector('dialog.alert h4');
+          const p = document.querySelector('dialog.alert p');
+          p.classList.add('ws-pre');
+          h.textContent = 'User Access History';
+          p.textContent = response.access_log.join('\n');
+          dialog.showModal();
+
+        }}>${mapp.dictionary.admin_view.view}</a></label>
 
             <input type="text" id="access_log" name="access_log" disabled value=${user.access_log}>
           </fieldset>  
@@ -981,52 +990,52 @@
           </button>
           <button class="raised red"
           onclick=${async e => {
-            e.preventDefault();
-            // get confirm dialog element
-            let confirmDialog = document.querySelector('dialog.confirm');
-            let p = confirmDialog.querySelector('p');
-            // set message 
-            p.textContent = `${user.email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
+          e.preventDefault();
+          // get confirm dialog element
+          const confirmDialog = document.querySelector('dialog.confirm');
+          const p = confirmDialog.querySelector('p');
+          // set message 
+          p.textContent = `${user.email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
 
-            // delete button action
-            confirmDialog.querySelector('button.del').onclick = async ev => {
-              ev.stopPropagation();
-              const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${user.email}`);
-              if (response.err) return console.error(response.err);
-              // hide form and mask
-              document.querySelector('.mask').classList.add('none');
-              removeSearch();
-              // remove deleted row
-              document.querySelector(`#userTable table tr[data-email='${user.email}']`).remove();
-              // show confirmation
-              setTimeout(() => {
-                let dialog = document.querySelector('dialog.alert');
-                let p = document.querySelector('dialog.alert p');
-                p.classList.add('ws-pre');
-                p.textContent = `${user.email}\n${mapp.dictionary.admin_view.deleted}`;
-                dialog.showModal();
-              }, 400)
-              
-            }
-            // open confirm modal
-            confirmDialog.showModal();
+          // delete button action
+          confirmDialog.querySelector('button.del').onclick = async ev => {
+            ev.stopPropagation();
+            const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${user.email}`);
+            if (response.err) return console.error(response.err);
+            // hide form and mask
+            document.querySelector('.mask').classList.add('none');
+            removeSearch();
+            // remove deleted row
+            document.querySelector(`#userTable table tr[data-email='${user.email}']`).remove();
+            // show confirmation
+            setTimeout(() => {
+              const dialog = document.querySelector('dialog.alert');
+              const p = document.querySelector('dialog.alert p');
+              p.classList.add('ws-pre');
+              p.textContent = `${user.email}\n${mapp.dictionary.admin_view.deleted}`;
+              dialog.showModal();
+            }, 400)
 
-          }}>${mapp.dictionary.admin_view.delete_user}</button>
+          }
+          // open confirm modal
+          confirmDialog.showModal();
+
+        }}>${mapp.dictionary.admin_view.delete_user}</button>
         `;
 
-        return form;
+      return form;
     }
-    
+
     function openForm(user) {
 
       // check if there's an email param passed
-      let url = new URL(window.location);
-      if(!url.searchParams.has('email')) {
+      const url = new URL(window.location);
+      if (!url.searchParams.has('email')) {
         url.searchParams.append('email', user.email);
         history.pushState({}, "", url);
       }
-      
-      let mask = document.querySelector('.mask');
+
+      const mask = document.querySelector('.mask');
       clearNode(mask);
       mask.classList.remove('none');
       const div = mapp.utils.html.node`<div class="form">`
@@ -1039,7 +1048,7 @@
 
       const userList = await getUserList();
 
-      let el = document.getElementById('userTable');
+      const el = document.getElementById('userTable');
       clearNode(el);
 
       const table = mapp.utils.html.node`<table>
@@ -1050,19 +1059,27 @@
           <th class="desktop-only">${mapp.dictionary.admin_view.last_active}</th>
           <th class="desktop-only">${mapp.dictionary.admin_view.roles}</th>`;
 
-        const tbody = mapp.utils.html.node`<tbody>`
+      const tbody = mapp.utils.html.node`<tbody>`
 
-        Object.values(userList).map(i => {
+      Object.values(userList).map(i => {
 
-          let css = `${i.blocked ? `account-blocked none`: ``} ${i.email === cookieResponse.email ? `txt-hl` : ``}`;
+        const css = `${i.blocked ? `account-blocked none` : ``} ${i.email === cookieResponse.email ? `txt-hl` : ``}`;
 
-          let last_active = i.access_log ? new Date(i.access_log.split('@')[0]).toLocaleString('en-GB') : ``;
+        const last_active = i.access_log ? new Date(i.access_log.split('@')[0]).toLocaleString('en-GB') : ``;
 
-          let last_active_iso = i.access_log.split('@')[0];
+        let last_active_iso;
 
-          let active_roles = i.roles.join(', ');
+        // If the user has never logged in, last active date will be an empty string.
+        if (last_active === "") {
+          last_active_iso = null
+        } 
+        // If the user has logged in, last active date will be the date of the last login, so we can split the string to get the date.
+        else {
+          last_active_iso = i.access_log.split('@')[0];
+        }
+        const active_roles = i.roles.join(', ');
 
-          tbody.appendChild(mapp.utils.html.node`<tr 
+        tbody.appendChild(mapp.utils.html.node`<tr 
           class="${css}"
           data-email=${i.email}
           onclick=${e => {
@@ -1074,35 +1091,35 @@
           <td class="desktop-only" data-iso=${last_active_iso} title=${last_active}>${last_active}</td>
           <td class="desktop-only" title=${active_roles}>${active_roles}</td>
           </tr>`)
-        });
+      });
 
-        table.appendChild(tbody);
+      table.appendChild(tbody);
 
-        el.appendChild(table);
+      el.appendChild(table);
 
-        let current_url = new URL(window.location);
-        if(current_url.searchParams.has('email')) { 
-          const findUser = Object.values(userList).find(i => i.email === current_url.searchParams.get('email'));
-          if(findUser) openForm(findUser);
-        
-        }
+      const current_url = new URL(window.location);
+      if (current_url.searchParams.has('email')) {
+        const findUser = Object.values(userList).find(i => i.email === current_url.searchParams.get('email'));
+        if (findUser) openForm(findUser);
+
+      }
 
     }
 
-    async function getUserList(){
-      
+    async function getUserList() {
+
       // Get user list from host.
       const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/list`)
-      
+
       // Data must be an array if only 1 record returned in response.
       const data = Array.isArray(response) && response || [response]
-      
+
       data.forEach(row => {
         row.re_verification = !row.verificationtoken
       })
 
       return data;
-    
+
     }
 
 
@@ -1110,11 +1127,11 @@
 
     function removeSearch() {
       // this function clears email parameter from window query string
-      let url = new URL(window.location);
+      const url = new URL(window.location);
       url.searchParams.delete('email');
       history.pushState({}, "", url);
     }
-    
+
     // email address search
     const searchAccounts = document.getElementById("filterInput");
     searchAccounts.placeholder = mapp.dictionary.admin_view.search_accounts;
@@ -1122,13 +1139,13 @@
       // reset status search
       filterStatus.value = '';
 
-      let table = document.querySelector('#userTable table');
-      let filter = e.target.value.toLowerCase();
-      let trs = table.querySelectorAll("tr");
+      const table = document.querySelector('#userTable table');
+      const filter = e.target.value.toLowerCase();
+      const trs = table.querySelectorAll("tr");
 
-      for(let tr of trs) {
-        let td = tr.querySelector("td");
-        if(!td) continue;
+      for (const tr of trs) {
+        const td = tr.querySelector("td");
+        if (!td) continue;
         tr.style.display = td.textContent.toLowerCase().indexOf(filter) > -1 ? "" : "none";
       }
     })
@@ -1140,23 +1157,23 @@
 
       // reset email search
       searchAccounts.value = '';
-      
-      let table = document.querySelector('#userTable table');
-      
-      let filter = e.target.value.toLowerCase();
-      
-      let trs = table.querySelectorAll("tr");
 
-      for(let tr of trs) {
-        let td = tr.querySelectorAll("td")[1];
-        if(!td) continue;
+      const table = document.querySelector('#userTable table');
+
+      const filter = e.target.value.toLowerCase();
+
+      const trs = table.querySelectorAll("tr");
+
+      for (const tr of trs) {
+        const td = tr.querySelectorAll("td")[1];
+        if (!td) continue;
         tr.style.display = td.textContent.toLowerCase().indexOf(filter) > -1 ? "" : "none";
       }
     })
 
     document.getElementById("showBlocked").addEventListener('click', e => {
 
-      let blocked = e.target.checked;
+      const blocked = e.target.checked;
 
       if (blocked) {
         Array.from(document.querySelectorAll('#userTable table tr.account-blocked')
@@ -1165,50 +1182,50 @@
       }
 
       Array.from(document.querySelectorAll('#userTable table tr.account-blocked'))
-      .map(el => el.classList.add('none'));
+        .map(el => el.classList.add('none'));
     })
 
-  // table sorting
-  function sortTableByColumn(table, column, asc = true) {
-    const dirModifier = asc ? 1 : -1;
-    const tBody = table.tBodies[0];
-    const rows = Array.from(tBody.querySelectorAll("tr"));
-    
-    // Sort each row
-    const sortedRows = rows.sort((a, b) => {
-      const td_a = a.querySelector(`td:nth-child(${ column + 1 })`);
-      const td_b = b.querySelector(`td:nth-child(${ column + 1 })`);
-      const aColText = td_a.textContent.trim().toLowerCase();
-      const bColText = td_b.textContent.trim().toLowerCase();
+    // table sorting
+    function sortTableByColumn(table, column, asc = true) {
+      const dirModifier = asc ? 1 : -1;
+      const tBody = table.tBodies[0];
+      const rows = Array.from(tBody.querySelectorAll("tr"));
 
-      // check if column is a date
-      if(td_a.dataset.iso) {
-        return new Date(td_a.dataset.iso) > new Date(td_b.dataset.iso) ? (1 * dirModifier) : (-1 * dirModifier);
-      }
+      // Sort each row
+      const sortedRows = rows.sort((a, b) => {
+        const td_a = a.querySelector(`td:nth-child(${column + 1})`);
+        const td_b = b.querySelector(`td:nth-child(${column + 1})`);
+        const aColText = td_a.textContent.trim().toLowerCase();
+        const bColText = td_b.textContent.trim().toLowerCase();
 
-      return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+        // check if column is a date
+        if (td_a.dataset.iso) {
+          return new Date(td_a.dataset.iso) > new Date(td_b.dataset.iso) ? (1 * dirModifier) : (-1 * dirModifier);
+        }
+
+        return aColText > bColText ? (1 * dirModifier) : (-1 * dirModifier);
+      });
+
+      clearNode(tBody);
+
+      tBody.append(...sortedRows);
+
+      table.querySelectorAll("th").forEach(th => th.classList.remove("asc", "desc"));
+      table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("asc", asc);
+      table.querySelector(`th:nth-child(${column + 1})`).classList.toggle("desc", !asc);
+
+    }
+
+    document.querySelectorAll("#userTable table th").forEach(headerCell => {
+      headerCell.addEventListener("click", () => {
+        const tableElement = document.querySelector('#userTable table');
+        const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
+        const currentIsAscending = headerCell.classList.contains("asc");
+        sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
+      });
     });
-    
-    clearNode(tBody);
-    
-    tBody.append(...sortedRows);
-    
-    table.querySelectorAll("th").forEach(th => th.classList.remove("asc", "desc"));
-    table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("asc", asc);
-    table.querySelector(`th:nth-child(${ column + 1})`).classList.toggle("desc", !asc);
-  
+
   }
-  
-  document.querySelectorAll("#userTable table th").forEach(headerCell => {
-    headerCell.addEventListener("click", () => {
-      const tableElement = document.querySelector('#userTable table');
-      const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
-      const currentIsAscending = headerCell.classList.contains("asc");
-      sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
-    });
-  });
-
-} 
 
 
 
