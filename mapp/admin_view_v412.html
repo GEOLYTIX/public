@@ -287,15 +287,26 @@
       padding: 1em;
     }
 
+    dialog p {
+      text-align: center;
+    }
+
     .ws-pre {
       white-space: pre;
+    }
+
+    dialog .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     dialog.alert button {
       float: right;
       font-size: 0.9em;
-      color: #003D57;
+      color: white;
       z-index: 1005;
+      min-width: 4em;
+      margin: 0 auto 1em !important;
     }
 
     dialog:focus {
@@ -444,7 +455,6 @@
         <p style="margin-top: 0.5em;"><span id="top-info">Click on a row in the table to make changes to the users
             permissions and roles. <br>Click on a table header to sort.</span></p>
       </div>
-      <div id="dialog"></div>
 
     </div>
 
@@ -569,39 +579,6 @@
       document.querySelector('.mask').classList.add('none');
       removeSearch();
     })
-
-    const dialog = mapp.utils.html.node`<dialog class="alert" onclick=${e => {
-      e.stopPropagation();
-      dialog.close();
-    }}><button class="sticky-top"
-    onclick=${e => {
-        e.stopPropagation();
-        dialog.close();
-      }}
-    >&#10005;</button>
-    <h4 class="sticky-top">&#8505;${mapp.dictionary.admin_view.info}</h4>
-    <p>`
-
-    document.getElementById('dialog').appendChild(dialog);
-
-    const confirmDialog = mapp.utils.html.node`<dialog class="confirm" onclick=${e => {
-      e.preventDefault();
-      confirmDialog.close();
-    }}>
-    <h4>${mapp.dictionary.admin_view.confirm}</h4>
-    <p class="ws-pre"></p>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 0.2em">
-    <button class="raised red del" onclick=${e => {
-        e.stopPropagation();
-        confirmDialog.close();
-      }}>${mapp.dictionary.admin_view.delete}</button>
-    <button class="raised primary-colour" onclick=${e => {
-        e.stopPropagation();
-        confirmDialog.close();
-      }}>${mapp.dictionary.admin_view.cancel}</button>
-    `;
-
-    document.getElementById('dialog').appendChild(confirmDialog);
 
     function clearNode(node) {
       if (!node) return;
@@ -776,13 +753,12 @@
           Object.keys(mapp.dictionary.admin_view.status_description).map(k => {
             msg += `${k} - ${mapp.dictionary.admin_view.status_description[k]}\n`
           })
-          const dialog = document.querySelector('dialog.alert');
-          const h = document.querySelector('dialog.alert h4');
-          const p = document.querySelector('dialog.alert p');
-          p.classList.add('ws-pre');
-          h.textContent = mapp.dictionary.admin_view.status_info;
-          p.textContent = msg;
-          dialog.showModal();
+
+          mapp.ui.elements.alert({
+            class: 'alert',
+            title: mapp.dictionary.admin_view.status_info,
+            text: mapp.utils.html`<span class="ws-pre">${msg}`
+          })
 
         }}><a>${mapp.dictionary.admin_view.status}&nbsp;&#8505;</a></div>
 
@@ -815,13 +791,12 @@
             Object.entries(rolesList).map(i => {
               msg += `${[i[0]]} - ${i[1].label || mapp.dictionary.admin_view.roles_no_info}\n`
             })
-            const dialog = document.querySelector('dialog.alert');
-            const h = document.querySelector('dialog.alert h4');
-            const p = document.querySelector('dialog.alert p');
-            p.classList.add('ws-pre');
-            h.textContent = mapp.dictionary.admin_view.roles_info;
-            p.textContent = msg;
-            dialog.showModal();
+
+            mapp.ui.elements.alert({
+              title: mapp.dictionary.admin_view.roles_info,
+              text: msg
+            })
+
           }
             }><a title="${mapp.dictionary.admin_view.roles_view}">${mapp.dictionary.admin_view.roles}&nbsp;&#8505;`
         })()
@@ -927,13 +902,16 @@
           const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/log?email=${user.email}`);
           if (response.err) return console.error(response.err);
           if (!response.access_log) return;
-          const dialog = document.querySelector('dialog.alert');
-          const h = document.querySelector('dialog.alert h4');
-          const p = document.querySelector('dialog.alert p');
-          p.classList.add('ws-pre');
-          h.textContent = 'User Access History';
-          p.textContent = response.access_log.join('\n');
-          dialog.showModal();
+
+          const len = response.access_log.length;
+          // include only last 10 timestamps
+          const log = len < 11 ? response.access_log : response.access_log.slice(Math.max(len - 10, 0));
+
+          mapp.ui.elements.alert({
+            class: 'alert',
+            title: mapp.dictionary.admin_view.access_log_label,
+            text: mapp.utils.html`<span class="ws-pre">${log.join('\n')}`
+          })
 
         }}>${mapp.dictionary.admin_view.view}</a></label>
 
@@ -952,33 +930,24 @@
           onclick=${async e => {
           e.preventDefault();
           // get confirm dialog element
-          const confirmDialog = document.querySelector('dialog.confirm');
-          const p = confirmDialog.querySelector('p');
-          // set message 
-          p.textContent = `${user.email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
 
-          // delete button action
-          confirmDialog.querySelector('button.del').onclick = async ev => {
-            ev.stopPropagation();
+          const confirm = await mapp.ui.elements.confirm({
+            text: mapp.utils.html`<span class="ws-pre">${user.email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`
+          })
+
+          if(confirm) {
             const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${user.email}`);
             if (response.err) return console.error(response.err);
-            // hide form and mask
-            document.querySelector('.mask').classList.add('none');
             removeSearch();
             // remove deleted row
             document.querySelector(`#userTable table tr[data-email='${user.email}']`).remove();
             // show confirmation
             setTimeout(() => {
-              const dialog = document.querySelector('dialog.alert');
-              const p = document.querySelector('dialog.alert p');
-              p.classList.add('ws-pre');
-              p.textContent = `${user.email}\n${mapp.dictionary.admin_view.deleted}`;
-              dialog.showModal();
+              mapp.ui.elements.alert({
+                text: `${user.email}\n${mapp.dictionary.admin_view.deleted}`
+              })
             }, 400)
-
-          }
-          // open confirm modal
-          confirmDialog.showModal();
+          } 
 
         }}>${mapp.dictionary.admin_view.delete_user}</button>
         `;
