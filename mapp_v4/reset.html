@@ -118,11 +118,11 @@
       const message = document.getElementById("password_match_message");
 
       // Define
-      const requiredPattern = new RegExp("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{10,}$");
+      const requiredPattern = new RegExp("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])^.{12,}$");
 
       // Check the pattern agains the password
       if (!requiredPattern.test(password)) {
-        message.innerHTML = "Your Password must contain a number, upper and lower case letter and be 10 characters or greater.";
+        message.innerHTML = "Your Password must contain a number, upper and lower case letter and be 12 characters or greater.";
         message.style.color = "black";
       }
       // If the password meets criteria, then check if the passwords match
