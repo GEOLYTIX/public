@@ -47,8 +47,8 @@
 
             <div style="text-align: center;">
             <b class="gap-top-700">
-              As of January 2025, we’re enforcing a minimum password length of 12 characters.</b>
-            <br><i class="gap-top-700"> You will be asked to reset your password if it does not meet these requirements.</i>
+              Please note we have recently introduced a minimum 12 character password policy for security purposes. </b>
+            <br><i class="gap-top-700"> If your password does not meet these requirements you need to <a href="{{dir}}/api/user/register?reset=true">reset your password</a> in order to access MAPP.</i>
             </div>
             <div class="form-field">
               <label>Email address</label>
@@ -58,7 +58,7 @@
             <div class="form-field">
               <label>Password</label>
               <div class="password-container">
-                <input type="password" id="password" class="password-input" required minlength="10" name="password" placeholder="Enter password">
+                <input type="password" id="password" class="password-input" required minlength="12" name="password" placeholder="Enter password">
                 <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
               </div>
             </div>
