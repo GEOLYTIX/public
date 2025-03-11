@@ -463,6 +463,9 @@
       return;
     }
 
+    mapp?.utils?.versionCheck('4.12') ? console.log(`Please use Mapp Admin View v4.12`) : console.warn(`Mapp Admin View`);
+
+
     // expand dictionary
     mapp.utils.merge(mapp.dictionaries, {
       en: {
