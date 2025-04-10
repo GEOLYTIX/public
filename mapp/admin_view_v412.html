@@ -613,7 +613,8 @@
 
       document.querySelector('.mask').classList.add('none');
       removeSearch();
-      await createUserTable();
+      const userList = await getUserList();
+      createUserTable(userList);
 
     }
 
@@ -970,9 +971,7 @@
       mask.appendChild(div);
     }
 
-    async function createUserTable() {
-
-      const userList = await getUserList();
+    function createUserTable(userList) {
 
       const el = document.getElementById('userTable');
       clearNode(el);
@@ -1049,8 +1048,9 @@
 
     }
 
+    const userList = await getUserList();
 
-    await createUserTable();
+    createUserTable(userList);
 
     function removeSearch() {
       // this function clears email parameter from window query string
