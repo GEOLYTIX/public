@@ -1038,7 +1038,7 @@
       const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/list`);
 
       // Data must be an array if only 1 record returned in response.
-      const data = Array.isArray(response) && response || [response]
+      const data = Array.isArray(response) : response ? [response];
 
       data.forEach(row => {
         row.re_verification = !row.verificationtoken
