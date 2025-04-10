@@ -693,16 +693,16 @@
           const userUpdated = {};
 
           // process form data
-          Object.entries(user).forEach(i => {
+          Object.entries(user).forEach(item => {
 
-            const updated = [...formData].find(j => j[0] === i[0]);
+            const updated = [...formData].find(record => record[0] === item[0]);
 
             // skip unchanged fields
             if (updated === undefined) return;
             // skip checked options if no change
-            if (updated[1] === 'on' && i[1]) return;
+            if (updated[1] === 'on' && item[1]) return;
             // skip unchecked options if no change
-            if (updated[1] === 'no' && !i[1]) return;
+            if (updated[1] === 'no' && !item[1]) return;
             // check if roles have been edited
             if (updated[0] === 'roles') {
               const initial_roles = new Set(user.roles);
@@ -718,19 +718,19 @@
               if (!updated[1]) return;
               const prevExpiryDate = (new Date(user.expires_on * 1000)).toLocaleDateString('fr-CA');
               if (prevExpiryDate === updated[1]) return;
-              userUpdated[i[0]] = parseInt(new Date(updated[1]).getTime() / 1000);
+              userUpdated[item[0]] = parseInt(new Date(updated[1]).getTime() / 1000);
               return;
             }
             // set changes on user updated payload
             switch (updated[1]) {
               case 'on':
-                userUpdated[i[0]] = true; // flags on 
+                userUpdated[item[0]] = true; // flags on 
                 break;
               case 'no':
-                userUpdated[i[0]] = false; // flags off
+                userUpdated[item[0]] = false; // flags off
                 break;
               default:
-                userUpdated[i[0]] = updated[1]; // new value
+                userUpdated[item[0]] = updated[1]; // new value
             }
           });
 
@@ -769,7 +769,7 @@
             {description: 'Administrator', status: 'admin'},
             {description: 'API', status: 'api'},
             {description: 'Blocked', status: 'blocked'}
-          ]).map( i => status_checkbox({description: i.description, status: i.status}))}
+          ]).map(item => status_checkbox({description: item.description, status: item.status}))}
 
 
         </div>
@@ -781,15 +781,15 @@
             return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}`;
           }
           //and if there are description to display
-          if (!Object.values(rolesList).every(r => r.label)) {
+          if (!Object.values(rolesList).every(role => role.label)) {
             return mapp.utils.html.node`<div>${mapp.dictionary.admin_view.roles}`
           }
 
           return mapp.utils.html.node`<div onclick=${e => {
             e.stopPropagation();
             let msg = '';
-            Object.entries(rolesList).map(i => {
-              msg += `${[i[0]]} - ${i[1].label || mapp.dictionary.admin_view.roles_no_info}\n`
+            Object.entries(rolesList).map(item => {
+              msg += `${[item[0]]} - ${item[1].label || mapp.dictionary.admin_view.roles_no_info}\n`
             })
 
             mapp.ui.elements.alert({
@@ -875,7 +875,7 @@
 
               filtered
                 .filter(val => !pills.pills.has(val))
-                .filter((val, i) => i < 9)
+                .filter((val, idx) => idx < 9)
                 .forEach(val => (searchbox.list.append(li(val))));
             }
           })
@@ -983,18 +983,18 @@
       const table = mapp.utils.html.node`<table>
       <thead>
         <tr>
-          <th class="asc">${mapp.dictionary.admin_view.email}</th>
-          <th>${mapp.dictionary.admin_view.status}</th>
-          <th class="desktop-only">${mapp.dictionary.admin_view.last_active}</th>
-          <th class="desktop-only">${mapp.dictionary.admin_view.roles}</th>`;
+          <th onclick=${headerCellClickEvent} class="asc">${mapp.dictionary.admin_view.email}</th>
+          <th onclick=${headerCellClickEvent}>${mapp.dictionary.admin_view.status}</th>
+          <th onclick=${headerCellClickEvent} class="desktop-only">${mapp.dictionary.admin_view.last_active}</th>
+          <th onclick=${headerCellClickEvent} class="desktop-only">${mapp.dictionary.admin_view.roles}</th>`;
 
       const tbody = mapp.utils.html.node`<tbody>`
 
-      Object.values(userList).map(i => {
+      Object.values(userList).map(item => {
 
-        const css = `${i.blocked ? `account-blocked none` : ``} ${i.email === cookieResponse.email ? `txt-hl` : ``}`;
+        const css = `${item.blocked ? `account-blocked none` : ``} ${item.email === cookieResponse.email ? `txt-hl` : ``}`;
 
-        const last_active = i.access_log ? new Date(i.access_log.split('@')[0]).toLocaleString('en-GB') : ``;
+        const last_active = item.access_log ? new Date(item.access_log.split('@')[0]).toLocaleString('en-GB') : ``;
 
         let last_active_iso;
 
@@ -1004,19 +1004,20 @@
         } 
         // If the user has logged in, last active date will be the date of the last login, so we can split the string to get the date.
         else {
-          last_active_iso = i.access_log.split('@')[0];
+          last_active_iso = item.access_log.split('@')[0];
         }
-        const active_roles = i.roles.join(', ');
+        
+        const active_roles = item.roles?.length ? item.roles.join(', ') : '';
 
         tbody.appendChild(mapp.utils.html.node`<tr 
           class="${css}"
-          data-email=${i.email}
+          data-email=${item.email}
           onclick=${e => {
             e.stopPropagation();
-            openForm(i);
+            openForm(item);
           }}>
-          <td>${i.email}</td>
-          <td>${checkUserStatus(i)}</td>
+          <td>${item.email}</td>
+          <td>${checkUserStatus(item)}</td>
           <td class="desktop-only" data-iso=${last_active_iso} title=${last_active}>${last_active}</td>
           <td class="desktop-only" title=${active_roles}>${active_roles}</td>
           </tr>`)
@@ -1028,7 +1029,7 @@
 
       const current_url = new URL(window.location);
       if (current_url.searchParams.has('email')) {
-        const findUser = Object.values(userList).find(i => i.email === current_url.searchParams.get('email'));
+        const findUser = Object.values(userList).find(item => item.email === current_url.searchParams.get('email'));
         if (findUser) openForm(findUser);
 
       }
@@ -1145,14 +1146,16 @@
 
     }
 
-    document.querySelectorAll("#userTable table th").forEach(headerCell => {
-      headerCell.addEventListener("click", () => {
-        const tableElement = document.querySelector('#userTable table');
-        const headerIndex = Array.prototype.indexOf.call(headerCell.parentElement.children, headerCell);
-        const currentIsAscending = headerCell.classList.contains("asc");
-        sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
-      });
-    });
+    // table header cell click event - sorting
+    function headerCellClickEvent(e) {
+      e.stopPropagation();
+      const tableElement = document.querySelector('#userTable table');
+      const headerIndex = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+      const currentIsAscending = e.target.classList.contains("asc");
+      sortTableByColumn(tableElement, headerIndex, !currentIsAscending);
+
+    }
+
 
   }
 
