@@ -601,22 +601,19 @@
       return mapp.utils.html.node`<span class="dot" style=${bg}></span>${state.label}`
     }
 
-    function submit(user) {
+    async function submit(user) {
 
-      fetch(`${document.head.dataset.dir}/api/user/update`, {
+      await fetch(`${document.head.dataset.dir}/api/user/update`, {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
           "Content-type": "application/json"
         }
       })
-        .then(response => {
-          document.querySelector('.mask').classList.add('none');
-          removeSearch();
-          createUserTable();
 
-
-        });
+      document.querySelector('.mask').classList.add('none');
+      removeSearch();
+      await createUserTable();
 
     }
 
@@ -683,7 +680,7 @@
       onchange=${e => {
           e.preventDefault();
         }}
-      onsubmit=${e => {
+      onsubmit=${async e => {
           // important: overrride default function
           e.preventDefault();
 
@@ -736,7 +733,7 @@
 
           userUpdated.email = user.email;
           // submit updated user
-          submit(userUpdated);
+          await submit(userUpdated);
 
         }}>
       <div><h2>${mapp.dictionary.admin_view.acc_details}</h2></div>
@@ -1039,7 +1036,7 @@
     async function getUserList() {
 
       // Get user list from host.
-      const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/list`)
+      const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/list`);
 
       // Data must be an array if only 1 record returned in response.
       const data = Array.isArray(response) && response || [response]
