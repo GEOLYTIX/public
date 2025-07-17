@@ -459,7 +459,7 @@
           <p style="margin-top: 0.5em">
             <span id="top-info"
               >Click on a row in the table to make changes to the users
-              permissions and roles. <br/>
+              permissions and roles. <br>
               Click on a table header to sort.</span
             >
           </p>
@@ -558,8 +558,8 @@
       });
 
       // Get list of available roles from workspace.
-      const rolesList = await mapp.utils.xhr(
-        `${document.head.dataset.dir}/api/workspace/roles`
+     const rolesList = await mapp.utils.xhr(
+        `${document.head.dataset.dir}/api/workspace/roles?tree=true`
       );
 
       // List of languages key values.
