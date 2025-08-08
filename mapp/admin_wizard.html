@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="{{language}}">
+  <head data-dir="{{dir}}" data-login="{{login}}">
+    <title>MAPP | User Management Dashboard</title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{dir}}/public/icons/favicon.ico"
+    >
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js"
+      integrity="sha384-R02sHnzL8yl/uvLZvMsfgBOMBIOOHLpuLNo4dLuWQWFun1sxEWJej+SPwiGxaeGd"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load XYZ / MAPP stylesheet and library. -->
+    <!--<link rel="stylesheet" href="{{dir}}/public/css/mapp.css" /> not needed here -->
+    <link rel="stylesheet" href="{{dir}}/public/css/ui.css" />
+
+    <script type="module" src="{{dir}}/public/js/lib/mapp.js" defer></script>
+    <script type="module" src="{{dir}}/public/js/lib/ui.js" defer></script>
+
+    <script
+      type="module"
+      src="{{dir}}/public/js/tests/_mapp.test.js"
+      defer
+    ></script>
+
+    <style>
+
+      :root {
+        --color-notification: #FEFCE8;
+        --color-notification-contrast: #FDF08A;
+        --color-notification-hover: #FDE048;
+        --color-notification-font: #854D0F;
+        --box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        --border-radius: 10px;
+        --padding: 10px;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      
+      .viewport {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-base);
+        
+        .content {
+          height: 100%;
+          background-color: var(--color-base-secondary);
+          border-radius: var(--border-radius);
+          margin: 1em;
+          box-shadow: var(--box-shadow);
+          padding: 1em;
+          display: flex;
+          flex-direction: column;
+
+          .notification {
+            margin: 1em 0;
+            padding: 1em;
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-gap: 10px;
+            background-color: var(--color-notification);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+
+            span {
+              margin: auto 0;
+            }
+
+            button {
+              background-color: var(--color-notification-contrast);
+              color: var(--color-notification-font);
+              border-color: transparent;
+              font-weight: bold;
+
+              &:hover {
+                background-color: var(--color-notification-hover);
+              }
+            }
+            
+          }
+
+          /* begin user table */ 
+        
+          #users {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: auto;
+
+            table {
+              position: relative;
+              width: 100%;
+              display: table;
+              overflow: scroll;
+              cursor: pointer;
+
+              thead {
+                text-align: left;
+                font-weight: bold;
+
+                th {
+                  position: sticky;
+                  top: 0;
+                  background-color: var(--color-base);
+                  box-shadow: var(--box-shadow);
+                  padding: var(--padding);
+
+                  &:first-child {
+                    border-top-left-radius: var(--border-radius);
+                  }
+
+                  &:last-child {
+                    border-top-right-radius: var(--border-radius);
+                  }
+
+                  &:after {
+                    content: '\25be';
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: rotate(270deg);
+                  }
+
+                  /* begin table sorting */
+
+                  &.asc::after {
+                    margin-left: 2px;
+                    content: "\25be";
+                    transform: rotate(180deg);
+                  }
+
+                  &.desc::after {
+                    margin-left: 2px;
+                    content: "\25be";
+                    transform: unset;
+                    vertical-align: baseline;
+
+                  }
+
+                  /* end table sorting */
+                }
+              }
+
+              tbody {
+                tr {
+                  
+                  &:hover {
+                    background-color: var(--color-notification);
+                  }
+                  td {
+                    padding: var(--padding);
+                    border-bottom: 1px solid var(--color-border);
+
+                    .dot {
+                      border-radius: 3px;
+                      padding: 2px 6px;
+                      font-weight: bold;
+                      color: var(--color-font-contrast);
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* end user table */ 
+
+        }
+
+      }
+
+      @media only screen and (max-width: 700px) {
+        body,
+        {
+          margin: 0;
+        }
+
+        .desktop-only {
+          display: none;
+        }
+      }
+
+    </style>
+
+    <body>
+
+      <div class="viewport">
+        <div class="content">
+          <header></header>
+          <div id="notification"></div>
+          <div id="users"></div>
+        </div>
+      </div>
+
+      <script type="module">
+        console.log(`MAPP v${mapp.version}`);
+        // Set the maxWidth for mobile responsive display.
+        mapp.utils.mobile(765);
+
+         // expand dictionary TODO: check what's in use
+         mapp.utils.merge(mapp.dictionaries, {
+          en: {
+            admin_view: {
+              languages: {
+                en: "English",
+                de: "German",
+                zh: "Chinese",
+                zh_tw: "Chinese (Traditional)",
+                pl: "Polish",
+                ja: "Japanese",
+                es: "Spanish",
+                fr: "French",
+                tr: "Turkish",
+                it: "Italian",
+                th: "Thai",
+              },
+              info: "Information",
+              view: "View",
+              save: "Save",
+              confirm: "Confirm",
+              cancel: "Cancel",
+              delete: "Delete",
+              new: "New",
+              re_verification: "Re-verification",
+              verified: "Verified",
+              approved: "Approved",
+              blocked: "Blocked",
+              admin: "Administrator",
+              api: "API",
+              acc_details: "Account Details",
+              email: "E-mail",
+              email_label: "Account e-mail address",
+              lang: "Language",
+              lang_label: "Account Language",
+              status: "Status",
+              status_description: {
+                "Verified": "check the box to verify a user",
+                "Re-verification": "check the box to re-verify after password reset",
+                "Approved": "check the box to approve a user",
+                "Administrator": "check the box to make user an administrator",
+                "API": "check the box to allow the user API privileges",
+                "Blocked": "check the box to block the user",
+              },
+              status_info: "Information on Status",
+              roles: "Access Roles",
+              roles_info: "Information on Access Roles",
+              roles_no_info: "no description provided",
+              roles_view: "View information on access roles",
+              roles_no: "No access roles defined",
+              roles_search: "Search access roles",
+              approved_by: "Approved by",
+              approved_label: "Administrator who approved last modification to this account",
+              expiry: "Account Expiry",
+              expiry_label: "Date when user access expires",
+              access_log: "Access Log",
+              access_log_label: "User Access History",
+              verification_token: "Verification Token",
+              failed_login: "Failed Login Attempts",
+              sure: "Are you sure to delete this user account?",
+              undone: "This cannot be undone",
+              deleted: "Account for this user has been permanently deleted.",
+              delete_user: "Delete User",
+              last_active: "Last active",
+              logged_in_label: "Logged in as",
+              back: "Back to Mapp",
+              test_view: "Test View",
+              logout: "Logout",
+              search_accounts: "Search accounts",
+              filter_status: "Filter status",
+              unknown: "Unknown",
+              show_blocked: "Show blocked accounts",
+              top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort.",
+            },
+          },
+        });
+
+      // Get list of available roles from workspace.
+      const rolesList = await mapp.utils.xhr(
+        `${document.head.dataset.dir}/api/workspace/roles`
+      );
+
+      // List of languages key values - TODO clarify if this is needed
+      const languagesList = mapp.dictionary.admin_view.languages;
+
+      // TODO Get current URL params - clarify if this is needed
+      const params = new URLSearchParams(window.location.search);
+
+      // Create header with all needed parameters, logged in as etc. TODO review what from the past is needed or not
+      const header = mapp.utils.html`<div>
+        <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
+        <h1>User Management Dashboard</h1>
+        <p>Overview of all users, their roles and account status.</p>
+      </div>`;
+
+      mapp.utils.render(document.querySelector('header'), header);
+
+      // create notifications placeholder section
+      const notification = mapp.utils.html`<div class="notification">
+        <span>You have <b>2 pending approvals</b> that require attention</span>
+        <button class="action outlined">Review pending users</button>`
+
+      mapp.utils.render(document.getElementById('notification'), notification);
+
+      // get users list
+      async function getUserList() {
+        // Get user list from host.
+        const response = await mapp.utils.xhr(
+          `${document.head.dataset.dir}/api/user/list`
+        );
+
+        // Data must be an array if only 1 record returned in response.
+        const data = Array.isArray(response) ? response : [response];
+
+        data.forEach((row) => {
+          row.re_verification = !row.verificationtoken;
+        });
+
+        return data;
+      }
+
+      const userList = await getUserList();
+
+      // create user table
+      const users = listTable({
+          data: userList,
+          createRow: createUserRow,
+          headers: [{
+            field: 'email',
+            label: mapp.dictionary.admin_view.email
+          }, {
+            field: 'status',
+            label: mapp.dictionary.admin_view.status
+          }, {
+            field: 'last_active',
+            label: mapp.dictionary.admin_view.last_active,
+            css_class: 'desktop-only'
+          },{
+            field: 'roles',
+            label: mapp.dictionary.admin_view.roles,
+            css_class: 'desktop-only'
+          }]
+        });
+
+      mapp.utils.render(document.getElementById('users'), users.table);
+
+
+      // List table
+
+      function listTable(params) {
+
+        if(!params.data) return;
+
+        if(params.table) return params.update(params);
+
+        params.heads = (params) => {
+
+          if(!params.headers) return;
+
+          const heads = params.headers.map((item, idx) => {
+            const th = mapp.utils.html.node`<th class=${item.css_class || ``}>${mapp.utils.html.node`${item.label}`}`
+
+            th.onclick = params.headerCellClick;
+
+            return th
+          });
+
+          return heads;
+
+        }
+
+        params.rows = (params) => {
+
+          params.data = Array.isArray(params.data) ? params.data : [params.data];
+
+          const rows = params.data.map((item) => params.createRow(item));
+
+          return rows;
+
+        };
+
+        params.make = (params) => {
+
+          params.headers ??= [];
+
+          params.ths = params.heads(params);
+
+          params.trs = params.rows(params);
+
+          params.thead = mapp.utils.html`<thead><tr>${params.ths}`
+
+          params.tbody = mapp.utils.html`<tbody>${params.trs}`;
+
+          params.table = mapp.utils.html.node`<table>${params.thead}${params.tbody}`;
+
+          return params;
+
+        }
+
+        params.sort = (column, asc = true) => {
+
+          const dirModifier = asc ? 1 : -1;
+          const tBody = params.table.tBodies[0];
+          const rows = Array.from(tBody.querySelectorAll("tr"));
+
+          // Sort each row
+          const sortedRows = rows.sort((a, b) => {
+            const td_a = a.querySelector(`td:nth-child(${column + 1})`);
+            const td_b = b.querySelector(`td:nth-child(${column + 1})`);
+            const aColText = td_a.textContent.trim().toLowerCase();
+            const bColText = td_b.textContent.trim().toLowerCase();
+
+            // check if column is a date
+            if (td_a.dataset.iso) {
+              return new Date(td_a.dataset.iso) > new Date(td_b.dataset.iso) ? 1 * dirModifier : -1 * dirModifier;
+            }
+
+            return aColText > bColText ? 1 * dirModifier : -1 * dirModifier;
+          });
+
+          tBody.replaceChildren();
+
+          tBody.append(...sortedRows);
+
+          params.table
+          .querySelectorAll("th")
+          .forEach((th) => th.classList.remove("asc", "desc"));
+
+          params.table
+          .querySelector(`th:nth-child(${column + 1})`)
+          .classList.toggle("asc", asc);
+          params.table
+          .querySelector(`th:nth-child(${column + 1})`)
+          .classList.toggle("desc", !asc);
+
+        };
+
+        // TODO test this and if it's needed
+        params.update = (params) => {
+          const tBody = params.table.tBodies[0];
+          tBody.replaceChildren();
+          const rows = params.rows(params);
+          tBody.append(...rows);
+        };
+
+        params.headerCellClick = (e) => {
+          e.stopPropagation();
+          const headerIndex = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+          const currentIsAscending = e.target.classList.contains("asc");
+          params.sort(headerIndex, !currentIsAscending);
+        };
+
+        params.make(params);
+
+        return params;
+
+      }
+
+      // creates each row in the user table
+      function createUserRow(user) {
+
+        user.status = checkUserStatus(user);
+
+        const last_log_entry = user.access_log.split("@")[0];
+
+        user.last_active = user.access_log
+            ? new Intl.DateTimeFormat('en-GB').format(new Date(last_log_entry))
+            : ``;
+
+        user.last_active_iso = user.last_active === "" ? null : last_log_entry;
+
+        // TODO find out how this should be flattened
+        const active_roles = user.roles?.length ? user.roles.join(", ") : "";
+
+        return mapp.utils.html`<tr>
+          <td>${user.email}</td>
+          <td>${user.status}</td>
+          <td class="desktop-only">${user.last_active}</td>
+          <td class="desktop-only">${active_roles}</td></tr>`
+
+      }
+
+      // Determine user status
+      function checkUserStatus(user) {
+        let state = { label: mapp.dictionary.admin_view.new, color: "#e64a19" };
+        if (user.re_verification)
+          state = {
+            label: mapp.dictionary.admin_view.re_verification,
+            color: "#b71c1c",
+          };
+        if (user.verified)
+          state = {
+            label: mapp.dictionary.admin_view.verified,
+            color: "#9c27b0",
+          };
+        if (user.approved)
+          state = {
+            label: mapp.dictionary.admin_view.approved,
+            color: "#43a047",
+          };
+        if (user.admin)
+          state = { label: mapp.dictionary.admin_view.admin, color: "#0d47a1" };
+        if (user.blocked)
+          state = {
+            label: mapp.dictionary.admin_view.blocked,
+            color: "#263238",
+          };
+
+        return mapp.utils.html`<span class="dot" 
+        style=${'background-color: ' + state.color}>${state.label}</span>`;
+      }
+
+
+
+
+      </script>
+
+    </body>
+
+  </head>
