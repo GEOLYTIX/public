@@ -54,7 +54,68 @@
           display: none;
         }
       }
+
+      .actions {
+          margin-top: 2em; 
+          display: inline-flex; 
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0.2em;
+      }
+
+      /* user details dialog layout */
+      dialog {
+        padding: 1em;
+
+        .details {
+          margin-top: 2em;
+          display: grid; 
+          grid-template-columns: 1fr 2fr;
+          grid-gap: 0;
+
+          div {
+            background-color: var(--color-base-secondary);
+            padding: var(--padding);
+            border-bottom: 1px solid var(--color-border);
+          }
+
+        }
+
+      }
+
+      /* User details action button */
+      button.admin {
+        border-radius: var(--border-radius);
+        min-width: 8em;
+
+        .material-symbol-outlined {
+          font-size: 2em;
+        }
+
+        .label {
+          text-overflow: ellipsis;
+          font-weight: bold;
+        }
+      }
+
+      /* status info dot */
+      .dot {
+        border-radius: 12px;
+        padding: 2px 8px;
+        font-weight: bold;
+        color: var(--color-font-contrast);
+        font-size: 0.9em;
+
+        &.yes {
+          background-color: #0d47a1;
+        }
+
+        &.no {
+          background-color: #546e7a;
+        }
+      }
       
+      /* inside viewport */
       .viewport {
         width: 100%;
         height: 100%;
@@ -168,13 +229,6 @@
                     padding: var(--padding);
                     border-bottom: 1px solid var(--color-border);
 
-                    .dot {
-                      border-radius: 12px;
-                      padding: 2px 8px;
-                      font-weight: bold;
-                      color: var(--color-font-contrast);
-                      font-size: 0.9em;
-                    }
                   }
                 }
               }
@@ -187,6 +241,7 @@
 
       }
 
+      /* rules for mobile */
       @media only screen and (max-width: 700px) {
         body,
         {
@@ -205,6 +260,7 @@
       <div class="viewport">
         <div class="content">
           <header></header>
+          <div id="tools"></div>
           <div id="notification"></div>
           <div id="users"></div>
         </div>
@@ -218,6 +274,8 @@
          // expand dictionary TODO: check what's in use
          mapp.utils.merge(mapp.dictionaries, {
           en: {
+            yes: 'Yes',
+            no: 'No',
             admin_view: {
               languages: {
                 en: "English",
@@ -267,7 +325,7 @@
               roles_no: "No access roles defined",
               roles_search: "Search access roles",
               approved_by: "Approved by",
-              approved_label: "Administrator who approved last modification to this account",
+              approved_label: "Last modification to this account approved by",
               expiry: "Account Expiry",
               expiry_label: "Date when user access expires",
               access_log: "Access Log",
@@ -318,6 +376,23 @@
         <button class="action outlined">Review pending users</button>`
 
       mapp.utils.render(document.getElementById('notification'), notification);
+
+
+      // create administrator actions
+
+      const administrator_tools = mapp.utils.html`<div class="actions">
+        <button class="admin outlined">
+          <span class="material-symbols-outlined">arrow_back_2</span><br>
+          <span class="label">Back to Mapp</span>
+        <button>
+        <button class="admin outlined">
+          <span class="material-symbols-outlined">logout</span><br>
+          <span class="label">Logout</span>
+        <button>
+      </div>`;
+
+      mapp.utils.render(document.getElementById('tools'), administrator_tools);
+
 
       // get users list
       async function getUserList() {
@@ -396,24 +471,6 @@
 
         };
 
-        params.make = (params) => {
-
-          params.headers ??= [];
-
-          params.ths = params.heads(params);
-
-          params.trs = params.rows(params);
-
-          params.thead = mapp.utils.html`<thead><tr>${params.ths}`
-
-          params.tbody = mapp.utils.html`<tbody>${params.trs}`;
-
-          params.table = mapp.utils.html.node`<table>${params.thead}${params.tbody}`;
-
-          return params;
-
-        }
-
         params.sort = (column, asc = true) => {
 
           const dirModifier = asc ? 1 : -1;
@@ -467,10 +524,19 @@
           params.sort(headerIndex, !currentIsAscending);
         };
 
-        params.make(params);
+        params.headers ??= [];
+
+        params.ths = params.heads(params);
+
+        params.trs = params.rows(params);
+
+        params.thead = mapp.utils.html`<thead><tr>${params.ths}`
+
+        params.tbody = mapp.utils.html`<tbody>${params.trs}`;
+
+        params.table = mapp.utils.html.node`<table>${params.thead}${params.tbody}`;
 
         return params;
-
       }
 
       // creates each row in the user table
@@ -489,7 +555,9 @@
         // TODO find out how this should be flattened
         const active_roles = user.roles?.length ? user.roles.join(", ") : "";
 
-        return mapp.utils.html`<tr>
+        return mapp.utils.html.node`<tr onclick=${e => {
+          user_details(e, user);
+        }}>
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
@@ -521,13 +589,99 @@
         if (user.blocked)
           state = {
             label: mapp.dictionary.admin_view.blocked,
-            color: "#263238",
+            color: "#546e7a"
           };
 
         return mapp.utils.html`<span class="dot" style=${'background-color: ' + state.color}>${state.label}</span>`;
       }
 
+      // user details layout with actions
+      function user_details(e, user) {
+        console.log(user);
 
+        const action_buttons = mapp.utils.html`
+            <button class="admin outlined">
+              <span class="material-symbols-outlined">add_moderator</span><br>
+              <span class="label">Grant Roles</span>
+            <button>
+            <button class="admin outlined">
+              <span class="material-symbols-outlined">approval</span><br>
+              <span class="label">Approval</span>
+            <button>`;
+
+        const actions = mapp.utils.html.node`
+        <div class="actions">
+          ${action_buttons}
+          <button class="admin outlined" onclick=${e => {
+           dialog.close();
+            }}>
+            <span class="material-symbols-outlined">back_to_tab</span><br>
+            <span class="label">Back to Dashboard</span>
+          </button>
+        </div>`;
+
+        const bottom_actions = mapp.utils.html`
+          <div class="actions">
+          <button class="admin outlined">
+            <span class="material-symbols-outlined">block</span><br>
+            <span class="label">Block Account</span>
+          <button>
+          <button class="admin outlined">
+            <span class="material-symbols-outlined">account_circle_off</span><br>
+            <span class="label">Delete Account</span>
+          <button></div>`;
+
+
+        const content = [
+          actions,
+          user_details_content(user),
+          bottom_actions
+        ];
+
+        const dialog = mapp.ui.elements.dialog({
+          header: mapp.utils.html.node`<h1>User Account Details`,
+          css_style: 'width: 100%; height: 100%',
+          closeBtn: true,
+          onClose: () => {
+            console.log('I have been closed')
+          },
+          content,
+        });
+      }
+
+      // user prop content for read only
+      function user_details_content(user) {
+
+        const expiryDate = user.expires_on ? 
+        mapp.utils.html`
+          <div>${mapp.dictionary.admin_view.expiry_label}</div>
+          <div>${new Intl.DateTimeFormat('en-GB').format(new Date (user.expires_on * 1000))}</div>` : ``;
+
+        const api_access = user.api ? mapp.utils.html`<span class="dot yes">${mapp.dictionary.yes}` : mapp.utils.html`<span class="dot no">${mapp.dictionary.no}`;
+
+        const elements = mapp.utils.html`<div class="details">
+          <div>${mapp.dictionary.admin_view.email_label}</div>
+          <div><b>${user.email}</b>
+          </div>
+          <div>${mapp.dictionary.admin_view.lang_label}</div>
+          <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
+          
+          <div>Account Status</div>
+          <div>${checkUserStatus(user)}</div>
+          <div>API Access</div>
+          <div>${api_access}</div>
+          <div>${mapp.dictionary.admin_view.approved_label}</div>
+          <div>${user.approved_by}</div>
+          ${expiryDate}
+          <div>${mapp.dictionary.admin_view.verification_token}</div>
+          <div>${user.verificationtoken}</div>
+          <div>${mapp.dictionary.admin_view.failed_login}</div>
+          <div>${user.failedattempts}</div>
+        </div>
+        `;
+
+        return elements;
+      }
 
 
       </script>
