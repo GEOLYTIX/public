@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{language}}">
   <head data-dir="{{dir}}" data-login="{{login}}">
-    <title>MAPP | User Management Dashboard</title>
+    <title>MAPP | User Administration</title>
 
     <link
       rel="icon"
@@ -169,10 +169,11 @@
                     border-bottom: 1px solid var(--color-border);
 
                     .dot {
-                      border-radius: 3px;
-                      padding: 2px 6px;
+                      border-radius: 12px;
+                      padding: 2px 8px;
                       font-weight: bold;
                       color: var(--color-font-contrast);
+                      font-size: 0.9em;
                     }
                   }
                 }
@@ -291,7 +292,7 @@
           },
         });
 
-      // Get list of available roles from workspace.
+        // Get list of available roles from workspace.
       const rolesList = await mapp.utils.xhr(
         `${document.head.dataset.dir}/api/workspace/roles`
       );
@@ -302,7 +303,7 @@
       // TODO Get current URL params - clarify if this is needed
       const params = new URLSearchParams(window.location.search);
 
-      // Create header with all needed parameters, logged in as etc. TODO review what from the past is needed or not
+      // Create header with all needed parameters, logged in as etc.
       const header = mapp.utils.html`<div>
         <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
         <h1>User Management Dashboard</h1>
@@ -344,17 +345,17 @@
           headers: [{
             field: 'email',
             label: mapp.dictionary.admin_view.email
-          }, {
-            field: 'status',
-            label: mapp.dictionary.admin_view.status
-          }, {
-            field: 'last_active',
-            label: mapp.dictionary.admin_view.last_active,
-            css_class: 'desktop-only'
           },{
             field: 'roles',
             label: mapp.dictionary.admin_view.roles,
             css_class: 'desktop-only'
+          }, {
+            field: 'last_active',
+            label: mapp.dictionary.admin_view.last_active,
+            css_class: 'desktop-only'
+          }, {
+            field: 'status',
+            label: mapp.dictionary.admin_view.status
           }]
         });
 
@@ -490,9 +491,10 @@
 
         return mapp.utils.html`<tr>
           <td>${user.email}</td>
-          <td>${user.status}</td>
+          <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td class="desktop-only">${active_roles}</td></tr>`
+          <td>${user.status}</td>
+          </tr>`
 
       }
 
@@ -522,8 +524,7 @@
             color: "#263238",
           };
 
-        return mapp.utils.html`<span class="dot" 
-        style=${'background-color: ' + state.color}>${state.label}</span>`;
+        return mapp.utils.html`<span class="dot" style=${'background-color: ' + state.color}>${state.label}</span>`;
       }
 
 
