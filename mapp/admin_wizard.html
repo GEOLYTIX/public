@@ -64,7 +64,7 @@
       }
 
       /* user details dialog layout */
-      dialog {
+      dialog.user-details {
         padding: 1em;
 
         .details {
@@ -87,6 +87,16 @@
       button.admin {
         border-radius: var(--border-radius);
         min-width: 8em;
+
+        &.disabled {
+          pointer-events: none;
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+
+        * {
+          pointer-events: none;
+        }
 
         .material-symbol-outlined {
           font-size: 2em;
@@ -179,6 +189,7 @@
 
                 th {
                   position: sticky;
+                  user-select: none;
                   top: 0;
                   background-color: var(--color-base);
                   box-shadow: var(--box-shadow);
@@ -350,9 +361,9 @@
           },
         });
 
-        // Get list of available roles from workspace.
+        // Get list of available roles from workspace. TODO check how to show these
       const rolesList = await mapp.utils.xhr(
-        `${document.head.dataset.dir}/api/workspace/roles`
+        `${document.head.dataset.dir}/api/workspace/roles?tree=true`
       );
 
       // List of languages key values - TODO clarify if this is needed
@@ -381,11 +392,13 @@
       // create administrator actions
 
       const administrator_tools = mapp.utils.html`<div class="actions">
-        <button class="admin outlined">
+        <button class="admin outlined"
+        onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
           <span class="material-symbols-outlined">arrow_back</span><br>
           <span class="label">Back to Mapp</span>
         <button>
-        <button class="admin outlined">
+        <button class="admin outlined"
+        onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
           <span class="material-symbols-outlined">logout</span><br>
           <span class="label">Logout</span>
         <button>
@@ -437,7 +450,7 @@
       mapp.utils.render(document.getElementById('users'), users.table);
 
 
-      // List table
+      // List table and its functionalities
 
       function listTable(params) {
 
@@ -509,7 +522,6 @@
 
         };
 
-        // TODO test this and if it's needed
         params.update = (params) => {
           const tBody = params.table.tBodies[0];
           tBody.replaceChildren();
@@ -523,8 +535,6 @@
           const currentIsAscending = e.target.classList.contains("asc");
           params.sort(headerIndex, !currentIsAscending);
         };
-
-        params.headers ??= [];
 
         params.ths = params.heads(params);
 
@@ -544,7 +554,7 @@
 
         user.status = checkUserStatus(user);
 
-        const last_log_entry = user.access_log.split("@")[0];
+        const last_log_entry = user.access_log ? user.access_log.split("@")[0] : ``;
 
         user.last_active = user.access_log
             ? new Intl.DateTimeFormat('en-GB').format(new Date(last_log_entry))
@@ -611,22 +621,23 @@
 
         const actions = mapp.utils.html.node`
         <div class="actions">
-          ${action_buttons}
           <button class="admin outlined" onclick=${e => {
            dialog.close();
             }}>
             <span class="material-symbols-outlined">back_to_tab</span><br>
-            <span class="label">Back to Dashboard</span>
+            <span class="label">Back to List</span>
           </button>
+           ${action_buttons}
         </div>`;
 
         const bottom_actions = mapp.utils.html`
           <div class="actions">
-          <button class="admin outlined">
+          <button class=${'admin outlined' + (user.blocked ? ' disabled' : '')} data-user=${user.email}
+          onclick=${blockAccount}>
             <span class="material-symbols-outlined">block</span><br>
             <span class="label">Block Account</span>
           <button>
-          <button class="admin outlined">
+          <button class="admin outlined" data-user=${user.email} onclick=${deleteAccount}>
             <span class="material-symbols-outlined">account_circle_off</span><br>
             <span class="label">Delete Account</span>
           <button></div>`;
@@ -639,25 +650,90 @@
         ];
 
         const dialog = mapp.ui.elements.dialog({
+          target: document.body,
           header: mapp.utils.html.node`<h1>User Account Details`,
           css_style: 'width: 100%; height: 100%',
+          class: 'user-details box-shadow',
           closeBtn: true,
-          onClose: () => {
-            console.log('I have been closed')
+          onClose: async (e) => {
+            // if users list needs update request data and recreate rows
+            if(e?.target.dataset.update) {
+              users.data = await getUserList();
+              users.update(users);
+            }
           },
           content,
         });
       }
 
-      // user prop content for read only
+      /* this function deletes user account after confirmation and returns to main view */
+      async function deleteAccount(e) {
+
+        const user_email = e.target.dataset.user;
+
+        const text = `${user_email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
+
+        const confirm = await mapp.ui.elements.confirm({ 
+          text
+        });
+
+        if (confirm) {
+            const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${user_email}`);
+            if (response?.err) return console.error(response.err);
+            // close details and refresh users table
+            updateUsersList(e);
+        }
+
+      }
+
+      /* this function blocks user account after confirmation and returns to main view */
+      async function blockAccount(e) {
+
+        const user_email = e.target.dataset.user;
+        const text = `${user_email}\nAre you sure to block this user account?`;
+
+        const confirm = await mapp.ui.elements.confirm({ 
+          text
+        });
+
+        if (confirm) {
+          
+          await fetch(`${document.head.dataset.dir}/api/user/update`, {
+            method: "POST",
+            body: JSON.stringify({email: user_email, blocked: true}),
+            headers: {
+              "Content-type": "application/json",
+            },
+          });
+            // close details and refresh users table
+            updateUsersList(e);
+        }
+
+      }
+
+      /* this function sets update flag on user details window in order to update list of users with edited values after exit to main view */
+      function updateUsersList(e) {
+
+        const userDetails = e.target.closest('dialog.user-details');
+        // set attribute for update
+        userDetails.dataset.update = true;
+        userDetails.close();
+
+      }
+
+      // user prop content for read only TODO will require to be updated as well 
       function user_details_content(user) {
 
         const expiryDate = user.expires_on ? 
-        mapp.utils.html`
-          <div>${mapp.dictionary.admin_view.expiry_label}</div>
-          <div>${new Intl.DateTimeFormat('en-GB').format(new Date (user.expires_on * 1000))}</div>` : ``;
+        new Intl.DateTimeFormat('en-GB').format(new Date(user.expires_on * 1000)) : `-`;
 
         const api_access = user.api ? mapp.utils.html`<span class="dot yes">${mapp.dictionary.yes}` : mapp.utils.html`<span class="dot no">${mapp.dictionary.no}`;
+
+        const approved_by = user.approved_by ? 
+        `${user.approved_by.split('|')[0]}` : ``;
+
+        const approved_on = user.approved_by?.split('|')[1] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : ``;
 
         const elements = mapp.utils.html`<div class="details">
           <div>${mapp.dictionary.admin_view.email_label}</div>
@@ -665,14 +741,18 @@
           </div>
           <div>${mapp.dictionary.admin_view.lang_label}</div>
           <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
-          
           <div>Account Status</div>
           <div>${checkUserStatus(user)}</div>
           <div>API Access</div>
           <div>${api_access}</div>
+          <div>${mapp.dictionary.admin_view.expiry_label}</div>
+          <div>${expiryDate}</div>
+          <div>Last active</div>
+          <div>${user.last_active}</div>
           <div>${mapp.dictionary.admin_view.approved_label}</div>
-          <div>${user.approved_by}</div>
-          ${expiryDate}
+          <div>${approved_by}</div>
+          <div>Last modification approved on</div>
+          <div>${approved_on}</div>
           <div>${mapp.dictionary.admin_view.verification_token}</div>
           <div>${user.verificationtoken}</div>
           <div>${mapp.dictionary.admin_view.failed_login}</div>
