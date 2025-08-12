@@ -572,8 +572,7 @@
 
         user.last_active_iso = user.last_active === "" ? null : last_log_entry;
 
-        // TODO find out how this should be flattened
-        const active_roles = user.roles?.length ? user.roles.join(", ") : "";
+        const active_roles = get_user_roles(user);
 
         return mapp.utils.html.node`<tr onclick=${e => {
           user_details(e, user);
@@ -583,6 +582,14 @@
           <td class="desktop-only">${user.last_active}</td>
           <td>${checkUserStatus(user)}</td>
           </tr>`
+
+      }
+
+      /* this function will display user roles in table and details */
+      function get_user_roles(user) {
+        // TODO find out how this should be flattened and adjusted
+        const active_roles = user.roles?.length ? user.roles.join(", ") : "";
+        return active_roles;
 
       }
 
@@ -769,6 +776,8 @@
           <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
           <div>Account Status</div>
           <div>${checkUserStatus(user)}</div>
+          <div>User Access Roles</div>
+          <div>${get_user_roles(user)}</div>
           <div>API Access</div>
           <div>${api_access}</div>
           <div>${mapp.dictionary.admin_view.expiry_label}</div>
