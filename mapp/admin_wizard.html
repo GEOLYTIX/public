@@ -88,6 +88,18 @@
         border-radius: var(--border-radius);
         min-width: 8em;
 
+        &.block {
+          .material-symbols-outlined::after {
+            content: 'lock';
+          }
+        }
+
+         &.unblock {
+          .material-symbols-outlined::after {
+            content: 'lock_open_right';
+          }
+        }
+
         &.disabled {
           pointer-events: none;
           cursor: not-allowed;
@@ -552,8 +564,6 @@
       // creates each row in the user table
       function createUserRow(user) {
 
-        user.status = checkUserStatus(user);
-
         const last_log_entry = user.access_log ? user.access_log.split("@")[0] : ``;
 
         user.last_active = user.access_log
@@ -571,7 +581,7 @@
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td>${user.status}</td>
+          <td>${checkUserStatus(user)}</td>
           </tr>`
 
       }
@@ -632,20 +642,22 @@
 
         const bottom_actions = mapp.utils.html`
           <div class="actions">
-          <button class=${'admin outlined' + (user.blocked ? ' disabled' : '')} data-user=${user.email}
+          <button class=${'admin outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
-            <span class="material-symbols-outlined">block</span><br>
-            <span class="label">Block Account</span>
+            <span class="material-symbols-outlined"></span><br>
+            <span class="label">${user.blocked ? 'Unblock Account' : 'Block Account'}</span>
           <button>
-          <button class="admin outlined" data-user=${user.email} onclick=${deleteAccount}>
+          <button class="admin outlined" data-email=${user.email} onclick=${deleteAccount}>
             <span class="material-symbols-outlined">account_circle_off</span><br>
             <span class="label">Delete Account</span>
           <button></div>`;
 
+          const user_details = mapp.utils.html`<div class="details">${user_details_content(user)}`;
+
 
         const content = [
           actions,
-          user_details_content(user),
+          user_details,
           bottom_actions
         ];
 
@@ -669,16 +681,16 @@
       /* this function deletes user account after confirmation and returns to main view */
       async function deleteAccount(e) {
 
-        const user_email = e.target.dataset.user;
+        const email = e.target.dataset.email;
 
-        const text = `${user_email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
+        const text = `${email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
 
         const confirm = await mapp.ui.elements.confirm({ 
           text
         });
 
         if (confirm) {
-            const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${user_email}`);
+            const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${email}`);
             if (response?.err) return console.error(response.err);
             // close details and refresh users table
             updateUsersList(e);
@@ -689,24 +701,36 @@
       /* this function blocks user account after confirmation and returns to main view */
       async function blockAccount(e) {
 
-        const user_email = e.target.dataset.user;
-        const text = `${user_email}\nAre you sure to block this user account?`;
+        const user = JSON.parse(e.target.dataset.user);
+
+        //const user_email = e.target.dataset.user;
+        const text = `${user.email}\n${user.blocked ? 
+          'Are you sure to unblock this user account?' : 'Are you sure to block this user account?'}`;
 
         const confirm = await mapp.ui.elements.confirm({ 
           text
         });
 
         if (confirm) {
-          
+
+          user.blocked = !user.blocked;
+
           await fetch(`${document.head.dataset.dir}/api/user/update`, {
             method: "POST",
-            body: JSON.stringify({email: user_email, blocked: true}),
+            body: JSON.stringify({email: user.email, blocked: user.blocked}),
             headers: {
               "Content-type": "application/json",
             },
           });
-            // close details and refresh users table
-            updateUsersList(e);
+          // refresh user content while keeping the user details window on
+          mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+          // update button label
+          e.target.querySelector('.label').textContent = user.blocked ? 'Unblock Account' : 'Block Account';
+          // update button icon
+          e.target.classList.toggle('block', 'unblock');
+          // update user attribute in the target
+          e.target.dataset.user = JSON.stringify(user);
+
         }
 
       }
@@ -717,6 +741,8 @@
         const userDetails = e.target.closest('dialog.user-details');
         // set attribute for update
         userDetails.dataset.update = true;
+        // if button has keep option keep the user details dialog open
+        if(e.target.dataset.keep) return;
         userDetails.close();
 
       }
@@ -735,7 +761,7 @@
         const approved_on = user.approved_by?.split('|')[1] ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : ``;
 
-        const elements = mapp.utils.html`<div class="details">
+        const elements = mapp.utils.html`
           <div>${mapp.dictionary.admin_view.email_label}</div>
           <div><b>${user.email}</b>
           </div>
@@ -757,7 +783,6 @@
           <div>${user.verificationtoken}</div>
           <div>${mapp.dictionary.admin_view.failed_login}</div>
           <div>${user.failedattempts}</div>
-        </div>
         `;
 
         return elements;
