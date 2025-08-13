@@ -326,7 +326,7 @@
               blocked: "Blocked",
               admin: "Administrator",
               api: "API",
-              acc_details: "Account Details",
+              acc_details: "User Account Details",
               email: "E-mail",
               email_label: "Account e-mail address",
               lang: "Language",
@@ -626,12 +626,16 @@
       function user_details(e, user) {
         console.log(user);
 
-        const action_buttons = mapp.utils.html`
-            <button class="admin outlined">
+        // TODO prevent grant roles for blocked users
+        const grant_btn = mapp.utils.html`
+            <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}">
               <span class="material-symbols-outlined">add_moderator</span><br>
               <span class="label">Grant Roles</span>
-            <button>
-            <button class="admin outlined">
+            <button>`;
+
+        // TODO prevent approval when roles exist and have not been visited?
+        const approve_btn = mapp.utils.html`
+            <button class="${'admin outlined approve' + (user.blocked ? ' disabled' : '')}">
               <span class="material-symbols-outlined">approval</span><br>
               <span class="label">Approval</span>
             <button>`;
@@ -644,7 +648,8 @@
             <span class="material-symbols-outlined">back_to_tab</span><br>
             <span class="label">Back to List</span>
           </button>
-           ${action_buttons}
+           ${grant_btn}
+           ${approve_btn}
         </div>`;
 
         const bottom_actions = mapp.utils.html`
@@ -670,16 +675,15 @@
 
         const dialog = mapp.ui.elements.dialog({
           target: document.body,
-          header: mapp.utils.html.node`<h1>User Account Details`,
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.acc_details}`,
           css_style: 'width: 100%; height: 100%',
           class: 'user-details box-shadow',
           closeBtn: true,
           onClose: async (e) => {
             // if users list needs update request data and recreate rows
-            if(e?.target.dataset.update) {
-              users.data = await getUserList();
-              users.update(users);
-            }
+            if(!dialog.node.dataset.update) return;
+            users.data = await getUserList();
+            users.update(users);
           },
           content,
         });
@@ -735,8 +739,11 @@
           e.target.querySelector('.label').textContent = user.blocked ? 'Unblock Account' : 'Block Account';
           // update button icon
           e.target.classList.toggle('block', 'unblock');
+          document.querySelector('.grant').classList.toggle('disabled');
+          document.querySelector('.approve').classList.toggle('disabled');
           // update user attribute in the target
           e.target.dataset.user = JSON.stringify(user);
+          updateUsersList(e);
 
         }
 
