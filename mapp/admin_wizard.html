@@ -43,6 +43,14 @@
         --box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
         --border-radius: 10px;
         --padding: 10px;
+
+        --color-approved: #43a047;
+        --color-verified: #9c27b0;
+        --color-re-verify: #b71c1c;
+        --color-blocked: #546e7a;
+        --color-admin: #0d47a1;
+        --color-api: #4527a0;
+        --color-new: #e64a19;
       }
 
       body {
@@ -87,6 +95,7 @@
 
       }
 
+      /* user approval dialog layout */
       dialog.user-approval {
         padding: 1em;
         width: 90%;
@@ -98,9 +107,7 @@
 
       }
 
-
-
-      /* User details action button */
+      /* User details administrative action button */
       button.admin {
         border-radius: var(--border-radius);
         min-width: 8em;
@@ -142,15 +149,15 @@
         font-size: 0.9em;
 
         &.yes {
-          background-color: #0d47a1;
+          background-color: var(--color-approved);
         }
 
         &.no {
-          background-color: #546e7a;
+          background-color: var(--color-blocked);
         }
       }
 
-      /* resusable class for information */
+      /* reusable class for information */
       .notification {
         margin: 1em 0;
         padding: 1em;
@@ -304,10 +311,10 @@
 
       <script type="module">
         console.log(`MAPP v${mapp.version}`);
-        // Set the maxWidth for mobile responsive display.
+        /* Set the maxWidth for mobile responsive display. */
         mapp.utils.mobile(765);
 
-         // expand dictionary TODO: check what's in use
+         /* expand dictionary TODO: check what's in use */
          mapp.utils.merge(mapp.dictionaries, {
           en: {
             yes: 'Yes',
@@ -346,11 +353,11 @@
               lang_label: "Account Language",
               status: "Status",
               status_description: {
-                "Verified": "check the box to verify a user",
-                "Re-verification": "check the box to re-verify after password reset",
-                "Approved": "check the box to approve a user",
-                "Administrator": "check the box to make user an administrator",
-                "API": "check the box to allow the user API privileges",
+                "Verified": "Check the box to verify the user",
+                "Re-verification": "Checked if the user needs to re-verify after password reset",
+                "Approved": "Check the box to approve the user",
+                "Administrator": "Check the box to make the user an administrator",
+                "API": "Check the box to allow the user API privileges",
                 "Blocked": "check the box to block the user",
               },
               status_info: "Information on Status",
@@ -386,20 +393,20 @@
           },
         });
 
-        // Get list of available roles from workspace. TODO check how to show these
+      /* Get list of available roles from workspace. TODO check how to show these */
       const rolesList = await mapp.utils.xhr(
         `${document.head.dataset.dir}/api/workspace/roles?tree=true`
       );
 
       console.log(rolesList);
 
-      // List of languages key values - TODO clarify if this is needed
+      /* List of languages key values - TODO clarify if this is needed */
       const languagesList = mapp.dictionary.admin_view.languages;
 
-      // TODO Get current URL params - clarify if this is needed
+      /* TODO Get current URL params - clarify if this is needed */
       const params = new URLSearchParams(window.location.search);
 
-      // Create header with all needed parameters, logged in as etc.
+      /* Create header with all needed parameters, logged in as etc. TODO review header content */
       const header = mapp.utils.html`<div>
         <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
         <h1>User Management Dashboard</h1>
@@ -408,7 +415,7 @@
 
       mapp.utils.render(document.querySelector('header'), header);
 
-      // create notifications placeholder section
+      /* create notifications placeholder section TODO clarify how this should eventually exist or work */
       const notification = mapp.utils.html`<div class="notification">
         <span>You have <b>2 pending approvals</b> that require attention</span>
         <button class="action outlined">Review pending users</button>`
@@ -416,7 +423,7 @@
       mapp.utils.render(document.getElementById('notification'), notification);
 
 
-      // create administrator actions
+      /* create administrator actions */
 
       const administrator_tools = mapp.utils.html`<div class="actions">
         <button class="admin outlined"
@@ -434,7 +441,7 @@
       mapp.utils.render(document.getElementById('tools'), administrator_tools);
 
 
-      // get users list
+      /* get users list */
       async function getUserList() {
         // Get user list from host.
         const response = await mapp.utils.xhr(
@@ -453,7 +460,7 @@
 
       const userList = await getUserList();
 
-      // create user table
+      /* create user table */
       const users = listTable({
           data: userList,
           createRow: createUserRow,
@@ -477,7 +484,7 @@
       mapp.utils.render(document.getElementById('users'), users.table);
 
 
-      // List table and its functionalities
+      /* List table and its functionalities */
 
       function listTable(params) {
 
@@ -576,7 +583,7 @@
         return params;
       }
 
-      // creates each row in the user table
+      /* this function creates each row in the user table */
       function createUserRow(user) {
 
         const last_log_entry = user.access_log ? user.access_log.split("@")[0] : ``;
@@ -589,18 +596,16 @@
 
         const active_roles = get_user_roles(user);
 
-        return mapp.utils.html.node`<tr onclick=${e => {
-          user_details(e, user);
-        }}>
+        return mapp.utils.html.node`<tr data-user=${JSON.stringify(user)} onclick=${user_details}>
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td>${checkUserStatus(user)}</td>
+          <td>${check_user_status(user)}</td>
           </tr>`
 
       }
 
-      /* this function will display user roles in table and details */
+      /* this function will display user roles in table and details TODO */
       function get_user_roles(user) {
         // TODO find out how this should be flattened and adjusted
         const active_roles = user.roles?.length ? user.roles.join(", ") : "";
@@ -608,40 +613,41 @@
 
       }
 
-      // Determine user status
-      function checkUserStatus(user) {
-        let state = { label: mapp.dictionary.admin_view.new, color: "#e64a19" };
+      /* this function determines user status */
+      function check_user_status(user) {
+        let state = { label: mapp.dictionary.admin_view.new, color: "var(--color-new)" };
         if (user.re_verification)
           state = {
             label: mapp.dictionary.admin_view.re_verification,
-            color: "#b71c1c",
+            color: "var(--color-re-verify)",
           };
         if (user.verified)
           state = {
             label: mapp.dictionary.admin_view.verified,
-            color: "#9c27b0",
+            color: "var(--color-verified)",
           };
         if (user.approved)
           state = {
             label: mapp.dictionary.admin_view.approved,
-            color: "#43a047",
+            color: "var(--color-approved)",
           };
         if (user.admin)
-          state = { label: mapp.dictionary.admin_view.admin, color: "#0d47a1" };
+          state = { label: mapp.dictionary.admin_view.admin, color: "var(--color-admin)" };
         if (user.blocked)
           state = {
             label: mapp.dictionary.admin_view.blocked,
-            color: "#546e7a"
+            color: "var(--color-blocked)"
           };
 
         return mapp.utils.html`<span class="dot" style=${'background-color: ' + state.color}>${state.label}</span>`;
       }
 
-      // user details layout with actions
-      function user_details(e, user) {
+      /* this function creates user details layout with actions */
+      function user_details(e) {
+        const user = JSON.parse(e.target.dataset.user);
         console.log(user);
 
-        // TODO prevent grant roles for blocked users
+        // TODO prevent grant roles for blocked users. Should it be prevented if no roles exist?
         const grant_btn = mapp.utils.html`
             <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}">
               <span class="material-symbols-outlined">add_moderator</span><br>
@@ -726,7 +732,7 @@
 
       }
 
-      /* this function blocks user account after confirmation and returns to main view */
+      /* this function blocks user account after confirmation */
       async function blockAccount(e) {
 
         const user = JSON.parse(e.target.dataset.user);
@@ -766,20 +772,41 @@
 
       }
 
+      /* this function modifies user account and returns to updated user details view. Called inside userApproval */
       async function approveAccount(e) {
         if(!e.target.dataset?.user) {
           // no changes made
           return;
         }
-        console.log('hello approve these changes and exit to newly updated user details and then user table!');
 
         const user = JSON.parse(e.target.dataset.user);
 
-        console.log(user);
+        //console.log('hello approve these changes and exit to newly updated user details and then user table!');
+        await fetch(`${document.head.dataset.dir}/api/user/update`, {
+          method: "POST",
+          body: JSON.stringify({
+            email: user.email,
+            approved: user.approved,
+            verified: user.verified,
+            admin: user.admin,
+            api: user.api,
+            expires_on: user.expires_on
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
 
-        // nothing else here yet
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+        // update details and the list but keep details open
+        updateUsersList(e);
+        // close approval window
+        e.target.closest('dialog.user-approval').close();
+
       }
 
+      /* this function displays editable user details where changes are saved and approval process is completed */
       async function userApproval(e) {
 
         const user = JSON.parse(e.target.dataset.user);
@@ -805,11 +832,8 @@
 
         const re_verification = mapp.ui.elements.chkbox({
           checked: user.re_verification,
-          label: mapp.dictionary.admin_view.status_description["Re-verification"],
-          onchange: (checked) => {
-            user.re_verification = checked;
-            save_btn.dataset.user = JSON.stringify(user);
-          }
+          disabled: true,
+          label: mapp.dictionary.admin_view.status_description["Re-verification"]
         });
 
         const approved = mapp.ui.elements.chkbox({
@@ -817,6 +841,15 @@
           label: mapp.dictionary.admin_view.status_description["Approved"],
           onchange: (checked) => {
             user.approved = checked;
+            save_btn.dataset.user = JSON.stringify(user);
+          }
+        });
+
+        const admin = mapp.ui.elements.chkbox({
+          checked: user.admin,
+          label: mapp.dictionary.admin_view.status_description["Administrator"],
+          onchange: (checked) => {
+            user.admin = checked;
             save_btn.dataset.user = JSON.stringify(user);
           }
         });
@@ -830,7 +863,8 @@
           }
         });
 
-        const save_btn = mapp.utils.html.node`<button class="save admin outlined"
+        /* saves changes to user account */
+        const save_btn = mapp.utils.html.node`<button class="save admin outlined" data-keep=true
         onclick=${approveAccount}>
         <span class="material-symbols-outlined">verified</span><br>
         <span class="label">Approve Changes</span>
@@ -845,23 +879,37 @@
         </button>`;
 
         const content = mapp.utils.html`
-          <div class="notification"><b>Visit Grant Roles section in order to update user roles or give Administrator privilege.</b></div>
+          <div class="notification"><b>Visit Grant Roles section in order to set user roles.</b></div>
           <div class="actions">
             ${cancel_btn}
             ${save_btn}
           </div>
           <div class="details">
-          <div>${mapp.dictionary.admin_view.email_label}</div>
+          <div><b>${mapp.dictionary.admin_view.email_label}</b></div>
           <div><b>${user.email}</b></div>
-          <div>${mapp.dictionary.admin_view.verified}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
+          </div>
           <div>${verification}</div>
-          <div>${mapp.dictionary.admin_view.re_verification}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
+          </div>
           <div>${re_verification}</div>
-          <div>${mapp.dictionary.admin_view.approved}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
+          </div>
           <div>${approved}</div>
-          <div>${mapp.dictionary.admin_view.api}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
+          </div>
+          <div>${admin}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-api)">${mapp.dictionary.admin_view.api}</span>
+          </div>
           <div>${api_access}</div>
-          <div>${mapp.dictionary.admin_view.expiry_label}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
+          </div>
           <div>${expiry_date_input}</div>
           </div>
         `;
@@ -878,7 +926,7 @@
       /* this function sets update flag on user details window in order to update list of users with edited values after exit to main view */
       function updateUsersList(e) {
 
-        const userDetails = e.target.closest('dialog.user-details');
+        const userDetails = document.querySelector('dialog.user-details');
         // set attribute for update
         userDetails.dataset.update = true;
         // if button has keep option keep the user details dialog open
@@ -908,7 +956,7 @@
           <div>${mapp.dictionary.admin_view.lang_label}</div>
           <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
           <div>Account Status</div>
-          <div>${checkUserStatus(user)}</div>
+          <div>${check_user_status(user)}</div>
           <div>User Access Roles</div>
           <div>${get_user_roles(user)}</div>
           <div>API Access</div>
