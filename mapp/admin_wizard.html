@@ -644,8 +644,8 @@
 
       /* this function creates user details layout with actions */
       function user_details(e) {
-        const user = JSON.parse(e.target.dataset.user);
-        console.log(user);
+
+        const user = JSON.parse(e.target.closest('tr').dataset.user);
 
         // TODO prevent grant roles for blocked users. Should it be prevented if no roles exist?
         const grant_btn = mapp.utils.html`
@@ -664,6 +664,12 @@
               <span class="label">Approval</span>
             </button>`;
 
+        const access_log_btn = mapp.utils.html`
+            <button class="admin outlined access-log disabled">
+              <span class="material-symbols-outlined">pace</span><br>
+              <span class="label">Access Log</span>
+            </button>`;
+
         const actions = mapp.utils.html.node`
         <div class="actions">
           <button class="admin outlined" onclick=${e => {
@@ -674,6 +680,7 @@
           </button>
            ${grant_btn}
            ${approve_btn}
+           ${access_log_btn}
         </div>`;
 
         const bottom_actions = mapp.utils.html`
@@ -688,12 +695,12 @@
             <span class="label">Delete Account</span>
           </button></div>`;
 
-          const user_details = mapp.utils.html`<div class="details">${user_details_content(user)}`;
+          const user_details_layout = mapp.utils.html`<div class="details">${user_details_content(user)}`;
 
 
         const content = [
           actions,
-          user_details,
+          user_details_layout,
           bottom_actions
         ];
 
