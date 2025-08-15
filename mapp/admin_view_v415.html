@@ -674,7 +674,7 @@
       <label for="approved_by">${mapp.dictionary.admin_view.approved_by}</label>
       <input type="text" id="approved_by" name="approved_by" disabled value=${user.approved_by}>`;
 
-        const form_expiry = mapp.utils.html`<li>
+        const form_expiry = mapp.utils.html`<li class="${user.expires_on === undefined ? 'display-none' : ''}">
       <fieldset title="${mapp.dictionary.admin_view.expiry_label}">
       <label for="expires_on">${mapp.dictionary.admin_view.expiry}</label>
       <input type="date" id="expires_on" name="expires_on" value=${((e) => {
@@ -754,7 +754,7 @@
             const prevExpiryDate = new Date(
               user.expires_on * 1000
             ).toLocaleDateString("fr-CA");
-            if (prevExpiryDate === updated[1]) return;
+            if (prevExpiryDate == updated[1]) return;
             userUpdated[item[0]] = parseInt(
               new Date(updated[1]).getTime() / 1000
             );

@@ -946,7 +946,7 @@
             <input type="text" id="approved_by" name="approved_by" disabled value=${user.approved_by}>
           </fieldset>  
         </li>
-        <li>
+        <li class="${user.expires_on === undefined ? 'display-none' : ''}">
           <fieldset title="${mapp.dictionary.admin_view.expiry_label}">
             <label for="expires_on">${mapp.dictionary.admin_view.expiry}</label>
             <input type="date" id="expires_on" name="expires_on"
