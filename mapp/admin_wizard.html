@@ -147,6 +147,8 @@
         font-weight: bold;
         color: var(--color-font-contrast);
         font-size: 0.9em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 
         &.yes {
           background-color: var(--color-approved);
@@ -297,6 +299,16 @@
 
         .desktop-only {
           display: none;
+        }
+
+        .user-approval .checkbox > span:last-child {
+          display: none;
+        }
+
+        .mobile-width {
+          grid-column: 1 / span 2;
+          text-align: center;
+          font-size: 1.1em;
         }
       }
 
@@ -929,13 +941,13 @@
 
         const content = mapp.utils.html`
           <div class="notification"><b>${mapp.dictionary.admin_view.roles_message}</b></div>
+          <div><span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
+          <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
           <div class="actions">
             ${cancel_btn}
             ${save_btn}
           </div>
           <div class="details">
-          <div><b>${mapp.dictionary.admin_view.email_label}</b></div>
-          <div><b>${user.email}</b></div>
           <div>
             <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
           </div>
@@ -1001,9 +1013,11 @@
         const approved_on = user.approved_by?.split('|')[1] ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
 
+        //
+
         const elements = mapp.utils.html`
-          <div>${mapp.dictionary.admin_view.email_label}</div>
-          <div><b>${user.email}</b>
+          <div class="desktop-only">${mapp.dictionary.admin_view.email_label}</div>
+          <div class="mobile-width"><b>${user.email}</b>
           </div>
           <div>${mapp.dictionary.admin_view.lang_label}</div>
           <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
