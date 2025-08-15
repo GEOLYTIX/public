@@ -157,6 +157,10 @@
         }
       }
 
+      .ws-pre {
+        white-space: pre;
+      }
+
       /* reusable class for information */
       .notification {
         margin: 1em 0;
@@ -665,7 +669,9 @@
             </button>`;
 
         const access_log_btn = mapp.utils.html`
-            <button class="admin outlined access-log disabled">
+            <button class="admin outlined access-log" 
+            data-user=${JSON.stringify(user)}
+            onclick=${userAccessLog}>
               <span class="material-symbols-outlined">pace</span><br>
               <span class="label">Access Log</span>
             </button>`;
@@ -776,6 +782,35 @@
           updateUsersList(e);
 
         }
+
+      }
+
+      /* this function display user access log information */
+      async function userAccessLog(e) {
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        const response = await mapp.utils.xhr(
+            `${document.head.dataset.dir}/api/user/log?email=${user.email}`
+          );
+        if (response.err) return console.error(response.err);
+        if (!response.access_log) {
+          mapp.ui.elements.alert({
+            text: 'No access log information found for this user account.'
+          });
+          return;
+        }
+
+        const len = response.access_log.length;
+          // include only last 10 timestamps
+        const log = len < 11
+              ? response.access_log
+              : response.access_log.slice(Math.max(len - 10, 0));
+
+        mapp.ui.elements.alert({
+          title: mapp.dictionary.admin_view.access_log_label,
+          text: mapp.utils.html`<span><b>Last 10 visits</b></span><br><span class="ws-pre">${log.join("\n")}`,
+        });
 
       }
 
