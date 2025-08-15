@@ -321,9 +321,41 @@
          /* expand dictionary TODO: check what's in use */
          mapp.utils.merge(mapp.dictionaries, {
           en: {
-            yes: 'Yes',
             no: 'No',
+            yes: 'Yes',
             admin_view: {
+              acc_details: "User Account Details",
+              access_log: "Access Log",
+              access_log_caption: "Last 10 visits",
+              access_log_label: "User Access History",
+              access_log_not_found: "No access log information found for this user account.",
+              account_status: "Account Status",
+              admin: "Administrator",
+              api: "API Access",
+              approval: "Approval",
+              approve_changes: "Approve Changes",
+              approved: "Approved",
+              approved_by: "Approved by",
+              approved_label: "Last modification to this account approved by",
+              approved_on: "Last modification approved on",
+              back: "Back to Mapp",
+              back_to_list: "Back to List",
+              block_account: "Block Account",
+              blocked: "Blocked",
+              cancel: "Cancel",
+              confirm: "Confirm",
+              confirm_block: "Are you sure to block this user account?",
+              confirm_unblock: "Are you sure to unblock this user account?",
+              delete: "Delete Account",
+              deleted: "Account for this user has been permanently deleted.",
+              email: "E-mail",
+              email_label: "Account e-mail address",
+              exit: "Exit",
+              expiry_label: "Date when user access expires",
+              failed_login: "Failed Login Attempts",
+              filter_status: "Filter status",
+              grant: "Grant Roles",
+              lang_label: "Account Language",
               languages: {
                 en: "English",
                 de: "German",
@@ -337,24 +369,21 @@
                 it: "Italian",
                 th: "Thai",
               },
-              info: "Information",
-              view: "View",
-              save: "Save",
-              confirm: "Confirm",
-              cancel: "Cancel",
-              delete: "Delete",
+              last_active: "Last active",
+              logged_in_label: "Logged in as",
+              logout: "Logout",
               new: "New",
               re_verification: "Re-verification",
-              verified: "Verified",
-              approved: "Approved",
-              blocked: "Blocked",
-              admin: "Administrator",
-              api: "API Access",
-              acc_details: "User Account Details",
-              email: "E-mail",
-              email_label: "Account e-mail address",
-              lang: "Language",
-              lang_label: "Account Language",
+              roles: "User Access Roles",
+              roles_info: "Information on Access Roles",
+              roles_message: "Visit Grant Roles section in order to set user roles.",
+              roles_no: "No access roles defined",
+              roles_no_info: "no description provided",
+              roles_search: "Search access roles",
+              roles_view: "View information on access roles",
+              save: "Save",
+              search_accounts: "Search accounts",
+              show_blocked: "Show blocked accounts",
               status: "Status",
               status_description: {
                 "Verified": "Check the box to verify the user",
@@ -364,35 +393,14 @@
                 "API": "Check the box to allow the user API privileges",
                 "Blocked": "check the box to block the user",
               },
-              status_info: "Information on Status",
-              roles: "Access Roles",
-              roles_info: "Information on Access Roles",
-              roles_no_info: "no description provided",
-              roles_view: "View information on access roles",
-              roles_no: "No access roles defined",
-              roles_search: "Search access roles",
-              approved_by: "Approved by",
-              approved_label: "Last modification to this account approved by",
-              expiry: "Account Expiry",
-              expiry_label: "Date when user access expires",
-              access_log: "Access Log",
-              access_log_label: "User Access History",
-              verification_token: "Verification Token",
-              failed_login: "Failed Login Attempts",
               sure: "Are you sure to delete this user account?",
-              undone: "This cannot be undone",
-              deleted: "Account for this user has been permanently deleted.",
-              delete_user: "Delete User",
-              last_active: "Last active",
-              logged_in_label: "Logged in as",
-              back: "Back to Mapp",
               test_view: "Test View",
-              logout: "Logout",
-              search_accounts: "Search accounts",
-              filter_status: "Filter status",
-              unknown: "Unknown",
-              show_blocked: "Show blocked accounts",
               top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort.",
+              unblock_account: "Unblock Account",
+              undone: "This cannot be undone.",
+              unknown: "Unknown",
+              verification_token: "Verification Token",
+              verified: "Verified",
             },
           },
         });
@@ -433,12 +441,12 @@
         <button class="admin outlined"
         onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
           <span class="material-symbols-outlined">arrow_back</span><br>
-          <span class="label">Back to Mapp</span>
+          <span class="label">${mapp.dictionary.admin_view.back}</span>
         <button>
         <button class="admin outlined"
         onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
           <span class="material-symbols-outlined">logout</span><br>
-          <span class="label">Logout</span>
+          <span class="label">${mapp.dictionary.admin_view.logout}</span>
         <button>
       </div>`;
 
@@ -655,7 +663,7 @@
         const grant_btn = mapp.utils.html`
             <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}">
               <span class="material-symbols-outlined">add_moderator</span><br>
-              <span class="label">Grant Roles</span>
+              <span class="label">${mapp.dictionary.admin_view.grant}</span>
             </button>`;
 
         // TODO prevent approval when roles exist and have not been visited?
@@ -665,7 +673,7 @@
             data-keep=true
             onclick=${userApproval}>
               <span class="material-symbols-outlined">approval</span><br>
-              <span class="label">Approval</span>
+              <span class="label">${mapp.dictionary.admin_view.approval}</span>
             </button>`;
 
         const access_log_btn = mapp.utils.html`
@@ -673,7 +681,7 @@
             data-user=${JSON.stringify(user)}
             onclick=${userAccessLog}>
               <span class="material-symbols-outlined">pace</span><br>
-              <span class="label">Access Log</span>
+              <span class="label">${mapp.dictionary.admin_view.access_log}</span>
             </button>`;
 
         const actions = mapp.utils.html.node`
@@ -682,7 +690,7 @@
            dialog.close();
             }}>
             <span class="material-symbols-outlined">back_to_tab</span><br>
-            <span class="label">Back to List</span>
+            <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
            ${grant_btn}
            ${approve_btn}
@@ -694,11 +702,11 @@
           <button class=${'admin outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
             <span class="material-symbols-outlined"></span><br>
-            <span class="label">${user.blocked ? 'Unblock Account' : 'Block Account'}</span>
+            <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
           </button>
           <button class="admin outlined" data-email=${user.email} onclick=${deleteAccount}>
             <span class="material-symbols-outlined">account_circle_off</span><br>
-            <span class="label">Delete Account</span>
+            <span class="label">${mapp.dictionary.admin_view.delete}</span>
           </button></div>`;
 
           const user_details_layout = mapp.utils.html`<div class="details">${user_details_content(user)}`;
@@ -752,7 +760,7 @@
 
         //const user_email = e.target.dataset.user;
         const text = `${user.email}\n${user.blocked ? 
-          'Are you sure to unblock this user account?' : 'Are you sure to block this user account?'}`;
+          mapp.dictionary.admin_view.confirm_unblock : mapp.dictionary.admin_view.confirm_block}`;
 
         const confirm = await mapp.ui.elements.confirm({ 
           text
@@ -772,7 +780,7 @@
           // refresh user content while keeping the user details window on
           mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
           // update button label
-          e.target.querySelector('.label').textContent = user.blocked ? 'Unblock Account' : 'Block Account';
+          e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
           // update button icon
           e.target.classList.toggle('block', 'unblock');
           document.querySelector('.grant').classList.toggle('disabled');
@@ -796,7 +804,7 @@
         if (response.err) return console.error(response.err);
         if (!response.access_log) {
           mapp.ui.elements.alert({
-            text: 'No access log information found for this user account.'
+            text: mapp.dictionary.admin_view.access_log_not_found
           });
           return;
         }
@@ -809,7 +817,7 @@
 
         mapp.ui.elements.alert({
           title: mapp.dictionary.admin_view.access_log_label,
-          text: mapp.utils.html`<span><b>Last 10 visits</b></span><br><span class="ws-pre">${log.join("\n")}`,
+          text: mapp.utils.html`<span><b>${mapp.dictionary.admin_view.access_log_caption}</b></span><br><span class="ws-pre">${log.join("\n")}`,
         });
 
       }
@@ -909,7 +917,7 @@
         const save_btn = mapp.utils.html.node`<button class="save admin outlined" data-keep=true
         onclick=${approveAccount}>
         <span class="material-symbols-outlined">verified</span><br>
-        <span class="label">Approve Changes</span>
+        <span class="label">${mapp.dictionary.admin_view.approve_changes}</span>
         </button>`;
 
         const cancel_btn = mapp.utils.html.node`<button class="save admin outlined"
@@ -917,11 +925,11 @@
           e.target.closest('dialog.user-approval').close();
         }}>
         <span class="material-symbols-outlined">arrow_back</span><br>
-        <span class="label">Exit</span>
+        <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
         const content = mapp.utils.html`
-          <div class="notification"><b>Visit Grant Roles section in order to set user roles.</b></div>
+          <div class="notification"><b>${mapp.dictionary.admin_view.roles_message}</b></div>
           <div class="actions">
             ${cancel_btn}
             ${save_btn}
@@ -957,7 +965,7 @@
         `;
 
         const dialog = mapp.ui.elements.dialog({
-          header: mapp.utils.html.node`<h1>Approval`,
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.approval}`,
           class: 'user-approval box-shadow',
           closeBtn: true,
           content,
@@ -1000,18 +1008,18 @@
           </div>
           <div>${mapp.dictionary.admin_view.lang_label}</div>
           <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
-          <div>Account Status</div>
+          <div>${mapp.dictionary.admin_view.account_status}</div>
           <div>${check_user_status(user)}</div>
-          <div>User Access Roles</div>
+          <div>${mapp.dictionary.admin_view.roles}</div>
           <div>${get_user_roles(user)}</div>
-          <div>API Access</div>
+          <div>${mapp.dictionary.admin_view.api}</div>
           <div>${api_access}</div>
           ${expiryDateEntry}
-          <div>Last active</div>
+          <div>${mapp.dictionary.admin_view.last_active}</div>
           <div>${user.last_active}</div>
           <div>${mapp.dictionary.admin_view.approved_label}</div>
           <div>${approved_by}</div>
-          <div>Last modification approved on</div>
+          <div>${mapp.dictionary.admin_view.approved_on}</div>
           <div>${approved_on}</div>
           <div>${mapp.dictionary.admin_view.verification_token}</div>
           <div>${user.verificationtoken}</div>
