@@ -948,6 +948,9 @@
         const expiryDate = user.expires_on ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(user.expires_on * 1000)) : `-`;
 
+        const expiryDateEntry = user.expires_on === undefined ? 
+        `` : mapp.utils.html`<div>${mapp.dictionary.admin_view.expiry_label}</div><div>${expiryDate}</div>`;
+
         const api_access = user.api ? mapp.utils.html`<span class="dot yes">${mapp.dictionary.yes}` : mapp.utils.html`<span class="dot no">${mapp.dictionary.no}`;
 
         const approved_by = user.approved_by ? 
@@ -968,8 +971,7 @@
           <div>${get_user_roles(user)}</div>
           <div>API Access</div>
           <div>${api_access}</div>
-          <div>${mapp.dictionary.admin_view.expiry_label}</div>
-          <div>${expiryDate}</div>
+          ${expiryDateEntry}
           <div>Last active</div>
           <div>${user.last_active}</div>
           <div>${mapp.dictionary.admin_view.approved_label}</div>
