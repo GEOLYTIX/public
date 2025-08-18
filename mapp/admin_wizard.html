@@ -877,6 +877,7 @@
         const expiry_date_input = mapp.utils.html.node`<input
           type="date"
           value="${expiry_date}"
+          min=${new Date().toISOString().slice(0, 10)}
           onchange=${(e) => {
             user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
             save_btn.dataset.user = JSON.stringify(user);
