@@ -1014,7 +1014,10 @@
         const approved_on = user.approved_by?.split('|')[1] ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
 
-        //
+        const login_failed_attempts = user.failedattempts > 0 ? 
+        mapp.utils.html`
+          <div>${mapp.dictionary.admin_view.failed_login}</div>
+          <div>${user.failedattempts}</div>` : ``;
 
         const elements = mapp.utils.html`
           <div class="desktop-only">${mapp.dictionary.admin_view.email_label}</div>
@@ -1026,19 +1029,18 @@
           <div>${check_user_status(user)}</div>
           <div>${mapp.dictionary.admin_view.roles}</div>
           <div>${get_user_roles(user)}</div>
-          <div>${mapp.dictionary.admin_view.api}</div>
-          <div>${api_access}</div>
-          ${expiryDateEntry}
           <div>${mapp.dictionary.admin_view.last_active}</div>
           <div>${user.last_active}</div>
+          ${expiryDateEntry}
+          ${login_failed_attempts}
+          <div>${mapp.dictionary.admin_view.api}</div>
+          <div>${api_access}</div>
           <div>${mapp.dictionary.admin_view.approved_label}</div>
           <div>${approved_by}</div>
           <div>${mapp.dictionary.admin_view.approved_on}</div>
           <div>${approved_on}</div>
           <div>${mapp.dictionary.admin_view.verification_token}</div>
           <div>${user.verificationtoken}</div>
-          <div>${mapp.dictionary.admin_view.failed_login}</div>
-          <div>${user.failedattempts}</div>
         `;
 
         return elements;
