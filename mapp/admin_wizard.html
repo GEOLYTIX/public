@@ -405,6 +405,7 @@
               failed_login: "Failed Login Attempts",
               filter_status: "Filter status",
               grant: "Grant Roles",
+              grant_assignment: "Role Assignment",
               lang_label: "Account Language",
               languages: {
                 en: "English",
@@ -1089,7 +1090,7 @@
           `;
 
         const dialog = mapp.ui.elements.dialog({
-          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant}`,
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant_assignment}`,
           class: 'user-grant box-shadow',
           closeBtn: true,
           content,
