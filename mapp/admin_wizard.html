@@ -107,6 +107,13 @@
 
       }
 
+      /* user roles dialog layout */
+      dialog.user-grant {
+        padding: 1em;
+        width: 90%;
+        height: 90%;
+      }
+
       /* User details administrative action button */
       button.admin {
         border-radius: var(--border-radius);
@@ -672,7 +679,9 @@
 
         // TODO prevent grant roles for blocked users. Should it be prevented if no roles exist?
         const grant_btn = mapp.utils.html`
-            <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}">
+            <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
+            data-user=${JSON.stringify(user)}
+            onclick=${roleAssignment}>
               <span class="material-symbols-outlined">add_moderator</span><br>
               <span class="label">${mapp.dictionary.admin_view.grant}</span>
             </button>`;
@@ -979,6 +988,62 @@
         const dialog = mapp.ui.elements.dialog({
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.approval}`,
           class: 'user-approval box-shadow',
+          closeBtn: true,
+          content,
+        });
+
+      }
+
+      async function roleAssignment(e) {
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        const options = Object.keys(rolesList).map(role => {
+          return mapp.utils.html.node`<option value=${role}>${role}<option>`
+        });
+
+        const edit_roles_btn = mapp.utils.html`
+            <button class="admin outlined"
+            data-user=${JSON.stringify(user)}
+            data-keep=true
+            >
+            <span class="material-symbols-outlined">edit</span><br>
+            <span class="label">Edit primary roles</span>
+          </button>`;
+
+        const current_roles = user.roles?.length ? user.roles.map(role => {
+          return mapp.ui.elements.card({
+            header: mapp.utils.html`<span class="dot" style="background-color: var(--color-approved)">${role}</span>`,
+            content: `this is some html info on role ${role}`,
+            close: async (e) => {
+              console.log('role deleted');
+            }
+          })
+        }) : ``
+
+        const current_roles_content = current_roles.length ? mapp.utils.html`<div>
+          <h2>Current roles for this account</h2>
+          ${current_roles}</div>` : `No primary roles granted yet.`;
+
+
+        const content = mapp.utils.html`
+          <div class="notification"><b>Some explanatory text here that this screen does etc.</b></div>
+          <div>
+            <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
+            <h1>
+              <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
+            </h1>
+          <div class="actions">
+            ${edit_roles_btn}
+          </div>
+          <div style="margin-top: 1em; display: grid; grid-template-columns: 2fr 1fr">
+          ${current_roles_content}
+          </div>
+          `;
+
+        const dialog = mapp.ui.elements.dialog({
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant}`,
+          class: 'user-grant box-shadow',
           closeBtn: true,
           content,
         });
