@@ -112,6 +112,13 @@
         padding: 1em;
         width: 90%;
         height: 90%;
+
+        .layout {
+          margin-top: 1em; 
+          display: grid; 
+          grid-template-columns: 60%; 
+          grid-gap: 2px;
+        } 
       }
 
       /* User details administrative action button */
@@ -1021,9 +1028,10 @@
           })
         }) : ``
 
-        const current_roles_content = current_roles.length ? mapp.utils.html`<div>
+        const current_roles_content = current_roles.length ? 
+        mapp.utils.html`<div class="layout">
           <h2>Current roles for this account</h2>
-          ${current_roles}</div>` : `No primary roles granted yet.`;
+          ${current_roles}</div>` : mapp.utils.html`<div class="layout">No primary roles granted yet.`;
 
 
         const content = mapp.utils.html`
@@ -1036,9 +1044,7 @@
           <div class="actions">
             ${edit_roles_btn}
           </div>
-          <div style="margin-top: 1em; display: grid; grid-template-columns: 2fr 1fr">
           ${current_roles_content}
-          </div>
           `;
 
         const dialog = mapp.ui.elements.dialog({
