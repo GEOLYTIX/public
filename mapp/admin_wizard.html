@@ -113,11 +113,38 @@
         width: 90%;
         height: 90%;
 
+        .title {
+          margin-top: 1em; 
+        }
+
         .layout {
           margin-top: 1em; 
-          display: grid; 
-          grid-template-columns: 60%; 
-          grid-gap: 2px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap; 
+          gap: 0.5em;
+
+          .role-item {
+            background-color: var(--color-base-secondary);
+            padding: var(--padding);
+            border-bottom: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+
+            button {
+              * {
+                pointer-events: none;
+              }
+              .dot {
+                background-color: var(--color-blocked);
+              }
+
+              &.granted {
+                .dot {
+                  background-color: var(--color-approved);
+                }
+              }
+            }
+          }
         } 
       }
 
@@ -346,8 +373,6 @@
 
         mapp.utils.merge(mapp.dictionaries, {
           en: {
-            no: 'No',
-            yes: 'Yes',
             admin_view: {
               acc_details: "User Account Details",
               access_log: "Access Log",
@@ -427,6 +452,8 @@
               verification_token: "Verification Token",
               verified: "Verified",
             },
+            no: 'No',
+            yes: 'Yes',
           },
         });
 
@@ -1001,7 +1028,10 @@
 
       }
 
+      /* TODO in progress - role assignment workflow */
       async function roleAssignment(e) {
+
+        if(!rolesList || rolesList === {}) return console.log('no roles found');
 
         const user = JSON.parse(e.target.dataset.user);
 
@@ -1018,32 +1048,43 @@
             <span class="label">Edit primary roles</span>
           </button>`;
 
-        const current_roles = user.roles?.length ? user.roles.map(role => {
-          return mapp.ui.elements.card({
-            header: mapp.utils.html`<span class="dot" style="background-color: var(--color-approved)">${role}</span>`,
-            content: `this is some html info on role ${role}`,
-            close: async (e) => {
-              console.log('role deleted');
+        const current_roles = rolesList ? Object.keys(rolesList).map(role => {
+         
+          return mapp.utils.html.node`<div class="role-item">
+          <button class=${user.roles.includes(role) ? 'granted' : ''}
+          onclick=${(e) => {
+            e.target.classList.toggle('granted');
+            const action = e.target.classList.contains('granted');
+            if(action) {
+              console.log('grant this role');
+            } else {
+              console.log('take away this role');
             }
-          })
+          }}>
+          <span class="dot">${role}</span>
+          </button>
+          <button class="action disabled">
+          <span class="material-symbols-outlined">edit</span>
+          <span>Edit role</span>
+          </button>`;
         }) : ``
 
         const current_roles_content = current_roles.length ? 
-        mapp.utils.html`<div class="layout">
-          <h2>Current roles for this account</h2>
-          ${current_roles}</div>` : mapp.utils.html`<div class="layout">No primary roles granted yet.`;
+        mapp.utils.html`
+          <div class="title">
+          <h2>Available primary roles</h2>
+          </div>
+          <div class="layout">
+          ${current_roles}</div>` : mapp.utils.html`<div class="title">No primary roles available.`;
 
 
         const content = mapp.utils.html`
-          <div class="notification"><b>Some explanatory text here that this screen does etc.</b></div>
+          <div class="notification ws-pre"><b>Active roles are highlighted in <span class="dot" style="background-color: var(--color-approved)">green</span>\nClick on roles to switch their status.\nUse role editing in order to access additional settings.</b></div>
           <div>
             <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
             <h1>
               <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
             </h1>
-          <div class="actions">
-            ${edit_roles_btn}
-          </div>
           ${current_roles_content}
           `;
 
