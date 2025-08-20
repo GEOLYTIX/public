@@ -41,7 +41,7 @@
         --color-notification-hover: #FDE048;
         --color-notification-font: #854D0F;
         --box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
-        --border-radius: 10px;
+        --border-radius: 5px;
         --padding: 10px;
 
         --color-approved: #43a047;
@@ -68,7 +68,7 @@
           display: inline-flex; 
           flex-direction: row;
           flex-wrap: wrap;
-          gap: 0.2em;
+          gap: 4px;
       }
 
       .details {
@@ -147,6 +147,7 @@
           }
         } 
       }
+
 
       /* User details administrative action button */
       button.admin {
@@ -493,7 +494,7 @@
       /* create notifications placeholder section TODO clarify how this should eventually exist or work */
       const notification = mapp.utils.html`<div class="notification">
         <span>You have <b>2 pending approvals</b> that require attention</span>
-        <button class="action outlined">Review pending users</button>`
+        <button class="action">Review pending users</button>`
 
       mapp.utils.render(document.getElementById('notification'), notification);
 
@@ -501,14 +502,14 @@
       /* create administrator actions */
 
       const administrator_tools = mapp.utils.html`<div class="actions">
-        <button class="admin outlined"
+        <button class="action admin outlined"
         onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
-          <span class="material-symbols-outlined">arrow_back</span><br>
+          <span class="material-symbols-outlined">arrow_back</span>
           <span class="label">${mapp.dictionary.admin_view.back}</span>
         <button>
-        <button class="admin outlined"
+        <button class="action admin outlined"
         onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
-          <span class="material-symbols-outlined">logout</span><br>
+          <span class="material-symbols-outlined">logout</span>
           <span class="label">${mapp.dictionary.admin_view.logout}</span>
         <button>
       </div>`;
@@ -730,37 +731,37 @@
 
         // TODO prevent grant roles for blocked users. Should it be prevented if no roles exist?
         const grant_btn = mapp.utils.html`
-            <button class="${'admin outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
+            <button class="${'admin action outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             onclick=${roleAssignment}>
-              <span class="material-symbols-outlined">add_moderator</span><br>
+              <span class="material-symbols-outlined">add_moderator</span>
               <span class="label">${mapp.dictionary.admin_view.grant}</span>
             </button>`;
 
         // TODO prevent approval when roles exist and have not been visited?
         const approve_btn = mapp.utils.html`
-            <button class="${'admin outlined approve' + (user.blocked ? ' disabled' : '')}"
+            <button class="${'admin action outlined approve' + (user.blocked ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             data-keep=true
             onclick=${userApproval}>
-              <span class="material-symbols-outlined">approval</span><br>
+              <span class="material-symbols-outlined">approval</span>
               <span class="label">${mapp.dictionary.admin_view.approval}</span>
             </button>`;
 
         const access_log_btn = mapp.utils.html`
-            <button class="admin outlined access-log" 
+            <button class="admin action outlined access-log" 
             data-user=${JSON.stringify(user)}
             onclick=${userAccessLog}>
-              <span class="material-symbols-outlined">pace</span><br>
+              <span class="material-symbols-outlined">pace</span>
               <span class="label">${mapp.dictionary.admin_view.access_log}</span>
             </button>`;
 
         const actions = mapp.utils.html.node`
         <div class="actions">
-          <button class="admin outlined" onclick=${e => {
+          <button class="admin action outlined" onclick=${e => {
            dialog.close();
             }}>
-            <span class="material-symbols-outlined">back_to_tab</span><br>
+            <span class="material-symbols-outlined">back_to_tab</span>
             <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
            ${grant_btn}
@@ -770,13 +771,13 @@
 
         const bottom_actions = mapp.utils.html`
           <div class="actions">
-          <button class=${'admin outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
+          <button class=${'admin action outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
-            <span class="material-symbols-outlined"></span><br>
+            <span class="material-symbols-outlined"></span>
             <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
           </button>
-          <button class="admin outlined" data-email=${user.email} onclick=${deleteAccount}>
-            <span class="material-symbols-outlined">account_circle_off</span><br>
+          <button class="admin action outlined" data-email=${user.email} onclick=${deleteAccount}>
+            <span class="material-symbols-outlined">account_circle_off</span>
             <span class="label">${mapp.dictionary.admin_view.delete}</span>
           </button></div>`;
 
@@ -999,17 +1000,17 @@
         });
 
         /* saves changes to user account */
-        const save_btn = mapp.utils.html.node`<button class="save admin outlined" data-keep=true
+        const save_btn = mapp.utils.html.node`<button class="save admin action outlined" data-keep=true
         onclick=${approveAccount}>
-        <span class="material-symbols-outlined">verified</span><br>
+        <span class="material-symbols-outlined">verified</span>
         <span class="label">${mapp.dictionary.admin_view.approve_changes}</span>
         </button>`;
 
-        const cancel_btn = mapp.utils.html.node`<button class="save admin outlined"
+        const cancel_btn = mapp.utils.html.node`<button class="save action outlined admin"
         onclick=${(e) => {
           e.target.closest('dialog.user-approval').close();
         }}>
-        <span class="material-symbols-outlined">arrow_back</span><br>
+        <span class="material-symbols-outlined">arrow_back</span>
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
@@ -1067,10 +1068,10 @@
         });
 
         const edit_roles_btn = mapp.utils.html`
-            <button class="admin outlined"
+            <button class="admin action outlined"
             data-user=${JSON.stringify(user)}
             data-keep=true>
-            <span class="material-symbols-outlined">edit</span><br>
+            <span class="material-symbols-outlined">edit</span>
             <span class="label">Edit primary roles</span>
           </button>`;
 
@@ -1098,11 +1099,11 @@
           <div class="layout">
           ${current_roles}</div>` : mapp.utils.html`<div class="title">No primary roles available.`;
 
-        const cancel_btn = mapp.utils.html.node`<button class="close admin outlined"
+        const cancel_btn = mapp.utils.html.node`<button class="exit admin action outlined"
         onclick=${(e) => {
           e.target.closest('dialog.user-grant').close();
         }}>
-        <span class="material-symbols-outlined">arrow_back</span><br>
+        <span class="material-symbols-outlined">arrow_back</span>
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
