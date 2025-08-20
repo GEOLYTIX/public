@@ -199,6 +199,7 @@
         font-size: 0.9em;
         white-space: nowrap;
         text-overflow: ellipsis;
+        margin: 1px;
 
         &.yes {
           background-color: var(--color-approved);
@@ -682,8 +683,14 @@
       /* this function will display user roles in table and details TODO */
       function get_user_roles(user) {
         // TODO find out how this should be flattened and adjusted
-        const active_roles = user.roles?.length ? user.roles.join(", ") : "";
-        return active_roles;
+        //const active_roles = user.roles?.length ? user.roles.join(", ") : "";
+        if(!user.roles?.length) return '';
+
+        const active_roles = user.roles.map(role => {
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
+        })
+
+        return mapp.utils.html`<div style="display: flex; flex-wrap:wrap">${active_roles}`;
 
       }
 
@@ -893,9 +900,10 @@
           return;
         }
 
+        if(!e.target.classList.contains('danger')) return;
+
         const user = JSON.parse(e.target.dataset.user);
 
-        //console.log('hello approve these changes and exit to newly updated user details and then user table!');
         await fetch(`${document.head.dataset.dir}/api/user/update`, {
           method: "POST",
           body: JSON.stringify({
@@ -1061,8 +1069,7 @@
         const edit_roles_btn = mapp.utils.html`
             <button class="admin outlined"
             data-user=${JSON.stringify(user)}
-            data-keep=true
-            >
+            data-keep=true>
             <span class="material-symbols-outlined">edit</span><br>
             <span class="label">Edit primary roles</span>
           </button>`;
@@ -1071,22 +1078,17 @@
          
           return mapp.utils.html.node`<div class="role-item">
           <button class=${user.roles.includes(role) ? 'granted' : ''}
-          onclick=${(e) => {
-            e.target.classList.toggle('granted');
-            const action = e.target.classList.contains('granted');
-            if(action) {
-              console.log('grant this role');
-            } else {
-              console.log('take away this role');
-            }
-          }}>
+          data-keep=true
+          data-user=${JSON.stringify(user)}
+          data-role=${role}
+          onclick=${assignRole}>
           <span class="dot">${role}</span>
           </button>
           <button class="action disabled">
           <span class="material-symbols-outlined">edit</span>
           <span>Edit role</span>
           </button>`;
-        }) : ``
+        }) : ``;
 
         const current_roles_content = current_roles.length ? 
         mapp.utils.html`
@@ -1096,6 +1098,14 @@
           <div class="layout">
           ${current_roles}</div>` : mapp.utils.html`<div class="title">No primary roles available.`;
 
+        const cancel_btn = mapp.utils.html.node`<button class="close admin outlined"
+        onclick=${(e) => {
+          e.target.closest('dialog.user-grant').close();
+        }}>
+        <span class="material-symbols-outlined">arrow_back</span><br>
+        <span class="label">${mapp.dictionary.admin_view.exit}</span>
+        </button>`;
+
 
         const content = mapp.utils.html`
           <div class="notification ws-pre"><b>Active roles are highlighted in <span class="dot" style="background-color: var(--color-approved)">green</span>\nClick on roles to switch their status.\nUse role editing in order to access additional settings.</b></div>
@@ -1104,6 +1114,9 @@
             <h1>
               <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
             </h1>
+          <div class="actions">
+            ${cancel_btn}
+          </div>
           ${current_roles_content}
           `;
 
@@ -1113,6 +1126,42 @@
           closeBtn: true,
           content,
         });
+
+      }
+
+      /* TODO assign role to the user */
+      async function assignRole(e) {
+
+        e.target.classList.toggle('granted');
+
+        const role = e.target.dataset.role;
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        // check if role should be added or removed
+        if(user.roles.includes(role)) {
+          const idx = user.roles.indexOf(role);
+          user.roles.splice(idx, 1);
+        } else {
+          user.roles.push(role);
+        }
+
+        // update user
+        await fetch(`${document.head.dataset.dir}/api/user/update`, {
+          method: "POST",
+          body: JSON.stringify({
+            email: user.email,
+            roles: user.roles
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+        // update details and the list but keep details open
+        updateUsersList(e);
 
       }
 
@@ -1159,7 +1208,7 @@
           <div>${mapp.dictionary.admin_view.account_status}</div>
           <div>${check_user_status(user)}</div>
           <div>${mapp.dictionary.admin_view.roles}</div>
-          <div>${get_user_roles(user)}</div>
+          ${get_user_roles(user)}
           <div>${mapp.dictionary.admin_view.last_active}</div>
           <div>${user.last_active}</div>
           ${expiryDateEntry}
