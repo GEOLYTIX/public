@@ -153,6 +153,15 @@
         border-radius: var(--border-radius);
         min-width: 8em;
 
+        &.danger {
+          color: var(--color-danger);
+          border-color: var(--color-danger);
+
+          * {
+            color: var(--color-danger);
+          }
+        }
+
         &.block {
           .material-symbols-outlined::after {
             content: 'lock';
@@ -908,6 +917,8 @@
         updateUsersList(e);
         // close approval window
         e.target.closest('dialog.user-approval').close();
+        // save button back to initial state
+        e.target.classList.remove('danger');
 
       }
 
@@ -918,14 +929,20 @@
 
         const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
 
-        const expiry_date_input = mapp.utils.html.node`<input
+        const expiry_date_input = user.expires_on === undefined ? `` : mapp.utils.html.node`<input
           type="date"
           value="${expiry_date}"
           min=${new Date().toISOString().slice(0, 10)}
           onchange=${(e) => {
             user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
             save_btn.dataset.user = JSON.stringify(user);
+            save_btn.classList.add('danger');
           }}>`;
+
+        const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
+          <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
+          </div>
+          <div>${expiry_date_input}</div>`;
 
         const verification = mapp.ui.elements.chkbox({
           checked: user.verified,
@@ -933,6 +950,7 @@
           onchange: (checked) => {
             user.verified = checked;
             save_btn.dataset.user = JSON.stringify(user);
+            save_btn.classList.add('danger');
           }
         });
 
@@ -948,6 +966,7 @@
           onchange: (checked) => {
             user.approved = checked;
             save_btn.dataset.user = JSON.stringify(user);
+            save_btn.classList.add('danger');
           }
         });
 
@@ -957,6 +976,7 @@
           onchange: (checked) => {
             user.admin = checked;
             save_btn.dataset.user = JSON.stringify(user);
+            save_btn.classList.add('danger');
           }
         });
 
@@ -966,6 +986,7 @@
           onchange: (checked) => {
             user.api_access = checked;
             save_btn.dataset.user = JSON.stringify(user);
+            save_btn.classList.add('danger');
           }
         });
 
@@ -1013,10 +1034,7 @@
             <span class="dot" style="background-color: var(--color-api)">${mapp.dictionary.admin_view.api}</span>
           </div>
           <div>${api_access}</div>
-          <div>
-            <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
-          </div>
-          <div>${expiry_date_input}</div>
+          ${expiry_date_entry}
           </div>
         `;
 
