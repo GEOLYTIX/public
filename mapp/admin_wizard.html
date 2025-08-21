@@ -83,6 +83,17 @@
           }
       }
 
+      /* vertically aligns spans inside a div */
+      .v-align {
+        display: flex;
+        align-items: anchor-center;
+      }
+
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
       /* user details dialog layout */
       dialog.user-details {
         padding: 1em;
@@ -394,7 +405,7 @@
               admin: "Administrator",
               api: "API Access",
               approval: "Approval",
-              approve_changes: "Approve Changes",
+              approve: "Approve",
               approved: "Approved",
               approved_by: "Approved by",
               approved_label: "Last modification to this account approved by",
@@ -436,6 +447,8 @@
               logout: "Logout",
               new: "New",
               re_verification: "Re-verification",
+              required: "Required after password reset",
+              required_not: "Not required",
               roles: "User Access Roles",
               roles_info: "Information on Access Roles",
               roles_message: "Visit Grant Roles section in order to set user roles.",
@@ -463,6 +476,7 @@
               unknown: "Unknown",
               verification_token: "Verification Token",
               verified: "Verified",
+              verify: "Verify",
             },
             no: 'No',
             yes: 'Yes',
@@ -681,17 +695,19 @@
 
       }
 
-      /* this function will display user roles in table and details TODO */
+      /* this function will display user roles in table and details */
       function get_user_roles(user) {
         // TODO find out how this should be flattened and adjusted
-        //const active_roles = user.roles?.length ? user.roles.join(", ") : "";
-        if(!user.roles?.length) return '';
+        if(!user.roles?.length) return mapp.utils.html`<div></div>`;
 
-        const active_roles = user.roles.map(role => {
+        // exclude roles that users have that are not relevant in the workspace TODO
+        const active_roles = user.roles
+        .filter((role) => (rolesList.hasOwnProperty(role)))
+        .map(role => {
           return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
-        })
+        });
 
-        return mapp.utils.html`<div style="display: flex; flex-wrap:wrap">${active_roles}`;
+        return mapp.utils.html`<div class="flex">${active_roles}`;
 
       }
 
@@ -830,25 +846,20 @@
 
         const user = JSON.parse(e.target.dataset.user);
 
-        //const user_email = e.target.dataset.user;
         const text = `${user.email}\n${user.blocked ? 
           mapp.dictionary.admin_view.confirm_unblock : mapp.dictionary.admin_view.confirm_block}`;
 
-        const confirm = await mapp.ui.elements.confirm({ 
-          text
-        });
+        const confirm = await mapp.ui.elements.confirm({ text });
 
-        if (confirm) {
+        if(confirm) {
 
           user.blocked = !user.blocked;
 
-          await fetch(`${document.head.dataset.dir}/api/user/update`, {
-            method: "POST",
-            body: JSON.stringify({email: user.email, blocked: user.blocked}),
-            headers: {
-              "Content-type": "application/json",
-            },
+          await updateUser({
+            email: user.email, 
+            blocked: user.blocked
           });
+
           // refresh user content while keeping the user details window on
           mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
           // update button label
@@ -894,158 +905,58 @@
 
       }
 
-      /* this function modifies user account and returns to updated user details view. Called inside userApproval */
-      async function approveAccount(e) {
-        if(!e.target.dataset?.user) {
-          // no changes made
-          return;
-        }
-
-        if(!e.target.classList.contains('danger')) return;
+      /* this function verifies account - sets flag verified to true */
+      async function verifyAccount(e) {
 
         const user = JSON.parse(e.target.dataset.user);
 
-        await fetch(`${document.head.dataset.dir}/api/user/update`, {
-          method: "POST",
-          body: JSON.stringify({
-            email: user.email,
-            approved: user.approved,
-            verified: user.verified,
-            admin: user.admin,
-            api: user.api,
-            expires_on: user.expires_on
-          }),
-          headers: {
-            "Content-type": "application/json",
-          },
+        if(user.verified) return;
+
+        user.verified = true;
+
+        await updateUser({
+          email: user.email,
+          approved: user.verified
+        });
+
+        // refresh verified flag on the current screen and keep the window 
+        mapp.utils.render(document.querySelector('.user-approval .content'), user_approval_content(user));
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+        // set updated attribute on user details so that the user list is updated on close
+        document.querySelector('dialog.user-details').dataset.update = true;
+
+      }
+
+      /* this function modifies user account and returns to updated user details view. Called inside userApproval */
+      async function approveAccount(e) {
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        if(user.approved) return;
+
+        user.approved = true;
+
+        await updateUser({
+          email: user.email,
+          approved: user.approved
         });
 
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-        // update details and the list but keep details open
-        updateUsersList(e);
+        // set updated attribute on user details so that the user list is updated on close but keep details open
+        document.querySelector('dialog.user-details').dataset.update = true;
         // close approval window
         e.target.closest('dialog.user-approval').close();
-        // save button back to initial state
-        e.target.classList.remove('danger');
 
       }
 
       /* this function displays editable user details where changes are saved and approval process is completed */
-      async function userApproval(e) {
+      async function userApproval(event) {
 
-        const user = JSON.parse(e.target.dataset.user);
+        const user = JSON.parse(event.target.dataset.user);
 
-        const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
-
-        const expiry_date_input = user.expires_on === undefined ? `` : mapp.utils.html.node`<input
-          type="date"
-          value="${expiry_date}"
-          min=${new Date().toISOString().slice(0, 10)}
-          onchange=${(e) => {
-            user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
-            save_btn.dataset.user = JSON.stringify(user);
-            save_btn.classList.add('danger');
-          }}>`;
-
-        const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
-          <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
-          </div>
-          <div>${expiry_date_input}</div>`;
-
-        const verification = mapp.ui.elements.chkbox({
-          checked: user.verified,
-          label: mapp.dictionary.admin_view.status_description["Verified"],
-          onchange: (checked) => {
-            user.verified = checked;
-            save_btn.dataset.user = JSON.stringify(user);
-            save_btn.classList.add('danger');
-          }
-        });
-
-        const re_verification = mapp.ui.elements.chkbox({
-          checked: user.re_verification,
-          disabled: true,
-          label: mapp.dictionary.admin_view.status_description["Re-verification"]
-        });
-
-        const approved = mapp.ui.elements.chkbox({
-          checked: user.approved,
-          label: mapp.dictionary.admin_view.status_description["Approved"],
-          onchange: (checked) => {
-            user.approved = checked;
-            save_btn.dataset.user = JSON.stringify(user);
-            save_btn.classList.add('danger');
-          }
-        });
-
-        const admin = mapp.ui.elements.chkbox({
-          checked: user.admin,
-          label: mapp.dictionary.admin_view.status_description["Administrator"],
-          onchange: (checked) => {
-            user.admin = checked;
-            save_btn.dataset.user = JSON.stringify(user);
-            save_btn.classList.add('danger');
-          }
-        });
-
-        const api_access = mapp.ui.elements.chkbox({
-          checked: user.api_access,
-          label: mapp.dictionary.admin_view.status_description["API"],
-          onchange: (checked) => {
-            user.api_access = checked;
-            save_btn.dataset.user = JSON.stringify(user);
-            save_btn.classList.add('danger');
-          }
-        });
-
-        /* saves changes to user account */
-        const save_btn = mapp.utils.html.node`<button class="save admin action outlined" data-keep=true
-        onclick=${approveAccount}>
-        <span class="material-symbols-outlined">verified</span>
-        <span class="label">${mapp.dictionary.admin_view.approve_changes}</span>
-        </button>`;
-
-        const cancel_btn = mapp.utils.html.node`<button class="save action outlined admin"
-        onclick=${(e) => {
-          e.target.closest('dialog.user-approval').close();
-        }}>
-        <span class="material-symbols-outlined">arrow_back</span>
-        <span class="label">${mapp.dictionary.admin_view.exit}</span>
-        </button>`;
-
-        const content = mapp.utils.html`
-          <div class="notification"><b>${mapp.dictionary.admin_view.roles_message}</b></div>
-          <div><span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
-          <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
-          <div class="actions">
-            ${cancel_btn}
-            ${save_btn}
-          </div>
-          <div class="details">
-          <div>
-            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
-          </div>
-          <div>${verification}</div>
-          <div>
-            <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
-          </div>
-          <div>${re_verification}</div>
-          <div>
-            <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
-          </div>
-          <div>${approved}</div>
-          <div>
-            <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
-          </div>
-          <div>${admin}</div>
-          <div>
-            <span class="dot" style="background-color: var(--color-api)">${mapp.dictionary.admin_view.api}</span>
-          </div>
-          <div>${api_access}</div>
-          ${expiry_date_entry}
-          </div>
-        `;
+        const content = user_approval_content(user);
 
         const dialog = mapp.ui.elements.dialog({
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.approval}`,
@@ -1147,16 +1058,9 @@
           user.roles.push(role);
         }
 
-        // update user
-        await fetch(`${document.head.dataset.dir}/api/user/update`, {
-          method: "POST",
-          body: JSON.stringify({
-            email: user.email,
-            roles: user.roles
-          }),
-          headers: {
-            "Content-type": "application/json",
-          },
+        await updateUser({
+          email: user.email,
+          roles: user.roles
         });
 
         // refresh user content while keeping the user details window on
@@ -1178,7 +1082,7 @@
 
       }
 
-      // user prop content for read only TODO will require to be updated as well 
+      /* creates user prop content for read only. Used to rerender content after update */
       function user_details_content(user) {
 
         const expiryDate = user.expires_on ? 
@@ -1225,6 +1129,146 @@
         `;
 
         return elements;
+      }
+
+      /* creates user prop content in the approval window. Used to rerender content after update */
+      function user_approval_content(user) {
+
+        const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
+
+        const expiry_date_input = user.expires_on === undefined ? `` : mapp.utils.html.node`<input
+          type="date"
+          value="${expiry_date}"
+          min=${new Date().toISOString().slice(0, 10)}
+          onchange=${async (e) => {
+            
+            user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
+
+            await updateUser({
+              email: user.email,
+              expires_on: user.expires_on
+            });
+
+          }}>`;
+
+        const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
+          <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
+          </div>
+          <div>${expiry_date_input}</div>`;
+
+        const verification = mapp.utils.html`<div><span class="dot" 
+        style=${'background-color: ' + (user.verified ? 'var(--color-verified)' : 'var(--color-blocked)')}>
+        ${user.verified ? mapp.dictionary.yes : mapp.dictionary.no}</span></div>`;
+
+        const re_verification = mapp.utils.html`<div><span class="dot" 
+        style=${'background-color: ' + (user.re_verification ? 'var(--color-re-verify)' : 'var(--color-blocked)')}>
+        ${user.re_verification ? mapp.dictionary.admin_view.required : mapp.dictionary.admin_view.required_not}</span>
+        </div>`
+
+        const approved = mapp.utils.html`<span class="dot" 
+        style=${'background-color: ' + (user.approved ? 'var(--color-approved)' : 'var(--color-blocked)')}>
+        ${user.approved ? mapp.dictionary.yes : mapp.dictionary.no}`
+
+        const admin = mapp.ui.elements.chkbox({
+          checked: user.admin,
+          label: mapp.dictionary.admin_view.status_description["Administrator"],
+          onchange: async (checked) => {
+            user.admin = checked;
+            
+            await updateUser({
+              email: user.email,
+              admin: user.admin
+            });
+          }
+        });
+
+        const api_access = mapp.ui.elements.chkbox({
+          checked: user.api,
+          label: mapp.dictionary.admin_view.status_description["API"],
+          onchange: async (checked) => {
+            user.api = checked;
+            
+             await updateUser({
+              email: user.email,
+              api: user.api
+            });
+          }
+        });
+
+        /* approves user account - sets approved flag to true */
+        const verify_btn = mapp.utils.html.node`<button class="verify admin action outlined" data-keep=true
+        data-user=${JSON.stringify(user)}
+        onclick=${verifyAccount}>
+        <span class="material-symbols-outlined">person_check</span>
+        <span class="label">${mapp.dictionary.admin_view.verify}</span>
+        </button>`;
+
+        /* approves user account - sets approved flag to true */
+        const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
+        data-user=${JSON.stringify(user)}
+        onclick=${approveAccount}>
+        <span class="material-symbols-outlined">verified</span>
+        <span class="label">${mapp.dictionary.admin_view.approve}</span>
+        </button>`;
+
+        const exit_btn = mapp.utils.html.node`<button class="save action outlined admin"
+        onclick=${(e) => {
+          event.target.dataset.user = JSON.stringify(user);
+          // refresh user content while keeping the user details window on
+          mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+          e.target.closest('dialog.user-approval').close();
+        }}>
+        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="label">${mapp.dictionary.admin_view.exit}</span>
+        </button>`;
+
+        return mapp.utils.html`
+          <div class="notification"><b>${mapp.dictionary.admin_view.roles_message}</b></div>
+          <div><span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
+          <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
+          <div class="actions">
+            ${exit_btn}
+            ${verify_btn}
+            ${approve_btn}
+          </div>
+          <div class="details">
+          <div>
+            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
+          </div>
+          ${verification}
+          <div>
+            <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
+          </div>
+          ${re_verification}
+          <div>
+            <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
+          </div>
+          <div>${approved}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
+          </div>
+          <div>${admin}</div>
+          <div>
+            <span class="dot" style="background-color: var(--color-api)">${mapp.dictionary.admin_view.api}</span>
+          </div>
+          <div>${api_access}</div>
+          ${expiry_date_entry}
+          </div>
+        `;
+
+      }
+
+      /* updates field for user entry */
+      async function updateUser(params) {
+
+        await fetch(`${document.head.dataset.dir}/api/user/update`, {
+          method: "POST",
+          body: JSON.stringify(params),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+
       }
 
 
