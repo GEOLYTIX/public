@@ -203,7 +203,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         margin: 1px;
-
+        
         &.yes {
           background-color: var(--color-approved);
         }
@@ -211,6 +211,10 @@
         &.no {
           background-color: var(--color-blocked);
         }
+      }
+
+      button > .dot {
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       }
 
       .ws-pre {
@@ -959,11 +963,11 @@
       }
 
       /* TODO in progress - role assignment workflow */
-      async function roleAssignment(e) {
+      async function roleAssignment(event) {
 
         if(!rolesList || rolesList === {}) return console.log('no roles found');
 
-        const user = JSON.parse(e.target.dataset.user);
+        const user = JSON.parse(event.target.dataset.user);
 
         const options = Object.keys(rolesList).map(role => {
           return mapp.utils.html.node`<option value=${role}>${role}<option>`
@@ -978,30 +982,18 @@
           </button>`;
 
         const current_roles = rolesList ? Object.keys(rolesList).map(role => {
-         
-          return mapp.utils.html.node`<div class="role-item">
-          <button class=${user.roles.includes(role) ? 'granted' : ''}
-          data-keep=true
-          data-user=${JSON.stringify(user)}
-          data-role=${role}
-          onclick=${assignRole}>
-          <span class="dot">${role}</span>
-          </button>
-          <button class="action disabled">
-          <span class="material-symbols-outlined">edit</span>
-          <span>Edit role</span>
-          </button>`;
+          return roleItem({user, role})
         }) : ``;
 
         const current_roles_content = current_roles.length ? 
         mapp.utils.html`
           <div class="title">
-          <h2>Available primary roles</h2>
+          <h2>Available roles</h2>
           </div>
           <div class="layout">
-          ${current_roles}</div>` : mapp.utils.html`<div class="title">No primary roles available.`;
+          ${current_roles}</div>` : mapp.utils.html`<div class="title">No roles available.`;
 
-        const cancel_btn = mapp.utils.html.node`<button class="exit admin action outlined"
+        const exit_btn = mapp.utils.html.node`<button class="exit admin action outlined"
         onclick=${(e) => {
           e.target.closest('dialog.user-grant').close();
         }}>
@@ -1018,7 +1010,7 @@
               <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
             </h1>
           <div class="actions">
-            ${cancel_btn}
+            ${exit_btn}
           </div>
           ${current_roles_content}
           `;
@@ -1029,6 +1021,24 @@
           closeBtn: true,
           content,
         });
+
+      }
+
+      /* create role item in the list of roles available for assignment */
+      function roleItem(params) {
+
+        return mapp.utils.html.node`<div class="role-item">
+          <button class=${params.user.roles.includes(params.role) ? 'granted' : ''}
+          data-keep=true
+          data-user=${JSON.stringify(params.user)}
+          data-role=${params.role}
+          onclick=${assignRole}>
+          <span class="dot">${params.role}</span>
+          </button>
+          <button class="action disabled">
+          <span class="material-symbols-outlined">edit</span>
+          <span>Edit role</span>
+          </button>`
 
       }
 
@@ -1053,7 +1063,9 @@
           email: user.email,
           roles: user.roles
         });
-
+        
+        // set updated user object on the grant button so that role items are up to date 
+         document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
         // update details and the list but keep details open
