@@ -134,6 +134,7 @@
           flex-direction: row;
           flex-wrap: wrap; 
           gap: 0.5em;
+          align-items: anchor-center;
 
           .role-item {
             background-color: var(--color-base-secondary);
@@ -154,6 +155,35 @@
                   background-color: var(--color-approved);
                 }
               }
+            }
+
+            .role-title {
+              display: inline-flex;
+              justify-content: space-between;
+              padding: 0 0.5em;
+              width: 100%;
+              margin-right: 1em;
+            }
+
+            .role-header {
+              flex-basis: 100%;
+              * {
+                  color: var(--color-primary);
+                  pointer-events: none;
+                  font-size: inherit;
+                  vertical-align: middle;
+                }
+              }
+
+            .role-layout {
+              display: flex;
+              flex-wrap: wrap;
+              margin-top: 0.5em;
+              padding: 0.5em;
+              gap: 0.5em;
+              border: solid 1px var(--color-border);
+              border-radius: var(--border-radius);
+
             }
           }
         } 
@@ -969,6 +999,8 @@
 
         const user = JSON.parse(event.target.dataset.user);
 
+        console.log(user);
+
         const options = Object.keys(rolesList).map(role => {
           return mapp.utils.html.node`<option value=${role}>${role}<option>`
         });
@@ -981,14 +1013,14 @@
             <span class="label">Edit primary roles</span>
           </button>`;
 
-        const current_roles = rolesList ? Object.keys(rolesList).map(role => {
+        const current_roles = rolesList ? Object.entries(rolesList).map(role => {
           return roleItem({user, role})
         }) : ``;
 
         const current_roles_content = current_roles.length ? 
         mapp.utils.html`
           <div class="title">
-          <h2>Available roles</h2>
+          <h2>Available primary roles</h2>
           </div>
           <div class="layout">
           ${current_roles}</div>` : mapp.utils.html`<div class="title">No roles available.`;
@@ -1027,19 +1059,42 @@
       /* create role item in the list of roles available for assignment */
       function roleItem(params) {
 
-        return mapp.utils.html.node`<div class="role-item">
-          <button class=${params.user.roles.includes(params.role) ? 'granted' : ''}
-          data-keep=true
-          data-user=${JSON.stringify(params.user)}
-          data-role=${params.role}
-          onclick=${assignRole}>
-          <span class="dot">${params.role}</span>
-          </button>
-          <button class="action disabled">
-          <span class="material-symbols-outlined">edit</span>
-          <span>Edit role</span>
-          </button>`
+        const role = params.role[0];
+        const roleObj = params.role[1];
 
+        const subroles = Object.keys(roleObj).map((subrole) => {
+            if(!subrole) return;
+            return mapp.utils.html.node`<button class=${params.user.roles.includes(subrole) ? 'granted' : ''}
+              data-keep=true
+              data-role=${subrole}
+              onclick=${assignRole}>
+              <span class="dot">${subrole}</span>
+            </button>`
+        });
+
+        const subrole_container = subroles.length ? mapp.utils.html`<div class="role-layout">
+          <div class="role-header">
+          <span class="material-symbols-outlined">graph_1</span>
+          <span>Secondary roles</span>
+          </div>
+          <br/>
+          ${subroles}</div>` : ``;
+
+        return mapp.utils.html.node`<div class="role-item"
+          data-user=${JSON.stringify(params.user)}>
+          <div class="role-title">
+          <div class="role-header">
+          <span class="material-symbols-outlined">add_moderator</span>
+          <span>Primary role</span>
+          </div>
+          <button class=${params.user.roles.includes(role) ? 'granted' : ''}
+          data-keep=true
+          data-role=${role}
+          onclick=${assignRole}>
+          <span class="dot">${role}</span>
+          </button>
+          </div>
+          ${subrole_container}`
       }
 
       /* TODO assign role to the user */
@@ -1049,7 +1104,7 @@
 
         const role = e.target.dataset.role;
 
-        const user = JSON.parse(e.target.dataset.user);
+        const user = JSON.parse(e.target.closest('.role-item').dataset.user);
 
         // check if role should be added or removed
         if(user.roles.includes(role)) {
