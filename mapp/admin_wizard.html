@@ -148,12 +148,27 @@
               }
               .dot {
                 background-color: var(--color-blocked);
+
+                .material-symbols-outlined.role-switch {
+                  font-size: inherit;
+                  color: inherit;
+
+                  &:after {
+                    content: 'check_indeterminate_small';
+                  }
+                }
+
               }
 
               &.granted {
                 .dot {
                   background-color: var(--color-approved);
+
+                  .role-switch::after {
+                    content: 'check';
+                  }
                 }
+
               }
             }
 
@@ -1068,7 +1083,9 @@
               data-keep=true
               data-role=${subrole}
               onclick=${assignRole}>
-              <span class="dot">${subrole}</span>
+              <span class="dot">${subrole}
+              <span class="material-symbols-outlined role-switch"></span>
+              </span>
             </button>`
         });
 
@@ -1091,7 +1108,9 @@
           data-keep=true
           data-role=${role}
           onclick=${assignRole}>
-          <span class="dot">${role}</span>
+          <span class="dot">${role}
+          <span class="material-symbols-outlined role-switch"></span>
+          </span>
           </button>
           </div>
           ${subrole_container}`
