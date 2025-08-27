@@ -152,10 +152,6 @@
                 .material-symbols-outlined.role-switch {
                   font-size: inherit;
                   color: inherit;
-
-                  &:after {
-                    content: 'check_indeterminate_small';
-                  }
                 }
 
               }
@@ -437,7 +433,7 @@
           en: {
             admin_view: {
               acc_details: "User Account Details",
-              access_log: "Access Log",
+              access_log: "Access History",
               access_log_caption: "Last 10 visits",
               access_log_label: "User Access History",
               access_log_not_found: "No access log information found for this user account.",
@@ -935,9 +931,12 @@
               ? response.access_log
               : response.access_log.slice(Math.max(len - 10, 0));
 
+        const text = len ? 
+        mapp.utils.html`<span><b>${mapp.dictionary.admin_view.access_log_caption}</b></span><br><span class="ws-pre">${log.join("\n")}` : `${mapp.dictionary.admin_view.access_log_not_found}`
+
         mapp.ui.elements.alert({
           title: mapp.dictionary.admin_view.access_log_label,
-          text: mapp.utils.html`<span><b>${mapp.dictionary.admin_view.access_log_caption}</b></span><br><span class="ws-pre">${log.join("\n")}`,
+          text,
         });
 
       }
@@ -1200,14 +1199,14 @@
           <div class="desktop-only">${mapp.dictionary.admin_view.email_label}</div>
           <div class="mobile-width"><b>${user.email}</b>
           </div>
-          <div>${mapp.dictionary.admin_view.lang_label}</div>
-          <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
           <div>${mapp.dictionary.admin_view.account_status}</div>
           <div>${check_user_status(user)}</div>
           <div>${mapp.dictionary.admin_view.roles}</div>
           ${get_user_roles(user)}
           <div>${mapp.dictionary.admin_view.last_active}</div>
           <div>${user.last_active}</div>
+          <div>${mapp.dictionary.admin_view.lang_label}</div>
+          <div>${mapp.dictionary.admin_view.languages[user.language]}</div>
           ${expiryDateEntry}
           ${login_failed_attempts}
           <div>${mapp.dictionary.admin_view.api}</div>
