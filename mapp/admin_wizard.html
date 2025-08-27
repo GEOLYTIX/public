@@ -482,6 +482,10 @@
               logged_in_label: "Logged in as",
               logout: "Logout",
               new: "New",
+              primary_role: "Primary role",
+              primary_roles_available: "Available primary roles",
+              primary_roles_edit: "Edit primary roles",
+              primary_roles_none: "No roles available.",
               re_verification: "Re-verification",
               required: "Required after password reset",
               required_not: "Not required",
@@ -494,6 +498,7 @@
               roles_view: "View information on access roles",
               save: "Save",
               search_accounts: "Search accounts",
+              secondary_roles: "Secondary roles",
               show_blocked: "Show blocked accounts",
               status: "Status",
               status_description: {
@@ -996,7 +1001,8 @@
 
       }
 
-      /* returns array of role items in order to create role layout. Used both to initialize and to regenerate after update */
+      /* returns array of role items in order to create role layout. 
+      Used both to initialize and to regenerate after update */
       function renderRoleLayout(user) {
 
         if(!rolesList) return ``;
@@ -1025,7 +1031,7 @@
             data-user=${JSON.stringify(user)}
             data-keep=true>
             <span class="material-symbols-outlined" translate="no">edit</span>
-            <span class="label">Edit primary roles</span>
+            <span class="label">${mapp.dictionary.admin_view.primary_roles_edit}</span>
           </button>`;
 
         const current_roles = renderRoleLayout(user);
@@ -1033,10 +1039,10 @@
         const current_roles_content = current_roles.length ? 
         mapp.utils.html`
           <div class="title">
-          <h2>Available primary roles</h2>
+          <h2>${mapp.dictionary.admin_view.primary_roles_available}</h2>
           </div>
           <div class="layout">
-          ${current_roles}</div>` : mapp.utils.html`<div class="title">No roles available.`;
+          ${current_roles}</div>` : mapp.utils.html`<div class="title">${mapp.dictionary.admin_view.primary_roles_none}`;
 
         const exit_btn = mapp.utils.html.node`<button class="exit admin action outlined"
         onclick=${(e) => {
@@ -1095,7 +1101,7 @@
         const subrole_container = subroles.length ? mapp.utils.html`<div class="role-layout">
           <div class="role-header">
           <span class="material-symbols-outlined" translate="no">graph_1</span>
-          <span>Secondary roles</span>
+          <span>${mapp.dictionary.admin_view.secondary_roles}</span>
           </div>
           <br/>
           ${subroles}</div>` : ``;
@@ -1105,7 +1111,7 @@
           <div class="role-title">
           <div class="role-header">
           <span class="material-symbols-outlined" translate="no">add_moderator</span>
-          <span>Primary role</span>
+          <span>${mapp.dictionary.admin_view.primary_role}</span>
           </div>
           <button class=${current_user_roles.has(role) ? 'granted' : ''}
           data-keep=true
