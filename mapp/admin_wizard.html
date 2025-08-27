@@ -47,7 +47,7 @@
         --color-approved: #43a047;
         --color-verified: #9c27b0;
         --color-re-verify: #b71c1c;
-        --color-blocked: #546e7a;
+        --color-blocked: #78909c;
         --color-admin: #0d47a1;
         --color-api: #4527a0;
         --color-new: #e64a19;
@@ -551,12 +551,12 @@
       const administrator_tools = mapp.utils.html`<div class="actions">
         <button class="action admin outlined"
         onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
-          <span class="material-symbols-outlined">arrow_back</span>
+          <span class="material-symbols-outlined" translate="no">arrow_back</span>
           <span class="label">${mapp.dictionary.admin_view.back}</span>
         <button>
         <button class="action admin outlined"
         onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
-          <span class="material-symbols-outlined">logout</span>
+          <span class="material-symbols-outlined" translate="no">logout</span>
           <span class="label">${mapp.dictionary.admin_view.logout}</span>
         <button>
       </div>`;
@@ -783,7 +783,7 @@
             <button class="${'admin action outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             onclick=${roleAssignment}>
-              <span class="material-symbols-outlined">add_moderator</span>
+              <span class="material-symbols-outlined" translate="no">add_moderator</span>
               <span class="label">${mapp.dictionary.admin_view.grant}</span>
             </button>`;
 
@@ -793,7 +793,7 @@
             data-user=${JSON.stringify(user)}
             data-keep=true
             onclick=${userApproval}>
-              <span class="material-symbols-outlined">approval</span>
+              <span class="material-symbols-outlined" translate="no">approval</span>
               <span class="label">${mapp.dictionary.admin_view.approval}</span>
             </button>`;
 
@@ -801,7 +801,7 @@
             <button class="admin action outlined access-log" 
             data-user=${JSON.stringify(user)}
             onclick=${userAccessLog}>
-              <span class="material-symbols-outlined">pace</span>
+              <span class="material-symbols-outlined" translate="no">pace</span>
               <span class="label">${mapp.dictionary.admin_view.access_log}</span>
             </button>`;
 
@@ -810,7 +810,7 @@
           <button class="admin action outlined" onclick=${e => {
            dialog.close();
             }}>
-            <span class="material-symbols-outlined">back_to_tab</span>
+            <span class="material-symbols-outlined" translate="no">back_to_tab</span>
             <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
            ${grant_btn}
@@ -822,11 +822,11 @@
           <div class="actions">
           <button class=${'admin action outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
-            <span class="material-symbols-outlined"></span>
+            <span class="material-symbols-outlined" translate="no"></span>
             <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
           </button>
           <button class="admin action outlined" data-email=${user.email} onclick=${deleteAccount}>
-            <span class="material-symbols-outlined">account_circle_off</span>
+            <span class="material-symbols-outlined" translate="no">account_circle_off</span>
             <span class="label">${mapp.dictionary.admin_view.delete}</span>
           </button></div>`;
 
@@ -1013,7 +1013,7 @@
             <button class="admin action outlined"
             data-user=${JSON.stringify(user)}
             data-keep=true>
-            <span class="material-symbols-outlined">edit</span>
+            <span class="material-symbols-outlined" translate="no">edit</span>
             <span class="label">Edit primary roles</span>
           </button>`;
 
@@ -1035,7 +1035,7 @@
         onclick=${(e) => {
           e.target.closest('dialog.user-grant').close();
         }}>
-        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="material-symbols-outlined" translate="no">arrow_back</span>
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
@@ -1075,14 +1075,14 @@
               data-role=${subrole}
               onclick=${assignRole}>
               <span class="dot">${subrole}
-              <span class="material-symbols-outlined role-switch"></span>
+              <span class="material-symbols-outlined role-switch" translate="no"></span>
               </span>
             </button>`
         });
 
         const subrole_container = subroles.length ? mapp.utils.html`<div class="role-layout">
           <div class="role-header">
-          <span class="material-symbols-outlined">graph_1</span>
+          <span class="material-symbols-outlined" translate="no">graph_1</span>
           <span>Secondary roles</span>
           </div>
           <br/>
@@ -1092,7 +1092,7 @@
           data-user=${JSON.stringify(params.user)}>
           <div class="role-title">
           <div class="role-header">
-          <span class="material-symbols-outlined">add_moderator</span>
+          <span class="material-symbols-outlined" translate="no">add_moderator</span>
           <span>Primary role</span>
           </div>
           <button class=${params.user.roles.includes(role) ? 'granted' : ''}
@@ -1100,7 +1100,7 @@
           data-role=${role}
           onclick=${assignRole}>
           <span class="dot">${role}
-          <span class="material-symbols-outlined role-switch"></span>
+          <span class="material-symbols-outlined role-switch" translate="no"></span>
           </span>
           </button>
           </div>
@@ -1276,7 +1276,7 @@
         const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
         data-user=${JSON.stringify(user)}
         onclick=${approveAccount}>
-        <span class="material-symbols-outlined">verified</span>
+        <span class="material-symbols-outlined" translate="no">verified</span>
         <span class="label">${mapp.dictionary.admin_view.approve}</span>
         </button>`;
 
@@ -1287,7 +1287,7 @@
           mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
           e.target.closest('dialog.user-approval').close();
         }}>
-        <span class="material-symbols-outlined">arrow_back</span>
+        <span class="material-symbols-outlined" translate="no">arrow_back</span>
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
