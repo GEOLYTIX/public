@@ -530,9 +530,6 @@
 
       console.log(rolesList);
 
-      /* List of languages key values - TODO clarify if this is needed */
-      const languagesList = mapp.dictionary.admin_view.languages;
-
       /* TODO Get current URL params - clarify if this is needed */
       const params = new URLSearchParams(window.location.search);
 
@@ -1007,6 +1004,22 @@
 
       }
 
+      /* Checks whether an object key should be handled as a primary role */
+      function checkIfRolePrimary(role) {
+
+        const secondary_roles = new Set();
+
+        Object.values(rolesList).forEach((primary_role) => {
+
+          Object.keys(primary_role).forEach((secondary_role) => (secondary_roles.add(secondary_role)));
+
+        });
+
+        // the role not found in secondary level in the role tree
+        return !secondary_roles.has(role);
+
+      }
+
       /* TODO in progress - role assignment workflow */
       async function roleAssignment(event) {
 
@@ -1028,7 +1041,9 @@
             <span class="label">Edit primary roles</span>
           </button>`;
 
-        const current_roles = rolesList ? Object.entries(rolesList).map(role => {
+        const current_roles = rolesList ? Object.entries(rolesList)
+        .filter(role => (checkIfRolePrimary(role[0])))
+        .map(role => {
           return roleItem({user, role})
         }) : ``;
 
