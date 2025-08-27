@@ -996,6 +996,21 @@
 
       }
 
+      /* returns array of role items in order to create role layout. Used both to initialize and to regenerate after update */
+      function renderRoleLayout(user) {
+
+        if(!rolesList) return ``;
+
+        const current_roles = Object.entries(rolesList)
+        .filter(role => (checkIfRolePrimary(role[0])))
+        .map(role => {
+          return roleItem({user, role})
+        });
+
+        return current_roles;
+
+      }
+
       /* TODO in progress - role assignment workflow */
       async function roleAssignment(event) {
 
@@ -1005,10 +1020,6 @@
 
         console.log(user);
 
-        const options = Object.keys(rolesList).map(role => {
-          return mapp.utils.html.node`<option value=${role}>${role}<option>`
-        });
-
         const edit_roles_btn = mapp.utils.html`
             <button class="admin action outlined"
             data-user=${JSON.stringify(user)}
@@ -1017,11 +1028,7 @@
             <span class="label">Edit primary roles</span>
           </button>`;
 
-        const current_roles = rolesList ? Object.entries(rolesList)
-        .filter(role => (checkIfRolePrimary(role[0])))
-        .map(role => {
-          return roleItem({user, role})
-        }) : ``;
+        const current_roles = renderRoleLayout(user);
 
         const current_roles_content = current_roles.length ? 
         mapp.utils.html`
@@ -1068,10 +1075,15 @@
         const role = params.role[0];
         const roleObj = params.role[1];
 
+        const current_user_roles = new Set(params.user.roles);
+
+        const secondary_roles = Object.keys(roleObj).length ? Object.keys(roleObj).join(',') : null;
+
         const subroles = Object.keys(roleObj).map((subrole) => {
             if(!subrole) return;
-            return mapp.utils.html.node`<button class=${params.user.roles.includes(subrole) ? 'granted' : ''}
+            return mapp.utils.html.node`<button class=${current_user_roles.has(role) && current_user_roles.has(subrole) ? 'granted' : ''}
               data-keep=true
+              data-primary-role=${role}
               data-role=${subrole}
               onclick=${assignRole}>
               <span class="dot">${subrole}
@@ -1095,9 +1107,10 @@
           <span class="material-symbols-outlined" translate="no">add_moderator</span>
           <span>Primary role</span>
           </div>
-          <button class=${params.user.roles.includes(role) ? 'granted' : ''}
+          <button class=${current_user_roles.has(role) ? 'granted' : ''}
           data-keep=true
           data-role=${role}
+          data-secondary-roles=${secondary_roles}
           onclick=${assignRole}>
           <span class="dot">${role}
           <span class="material-symbols-outlined role-switch" translate="no"></span>
@@ -1110,19 +1123,36 @@
       /* TODO assign role to the user */
       async function assignRole(e) {
 
-        e.target.classList.toggle('granted');
-
-        const role = e.target.dataset.role;
-
         const user = JSON.parse(e.target.closest('.role-item').dataset.user);
 
-        // check if role should be added or removed
-        if(user.roles.includes(role)) {
-          const idx = user.roles.indexOf(role);
-          user.roles.splice(idx, 1);
+        const current_user_roles = new Set(user.roles);
+
+        // role assigned to the target button
+        const role = e.target.dataset.role;
+        
+        // primary role if exists
+        const primary_role = e.target.dataset.primaryRole;
+
+        // secondary roles if exist
+        const secondary_roles = new Set(e.target.dataset.secondaryRoles?.split(','));
+
+        // the logic behind partial interdependence: when primary role is turned off all related secondary roles are turned off
+        // when a secondary role is turned on relative primary role is turned on too
+        // if user has this role
+        if(current_user_roles.has(role)) {
+          // take it away
+          current_user_roles.delete(role);
+          // take away secondary roles too
+          if(secondary_roles.size) secondary_roles.forEach(secondary_role => current_user_roles.delete(secondary_role));
+
         } else {
-          user.roles.push(role);
+          // if user doesn't have it add it
+          current_user_roles.add(role);
+          // if it has primary role add it too
+          if(primary_role) current_user_roles.add(primary_role);
         }
+
+        user.roles = [...current_user_roles];
 
         await updateUser({
           email: user.email,
@@ -1133,6 +1163,12 @@
          document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+
+        // recreate the layout of an array of user role items in order to reflect updates
+        const user_roles_content = renderRoleLayout(user);
+        // render layout as html in the target container.
+        mapp.utils.render(document.querySelector('.user-grant .layout'), mapp.utils.html`${user_roles_content}`);
+
         // update details and the list but keep details open
         updateUsersList(e);
 
