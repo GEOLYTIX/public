@@ -941,29 +941,6 @@
 
       }
 
-      /* this function verifies account - sets flag verified to true */
-      async function verifyAccount(e) {
-
-        const user = JSON.parse(e.target.dataset.user);
-
-        if(user.verified) return;
-
-        user.verified = true;
-
-        await updateUser({
-          email: user.email,
-          approved: user.verified
-        });
-
-        // refresh verified flag on the current screen and keep the window 
-        mapp.utils.render(document.querySelector('.user-approval .content'), user_approval_content(user));
-        // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-        // set updated attribute on user details so that the user list is updated on close
-        document.querySelector('dialog.user-details').dataset.update = true;
-
-      }
-
       /* this function modifies user account and returns to updated user details view. Called inside userApproval */
       async function approveAccount(e) {
 
@@ -1247,9 +1224,18 @@
           </div>
           <div>${expiry_date_input}</div>`;
 
-        const verification = mapp.utils.html`<div><span class="dot" 
-        style=${'background-color: ' + (user.verified ? 'var(--color-verified)' : 'var(--color-blocked)')}>
-        ${user.verified ? mapp.dictionary.yes : mapp.dictionary.no}</span></div>`;
+        const verification = mapp.ui.elements.chkbox({
+          checked: user.api,
+          label: mapp.dictionary.admin_view.status_description["Verified"],
+          onchange: async (checked) => {
+            user.verified = checked;
+            
+             await updateUser({
+              email: user.email,
+              verified: user.verified
+            });
+          }
+        });
 
         const re_verification = mapp.utils.html`<div><span class="dot" 
         style=${'background-color: ' + (user.re_verification ? 'var(--color-re-verify)' : 'var(--color-blocked)')}>
@@ -1287,14 +1273,6 @@
         });
 
         /* approves user account - sets approved flag to true */
-        const verify_btn = mapp.utils.html.node`<button class="verify admin action outlined" data-keep=true
-        data-user=${JSON.stringify(user)}
-        onclick=${verifyAccount}>
-        <span class="material-symbols-outlined">person_check</span>
-        <span class="label">${mapp.dictionary.admin_view.verify}</span>
-        </button>`;
-
-        /* approves user account - sets approved flag to true */
         const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
         data-user=${JSON.stringify(user)}
         onclick=${approveAccount}>
@@ -1319,22 +1297,25 @@
           <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
           <div class="actions">
             ${exit_btn}
-            ${verify_btn}
             ${approve_btn}
           </div>
           <div class="details">
-          <div>
-            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
-          </div>
-          ${verification}
-          <div>
+            <div>
+              <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
+            </div>
+            <div>${approved}</div>
+
+              <div>
             <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
           </div>
           ${re_verification}
+
           <div>
-            <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
+            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
           </div>
-          <div>${approved}</div>
+          <div>${verification}</div>
+        
+          
           <div>
             <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
           </div>
