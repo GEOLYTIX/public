@@ -63,6 +63,16 @@
         }
       }
 
+      .backdrop {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
       .actions {
           margin-top: 1em; 
           display: inline-flex; 
@@ -96,7 +106,7 @@
 
       /* user details dialog layout */
       dialog.user-details {
-        padding: 1em;
+        padding: 2em;
         width: 100%;
         height: 100%;
 
@@ -108,9 +118,10 @@
 
       /* user approval dialog layout */
       dialog.user-approval {
-        padding: 1em;
-        width: 90%;
-        height: 90%;
+        padding: 2em;
+        width: 100%;
+        height: 100%;
+        border: solid 1px var(--color-border);
 
         .details {
           grid-template-columns: repeat(2, 1fr);
@@ -120,9 +131,10 @@
 
       /* user roles dialog layout */
       dialog.user-grant {
-        padding: 1em;
-        width: 90%;
-        height: 90%;
+        padding: 2em;
+        width: 100%;
+        height: 100%;
+        border: solid 1px var(--color-border);
 
         .title {
           margin-top: 1em; 
@@ -244,6 +256,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         margin: 1px;
+        height: 2em;
         
         &.yes {
           background-color: var(--color-approved);
@@ -414,7 +427,6 @@
     </style>
 
     <body>
-
       <div class="viewport">
         <div class="content">
           <header></header>
@@ -423,6 +435,7 @@
           <div id="users"></div>
         </div>
       </div>
+      <div class="backdrop"></div>
 
       <script type="module">
         console.log(`MAPP v${mapp.version}`);
@@ -433,7 +446,7 @@
           en: {
             admin_view: {
               acc_details: "User Account Details",
-              access_log: "Access History",
+              access_log: "Login History",
               access_log_caption: "Last 10 visits",
               access_log_label: "User Access History",
               access_log_not_found: "No access log information found for this user account.",
@@ -442,6 +455,8 @@
               api: "API Access",
               approval: "Approval",
               approve: "Approve",
+              approve_alert: "Account has been approved.",
+              approve_confirm: "You are about to approve this user account.\nPlease confirm access roles have been assigned where required.",
               approved: "Approved",
               approved_by: "Approved by",
               approved_label: "Last modification to this account approved by",
@@ -545,8 +560,7 @@
 
       /* create notifications placeholder section TODO clarify how this should eventually exist or work */
       const notification = mapp.utils.html`<div class="notification">
-        <span>You have <b>2 pending approvals</b> that require attention</span>
-        <button class="action">Review pending users</button>`
+        <span>You have <b>2 pending approvals</b> that require attention</span>`
 
       mapp.utils.render(document.getElementById('notification'), notification);
 
@@ -844,12 +858,19 @@
           bottom_actions
         ];
 
+        /* show backdrop to prevent clicks on user table when account details are open */
+        document.querySelector('.backdrop').style.display = 'block';
+
         const dialog = mapp.ui.elements.dialog({
           target: document.body,
+          contained: true,
+          containedCentre: true,
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.acc_details}`,
           class: 'user-details box-shadow',
           closeBtn: true,
           onClose: async (e) => {
+            // hide backdrop on window close
+            document.querySelector('.backdrop').style.display = 'none';
             // if users list needs update request data and recreate rows
             if(!dialog.node.dataset.update) return;
             users.data = await getUserList();
@@ -953,6 +974,12 @@
 
         if(user.approved) return;
 
+        const confirm = await mapp.ui.elements.confirm({
+          text: mapp.dictionary.admin_view.approve_confirm
+        });
+
+        if(!confirm) return;
+
         user.approved = true;
 
         await updateUser({
@@ -967,6 +994,10 @@
         // close approval window
         e.target.closest('dialog.user-approval').close();
 
+        mapp.ui.elements.alert({
+          text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
+        });
+
       }
 
       /* this function displays editable user details where changes are saved and approval process is completed */
@@ -977,6 +1008,9 @@
         const content = user_approval_content(user);
 
         const dialog = mapp.ui.elements.dialog({
+          target: event.target.closest('.user-details'),
+          contained: true,
+          containedCentre: true,
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.approval}`,
           class: 'user-approval box-shadow',
           closeBtn: true,
@@ -1067,6 +1101,9 @@
           `;
 
         const dialog = mapp.ui.elements.dialog({
+          target: event.target.closest('.user-details'),
+          containedCentre: true,
+          contained: true,
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant_assignment}`,
           class: 'user-grant box-shadow',
           closeBtn: true,
