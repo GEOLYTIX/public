@@ -104,6 +104,11 @@
         flex-wrap: wrap;
       }
 
+      /* font size for h1 inside header tags */
+      header h1 {
+        font-size: 140%;
+      }
+
       /* user details dialog layout */
       dialog.user-details {
         padding: 2em;
@@ -404,6 +409,39 @@
 
       }
 
+      /* search */
+      .search {
+
+        width: 100%;
+        margin-bottom: 1em;
+        background-color: var(--color-base);
+        border-radius: var(--border-radius);
+        padding: 0.5em 1em;
+        box-shadow: var(--box-shadow);
+
+        .radio-group {
+          display: flex;
+          gap: 2em;
+          border: none;
+        }
+
+        /* Container for each individual radio button and its label */
+        .radio-option {
+          display: flex;
+          align-items: center;
+          gap: 8px; /* Space between the radio circle and its text */
+          white-space: nowrap;
+        }
+
+        input[type="radio"] {
+          accent-color: var(--color-primary); /* Changes the color of the selected dot */
+          width: 1.2em;
+          height: 1.2em;
+        }
+        
+
+      }
+
       /* rules for mobile */
       @media only screen and (max-width: 700px) {
         body,
@@ -412,7 +450,7 @@
         }
 
         .desktop-only {
-          display: none;
+          display: none !important;
         }
 
         .user-approval .checkbox > span:last-child {
@@ -424,6 +462,13 @@
           text-align: center;
           font-size: 1.1em;
         }
+
+        .search {
+          .radio-group {
+            flex-direction: column;
+            gap: 0.2em;
+          }
+        }
       }
 
     </style>
@@ -434,6 +479,7 @@
           <header></header>
           <div id="tools"></div>
           <div id="notification"></div>
+          <div id="search"></div>
           <div id="users"></div>
         </div>
       </div>
@@ -475,6 +521,7 @@
               deleted: "Account for this user has been permanently deleted.",
               email: "E-mail",
               email_label: "Account e-mail address",
+              email_label_search: "e-mail address",
               exit: "Exit",
               expiry_label: "Account Expiry Date",
               failed_login: "Failed Login Attempts",
@@ -508,6 +555,7 @@
               required_not: "Not required",
               roles: "User Access Roles",
               roles_info: "Information on Access Roles",
+              roles_label_search: "access role",
               roles_message: "Visit Grant Roles section in order to set user roles.",
               roles_no: "No access roles defined",
               roles_no_info: "no description provided",
@@ -515,6 +563,7 @@
               roles_view: "View information on access roles",
               save: "Save",
               search_accounts: "Search accounts",
+              search_placeholder: "Search users by",
               secondary_roles: "Secondary roles",
               show_blocked: "Show blocked accounts",
               status: "Status",
@@ -526,6 +575,7 @@
                 "API": "Check the box to allow the user API privileges",
                 "Blocked": "check the box to block the user",
               },
+              status_label_search: "status",
               sure: "Are you sure you want to delete this user account?",
               test_view: "Test View",
               top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort.",
@@ -560,12 +610,6 @@
 
       mapp.utils.render(document.querySelector('header'), header);
 
-      /* create notifications placeholder section TODO clarify how this should eventually exist or work */
-      const notification = mapp.utils.html`<div class="notification">
-        <span>You have <b>2 pending approvals</b> that require attention</span>`
-
-      mapp.utils.render(document.getElementById('notification'), notification);
-
 
       /* create administrator actions */
 
@@ -583,6 +627,71 @@
       </div>`;
 
       mapp.utils.render(document.getElementById('tools'), administrator_tools);
+
+      /* create notifications placeholder section TODO clarify how this should eventually exist or work */
+      const notification = mapp.utils.html`<div class="notification">
+        <span>You have <b>2 pending approvals</b> that require attention</span>`
+
+      mapp.utils.render(document.getElementById('notification'), notification);
+
+      /* create searchbox */
+
+      const search = mapp.utils.html`<div class="search">
+        <div class="radio-group">
+          <input type="text" placeholder="${mapp.dictionary.admin_view.search_placeholder}" oninput=${search_function}/>
+          <div class="radio-option">
+            <input type="radio" id="email" name="search" value="email" checked>
+            <label for="email">${mapp.dictionary.admin_view.email_label_search}</label>
+          </div>
+          <div class="radio-option desktop-only">
+            <input type="radio" id="role" name="search" value="role">
+            <label for="role">${mapp.dictionary.admin_view.roles_label_search}</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="status" name="search" value="status">
+            <label for="status">${mapp.dictionary.admin_view.status_label_search}</label>
+          </div>
+        </div>
+      `;
+
+      /* search function based on selected mode */ 
+      function search_function(e) {
+
+          const mode = e.target.closest(".radio-group")
+          .querySelector("input[type='radio'][name='search']:checked").value; 
+
+          const filter = e.target.value.toLowerCase();
+
+          const table = document.querySelector('#users table');
+
+          const trs = table.querySelectorAll("tbody tr");
+
+          for (const tr of trs) {
+
+            if(!e.target.value) {
+              tr.style.display = "";
+              continue;
+            }
+
+            const userData = JSON.parse(tr.dataset.user);
+
+            if(mode === 'email') {
+              tr.style.display = userData.email.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+
+            if(mode === 'status') {
+              tr.style.display = userData.status.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+
+            if(mode === 'role') {
+              const roles_string = userData.roles.join(',');
+              tr.style.display = roles_string.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+          }
+      } 
+
+      mapp.utils.render(document.getElementById('search'), search);
+
 
 
       /* get users list */
@@ -623,7 +732,7 @@
             field: 'status',
             label: mapp.dictionary.admin_view.status
           }]
-        });
+      });
 
       mapp.utils.render(document.getElementById('users'), users.table);
 
@@ -740,11 +849,13 @@
 
         const active_roles = get_user_roles(user);
 
+        const user_status = check_user_status(user);
+
         return mapp.utils.html.node`<tr data-user=${JSON.stringify(user)} onclick=${user_details}>
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td>${check_user_status(user)}</td>
+          <td>${user_status}</td>
           </tr>`
 
       }
@@ -790,6 +901,8 @@
             label: mapp.dictionary.admin_view.blocked,
             color: "var(--color-blocked)"
           };
+
+        user.status = state.label;
 
         return mapp.utils.html`<span class="dot" style=${'background-color: ' + state.color}>${state.label}</span>`;
       }
