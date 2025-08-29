@@ -147,11 +147,16 @@
 
         .layout {
           margin-top: 1em; 
+          padding: 1em;
           display: flex;
           flex-direction: row;
           flex-wrap: wrap; 
           gap: 0.5em;
           align-items: anchor-center;
+          max-height: 400px;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          border-bottom: solid 1px var(--color-border);
 
           .role-item {
             background-color: var(--color-base-secondary);
@@ -598,15 +603,11 @@
           },
         });
 
-      /* Get list of available roles from workspace. TODO check how to show these */
-      const rolesList = await mapp.utils.xhr(
-        `${document.head.dataset.dir}/api/workspace/roles?tree=true`
-      );
+      /* Get list of available roles from workspace. */
+      const rolesList = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
 
-      console.log(rolesList);
-
-      /* TODO Get current URL params - clarify if this is needed */
-      const params = new URLSearchParams(window.location.search);
+      /* Serialize roles into a tree in order to determine hierarchy */
+      const rolesTree = makeTree(rolesList);
 
       /* Create header with all needed parameters, logged in as etc. TODO review header content */
       const header = mapp.utils.html`<div>
@@ -699,7 +700,27 @@
 
       mapp.utils.render(document.getElementById('search'), search);
 
+      /* creates tree of roles list */
+      function makeTree(list_of_roles) {
 
+        const rolesSet = new Set(list_of_roles);
+
+        const tree = {};
+
+        rolesSet.forEach((role) => {
+          const roles = role.split('.');
+          if (roles.length > 1) {
+            roles.reduce((accumulator, currentValue) => (accumulator[currentValue] ??= {}), tree);
+            // Pop last role from array into roleSet.
+            rolesSet.add(roles.pop());
+          } else {
+            tree[role] ??= {};
+          }
+        });
+
+        return tree;
+
+      }
 
       /* get users list */
       async function getUserList() {
@@ -874,7 +895,7 @@
 
         // exclude roles that users have that are not relevant in the workspace TODO
         const active_roles = user.roles
-        .filter((role) => (rolesList.hasOwnProperty(role)))
+        .filter((role) => (rolesTree.hasOwnProperty(role)))
         .map(role => {
           return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
         });
@@ -1146,7 +1167,7 @@
 
         const secondary_roles = new Set();
 
-        Object.values(rolesList).forEach((primary_role) => {
+        Object.values(rolesTree).forEach((primary_role) => {
 
           Object.keys(primary_role).forEach((secondary_role) => (secondary_roles.add(secondary_role)));
 
@@ -1161,9 +1182,9 @@
       Used both to initialize and to regenerate after update */
       function renderRoleLayout(user) {
 
-        if(!rolesList) return ``;
+        if(!rolesList.length) return ``;
 
-        const current_roles = Object.entries(rolesList)
+        const current_roles = Object.entries(rolesTree)
         .filter(role => (checkIfRolePrimary(role[0])))
         .map(role => {
           return roleItem({user, role})
@@ -1176,7 +1197,7 @@
       /* TODO in progress - role assignment workflow */
       async function roleAssignment(event) {
 
-        if(!rolesList || rolesList === {}) return console.log('no roles found');
+        if(!rolesList?.length) return console.log('no roles found');
 
         const user = JSON.parse(event.target.dataset.user);
 
