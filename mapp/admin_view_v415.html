@@ -996,7 +996,7 @@
               const response = await mapp.utils.xhr(
                 `${document.head.dataset.dir}/api/user/delete?email=${user.email}`
               );
-              if (response.err) return console.error(response.err);
+              if (response?.err) return console.error(response.err);
               removeSearch();
               // remove deleted row
               document
