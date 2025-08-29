@@ -1158,6 +1158,10 @@
           class: 'user-approval box-shadow',
           closeBtn: true,
           content,
+          onClose: () => {
+            // regenerate user details after update
+            document.querySelector('dialog.user-details').dataset.update = true;
+          }
         });
 
       }
