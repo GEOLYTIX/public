@@ -998,6 +998,8 @@
               );
               if (response?.err) return console.error(response.err);
               removeSearch();
+              // close form
+              document.querySelector(".mask").classList.add("none");
               // remove deleted row
               document
                 .querySelector(
