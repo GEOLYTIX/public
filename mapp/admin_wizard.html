@@ -743,6 +743,9 @@
           row.re_verification = !row.verificationtoken;
         });
 
+        // sort emails alphabetically ignoring case
+        data.sort((a, b) => a.email.toLowerCase().localeCompare(b.email.toLowerCase()));
+
         return data;
       }
 
@@ -1251,7 +1254,7 @@
 
 
         const content = mapp.utils.html`
-          <div class="notification ws-pre"><b>Active roles are highlighted in <span class="dot" style="background-color: var(--color-approved)">green</span>\nClick on roles to switch their status.</b></div>
+          <div class="notification ws-pre"><b>Active roles are  <span class="dot" style="background-color: var(--color-approved)">highlighted</span>\nClick on roles to switch their status.</b></div>
           <div>
             <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
             <h1>
