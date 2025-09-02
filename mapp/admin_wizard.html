@@ -247,6 +247,13 @@
           }
         }
 
+        &.approve {
+          background-color: var(--color-primary);
+          * {
+            color: var(--color-font-contrast);
+          }
+        }
+
         &.disabled {
           pointer-events: none;
           cursor: not-allowed;
@@ -985,9 +992,9 @@
             <span class="material-symbols-outlined" translate="no">back_to_tab</span>
             <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
+           ${access_log_btn}
            ${grant_btn}
            ${approve_btn}
-           ${access_log_btn}
         </div>`;
 
         const bottom_actions = mapp.utils.html`
@@ -1531,7 +1538,7 @@
         });
 
         /* approves user account - sets approved flag to true */
-        const approve_btn = mapp.utils.html.node`<button class="${'approve admin action outlined' + (user.approved ? ' disabled' : '')}" data-keep=true
+        const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
         data-user=${JSON.stringify(user)}
         onclick=${approveAccount}>
         <span class="material-symbols-outlined" translate="no">verified</span>
