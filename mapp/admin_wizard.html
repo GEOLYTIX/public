@@ -175,7 +175,7 @@
                   font-size: inherit;
                   color: inherit;
                   position: absolute;
-                  background-color: var(--color-active);
+                  background-color: var(--color-approved);
                   border-radius: 50%;
                   box-shadow: var(--box-shadow);
                   margin: 0 1px;
@@ -185,7 +185,7 @@
 
               &.granted {
                 .dot {
-                  background-color: var(--color-approved);
+                  background-color: var(--color-primary);
 
                   .role-switch::after {
                     content: 'check';
@@ -1246,10 +1246,22 @@
 
         const exit_btn = mapp.utils.html.node`<button class="exit admin action outlined"
         onclick=${(e) => {
+          // close grant roles window
           e.target.closest('dialog.user-grant').close();
         }}>
         <span class="material-symbols-outlined" translate="no">arrow_back</span>
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
+        </button>`;
+
+        const back_to_list = mapp.utils.html.node`<button class="back-to-list admin action outlined"
+        onclick=${(e) => {
+          // close grant roles window
+          e.target.closest('dialog.user-grant').close();
+          // close details window
+          e.target.closest('dialog.user-details').close();
+        }}>
+        <span class="material-symbols-outlined" translate="no">back_to_tab</span>
+        <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
         </button>`;
 
 
@@ -1261,6 +1273,7 @@
               <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
             </h1>
           <div class="actions">
+            ${back_to_list}
             ${exit_btn}
           </div>
           ${current_roles_content}
@@ -1536,11 +1549,23 @@
         <span class="label">${mapp.dictionary.admin_view.exit}</span>
         </button>`;
 
+        const back_to_list = mapp.utils.html.node`<button class="back-to-list admin action outlined"
+        onclick=${(e) => {
+          // close approval window
+          e.target.closest('dialog.user-approval').close();
+          // close details window
+          e.target.closest('dialog.user-details').close();
+        }}>
+        <span class="material-symbols-outlined" translate="no">back_to_tab</span>
+        <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
+        </button>`;
+
         return mapp.utils.html`
           <div class="notification"><b>${mapp.dictionary.admin_view.roles_message}</b></div>
           <div><span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
           <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
           <div class="actions">
+            ${back_to_list}
             ${exit_btn}
             ${approve_btn}
           </div>
