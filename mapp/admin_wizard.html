@@ -289,7 +289,7 @@
       }
 
       .ws-pre {
-        white-space: pre;
+        white-space: pre-line;
       }
 
       /* reusable class for information */
@@ -512,9 +512,11 @@
             admin_view: {
               acc_details: "User Account Details",
               access_log: "Login History",
-              access_log_caption: "Last 10 visits",
+              access_log_since: "Active since ",
+              access_log_caption: "Most recent logins",
               access_log_label: "User Login History",
               access_log_not_found: "No access log information found for this user account.",
+              access_log_total: "Total logins",
               account_status: "Account Status",
               admin: "Administrator",
               api: "API Access",
@@ -1100,13 +1102,22 @@
         }
 
         const len = response.access_log.length;
+        const first_visit = response.access_log[0] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(response.access_log[0].split('@')[0])) : ``;
           // include only last 10 timestamps
         const log = len < 11
               ? response.access_log
               : response.access_log.slice(Math.max(len - 10, 0));
 
-        const text = len ? 
-        mapp.utils.html`<span><b>${mapp.dictionary.admin_view.access_log_caption}</b></span><br><span class="ws-pre">${log.join("\n")}` : `${mapp.dictionary.admin_view.access_log_not_found}`
+        const content = mapp.utils.html`
+          <b>${mapp.dictionary.admin_view.access_log_since + first_visit}</b>
+          <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot" style="background-color: var(--color-primary)">${len}</span></span>
+          <span class="ws-pre">
+            <b>${mapp.dictionary.admin_view.access_log_caption}</b>
+            ${log.join('\n')}
+          </span>`
+
+        const text = len ? content : `${mapp.dictionary.admin_view.access_log_not_found}`
 
         mapp.ui.elements.alert({
           title: mapp.dictionary.admin_view.access_log_label,
