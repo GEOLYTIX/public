@@ -1266,7 +1266,7 @@
 
 
         const content = mapp.utils.html`
-          <div class="notification ws-pre"><b>Active roles are  <span class="dot" style="background-color: var(--color-approved)">highlighted</span>\nClick on roles to switch their status.</b></div>
+          <div class="notification ws-pre"><b>Active roles are  <span class="dot" style="background-color: var(--color-primary)">highlighted</span>\nClick on roles to switch their status.</b></div>
           <div>
             <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
             <h1>
@@ -1531,7 +1531,7 @@
         });
 
         /* approves user account - sets approved flag to true */
-        const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
+        const approve_btn = mapp.utils.html.node`<button class="${'approve admin action outlined' + (user.approved ? ' disabled' : '')}" data-keep=true
         data-user=${JSON.stringify(user)}
         onclick=${approveAccount}>
         <span class="material-symbols-outlined" translate="no">verified</span>
