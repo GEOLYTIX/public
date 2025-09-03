@@ -554,6 +554,8 @@
               filter_status: "Filter status",
               grant: "Grant Roles",
               grant_assignment: "Role Assignment",
+              header: "User Management Dashboard",
+              header_subtitle: "Overview of all users, their roles and account status.",
               lang_label: "Account Language",
               languages: {
                 en: "English",
@@ -626,8 +628,8 @@
       /* Create header with all needed parameters, logged in as etc. TODO review header content */
       const header = mapp.utils.html`<div>
         <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
-        <h1>User Management Dashboard</h1>
-        <p>Overview of all users, their roles and account status.</p>
+        <h1>${mapp.dictionary.admin_view.header}</h1>
+        <p>${mapp.dictionary.admin_view.header_subtitle}</p>
       </div>`;
 
       mapp.utils.render(document.querySelector('header'), header);
@@ -652,7 +654,7 @@
 
       /* create notifications placeholder section TODO clarify how this should eventually exist or work */
       const notification = mapp.utils.html`<div class="notification">
-        <span>You have <b>2 pending approvals</b> that require attention</span>`
+        <span>You have <b>2 accounts awaiting approval</b> that require attention</span>`
 
       mapp.utils.render(document.getElementById('notification'), notification);
 
@@ -697,17 +699,12 @@
 
             const userData = JSON.parse(tr.dataset.user);
 
-            if(mode === 'email') {
-              tr.style.display = userData.email.toLowerCase().indexOf(filter) > -1 ? "" : "none";
-            }
-
-            if(mode === 'status') {
-              tr.style.display = userData.status.toLowerCase().indexOf(filter) > -1 ? "" : "none";
-            }
-
             if(mode === 'role') {
-              const roles_string = userData.roles.join(',');
+              // filter out roles that users may have outside current workspace
+              const roles_string = userData.roles.filter((role) => (rolesTree.hasOwnProperty(role))).join(',');
               tr.style.display = roles_string.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            } else {
+              tr.style.display = userData[mode].toLowerCase().indexOf(filter) > -1 ? "" : "none";
             }
           }
       } 
@@ -783,7 +780,6 @@
 
 
       /* List table and its functionalities */
-
       function listTable(params) {
 
         if(!params.data) return;
@@ -803,7 +799,6 @@
           });
 
           return heads;
-
         }
 
         params.rows = (params) => {
@@ -813,7 +808,6 @@
           const rows = params.data.map((item) => params.createRow(item));
 
           return rows;
-
         };
 
         params.sort = (column, asc = true) => {
@@ -851,7 +845,6 @@
           params.table
           .querySelector(`th:nth-child(${column + 1})`)
           .classList.toggle("desc", !asc);
-
         };
 
         params.update = (params) => {
@@ -881,8 +874,8 @@
         return params;
       }
 
-      /* this function creates each row in the user table */
-      function createUserRow(user) {
+      /* this function creates user row content - separated in order to be able to update row after editing */
+      function user_row_content(user) {
 
         const last_log_entry = user.access_log ? user.access_log.split("@")[0] : ``;
 
@@ -896,21 +889,43 @@
 
         const user_status = check_user_status(user);
 
-        return mapp.utils.html.node`<tr data-user=${JSON.stringify(user)} onclick=${user_details}>
+        return mapp.utils.html`
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td>${user_status}</td>
-          </tr>`
+          <td>${user_status}</td>`;
+      }
 
+      /* this function creates each row in the user table */
+      function createUserRow(user) {
+
+        const content = user_row_content(user);
+
+        return mapp.utils.html.node`<tr 
+          data-email=${user.email} data-user=${JSON.stringify(user)} onclick=${user_details}>
+          ${content}
+          </tr>`;
+      }
+
+       /* this function regenerates updated row in the user table */
+      function updateUserRow(user) {
+        const row = users.table.querySelector(`tr[data-email="${user.email}"]`);
+        // check if row is found
+        if(!row) return;
+        // delete row if account was deleted
+        if(user.delete) {
+          row.remove();
+          return;
+        }
+        // recreate row content with updated user
+        row.dataset.user = JSON.stringify(user);
+        mapp.utils.render(row, user_row_content(user));
       }
 
       /* this function will display user roles in table and details */
       function get_user_roles(user) {
-        // TODO find out how this should be flattened and adjusted
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
-
-        // exclude roles that users have that are not relevant in the workspace TODO
+        // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
         .filter((role) => (rolesTree.hasOwnProperty(role)))
         .map(role => {
@@ -918,7 +933,6 @@
         });
 
         return mapp.utils.html`<div class="flex">${active_roles}`;
-
       }
 
       /* this function determines user status */
@@ -957,7 +971,7 @@
 
         const user = JSON.parse(e.target.closest('tr').dataset.user);
 
-        // TODO prevent grant roles for blocked users. Should it be prevented if no roles exist?
+        // Disabled grant roles for blocked users
         const grant_btn = mapp.utils.html`
             <button class="${'admin action outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
@@ -966,11 +980,10 @@
               <span class="label">${mapp.dictionary.admin_view.grant}</span>
             </button>`;
 
-        // TODO prevent approval when roles exist and have not been visited?
+        // Disabled approval for blocked users
         const approve_btn = mapp.utils.html`
             <button class="${'admin action outlined approve' + (user.blocked ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
-            data-keep=true
             onclick=${userApproval}>
               <span class="material-symbols-outlined" translate="no">approval</span>
               <span class="label">${mapp.dictionary.admin_view.approval}</span>
@@ -999,7 +1012,7 @@
 
         const bottom_actions = mapp.utils.html`
           <div class="actions">
-          <button class=${'admin action outlined ' + (user.blocked ? 'unblock' : 'block')} data-keep=true data-user=${JSON.stringify(user)}
+          <button class=${'admin action outlined ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
             <span class="material-symbols-outlined" translate="no"></span>
             <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
@@ -1031,10 +1044,6 @@
           onClose: async (e) => {
             // hide backdrop on window close
             document.querySelector('.backdrop').style.display = 'none';
-            // if users list needs update request data and recreate rows
-            if(!dialog.node.dataset.update) return;
-            users.data = await getUserList();
-            users.update(users);
           },
           content,
         });
@@ -1051,13 +1060,12 @@
           text
         });
 
-        if (confirm) {
-            const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${email}`);
-            if (response?.err) return console.error(response.err);
-            // close details and refresh users table
-            updateUsersList(e);
-        }
+        if(!confirm) return;
 
+        const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${email}`);
+        if (response?.err) return console.error(response.err);
+        // close details and refresh users table
+        updateUsersList({ delete: true, email });
       }
 
       /* this function blocks user account after confirmation */
@@ -1070,29 +1078,25 @@
 
         const confirm = await mapp.ui.elements.confirm({ text });
 
-        if(confirm) {
+        if(!confirm) return;
 
-          user.blocked = !user.blocked;
+        user.blocked = !user.blocked;
 
-          await updateUser({
-            email: user.email, 
-            blocked: user.blocked
-          });
+        await updateUser({
+          email: user.email, 
+          blocked: user.blocked
+        });
 
-          // refresh user content while keeping the user details window on
-          mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-          // update button label
-          e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
-          // update button icon
-          e.target.classList.toggle('block', 'unblock');
-          document.querySelector('.grant').classList.toggle('disabled');
-          document.querySelector('.approve').classList.toggle('disabled');
-          // update user attribute in the target
-          e.target.dataset.user = JSON.stringify(user);
-          updateUsersList(e);
-
-        }
-
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+        // update button label
+        e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
+        // update button icon
+        e.target.classList.toggle('block', 'unblock');
+        document.querySelector('.grant').classList.toggle('disabled');
+        document.querySelector('.approve').classList.toggle('disabled');
+        // update user list and keep details window on
+        updateUsersList({ ...user, ...{ keep: true } });
       }
 
       /* this function display user access log information */
@@ -1114,7 +1118,7 @@
         const len = response.access_log.length;
         const first_visit = response.access_log[0] ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(response.access_log[0].split('@')[0])) : ``;
-          // include only last 10 timestamps
+        // include only last 10 timestamps
         const log = len < 11
               ? response.access_log
               : response.access_log.slice(Math.max(len - 10, 0));
@@ -1127,13 +1131,12 @@
             ${log.join('\n')}
           </span>`
 
-        const text = len ? content : `${mapp.dictionary.admin_view.access_log_not_found}`
+        const text = len ? content : mapp.dictionary.admin_view.access_log_not_found;
 
         mapp.ui.elements.alert({
           title: mapp.dictionary.admin_view.access_log_label,
           text,
         });
-
       }
 
       /* this function modifies user account and returns to updated user details view. Called inside userApproval */
@@ -1158,15 +1161,14 @@
 
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-        // set updated attribute on user details so that the user list is updated on close but keep details open
-        document.querySelector('dialog.user-details').dataset.update = true;
+        // update users list and keep user details window on
+        updateUsersList({...user, ...{ keep: true } });
         // close approval window
         e.target.closest('dialog.user-approval').close();
 
         mapp.ui.elements.alert({
           text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
         });
-
       }
 
       /* this function displays editable user details where changes are saved and approval process is completed */
@@ -1185,11 +1187,10 @@
           closeBtn: true,
           content,
           onClose: () => {
-            // regenerate user details after update
-            document.querySelector('dialog.user-details').dataset.update = true;
+            // regenerate user row after update and keep details window on
+            updateUsersList({...user, ...{ keep: true }});
           }
         });
-
       }
 
       /* Checks whether an object key should be handled as a primary role */
@@ -1205,7 +1206,6 @@
 
         // the role not found in secondary level in the role tree
         return !secondary_roles.has(role);
-
       }
 
       /* returns array of role items in order to create role layout. 
@@ -1221,25 +1221,15 @@
         });
 
         return current_roles;
-
       }
 
-      /* TODO in progress - role assignment workflow */
+      /* role assignment window */
       async function roleAssignment(event) {
 
-        if(!rolesList?.length) return console.log('no roles found');
+        // no roles found
+        if(!rolesList?.length) return;
 
         const user = JSON.parse(event.target.dataset.user);
-
-        console.log(user);
-
-        const edit_roles_btn = mapp.utils.html`
-            <button class="admin action outlined"
-            data-user=${JSON.stringify(user)}
-            data-keep=true>
-            <span class="material-symbols-outlined" translate="no">edit</span>
-            <span class="label">${mapp.dictionary.admin_view.primary_roles_edit}</span>
-          </button>`;
 
         const current_roles = renderRoleLayout(user);
 
@@ -1295,7 +1285,6 @@
           closeBtn: true,
           content,
         });
-
       }
 
       /* create role item in the list of roles available for assignment */
@@ -1311,7 +1300,6 @@
         const subroles = Object.keys(roleObj).map((subrole) => {
             if(!subrole) return;
             return mapp.utils.html.node`<button class=${current_user_roles.has(role) && current_user_roles.has(subrole) ? 'granted' : ''}
-              data-keep=true
               data-primary-role=${role}
               data-role=${subrole}
               onclick=${assignRole}>
@@ -1337,7 +1325,6 @@
           <span>${mapp.dictionary.admin_view.primary_role}</span>
           </div>
           <button class=${current_user_roles.has(role) ? 'granted' : ''}
-          data-keep=true
           data-role=${role}
           data-secondary-roles=${secondary_roles}
           onclick=${assignRole}>
@@ -1349,7 +1336,7 @@
           ${subrole_container}`
       }
 
-      /* TODO assign role to the user */
+      /* assign role to the user */
       async function assignRole(e) {
 
         const user = JSON.parse(e.target.closest('.role-item').dataset.user);
@@ -1389,30 +1376,25 @@
         });
         
         // set updated user object on the grant button so that role items are up to date 
-         document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
+        document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-
         // recreate the layout of an array of user role items in order to reflect updates
         const user_roles_content = renderRoleLayout(user);
         // render layout as html in the target container.
         mapp.utils.render(document.querySelector('.user-grant .layout'), mapp.utils.html`${user_roles_content}`);
-
         // update details and the list but keep details open
-        updateUsersList(e);
-
+        updateUsersList({...user, ...{ keep: true } });
       }
 
-      /* this function sets update flag on user details window in order to update list of users with edited values after exit to main view */
-      function updateUsersList(e) {
-
+      /* this function keeps users list up to date based on ongoing edits */
+      function updateUsersList(params) {
         const userDetails = document.querySelector('dialog.user-details');
-        // set attribute for update
-        userDetails.dataset.update = true;
+        // set user attribute for update
+        updateUserRow(params);
         // if button has keep option keep the user details dialog open
-        if(e.target.dataset.keep) return;
+        if(params.keep) return;
         userDetails.close();
-
       }
 
       /* creates user prop content for read only. Used to rerender content after update */
@@ -1481,7 +1463,7 @@
               email: user.email,
               expires_on: user.expires_on
             });
-
+            updateUsersList({...user, ...{ keep: true } });
           }}>`;
 
         const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
@@ -1495,10 +1477,11 @@
           onchange: async (checked) => {
             user.verified = checked;
             
-             await updateUser({
+            await updateUser({
               email: user.email,
               verified: user.verified
             });
+            updateUsersList({...user, ...{ keep: true } });
           }
         });
 
@@ -1521,6 +1504,7 @@
               email: user.email,
               admin: user.admin
             });
+            updateUsersList({...user, ...{ keep: true } });
           }
         });
 
@@ -1534,11 +1518,12 @@
               email: user.email,
               api: user.api
             });
+            updateUsersList({...user, ...{ keep: true } });
           }
         });
 
         /* approves user account - sets approved flag to true */
-        const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined" data-keep=true
+        const approve_btn = mapp.utils.html.node`<button class="approve admin action outlined"
         data-user=${JSON.stringify(user)}
         onclick=${approveAccount}>
         <span class="material-symbols-outlined" translate="no">verified</span>
@@ -1547,7 +1532,6 @@
 
         const exit_btn = mapp.utils.html.node`<button class="save action outlined admin"
         onclick=${(e) => {
-          event.target.dataset.user = JSON.stringify(user);
           // refresh user content while keeping the user details window on
           mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
           e.target.closest('dialog.user-approval').close();
@@ -1581,18 +1565,14 @@
               <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
             </div>
             <div>${approved}</div>
-
-              <div>
+            <div>
             <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
           </div>
           ${re_verification}
-
           <div>
             <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
           </div>
           <div>${verification}</div>
-        
-          
           <div>
             <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
           </div>
@@ -1604,7 +1584,6 @@
           ${expiry_date_entry}
           </div>
         `;
-
       }
 
       /* updates field for user entry */
@@ -1617,7 +1596,6 @@
             "Content-type": "application/json",
           },
         });
-
       }
 
 
