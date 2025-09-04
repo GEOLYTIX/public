@@ -443,7 +443,7 @@
           gap: 2em;
           border: none;
 
-          input[type="text"] {
+          input[type="search"] {
             background-color: var(--color-base-tertiary);
             border: solid 1px var(--color-border);
             border-radius: var(--border-radius);
@@ -664,7 +664,7 @@
 
       const search = mapp.utils.html`<div class="search">
         <div class="radio-group">
-          <input type="text" placeholder="${mapp.dictionary.admin_view.search_placeholder}" oninput=${search_function}/>
+          <input type="search" placeholder="${mapp.dictionary.admin_view.search_placeholder}" oninput=${search_function}/>
           <div class="radio-option">
             <input type="radio" id="email" name="search" value="email" checked>
             <label for="email">${mapp.dictionary.admin_view.email_label_search}</label>
