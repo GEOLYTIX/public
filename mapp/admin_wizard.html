@@ -99,6 +99,7 @@
         align-items: anchor-center;
       }
 
+      /* used for role pills displayed in user data */
       .flex {
         display: flex;
         flex-wrap: wrap;
@@ -585,6 +586,7 @@
               roles_info: "Information on Access Roles",
               roles_label_search: "access role",
               roles_message: "Visit Grant Roles section in order to set user roles.",
+              roles_more: "and more",
               roles_no: "No access roles defined",
               roles_no_info: "no description provided",
               roles_search: "Search access roles",
@@ -885,7 +887,7 @@
 
         user.last_active_iso = user.last_active === "" ? null : last_log_entry;
 
-        const active_roles = get_user_roles(user);
+        const active_roles = show_user_roles_in_list(user);
 
         const user_status = check_user_status(user);
 
@@ -922,7 +924,7 @@
         mapp.utils.render(row, user_row_content(user));
       }
 
-      /* this function will display user roles in table and details */
+      /* this function will display user roles in account details */
       function get_user_roles(user) {
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         // exclude roles that users have that are not relevant in the workspace
@@ -932,7 +934,22 @@
           return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
         });
 
-        return mapp.utils.html`<div class="flex">${active_roles}`;
+        return mapp.utils.html`<div class="flex">${active_roles}<div>`;
+      }
+
+      /* this function will display user first 3 roles in users list */
+      function show_user_roles_in_list(user) {
+        if(!user.roles?.length) return mapp.utils.html`<div></div>`;
+        // exclude roles that users have that are not relevant in the workspace
+        const active_roles = user.roles
+        .filter((role) => (rolesTree.hasOwnProperty(role)))
+        .filter((role) => user.roles.indexOf(role) < 4)
+        .map((role, idx) => {
+          if(idx === 3) return mapp.utils.html`<span class="dot" style="color: var(--color-primary)">${mapp.dictionary.admin_view.roles_more}</span>`;
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
+        });
+
+        return mapp.utils.html`<div class="flex">${active_roles}<div>`;
       }
 
       /* this function determines user status */
