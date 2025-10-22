@@ -79,6 +79,20 @@
           flex-direction: row;
           flex-wrap: wrap;
           gap: 4px;
+
+          button.danger {
+            color: var(--color-danger);
+            & > * {
+              color: var(--color-danger);
+            }
+          }
+
+          button.info {
+            color: var(--color-info);
+            & > * {
+              color: var(--color-info);
+            }
+          }
       }
 
       .details {
@@ -145,93 +159,6 @@
         .title {
           margin-top: 1em; 
         }
-
-        .layout {
-          margin-top: 1em; 
-          padding: 1em;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap; 
-          gap: 0.5em;
-          align-items: stretch;
-          max-height: 400px;
-          overflow-y: scroll;
-          overflow-x: hidden;
-          border-bottom: solid 1px var(--color-border);
-
-          .role-item {
-            background-color: var(--color-base-secondary);
-            padding: var(--padding);
-            border: solid 1px var(--color-border);
-            border-radius: var(--border-radius);
-            min-height: 100px;
-            width: 24%;
-            align-items: anchor-center;
-
-            button {
-              position: relative;
-              
-              * {
-                pointer-events: none;
-              }
-              .dot {
-                background-color: var(--color-blocked);
-
-                .material-symbols-outlined.role-switch {
-                  font-size: inherit;
-                  color: inherit;
-                  position: absolute;
-                  background-color: var(--color-approved);
-                  border-radius: 50%;
-                  box-shadow: var(--box-shadow);
-                  margin: 0 1px;
-                }
-
-              }
-
-              &.granted {
-                
-                .dot {
-                  background-color: var(--color-primary);
-
-                  .role-switch::after {
-                    content: 'check';
-                  }
-                }
-
-              }
-            }
-
-            .role-title {
-              justify-content: space-between;
-              padding: 0 0.5em;
-              width: 100%;
-              margin-right: 1em;
-              text-align: center;
-            }
-
-            .role-header {
-              flex-basis: 100%;
-              * {
-                  color: var(--color-primary);
-                  pointer-events: none;
-                  font-size: inherit;
-                  vertical-align: middle;
-                }
-              }
-
-            .role-layout {
-              display: flex;
-              flex-wrap: wrap;
-              margin-top: 0.5em;
-              padding: 0.5em;
-              gap: 0.5em;
-              border: solid 1px var(--color-border);
-              border-radius: var(--border-radius);
-
-            }
-          }
-        } 
       }
 
 
@@ -241,6 +168,7 @@
         border-color: var(--color-border);
         background-color: var(--color-base-tertiary);
         min-width: 8em;
+        padding: 0.5em 1em;
 
         &.block {
           .material-symbols-outlined::after {
@@ -254,12 +182,12 @@
           }
         }
 
-        &.approve {
+        /*&.approve {
           background-color: var(--color-primary);
           * {
             color: var(--color-font-contrast);
           }
-        }
+        }*/
 
         &.disabled {
           pointer-events: none;
@@ -635,6 +563,8 @@
       /* Get list of available roles from workspace. */
       const rolesList = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
 
+      console.log(rolesList);
+
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
 
@@ -950,6 +880,7 @@
 
       /* this function will display user first 3 roles in users list */
       function show_user_roles_in_list(user) {
+        console.log(user);
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
@@ -1001,7 +932,7 @@
 
         // Disabled grant roles for blocked users
         const grant_btn = mapp.utils.html`
-            <button class="${'admin action outlined grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
+            <button class="${'admin action outlined info grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             onclick=${roleAssignment}>
               <span class="material-symbols-outlined" translate="no">add_moderator</span>
@@ -1010,7 +941,7 @@
 
         // Disabled approval for blocked users
         const approve_btn = mapp.utils.html`
-            <button class="${'admin action outlined approve' + (user.blocked ? ' disabled' : '')}"
+            <button class="${'admin action outlined info approve' + (user.blocked ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             onclick=${userApproval}>
               <span class="material-symbols-outlined" translate="no">person_edit</span>
@@ -1025,7 +956,7 @@
               <span class="label">${mapp.dictionary.admin_view.access_log}</span>
             </button>`;
 
-        const actions = mapp.utils.html.node`
+        const actions = mapp.utils.html`
         <div class="actions">
           <button class="admin action outlined" onclick=${e => {
            dialog.close();
@@ -1036,27 +967,24 @@
            ${access_log_btn}
            ${grant_btn}
            ${approve_btn}
-        </div>`;
-
-        const bottom_actions = mapp.utils.html`
-          <div class="actions">
-          <button class=${'admin action outlined ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
+           <button class=${'admin action outlined danger ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
             <span class="material-symbols-outlined" translate="no"></span>
             <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
           </button>
-          <button class="admin action outlined" data-email=${user.email} onclick=${deleteAccount}>
+          <button class="admin action outlined danger" data-email=${user.email} onclick=${deleteAccount}>
             <span class="material-symbols-outlined" translate="no">account_circle_off</span>
             <span class="label">${mapp.dictionary.admin_view.delete}</span>
-          </button></div>`;
+          </button>
+        </div>`;
+
 
           const user_details_layout = mapp.utils.html`<div class="details">${user_details_content(user)}`;
 
 
         const content = [
           actions,
-          user_details_layout,
-          bottom_actions
+          user_details_layout
         ];
 
         /* show backdrop to prevent clicks on user table when account details are open */
@@ -1221,35 +1149,7 @@
         });
       }
 
-      /* Checks whether an object key should be handled as a primary role */
-      function checkIfRolePrimary(role) {
 
-        const secondary_roles = new Set();
-
-        Object.values(rolesTree).forEach((primary_role) => {
-
-          Object.keys(primary_role).forEach((secondary_role) => (secondary_roles.add(secondary_role)));
-
-        });
-
-        // the role not found in secondary level in the role tree
-        return !secondary_roles.has(role);
-      }
-
-      /* returns array of role items in order to create role layout. 
-      Used both to initialize and to regenerate after update */
-      function renderRoleLayout(user) {
-
-        if(!rolesList.length) return ``;
-
-        const current_roles = Object.entries(rolesTree)
-        .filter(role => (checkIfRolePrimary(role[0])))
-        .map(role => {
-          return roleItem({user, role})
-        });
-
-        return current_roles;
-      }
 
       /* role assignment window */
       async function roleAssignment(event) {
@@ -1258,16 +1158,6 @@
         if(!rolesList?.length) return;
 
         const user = JSON.parse(event.target.dataset.user);
-
-        const current_roles = renderRoleLayout(user);
-
-        const current_roles_content = current_roles.length ? 
-        mapp.utils.html`
-          <div class="title">
-          <h2>${mapp.dictionary.admin_view.primary_roles_available}</h2>
-          </div>
-          <div class="layout">
-          ${current_roles}</div>` : mapp.utils.html`<div class="title">${mapp.dictionary.admin_view.primary_roles_none}`;
 
         const exit_btn = mapp.utils.html.node`<button class="exit admin action outlined"
         onclick=${(e) => {
@@ -1291,7 +1181,7 @@
 
 
         const content = mapp.utils.html`
-          <div class="notification ws-pre"><b>Active roles are  <span class="dot" style="background-color: var(--color-primary)">highlighted</span>\nClick on roles to switch their status.</b></div>
+          <div class="notification ws-pre"><b>Some info here.</b></div>
           <div>
             <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
             <h1>
@@ -1301,7 +1191,6 @@
             ${back_to_list}
             ${exit_btn}
           </div>
-          ${current_roles_content}
           `;
 
         const dialog = mapp.ui.elements.dialog({
@@ -1315,82 +1204,11 @@
         });
       }
 
-      /* create role item in the list of roles available for assignment */
-      function roleItem(params) {
 
-        const role = params.role[0];
-        const roleObj = params.role[1];
-
-        const current_user_roles = new Set(params.user.roles);
-
-        const secondary_roles = Object.keys(roleObj).length ? Object.keys(roleObj).join(',') : null;
-
-        const subroles = Object.keys(roleObj).map((subrole) => {
-            if(!subrole) return;
-            return mapp.utils.html.node`<button class=${current_user_roles.has(role) && current_user_roles.has(subrole) ? 'granted' : ''}
-              data-primary-role=${role}
-              data-role=${subrole}
-              onclick=${assignRole}>
-              <span class="dot">${subrole}
-              <span class="material-symbols-outlined role-switch" translate="no"></span>
-              </span>
-            </button>`
-        });
-
-        const subrole_container = subroles.length ? mapp.utils.html`<div class="role-layout">
-          <div class="role-header">
-          <span class="material-symbols-outlined" translate="no">graph_1</span>
-          <span>${mapp.dictionary.admin_view.secondary_roles}</span>
-          </div>
-          ${subroles}
-        </div>` : ``;
-
-        return mapp.utils.html.node`<div class="role-item"
-          data-user=${JSON.stringify(params.user)}>
-          <div class="role-title">
-          <button class=${current_user_roles.has(role) ? 'granted' : ''}
-          data-role=${role}
-          data-secondary-roles=${secondary_roles}
-          onclick=${assignRole}>
-          <span class="dot">${role}
-          <span class="material-symbols-outlined role-switch" translate="no"></span>
-          </span>
-          </button>
-          </div>
-          ${subrole_container}`
-      }
-
-      /* assign role to the user */
+      /* assign role to the user - at the moment not in use but kept for reference */
       async function assignRole(e) {
 
-        const user = JSON.parse(e.target.closest('.role-item').dataset.user);
-
         const current_user_roles = new Set(user.roles);
-
-        // role assigned to the target button
-        const role = e.target.dataset.role;
-        
-        // primary role if exists
-        const primary_role = e.target.dataset.primaryRole;
-
-        // secondary roles if exist
-        const secondary_roles = new Set(e.target.dataset.secondaryRoles?.split(','));
-
-        // the logic behind partial interdependence: when primary role is turned off all related secondary roles are turned off
-        // when a secondary role is turned on relative primary role is turned on too
-        // if user has this role
-        if(current_user_roles.has(role)) {
-          // take it away
-          current_user_roles.delete(role);
-          // take away secondary roles too
-          if(secondary_roles.size) secondary_roles.forEach(secondary_role => current_user_roles.delete(secondary_role));
-
-        } else {
-          // if user doesn't have it add it
-          current_user_roles.add(role);
-          // if it has primary role add it too
-          if(primary_role) current_user_roles.add(primary_role);
-        }
 
         user.roles = [...current_user_roles];
 
@@ -1400,15 +1218,12 @@
         });
         
         // set updated user object on the grant button so that role items are up to date 
-        document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
+        //document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
         // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-        // recreate the layout of an array of user role items in order to reflect updates
-        const user_roles_content = renderRoleLayout(user);
-        // render layout as html in the target container.
-        mapp.utils.render(document.querySelector('.user-grant .layout'), mapp.utils.html`${user_roles_content}`);
+        //mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+
         // update details and the list but keep details open
-        updateUsersList({...user, ...{ keep: true } });
+        //updateUsersList({...user, ...{ keep: true } });
       }
 
       /* this function keeps users list up to date based on ongoing edits */
