@@ -401,6 +401,117 @@
 
       }
 
+                /* outer container for roles ui */
+        .roles-management {
+          display:flex; 
+          flex-direction: column; 
+          width: 100%; 
+          height: 100%;
+
+          /* header for the split section */
+          .split-screen-header {
+            padding: 1em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1em;
+          }
+
+          /* end header for the split section */
+
+          /* begin role assignment specific layout */
+          .role-assignment {
+            height: 500px;
+            padding: 1em;
+            margin: 0 1em;
+            border: solid 1px var(--color-border);
+            border-radius: 10px;
+            display: grid;
+            grid-gap: 1em;
+            grid-template-columns: repeat(2, 1fr);
+
+            .role-hierarchy {
+              /* for the role hierarchy target */
+              overflow-y: auto;
+            }
+
+            .role-preview {
+              overflow-y: auto;
+              ul.preview-list {
+                li {
+                  border-bottom: solid 1px var(--color-border);
+                  padding: 1em 0.5em;
+                  font-family: monospace;
+                }
+              }
+            }
+
+            /* indent on nested lists */
+            ul {
+              padding-left: 0; 
+
+              ul {
+                padding-left: 2em;
+              }
+
+              button.material-symbols-outlined.disabled {
+                color: var(--color-font-mid);
+                cursor: default;
+              }  
+            }
+
+            .inline-flex {
+              display: inline-flex;
+              border-bottom: solid 1px var(--color-border);
+              padding: 0.2em;
+              width: 100%;
+
+              &.granted {
+                background-color: rgb(from var(--color-info) r g b / 0.1);
+                border-radius: 3px;
+              }
+            }
+
+            .expandable {
+              
+              button.material-symbols-outlined.caret::after {
+                content: 'arrow_right';
+                color: var(--color-font);
+              }
+
+              & > div > label {
+                font-weight: bold;
+              }
+
+              & ul {
+                /* list closed */
+                opacity: 0;
+                max-height: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+              }
+
+              &.expanded {
+
+                & > div > button.material-symbols-outlined.caret::after {
+                  content: 'arrow_drop_down';
+                  color: var(--color-font);
+                }
+
+                & > ul {
+                  /* list open */
+                  opacity: 1;
+                  max-height: unset;
+                  height: auto;
+                  visibility: visible;
+                  transition: max-height 0.3s ease, opacity 0.3s ease;
+                }
+              }
+            }
+          }
+          
+        } /* end role assignment specific layout */
+
+
       /* rules for mobile */
       @media only screen and (max-width: 700px) {
         body,
@@ -579,7 +690,6 @@
 
 
       /* create administrator actions */
-
       const administrator_tools = mapp.utils.html`<div class="actions">
         <button class="action admin outlined"
         onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
@@ -654,7 +764,7 @@
 
       mapp.utils.render(document.getElementById('search'), search);
 
-      /* creates tree of roles list */
+      /* creates tree of roles list - should I remove nested roles that duplicate on the main level? */
       function makeTree(list_of_roles) {
 
         const rolesSet = new Set(list_of_roles);
@@ -880,7 +990,6 @@
 
       /* this function will display user first 3 roles in users list */
       function show_user_roles_in_list(user) {
-        console.log(user);
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
@@ -1149,8 +1258,6 @@
         });
       }
 
-
-
       /* role assignment window */
       async function roleAssignment(event) {
 
@@ -1179,18 +1286,30 @@
         <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
         </button>`;
 
+        // creates document fragment to embed ui - add these to dictionary
+        const role_ui_container = mapp.utils.html.node`<div class="roles-management">
+          <div class="split-screen-header">
+          <h2>Role Hierarchy</h2>
+          <h2>Assigned Roles Summary</h2>
+        </div>
+        <div class="role-assignment">
+          <div class="role-hierarchy"></div>
+          <div class="role-preview"></div>
+        </div></div>`;
+
+        /* create list content */
+        mapp.utils.render(role_ui_container.querySelector('.role-hierarchy'), mapp.utils.html.node`<div>${listHierarchy(rolesTree, user)}`);
+        /* create preview windown content */
+        mapp.utils.render(role_ui_container.querySelector('.role-preview'), rolePreview(user));
 
         const content = mapp.utils.html`
-          <div class="notification ws-pre"><b>Some info here.</b></div>
-          <div>
-            <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span></div>
-            <h1>
-              <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
-            </h1>
-          <div class="actions">
-            ${back_to_list}
-            ${exit_btn}
-          </div>
+            <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span><br>
+            <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
+            <div class="actions">
+              ${back_to_list}
+             ${exit_btn}
+            </div>
+          ${role_ui_container}
           `;
 
         const dialog = mapp.ui.elements.dialog({
@@ -1202,28 +1321,6 @@
           closeBtn: true,
           content,
         });
-      }
-
-
-      /* assign role to the user - at the moment not in use but kept for reference */
-      async function assignRole(e) {
-
-        const current_user_roles = new Set(user.roles);
-
-        user.roles = [...current_user_roles];
-
-        await updateUser({
-          email: user.email,
-          roles: user.roles
-        });
-        
-        // set updated user object on the grant button so that role items are up to date 
-        //document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
-        // refresh user content while keeping the user details window on
-        //mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-
-        // update details and the list but keep details open
-        //updateUsersList({...user, ...{ keep: true } });
       }
 
       /* this function keeps users list up to date based on ongoing edits */
@@ -1424,6 +1521,160 @@
           </div>
         `;
       }
+
+      /** Begin Role Assignment UI **/
+      /* creates the list hierarchy DOM */
+      function listHierarchy(obj, user) {
+        const ul = mapp.utils.html.node`<ul class="main-list">`;
+        // Use Object.entries to get [key, value] pairs
+        for (const [key, value] of Object.entries(obj)) {
+          // Check if the value is an object with inner content
+          if (typeof value === 'object' && Object.keys(value).length > 0) {
+            // recurse into that object
+            const sublist = listHierarchy(value, user);
+            ul.append(listItem({ value: key, content: sublist, user }));
+          } else {
+            // "leaf" value
+            const li = listItem({ value: key, user });
+            ul.append(li);
+          }
+        }
+        return ul;
+      }
+
+      /* creates role item; params: user, content, value */
+      function listItem(params) {
+        const value = params.value;
+        const content = params.content;
+
+        const roleSet = new Set();
+
+        for(const role of params.user.roles) {
+          role.split('.').map(item => roleSet.add(item));
+        }
+
+        const checked = roleSet.has(params.value);
+
+        const chkbox = mapp.ui.elements.chkbox({ 
+          label: value, 
+          val: value,
+          onchange: async (state, val)=> {
+            chkbox.closest('div').classList.toggle('granted');
+            await role_change({
+              user: params.user, 
+              element: chkbox, 
+              role: value, 
+              checked: state 
+            });
+          },
+          checked
+        });
+
+        if(!content) {
+          return mapp.utils.html.node`<li data-id=${value}>
+          <div class="${'inline-flex' + (checked ? ` granted` : ``) }">
+          <button class="disabled material-symbols-outlined notranslate">shield_person</button>
+          ${chkbox}`;
+        }
+
+        const li = mapp.utils.html.node`<li class="expandable" data-id=${value}>
+        <div class="${'inline-flex' + (checked ? ` granted` : ``) }">
+        <button class="material-symbols-outlined notranslate caret" onclick=${(e) => {
+          li.classList.toggle('expanded');
+        }}></button>
+        ${chkbox}
+        </div>
+        ${content}`;
+
+        return li;
+      }
+
+      /* runs inside checkbox change event, updates role; params: user, element, value, checked */
+      async function role_change(params) {
+        const element = params.element;
+        const role = params.role;
+        const checked = params.checked;
+        const user = params.user;
+
+        // add current role
+        const role_list = [role];
+
+        // current list item
+        const current_li = element.closest('li');
+
+        // upper list item
+        let upper_li = current_li.closest('ul').closest('li');
+
+        // from each list item up to level of main-list
+        while (upper_li && !upper_li.classList.contains('main-list')) {
+          // get data id which is information on role
+          role_list.unshift(upper_li.dataset.id)
+          // reassign upper list item
+          upper_li = upper_li.closest('ul').closest('li');
+        }
+
+        // this constructs the role
+        const changed_role = role_list.join('.');
+
+        if(checked) {
+          // add this to array
+          user.roles.push(changed_role);
+        } else {
+          // filter out everything that contains this role
+          user.roles = user.roles.filter(role => {
+            return !role.includes(changed_role);
+          })
+        }
+
+        // update with final contatenated role
+        await updateUser({
+            email: user.email,
+            roles: user.roles
+          });
+
+        /* update hierarchy DOM based on the new roles */
+        updateListDOM(user, document.querySelector('.role-hierarchy'));
+        // set updated user object on the grant button so that role items are up to date 
+        document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
+        //update details and the list but keep details open
+        updateUsersList({...user, ...{ keep: true } });
+      }
+
+      /* updates hierarchy DOM after change; user and document fragment to update */
+      /* handled separately from creation to prevent lists from closing by default */
+      function updateListDOM(user, document_fragment) {
+        const roleSet = new Set();
+
+        // get a set of unique roles
+        for(const role of user.roles) {
+          role.split('.').map(item => roleSet.add(item));
+        }
+
+        // get all list items
+        const all_items = document_fragment.querySelectorAll('li');
+
+        // set state and classes where needed - granted class and checked checkbox
+        for(const li of all_items) {
+          li.querySelector('input').checked = roleSet.has(li.dataset.id);
+          roleSet.has(li.dataset.id) ? li.querySelector('div').classList.add('granted') : li.querySelector('div').classList.remove('granted');
+        }
+
+        // redraw the preview section
+        mapp.utils.render(document.querySelector('.role-preview'), rolePreview(user));
+      }
+
+      /* draws role preview section content */
+      function rolePreview(user) {
+        const items = [];
+        for(const role of user.roles) {
+          items.push(mapp.utils.html`<li>${role}</li>`)
+        }
+        return mapp.utils.html`<ul class="preview-list">${items}`;
+      }
+
+      /** End Role Assignment UI **/
 
       /* updates field for user entry */
       async function updateUser(params) {
