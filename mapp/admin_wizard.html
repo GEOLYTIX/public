@@ -401,7 +401,7 @@
 
       }
 
-                /* outer container for roles ui */
+        /* outer container for roles ui */
         .roles-management {
           display:flex; 
           flex-direction: column; 
@@ -633,6 +633,8 @@
               required: "Required after password reset",
               required_not: "Not required",
               roles: "User Access Roles",
+              roles_hierarchy: "Role Hierarchy",
+              roles_hierarchy_summary: "Assigned Roles Summary",
               roles_info: "Information on Access Roles",
               roles_label_search: "access role",
               roles_message: "Visit Grant Roles section in order to set user roles.",
@@ -980,7 +982,7 @@
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
-        .filter((role) => (rolesTree.hasOwnProperty(role)))
+        //.filter((role) => (rolesTree.hasOwnProperty(role))) // temporarily disabled to show all roles assigned the the user relevat or not
         .map(role => {
           return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
         });
@@ -993,7 +995,7 @@
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
-        .filter((role) => (rolesTree.hasOwnProperty(role)))
+        //.filter((role) => (rolesTree.hasOwnProperty(role)))  // temporarily disabled to show all roles assigned the the user relevat or not
         .filter((role) => user.roles.indexOf(role) < 4)
         .map((role, idx) => {
           if(idx === 3) return mapp.utils.html`<span class="dot" style="color: var(--color-primary)">${mapp.dictionary.admin_view.roles_more}</span>`;
@@ -1286,11 +1288,11 @@
         <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
         </button>`;
 
-        // creates document fragment to embed ui - add these to dictionary
+        // creates document fragment to embed ui
         const role_ui_container = mapp.utils.html.node`<div class="roles-management">
           <div class="split-screen-header">
-          <h2>Role Hierarchy</h2>
-          <h2>Assigned Roles Summary</h2>
+          <h2>${mapp.dictionary.admin_view.roles_hierarchy}</h2>
+          <h2>${mapp.dictionary.admin_view.roles_hierarchy_summary}</h2>
         </div>
         <div class="role-assignment">
           <div class="role-hierarchy"></div>
