@@ -782,8 +782,33 @@
           }
         });
 
+        /* delete duplicates from root level */
+        deleteRedundantRoles(tree);
+
         return tree;
 
+      }
+
+      /* Finds all nested roles that are duplicated on the root level */
+      function findNestedRoles(nestedRoles, rolesTree) {
+        if(!rolesTree) return;
+        for (const [key, value] of Object.entries(rolesTree)) {
+          // Check if the value is itself a plain object
+          if (value?.constructor === Object) {
+            Object.keys(value).forEach(k => nestedRoles.add(k));
+            // Recurse to go deeper
+            findNestedRoles(value);
+          }
+        }
+      }
+
+      /* Deletes nested roles from root level */
+      function deleteRedundantRoles(rolesTree) {
+        const nestedRoles = new Set();
+        findNestedRoles(nestedRoles, rolesTree);
+        for (const key of nestedRoles) {
+          if (rolesTree.hasOwnProperty(key)) delete rolesTree[key];
+        }
       }
 
       /* get users list */
