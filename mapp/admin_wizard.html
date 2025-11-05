@@ -783,32 +783,37 @@
         });
 
         /* delete duplicates from root level */
-        deleteRedundantRoles(tree);
+        const nested_keys = getAllNestedKeys(tree);
+        nested_keys.forEach(item => (delete tree[item]));
 
         return tree;
 
       }
 
-      /* Finds all nested roles that are duplicated on the root level */
-      function findNestedRoles(nestedRoles, rolesTree) {
-        if(!rolesTree) return;
-        for (const [key, value] of Object.entries(rolesTree)) {
-          // Check if the value is itself a plain object
-          if (value?.constructor === Object) {
-            Object.keys(value).forEach(k => nestedRoles.add(k));
-            // Recurse to go deeper
-            findNestedRoles(value);
+      function getAllNestedKeys(obj) {
+        const nestedKeys = new Set();
+
+        function findKeys(currentObj) {
+        // We only care about plain objects (not arrays, null, etc.)
+          if (currentObj?.constructor !== Object) {
+            return;
+          }
+
+          for (const [key, value] of Object.entries(currentObj)) {
+          // Check if the value is itself a plain, non-array object
+            if (value?.constructor === Object) {
+            // This is a nested object. Add all its keys to our set.
+              Object.keys(value).forEach(k => nestedKeys.add(k));
+              // --- RECURSION ---
+              // Now, scan this nested object for *its own* nested objects.
+              findKeys(value);
+            }
           }
         }
-      }
+        // Start the recursive search on the main object
+        findKeys(obj);
 
-      /* Deletes nested roles from root level */
-      function deleteRedundantRoles(rolesTree) {
-        const nestedRoles = new Set();
-        findNestedRoles(nestedRoles, rolesTree);
-        for (const key of nestedRoles) {
-          if (rolesTree.hasOwnProperty(key)) delete rolesTree[key];
-        }
+        return nestedKeys;
       }
 
       /* get users list */
@@ -1320,8 +1325,16 @@
           <div class="role-preview"></div>
         </div>`;
 
+        /* create hierarchy DOM element */
+        const listHierarchyDOM = listHierarchy(rolesTree, user);
+
+        /* assign attributes corresponding to roles */
+        assignAttributes(listHierarchyDOM);
+
+        updateListDOM(user, listHierarchyDOM);
+
         /* create list content */
-        mapp.utils.render(role_ui_container.querySelector('.role-hierarchy'), mapp.utils.html.node`<div>${listHierarchy(rolesTree, user)}`);
+        mapp.utils.render(role_ui_container.querySelector('.role-hierarchy'), mapp.utils.html.node`<div>${listHierarchyDOM}`);
         /* create preview windown content */
         mapp.utils.render(role_ui_container.querySelector('.role-preview'), rolePreview(user));
 
@@ -1547,14 +1560,15 @@
 
       /** Begin Role Assignment UI **/
       /* creates the list hierarchy DOM */
-      function listHierarchy(obj, user) {
+      function listHierarchy(obj, user, key) {
         const ul = mapp.utils.html.node`<ul class="main-list">`;
+        key ? (ul.dataset.id = key) : (ul.classList.add('root'));
         // Use Object.entries to get [key, value] pairs
         for (const [key, value] of Object.entries(obj)) {
           // Check if the value is an object with inner content
           if (typeof value === 'object' && Object.keys(value).length > 0) {
             // recurse into that object
-            const sublist = listHierarchy(value, user);
+            const sublist = listHierarchy(value, user, key);
             ul.append(listItem({ value: key, content: sublist, user }));
           } else {
             // "leaf" value
@@ -1565,43 +1579,76 @@
         return ul;
       }
 
+      /* assigns concatenated role as dataset.id to a list item */
+      function assignAttributes(document_fragment, separator = '.') {
+        // Get all <li> elements within the root list
+        const allListItems = document_fragment.querySelectorAll('li');
+
+        allListItems.forEach(li => {
+          const pathParts = [];
+          let currentElement = li; // Start at the <li>
+
+          // Loop upwards until we're outside the rootUl
+          while (currentElement && document_fragment.contains(currentElement)) {
+          // Find the closest parent <ul>
+            const parentUl = currentElement.closest('ul');
+            if (parentUl === null) {
+              break; // Should not happen if li is in document_fragment, but safe.
+            }
+
+            // Check if this <ul> has the data attribute
+            if (parentUl.dataset.id) {
+              // Add to the *beginning* of the array
+              // This builds the path in top-down order (e.g., 'root' -> 'child')
+              pathParts.unshift(parentUl.dataset.id);
+            }
+
+            // Move up for the next loop.
+            // We look for the <li> that contains this <ul>
+            // then we'll find its parent <ul> in the next loop.
+            currentElement = parentUl.closest('li');
+
+            // If we've reached the root, add its ID and stop
+            if (parentUl === document_fragment) {
+              break;
+            }
+          }
+          // Set the new data attribute on the <li>
+          if (pathParts.length > 0) {
+            li.dataset.id = `${pathParts.join(separator)}.${li.dataset.id}`;
+          }
+        });
+      }
+
       /* creates role item; params: user, content, value */
       function listItem(params) {
         const value = params.value;
         const content = params.content;
 
-        const roleSet = new Set();
-
-        for(const role of params.user.roles) {
-          role.split('.').map(item => roleSet.add(item));
-        }
-
-        const checked = roleSet.has(params.value);
-
         const chkbox = mapp.ui.elements.chkbox({ 
-          label: value, 
+          label: value,
           val: value,
           onchange: async (state, val)=> {
             chkbox.closest('div').classList.toggle('granted');
+            const modified_role = chkbox.closest('li').dataset.id;
             await role_change({
               user: params.user, 
               element: chkbox, 
-              role: value, 
+              role: modified_role,
               checked: state 
             });
           },
-          checked
         });
 
         if(!content) {
           return mapp.utils.html.node`<li data-id=${value}>
-          <div class="${'inline-flex' + (checked ? ` granted` : ``) }">
+          <div class="inline-flex">
           <button class="disabled material-symbols-outlined notranslate">shield_person</button>
           ${chkbox}`;
         }
 
         const li = mapp.utils.html.node`<li class="expandable" data-id=${value}>
-        <div class="${'inline-flex' + (checked ? ` granted` : ``) }">
+        <div class="inline-flex">
         <button class="material-symbols-outlined notranslate caret" onclick=${(e) => {
           li.classList.toggle('expanded');
         }}></button>
@@ -1614,49 +1661,27 @@
 
       /* runs inside checkbox change event, updates role; params: user, element, value, checked */
       async function role_change(params) {
-        const element = params.element;
         const role = params.role;
         const checked = params.checked;
         const user = params.user;
 
-        // add current role
-        const role_list = [role];
-
-        // current list item
-        const current_li = element.closest('li');
-
-        // upper list item
-        let upper_li = current_li.closest('ul').closest('li');
-
-        // from each list item up to level of main-list
-        while (upper_li && !upper_li.classList.contains('main-list')) {
-          // get data id which is information on role
-          role_list.unshift(upper_li.dataset.id)
-          // reassign upper list item
-          upper_li = upper_li.closest('ul').closest('li');
-        }
-
-        // this constructs the role
-        const changed_role = role_list.join('.');
-
         if(checked) {
-          // add this to array
-          user.roles.push(changed_role);
+          user.roles.push(role);
         } else {
-          // filter out everything that contains this role
-          user.roles = user.roles.filter(role => {
-            return !role.includes(changed_role);
-          })
+          const idx = user.roles.indexOf(role);
+          if(idx > -1) user.roles.splice(idx, 1);
         }
 
-        // update with final contatenated role
+        // update
         await updateUser({
-            email: user.email,
-            roles: user.roles
-          });
+          email: user.email,
+          roles: user.roles
+        });
 
         /* update hierarchy DOM based on the new roles */
         updateListDOM(user, document.querySelector('.role-hierarchy'));
+        // redraw the preview section
+        mapp.utils.render(document.querySelector('.role-preview'), rolePreview(user));
         // set updated user object on the grant button so that role items are up to date 
         document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
         // refresh user content while keeping the user details window on
@@ -1668,24 +1693,27 @@
       /* updates hierarchy DOM after change; user and document fragment to update */
       /* handled separately from creation to prevent lists from closing by default */
       function updateListDOM(user, document_fragment) {
-        const roleSet = new Set();
 
-        // get a set of unique roles
         for(const role of user.roles) {
-          role.split('.').map(item => roleSet.add(item));
+
+          const this_li = document_fragment.querySelector(`li[data-id="${role}"]`);
+          if(!this_li) return;
+          this_li.querySelector('div').classList.add('granted');
+          this_li.querySelector('input').checked = true;
+
+          let root_lists = document_fragment.querySelectorAll('ul.main-list.root li');
+
+          root_lists = Array.from(root_lists).filter(item => {
+            return role.includes(item.dataset.id)
+          })
+
+          for(const list of root_lists) {
+            list.querySelector('div').classList.add('granted');
+            list.querySelector('input').checked = true;
+          }
+          
         }
-
-        // get all list items
-        const all_items = document_fragment.querySelectorAll('li');
-
-        // set state and classes where needed - granted class and checked checkbox
-        for(const li of all_items) {
-          li.querySelector('input').checked = roleSet.has(li.dataset.id);
-          roleSet.has(li.dataset.id) ? li.querySelector('div').classList.add('granted') : li.querySelector('div').classList.remove('granted');
-        }
-
-        // redraw the preview section
-        mapp.utils.render(document.querySelector('.role-preview'), rolePreview(user));
+        
       }
 
       /* draws role preview section content */
