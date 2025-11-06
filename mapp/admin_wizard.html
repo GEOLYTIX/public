@@ -289,13 +289,6 @@
           }
         }
 
-        /*&.approve {
-          background-color: var(--color-primary);
-          * {
-            color: var(--color-font-contrast);
-          }
-        }*/
-
         &.disabled {
           pointer-events: none;
           cursor: not-allowed;
@@ -397,12 +390,13 @@
               width: 100%;
               display: table;
               overflow: scroll;
-              cursor: pointer;
               table-layout: fixed;
+              user-select: none;
 
               thead {
                 text-align: left;
                 font-weight: bold;
+                cursor: pointer;
 
                 th {
                   position: sticky;
@@ -418,6 +412,13 @@
 
                   &:last-child {
                     border-top-right-radius: var(--border-radius);
+                  }
+
+                  &.tools {
+                    pointer-events: none;
+                    &::after {
+                      content: '';
+                    }
                   }
 
                   /* begin table sorting */
@@ -456,6 +457,13 @@
                   td {
                     padding: var(--padding);
                     border-bottom: 1px solid var(--color-border);
+
+                    button.outlined {
+                      border-radius: 12px;
+                      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+                      font-size: 0.9em;
+                      border-color: transparent;
+                    }
 
                   }
                 }
@@ -948,7 +956,7 @@
 
         params.trs = params.rows(params);
 
-        params.thead = mapp.utils.html`<thead><tr>${params.ths}`
+        params.thead = mapp.utils.html`<thead><tr>${params.ths}<th class="tools"></th>`
 
         params.tbody = mapp.utils.html`<tbody>${params.trs}`;
 
@@ -976,7 +984,13 @@
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${user.last_active}</td>
-          <td>${user_status}</td>`;
+          <td>${user_status}</td>
+          <td>
+            <button class="action outlined"onclick=${user_details}>
+              <span class="material-symbols-outlined">manage_accounts</span>
+              <span>Manage</span>
+            </button>
+          </td>`;
       }
 
       /* this function creates each row in the user table */
@@ -985,7 +999,7 @@
         const content = user_row_content(user);
 
         return mapp.utils.html.node`<tr 
-          data-email=${user.email} data-user=${JSON.stringify(user)} onclick=${user_details}>
+          data-email=${user.email} data-user=${JSON.stringify(user)}>
           ${content}
           </tr>`;
       }
