@@ -1645,13 +1645,7 @@
           val: value,
           onchange: async (state, val)=> {
             chkbox.closest('div').classList.toggle('granted');
-            const modified_role = chkbox.closest('li').dataset.id;
-            await role_change({
-              user: params.user, 
-              element: chkbox, 
-              role: modified_role,
-              checked: state 
-            });
+            await role_change(params.user);
           },
         });
 
@@ -1674,18 +1668,22 @@
         return li;
       }
 
-      /* runs inside checkbox change event, updates role; params: user, element, value, checked */
-      async function role_change(params) {
-        const role = params.role;
-        const checked = params.checked;
-        const user = params.user;
+      /* runs inside checkbox change event, updates role; params: user */
+      async function role_change(user) {
 
-        if(checked) {
-          user.roles.push(role);
-        } else {
-          const idx = user.roles.indexOf(role);
-          if(idx > -1) user.roles.splice(idx, 1);
+        const document_fragment = document.querySelector('.role-hierarchy');
+
+        const active_items = document_fragment.querySelectorAll('div.granted');
+
+        const updated_roles = [];
+
+        for(const div of active_items) {
+          const li = div.closest('li');
+          updated_roles.push(li.dataset.id);
         }
+
+        // replace previous user roles
+        user.roles = updated_roles;
 
         // update
         await updateUser({
