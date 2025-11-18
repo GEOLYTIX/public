@@ -1644,7 +1644,7 @@
           label: value,
           val: value,
           onchange: async (state, val)=> {
-            chkbox.closest('div').classList.toggle('granted');
+            setGrantedClass(chkbox, state);
             await role_change(params.user);
           },
         });
@@ -1666,6 +1666,22 @@
         ${content}`;
 
         return li;
+      }
+
+      /* runs inside checkbox change event, updates nested checkboxes; params: checkbox_elements, checked state */
+      function setGrantedClass(checkbox_element, state){
+        // switch granted class
+        checkbox_element.closest('div').classList.toggle('granted');
+        // if element is checked then exit
+        if(state) return;
+        // find any nested granted items
+        const nested_items = checkbox_element.closest('li').querySelectorAll('div.granted');
+        // exit if none found
+        if(!nested_items.length) return;
+        // remove granted from any nested items
+        for(const nested_item of nested_items) {
+          nested_item.classList.remove('granted');
+        }
       }
 
       /* runs inside checkbox change event, updates role; params: user */
@@ -1706,6 +1722,10 @@
       /* updates hierarchy DOM after change; user and document fragment to update */
       /* handled separately from creation to prevent lists from closing by default */
       function updateListDOM(user, document_fragment) {
+
+        // reset all checkboxes
+        const all_checkboxes = document_fragment.querySelectorAll('li input[type="checkbox"]');
+        for(const chk of all_checkboxes) chk.checked = false;
 
         for(const role of user.roles) {
 
