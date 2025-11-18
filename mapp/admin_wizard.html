@@ -155,6 +155,11 @@
         width: 100%;
         height: 100%;
         border: solid 1px var(--color-border);
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
         
         .content {
           width: 100%;
@@ -459,6 +464,12 @@
                     border-bottom: 1px solid var(--color-border);
 
                     button {
+                      background-color: var(--color-base-tertiary);
+
+                      & > * {
+                        pointer-events: none;
+                      }
+
                       &.outlined {
                         border-radius: 12px;
                         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -615,7 +626,7 @@
               expiry_label: "Account Expiry Date",
               failed_login: "Failed Login Attempts",
               filter_status: "Filter status",
-              grant: "Grant Roles",
+              grant: "Set Roles",
               grant_assignment: "Role Assignment",
               header: "User Management Dashboard",
               header_subtitle: "Overview of all users, their roles and account status.",
@@ -1001,9 +1012,16 @@
           <td class="desktop-only">${access_log_btn}</td>
           <td>${user_status}</td>
           <td>
-            <button class="action outlined"onclick=${user_details}>
-              <span class="material-symbols-outlined">manage_accounts</span>
+            <button class="action outlined" onclick=${user_details}>
+              <span class="material-symbols-outlined notranslate">manage_accounts</span>
               <span>${mapp.dictionary.admin_view.manage}</span>
+            </button>
+            <button 
+            class="${'action outlined' + (user.blocked || !Object.keys(rolesList).length ? ' display-none' : '')}"
+            data-user=${JSON.stringify(user)}
+            onclick=${roleAssignment}>
+              <span class="material-symbols-outlined notranslate">shield_person</span>
+              <span>${mapp.dictionary.admin_view.grant}</span>
             </button>
           </td>`;
       }
@@ -1050,9 +1068,7 @@
       /* this function will display user first 3 roles in users list */
       function show_user_roles_in_list(user) {
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
-        // exclude roles that users have that are not relevant in the workspace
         const active_roles = user.roles
-        //.filter((role) => (rolesTree.hasOwnProperty(role)))  // temporarily disabled to show all roles assigned the the user relevat or not
         .filter((role) => user.roles.indexOf(role) < 4)
         .map((role, idx) => {
           if(idx === 3) return mapp.utils.html`<span class="dot" style="color: var(--color-primary)">${mapp.dictionary.admin_view.roles_more}</span>`;
@@ -1098,15 +1114,6 @@
 
         const user = JSON.parse(e.target.closest('tr').dataset.user);
 
-        // Disabled grant roles for blocked users
-        const grant_btn = mapp.utils.html`
-            <button class="${'admin action outlined info grant' + (user.blocked || !Object.keys(rolesList).length ? ' disabled' : '')}"
-            data-user=${JSON.stringify(user)}
-            onclick=${roleAssignment}>
-              <span class="material-symbols-outlined" translate="no">add_moderator</span>
-              <span class="label">${mapp.dictionary.admin_view.grant}</span>
-            </button>`;
-
         // Disabled approval for blocked users
         const approve_btn = mapp.utils.html`
             <button class="${'admin action outlined info approve' + (user.blocked ? ' disabled' : '')}"
@@ -1124,7 +1131,6 @@
             <span class="material-symbols-outlined" translate="no">back_to_tab</span>
             <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
-           ${grant_btn}
            ${approve_btn}
            <button class=${'admin action outlined danger ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
@@ -1217,7 +1223,7 @@
       /* this function display user access log information */
       async function userAccessLog(e) {
 
-        const user = JSON.parse(e.target.closest('button').dataset.user);
+        const user = JSON.parse(e.target.dataset.user);
 
         const response = await mapp.utils.xhr(
             `${document.head.dataset.dir}/api/user/log?email=${user.email}`
@@ -1317,26 +1323,6 @@
 
         const user = JSON.parse(event.target.dataset.user);
 
-        const exit_btn = mapp.utils.html.node`<button class="exit admin action outlined"
-        onclick=${(e) => {
-          // close grant roles window
-          e.target.closest('dialog.user-grant').close();
-        }}>
-        <span class="material-symbols-outlined" translate="no">arrow_back</span>
-        <span class="label">${mapp.dictionary.admin_view.exit}</span>
-        </button>`;
-
-        const back_to_list = mapp.utils.html.node`<button class="back-to-list admin action outlined"
-        onclick=${(e) => {
-          // close grant roles window
-          e.target.closest('dialog.user-grant').close();
-          // close details window
-          e.target.closest('dialog.user-details').close();
-        }}>
-        <span class="material-symbols-outlined" translate="no">back_to_tab</span>
-        <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
-        </button>`;
-
         // creates document fragment to embed ui
         const role_ui_container = mapp.utils.html.node`
         <div class="role-assignment">
@@ -1352,6 +1338,7 @@
         /* assign attributes corresponding to roles */
         assignAttributes(listHierarchyDOM);
 
+        /* set state on all checkboxes */
         updateListDOM(user, listHierarchyDOM);
 
         /* create list content */
@@ -1362,15 +1349,9 @@
         const content = mapp.utils.html`
             <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
             <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
-            <div class="actions">
-              ${back_to_list}
-             ${exit_btn}
-            </div>
-          ${role_ui_container}
-          `;
+            ${role_ui_container}`;
 
         const dialog = mapp.ui.elements.dialog({
-          target: event.target.closest('.user-details'),
           containedCentre: true,
           contained: true,
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant_assignment}`,
@@ -1715,12 +1696,8 @@
         updateListDOM(user, document.querySelector('.role-hierarchy'));
         // redraw the preview section
         mapp.utils.render(document.querySelector('.role-preview'), rolePreview(user));
-        // set updated user object on the grant button so that role items are up to date 
-        document.querySelector('dialog.user-details button.grant').dataset.user = JSON.stringify(user);
-        // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details'), user_details_content(user));
-        //update details and the list but keep details open
-        updateUsersList({...user, ...{ keep: true } });
+        // update user row in the table
+        updateUserRow(user);
       }
 
       /* updates hierarchy DOM after change; user and document fragment to update */
@@ -1748,9 +1725,7 @@
             list.querySelector('div').classList.add('granted');
             list.querySelector('input').checked = true;
           }
-          
         }
-        
       }
 
       /* draws role preview section content */
