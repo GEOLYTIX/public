@@ -458,13 +458,19 @@
                     padding: var(--padding);
                     border-bottom: 1px solid var(--color-border);
 
-                    button.outlined {
-                      border-radius: 12px;
-                      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-                      font-size: 0.9em;
-                      border-color: transparent;
-                    }
+                    button {
+                      &.outlined {
+                        border-radius: 12px;
+                        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+                        font-size: 0.9em;
+                        border-color: transparent;
+                      }
 
+                      &.action {
+                        margin: 0 0.5em;
+                      }
+                    
+                    }
                   }
                 }
               }
@@ -574,7 +580,7 @@
           en: {
             admin_view: {
               acc_details: "User Account Details",
-              access_log: "Login History",
+              access_log: "View Login History",
               access_log_since: "Active since ",
               access_log_caption: "Most recent logins",
               access_log_label: "User Login History",
@@ -671,7 +677,6 @@
               unblock_account: "Unblock Account",
               undone: "This cannot be undone.",
               unknown: "Unknown",
-              verification_token: "Verification Token",
               verified: "Awaiting Approval",
               verify: "Verify",
             },
@@ -981,10 +986,19 @@
 
         const user_status = check_user_status(user);
 
+        const access_log_btn = mapp.utils.html`
+          <button class="action outlined access-log" 
+          title=${mapp.dictionary.admin_view.access_log}
+          data-user=${JSON.stringify(user)}
+          onclick=${userAccessLog}>
+            <span class="material-symbols-outlined" translate="no">pace</span>
+            ${user.last_active}
+          </button>`;
+
         return mapp.utils.html`
           <td>${user.email}</td>
           <td class="desktop-only">${active_roles}</td>
-          <td class="desktop-only">${user.last_active}</td>
+          <td class="desktop-only">${access_log_btn}</td>
           <td>${user_status}</td>
           <td>
             <button class="action outlined"onclick=${user_details}>
@@ -1102,14 +1116,6 @@
               <span class="label">${mapp.dictionary.admin_view.account_settings}</span>
             </button>`;
 
-        const access_log_btn = mapp.utils.html`
-            <button class="admin action outlined access-log" 
-            data-user=${JSON.stringify(user)}
-            onclick=${userAccessLog}>
-              <span class="material-symbols-outlined" translate="no">pace</span>
-              <span class="label">${mapp.dictionary.admin_view.access_log}</span>
-            </button>`;
-
         const actions = mapp.utils.html`
         <div class="actions">
           <button class="admin action outlined" onclick=${e => {
@@ -1118,7 +1124,6 @@
             <span class="material-symbols-outlined" translate="no">back_to_tab</span>
             <span class="label">${mapp.dictionary.admin_view.back_to_list}</span>
           </button>
-           ${access_log_btn}
            ${grant_btn}
            ${approve_btn}
            <button class=${'admin action outlined danger ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
@@ -1212,7 +1217,7 @@
       /* this function display user access log information */
       async function userAccessLog(e) {
 
-        const user = JSON.parse(e.target.dataset.user);
+        const user = JSON.parse(e.target.closest('button').dataset.user);
 
         const response = await mapp.utils.xhr(
             `${document.head.dataset.dir}/api/user/log?email=${user.email}`
@@ -1234,6 +1239,7 @@
               : response.access_log.slice(Math.max(len - 10, 0));
 
         const content = mapp.utils.html`
+          <div><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></div>
           <b>${mapp.dictionary.admin_view.access_log_since + first_visit}</b>
           <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot" style="background-color: var(--color-primary)">${len}</span></span>
           <span class="ws-pre">
@@ -1426,8 +1432,6 @@
           <div>${approved_by}</div>
           <div>${mapp.dictionary.admin_view.approved_on}</div>
           <div>${approved_on}</div>
-          <div>${mapp.dictionary.admin_view.verification_token}</div>
-          <div>${user.verificationtoken}</div>
         `;
 
         return elements;
