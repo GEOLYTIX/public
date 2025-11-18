@@ -992,7 +992,7 @@
           data-user=${JSON.stringify(user)}
           onclick=${userAccessLog}>
             <span class="material-symbols-outlined" translate="no">pace</span>
-            ${user.last_active}
+            ${user.last_active || mapp.dictionary.admin_view.unknown}
           </button>`;
 
         return mapp.utils.html`
