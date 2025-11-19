@@ -106,6 +106,12 @@
         width: 100%;
         height: 100%;
 
+        .account-details-grid { 
+          display: grid; 
+          grid-gap: 1em; 
+          grid-template-columns: repeat(2, 1fr); 
+        }
+
         .card {
           margin-top: 2em;
           background-color: var(--color-base-tertiary);
@@ -179,7 +185,6 @@
         &::-webkit-scrollbar {
           display: none;
         }
-
         
         .content {
           width: 100%;
@@ -302,13 +307,6 @@
         min-width: 8em;
         padding: 0.5em 1em;
 
-        /*&.approved {
-          border: solid 1px var(--color-approved);
-          * {
-            color: var(--color-approved);
-          }
-        }*/
-
         &.block {
           .material-symbols-outlined::after {
             content: 'lock';
@@ -361,18 +359,11 @@
           font-size: inherit;
           color: inherit;
         }
-        
-        &.yes {
-          background-color: var(--color-approved);
-        }
 
-        &.no {
-          background-color: var(--color-blocked);
-        }
       }
 
       button > .dot {
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        box-shadow: var(--box-shadow-prominent);
       }
 
       .ws-pre {
@@ -626,7 +617,7 @@
         mapp.utils.merge(mapp.dictionaries, {
           en: {
             admin_view: {
-              acc_details: "User Account Details",
+              acc_details: "Account Details",
               access: "Current Access",
               access_log: "View Login History",
               access_log_since: "Active since ",
@@ -634,11 +625,9 @@
               access_log_label: "User Login History",
               access_log_not_found: "No access log information found for this user account.",
               access_log_total: "Total logins",
-              account_settings: "User Settings",
               account_status: "Account Status",
               admin: "Administrator",
               api: "API Access",
-              approval: "Approval",
               approve: "Approve User Account",
               approve_alert: "Account has been approved.",
               approve_confirm: "You are about to approve this user account.\nPlease confirm access roles have been assigned where required.",
@@ -647,7 +636,6 @@
               approved_label: "Last change approved by",
               approved_on: "Last change approved on",
               back: "Back to Mapp",
-              back_to_list: "Back to List",
               block_account: "Block Account",
               blocked: "Blocked",
               cancel: "Cancel",
@@ -659,7 +647,6 @@
               email: "E-mail",
               email_label: "Account e-mail address",
               email_label_search: "e-mail address",
-              exit: "Exit",
               expiry_label: "Account Expiry Date",
               failed_login: "Failed Login Attempts",
               filter_status: "Filter status",
@@ -667,48 +654,20 @@
               grant_assignment: "Role Assignment",
               header: "User Management Dashboard",
               header_subtitle: "Overview of all users, their roles and account status.",
-              lang_label: "Account Language",
-              languages: {
-                en: "English",
-                de: "German",
-                zh: "Chinese",
-                zh_tw: "Chinese (Traditional)",
-                pl: "Polish",
-                ja: "Japanese",
-                es: "Spanish",
-                fr: "French",
-                tr: "Turkish",
-                it: "Italian",
-                th: "Thai",
-              },
               last_active: "Last active",
-              logged_in_label: "Logged in as",
               logout: "Logout",
               manage: "Manage",
               new: "Verification Required",
-              primary_role: "Primary role",
-              primary_roles_available: "Available primary roles",
-              primary_roles_edit: "Edit primary roles",
-              primary_roles_none: "No roles available.",
               re_verification: "Re-verification",
               required: "Required after password reset",
               required_not: "Not required",
               roles: "User Access Roles",
               roles_hierarchy: "Role Hierarchy",
               roles_hierarchy_summary: "Assigned Roles Summary",
-              roles_info: "Information on Access Roles",
               roles_label_search: "access role",
-              roles_message: "Visit Grant Roles section in order to set user roles.",
               roles_more: "and more",
-              roles_no: "No access roles defined",
-              roles_no_info: "no description provided",
-              roles_search: "Search access roles",
-              roles_view: "View information on access roles",
-              save: "Save",
-              search_accounts: "Search accounts",
               search_placeholder: "Search users by",
-              secondary_roles: "Secondary roles",
-              show_blocked: "Show blocked accounts",
+              special_permissions: "Special Permissions",
               status: "Status",
               status_description: {
                 "Verified": "Check the box to verify the user",
@@ -720,7 +679,6 @@
               },
               status_label_search: "status",
               sure: "Are you sure you want to delete this user account?",
-              test_view: "Test View",
               top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort.",
               unblock_account: "Unblock Account",
               undone: "This cannot be undone.",
@@ -729,10 +687,9 @@
               verification_pending: "Awaiting Account Verification",
               verified: "Awaiting Approval",
               verify: "Verify",
-            },
-            no: 'No',
-            yes: 'Yes',
-          },
+              widthdraw: "Withdraw Access"
+            }
+          }
         });
 
       /* Get list of available roles from workspace. */
@@ -1161,7 +1118,7 @@
           </h1>`;
 
         const delete_actions = mapp.utils.html`
-        <div class="card"><h3>Withdraw Access</h3>
+        <div class="card"><h3>${mapp.dictionary.admin_view.withdraw}</h3>
         <div class="actions">
            <button class=${'admin action outlined danger ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
           onclick=${blockAccount}>
@@ -1175,18 +1132,22 @@
         </div>`;
 
         const special_permissions = mapp.utils.html`<div class="card">
-          <h3>Special Permissions</h3>
+          <h3>${mapp.dictionary.admin_view.special_permissions}</h3>
           ${special_permissions_content(user)}`;
 
         const user_approval_layout = mapp.utils.html`<div class="details status">${user_approval_content(user)}`;
 
         const user_details_layout = mapp.utils.html`<div class="details account">${user_details_content(user)}`;
 
-        const account_status = mapp.utils.html`<div class="card"><h3>Account Status</h3>${user_approval_layout}`;
+        const account_status = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.account_status}</h3>
+          ${user_approval_layout}`;
 
-        const account_details = mapp.utils.html`<div class="card"><h3>Account Details</h3>${user_details_layout}`;
+        const account_details = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.acc_details}</h3>
+          ${user_details_layout}`;
 
-        const grid = mapp.utils.html`<div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(2, 1fr);">${[
+        const grid = mapp.utils.html`<div class="account-details-grid">${[
           account_status, 
           account_details,
           special_permissions, 
