@@ -89,18 +89,48 @@
           }
       }
 
-      .details {
+      /* used for role pills displayed in user data */
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* font size for h1 inside header tags */
+      header h1 {
+        font-size: 140%;
+      }
+
+      /* user details dialog layout */
+      dialog.user-details {
+        padding: 2em;
+        width: 100%;
+        height: 100%;
+
+        .card {
+          margin-top: 2em;
+          background-color: var(--color-base-tertiary);
+          border-radius: var(--border-radius);
+          padding: 0.5em 0.5em 1.5em 0.5em;
+          box-shadow: var(--box-shadow-prominent);
+        }
+
+        .details {
+          grid-template-columns: 1fr 2fr;
           margin-top: 2em;
           display: grid; 
-          grid-gap: 0;
-          border-radius: var(--border-radius);
 
           div {
             padding: var(--padding);
             border-bottom: 1px solid var(--color-border);
+            line-height: 2em;
+          }
+
+          label {
+            line-height: 1;
           }
 
           button.outlined {
+            line-height: 1;
             &.approve {
               border-color: var(--color-verified);
               * {
@@ -136,41 +166,6 @@
             }
           }
       }
-
-      /* vertically aligns spans inside a div */
-      .v-align {
-        display: flex;
-        align-items: anchor-center;
-      }
-
-      /* used for role pills displayed in user data */
-      .flex {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      /* font size for h1 inside header tags */
-      header h1 {
-        font-size: 140%;
-      }
-
-      /* user details dialog layout */
-      dialog.user-details {
-        padding: 2em;
-        width: 100%;
-        height: 100%;
-
-        .details {
-          grid-template-columns: 1fr 2fr;
-        }
-
-        .card {
-          margin-top: 2em;
-          background-color: var(--color-base-tertiary);
-          border-radius: var(--border-radius);
-          padding: 0.5em 0.5em 1.5em 0.5em;
-          box-shadow: var(--box-shadow-prominent);
-        }
 
       }
 
@@ -632,6 +627,7 @@
           en: {
             admin_view: {
               acc_details: "User Account Details",
+              access: "Current Access",
               access_log: "View Login History",
               access_log_since: "Active since ",
               access_log_caption: "Most recent logins",
@@ -648,8 +644,8 @@
               approve_confirm: "You are about to approve this user account.\nPlease confirm access roles have been assigned where required.",
               approved: "Approved",
               approved_by: "Approved by",
-              approved_label: "Last modification to this account approved by",
-              approved_on: "Last modification approved on",
+              approved_label: "Last change approved by",
+              approved_on: "Last change approved on",
               back: "Back to Mapp",
               back_to_list: "Back to List",
               block_account: "Block Account",
@@ -689,7 +685,7 @@
               logged_in_label: "Logged in as",
               logout: "Logout",
               manage: "Manage",
-              new: "New",
+              new: "Verification Required",
               primary_role: "Primary role",
               primary_roles_available: "Available primary roles",
               primary_roles_edit: "Edit primary roles",
@@ -729,6 +725,7 @@
               unblock_account: "Unblock Account",
               undone: "This cannot be undone.",
               unknown: "Unknown",
+              verification: "Verification",
               verification_pending: "Awaiting Account Verification",
               verified: "Awaiting Approval",
               verify: "Verify",
@@ -1181,15 +1178,24 @@
           <h3>Special Permissions</h3>
           ${special_permissions_content(user)}`;
 
-        const user_approval_layout = mapp.utils.html`<div class="details">${user_approval_content(user)}`;
+        const user_approval_layout = mapp.utils.html`<div class="details status">${user_approval_content(user)}`;
+
+        const user_details_layout = mapp.utils.html`<div class="details account">${user_details_content(user)}`;
 
         const account_status = mapp.utils.html`<div class="card"><h3>Account Status</h3>${user_approval_layout}`;
 
-        const content = [
-          header,
+        const account_details = mapp.utils.html`<div class="card"><h3>Account Details</h3>${user_details_layout}`;
+
+        const grid = mapp.utils.html`<div style="display: grid; grid-gap: 1em; grid-template-columns: repeat(2, 1fr);">${[
           account_status, 
+          account_details,
           special_permissions, 
           delete_actions
+        ]}`;
+
+        const content = [
+          header,
+          grid
         ];
 
         const dialog = mapp.ui.elements.dialog({
@@ -1242,7 +1248,8 @@
         });
 
         // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
         // update button label
         e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
         // update button icon
@@ -1314,7 +1321,8 @@
         });
 
         // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
         // update users list and keep user details window on
         updateUserRow(user);
 
@@ -1406,13 +1414,13 @@
           }
         });
 
-         return mapp.utils.html`<div class="details">
+         return mapp.utils.html`<div class="permissions details">
           <div>
-          <span class="dot" style="background-color: var(--color-admin)">${mapp.dictionary.admin_view.admin}</span>
+          <b>${mapp.dictionary.admin_view.admin}</b>
           </div>
           <div>${admin}</div>
           <div>
-            <span class="dot" style="background-color: var(--color-api)">${mapp.dictionary.admin_view.api}</span>
+            <b>${mapp.dictionary.admin_view.api}</b>
           </div>
           <div>${api_access}</div>`
       }
@@ -1421,6 +1429,9 @@
       function user_approval_content(user) {
 
         const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
+
+        // for testing - remove when done
+        user.expires_on = '';
 
         const expiry_date_input = user.expires_on === undefined ? `` : mapp.utils.html.node`<input
           type="date"
@@ -1438,9 +1449,14 @@
           }}>`;
 
         const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
-          <span class="dot" style="background-color: var(--color-blocked)">${mapp.dictionary.admin_view.expiry_label}<span>
+          <b>${mapp.dictionary.admin_view.expiry_label}</b>
           </div>
           <div>${expiry_date_input}</div>`;
+
+        const login_failed_attempts = user.failedattempts > 0 ? 
+        mapp.utils.html`
+          <div><b>${mapp.dictionary.admin_view.failed_login}</b></div>
+          <div>${user.failedattempts}</div>` : ``;
 
         const verification = mapp.ui.elements.chkbox({
           checked: user.verified,
@@ -1456,35 +1472,29 @@
           }
         });
 
-        const re_verification = mapp.utils.html`<div><span class="dot" 
-        style=${'background-color: ' + (user.re_verification ? 'var(--color-re-verify)' : 'var(--color-blocked)')}>
-        ${user.re_verification ? mapp.dictionary.admin_view.required : mapp.dictionary.admin_view.required_not}</span>
-        </div>`
-
         // Disabled approval for blocked users
         const approve_btn = mapp.utils.html`
-          <button class="action outlined approve"
+          <button class="admin action outlined approve"
           data-user=${JSON.stringify(user)}
           onclick=${approveAccount}>
             <span class="material-symbols-outlined" translate="no">verified</span>
             <span class="label">${mapp.dictionary.admin_view.approve}</span>
           </button>`;
 
-
         const approved = mapp.utils.html`
-          <button class="action outlined approved">
+          <button class="admin action outlined approved">
             <span class="material-symbols-outlined" translate="no">done_all</span>
             <span class="label">${mapp.dictionary.admin_view.approved}</span>
           </button>`;
 
         const blocked = mapp.utils.html`
-          <button class="action outlined blocked">
+          <button class="admin action outlined blocked">
             <span class="material-symbols-outlined" translate="no">no_accounts</span>
             <span class="label">${mapp.dictionary.admin_view.blocked}</span>
           </button>`;
 
         const action_from_user = mapp.utils.html`
-          <button class="action outlined user-action">
+          <button class="admin action outlined user-action">
             <span class="material-symbols-outlined" translate="no">hourglass</span>
             <span class="label">${mapp.dictionary.admin_view.verification_pending}</span>
           </button>`;
@@ -1502,18 +1512,38 @@
 
         return mapp.utils.html`
             <div>
-              <span class="dot" style="background-color: var(--color-approved)">${mapp.dictionary.admin_view.approved}</span>
+              <b>${mapp.dictionary.admin_view.access}</b>
             </div>
             <div>${approval_element}</div>
-            <div>
-            <span class="dot" style="background-color: var(--color-re-verify">${mapp.dictionary.admin_view.re_verification}</span>
-          </div>
-          ${re_verification}
           <div>
-            <span class="dot" style="background-color: var(--color-verified)">${mapp.dictionary.admin_view.verified}</span>
+            <b>${mapp.dictionary.admin_view.verification}</b>
           </div>
           <div>${verification}</div>
           ${expiry_date_entry}
+          ${login_failed_attempts}
+        `;
+      }
+
+      function user_details_content(user) {
+        const re_verification = mapp.utils.html`<div>
+          ${user.re_verification ? mapp.dictionary.admin_view.required : mapp.dictionary.admin_view.required_not}
+        </div>`
+
+        const approved_by = user.approved_by ? 
+        `${user.approved_by.split('|')[0]}` : `-`;
+
+        const approved_on = user.approved_by?.split('|')[1] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
+
+        return mapp.utils.html`
+          <div>
+            <b>${mapp.dictionary.admin_view.re_verification}</b>
+          </div>
+          ${re_verification}
+          <div><b>${mapp.dictionary.admin_view.approved_label}</b></div>
+          <div>${approved_by}</div>
+          <div><b>${mapp.dictionary.admin_view.approved_on}</b></div>
+          <div>${approved_on}</div>
         `;
       }
 
