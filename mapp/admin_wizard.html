@@ -1391,10 +1391,7 @@
 
         const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
 
-        // for testing - remove when done
-        user.expires_on = '';
-
-        const expiry_date_input = user.expires_on === undefined ? `` : mapp.utils.html.node`<input
+        const expiry_date_input = mapp.utils.html.node`<input
           type="date"
           value="${expiry_date}"
           min=${new Date().toISOString().slice(0, 10)}
@@ -1409,7 +1406,9 @@
             updateUserRow(user);
           }}>`;
 
-        const expiry_date_entry = user.expires_on === undefined ? `` : mapp.utils.html`<div>
+        if(user.expires_on === undefined) expiry_date_input.disabled = true;
+
+        const expiry_date_entry = mapp.utils.html`<div>
           <b>${mapp.dictionary.admin_view.expiry_label}</b>
           </div>
           <div>${expiry_date_input}</div>`;
