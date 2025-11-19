@@ -107,13 +107,13 @@
         height: 100%;
 
         .account-details-grid { 
+          margin-top: 2em;
           display: grid; 
           grid-gap: 1em; 
           grid-template-columns: repeat(2, 1fr); 
         }
 
         .card {
-          margin-top: 2em;
           background-color: var(--color-base-tertiary);
           border-radius: var(--border-radius);
           padding: 0.5em 0.5em 1.5em 0.5em;
@@ -626,6 +626,7 @@
               access_log_not_found: "No access log information found for this user account.",
               access_log_total: "Total logins",
               account_status: "Account Status",
+              active: "Active",
               admin: "Administrator",
               api: "API Access",
               approve: "Approve User Account",
@@ -1346,9 +1347,8 @@
         userDetails.close();
       }
 
-
+      /* creates special permissions section in user details window */
       function special_permissions_content(user) {
-
         const admin = mapp.ui.elements.chkbox({
           checked: user.admin,
           label: mapp.dictionary.admin_view.status_description["Administrator"],
@@ -1448,6 +1448,12 @@
             <span class="label">${mapp.dictionary.admin_view.approved}</span>
           </button>`;
 
+        const active_admin = mapp.utils.html`
+          <button class="admin action outlined approved">
+            <span class="material-symbols-outlined" translate="no">star</span>
+            <span class="label">${mapp.dictionary.admin_view.active} ${mapp.dictionary.admin_view.admin}</span>
+          </button>`;
+
         const blocked = mapp.utils.html`
           <button class="admin action outlined blocked">
             <span class="material-symbols-outlined" translate="no">no_accounts</span>
@@ -1467,6 +1473,8 @@
         if(!user.approved && !user.verified) approval_element = action_from_user;
 
         if(user.approved) approval_element = approved;
+
+        if(user.approved && user.admin) approval_element = active_admin;
 
         if(user.blocked) approval_element = blocked;
 
