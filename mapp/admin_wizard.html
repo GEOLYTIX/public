@@ -44,6 +44,7 @@
         --border-radius: 5px;
         --padding: 10px;
         --box-shadow-prominent: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        --box-shadow-row: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
 
         --color-approved: #43a047;
         --color-verified: #9c27b0;
@@ -433,6 +434,7 @@
                 text-align: left;
                 font-weight: bold;
                 cursor: pointer;
+                box-shadow: var(--box-shadow-row);
 
                 th {
                   position: sticky;
@@ -527,7 +529,6 @@
 
       /* search */
       .search {
-
         width: 100%;
         margin-bottom: 1em;
         background-color: var(--color-base);
@@ -1210,8 +1211,7 @@
         });
 
         // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
-        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+        updateUserDetailsHTML(user);
         // update button label
         e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
         // update button icon
@@ -1283,8 +1283,7 @@
         });
 
         // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
-        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+        updateUserDetailsHTML(user);
         // update users list and keep user details window on
         updateUserRow(user);
 
@@ -1347,6 +1346,12 @@
         userDetails.close();
       }
 
+      function updateUserDetailsHTML(user) {
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+      }
+
       /* creates special permissions section in user details window */
       function special_permissions_content(user) {
         const admin = mapp.ui.elements.chkbox({
@@ -1359,6 +1364,7 @@
               admin: user.admin
             });
             updateUserRow(user);
+            updateUserDetailsHTML(user);
           }
         });
 
@@ -1372,6 +1378,7 @@
               api: user.api
             });
             updateUserRow(user);
+            updateUserDetailsHTML(user);
           }
         });
 
@@ -1404,6 +1411,7 @@
               expires_on: user.expires_on
             });
             updateUserRow(user);
+            updateUserDetailsHTML(user);
           }}>`;
 
         if(user.expires_on === undefined) expiry_date_input.disabled = true;
@@ -1429,6 +1437,7 @@
               verified: user.verified
             });
             updateUserRow(user);
+            updateUserDetailsHTML(user);
           }
         });
 
