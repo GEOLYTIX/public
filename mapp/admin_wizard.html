@@ -46,12 +46,13 @@
         --box-shadow-prominent: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         --box-shadow-row: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
 
-        --color-approved: #43a047;
+        --color-approved: #3C9040;
         --color-verified: #9c27b0;
-        --color-blocked: #b71c1c;
+        --color-locked: #b71c1c;
+        --color-blocked: #37474f;
         --color-admin: #0d47a1;
         --color-api: #4527a0;
-        --color-new: #e64a19;
+        --color-new: #F77F00;
       }
 
       body {
@@ -307,6 +308,11 @@
         min-width: 8em;
         padding: 0.5em 1em;
 
+        * {
+          pointer-events: none;
+          color: inherit;
+        }
+
         &.block {
           .material-symbols-outlined::after {
             content: 'block';
@@ -331,10 +337,6 @@
           pointer-events: none;
           cursor: not-allowed;
           opacity: 0.5;
-        }
-
-        * {
-          pointer-events: none;
         }
 
         .label {
@@ -366,6 +368,12 @@
         vertical-align: middle; 
         font-size: inherit; 
         cursor: pointer;
+      }
+
+      .status-info {
+        * {
+          color: inherit;
+        }
       }
 
       button > .dot {
@@ -662,9 +670,10 @@
               header: "User Management Dashboard",
               header_subtitle: "Overview of all users, their roles and account status.",
               last_active: "Last seen",
+              locked: "Locked",
               logout: "Logout",
               manage: "Manage",
-              new: "Verification Required",
+              new: "Verification Pending",
               roles: "User Access Roles",
               roles_hierarchy: "Role Hierarchy",
               roles_hierarchy_summary: "Assigned Roles Summary",
@@ -736,7 +745,6 @@
       mapp.utils.render(document.getElementById('notification'), notification);
 
       /* create searchbox */
-
       const search = mapp.utils.html`<div class="search">
         <div class="radio-group">
           <input type="search" placeholder="${mapp.dictionary.admin_view.search_placeholder}" oninput=${search_function}/>
@@ -811,9 +819,9 @@
         nested_keys.forEach(item => (delete tree[item]));
 
         return tree;
-
       }
 
+      /* this function finds keys nested inside role tree to ensure they're not treated as main level */
       function getAllNestedKeys(obj) {
         const nestedKeys = new Set();
 
@@ -856,6 +864,7 @@
         return data;
       }
 
+      // user list requested
       const userList = await getUserList();
 
       /* create user table */
@@ -878,9 +887,9 @@
             label: mapp.dictionary.admin_view.status
           }]
       });
-
+      
+      // user table created
       mapp.utils.render(document.getElementById('users'), users.table);
-
 
       /* List table and its functionalities */
       function listTable(params) {
@@ -1078,28 +1087,64 @@
         return mapp.utils.html`<div class="flex">${active_roles}<div>`;
       }
 
-      /* this function determines user status */
-      function check_user_status(user) {
-        let state = { label: mapp.dictionary.admin_view.new, color: "var(--color-new)" };
+      /* this function keeps users list up to date based on ongoing edits and closes details window */
+      function updateUsersList(params) {
+        const userDetails = document.querySelector('dialog.user-details');
+        // set user attribute for update
+        updateUserRow(params);
+        userDetails.close();
+      }
+
+      /* this function determines user status and returns state object */
+      function determine_user_status(user) {
+        let state = { label: mapp.dictionary.admin_view.new, color: "var(--color-new)", icon: 'mail' };
         if (user.verified)
           state = {
             label: mapp.dictionary.admin_view.verified,
+            action: mapp.dictionary.admin_view.approve,
             color: "var(--color-verified)",
+            icon: 'verified'
           };
         if (user.approved)
           state = {
             label: mapp.dictionary.admin_view.approved,
             color: "var(--color-approved)",
+            icon: 'done_all'
           };
+
+        if(user.approved && user.admin) 
+          state = {
+            label: `${mapp.dictionary.admin_view.approved} ${mapp.dictionary.admin_view.admin}`,
+            color: "var(--color-approved)",
+            icon: 'crown'
+          }
+
+        if (user.approved && user.failedattempts > 2)
+          state = {
+            label: mapp.dictionary.admin_view.locked,
+            color: "var(--color-locked)",
+            icon: 'lock'
+        };
+
         if (user.blocked)
           state = {
             label: mapp.dictionary.admin_view.blocked,
-            color: "var(--color-blocked)"
+            color: "var(--color-blocked)",
+            icon: 'no_accounts'
           };
+        return state;
+      }
 
+      /* this function creates a status indication element in the user table */
+      function check_user_status(user) {
+        const state = determine_user_status(user);
         user.status = state.label;
 
-        return mapp.utils.html`<span class="dot" style=${'background-color: ' + state.color}>${state.label}</span>`;
+        return mapp.utils.html`<button class="outlined action status-info"
+          style=${'border-color: ' + state.color + '; color:' + state.color}
+          >
+          <span class="material-symbols-outlined notranslate inline-icon">${state.icon}</span>
+          <span>${state.label}</span>`
       }
 
       /* this function creates user details layout with actions */
@@ -1167,6 +1212,175 @@
         });
       }
 
+      /* Begin User Details Window Content */
+      /* updates elements in the account details window */
+      function updateUserDetailsHTML(user) {
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+      }
+
+      /* creates special permissions section in user details window */
+      function special_permissions_content(user) {
+        const verification = mapp.ui.elements.chkbox({
+          checked: user.verified,
+          label: mapp.dictionary.admin_view.status_description["Verified"],
+          onchange: async (checked) => {
+            user.verified = checked;
+            
+            await updateUser({
+              email: user.email,
+              verified: user.verified
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+        const admin = mapp.ui.elements.chkbox({
+          checked: user.admin,
+          label: mapp.dictionary.admin_view.status_description["Administrator"],
+          onchange: async (checked) => {
+            user.admin = checked;
+            await updateUser({
+              email: user.email,
+              admin: user.admin
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+        const api_access = mapp.ui.elements.chkbox({
+          checked: user.api,
+          label: mapp.dictionary.admin_view.status_description["API"],
+          onchange: async (checked) => {
+            user.api = checked;
+            await updateUser({
+              email: user.email,
+              api: user.api
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+         return mapp.utils.html`<div class="permissions details">
+          <div>
+            <span title=${mapp.dictionary.admin_view.verification}
+            style="color: var(--color-new)"
+            class="material-symbols-outlined notranslate inline-icon">mail</span>
+            <b>${mapp.dictionary.admin_view.verification}</b>
+          </div>
+          <div>${verification}</div>
+          <div>
+          <b><span title=${mapp.dictionary.admin_view.admin} 
+            style="color: var(--color-approved)"
+            class="material-symbols-outlined notranslate inline-icon">crown</span>
+            ${mapp.dictionary.admin_view.admin}
+          </b>
+          </div>
+          <div>${admin}</div>
+          <div>
+            <b><span title=${mapp.dictionary.admin_view.api} 
+            style="color: var(--color-api)"
+            class="material-symbols-outlined notranslate inline-icon">api</span>
+            ${mapp.dictionary.admin_view.api}
+            </b>
+          </div>
+          <div>${api_access}</div>`
+      }
+
+      function create_approval_element(user) {
+        const state = determine_user_status(user);
+        const element =  mapp.utils.html`<button class="admin action outline" data-user=${JSON.stringify(user)}
+        style=${'border-color:' + state.color + ';color:' + state.color}>
+        <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
+        <b>${state.action || state.label}`
+        if(user.verified) element.onclick = approveAccount;
+        return element;
+      }
+
+      /* creates user prop content in the approval window. Used to rerender content after update */
+      function user_approval_content(user) {
+
+        const approval_element = create_approval_element(user);
+
+        const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
+
+        const expiry_date_input = mapp.utils.html.node`<input
+          type="date"
+          value="${expiry_date}"
+          min=${new Date().toISOString().slice(0, 10)}
+          onchange=${async (e) => {
+            
+            user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
+
+            await updateUser({
+              email: user.email,
+              expires_on: user.expires_on
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }}>`;
+
+        if(user.expires_on === undefined) expiry_date_input.disabled = true;
+
+        const expiry_date_entry = mapp.utils.html`<div>
+          <span style="color: var(--color-verified)" 
+          class="material-symbols-outlined notranslate inline-icon">hourglass_top</span>
+          <b>${mapp.dictionary.admin_view.expiry_label}</b>
+          </div>
+          <div>${expiry_date_input}</div>`;
+
+        return mapp.utils.html`
+            <div>
+              <span style="color: var(--color-approved)" 
+              class="material-symbols-outlined notranslate inline-icon">star</span>
+              <b>${mapp.dictionary.admin_view.access}</b>
+            </div>
+            <div>${approval_element}</div>
+          ${expiry_date_entry}
+        `;
+      }
+
+      /* creates HTML content for user account details section */
+      function user_details_content(user) {
+
+        const approved_by = user.approved_by ? 
+        `${user.approved_by.split('|')[0]}` : `-`;
+
+        const approved_on = user.approved_by?.split('|')[1] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
+
+        const login_failed_attempts = mapp.utils.html`
+          <div>
+            <span 
+            style="color: var(--color-locked)"
+            class="material-symbols-outlined notranslate inline-icon">warning</span>
+            <b>${mapp.dictionary.admin_view.failed_login}</b>
+          </div>
+          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
+
+        return mapp.utils.html`
+          <div>
+            <span style="color: var(--color-approved)"
+            class="material-symbols-outlined notranslate inline-icon">person_check</span>
+            <b>${mapp.dictionary.admin_view.approved_label}</b>
+          </div>
+          <div>${approved_by}</div>
+          <div>
+            <span style="color: var(--color-approved)"
+            class="material-symbols-outlined notranslate inline-icon">calendar_today</span>
+            <b>${mapp.dictionary.admin_view.approved_on}</b>
+          </div>
+          <div>${approved_on}</div>
+          ${login_failed_attempts}
+        `;
+      }
+      /* End User Details Window Content */
+
+      /* Begin Workflow Events */
       /* this function deletes user account after confirmation and returns to main view */
       async function deleteAccount(e) {
 
@@ -1286,6 +1500,8 @@
           text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
         });
       }
+      /* End Workflow Events */
+
 
       /* role assignment window */
       async function roleAssignment(event) {
@@ -1331,197 +1547,6 @@
           closeBtn: true,
           content,
         });
-      }
-
-      /* this function keeps users list up to date based on ongoing edits and closes details window */
-      function updateUsersList(params) {
-        const userDetails = document.querySelector('dialog.user-details');
-        // set user attribute for update
-        updateUserRow(params);
-        userDetails.close();
-      }
-
-      /* updates elements in the account details window */
-      function updateUserDetailsHTML(user) {
-        // refresh user content while keeping the user details window on
-        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
-        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
-      }
-
-      /* creates special permissions section in user details window */
-      function special_permissions_content(user) {
-
-        const verification = mapp.ui.elements.chkbox({
-          checked: user.verified,
-          label: mapp.dictionary.admin_view.status_description["Verified"],
-          onchange: async (checked) => {
-            user.verified = checked;
-            
-            await updateUser({
-              email: user.email,
-              verified: user.verified
-            });
-            updateUserRow(user);
-            updateUserDetailsHTML(user);
-          }
-        });
-
-        const admin = mapp.ui.elements.chkbox({
-          checked: user.admin,
-          label: mapp.dictionary.admin_view.status_description["Administrator"],
-          onchange: async (checked) => {
-            user.admin = checked;
-            await updateUser({
-              email: user.email,
-              admin: user.admin
-            });
-            updateUserRow(user);
-            updateUserDetailsHTML(user);
-          }
-        });
-
-        const api_access = mapp.ui.elements.chkbox({
-          checked: user.api,
-          label: mapp.dictionary.admin_view.status_description["API"],
-          onchange: async (checked) => {
-            user.api = checked;
-            await updateUser({
-              email: user.email,
-              api: user.api
-            });
-            updateUserRow(user);
-            updateUserDetailsHTML(user);
-          }
-        });
-
-         return mapp.utils.html`<div class="permissions details">
-          <div>
-            <span title=${mapp.dictionary.admin_view.verification}
-            style="color: var(--color-verified)"
-            class="material-symbols-outlined notranslate inline-icon">thumb_up</span>
-            <b>${mapp.dictionary.admin_view.verification}</b>
-          </div>
-          <div>${verification}</div>
-          <div>
-          <b><span title=${mapp.dictionary.admin_view.admin} 
-            style="color: var(--color-approved)"
-            class="material-symbols-outlined notranslate inline-icon">crown</span>
-            ${mapp.dictionary.admin_view.admin}
-          </b>
-          </div>
-          <div>${admin}</div>
-          <div>
-            <b><span title=${mapp.dictionary.admin_view.api} 
-            style="color: var(--color-api)"
-            class="material-symbols-outlined notranslate inline-icon">api</span>
-            ${mapp.dictionary.admin_view.api}
-            </b>
-          </div>
-          <div>${api_access}</div>`
-      }
-
-      /* creates user prop content in the approval window. Used to rerender content after update */
-      function user_approval_content(user) {
-
-        const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
-
-        const expiry_date_input = mapp.utils.html.node`<input
-          type="date"
-          value="${expiry_date}"
-          min=${new Date().toISOString().slice(0, 10)}
-          onchange=${async (e) => {
-            
-            user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
-
-            await updateUser({
-              email: user.email,
-              expires_on: user.expires_on
-            });
-            updateUserRow(user);
-            updateUserDetailsHTML(user);
-          }}>`;
-
-        if(user.expires_on === undefined) expiry_date_input.disabled = true;
-
-        const expiry_date_entry = mapp.utils.html`<div>
-          <b>${mapp.dictionary.admin_view.expiry_label}</b>
-          </div>
-          <div>${expiry_date_input}</div>`;
-
-        // Disabled approval for blocked users
-        const approve_btn = mapp.utils.html`
-          <button class="admin action outlined approve"
-          data-user=${JSON.stringify(user)}
-          onclick=${approveAccount}>
-            <span class="material-symbols-outlined" translate="no">verified</span>
-            <span class="label">${mapp.dictionary.admin_view.approve}</span>
-          </button>`;
-
-        const approved = mapp.utils.html`
-          <button class="admin action outlined approved">
-            <span class="material-symbols-outlined" translate="no">done_all</span>
-            <span class="label">${mapp.dictionary.admin_view.approved}</span>
-          </button>`;
-
-        const active_admin = mapp.utils.html`
-          <button class="admin action outlined approved">
-            <span class="material-symbols-outlined" translate="no">star</span>
-            <span class="label">${mapp.dictionary.admin_view.active} ${mapp.dictionary.admin_view.admin}</span>
-          </button>`;
-
-        const blocked = mapp.utils.html`
-          <button class="admin action outlined blocked">
-            <span class="material-symbols-outlined" translate="no">no_accounts</span>
-            <span class="label">${mapp.dictionary.admin_view.blocked}</span>
-          </button>`;
-
-        const action_from_user = mapp.utils.html`
-          <button class="admin action outlined user-action">
-            <span class="material-symbols-outlined" translate="no">hourglass</span>
-            <span class="label">${mapp.dictionary.admin_view.verification_pending}</span>
-          </button>`;
-
-        let approval_element;
-
-        if(!user.approved) approval_element = approve_btn;
-
-        if(!user.approved && !user.verified) approval_element = action_from_user;
-
-        if(user.approved) approval_element = approved;
-
-        if(user.approved && user.admin) approval_element = active_admin;
-
-        if(user.blocked) approval_element = blocked;
-
-
-        return mapp.utils.html`
-            <div>
-              <b>${mapp.dictionary.admin_view.access}</b>
-            </div>
-            <div>${approval_element}</div>
-          ${expiry_date_entry}
-        `;
-      }
-
-      function user_details_content(user) {
-
-        const approved_by = user.approved_by ? 
-        `${user.approved_by.split('|')[0]}` : `-`;
-
-        const approved_on = user.approved_by?.split('|')[1] ? 
-        new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
-
-        const login_failed_attempts = mapp.utils.html`
-          <div><b>${mapp.dictionary.admin_view.failed_login}</b></div>
-          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
-
-        return mapp.utils.html`
-          <div><b>${mapp.dictionary.admin_view.approved_label}</b></div>
-          <div>${approved_by}</div>
-          <div><b>${mapp.dictionary.admin_view.approved_on}</b></div>
-          <div>${approved_on}</div>
-          ${login_failed_attempts}
-        `;
       }
 
       /** Begin Role Assignment UI **/
