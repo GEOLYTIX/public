@@ -995,6 +995,11 @@
 
         const user_status = check_user_status(user);
 
+        const admin_label = user.admin ? mapp.utils.html`
+          <span title=${mapp.dictionary.admin_view.admin} 
+          style="color: var(--color-approved); vertical-align: middle; font-size: inherit; cursor: pointer"
+          class="material-symbols-outlined notranslate">crown` : ``;
+
         const access_log_btn = mapp.utils.html`
           <button class="action outlined access-log" 
           title=${mapp.dictionary.admin_view.access_log}
@@ -1005,7 +1010,7 @@
           </button>`;
 
         return mapp.utils.html`
-          <td>${user.email}</td>
+          <td>${user.email} ${admin_label}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${access_log_btn}</td>
           <td>${user_status}</td>
@@ -1094,8 +1099,6 @@
             label: mapp.dictionary.admin_view.approved,
             color: "var(--color-approved)",
           };
-        if (user.admin)
-          state = { label: mapp.dictionary.admin_view.admin, color: "var(--color-admin)" };
         if (user.blocked)
           state = {
             label: mapp.dictionary.admin_view.blocked,
