@@ -660,8 +660,8 @@
               logout: "Logout",
               manage: "Manage",
               new: "Verification Required",
-              re_verification: "Re-verification",
-              required: "Required after password reset",
+              re_verification: "Password Reset",
+              required: "Awaiting account verification",
               required_not: "Not required",
               roles: "User Access Roles",
               roles_hierarchy: "Role Hierarchy",
@@ -673,7 +673,7 @@
               status: "Status",
               status_description: {
                 "Verified": "Check the box to verify the user",
-                "Re-verification": "Checked if the user needs to re-verify after password reset",
+                "Re-verification": "Checked if the user needs to re-verify their account after password reset",
                 "Approved": "Check the box to approve the user",
                 "Administrator": "Check the box to make the user an administrator",
                 "API": "Check the box to allow the user API privileges",
@@ -1424,10 +1424,9 @@
           </div>
           <div>${expiry_date_input}</div>`;
 
-        const login_failed_attempts = user.failedattempts > 0 ? 
-        mapp.utils.html`
+        const login_failed_attempts = mapp.utils.html`
           <div><b>${mapp.dictionary.admin_view.failed_login}</b></div>
-          <div>${user.failedattempts}</div>` : ``;
+          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
 
         const verification = mapp.ui.elements.chkbox({
           checked: user.verified,
