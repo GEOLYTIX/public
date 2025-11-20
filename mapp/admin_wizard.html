@@ -48,7 +48,6 @@
 
         --color-approved: #43a047;
         --color-verified: #9c27b0;
-        --color-re-verify: #7F6A93;
         --color-blocked: #b71c1c;
         --color-admin: #0d47a1;
         --color-api: #4527a0;
@@ -666,9 +665,6 @@
               logout: "Logout",
               manage: "Manage",
               new: "Verification Required",
-              re_verification: "Password Reset",
-              required: "Awaiting account verification",
-              required_not: "Not required",
               roles: "User Access Roles",
               roles_hierarchy: "Role Hierarchy",
               roles_hierarchy_summary: "Assigned Roles Summary",
@@ -679,7 +675,6 @@
               status: "Status",
               status_description: {
                 "Verified": "Check the box to immediately verify the user",
-                "Re-verification": "Checked if the user needs to re-verify their account after password reset",
                 "Approved": "Check the box to approve the user",
                 "Administrator": "Check the box to make the user an administrator",
                 "API": "Check the box to allow the user API privileges",
@@ -691,7 +686,7 @@
               unblock_account: "Unblock Account",
               undone: "This cannot be undone.",
               unknown: "Unknown",
-              verification: "Verification",
+              verification: "E-mail verification",
               verification_pending: "Awaiting Account Verification",
               verified: "Awaiting Approval",
               verify: "Verify",
@@ -854,10 +849,6 @@
 
         // Data must be an array if only 1 record returned in response.
         const data = Array.isArray(response) ? response : [response];
-
-        data.forEach((row) => {
-          row.re_verification = !row.verificationtoken;
-        });
 
         // sort emails alphabetically ignoring case
         data.sort((a, b) => a.email.toLowerCase().localeCompare(b.email.toLowerCase()));
@@ -1090,11 +1081,6 @@
       /* this function determines user status */
       function check_user_status(user) {
         let state = { label: mapp.dictionary.admin_view.new, color: "var(--color-new)" };
-        if (user.re_verification)
-          state = {
-            label: mapp.dictionary.admin_view.re_verification,
-            color: "var(--color-re-verify)",
-          };
         if (user.verified)
           state = {
             label: mapp.dictionary.admin_view.verified,
@@ -1365,6 +1351,21 @@
       /* creates special permissions section in user details window */
       function special_permissions_content(user) {
 
+        const verification = mapp.ui.elements.chkbox({
+          checked: user.verified,
+          label: mapp.dictionary.admin_view.status_description["Verified"],
+          onchange: async (checked) => {
+            user.verified = checked;
+            
+            await updateUser({
+              email: user.email,
+              verified: user.verified
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
         const admin = mapp.ui.elements.chkbox({
           checked: user.admin,
           label: mapp.dictionary.admin_view.status_description["Administrator"],
@@ -1395,6 +1396,13 @@
 
          return mapp.utils.html`<div class="permissions details">
           <div>
+            <span title=${mapp.dictionary.admin_view.verification}
+            style="color: var(--color-verified)"
+            class="material-symbols-outlined notranslate inline-icon">thumb_up</span>
+            <b>${mapp.dictionary.admin_view.verification}</b>
+          </div>
+          <div>${verification}</div>
+          <div>
           <b><span title=${mapp.dictionary.admin_view.admin} 
             style="color: var(--color-approved)"
             class="material-symbols-outlined notranslate inline-icon">crown</span>
@@ -1403,7 +1411,7 @@
           </div>
           <div>${admin}</div>
           <div>
-            <b><span title=${mapp.dictionary.admin_view.admin} 
+            <b><span title=${mapp.dictionary.admin_view.api} 
             style="color: var(--color-api)"
             class="material-symbols-outlined notranslate inline-icon">api</span>
             ${mapp.dictionary.admin_view.api}
@@ -1439,25 +1447,6 @@
           <b>${mapp.dictionary.admin_view.expiry_label}</b>
           </div>
           <div>${expiry_date_input}</div>`;
-
-        const login_failed_attempts = mapp.utils.html`
-          <div><b>${mapp.dictionary.admin_view.failed_login}</b></div>
-          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
-
-        const verification = mapp.ui.elements.chkbox({
-          checked: user.verified,
-          label: mapp.dictionary.admin_view.status_description["Verified"],
-          onchange: async (checked) => {
-            user.verified = checked;
-            
-            await updateUser({
-              email: user.email,
-              verified: user.verified
-            });
-            updateUserRow(user);
-            updateUserDetailsHTML(user);
-          }
-        });
 
         // Disabled approval for blocked users
         const approve_btn = mapp.utils.html`
@@ -1510,19 +1499,11 @@
               <b>${mapp.dictionary.admin_view.access}</b>
             </div>
             <div>${approval_element}</div>
-          <div>
-            <b>${mapp.dictionary.admin_view.verification}</b>
-          </div>
-          <div>${verification}</div>
           ${expiry_date_entry}
-          ${login_failed_attempts}
         `;
       }
 
       function user_details_content(user) {
-        const re_verification = mapp.utils.html`<div>
-          ${user.re_verification ? mapp.dictionary.admin_view.required : mapp.dictionary.admin_view.required_not}
-        </div>`
 
         const approved_by = user.approved_by ? 
         `${user.approved_by.split('|')[0]}` : `-`;
@@ -1530,15 +1511,16 @@
         const approved_on = user.approved_by?.split('|')[1] ? 
         new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
 
+        const login_failed_attempts = mapp.utils.html`
+          <div><b>${mapp.dictionary.admin_view.failed_login}</b></div>
+          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
+
         return mapp.utils.html`
-          <div>
-            <b>${mapp.dictionary.admin_view.re_verification}</b>
-          </div>
-          ${re_verification}
           <div><b>${mapp.dictionary.admin_view.approved_label}</b></div>
           <div>${approved_by}</div>
           <div><b>${mapp.dictionary.admin_view.approved_on}</b></div>
           <div>${approved_on}</div>
+          ${login_failed_attempts}
         `;
       }
 
