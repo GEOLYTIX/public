@@ -1268,14 +1268,12 @@
          return mapp.utils.html`<div class="permissions details">
           <div>
             <span title=${mapp.dictionary.admin_view.verification}
-            style="color: var(--color-new)"
             class="material-symbols-outlined notranslate inline-icon">mail</span>
             <b>${mapp.dictionary.admin_view.verification}</b>
           </div>
           <div>${verification}</div>
           <div>
           <b><span title=${mapp.dictionary.admin_view.admin} 
-            style="color: var(--color-approved)"
             class="material-symbols-outlined notranslate inline-icon">crown</span>
             ${mapp.dictionary.admin_view.admin}
           </b>
@@ -1283,14 +1281,14 @@
           <div>${admin}</div>
           <div>
             <b><span title=${mapp.dictionary.admin_view.api} 
-            style="color: var(--color-api)"
-            class="material-symbols-outlined notranslate inline-icon">api</span>
+            class="material-symbols-outlined notranslate inline-icon">deployed_code</span>
             ${mapp.dictionary.admin_view.api}
             </b>
           </div>
           <div>${api_access}</div>`
       }
 
+      /* creates the elements to show in curent status section based on user account life cycle*/
       function create_approval_element(user) {
         const state = determine_user_status(user);
         const element =  mapp.utils.html`<button class="admin action outline" data-user=${JSON.stringify(user)}
@@ -1327,16 +1325,14 @@
         if(user.expires_on === undefined) expiry_date_input.disabled = true;
 
         const expiry_date_entry = mapp.utils.html`<div>
-          <span style="color: var(--color-verified)" 
-          class="material-symbols-outlined notranslate inline-icon">hourglass_top</span>
+          <span class="material-symbols-outlined notranslate inline-icon">hourglass</span>
           <b>${mapp.dictionary.admin_view.expiry_label}</b>
           </div>
           <div>${expiry_date_input}</div>`;
 
         return mapp.utils.html`
             <div>
-              <span style="color: var(--color-approved)" 
-              class="material-symbols-outlined notranslate inline-icon">star</span>
+              <span class="material-symbols-outlined notranslate inline-icon">star</span>
               <b>${mapp.dictionary.admin_view.access}</b>
             </div>
             <div>${approval_element}</div>
@@ -1355,23 +1351,19 @@
 
         const login_failed_attempts = mapp.utils.html`
           <div>
-            <span 
-            style="color: var(--color-locked)"
-            class="material-symbols-outlined notranslate inline-icon">warning</span>
+            <span class="material-symbols-outlined notranslate inline-icon">warning</span>
             <b>${mapp.dictionary.admin_view.failed_login}</b>
           </div>
           <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
 
         return mapp.utils.html`
           <div>
-            <span style="color: var(--color-approved)"
-            class="material-symbols-outlined notranslate inline-icon">person_check</span>
+            <span class="material-symbols-outlined notranslate inline-icon">person_check</span>
             <b>${mapp.dictionary.admin_view.approved_label}</b>
           </div>
           <div>${approved_by}</div>
           <div>
-            <span style="color: var(--color-approved)"
-            class="material-symbols-outlined notranslate inline-icon">calendar_today</span>
+            <span class="material-symbols-outlined notranslate inline-icon">calendar_today</span>
             <b>${mapp.dictionary.admin_view.approved_on}</b>
           </div>
           <div>${approved_on}</div>
