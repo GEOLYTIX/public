@@ -363,6 +363,12 @@
 
       }
 
+      .inline-icon {
+        vertical-align: middle; 
+        font-size: inherit; 
+        cursor: pointer;
+      }
+
       button > .dot {
         box-shadow: var(--box-shadow-prominent);
       }
@@ -672,7 +678,7 @@
               special_permissions: "Special Permissions",
               status: "Status",
               status_description: {
-                "Verified": "Check the box to verify the user",
+                "Verified": "Check the box to immediately verify the user",
                 "Re-verification": "Checked if the user needs to re-verify their account after password reset",
                 "Approved": "Check the box to approve the user",
                 "Administrator": "Check the box to make the user an administrator",
@@ -997,8 +1003,8 @@
 
         const admin_label = user.admin ? mapp.utils.html`
           <span title=${mapp.dictionary.admin_view.admin} 
-          style="color: var(--color-approved); vertical-align: middle; font-size: inherit; cursor: pointer"
-          class="material-symbols-outlined notranslate">crown` : ``;
+          style="color: var(--color-approved)"
+          class="material-symbols-outlined notranslate inline-icon">crown` : ``;
 
         const access_log_btn = mapp.utils.html`
           <button class="action outlined access-log" 
@@ -1349,6 +1355,7 @@
         userDetails.close();
       }
 
+      /* updates elements in the account details window */
       function updateUserDetailsHTML(user) {
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
@@ -1357,6 +1364,7 @@
 
       /* creates special permissions section in user details window */
       function special_permissions_content(user) {
+
         const admin = mapp.ui.elements.chkbox({
           checked: user.admin,
           label: mapp.dictionary.admin_view.status_description["Administrator"],
@@ -1387,11 +1395,19 @@
 
          return mapp.utils.html`<div class="permissions details">
           <div>
-          <b>${mapp.dictionary.admin_view.admin}</b>
+          <b><span title=${mapp.dictionary.admin_view.admin} 
+            style="color: var(--color-approved)"
+            class="material-symbols-outlined notranslate inline-icon">crown</span>
+            ${mapp.dictionary.admin_view.admin}
+          </b>
           </div>
           <div>${admin}</div>
           <div>
-            <b>${mapp.dictionary.admin_view.api}</b>
+            <b><span title=${mapp.dictionary.admin_view.admin} 
+            style="color: var(--color-api)"
+            class="material-symbols-outlined notranslate inline-icon">api</span>
+            ${mapp.dictionary.admin_view.api}
+            </b>
           </div>
           <div>${api_access}</div>`
       }
