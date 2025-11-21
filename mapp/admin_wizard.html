@@ -1306,7 +1306,7 @@
         const element =  mapp.utils.html`<button class="admin action outline" data-user=${JSON.stringify(user)}
         style=${'border-color:' + state.color + ';color:' + state.color}>
         <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
-        <b>${state.action || state.label}`
+        ${state.action || state.label}`
         if(user.verified) element.onclick = approveAccount;
         return element;
       }
