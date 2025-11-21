@@ -53,6 +53,7 @@
         --color-admin: #0d47a1;
         --color-api: #4527a0;
         --color-new: #F77F00;
+        --color-role: #FFF6C2;
       }
 
       body {
@@ -352,18 +353,32 @@
       .dot {
         border-radius: 12px;
         padding: 2px 8px;
-        font-weight: bold;
-        color: var(--color-font-contrast);
+        /*color: var(--color-font-contrast);*/
+        background-color: var(--color-role);
         font-size: 0.9em;
         white-space: nowrap;
         text-overflow: ellipsis;
         margin: 1px;
         height: 2em;
+        box-shadow: var(--box-shadow-prominent);
+
+        &.plain {
+          background: transparent;
+          box-shadow: unset;
+        }
+
+        &.email {
+          font-weight: bold;
+          color: var(--color-font-contrast);
+          background-color: var(--color-primary);
+        }
 
         & > .material-symbols-outlined {
           font-size: inherit;
           color: inherit;
         }
+
+
 
       }
 
@@ -1071,7 +1086,7 @@
         const active_roles = user.roles
         //.filter((role) => (rolesTree.hasOwnProperty(role))) // temporarily disabled to show all roles assigned the the user relevat or not
         .map(role => {
-          return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-role); color:var(--color-font)">${role}`
         });
 
         return mapp.utils.html`<div class="flex">${active_roles}</div>`;
@@ -1083,8 +1098,8 @@
         const active_roles = user.roles
         .filter((role) => user.roles.indexOf(role) < 4)
         .map((role, idx) => {
-          if(idx === 3) return mapp.utils.html`<span class="dot" style="color: var(--color-primary)">${mapp.dictionary.admin_view.roles_more}</span>`;
-          return mapp.utils.html`<span class="dot" style="background-color: var(--color-primary)">${role}`
+          if(idx === 3) return mapp.utils.html`<span class="dot plain">${mapp.dictionary.admin_view.roles_more}</span>`;
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-role)">${role}`
         });
 
         return mapp.utils.html`<div class="flex">${active_roles}<div>`;
@@ -1156,10 +1171,10 @@
         const user = JSON.parse(e.target.closest('tr').dataset.user);
 
         const header = mapp.utils.html`<div>
-          <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
+          <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
           </div>
           <h1>
-            <span class="dot" style="background-color: var(--color-primary)">${user.email}</span>
+            <span class="dot email">${user.email}</span>
           </h1>`;
 
         const delete_actions = mapp.utils.html`
@@ -1450,9 +1465,9 @@
               : response.access_log.slice(Math.max(len - 10, 0));
 
         const content = mapp.utils.html`
-          <div><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></div>
+          <div><span class="dot email" style="background-color: var(--color-primary)">${user.email}</span></div>
           <b>${mapp.dictionary.admin_view.access_log_since + first_visit}</b>
-          <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot" style="background-color: var(--color-primary)">${len}</span></span>
+          <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot email">${len}</span></span>
           <span class="ws-pre">
             <b>${mapp.dictionary.admin_view.access_log_caption}</b>
             ${log.join('\n')}
@@ -1530,8 +1545,8 @@
         mapp.utils.render(role_ui_container.querySelector('.role-preview'), rolePreview(user));
 
         const content = mapp.utils.html`
-            <span class="dot" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
-            <h1><span class="dot" style="background-color: var(--color-primary)">${user.email}</span></h1>
+            <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
+            <h1><span class="dot email">${user.email}</span></h1>
             ${role_ui_container}`;
 
         const dialog = mapp.ui.elements.dialog({
