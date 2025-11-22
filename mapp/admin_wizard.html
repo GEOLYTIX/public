@@ -691,6 +691,7 @@
               roles_hierarchy_summary: "Assigned Roles Summary",
               roles_label_search: "access role",
               roles_more: "and more",
+              roles_no: "No roles have been set",
               search_placeholder: "Search users by",
               special_permissions: "Special Permissions",
               status: "Status",
@@ -711,7 +712,8 @@
               verified: "Awaiting Approval",
               verify: "Verify",
               withdraw: "Withdraw Access"
-            }
+            },
+            yes: "Yes"
           }
         });
 
@@ -1114,7 +1116,8 @@
             label: mapp.dictionary.admin_view.verified,
             action: mapp.dictionary.admin_view.approve,
             color: "var(--color-verified)",
-            icon: 'verified'
+            icon: 'verified',
+            onclick: approveAccount
           };
         if (user.approved)
           state = {
@@ -1302,11 +1305,11 @@
       /* creates the elements to show in curent status section based on user account life cycle*/
       function create_approval_element(user) {
         const state = determine_user_status(user);
-        const element =  mapp.utils.html`<button class="admin action outline" data-user=${JSON.stringify(user)}
+        const element =  mapp.utils.html.node`<button class="admin action outline" data-user=${JSON.stringify(user)}
         style=${'border-color:' + state.color + ';color:' + state.color}>
         <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
-        ${state.action || state.label}`
-        if(user.verified) element.onclick = approveAccount;
+        ${state.action || state.label}`;
+        if(state.onclick) element.onclick = state.onclick;
         return element;
       }
 
@@ -1354,6 +1357,16 @@
       /* creates HTML content for user account details section */
       function user_details_content(user) {
 
+        const roles_granted = mapp.utils.html`<div>
+          <span class="material-symbols-outlined notranslate inline-icon">shield_person</span>
+          <b>Access Roles</b>
+        </div>
+        <div>
+          <span class="dot">
+            ${user.roles?.length > 0 ? mapp.dictionary.yes : mapp.dictionary.admin_view.roles_no}
+          </span>
+        </div>`;
+
         const approved_by = user.approved_by ? 
         `${user.approved_by.split('|')[0]}` : `-`;
 
@@ -1368,6 +1381,7 @@
           <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
 
         return mapp.utils.html`
+          ${roles_granted}
           <div>
             <span class="material-symbols-outlined notranslate inline-icon">person_check</span>
             <b>${mapp.dictionary.admin_view.approved_label}</b>
