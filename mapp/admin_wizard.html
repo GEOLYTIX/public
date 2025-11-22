@@ -124,6 +124,7 @@
 
         .details {
           grid-template-columns: 1fr 2fr;
+          grid-template-rows: 4em;
           margin-top: 2em;
           display: grid; 
 
@@ -1319,6 +1320,16 @@
 
         const approval_element = create_approval_element(user);
 
+        const roles_granted = mapp.utils.html`<div>
+          <span class="material-symbols-outlined notranslate inline-icon">shield_person</span>
+          <b>Access Roles</b>
+        </div>
+        <div>
+          <span class="dot">
+            ${user.roles?.length > 0 ? mapp.dictionary.yes : mapp.dictionary.admin_view.roles_no}
+          </span>
+        </div>`;
+
         const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
 
         const expiry_date_input = mapp.utils.html.node`<input
@@ -1351,22 +1362,13 @@
               <b>${mapp.dictionary.admin_view.access}</b>
             </div>
             <div>${approval_element}</div>
+            ${roles_granted}
           ${expiry_date_entry}
         `;
       }
 
       /* creates HTML content for user account details section */
       function user_details_content(user) {
-
-        const roles_granted = mapp.utils.html`<div>
-          <span class="material-symbols-outlined notranslate inline-icon">shield_person</span>
-          <b>Access Roles</b>
-        </div>
-        <div>
-          <span class="dot">
-            ${user.roles?.length > 0 ? mapp.dictionary.yes : mapp.dictionary.admin_view.roles_no}
-          </span>
-        </div>`;
 
         const approved_by = user.approved_by ? 
         `${user.approved_by.split('|')[0]}` : `-`;
@@ -1382,7 +1384,6 @@
           <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
 
         return mapp.utils.html`
-          ${roles_granted}
           <div>
             <span class="material-symbols-outlined notranslate inline-icon">person_check</span>
             <b>${mapp.dictionary.admin_view.approved_label}</b>
