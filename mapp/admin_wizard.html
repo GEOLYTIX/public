@@ -1305,11 +1305,12 @@
       /* creates the elements to show in curent status section based on user account life cycle*/
       function create_approval_element(user) {
         const state = determine_user_status(user);
-        const element =  mapp.utils.html.node`<button class="admin action outline" data-user=${JSON.stringify(user)}
+        const element =  mapp.utils.html.node`<button 
+        onclick=${state.onclick}
+        class="admin action outline" data-user=${JSON.stringify(user)}
         style=${'border-color:' + state.color + ';color:' + state.color}>
         <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
         ${state.action || state.label}`;
-        if(state.onclick) element.onclick = state.onclick;
         return element;
       }
 
