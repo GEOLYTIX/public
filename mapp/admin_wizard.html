@@ -1162,17 +1162,22 @@
           <span>${state.label}</span>`
       }
 
-      /* this function creates user details layout with actions */
-      function user_details(e) {
-
-        const user = JSON.parse(e.target.closest('tr').dataset.user);
-
-        const header = mapp.utils.html`<div>
+      /* creates window header with account email address */
+      function window_header(user) {
+        return mapp.utils.html`<div>
           <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
           </div>
           <h1>
             <span class="dot email">${user.email}</span>
           </h1>`;
+      }
+
+      /* this function creates user details layout with actions */
+      function user_details(e) {
+
+        const user = JSON.parse(e.target.closest('tr').dataset.user);
+
+        const header = window_header(user);
 
         const delete_actions = mapp.utils.html`
         <div class="card"><h3>${mapp.dictionary.admin_view.withdraw}</h3>
@@ -1474,7 +1479,7 @@
               : response.access_log.slice(Math.max(len - 10, 0));
 
         const content = mapp.utils.html`
-          <div><span class="dot email" style="background-color: var(--color-primary)">${user.email}</span></div>
+          <div><span class="dot email">${user.email}</span></div>
           <b>${mapp.dictionary.admin_view.access_log_since + first_visit}</b>
           <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot email">${len}</span></span>
           <span class="ws-pre">
@@ -1553,9 +1558,10 @@
         /* create preview windown content */
         mapp.utils.render(role_ui_container.querySelector('.role-preview'), rolePreview(user));
 
+        const email_header = window_header(user);
+
         const content = mapp.utils.html`
-            <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
-            <h1><span class="dot email">${user.email}</span></h1>
+            ${email_header}
             ${role_ui_container}`;
 
         const dialog = mapp.ui.elements.dialog({
