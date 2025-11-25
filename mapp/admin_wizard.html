@@ -443,6 +443,34 @@
           display: flex;
           flex-direction: column;
 
+          /* Maximum desired width */
+          max-width: 1440px; 
+
+          /* Center the container */
+          margin-left: auto;
+          margin-right: auto;
+
+          .admin-tools {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            column-gap: 1rem;
+            width: 100%;
+            margin: 1.2em 0;
+            background-color: var(--color-base);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 0.5em 1em 0.2em;
+
+            .flex-no-stretch {
+              flex: 0 0 auto;
+            }
+
+            .flex-stretch {
+              flex: 1;
+            }
+          }
+
           /* begin user table */ 
         
           #users {
@@ -557,10 +585,7 @@
       .search {
         width: 100%;
         margin-bottom: 1em;
-        background-color: var(--color-base);
-        border-radius: var(--border-radius);
         padding: 0.5em 1em;
-        box-shadow: var(--box-shadow);
 
         .radio-group {
           display: flex;
@@ -628,9 +653,11 @@
       <div class="viewport">
         <div class="content">
           <header></header>
-          <div id="tools"></div>
-          <div id="notification"></div>
-          <div id="search"></div>
+          <div class="admin-tools">
+            <div id="logout" class="flex-no-stretch"></div>
+            <div id="back_to_mapp" class="flex-no-stretch"></div>
+            <div id="search" class="flex-stretch"></div>
+          </div>
           <div id="users"></div>
         </div>
       </div>
@@ -737,26 +764,21 @@
 
 
       /* create administrator actions */
-      const administrator_tools = mapp.utils.html`<div class="actions">
-        <button class="action admin outlined"
-        onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
-          <span class="material-symbols-outlined" translate="no">arrow_back</span>
-          <span class="label">${mapp.dictionary.admin_view.back}</span>
-        <button>
-        <button class="action admin outlined"
+      const logout_btn = mapp.utils.html`<button class="action admin outlined"
         onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
           <span class="material-symbols-outlined" translate="no">logout</span>
           <span class="label">${mapp.dictionary.admin_view.logout}</span>
-        <button>
-      </div>`;
+        <button>`;
 
-      mapp.utils.render(document.getElementById('tools'), administrator_tools);
+      mapp.utils.render(document.getElementById('logout'), logout_btn);
 
-      /* create notifications placeholder section TODO clarify how this should eventually exist or work */
-      const notification = mapp.utils.html`<div class="notification">
-        <span><b>Some information on recent actions will appear here.</b></span>`
+      const back_to_mapp_btn = mapp.utils.html`<button class="action admin outlined"
+        onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
+          <span class="material-symbols-outlined" translate="no">arrow_back</span>
+          <span class="label">${mapp.dictionary.admin_view.back}</span>
+        <button>`;
 
-      mapp.utils.render(document.getElementById('notification'), notification);
+      mapp.utils.render(document.getElementById('back_to_mapp'), back_to_mapp_btn);
 
       /* create searchbox */
       const search = mapp.utils.html`<div class="search">
