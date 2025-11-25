@@ -107,6 +107,9 @@
         padding: 2em;
         width: 100%;
         height: 100%;
+        max-width: 1440px; 
+        margin-left: auto;
+        margin-right: auto;
 
         .account-details-grid { 
           margin-top: 2em;
@@ -184,6 +187,9 @@
         width: 100%;
         height: 100%;
         border: solid 1px var(--color-border);
+        max-width: 1440px; 
+        margin-left: auto;
+        margin-right: auto;
 
         &::-webkit-scrollbar {
           display: none;
@@ -398,33 +404,6 @@
 
       .ws-pre {
         white-space: pre-line;
-      }
-
-      /* reusable class for information */
-      .notification {
-        margin: 1em 0;
-        padding: 1em;
-        display: grid;
-        grid-template-columns: 1fr 150px;
-        grid-gap: 10px;
-        background-color: var(--color-notification);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-
-        span {
-          margin: auto 0;
-        }
-
-        button {
-          background-color: var(--color-notification-contrast);
-          color: var(--color-notification-font);
-          border-color: transparent;
-          font-weight: bold;
-
-          &:hover {
-            background-color: var(--color-notification-hover);
-          }
-        }      
       }
       
       /* inside viewport */
@@ -1250,8 +1229,12 @@
           header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.acc_details}`,
           class: 'user-details box-shadow',
           closeBtn: true,
+          onClose: () => {
+            document.querySelector('.backdrop').style.display = 'none';
+          },
           content,
         });
+        document.querySelector('.backdrop').style.display = 'block';
       }
 
       /* Begin User Details Window Content */
