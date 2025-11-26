@@ -1250,6 +1250,7 @@
       /* creates special permissions section in user details window */
       function special_permissions_content(user) {
         const verification = mapp.ui.elements.chkbox({
+          disabled: user.verified, // no longer editable after verification
           checked: user.verified,
           label: mapp.dictionary.admin_view.status_description["Verified"],
           onchange: async (checked) => {
