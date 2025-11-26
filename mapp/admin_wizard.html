@@ -1032,6 +1032,17 @@
             ${user.last_active || mapp.dictionary.admin_view.unknown}
           </button>`;
 
+        const set_roles_btn = mapp.utils.html.node`<button
+            class="action outlined"
+            data-user=${JSON.stringify(user)}
+            onclick=${roleAssignment}>
+              <span class="material-symbols-outlined notranslate">shield_person</span>
+              <span>${mapp.dictionary.admin_view.grant}</span>
+            </button>`;
+
+        // disabled roles if user is blocked or no roles have been found in the workspace
+        if(user.blocked || !rolesList.length) set_roles_btn.disabled = true;
+
         return mapp.utils.html`
           <td>${user.email} ${admin_label}</td>
           <td class="desktop-only">${active_roles}</td>
@@ -1042,13 +1053,7 @@
               <span class="material-symbols-outlined notranslate">manage_accounts</span>
               <span>${mapp.dictionary.admin_view.manage}</span>
             </button>
-            <button 
-            class="${'action outlined' + (user.blocked || !Object.keys(rolesList).length ? ' display-none' : '')}"
-            data-user=${JSON.stringify(user)}
-            onclick=${roleAssignment}>
-              <span class="material-symbols-outlined notranslate">shield_person</span>
-              <span>${mapp.dictionary.admin_view.grant}</span>
-            </button>
+            ${set_roles_btn}
           </td>`;
       }
 
