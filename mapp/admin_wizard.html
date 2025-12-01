@@ -546,9 +546,15 @@
                       }
 
                       &.action {
-                        margin: 0 0.2em;
+                        margin: 0.2em;
                       }
                     
+                    }
+
+                    &.user-email {
+                      width: max-content;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                     }
                   }
                 }
@@ -600,7 +606,7 @@
 
 
       /* rules for mobile */
-      @media only screen and (max-width: 700px) {
+      @media only screen and (max-width: 768px) {
         body,
         {
           margin: 0;
@@ -620,10 +626,26 @@
           width: 49%;
         }
 
-        .search {
-          .radio-group {
-            flex-direction: column;
-            gap: 0.2em;
+        .admin-tools {
+          flex-wrap: wrap;
+
+          .flex-no-stretch {
+            flex: 0 0 auto;
+          }
+
+          .flex-stretch {
+            /*flex: 1 0 100%;*/
+
+            .search {
+              border: solid 1px var(--color-border);
+              margin-top: 0.5em;
+              border-radius: var(--border-radius);
+
+              .radio-group {
+                flex-direction: column;
+                gap: 0.2em;
+              }
+            }
           }
         }
       }
@@ -1021,7 +1043,7 @@
         const admin_label = user.admin ? mapp.utils.html`
           <span title=${mapp.dictionary.admin_view.admin} 
           style="color: var(--color-admin)"
-          class="material-symbols-outlined notranslate inline-icon">crown` : ``;
+          class="material-symbols-outlined notranslate inline-icon desktop-only">crown` : ``;
 
         const access_log_btn = mapp.utils.html`
           <button class="action outlined access-log" 
@@ -1044,7 +1066,7 @@
         if(user.blocked || !rolesList.length) set_roles_btn.disabled = true;
 
         return mapp.utils.html`
-          <td>${user.email} ${admin_label}</td>
+          <td class="user-email" title=${user.email}>${user.email} ${admin_label}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${access_log_btn}</td>
           <td>${user_status}</td>
@@ -1167,7 +1189,7 @@
           style=${'border-color: ' + state.color + '; color:' + state.color}
           >
           <span class="material-symbols-outlined notranslate inline-icon">${state.icon}</span>
-          <span>${state.label}</span>`
+          <span class="desktop-only">${state.label}</span>`
       }
 
       /* creates window header with account email address */
