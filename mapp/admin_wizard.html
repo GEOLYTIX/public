@@ -59,7 +59,6 @@
       body {
         width: 100%;
         height: 100%;
-        position: absolute;
 
         &::-webkit-scrollbar {
           display: none;
@@ -78,7 +77,7 @@
 
       .actions {
           margin-top: 2em; 
-          display: inline-flex; 
+          display: inline-flex;
           flex-direction: row;
           flex-wrap: wrap;
           gap: 4px;
@@ -320,6 +319,7 @@
         background-color: var(--color-base-tertiary);
         min-width: 8em;
         padding: 0.5em 1em;
+        white-space: nowrap;
 
         * {
           pointer-events: none;
@@ -652,6 +652,10 @@
         dialog.user-details {
           .account-details-grid {
             grid-template-columns: 1fr;
+
+            .card .details {
+              grid-template-columns: repeat(2, 1fr);
+            }
           }
         }
       }
@@ -1285,7 +1289,7 @@
         const verification = mapp.ui.elements.chkbox({
           disabled: user.verified,
           checked: user.verified,
-          label: mapp.dictionary.admin_view.status_description["Verified"],
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["Verified"]}</span>`,
           onchange: async (checked) => {
             // prevent unchecking
             if(!checked) return;
@@ -1304,7 +1308,7 @@
 
         const admin = mapp.ui.elements.chkbox({
           checked: user.admin,
-          label: mapp.dictionary.admin_view.status_description["Administrator"],
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["Administrator"]}</span>`,
           onchange: async (checked) => {
             user.admin = checked;
             await updateUser({
@@ -1318,7 +1322,7 @@
 
         const api_access = mapp.ui.elements.chkbox({
           checked: user.api,
-          label: mapp.dictionary.admin_view.status_description["API"],
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["API"]}</span>`,
           onchange: async (checked) => {
             user.api = checked;
             await updateUser({
