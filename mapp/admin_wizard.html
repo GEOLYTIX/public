@@ -769,7 +769,7 @@
       /* create administrator actions */
       const logout_btn = mapp.utils.html`<button class="action admin outlined"
         onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
-          <span class="material-symbols-outlined" translate="no">logout</span>
+          <span class="material-symbols-outlined notranslate">logout</span>
           <span class="label">${mapp.dictionary.admin_view.logout}</span>
         <button>`;
 
@@ -777,7 +777,7 @@
 
       const back_to_mapp_btn = mapp.utils.html`<button class="action admin outlined"
         onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
-          <span class="material-symbols-outlined" translate="no">arrow_back</span>
+          <span class="material-symbols-outlined notranslate">exit_to_app</span>
           <span class="label">${mapp.dictionary.admin_view.back}</span>
         <button>`;
 
