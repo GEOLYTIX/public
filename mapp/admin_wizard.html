@@ -550,6 +550,15 @@
                       &.action {
                         margin: 0.2em;
                       }
+
+                      &.disabled {
+                        /* using class prevents new stacking context when opacity is applied on `disabled` property */
+                        pointer-events: none;
+                        cursor: not-allowed;
+                        * { 
+                          color: var(--color-font-mid);
+                        }
+                      }
                     
                     }
 
@@ -613,6 +622,7 @@
         body,
         {
           margin: 0;
+          height: auto;
         }
 
         .desktop-only {
@@ -627,7 +637,7 @@
 
         #users {
           table {
-            layout: auto;
+            table-layout: auto;
           }
         }
 
@@ -1081,16 +1091,14 @@
             ${user.last_active || mapp.dictionary.admin_view.unknown}
           </button>`;
 
+        // disabled roles if user is blocked or no roles have been found in the workspace
         const set_roles_btn = mapp.utils.html.node`<button
-            class="action outlined"
+            class="${'action outlined' + ((user.blocked || !rolesList.length) ? ' disabled' : '')}"
             data-user=${JSON.stringify(user)}
             onclick=${roleAssignment}>
               <span class="material-symbols-outlined notranslate">shield_person</span>
               <span>${mapp.dictionary.admin_view.grant}</span>
             </button>`;
-
-        // disabled roles if user is blocked or no roles have been found in the workspace
-        if(user.blocked || !rolesList.length) set_roles_btn.disabled = true;
 
         return mapp.utils.html`
           <td class="user-email" title=${user.email}>${user.email} ${admin_label}</td>
