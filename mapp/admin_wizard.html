@@ -611,58 +611,49 @@
           width: 1.2em;
           height: 1.2em;
         }
-        
 
       }
 
 
-
-      /* rules for mobile oriantation portrait */
-      @media only screen and (max-width: 768px) and (orientation: portrait) {
-        body,
-        {
-          margin: 0;
-          height: auto;
-        }
+      /* rules for mobile */
+      @media only screen and (max-width: 768px) {
 
         .desktop-only {
           display: none !important;
         }
 
-        .mobile-width {
-          grid-column: 1 / span 2;
-          text-align: center;
-          font-size: 1.1em;
-        }
-
-        #users {
-          table {
-            table-layout: auto;
-          }
-        }
-
-        .role-item {
-          width: 49%;
-        }
-
-        .admin-tools {
-          flex-wrap: wrap;
-
-          .flex-no-stretch {
-            flex: 0 0 auto;
+        /* only for orientation portrait */
+        @media (orientation: portrait) {
+          body,
+          {
+            margin: 0;
+            height: auto;
           }
 
-          .flex-stretch {
-            /*flex: 1 0 100%;*/
+          #users {
+            table {
+              table-layout: auto;
+            }
+          }
 
-            .search {
-              border: solid 1px var(--color-border);
-              margin-top: 0.5em;
-              border-radius: var(--border-radius);
+          .admin-tools {
+            flex-wrap: wrap;
+            
+            .flex-no-stretch {
+              flex: 0 0 auto;
+            }
 
-              .radio-group {
-                flex-direction: column;
-                gap: 0.2em;
+            .flex-stretch {
+
+              .search {
+                border: solid 1px var(--color-border);
+                margin-top: 0.5em;
+                border-radius: var(--border-radius);
+
+                .radio-group {
+                  flex-direction: column;
+                  gap: 0.2em;
+                } 
               }
             }
           }
@@ -685,7 +676,7 @@
             flex-direction: column;
           }
         }
-      }
+    }
 
     </style>
 
