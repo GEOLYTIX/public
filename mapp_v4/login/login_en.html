@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-<head data-dir="{{dir}}">
+  <head data-dir="${dir}">
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +11,13 @@
 
   <title>Home | Geolytix MAPP</title>
 
-  <link rel="icon" type="image/x-icon" href="https://geolytix.github.io/public/favicon_mapp.ico" />
-  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp_v4/app.css" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="icon" type="image/x-icon" href="https://geolytix.github.io/xyz/public/icons/favicon.ico" />
+  <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
 </head>
 
 <body>
   <main>
-<!--     <div class="lang-container">
-      <label for="language">
-        <select id="language" onChange="window.location.href=this.value">
-          <option value="{{dir}}?language=en&login=true">English</option>
-        </select>
-      </label>
-    </div> -->
+
     <div class="form-container">
       <div class="form-container__inner">
         <div class="flow">
@@ -39,61 +29,40 @@
             <h1 class="form-container__title">Login to your account</h1>
           </div>
 
-          <form action="{{dir}}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
+          <form action="${dir}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
 
-            <input style="display:none;" name="language" required value="en">
-
+            <input style="display: none;" name="redirect" value="${redirect}">
+    
             <input style="display: none;" name="login" value=true>
 
-            <div style="text-align: center;">
-            <b class="gap-top-700">
-              As of January 2025, we’re enforcing a minimum password length of 12 characters.</b>
-            <br><i class="gap-top-700"> You will be asked to reset your password if it does not meet these requirements.</i>
-            </div>
             <div class="form-field">
               <label>Email address</label>
-              <input name="email" type="email" required maxlength="50" placeholder="Enter email">
+              <input name="email" type="email" required maxlength="50">
             </div>
 
             <div class="form-field">
               <label>Password</label>
-              <div class="password-container">
-                <input type="password" id="password" class="password-input" required minlength="10" name="password" placeholder="Enter password">
-                <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
-              </div>
+              <input name="password" type="password" required minlength="10">
             </div>
 
             <button type="submit" class="button">Login</button>
-          
-            <p class="gap-top-700"><a href="{{dir}}/api/user/register?register=true">New to Geolytix MAPP? Sign up
-                &rarr;</a></p>
+            <p class="gap-top-700"><a href="${dir}/api/user/register?register=true">New to Geolytix MAPP? Sign up &rarr;</a></p>
           </form>
 
-          <p class="msg">{{msg}}</p>
+          <p class="msg">${msg}</p>
+
           <div class="text-align-center">
-            <p class="text-300"><a href="{{dir}}/api/user/register?reset=true">Forgot your password?</a></p>
+            <p class="text-300"><a href="${dir}/api/user/register?reset=true">Forgot your password?</a></p>
           </div>
           <div class="text-align-center">
             <p class="text-300"><a href="https://github.com/GEOLYTIX/xyz">Powered By xyz</a></p>
+             <p class="text-300"><a href="https://geolytix.github.io/public/mapp/terms.html">Terms of Service</a> &#x2022; 
+ <a href="https://geolytix.github.io/public/mapp/privacy.html">Privacy Policy</a></p>
           </div>
         </div>
       </div>
     </div>
   </main>
 </body>
-<script>
-  const togglePasswordButton = document.getElementById('toggle_password');
-  const passwordInput = document.getElementById('password');
 
-  togglePasswordButton.addEventListener('click', function () {
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      togglePasswordButton.innerText = "visibility";
-    } else {
-      passwordInput.type = 'password';
-      togglePasswordButton.innerText = "visibility_off";
-    }
-  });
-</script>
-
-</html>
+</html
