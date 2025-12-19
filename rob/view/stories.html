@@ -7,13 +7,6 @@
     <meta property="og:title" content="Mapp Stories">
     <meta name="twitter:title" content="Mapp Stories">
   
-    <meta name="description" content="Mapp Stories by Women of Geolytix">
-    <meta property="og:description" content="Mapp Stories by Women of Geolytix">
-    <meta name="twitter:description" content="Mapp Stories by Women of Geolytix">
-  
-    <meta property="og:image" content="https://res.cloudinary.com/dvx8vwneg/image/upload/v1678454175/iwd_2023/glx_women_1200x627.png">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dvx8vwneg/image/upload/v1678454175/iwd_2023/glx_women_1200x627.png">
-    
     <link rel="icon" type="image/x-icon" href="{{dir}}/icons/favicon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
@@ -276,7 +269,7 @@
         
         <div class="header half align_c lite">
             <img height=20 src="https://geolytix.github.io/public/mapp_v4/emblem.svg"><br>
-            Mapp&nbsp;Stories
+            Whistle stop tour of Rob Hurst!
         </div>
 
         <div class="stories half"></div>
@@ -292,10 +285,6 @@
                     <a target="_blank" href="http://www.openstreetmap.org/copyright">© OpenStreetMap contributors</a>
                 </div>
             </div>
-            <div class="select-story">
-                <img src="https://geolytix.github.io/public/stories/img/her_circle.svg" height=40>
-            </div>
-            <ul class="stories-list"></ul>
             
         </div>
 
@@ -326,11 +315,6 @@
 
             createStories();
 
-            function createStoriesList() {
-                if(!state.stories) return
-                state.stories.map(i => document.querySelector('.stories-list').appendChild(mapp.utils.html.node`<li><a href="${`#${i}`}">${i}`));
-            }
-
             function isInFocus(el) {
                 const rect = el.getBoundingClientRect()
                 return rect.top > 0 && rect.top < window.innerHeight/3; // one third to support mobile view
@@ -352,7 +336,7 @@
                     style: new ol.style.Style({
                         image: new ol.style.Icon({
                             src: story.pin || "https://geolytix.github.io/public/stories/img/her.svg",
-                            scale: 3
+                            scale: story.scale
                         })
                     })
                 });
@@ -363,10 +347,10 @@
 
             function createStories(){
 
-                const hash = window.location.hash ? window.location.hash.substring(1) : false;
+                const hash = window.location.hash ? window.location.hash.substring(1) : false
                 const xhr = new XMLHttpRequest();
-                //xhr.open('GET', 'http://localhost:3000/stories/public/stories.json');
-                xhr.open('GET', 'https://geolytix.github.io/public/stories/data/stories.json');
+                xhr.open('GET', 'http://localhost:3000/rob/public/stories.json');
+                //xhr.open('GET', 'https://geolytix.github.io/public/rob/data/stories.json');
 
                 xhr.onload = e => {
                     if(!e.target) return;
@@ -378,11 +362,6 @@
 
                     document.querySelector('.stories').innerHTML = '';
                     state.els = null;
-
-                    if(!state.stories) {
-                        state.stories = Object.keys(json);
-                        createStoriesList();
-                    }
 
                     stories.map((story, i) => {
 
@@ -467,12 +446,6 @@
                 if(el.style.display == 'block') el.style.display = 'none';
 
             }, false);
-
-            document.querySelector('.select-story').addEventListener('click', e => {
-                e.stopPropagation();
-                let el = document.querySelector('.stories-list');
-                el.style.display = el.style.display == 'block' ? 'none' : 'block';
-            })
 
 
         }

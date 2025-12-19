@@ -1,0 +1,245 @@
+{
+    "Rob": [
+        {
+            "title": "Hello, my name is Rob!",
+            "address": "Developer at Geolytix",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_health_hospital.svg",
+                "scale": 0.3,
+                "lat": -26.073965379978343,
+                "lng": 28.010582172773884
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678207428/rob_stories/rob_1.jpg"
+        },
+        {
+            "address": "Redhill School Morning side!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_2.webp"
+        },
+        {
+            "address": "Redhill School Morning side!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_3.jpg"
+        },
+        {
+            "address": "Redhill School Morning side!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -26.07547602022177,
+                "lng": 28.060590620102687
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/rob_stories/rob_4.jpg"
+        },
+        {
+            "address": "Simons Town",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.194621312103905,
+                "lng": 18.431394998840833
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_5.jpg"
+        },
+        {
+            "address": "Simons Town",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.194621312103905,
+                "lng": 18.431394998840833
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_6.jpg"
+        },
+        {
+            "address": "Varsity College Rondebosh",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/poi_pin_filled/poi_education_24px.svg",
+                "scale": 3,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_8.jpg"
+        },
+        {
+            "address": "Capones Pizza",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.131970164498334,
+                "lng": 18.4210916423284
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_12.jpg"
+        },
+        {
+            "address": "The Lighthouse Café",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.19324719393661,
+                "lng": 18.431345025758635
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_14.jpg"
+        },
+        {
+            "address": "The Lighthouse Café",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.19324719393661,
+                "lng": 18.431345025758635
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_15.jpg"
+        },
+        {
+            "address": "Katchmi Technologies",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -34.079811548280,
+                "lng": 18.433247030684083
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_11.jpg"
+        },
+        {
+            "address": "Geolytix!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": 51.527494796438006,
+                "lng": -0.1152933048956979
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_616,f_auto/website/about/blair-and-sarah.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717601702/rob_stories/rob_9.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -33.9600361732048,
+                "lng": 18.471639344769287
+            },
+            "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1717656429/rob_stories/rob_18.mov"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -18.789707931785095,
+                "lng": 16.330647715076108
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_21.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -18.789707931785095,
+                "lng": 16.330647715076108
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_19.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.22888206970219,
+                "lng": 27.981793055634554
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_16.jpg"
+        },
+        {
+            "address": "Hobbies!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.22888206970219,
+                "lng": 27.981793055634554
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_17.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_29.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_28.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_24.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_26.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_25.jpg"
+        },
+        {
+            "address": "These Days!",
+            "location": {
+                "pin": "https://geolytix.github.io/MapIcons/pins/blue.svg",
+                "scale": 1.5,
+                "lat": -26.069773217311756,
+                "lng": 28.0658763644179
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1717656428/rob_stories/rob_27.jpg"
+        }
+    ]
+}

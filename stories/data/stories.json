@@ -1,12 +1,14 @@
 {
-    "Geolytix": [{
+    "Geolytix": [
+    {
         "title": "Women of GEOLYTIX",
         "address": "Finsbury Business Centre - our head office",
-        "location": {
+        "location":
+        {
             "lat": 51.5248847,
             "lng": -0.1071502
         },
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1000,c_limit/v1678207428/iwd_2023/Women_of_Geolytix_Cropped.jpg",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678207428/iwd_2023/Women_of_Geolytix_Cropped.jpg",
         "description": "We love International Women’s Day and how it recognises women around the world. This day has never been bigger. <br>We are lucky at Geolytix. We know we have something special – caring for each other, offering a boost when one of us needs it or recognising when someone needs encouragement. <br>Over half our leadership team are female, and we’ve loved building a team with strong, intelligent and fun women who bring in a variety of high skill and expertise. Our female colleagues deliver projects to clients around the world, create products and develop brilliant solutions to location intelligence problems.<br>Get to know them a bit better through our MAPP Stories ⬇️"
     }],
     "Jasmin": [
@@ -18,7 +20,7 @@
             "lat": 51.5808204674407,
             "lng": -0.013817046406572648
         },
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209913/iwd_2023/jasmin_welcome_v2.jpg",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678209913/iwd_2023/jasmin_welcome_v2.jpg",
         "description": "Hello, I’m Jasmin. I’m a born and bred East Londoner. I joined Geolytix back in 2015, when it was a company of 7. I’ve been involved in many aspects of the business, but today I look after MAPP, our online mapping and marketing intelligence tool."
     },
     {
@@ -30,7 +32,7 @@
             "lng": 0.06772652645302418
         },
         "description": "Outside of work, you will often find me running. I am a member of a cross country running club and Epping Forest is a frequent stomping ground of mine. One of my favourite routes is a 14-mile loop out to Copped Hall (a Georgian mansion under restoration just outside of the M25) and back.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645443902/iwd_2023/Copped_Hall_Epping_Fores.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645443902/iwd_2023/Copped_Hall_Epping_Fores.jpg"
     },
     {
         "title": "London Marathon 2021",
@@ -41,7 +43,7 @@
             "lng": -0.07537795166540881
         },
         "description": "In October 2021, my dream came true of finally being able to run the London Marathon. I know it's cliché, but there's really nothing like the moment you cross Tower Bridge with hundreds of supporters lined up on either side shouting out your name. The second half of the race was super tough, but I loved seeing Sarah & Lou cheering me on at Canary Wharf when the wheels were starting to fall off.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645444017/iwd_2023/London_Marathon_-_London_Bridge.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645444017/iwd_2023/London_Marathon_-_London_Bridge.jpg"
     },
     {
         "title": "Conquering the highest mountain in Wales",
@@ -52,7 +54,7 @@
             "lng": -4.076319158069835
         },
         "description": "During the pandemic when travel was restricted, I took to exploring more of the UK and learnt to embrace the great outdoors. In May 2021, I spent a week in Wales with a group of friends and successfully climbed Mount Snowdon. We couldn’t believe our luck with the weather, during the week we also visited Portmeirion (a village styled to appear like you were in Italy), cycled through the hills to Cwm Bychan, wild swam in the river Conwy (it was absolutely freezing!) and sunbathed at Harlech beach.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645444099/iwd_2023/Snowdonia_Wales_V2.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645444099/iwd_2023/Snowdonia_Wales_V2.jpg"
     },
     {
         "title": "On the bonnie bonnie banks of Loch Lomond…",
@@ -63,7 +65,7 @@
             "lng": -4.521196907002455
         },
         "description": "Eager to squeeze one last trip in during 2021 and keen to get that outdoors fix, I ventured up to Scotland with a couple of friends in December. Whilst there we drove to Loch Lomond, stopped off at Glengoyne Whiskey distillery for Christmas gifts and hiked up Conic Hill. It was quite a tough climb - the name is clearly deceptive as it was much more than a ‘hill’ - but the views were breath-taking and were made even better by the glorious sunshine we had that day.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1645443998/iwd_2023/Conic_Hill_Scotland.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1645443998/iwd_2023/Conic_Hill_Scotland.jpg"
     },
     {
         "title": "When in Rome...",
@@ -74,70 +76,75 @@
             "lng": 12.454192712698315
         },
         "description": "As well as the UK, I also enjoy travelling further afield when I can. At the start of 2022, I visited Rome for the first time with my boyfriend, which we both loved. In addition to marvelling at the ancient sites, we were also able to tick off a new country at the same time (Vatican City!). After a few years of limited travel, it was great to experience the European culture of alfresco dining again (even in January) and we certainly enjoyed many an Aperitivo!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678221629/iwd_2023/Vatican_City.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678221629/iwd_2023/Vatican_City.jpg"
     }],
     "Lou": [
+    {
+        "title": "Hi, I'm Lou",
+        "address": "How did I get here?",
+        "location":
         {
-            "title": "Hi, I'm Lou",
-            "address": "How did I get here?",
-            "location": {
-                "lat": 53.3791036,
-                "lng": -1.466009248
-            },
-            "description": "I love geography, I'm a keen walker and have a passion for travel. I'm a South Yorkshire lass, originally from Doncaster. I've lived in Sheffield since 2008 when I started studying BSc Geography at Sheffield Hallam University. I continued on to gain my MSc in Geographical Information Systems. In 2013 I joined Geolytix. I'm Product Owner of Data and work across the Business Development and Data teams.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208265/iwd_2023/lou_1_sheffield.jpg"
+            "lat": 53.3791036,
+            "lng": -1.466009248
         },
+        "description": "I love geography, I'm a keen walker and have a passion for travel. I'm originally from Doncaster. I've lived in Sheffield since 2008 when I started studying BSc Geography at Sheffield Hallam University. I continued on to gain my MSc in Geographical Information Systems. In 2013 I joined Geolytix. I'm Product Owner of Data and work across the Business Development and Data teams.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678208265/iwd_2023/lou_1_sheffield.jpg"
+    },
+    {
+        "title": "Walking",
+        "address": "Sheffield & Peak District",
+        "location":
         {
-            "title": "Walking",
-            "address": "Sheffield & Peak District",
-            "location": {
-                "lat": 53.34930378,
-                "lng": -1.567240056
-            },
-            "description": "I absolutely love walking and discovering new routes. Sheffield is the perfect location to live for this hobby, I'm right on the doorstep of the Peak District National Park. Apps like <a target='_blank' href='https://www.strava.com/'>Strava</a> and <a target='_blank' href='https://www.sports-tracker.com/'>Sports Tracker</a> are brilliant for tracking exercise. Here are 3 long local walks I loved completeing in the last 2 years and highly recommend:<ul><li>Sheffield Round Walk - 15 miles</li><li>Edale Skyline, Peak District - 20 miles</li><li>Don Valley Way, Sheffield-Doncaster - 28 miles</li></ul><br>I'm really interested in the <a target='_blank' href='https://beta.slowways.org/'>Slow Ways</a> initative who are creating a network of walking routes that connect all of Great Britain’s towns and cities.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208679/iwd_2023/lou_2_walking.png"
+            "lat": 53.34930378,
+            "lng": -1.567240056
         },
+        "description": "I absolutely love walking and discovering new routes. Sheffield is the perfect location to live for this hobby, I'm right on the doorstep of the Peak District National Park. These are 3 of my favourite local long walks:<br/><ul><li>Sheffield Round Walk</li><li>Edale Skyline, Peak District</li><li>Don Valley Way, Sheffield-Doncaster</li></ul>",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678208679/iwd_2023/lou_2_walking.png"
+    },
+    {
+        "title": "Gigs & Festivals",
+        "address": "You can't beat live music",
+        "location":
         {
-            "title": "Gigs & Festivals",
-            "address": "You can't beat live music",
-            "location": {
-                "lat": 51.15371543,
-                "lng": -2.591915178
-            },
-            "description": "I played piano for 8 years when I was younger and although I'm slowly trying to teach myself the ukulele I prefer to leave it to the professionals. My first concert was Spice Girls at Don Valley in 1997. My music taste has evolved and I've been to hundreds of gigs. In 2006 I went to my first festival and loved the experience. Since then I have been to Leeds Festival (UK), Glastonbury (UK), Isle of Wight (UK), Bestival (UK), Secret Garden Party (UK), Benicassim (Spain), Super Bock Super Rock (Portugal). This year I'm going to Weekender in Warrington and Glastonbury for a 4th time.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678208938/iwd_2023/lou_3_glastonbury.jpg"
+            "lat": 51.15371543,
+            "lng": -2.591915178
         },
+        "description": "My first concert was Spice Girls at Don Valley in 1997. My music taste has evolved and I've been to hundreds of gigs. In 2006 I went to my first festival and loved the experience. I'm looking forward to going to Glastonbury for a 5th time this year.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709759954/iwd_2023/lou_33_glastonbury.jpg"
+    },
+    {
+        "title": "Where's Lou",
+        "address": "What a Wonderful World",
+        "location":
         {
-            "title": "Where's Lou",
-            "address": "What a Wonderful World",
-            "location": {
-                "lat": -51.25001859,
-                "lng":  -72.3585735
-            },
-            "description": "I travel as much as I can. I've been to over 40 countries across 6 continents. This year my trips include Bosnia & Herzegovina, Iceland and Canada. One of my favourite trips was in 2018 when myself and my friend & colleague Jazz went to Argentina and Chile to explore Patagonia.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209050/iwd_2023/lou_4_where_s_lou.png"
+            "lat": -51.25001859,
+            "lng": -72.3585735
         },
+        "description": "I travel as much as I can. I've been to over 40 countries across 6 continents. At the start of 2024 I spent 5 weeks in Australia visiting Sydney, Tasmania, Byron Bay, Brisbane, K'Gari Island, Noosa, Whitsundays, Melbourne, Adelaide and Perth.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678209050/iwd_2023/lou_4_where_s_lou.png"
+    },
+    {
+        "title": "Do the things which scare you",
+        "address": "Hang gliding in Brazil",
+        "location":
         {
-            "title": "Do the things which scare you",
-            "address": "Hang gliding in Brazil",
-            "location": {
-                "lat": -22.90458207,
-                "lng": -43.21871095
-            },
-            "description": "One of the best things I have ever done is hang gliding over Rio de Janeiro, Brazil.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209205/iwd_2023/lou_5_brazil.jpg"
+            "lat": -22.90458207,
+            "lng": -43.21871095
         },
+        "description": "One of the best things I have ever done is hang gliding over Rio de Janeiro, Brazil.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678209205/iwd_2023/lou_5_brazil.jpg"
+    },
+    {
+        "title": "My Philosophy",
+        "address": "Enjoy the passing of time",
+        "location":
         {
-            "title": "My Philosophy",
-            "address": "Enjoy the passing of time",
-            "location": {
-                "lat": 53.367607, 
-                "lng": -1.502267
-            },
-            "description": "We have one life and I intend to live it the best I can. This year I've set myself a few challenges... In January I ran the Sheffield Round Run, February I hosted a Geolytix event for over 100 people, in March I'm starting salsa lessons. I have a few ideas for the rest of the year including travels and long walks to push my comfort levels.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678209412/iwd_2023/lou_6_lou.jpg"
-        }
-    ],
+            "lat": 53.367607,
+            "lng": -1.502267
+        },
+        "description": "",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678209412/iwd_2023/lou_6_lou.jpg"
+    }],
     "Rachel": [
     {
         "title": "Hey, I'm Rachel!",
@@ -148,7 +155,7 @@
             "lng": 0.522141688
         },
         "description": "I'm a Location Planning Partner at Geolytix and based in the London Office. I'm originally from Maidstone, Kent and called here home for the first 18 years of my life. This is where my love of dance started - a hobby that I'm still passionate about!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210189/iwd_2023/1._rachel_ballet.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210189/iwd_2023/1._rachel_ballet.jpg"
     },
     {
         "title": "University of Leicester 2014-2017",
@@ -159,7 +166,7 @@
             "lng": -1.124546669
         },
         "description": "Back in 2014 I accepted a place at the Univeristy of Leicester to study BSc Geography. I had the best three years here, exploring the city (I was lucky enough to be in the City when they won the Premier League!!), competing with my dance society in competitions and  going on lots of different field trips (one of the many perks of studing Geography)!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210233/iwd_2023/2._rachel_graduation.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210233/iwd_2023/2._rachel_graduation.jpg"
     },
     {
         "title": "Inírida, Colombia",
@@ -170,7 +177,7 @@
             "lng": -67.91735382
         },
         "description": "As part of my Degree I was extremely lucky to travel to Colombia and the Amazon basin. Along with studying the ecology and biodiveristy, I also swam with river dolphins, climbed Cerros de Mavecure and ate A LOT of pineapple!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210273/iwd_2023/rachel_colombia.png"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210273/iwd_2023/rachel_colombia.png"
     },
     {
         "title": "My spare time",
@@ -181,7 +188,7 @@
             "lng": -0.168298046
         },
         "description": "Outside of work, if I haven't got my nose stuck in a book or I'm not attending an exercise class you'll find me in the kitchen. I absolutely LOVE to bake! The Great British Bake Off is probably a bit out of my reach, but, my friend and I did come second when we went to the 'The Big London Bake'! (Would 100% recommend if you fancy pretending you are in the Bake Off tent!)",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210351/iwd_2023/rachel_baking.png"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210351/iwd_2023/rachel_baking.png"
     },
     {
         "title": "Cyprus",
@@ -192,20 +199,30 @@
             "lng": 32.40827873
         },
         "description": "I have developed a soft spot for Cyprus and it seems to be my go to place for a bit of R&R (I've even sussed out the holiday home I'd love to own!). When I'm on holiday I love to explore nature and wildlife… I've taken to scuba diving and would love to work towards my PADI liscene.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210386/iwd_2023/5._rachel_scuba.png"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210386/iwd_2023/5._rachel_scuba.png"
     },
     {
         "title": "Iceland 2022",
-        "address": "",
+        "address": "Snowy adventure",
         "location":
         {
             "lat": 64.14748737,
             "lng": -21.94376643
         },
-        "description": "At the start of this year I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678210421/iwd_2023/6._rachel_northern_lights.jpg"
-    }
-    ],
+        "description": "At the start of this 2022 I took full advantage of travel opening up again and visited Iceland for a few nights. I swam in thermal waters, geeked out over all the geological features and saw the northern lights (twice)!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678210421/iwd_2023/6._rachel_northern_lights.jpg"
+    },
+    {
+        "title": "Costa Rica 2023",
+        "address": "Monkeying around",
+        "location":
+        {
+            "lat": 10.301800886037746,
+            "lng": -85.83432043
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892330/iwd_2023/rachel_howler_monkeys.jpg",
+        "description": "About a year ago we decided to tick a bucket list item off the list and visit Costa Rica - and boy did it live up to the hype! We had a dreamy set up and every morning I would do my yoga on the balcony with the sound of the sea in the background and the howler monkeys waking up! We visited a local volcano and also went on a trip down the Tamarindo Estuary in search of wildlife. We were so lucky to spot some crocodiles as well as lots of different types of birds! And to top it all off we managed to get up close to a troop of howler monkeys which was a personal highlight as they are one of my favourtie animals!!"
+    }],
     "Coco": [
     {
         "title": "Hi from China! I am Coco",
@@ -216,8 +233,8 @@
             "lng": 113.3034
         },
         "description": "I was born and grown up in Sichuan, West China, and now living in Guangzhou, the warm and humid South China. I travelled to Shanghai frequently, where Geolytix China office is located. However since 2020 I've been spending most time in Guangzhou - on this island... I've identified the top 3 biggest trees on the island now, which I wouldn't have noticed in the previous years...;-p",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/1._Hi_from_China.jpg"
-   },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/1._Hi_from_China.jpg"
+    },
     {
         "title": "CNY Event in London",
         "address": "1 Kensington Gore, South Kensington, London SW7 2AR",
@@ -227,7 +244,7 @@
             "lng": -0.17512
         },
         "description": "Team, partners, and clients gathering in the Royal Geographical Society. It was the CNY of the year of the dog. We dressed up in Chinese red. Everyone got red packet(s)…",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/2._CNY_Event.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/2._CNY_Event.jpg"
     },
     {
         "title": "Around our First Office in Shanghai",
@@ -238,18 +255,18 @@
             "lng": 121.4601
         },
         "description": "My first year in Geolytix Shanghai. Lots of new things to learn. All exciting! Still remember the chilly and smelly wind whenever Lifan and I got out from the 'Naked Hub' office during the evenings - there were lots of restaurants around our office, and every evening around 9pm the cleaning men would come to collect the left-over of the day... Therefore smelly:) A nice little pedestrian walk out there, leading you directly to the biggest Starbucks Flaship in the country...",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/3._Around_our_first_office_in_Shanghai.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/3._Around_our_first_office_in_Shanghai.jpg"
     },
     {
         "title": "Christmas 2018 in Xiamen",
         "address": "Gulangyu, Xiamen",
         "location":
         {
-            "lat":24.43802845,
-            "lng":118.0705
+            "lat": 24.43802845,
+            "lng": 118.0705
         },
         "description": "After a sucessful project delivery in Xiamen. Lifan and I went hiking on Gu Lang Yu island to celebrate both the delivery and the Christmas",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/4._Christmas_2018_in_Xiamen.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/4._Christmas_2018_in_Xiamen.jpg"
     },
     {
         "title": "Team Building in Shanghai",
@@ -260,7 +277,7 @@
             "lng": 121.4825
         },
         "description": "Room Escape. I was the 'victim' in that game, and my colleagues saved me successfully with team efforts. The game was designed as 90 mins, wherease we successfully 'escaped' with less than 60 mins.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/5._Team_Building_in_SH.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/5._Team_Building_in_SH.jpg"
     },
     {
         "title": "Market Visit in Taipei",
@@ -271,887 +288,1144 @@
             "lng": 121.5668
         },
         "description": "As the city experts, we make sure we understand the city not just from data and map, but also on feet and with heart.",
-        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678211423/iwd_2023/6._Market_Visit_in_Taipei.jpg"
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678211423/iwd_2023/6._Market_Visit_in_Taipei.jpg"
     }],
     "Lisa": [
+    {
+        "title": "Hi, I'm Lisa",
+        "address": "Director of Data and Product at Geolytix",
+        "location":
         {
-            "title": "Hi, I'm Lisa",
-            "address": "Director of Data and Product at Geolytix",
-            "location":
-            {
-                "lat": 52.76437075,
-                "lng": -1.723845304
-            },
-            "description": "I live in Staffordshire, right in the middle of the country and an equal commute to both our London and Leeds offices.  I joined Geolytix 3 years ago just after having my first son and love the flexibility you get when working for a small company.  Work and home life can definitely feel like a juggle at times but I've been so supported by Geolytix and couldn't ask for more from colleagues",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212405/iwd_2023/Lisa_me.jpg"
+            "lat": 52.76437075,
+            "lng": -1.723845304
         },
+        "description": "I live in Staffordshire, right in the middle of the country and an equal commute to both our London and Leeds offices.  I joined Geolytix 3 years ago just after having my first son and love the flexibility you get when working for a small company.  Work and home life can definitely feel like a juggle at times but I've been so supported by Geolytix and couldn't ask for more from colleagues",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212405/iwd_2023/Lisa_me.jpg"
+    },
+    {
+        "title": "Growing up by the sea",
+        "address": "Cornwall",
+        "location":
         {
-            "title": "Growing up by the sea",
-            "address": "Cornwall",
-            "location":
-            {
-                "lat": 50.11879911,
-                "lng": -5.537209701
-            },
-            "description": "Not sure I really appreciated how fortunate I was to grow up by the sea.  With an outdoor bathing pool and the beach a short walk from home, I could often be found in or on the water.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212405/iwd_2023/Lisa_cornwall.jpg"
+            "lat": 50.11879911,
+            "lng": -5.537209701
         },
+        "description": "Not sure I really appreciated how fortunate I was to grow up by the sea.  With an outdoor bathing pool and the beach a short walk from home, I could often be found in or on the water.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212405/iwd_2023/Lisa_cornwall.jpg"
+    },
+    {
+        "title": "University",
+        "address": "Cardiff",
+        "location":
         {
-            "title": "University",
-            "address": "Cardiff",
-            "location":
-            {
-                "lat": 51.48426446,
-                "lng": -3.167629657
-            },
-            "description": "A BSc in Mathematics, Operational Research and Statistics saw me up sticks from Cornwall and spend 3 years in Cardiff.  It was the time of Wales hosting the rugby world cup and to this day I can't decide whether the Welsh or Cornish are more passionate about their rugby! My degree included a year in industry which provided me invaluable work experience between my second and final year at university. I'm a huge fan of placements and am delighted that Geolytix has just created a placement opportunity for students.  You can find out more <a target='_blank' href='https://geolytix.co.uk/blog/data-analyst-year-in-industry/'>here</a>",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212405/iwd_2023/cardiff_castle.jpg"
+            "lat": 51.48426446,
+            "lng": -3.167629657
         },
+        "description": "A BSc in Mathematics, Operational Research and Statistics saw me up sticks from Cornwall and spend 3 years in Cardiff.  It was the time of Wales hosting the rugby world cup and to this day I can't decide whether the Welsh or Cornish are more passionate about their rugby! My degree included a year in industry which provided me invaluable work experience between my second and final year at university. I'm a huge fan of placements and am delighted that Geolytix has just created a placement opportunity for students.  You can find out more <a target='_blank' href='https://geolytix.co.uk/blog/data-analyst-year-in-industry/'>here</a>",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212405/iwd_2023/cardiff_castle.jpg"
+    },
+    {
+        "title": "A Special City",
+        "address": "London",
+        "location":
         {
-            "title": "A Special City",
-            "address": "London",
-            "location":
-            {
-                "lat": 51.50807574,
-                "lng": -0.09770064041
-            },
-            "description": "London will always be a special place for me. I started my career with roles at the Home Office and Sainsburys, bought my first home, got married and started my family here.  A special city full of memories and I’m glad I regularly go back for work.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212405/iwd_2023/Lisa_london.jpg"
+            "lat": 51.50807574,
+            "lng": -0.09770064041
         },
+        "description": "London will always be a special place for me. I started my career with roles at the Home Office and Sainsburys, bought my first home, got married and started my family here.  A special city full of memories and I’m glad I regularly go back for work.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212405/iwd_2023/Lisa_london.jpg"
+    },
+    {
+        "title": "Travel",
+        "address": "South Africa",
+        "location":
         {
-            "title": "Travel",
-            "address": "South Africa",
-            "location":
-            {
-                "lat": -33.95984288,
-                "lng": 18.43617414
-            },
-            "description": "It's not surprising that so many of us at Geolytix love to travel - a shared love of data and maps is a must for anyone joining the team. I'm no different, more so before children but my love of exploring new places has seen me visit a few far flung locations as many closer to home.  Finding these guys in South Africa was a definite highlight",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212405/iwd_2023/Lisa_sa_elephants.jpg"
-        }
-    ],
+            "lat": -33.95984288,
+            "lng": 18.43617414
+        },
+        "description": "It's not surprising that so many of us at Geolytix love to travel - a shared love of data and maps is a must for anyone joining the team. I'm no different, more so before children but my love of exploring new places has seen me visit a few far flung locations as many closer to home.  Finding these guys in South Africa was a definite highlight",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212405/iwd_2023/Lisa_sa_elephants.jpg"
+    }],
     "Sarah": [
+    {
+        "title": "Hello! I'm Sarah",
+        "address": "Co-founder and COO",
+        "location":
         {
-            "title": "Hello! I'm Sarah",
-            "address": "Co-founder and COO",
-            "location":
-            {
-                "lat": 51.64821633109159,
-                "lng": -0.06809752623016278
-            },
-            "description": "Hello, I'm Sarah, a Yorkshire lass originally from Brighouse but live in Enfield. I've been around at Geolytix since the beginning. Here is a favourite photo of some wonderful Geolytix ladies and I celebrating in Leeds this Christmas.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215388/iwd_2023/Leeds_Christmas_Party.jpg"
+            "lat": 51.64821633109159,
+            "lng": -0.06809752623016278
         },
+        "description": "Hello, I'm Sarah, a Yorkshire lass originally from Brighouse but live in Enfield. I've been around at Geolytix since the beginning. Here is a favourite photo of some wonderful Geolytix ladies and I celebrating in Leeds this Christmas.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215388/iwd_2023/Leeds_Christmas_Party.jpg"
+    },
+    {
+        "title": "Nottingham",
+        "address": "University, Boots D90 and trips back to visit friends",
+        "location":
         {
-            "title": "Nottingham",
-            "address": "University, Boots D90 and trips back to visit friends",
-            "location":
-            {
-                "lat": 52.93983440607589,
-                "lng": -1.1928064831843779
-            },
-            "description": "I spent 6 years in Nottingham, at University and then working in the Customer Insights team at Boots in D90. I still have some wonderful friends in the Midlands. Here I am last summer after a brilliant day site visiting in the city with a client.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215388/iwd_2023/site_visit_nottingham.jpg"
+            "lat": 52.93983440607589,
+            "lng": -1.1928064831843779
         },
+        "description": "I spent 6 years in Nottingham, at University and then working in the Customer Insights team at Boots in D90. I still have some wonderful friends in the Midlands. Here I am last summer after a brilliant day site visiting in the city with a client.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215388/iwd_2023/site_visit_nottingham.jpg"
+    },
+    {
+        "title": "Plymouth",
+        "address": "Visiting Family and a Geolytix trip to remember",
+        "location":
         {
-            "title": "Plymouth",
-            "address": "Visiting Family and a Geolytix trip to remember",
-            "location":
-            {
-                "lat": 50.3186658,
-                "lng": -4.1163035
-            },
-            "description": "Whilst I grew up miles from the sea, my husband grew up next to it in Plymouth. Here I am on boxing day enjoying the sunshine and sea air at Heybrook Bay.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215388/iwd_2023/Sarah_Plymouth.jpg"
+            "lat": 50.3186658,
+            "lng": -4.1163035
         },
+        "description": "Whilst I grew up miles from the sea, my husband grew up next to it in Plymouth. Here I am on boxing day enjoying the sunshine and sea air at Heybrook Bay.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215388/iwd_2023/Sarah_Plymouth.jpg"
+    },
+    {
+        "title": "Whitby",
+        "address": "Runswick Bay to Robin Hoods Bay",
+        "location":
         {
-            "title": "Whitby",
-            "address": "Runswick Bay to Robin Hoods Bay",
-            "location":
-            {
-                "lat": 54.533564839622684,
-                "lng": -0.7526146940809034
-            },
-            "description": "Whitby is one of my favourite places. The coastal walks are simply stunning. Last year I walked the same walk with a friend that I had 20 years earlier. It was as good as the memories.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212632/iwd_2023/Sarah_whitby.jpg"
+            "lat": 54.533564839622684,
+            "lng": -0.7526146940809034
         },
+        "description": "Whitby is one of my favourite places. The coastal walks are simply stunning. Last year I walked the same walk with a friend that I had 20 years earlier. It was as good as the memories.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212632/iwd_2023/Sarah_whitby.jpg"
+    },
+    {
+        "title": "South Africa",
+        "address": "Climbing Table Mountain is a day I won't forget",
+        "location":
         {
-            "title": "South Africa",
-            "address": "Climbing Table Mountain is a day I won't forget",
-            "location":
-            {
-                "lat": -33.964419076641406, 
-                "lng": 18.425138310653224
-            },
-            "description": "It was hard to pick my favourite destination but a holiday to South Africa in 2009 has to be up in the top few. Lockdown has delayed a trip out to see Rob, one of our developers, so I can visit the country again.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212632/iwd_2023/Sarah_table_mountain.jpg"
+            "lat": -33.964419076641406,
+            "lng": 18.425138310653224
         },
+        "description": "It was hard to pick my favourite destination but a holiday to South Africa in 2009 has to be up in the top few. Lockdown has delayed a trip out to see Rob, one of our developers, so I can visit the country again.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212632/iwd_2023/Sarah_table_mountain.jpg"
+    },
+    {
+        "title": "My guilty pleasure",
+        "address": "I love a casino and a visit to the roulette table",
+        "location":
         {
-            "title": "My guilty pleasure",
-            "address": "I love a casino and a visit to the roulette table",
-            "location":
-            {
-                "lat": 43.73917647351742, 
-                "lng": 7.428048444966478
-            },
-            "description": "If you've been on a few nights out with me, you'll know I love to end the night in a casino. I've been to a fair few in my time. Las Vegas and Monte Carlo are the stand outs so far...",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678212632/iwd_2023/Sarah_casino.jpg"
-        }
-    ],
+            "lat": 43.73917647351742,
+            "lng": 7.428048444966478
+        },
+        "description": "If you've been on a few nights out with me, you'll know I love to end the night in a casino. I've been to a fair few in my time. Las Vegas and Monte Carlo are the stand outs so far...",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678212632/iwd_2023/Sarah_casino.jpg"
+    }],
     "Catherine": [
+    {
+        "title": "Hi, I'm Catherine!",
+        "address": "Data Scientist at Geolytix",
+        "location":
         {
-            "title": "Hi, I'm Catherine!",
-            "address": "Data Scientist at Geolytix",
-            "location":
-            {
-                "lat": 53.838219,
-                "lng": -1.493109
-            },
-            "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from the south coast of England, but predominantly raised in Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine myself living anywhere else.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_roundhay_swans.jpg"
+            "lat": 53.838219,
+            "lng": -1.493109
         },
+        "description": "Hi, I'm Catherine, a Data Scientist at Geolytix! Originally from Derby, I moved north for university in 2016. Now, I call Leeds home and couldn't imagine living anywhere else. This photo is just outside the Geolytix office during Leeds Light Night in 2023, which a few of us attended together.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892332/iwd_2023/catherine_light_night.jpg"
+    },
+    {
+        "title": "Growing up a Girl Guide",
+        "address": "Yamaguchi Kirara Haku Memorial Park",
+        "location":
         {
-            "title": "Growing up a Girl Guide",
-            "address": "Yamaguchi Kirara Haku Memorial Park",
-            "location":
-            {
-                "lat": 34.005422,
-                "lng": 131.371658
-            },
-            "description": "As a child, I wanted to try every club and activity going, but coming from a family of Scout and Guide leaders, being a Girl Guide was a given. Thankfully, I loved my time in Guides and the movement gave me some amazing opportunities, the most notable being a place at the 23rd World Scout Jamboree in Yamaguchi, Japan when I was 17. The 12-day camp was attended by around 35,000 Scouts and Guides from over 150 countries and included a day trip to the Hiroshima Peace Memorial Museum.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_peace_cranes_hiroshima.jpg"
+            "lat": 34.005422,
+            "lng": 131.371658
         },
+        "description": "Coming from a family of Scout and Guide leaders, growing up in the movements was a given. I loved my time in Guides and it gave me some amazing opportunities, the most notable being a place at the 23rd World Scout Jamboree in Yamaguchi, Japan when I was 17. The 12-day camp was attended by around 35,000 Scouts and Guides from over 150 countries and included a day trip to the Hiroshima Peace Memorial Museum.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213194/iwd_2023/catherine_peace_cranes_hiroshima.jpg"
+    },
+    {
+        "title": "Years of Study",
+        "address": "University of Leeds",
+        "location":
         {
-            "title": "Years of Study",
-            "address": "University of Leeds",
-            "location":
-            {
-                "lat": 53.806745,
-                "lng": -1.555458
-            },
-            "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds (like many of my Geolytix colleagues!). After 3 years of university and a year gaining invaluable experience as an industrial placement student in Sainsbury's Property Data Analytics team, I started a Masters in Data Science and Analytics to build the fundamental skills needed for a career in data. I graduated from this course in November 2021, whilst working part-time at Geolytix and finally had my undergraduate and postgraduate graduation ceremonies in March and July 2022!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678455543/iwd_2023/peace_cranes_hiroshima.jpg"
+            "lat": 53.806745,
+            "lng": -1.555458
         },
+        "description": "In September 2016, I upped sticks and moved t' North to study for a BA in Geography at the University of Leeds (like many of my Geolytix colleagues!). After 3 years of university and a year gaining invaluable experience as an industrial placement student in Sainsbury's Property Data Analytics team, I started a Masters in Data Science and Analytics to build continue to develop the skills needed for a career in data. I graduated from this course in November 2021, whilst working part-time at Geolytix and finally had my undergraduate and postgraduate graduation ceremonies in March and July 2022 (thanks Covid)!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709764362/iwd_2023/catherine_graduation.jpg"
+    },
+    {
+        "title": "Outdoor Adventures",
+        "address": "Rodelbahn Oeschinensee, 3718 Kandersteg, Switzerland",
+        "location":
         {
-            "title": "Outdoor Adventures",
-            "address": "Rodelbahn Oeschinensee, 3718 Kandersteg, Switzerland",
-            "location":
-            {
-                "lat": 46.50215,
-                "lng": 7.69694
-            },
-            "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and embarking on an interrailing adventure with a stop at the 'Our Chalet' World Guiding Centre in Adelboden, Switzerland. Whilst there, I (part-bungee jump, part-) abseiled off a bridge, swam in a glacial lake and took a toboggan down a mountain!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_kandersteg_adelboden.jpg"
+            "lat": 46.50215,
+            "lng": 7.69694
         },
+        "description": "Whilst at university, I continued my affiliation with the Scouts and Guides, spending 4 years on the committee of the Leeds University Union Scout and Guide society, camping at all times of the year (February student 'rallies' are particularly chilly) and visiting the International Scout and Guide Centres in Kandersteg and Adelboden, Switzerland.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213194/iwd_2023/catherine_kandersteg_adelboden.jpg"
+    },
+    {
+        "title": "Travelling pre-Covid",
+        "address": "Taipei and Northern Taiwan",
+        "location":
         {
-            "title": "Travelling pre-Covid",
-            "address": "Seoul and Ganghwa Island, Taipei and Northern Taiwan, Shanghai",
-            "location": {
-                "lat": 25.108562,
-                "lng": 121.843601
-            },
-            "description": "I also try to get lots of travelling of my own done, and managed to perfectly time a trip to Seoul, Taipei and Shanghai in January 2020. My two weeks in Seoul were my first experience of solo travel and hostelling (although I did meet up with a friend who lives there most days). I am really hoping to get back out to Taiwan someday, as it is definitely a hidden gem and I'd love to travel more of the country!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213194/iwd_2023/catherine_taiwan_collage.jpg"
+            "lat": 25.108562,
+            "lng": 121.843601
         },
+        "description": "I also try to get lots of travelling of my own done, with Taiwan being a recent favourite destination. I love picking up or practising skills while travelling - I've recently tried my hand at making kimchi for the first time in a decade after being taught how in Seoul back in 2014, and jumped back into my Japanese language studies, which I started before the Jamboree in 2015 and helped a lot during my homestay in Kanazawa city.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213194/iwd_2023/catherine_taiwan_collage.jpg"
+    },
+    {
+        "title": "Where am I now?",
+        "address": "Geek Retreat",
+        "location":
         {
-            "title": "Where am I now?",
-            "address": "Geek Retreat",
-            "location": {
-                "lat": 53.796334,
-                "lng": -1.541428
-            },
-            "description": "Over the past couple of years, I have finished my studies, passed my first Japanese language proficiency test, discovered a love of board games, rediscovered my loves of reading and roller skating, and of course, started my job at Geolytix! Now you'll often find me at our Leeds office in Park House, leading the Beavers group I set up in Kippax in January 2022, or hanging out at the fantastic bars and nerdy spaces of Leeds with my local book and board game clubs.",
-            "img": ""
-        }
-    ],
+            "lat": 53.796334,
+            "lng": -1.541428
+        },
+        "description": "Other than producing models for our clients at Geolytix, I spend my time reading books, playing board games, helping my partner with his various DIY projects around the house, trawling the internet for bargain furniture and volunteering with the Scouts! I'm currently gearing up for a number of upcoming camps, and am particularly excited to return to the extremely important job of milkshake making at Essex International Jamboree (it's not often I'm given the opportunity to buy this much ice cream at once!).",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709764605/iwd_2023/catherine_iwd_collage.jpg"
+    }],
     "Becca": [
+    {
+        "title": "Becca",
+        "address": "Data Analyst at Geolytix",
+        "location":
         {
-            "title": "Becca",
-            "address": "Data Analyst at Geolytix",
-            "location":
-            {
-                "lat": 53.79855149,
-                "lng": -1.553168765
-            },
-            "description": "Hi, I'm Becca and I am a Data Analyst based in our Leeds office in Park Square. I joined Geolytix through a Data Analytics apprenticeship in 2019, soon after finishing my A-Levels. I am now two years into my permanent role after achieving a Distinction in 2021!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/1._Becca.jpg"
+            "lat": 53.79855149,
+            "lng": -1.553168765
         },
+        "description": "Hi, I'm Becca and I am a Data Analyst based in our Leeds office in Park Square. I joined Geolytix through a Data Analytics apprenticeship in 2019, soon after finishing my A-Levels. I am now three years into my permanent role after achieving a Distinction in 2021!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213485/iwd_2023/1._Becca.jpg"
+    },
+    {
+        "title": "Kirkstall Abbey, Leeds",
+        "address": "",
+        "location":
         {
-            "title": "Kirkstall Abbey, Leeds",
-            "address": "",
-            "location":
-            {
-                "lat": 53.82079092,
-                "lng": -1.60683893
-            },
-            "description": "I grew up in Kirkstall, Leeds and I'm still here 22 years later. It's the perfect place for me to live at the moment, with lots of family and friends living close, so much green space and so many places to go for delicious food! I love having Kirkstall Abbey on my doorstep as it makes a nice place for a lunchtime walk whilst working from home.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213484/iwd_2023/2._Kirkstall_Abbey.jpg"
+            "lat": 53.82079092,
+            "lng": -1.60683893
         },
+        "description": "I grew up in Kirkstall and I'm still here 23 years later. It's the perfect place for me to live at the moment, with lots of family and friends living close and so much green space whilst still being close to the city centre. I love having Kirkstall Abbey on my doorstep, it reminds me of my childhood and also makes a nice place for a lunchtime walk whilst working from home.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213484/iwd_2023/2._Kirkstall_Abbey.jpg"
+    },
+    {
+        "title": "Travelling",
+        "address": "Fuerteventura - July 2004",
+        "location":
         {
-            "title": "Travelling",
-            "address": "Fuerteventura - July 2004",
-            "location":
-            {
-                "lat": 28.72829336,
-                "lng": -13.85479954
-            },
-            "description": "I'm lucky enough to have grown up in a family that were able to take me on holiday abroad every year since I can remember. The earliest memory I have was a trip to Corralejo, Fuerteventura in 2004 which is where this photo was taken. My love for travelling continues to grow, last year I explored various places along the Riviera Maya in Mexico with one of my friends which was so much fun!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/3._Fuerteventura_2004.jpg"
+            "lat": 28.72829336,
+            "lng": -13.85479954
         },
+        "description": "I'm lucky enough to have grown up in a family that were able to take me on holiday abroad every year since I can remember. The earliest memory I have was a trip to Corralejo, Fuerteventura in 2004 which is where this photo was taken. I love travelling - my most recent trips have been to the Riviera Maya in Mexico, Sorrento and Marrakesh.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213485/iwd_2023/3._Fuerteventura_2004.jpg"
+    },
+    {
+        "title": "Travelling",
+        "address": "Morocco - February 2024",
+        "location":
         {
-            "title": "Barcelona - December 2019",
-            "address": "",
-            "location":
-            {
-                "lat": 41.41388955,
-                "lng": 2.15265621
-            },
-            "description": "I joined Geolytix as an apprentice, which meant that I continued living in my family home and started to put money aside to fulfil my love of travelling. A few months into life at Geolytix, I went to Barcelona with my best friend - we had the best time visiting all the tourist spots and eating our body weights in tapas.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213485/iwd_2023/4._Barcelona.jpg"
+            "lat": 30.54492066,
+            "lng": -9.709719435
         },
+        "description": "I recently got back from a trip to Morocco with Aimee and Matt. Although we were only away for a week, we managed to rent a car and spend a couple of nights by the coast in Taghazout where we went dune surfing and ate lots of great food. We then spent the second half of the week in Marrakesh experiencing the chaos of the medina and sight-seeing.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709763453/iwd_2023/becca_4_Morocco.jpg"
+    },
+    {
+        "title": "Weekends with me",
+        "address": "",
+        "location":
         {
-            "title": "Weekends with me",
-            "address": "",
-            "location":
-            {
-                "lat": 53.89496711,
-                "lng": -1.672445839
-            },
-            "description": "Being born into a family from Leeds, means I had no choice but to support Leeds United. I played in a local girls' football team until I reached high school, and have always enjoyed watching football with my older brother, Adam. If I'm not watching a Leeds game at the weekend, I'm usually either enjoying a long walk in the countryside (Otley Chevin Forest Park being a childhood favourite!), going out for food and drinks with my friends or reading a book.",
-            "img": ""
-        }
-    ],
+            "lat": 53.89496711,
+            "lng": -1.672445839
+        },
+        "description": "Being born into a family from Leeds, means I had no choice but to support Leeds United. I played in a local girls' football team until I reached high school, and have always enjoyed watching football with my older brother, Adam. I usually spend my weekends trying to get out for a walk when the weather is nice (Otley Chevin Forest Park being a childhood favourite), going out for food and drinks with my friends or finding a new book to read!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709763575/iwd_2023/becca_5_Weekends.jpg"
+    }],
     "Alison": [
+    {
+        "title": "Hi, I'm Alison",
+        "address": "Location Planning Partner at GEOLYTIX",
+        "location":
         {
-            "title": "Hi, I'm Alison",
-            "address": "Location Planning Partner at GEOLYTIX",
-            "location":
-            {
-                "lat": 51.53078309,
-                "lng": -0.1198216064
-            },
-            "description": "I live in North London near Finsbury Park and work in the GEOLYTIX London office in Clerkenwell, so I regularly pass through the Kings Cross area.  I love dynamic areas of cities and Kings Cross is certainly one of those. It's been completely transformed over the past 20 years and there's always something new and interesting to check out (alongside the old haunts like the Scala that are thankfully still standing).  It's also the scene of many a GEOLYTIX night out. This photo of Sarah and me was taken at the recent 10 year anniversary celebration at the Big Chill.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213809/iwd_2023/Alison_1.jpg"
+            "lat": 51.53078309,
+            "lng": -0.1198216064
         },
+        "description": "I live in North London near Finsbury Park and work in the GEOLYTIX London office in Clerkenwell, so I regularly pass through the Kings Cross area.  I love dynamic areas of cities and Kings Cross is certainly one of those. It's been completely transformed over the past 20 years and there's always something new and interesting to check out (alongside the old haunts like the Scala that are thankfully still standing).  It's also the scene of many a GEOLYTIX night out. This photo of Sarah and me was taken at the recent 10 year anniversary celebration at the Big Chill.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213809/iwd_2023/Alison_1.jpg"
+    },
+    {
+        "title": "Mumbai",
+        "address": "Living and working in India",
+        "location":
         {
-            "title": "Mumbai",
-            "address": "Living and working in India",
-            "location":
-            {
-                "lat": 19.057643258347237,
-                "lng": 72.83153767
-            },
-            "description": "Definitely one of the most challenging but incredible experiences in my career, spending two years in India doing supermarket location planning. I must have learnt 100 new things every single day and met some great people along the way. I think this picture was taken at the end of a particularly long work day but I'm smiling because I'm about to go and eat something amazing.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213809/iwd_2023/Alison_Mumbai.png"
+            "lat": 19.057643258347237,
+            "lng": 72.83153767
         },
+        "description": "Definitely one of the most challenging but incredible experiences in my career, spending two years in India doing supermarket location planning. I must have learnt 100 new things every single day and met some great people along the way. I think this picture was taken at the end of a particularly long work day but I'm smiling because I'm about to go and eat something amazing.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213809/iwd_2023/Alison_Mumbai.png"
+    },
+    {
+        "title": "Los Angeles",
+        "address": "Being part of a new business launch on the West Coast of America",
+        "location":
         {
-            "title": "Los Angeles",
-            "address": "Being part of a new business launch on the West Coast of America",
-            "location":
-            {
-                "lat": 33.86200045,
-                "lng": -118.4017086
-            },
-            "description": "When Tesco decided to try and crack America with a new, top secret store format called Fresh & Easy, I was part of the team that went out from the UK to help. California life was a lot of fun - you can't beat beach volleyball as a team building activity!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213809/iwd_2023/Alison_Los_Angeles.png"
+            "lat": 33.86200045,
+            "lng": -118.4017086
         },
+        "description": "When Tesco decided to try and crack America with a new, top secret store format called Fresh & Easy, I was part of the team that went out from the UK to help. California life was a lot of fun - you can't beat beach volleyball as a team building activity!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213809/iwd_2023/Alison_Los_Angeles.png"
+    },
+    {
+        "title": "Bolivia",
+        "address": "Volunteering with Communidad Inti Wara Yassi",
+        "location":
         {
-            "title": "Bolivia",
-            "address": "Volunteering with Communidad Inti Wara Yassi",
-            "location":
-            {
-                "lat": -16.97173048,
-                "lng": -65.41170872
-            },
-            "description": "Inti Wara Yassi is an incredible Bolivian NGO which rehabilitates and cares for wild animals rescued from illegal trafficking.  They are always in need of volunteers and I was lucky enough to spend a few months at Parque Machia walking a puma through the rainforest (yes really).",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213809/iwd_2023/Alison_Bolivia.png"
+            "lat": -16.97173048,
+            "lng": -65.41170872
         },
+        "description": "Inti Wara Yassi is an incredible Bolivian NGO which rehabilitates and cares for wild animals rescued from illegal trafficking.  They are always in need of volunteers and I was lucky enough to spend a few months at Parque Machia walking a puma through the rainforest (yes really).",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213809/iwd_2023/Alison_Bolivia.png"
+    },
+    {
+        "title": "Rochdale",
+        "address": "",
+        "location":
         {
-            "title": "Rochdale",
-            "address": "",
-            "location":
-            {
-                "lat": 53.61581157,
-                "lng": -2.159168713
-            },
-            "description": "I grew up in Rochdale, a place famous for a great many things.  Possibly not famous enough for this incredible pancake-flipping feat which I witnessed with my very own eyes, and then found commemorated in a dusty corner of the Guiness World Records Museum in Hollywood.  They used a crane, in case you were wondering, and it took all day to cook. ",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213808/iwd_2023/Alison_5.jpg"
+            "lat": 53.61581157,
+            "lng": -2.159168713
         },
+        "description": "I grew up in Rochdale, a place famous for a great many things.  Possibly not famous enough for this incredible pancake-flipping feat which I witnessed with my very own eyes, and then found commemorated in a dusty corner of the Guiness World Records Museum in Hollywood.  They used a crane, in case you were wondering, and it took all day to cook. ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213808/iwd_2023/Alison_5.jpg"
+    },
+    {
+        "title": "The Lake District",
+        "address": "I'm at my happiest when I'm climbing a big hill",
+        "location":
         {
-            "title": "The Lake District",
-            "address": "I'm at my happiest when I'm climbing a big hill",
-            "location":
-            {
-                "lat": 54.45765916,
-                "lng": -3.221755596
-            },
-            "description": "I just love hills and mountains, and the fresh air, the silence, the views & the sense of achievement you get from the top.  The Lake District is such a beautiful place to go walking & I've been regularly since I was a kid. I wish I could go there more!  Now I have small kids of my own, the walks tend to be a bit less ambitious however. My top Lake District tip: Grassmere gingerbread, it's the best.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678213809/iwd_2023/Alison_6.jpg"
-        }
-    ],
+            "lat": 54.45765916,
+            "lng": -3.221755596
+        },
+        "description": "I just love hills and mountains, and the fresh air, the silence, the views & the sense of achievement you get from the top.  The Lake District is such a beautiful place to go walking & I've been regularly since I was a kid. I wish I could go there more!  Now I have small kids of my own, the walks tend to be a bit less ambitious however. My top Lake District tip: Grassmere gingerbread, it's the best.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678213809/iwd_2023/Alison_6.jpg"
+    }],
     "Lizzie": [
+    {
+        "title": "Hi! I'm Lizzie",
+        "address": "Location Planning Partner at Geolytix",
+        "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214021/iwd_2023/Lizzie_9.png",
+        "location":
         {
-            "title": "Hi! I'm Lizzie",
-            "address": "Location Planning Partner at Geolytix",
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214021/iwd_2023/Lizzie_9.png",
-            "location": {
-                "lat": 51.45479405,
-                "lng": -2.622706035
-            },
-            "description": "I'm a Location Planning Partner at Geolytix, based in the London office. At the start of 2022 I moved to Bristol which I'm loving to get to know. I can already tell how much character the city has and love wandering through Clifton or having a drink on the harbourside amongst the colourful houses! London will always have a special place in my heart, so it's great having so much flexibility which allows me to split my time between the two cities and catch up with everyone when I'm in the office.",
-            "img": ""
+            "lat": 51.45479405,
+            "lng": -2.622706035
         },
+        "description": "I'm a Location Planning Partner at Geolytix, based in the London office. At the start of 2022 I moved to Bristol which I'm loving to get to know. I can already tell how much character the city has and love wandering through Clifton or having a drink on the harbourside amongst the colourful houses! London will always have a special place in my heart, so it's great having so much flexibility which allows me to split my time between the two cities and catch up with everyone when I'm in the office.",
+        "img": ""
+    },
+    {
+        "title": "Leeds Uni",
+        "address": "University Years",
+        "location":
         {
-            "title": "Leeds Uni",
-            "address": "University Years",
-            "location": {
-                "lat": 53.80613662,
-                "lng": -1.555912566
-            },
-            "description": "I spent 4 years at Leeds University from 2010-2014, studying BA Geography and having a lot of fun along the way. My course at Leeds without a doubt gave me a flavour for what Retail Geography was all about and has shaped my career ever since. During my time at Leeds, I did an industrial placement year at Disney in their market insights and analytics team, before returning for my final year. It was an amazing chapter...",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214021/iwd_2023/Lizzie_2.jpg"
+            "lat": 53.80613662,
+            "lng": -1.555912566
         },
+        "description": "I spent 4 years at Leeds University from 2010-2014, studying BA Geography and having a lot of fun along the way. My course at Leeds without a doubt gave me a flavour for what Retail Geography was all about and has shaped my career ever since. During my time at Leeds, I did an industrial placement year at Disney in their market insights and analytics team, before returning for my final year. It was an amazing chapter...",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214021/iwd_2023/Lizzie_2.jpg"
+    },
+    {
+        "title": "Travel",
+        "address": "Exploring South America",
+        "location":
         {
-            "title": "Travel",
-            "address": "Exploring South America",
-            "location": {
-                "lat": -0.2080523717,
-                "lng": -90.83086475
-            },
-            "description": "As with most others at Geolytix, I love to travel. A particular highlight has to be my 6 months travelling South America after university. It is virtually impossible to pick a 'favourite' country, but one which sticks with me a lot is when I visited the Galapagos islands off the coast of Ecuador. It was a pretty magical few days exploring and swimming with seals, rays, turtles, sharks (!!) and more. I can't wait to visit at some point again in the future!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214021/iwd_2023/Lizzie_3.jpg"
+            "lat": -0.2080523717,
+            "lng": -90.83086475
         },
+        "description": "As with most others at Geolytix, I love to travel. A particular highlight has to be my 6 months travelling South America after university. It is virtually impossible to pick a 'favourite' country, but one which sticks with me a lot is when I visited the Galapagos islands off the coast of Ecuador. It was a pretty magical few days exploring and swimming with seals, rays, turtles, sharks (!!) and more. I can't wait to visit at some point again in the future!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214021/iwd_2023/Lizzie_3.jpg"
+    },
+    {
+        "title": "Pyramid Stage",
+        "address": "Watching Adele at Glastonbury",
+        "location":
         {
-            "title": "Pyramid Stage",
-            "address": "Watching Adele at Glastonbury",
-            "location": {
-                "lat": 51.1554118,
-                "lng": -2.586604723
-            },
-            "description": "There is nothing I love more than festivals and in 2016 I made my debut visit to Glastonbury. It was one of the particuarly wet and muddy years, but it didn't really seem to matter. Having been blown away by Adele's performance on the Pyramid Stage, I knew I was going to be one of those people who tries for tickets every year after! With two years of it being postponed by Covid, I am counting down the days to go again this June!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214021/iwd_2023/Lizzie_4.jpg"
+            "lat": 51.1554118,
+            "lng": -2.586604723
         },
+        "description": "There is nothing I love more than festivals and in 2016 I made my debut visit to Glastonbury. It was one of the particuarly wet and muddy years, but it didn't really seem to matter. Having been blown away by Adele's performance on the Pyramid Stage, I knew I was going to be one of those people who tries for tickets every year after! With two years of it being postponed by Covid, I am counting down the days to go again this June!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214021/iwd_2023/Lizzie_4.jpg"
+    },
+    {
+        "title": "Living and working in Australia",
+        "address": "Sydney",
+        "location":
         {
-            "title": "Living and working in Australia",
-            "address": "Sydney",
-            "location": {
-                "lat": -33.85322289,
-                "lng": 151.214442
-            },
-            "description": "Having spent four years working in London after university, I made the big move out to Aus with my boyfriend. Whilst initially only planning to go for a year, we ended up staying for two and a half! It was such an incredible experience living and working in Sydney. The way of life allowed me to maximise every moment I spent out there, whether it was morning walks along the most beautiful coastline before work or weekend trips to rural New South Wales. I'm loving being back home with friends and family, but will definitely be heading back for a holiday when I can, or perhaps on an international project visit with Geolytix!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214021/iwd_2023/Lizzie_5.jpg"
+            "lat": -33.85322289,
+            "lng": 151.214442
         },
+        "description": "Having spent four years working in London after university, I made the big move out to Aus with my boyfriend. Whilst initially only planning to go for a year, we ended up staying for two and a half! It was such an incredible experience living and working in Sydney. The way of life allowed me to maximise every moment I spent out there, whether it was morning walks along the most beautiful coastline before work or weekend trips to rural New South Wales. I'm loving being back home with friends and family, but will definitely be heading back for a holiday when I can, or perhaps on an international project visit with Geolytix!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214021/iwd_2023/Lizzie_5.jpg"
+    },
+    {
+        "title": "Hobbies",
+        "address": "Finding my love for photography",
+        "location":
         {
-            "title": "Hobbies",
-            "address": "Finding my love for photography",
-            "location": {
-                "lat": 52.54446251,
-                "lng": -2.819358705
-            },
-            "description": "I have developed a real love for photography in the past few years, most probably fuelled by the amazing scenery in Aus. Since being back in the UK I've continued to get out and about to capture as much as I can. More recently I've been designated photographer at our work parties... already looking forward to the next one!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214022/iwd_2023/Lizzie_6.jpg"
-        }
-    ],
+            "lat": 52.54446251,
+            "lng": -2.819358705
+        },
+        "description": "I have developed a real love for photography in the past few years, most probably fuelled by the amazing scenery in Aus. Since being back in the UK I've continued to get out and about to capture as much as I can. More recently I've been designated photographer at our work parties... already looking forward to the next one!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214022/iwd_2023/Lizzie_6.jpg"
+    }],
     "Wensi": [
+    {
+        "title": "Wensi",
+        "address": "Data Analyst at Geolytix",
+        "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214288/iwd_2023/Wensi_1_Leeds_Office.png",
+        "location":
         {
-            "title": "Wensi",
-            "address": "Data Analyst at Geolytix",
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214288/iwd_2023/Wensi_1_Leeds_Office.png",
-            "location": {
-                "lat": 53.79861677,
-                "lng": -1.553139012
-            },
-            "description": "Hi, I am Wensi, a location planning analyst based in the Leeds office. I joined Geolytix in 2018. I still remember the excitment and joy when I picked up the call from Sarah while I was holidaying back in China."
+            "lat": 53.79861677,
+            "lng": -1.553139012
         },
+        "description": "Hi, I am Wensi, a location planning analyst based in the Leeds office. I joined Geolytix in 2018. I still remember the excitment and joy when I picked up the call from Sarah while I was holidaying back in China."
+    },
+    {
+        "title": "Growing Up",
+        "address": "",
+        "location":
         {
-            "title": "Growing Up",
-            "address": "",
-            "location": {
-                "lat": 28.28329741,
-                "lng": 121.6113886
-            },
-            "description": "I grew up in a fishing village (Shitang) on the east coast of China. The summers there are often accompanied with strong typhoons. The town itself is famous for being the location to receive the first ray of sunshine in the new millennium in the Mainland of China.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214287/iwd_2023/Wensi_2.jpg"
+            "lat": 28.28329741,
+            "lng": 121.6113886
         },
+        "description": "I grew up in a fishing village (Shitang) on the east coast of China. The summers there are often accompanied with strong typhoons. The town itself is famous for being the location to receive the first ray of sunshine in the new millennium in the Mainland of China.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214287/iwd_2023/Wensi_2.jpg"
+    },
+    {
+        "title": "Zhejiang Gongshang University",
+        "address": "",
+        "location":
         {
-            "title": "Zhejiang Gongshang University",
-            "address": "",
-            "location": {
-                "lat": 30.30896387,
-                "lng": 120.3884757
-            },
-            "description": "4 years university life in Hangzhou",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214287/iwd_2023/Wensi_3.jpg"
+            "lat": 30.30896387,
+            "lng": 120.3884757
         },
+        "description": "4 years university life in Hangzhou",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214287/iwd_2023/Wensi_3.jpg"
+    },
+    {
+        "title": "University of Leeds",
+        "address": "",
+        "location":
         {
-            "title": "University of Leeds",
-            "address": "",
-            "location": {
-                "lat": 53.80670049,
-                "lng": -1.55505426
-            },
-            "description": "In 2012, I came to Leeds to do a masters degree. I fell in love with the city instantly. ",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214288/iwd_2023/Wensi_4._Leeds_Uni.jpg"
+            "lat": 53.80670049,
+            "lng": -1.55505426
         },
+        "description": "In 2012, I came to Leeds to do a masters degree. I fell in love with the city instantly. ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214288/iwd_2023/Wensi_4._Leeds_Uni.jpg"
+    },
+    {
+        "title": "Wildlife and Gardening",
+        "address": "",
+        "location":
         {
-            "title": "Wildlife and Gardening",
-            "address": "",
-            "location": {
-                "lat": 53.79218411,
-                "lng": -1.38836707
-            },
-            "description": "After moving to a small town at the edge of Leeds, I began to garden. In my small suburban garden, I dug a pond which attracts frogs, newts and planted 8 trees/shrubs. I am also a plot holder at the local alloment where I try to grow oriental vegetables. ",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214288/iwd_2023/Wensi_5_Gardening.jpg"
-        }
-    ],
+            "lat": 53.79218411,
+            "lng": -1.38836707
+        },
+        "description": "After moving to a small town at the edge of Leeds, I began to garden. In my small suburban garden, I dug a pond which attracts frogs, newts and planted 8 trees/shrubs. I am also a plot holder at the local alloment where I try to grow oriental vegetables. ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214288/iwd_2023/Wensi_5_Gardening.jpg"
+    }],
     "Donna": [
+    {
+        "title": "Hi, I'm Donna",
+        "address": "Miracle Worker at Geolytix",
+        "location":
         {
-            "title": "Hi, I'm Donna",
-            "address": "Miracle Worker at Geolytix",
-            "location": {
-                "lat": 51.64778099,
-                "lng": -0.1312990446
-            },
-            "description": "I do everything office and finance here at Geolytix and I absolutely love my job! I have been at Geolytix 5 years now and I would say I have been a calming influence on the Geolytix mob - They were a bit rowdy when first joined ;-)  My biggest achievement to date would have to be my beautiful daughter Caitlyn who is 9 and definitely keeps her Mum on the straight & narrow.",
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214560/iwd_2023/Donna_-_Caitlyn.png"
+            "lat": 51.64778099,
+            "lng": -0.1312990446
         },
+        "description": "I do everything office and finance here at Geolytix and I absolutely love my job! I have been at Geolytix 5 years now and I would say I have been a calming influence on the Geolytix mob - They were a bit rowdy when first joined ;-)  My biggest achievement to date would have to be my beautiful daughter Caitlyn who is 9 and definitely keeps her Mum on the straight & narrow.",
+        "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214560/iwd_2023/Donna_-_Caitlyn.png"
+    },
+    {
+        "title": "North London is Red",
+        "address": "Emirates Stadium",
+        "location":
         {
-            "title": "North London is Red",
-            "address": "Emirates Stadium",
-            "location": {
-                "lat": 51.5549752,
-                "lng": -0.1084272736
-            },
-            "description": "Being born and bred in North London means I have a passion for football. Particularly the mighty gooners!! I know, I know - they are not the best team in the world but they are my team... I even have this plaque outside the stadium. One of my favourite things to do in my spare time is to go to a game (when I can get a ticket) and more importantly have a half time pie - Delicious! ",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214560/iwd_2023/Donna_Gooner.jpg"
+            "lat": 51.5549752,
+            "lng": -0.1084272736
         },
+        "description": "Being born and bred in North London means I have a passion for football. Particularly the mighty gooners!! I know, I know - they are not the best team in the world but they are my team... I even have this plaque outside the stadium. One of my favourite things to do in my spare time is to go to a game (when I can get a ticket) and more importantly have a half time pie - Delicious! ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214560/iwd_2023/Donna_Gooner.jpg"
+    },
+    {
+        "title": "Candying Our Way around Europe",
+        "address": "Kings Cross, Leeds, Plymouth, Carcasonne and just about anywhere that will play it ",
+        "location":
         {
-            "title": "Candying Our Way around Europe",
-            "address": "Kings Cross, Leeds, Plymouth, Carcasonne and just about anywhere that will play it ",
-            "location": {
-                "lat": 53.79375120432693,
-                "lng": -1.5397772311591984
-            },
-            "description": "I MIGHT be known for trying to bring The Candy dance to Geolytix - it is a lot tougher teaching these lot how to Candy than you would think! Although there were some who knew it already, the most impressive ones were the ones who showed real willing to learn it! It doesn't matter if they're often out of time they still tried LOL :",
-            "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1678214567/iwd_2023/Donna_video_1.mp4"
+            "lat": 53.79375120432693,
+            "lng": -1.5397772311591984
         },
+        "description": "I MIGHT be known for trying to bring The Candy dance to Geolytix - it is a lot tougher teaching these lot how to Candy than you would think! Although there were some who knew it already, the most impressive ones were the ones who showed real willing to learn it! It doesn't matter if they're often out of time they still tried LOL :",
+        "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1678214567/iwd_2023/Donna_video_1.mp4"
+    },
+    {
+        "title": "Another career I had at Geolytix...Off Road Driver",
+        "address": "Plymouth",
+        "location":
         {
-            "title": "Another career I had at Geolytix...Off Road Driver",
-            "address": "Plymouth",
-            "location": {
-                "lat": 50.31936914,
-                "lng": -3.986060311
-            },
-            "description": "One of my most memorable experiences with some of the Geolytix crew was on our way home from a pub trip one afternoon in beautiful Plymouth. My dad kindly leant me his Porshe Cayenne which compared to my Mazda was a little bit of a beast... I honestly did not see the sign that said no motor vehicles but it became apparent that no car should have gone down these tiny little lanes... let alone a beast! There was an awful lot of sensors going off as I drove too close to pretty much everything BUT we made it! Alessandro was so delighted to have made it back he clapped and more importantly there wasn't a scratch on it!! ",
-            "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1678214560/iwd_2023/Donna_video_2.mp4"
+            "lat": 50.31936914,
+            "lng": -3.986060311
         },
+        "description": "One of my most memorable experiences with some of the Geolytix crew was on our way home from a pub trip one afternoon in beautiful Plymouth. My dad kindly leant me his Porshe Cayenne which compared to my Mazda was a little bit of a beast... I honestly did not see the sign that said no motor vehicles but it became apparent that no car should have gone down these tiny little lanes... let alone a beast! There was an awful lot of sensors going off as I drove too close to pretty much everything BUT we made it! Alessandro was so delighted to have made it back he clapped and more importantly there wasn't a scratch on it!! ",
+        "video": "https://res.cloudinary.com/dvx8vwneg/video/upload/v1678214560/iwd_2023/Donna_video_2.mp4"
+    },
+    {
+        "title": "Favourite Beach Ever",
+        "address": "St Brelade's Beach",
+        "location":
         {
-            "title": "Favourite Beach Ever",
-            "address": "St Brelade's Beach",
-            "location": {
-                "lat": 49.18492162,
-                "lng": -2.196767074
-            },
-            "description": "Growing up I was fortunate to have family living on the beautiful island of Jersey. I have spent lots of time here but this one particular place in Jersey fills me with a sense of peace. It is popular and always busy reardless of the weather even if it's just for a walk but it's one place where I have always felt calm.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214560/iwd_2023/Donna_St_Brelades.jpg"
+            "lat": 49.18492162,
+            "lng": -2.196767074
         },
+        "description": "Growing up I was fortunate to have family living on the beautiful island of Jersey. I have spent lots of time here but this one particular place in Jersey fills me with a sense of peace. It is popular and always busy reardless of the weather even if it's just for a walk but it's one place where I have always felt calm.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214560/iwd_2023/Donna_St_Brelades.jpg"
+    },
+    {
+        "title": "A Pretty Incredible Place",
+        "address": "Dubai",
+        "location":
         {
-            "title": "A Pretty Incredible Place",
-            "address": "Dubai",
-            "location": {
-                "lat": 25.14133146,
-                "lng": 55.18520897
-            },
-            "description": "I have been fortunate to visit some amazing places in the world - America, Egypt, Cyprus and lots of Europe, however one of the most beautiful places I have ever visited was Dubai. I liked it so much I visited it twice in a year. I wasn't fortunate enough to stay here at The Burj al Arab but it did make for an awesome picture!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214560/iwd_2023/Donna_-_Dubai.jpg"
+            "lat": 25.14133146,
+            "lng": 55.18520897
         },
+        "description": "I have been fortunate to visit some amazing places in the world - America, Egypt, Cyprus and lots of Europe, however one of the most beautiful places I have ever visited was Dubai. I liked it so much I visited it twice in a year. I wasn't fortunate enough to stay here at The Burj al Arab but it did make for an awesome picture!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214560/iwd_2023/Donna_-_Dubai.jpg"
+    },
+    {
+        "title": "Can't Forget this one!!!",
+        "address": "Piano Works",
+        "location":
         {
-            "title": "Can't Forget this one!!!",
-            "address": "Piano Works",
-            "location": {
-                "lat": 51.52316257,
-                "lng": -0.1073495287
-            },
-            "description": "I couldn't leave this without talking about one of my favourite places to hang out with the Geolytix Crew. I would say 90% of our 'drinks' end up here! It's an absolute genius of a place with a live band taking your song requests like a live jukebox. Dancing until we can't anymore. Sarah headbanging and laughing till we have tears. Its a place where memories have been made and willl probably continue being made!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214560/iwd_2023/Donna_IMG_6524.jpg"
-        }
-    ],
+            "lat": 51.52316257,
+            "lng": -0.1073495287
+        },
+        "description": "I couldn't leave this without talking about one of my favourite places to hang out with the Geolytix Crew. I would say 90% of our 'drinks' end up here! It's an absolute genius of a place with a live band taking your song requests like a live jukebox. Dancing until we can't anymore. Sarah headbanging and laughing till we have tears. Its a place where memories have been made and willl probably continue being made!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214560/iwd_2023/Donna_IMG_6524.jpg"
+    }],
     "Sam": [
+    {
+        "title": "Hello! I'm Sam",
+        "address": "Director at Geolytix",
+        "location":
         {
-            "title": "Hello! I'm Sam",
-            "address": "Strategy Director at Geolytix",
-            "location": {
-                "lat": 51.52480261,
-                "lng": -0.1071849901
-            },
-            "description": "I wasn't sure which job title to put for this slide, I've done so many different things in my 7 years at Geolytix!  Which is actually one of the best bits about working for Geolytix, there's always a new challenge!  Over the last year I've had a brilliant time supporting our clever new product team to develop some very exciting footfall products; giving more insight into human activity in Retail Places.",
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214899/iwd_2023/sam_profile.png"
+            "lat": 51.52480261,
+            "lng": -0.1071849901
         },
+        "description": "I wasn't sure which job title to put for this slide, I've done so many different things in my 8 years at Geolytix! Which is actually one of the best bits about working for Geolytix, there's always a new challenge! ",
+        "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678214899/iwd_2023/sam_profile.png"
+    },
+    {
+        "title": "Tasmania",
+        "address": "Growing up down under",
+        "location":
         {
-            "title": "Tasmania",
-            "address": "Growing up down under",
-            "location": {
-                "lat": -42.88089232,
-                "lng": 147.3230631
-            },
-            "description": "I've lost the mancunian accent :) so not many people know I'm very orignally from Stockport. That only lasted 9 months before my parents moved back to Tasmania, Australia. My childhood was a little on the hippy side, living in rural Tassie, where my Mum and Dad made and sold wood turnings. We had chickens and goats in the garden and a fully vegetarian household, well before it was fashionable!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_8199.jpg"
+            "lat": -42.88089232,
+            "lng": 147.3230631
         },
+        "description": "I've lost the mancunian accent :) so not many people know I was born in Stockport, UK. At 9 months old we moved to Tasmania, Australia. My childhood was a little on the hippy side, living in rural Tassie, where my Mum and Dad made and sold wood turnings. We had chickens and goats in the garden and a fully vegetarian household, well before it was fashionable!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214898/iwd_2023/Sam_IMG_8199.jpg"
+    },
+    {
+        "title": "Melbourne",
+        "address": "Learning the craft",
+        "location":
         {
-            "title": "Melbourne",
-            "address": "Learning the craft",
-            "location": {
-                "lat": -37.81006834,
-                "lng": 144.9517884
-            },
-            "description": "We became a bit more 'normal' once I started high school and moved to suburban Melbourne.  I went on to study Urban Planning at Melbourne University and there I stumbled across Retail Location Planning. While I finished Uni I had a part time job in the Market Assessment team at Coles Myer, and that's what got me hooked. I learnt my location planning craft forecasting sales for Coles, Bi-Lo, Kmart and Target stores across Australia and New Zealand. Then I did what every 20 something Aussie does...move to London! In London I worked to turn the map orange as the head of the Network Planning team at Sainsbury's. A busy time.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_Coles_JS_pic.png"
+            "lat": -37.81006834,
+            "lng": 144.9517884
         },
+        "description": "Things became a bit more 'normal' once I started high school and we moved to suburban Melbourne.  I went on to study Urban Planning at Melbourne University and there I found Retail Location Planning.  While I finished Uni I had a part time job in the Market Assessment team at Coles Myer and that's what got me hooked.  I learnt my location planning craft forecasting sales for Coles, Bi-Lo, Kmart and Target stores across Australia and New Zealand.  Then I did what every 20 something Aussie does...move to London!  In London I worked to turn the map orange as the head of the Network Planning team at Sainsbury's. A busy time.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214898/iwd_2023/Sam_Coles_JS_pic.png"
+    },
+    {
+        "title": "Stonehenge",
+        "address": "Castles, cakes and children",
+        "location":
         {
-            "title": "Stonehenge",
-            "address": "Castles, cakes and children",
-            "location": {
-                "lat": 51.17878109,
-                "lng": -1.826043341
-            },
-            "description": "When I'm not working I'm probably eating cake or out with the family visiting something historic (or often both, I love a good tearoom!). Stonehenge was a favourite outing.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_0512.jpg"
+            "lat": 51.17878109,
+            "lng": -1.826043341
         },
+        "description": "When I'm not working I'm probably eating cake or out with the family visiting something historic (or often both, I love a good tearoom!). Stonehenge was a favourite outing.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214898/iwd_2023/Sam_IMG_0512.jpg"
+    },
+    {
+        "title": "Melbourne",
+        "address": "Geolytix Australia",
+        "location":
         {
-            "title": "Melbourne",
-            "address": "Geolytix Australia",
-            "location": {
-                "lat": -38.13370115,
-                "lng": 144.5985277
-            },
-            "description": "Full circle! As our APAC customer base grew we wanted more boots on the ground in the region, and I was keen for my children to experience the Aussie lifestyle. So we upsticks and set up Geolytix in Melbourne.  We enjoyed a visit from Blair and Danny just before Covid hit. A winery tour of the Bellarine Peninsula...does this count as a site visit?!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_IMG_1852.jpg"
+            "lat": -38.13370115,
+            "lng": 144.5985277
         },
+        "description": "Full circle! As our APAC customer base grew we wanted more boots on the ground in the region, and I was keen for my children to experience the Aussie lifestyle. So we upsticks and set up Geolytix in Melbourne.  We enjoyed a visit from Blair and Danny just before Covid hit. A winery tour of the Bellarine Peninsula...does this count as a site visit?!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214898/iwd_2023/Sam_IMG_1852.jpg"
+    },
+    {
+        "title": "Windsor",
+        "address": "The ultimate castle experience",
+        "location":
         {
-            "title": "Windsor",
-            "address": "The ultimate castle experience",
-            "location": {
-                "lat": 51.48156121,
-                "lng": -0.6095694961
-            },
-            "description": "What could be a better return to the UK in 2021 than a royal invitation to celebrate our Queen's Award for International Trade at Windsor Castle! A very proud moment. Six years ago we set ourselves a Big Hairy Audacious Goal to be a global location planning partner for our customers...and here we are, projects completed all over the Americas, Europe and APAC. Can't wait to see where we are in 6 more years!!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678214898/iwd_2023/Sam_Queens_Award_Windsor.png"
+            "lat": 51.48156121,
+            "lng": -0.6095694961
         },
+        "description": "A highlight moment at Geolytix would have be celebrating our Queen's Award for International Trade at Windsor Castle.  I even got to shake hands with the (to be) King! Seven years ago we set ourselves a Big Hairy Audacious Goal to be a global location planning partner for our customers...and here we are, projects completed all over the Americas, Europe and APAC.  Can't wait to see where we are in 7 more years!!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678214898/iwd_2023/Sam_Queens_Award_Windsor.png"
+    },
+    {
+        "title": "Melbourne",
+        "address": "Back to Oz",
+        "location":
         {
-            "title": "Melbourne",
-            "address": "Yes it's true...back to Melbourne!",
-            "location": {
-                "lat": -37.81006834,
-                "lng": 144.9517884
-            },
-            "description": "Covid rudely interrupted our time in Australia in 2020, but the allure of sunny shores is too great and we're heading back again!  From Easter 2023 we'll be living back in Melbourne and delighted to be putting our Geolytix Australia t-shirts back on!  Looking forward to lots of in-person coffees with our fabulous Australian customers and partners."
-        }
-    ],
+            "lat": -38.13370115,
+            "lng": 144.5985277
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761991/iwd_2023/sam_IMG_1615.jpg",
+        "description": "Full circle! As our APAC customer base grew we wanted more boots on the ground in the region, and I was keen for my children to experience the Aussie lifestyle. So we upped sticks and set up Geolytix in Melbourne.  "
+    }],
     "Imogen": [
+    {
+        "title": "Imogen",
+        "address": "Location Planning Partner at Geolytix",
+        "location":
         {
-            "title": "Imogen",
-            "address": "Location Planning Partner at Geolytix",
-            "location": {
-                "lat": 53.36721368,
-                "lng": -1.500470664
-            },
-            "description": "Hello, I'm Imogen, a Location Planning Partner at Geolytix. I joined the company in September 2021 and am based in the Leeds office, but visit London quite regularly too for meetings, events and site visits. I'm originally from Sheffield and lived there until leaving for university in 2016, since this time I've gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and buzzing local neighbourhoods. My favourite spot has to be Sharrowvale Road, a little haven of independent shops, cafes and pubs - Eve Kitchen is a must for gorg doughnuts!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215191/iwd_2023/Imogen_little_sq.jpg"
+            "lat": 53.36721368,
+            "lng": -1.500470664
         },
+        "description": "Hello, I'm Imogen, a Location Planning Partner at Geolytix. I joined the company in September 2021 and am based in the Leeds office, but visit London quite regularly too for meetings, events and site visits. I'm originally from Sheffield and lived there until leaving for university in 2016, since this time I've gained a real appreciation for how lucky I was to grow up there, surrounded by so much green space and lovely local neighbourhoods. My favourite spot has to be Sharrowvale Road, a little haven of independent shops, cafes and pubs - Eve Kitchen is a must for their doughnuts!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215191/iwd_2023/Imogen_little_sq.jpg"
+    },
+    {
+        "title": "Manchester",
+        "address": "Ancoats",
+        "location":
         {
-            "title": "Manchester",
-            "address": "Ancoats",
-            "location": {
-                "lat": 53.48423404,
-                "lng": -2.229067488
-            },
-            "description": "I currently live in Ancoats, Manchester - which is the best place I've had the pleasure to live in yet, and has featured several times in TimeOut's coolest neighbourhoods in the world! There are so many lovely wine and cocktail bars (Flawd and Jane Eyre are favourites), bakeries (Companio is a must for their almond and coffee crosissants) and coffee shops (the best coffee from Off The Press!), each located in some impressive old cotton mills as well as newer developments by New Islington Marina. ",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287567/iwd_2023/imogen_IMG_2239.png"
+            "lat": 53.48423404,
+            "lng": -2.229067488
         },
+        "description": "I currently live in Ancoats, Manchester - which is the best place I've had the pleasure to live in yet, and has featured several times in TimeOut's coolest neighbourhoods in the world! There are so many lovely wine and cocktail bars (Flawd and Jane Eyre are favourites), bakeries (Companio is a must for their almond and coffee crosissants) and coffee shops (the best coffee from Off The Press!), each located in some impressive old cotton mills as well as newer developments by New Islington Marina. ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678287567/iwd_2023/imogen_IMG_2239.png"
+    },
+    {
+        "title": "Leeds Uni",
+        "address": "University years",
+        "location":
         {
-            "title": "Leeds Uni",
-            "address": "University years",
-            "location": {
-                "lat": 53.80572993,
-                "lng": -1.554485772
-            },
-            "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni. Here is a pic of me and my friends last March finally graduating, only 2 years late thanks to Covid!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287567/iwd_2023/imogen_IMG_5894.jpg"
+            "lat": 53.80572993,
+            "lng": -1.554485772
         },
+        "description": "Leeds was my home for 3 years whilst studing BA Geography between 2016 and 2020, with an industrial placement in Savills' Retail and Leisure Research team in Manchester during my third year. During my placement and final year I gained my first practical insights into retail geography and location planning - leading me to where I am today! Leeds was such a fun place to be a student - which is obvious with so many Geolytix Leeds alumni. Here is a pic of me and my friends finally graduating in 2022, only 2 years late thanks to Covid!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678287567/iwd_2023/imogen_IMG_5894.jpg"
+    },
+    {
+        "title": "Walking",
+        "address": "Dovestones, Saddleworth",
+        "location":
         {
-            "title": "Walking",
-            "address": "Schliersee to Tegernsee, Bavaria",
-            "location": {
-                "lat": 47.72621713,
-                "lng": 11.80246008
-            },
-            "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk!) from the Peak District, I've always loved the countryside and as an adult I now try to ensure runs, walks and hikes are a regular part of my weekend. Back in October, myself and a couple of friends took our walking boots all the way to Munich and did a stunning hike between two Lakes, just a short train ride out of the city - we were able to stop half way at a hütte where we could hydrate with a well-earnt beer.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_1609.png"
+            "lat": 53.53116971,
+            "lng": -1.974799756
         },
+        "description": "Getting out and about outside of work as much as I can is super important to me! Growing up a short drive (or walk!) from the Peak District, I've always loved the countryside and as an adult I now try to ensure runs, walks and hikes are a regular part of my weekend. Pictured was a recent tough one I did with a friend above Dovestones Reservoir, Saddleworth.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709762918/iwd_2023/imogen_walking.jpg"
+    },
+    {
+        "title": "Travelling",
+        "address": "Exploring Lisbon",
+        "location":
         {
-            "title": "Travelling",
-            "address": "Exploring Italy",
-            "location": {
-                "lat": 45.987437,
-                "lng": 9.26156
-            },
-            "description": "I love to explore further afield when I can. The most beautiful country I've been to so far has to be Italy (would really recommend interrailing here too!). The scenery is unreal, as well as all the pizza, gelato, wine and aperol!! Last September I headed to the north and explored Milan, Lake Como and the old city of Bergamo. We did a daytrip to Bellagio whilst staying on Como, which is where this photo was taken.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678287568/iwd_2023/imogen_IMG_0529.png"
-        }
-    ],
+            "lat": 38.71204986,
+            "lng": -9.130148565
+        },
+        "description": "I love to explore further afield when I can. Portugal has been on my list for a while and last June I travelled to Lisbon, which along with Italy has probably taken the top spot for my fave place to go! It was a week full of (very hilly) walking, gorgeous scenery, a daily Pastel de nata and plenty of Portugese wine, with a couple of day trips to Sintra and Cascais (also lovely locations, would highly recommend).  ",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709763026/iwd_2023/imogen_lisbon.jpg"
+    }],
     "Kim": [
+    {
+        "title": "Hey, I'm Kim!",
+        "address": "Data Scientist at Geolytix",
+        "location":
         {
-            "title": "Hey, I'm Kim!",
-            "address": "Data Scientist at Geolytix",
-            "location": {
-                "lat": 53.80668125,
-                "lng": -1.55511586
-            },
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215985/iwd_2023/KimButterfield-headshot.jpg",
-            "description": "I’m a part-time Data Scientist at Geolytix and a full-time PhD student at the University of Leeds (soon to be a full time DS with a swanky new Dr title!). I’m originally from Halifax but moved to Leeds for university and currently live in Harrogate. I’m excited to kick start my career at this wonderful company with the best team 😊"
+            "lat": 53.80668125,
+            "lng": -1.55511586
         },
+        "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215985/iwd_2023/KimButterfield-headshot.jpg",
+        "description": "I’m a part-time Data Scientist at Geolytix and a full-time PhD student at the University of Leeds (soon to be a full time DS with a swanky new Dr title!). I’m originally from Halifax but moved to Leeds for university and currently live in Harrogate. I’m excited to kick start my career at this wonderful company with the best team 😊"
+    },
+    {
+        "title": "University of Leeds",
+        "address": "University of Leeds, Leeds",
+        "location":
         {
-            "title": "University of Leeds",
-            "address": "University of Leeds, Leeds",
-            "location": {
-                "lat": 53.80668125,
-                "lng": -1.55511586
-            },
-            "description": "I’ve spent the past decade at the University of Leeds, completing my BA Human Geography, MA Social Research (with data vis), and now my PhD in Geography and spatial modelling. Alongside my studies, I taught spatial planning and GIS to hundreds of students (some even here at Geolytix), and now I get to put my own skills to the test at work!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/leeds_uni.jpg"
+            "lat": 53.80668125,
+            "lng": -1.55511586
         },
+        "description": "I’ve spent the past decade at the University of Leeds, completing my BA Human Geography, MA Social Research (with data vis), and now my PhD in Geography and spatial modelling. Alongside my studies, I taught spatial planning and GIS to hundreds of students (some even here at Geolytix), and now I get to put my own skills to the test at work!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215984/iwd_2023/leeds_uni.jpg"
+    },
+    {
+        "title": "Growing up Italian and Ukrainian",
+        "address": "Soliera, Modena, Italy",
+        "location":
         {
-            "title": "Growing up Italian and Ukrainian",
-            "address": "Soliera, Modena, Italy",
-            "location": {
-                "lat": 44.73807305,
-                "lng": 10.92281643
-            },
-            "description": "My family are Italian and Ukrainian and both cultures heavily influenced my upbringing. We often visited my family’s farm in Modena, helping raise animals, processing home-grown tomatoes into canned sauces, and working on the vineyard. I also celebrate 2x every holiday as Ukraine uses the Julian calendar which is always fun! I was brough up speaking a mix of English, Italian and Ukrainian but can’t speak any language that fluently haha.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/italy_ukraine.jpg"
+            "lat": 44.73807305,
+            "lng": 10.92281643
         },
+        "description": "My family are Italian and Ukrainian and both cultures heavily influenced my upbringing. We often visited my family’s farm in Modena, helping raise animals, processing home-grown tomatoes into canned sauces, and working on the vineyard. I also celebrate 2x every holiday as Ukraine uses the Julian calendar which is always fun! I was brough up speaking a mix of English, Italian and Ukrainian but can’t speak any language that fluently haha.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215984/iwd_2023/italy_ukraine.jpg"
+    },
+    {
+        "title": "Making Halifax Home",
+        "address": "The Piece Hall, Halifax",
+        "location":
         {
-            "title": "Making Halifax Home",
-            "address": "The Piece Hall, Halifax",
-            "location": {
-                "lat": 53.72195588,
-                "lng": -1.856919002
-            },
-            "description": "My grandparents met in Halifax and made this town their home. My Italian nonna was raised in a farming family but migrated for textile work in post-war Britain. My Ukrainian grandad was detained in a working camp in Germany during WW2 and fled to seek refuge in Britain. They made Halifax our home, and our family have been a significant part of the Italian-Ukrainian community. Halifax, or Halifornia, will always have a place in my heart, from visiting Eureka as a child, hiking across its incredible trails with my dad, attending events at Piece Hall, and of course, it is the home of my lord and saviour, Anne Lister of Shibden hall. I'm very grateful for the community that welcomed my grandparents in this town.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/halifax.jpg"
+            "lat": 53.72195588,
+            "lng": -1.856919002
         },
+        "description": "My grandparents met in Halifax and made this town their home. My Italian nonna was raised in a farming family but migrated for textile work in post-war Britain. My Ukrainian grandad was detained in a working camp in Germany during WW2 and fled to seek refuge in Britain. They made Halifax our home, and our family have been a significant part of the Italian-Ukrainian community. Halifax, or Halifornia, will always have a place in my heart, from visiting Eureka as a child, hiking across its incredible trails with my dad, attending events at Piece Hall, and of course, it is the home of my lord and saviour, Anne Lister of Shibden hall. I'm very grateful for the community that welcomed my grandparents in this town.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215984/iwd_2023/halifax.jpg"
+    },
+    {
+        "title": "Free time?!",
+        "address": "Cold Bath Road, Harrogate",
+        "location":
         {
-            "title": "Free time?!",
-            "address": "Cold Bath Road, Harrogate",
-            "location": {
-                "lat": 53.99012854,
-                "lng": -1.547698407
-            },
-            "description": "When I’m not studying or working, I’m either playing videogames, baking some sort of bread, or at the gym. I used to be play right-mid for my university football team during my Masters but swapped over Olympic-style weightlifting when I moved to Harrogate. I also love cube-puzzles and can solve the Rubik’s cube in less than 30 seconds. I’m was terrified of heights and speed so I’ve taken up the hobbies of indoor-skydiving and go-karting… No longer terrified, just dizzy!",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/hobbies.jpg"
+            "lat": 53.99012854,
+            "lng": -1.547698407
         },
+        "description": "When I’m not studying or working, I’m either playing videogames, baking some sort of bread, or at the gym. I used to be play right-mid for my university football team during my Masters but swapped over Olympic-style weightlifting when I moved to Harrogate. I also love cube-puzzles and can solve the Rubik’s cube in less than 30 seconds. I’m was terrified of heights and speed so I’ve taken up the hobbies of indoor-skydiving and go-karting… No longer terrified, just dizzy!",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215984/iwd_2023/hobbies.jpg"
+    },
+    {
+        "title": "Visiting Toronto",
+        "address": "Bond Street, Hamilton, Toronto",
+        "location":
         {
-            "title": "Visiting Toronto",
-            "address": "Bond Street, Hamilton, Toronto",
-            "location": {
-                "lat": 43.65518183049744,
-                "lng": -79.37786774
-            },
-            "description": "In 2019 I visited Toronto, Canada. We celebrated Canada day on Toronto Island Park, visited the CN tower, went to Niagara Falls, and spent a week in Hamilton and explored Dundas Peak. My partner showed me where she studied at McMaster University, and all the places she’d visited. Having a Tim Hortons or Second Cup on every street corner was an absolute dream, but this one small restaurant called Tally Ho was the best secret place, serving their famous roast beef and gravy sandwiches.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678215984/iwd_2023/toronto.jpg"
-        }
-    ],
+            "lat": 43.65518183049744,
+            "lng": -79.37786774
+        },
+        "description": "In 2019 I visited Toronto, Canada. We celebrated Canada day on Toronto Island Park, visited the CN tower, went to Niagara Falls, and spent a week in Hamilton and explored Dundas Peak. My partner showed me where she studied at McMaster University, and all the places she’d visited. Having a Tim Hortons or Second Cup on every street corner was an absolute dream, but this one small restaurant called Tally Ho was the best secret place, serving their famous roast beef and gravy sandwiches.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678215984/iwd_2023/toronto.jpg"
+    }],
     "Aimee": [
+    {
+        "title": "Aimee",
+        "address": "Data Analyst at Geolytix",
+        "location":
         {
-            "title": "Aimee",
-            "address": "Data Analyst at Geolytix",
-            "location": {
-                "lat": 53.79855149,
-                "lng": -1.553168765
-            },
-            "description": "Hi, I'm Aimee, a Data Analyst at Geolytix. I joined the Leeds office in March 2022 after finishing my masters degree from the University of Leeds.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_1.jpg"
+            "lat": 53.79855149,
+            "lng": -1.553168765
         },
+        "description": "Hi, I'm Aimee, a Data Analyst at Geolytix. I joined the Leeds office in March 2022 after finishing my masters degree from the University of Leeds.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217408/iwd_2023/aimee_1.jpg"
+    },
+    {
+        "title": "Travelling",
+        "address": "World",
+        "location":
         {
-            "title": "Travelling",
-            "address": "World",
-            "location": {
-                "lat": 9.635273333,
-                "lng": 99.67170181
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_2.jpg",
-            "description": "Like most others at Geolytix, I try to travel as much and as often as I can. One of my most recent trips was in Thailand - going from the craziness of Bangkok to the white sandy beaches and spectacular views (photo taken at the Mu Ko Ang Thong National Marine Park) in Ko Pha Ngan. I'm now looking forward to my next trip in the southeast of Mexico."
+            "lat": 9.635273333,
+            "lng": 99.67170181
         },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217408/iwd_2023/aimee_2.jpg",
+        "description": "Like most others at Geolytix, I try to travel as much and as often as I can. One of my most recent trips was in Thailand - going from the craziness of Bangkok to the white sandy beaches and spectacular views (photo taken at the Mu Ko Ang Thong National Marine Park) in Ko Pha Ngan."
+    },
+    {
+        "title": "China",
+        "address": "Summer 2019",
+        "location":
         {
-            "title": "China",
-            "address": "Summer 2019",
-            "location": {
-                "lat": 29.99876,
-                "lng": 117.9833058
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_3.jpg",
-            "description": "In 2019, my university flatmates invited me to spend the summer at their homes in China. I was lucky enough to visit Beijing, Shanghai, Anhui, Xi an, Chongqing, Chengdu and Suzhou. From the Forbidden City in Beijing, to climbing the Yellow Mountains in Anhui and to eating (or attempting to eat) the spiciest hotpot in Chongqing - it is far too difficult to pick a favourite moment!"
+            "lat": 29.99876,
+            "lng": 117.9833058
         },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217408/iwd_2023/aimee_3.jpg",
+        "description": "In 2019, my university flatmates invited me to spend the summer at their homes in China. I was lucky enough to visit Beijing, Shanghai, Anhui, Xi an, Chongqing, Chengdu and Suzhou. From the Forbidden City in Beijing, to climbing the Yellow Mountains in Anhui and to eating (or attempting to eat) the spiciest hotpot in Chongqing - it is far too difficult to pick a favourite moment!"
+    },
+    {
+        "title": "Morocco",
+        "address": "February 2024",
+        "location":
         {
-            "title": "Palermo",
-            "address": "Our Second Home",
-            "location": {
-                "lat": 38.12043408,
-                "lng": 13.35733468
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_4.jpg",
-            "description": "With Vincenzo's family being in Palermo, we're lucky to visit so often. Aside from indulging in the most amazing food and spending time with family and friends, you will find us at the beach, going to the football, or spending late nights in the centre of Palermo."
+            "lat": 30.54666925,
+            "lng": -9.708868075
         },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709765726/iwd_2023/aimee_44.jpg",
+        "description": "To beat the winter blues, Becca, Matt and I recently got back from a week in Morocco - the perfect combination of Marrakech chaos to a much more chilled vibe in Taghazout!"
+    },
+    {
+        "title": "Formula One",
+        "address": "",
+        "location":
         {
-            "title": "Formula One",
-            "address": "",
-            "location": {
-                "lat": 43.25127636,
-                "lng": 5.793009527
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217408/iwd_2023/aimee_5.jpg",
-            "description": "Growing up with a family who loves Formula One, it was hard for me not to take interest too. In 2017, I went to my first GP at Silverstone and more recently, Circuit Paul Ricard in France. With the upcoming season, I hope the Leeds Office are ready to hear all about it!"
-        }
-    ],
+            "lat": 43.25127636,
+            "lng": 5.793009527
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217408/iwd_2023/aimee_5.jpg",
+        "description": "Growing up with a family who loves Formula One, it was hard for me not to take interest too. In 2017, I went to my first GP at Silverstone and more recently, Circuit Paul Ricard in France. With the upcoming season, I hope the Leeds Office are ready to hear all about it!"
+    }],
     "Khrish": [
+    {
+        "title": "Hey, I'm Khrish",
+        "address": "Data Scientist at Geolytix",
+        "location":
         {
-            "title": "Hey, I'm Khrish",
-            "address": "Data Scientist at Geolytix",
-            "location": {
-                "lat": 52.9362746,
-                "lng": -1.13797021
-            },
-            "description": "Hey I'm Khrish, a Data Scientist at Geolytix. I live in Nottingham with my partner Tom and our lovely cat, Ronnie. I graduated from the University of Nottingham in 2013 with an MMath in Maths & Statistics, and loved the city so much that I never left! I've worked at Experian, Boots and Oakbrook Finance here, lived in house/flat shares before buying a flat by myself in 2017, and now a house with Tom. I think Nottingham has something for everyone and I feel fortunate to have found my place here.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20221225-WA0013.jpg"
+            "lat": 52.9362746,
+            "lng": -1.13797021
         },
+        "description": "Hey I'm Khrish, a Data Scientist at Geolytix. I live in Nottingham with my partner Tom and our lovely cat, Ronnie. I graduated from the University of Nottingham in 2013 with an MMath in Maths & Statistics, and loved the city so much that I never left! I've worked at Experian, Boots and Oakbrook Finance here, lived in house/flat shares before buying a flat by myself in 2017, and now a house with Tom. I think Nottingham has something for everyone and I feel fortunate to have found my place here.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709763717/iwd_2023/krish_70469.jpg"
+    },
+    {
+        "title": "The Gym",
+        "address": "Bodybuilding, BodyAttack, HIIT… I love training!",
+        "location":
         {
-            "title": "The Gym",
-            "address": "Bodybuilding, BodyAttack, HIIT… I love training!",
-            "location": {
-                "lat": 52.9479688,
-                "lng": -1.13847968
-            },
-            "description": "My lifestyle is centred around health and fitness but I actually did almost no exercise until I discovered HIIT in 2014, then I realised I wanted a lean, muscular physique so I learnt about strength training with a PT for a year, and now you will find me at the gym most weekday evenings and weekend mornings! If I don't train, I can't feel like myself - in the good times, training is fun and I set myself different goals to reach, and in the difficult times, gym sessions are my therapy.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_20230224_095640661.jpg"
+            "lat": 52.9479688,
+            "lng": -1.13847968
         },
+        "description": "My lifestyle is centred around health and fitness, and I love Les Mills BodyAttack so much that I am now a qualified fitness instructor for it! However I actually did almost no exercise until I discovered HIIT in 2014, then I realised I wanted a lean, muscular physique so I learnt about strength training with a PT for a year, and now you will find me at the gym most weekday evenings and weekend mornings. If I don't train, I can't feel like myself - in the good times, training is fun and I set myself different goals to reach, and in the difficult times, gym sessions are my therapy.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709763824/iwd_2023/khrish_photo_output.jpg"
+    },
+    {
+        "title": "Narborough, Leicester",
+        "address": "My hometown",
+        "location":
         {
-            "title": "Narborough, Leicester",
-            "address": "My hometown",
-            "location": {
-                "lat": 52.5737388,
-                "lng": -1.20854745
-            },
-            "description": "Whilst I now call Nottingham home, my actual hometown is a village called Narborough, just outside of Leicester. Narborough was a lovely place to grow up in (even though I'm not a fan of the city of Leicester!) and it's now become a hub for seeing family and school friends. I have 2 sisters, Danesha and Honali, who I'm very close to but they also live in other cities now, so it's nice for us to have a place in the Midlands for us to get together.",
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20200802-WA0040.jpg"
+            "lat": 52.5737388,
+            "lng": -1.20854745
         },
+        "description": "Whilst I now call Nottingham home, my actual hometown is a village called Narborough, just outside of Leicester. Narborough was a lovely place to grow up in (even though I'm not a fan of the city of Leicester!) and it's now become a hub for seeing family and school friends. I have 2 sisters, Danesha and Honali, who I'm very close to but they also live in other cities now, so it's nice for us to have a place in the Midlands for us to get together.",
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217973/iwd_2023/krish-20200802-WA0040.jpg"
+    },
+    {
+        "title": "London",
+        "address": "A tale of love and hate",
+        "location":
         {
-            "title": "London",
-            "address": "A tale of love and hate",
-            "location": {
-                "lat": 51.5305576,
-                "lng": -0.12378615
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_InShot_20230223_162606968.jpg",
-            "description": "I'm not a city girl so I often say 'I like visiting London, but I really like leaving again after a day or two'. There is something special and different about this city though, I'm fortunate to have my sister and friends living here to visit, and visiting the Geolytix office gives me an extra reason to see those people! I've travelled to London ever since I can remember because it's my mum's hometown and she loved it. Unfortunately I lost her in 2016 when I was only 24, so this bustling city will always have a special place in my heart."
+            "lat": 51.5305576,
+            "lng": -0.12378615
         },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217974/iwd_2023/krish_InShot_20230223_162606968.jpg",
+        "description": "I'm not a city girl so I often say 'I like visiting London, but I really like leaving again after a day or two'. There is something special and different about this city though, I'm fortunate to have my sister and friends living here to visit, and visiting the Geolytix office gives me an extra reason to see those people! I've travelled to London ever since I can remember because it's my mum's hometown and she loved it. Unfortunately I lost her in 2016 when I was only 24, so this bustling city will always have a special place in my heart."
+    },
+    {
+        "title": "Santorini 2022",
+        "address": "The perfect summer holiday",
+        "location":
         {
-            "title": "Santorini 2022",
-            "address": "The perfect summer holiday",
-            "location": {
-                "lat": 36.382486,
-                "lng": 25.4821917
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217973/iwd_2023/krish-20220702-WA0004.jpg",
-            "description": "Tom and I had been on smaller trips together but Santorini was our first longer summer holiday, and the fact that it was just after Covid travel restrictions eased meant it had a special feeling for us. I loved everything about the island - staying on the beach strip in Kamari, days out to Oia and Fira, watching the beautiful sunset in Imerovigli... Although I'm not very good at properly relaxing so it took me a good few days to get used to more of a beach holiday, where you actually unwind by the beach and don't worry about all these other things you think you should be doing!!"
+            "lat": 36.382486,
+            "lng": 25.4821917
         },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217973/iwd_2023/krish-20220702-WA0004.jpg",
+        "description": "Tom and I had been on smaller trips together but Santorini was our first longer summer holiday, and the fact that it was just after Covid travel restrictions eased meant it had a special feeling for us. I loved everything about the island - staying on the beach strip in Kamari, days out to Oia and Fira, watching the beautiful sunset in Imerovigli... Although I'm not very good at properly relaxing so it took me a good few days to get used to more of a beach holiday, where you actually unwind by the beach and don't worry about all these other things you think you should be doing!!"
+    },
+    {
+        "title": "Mediterranean, Canaries, Caribbean",
+        "address": "Cruising with the family",
+        "location":
         {
-            "title": "Mediterranean, Canaries, Caribbean",
-            "address": "Cruising with the family",
-            "location": {
-                "lat": 41.1484013,
-                "lng": 5.59737833
-            },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678217974/iwd_2023/krish_20171230_130351_710.jpg",
-            "description": "My family and I did our first little cruise from Miami in the summer of 2012, whilst on a trip around America, and we were hooked ever since! I love being able to see several cities in one trip, but all the travel, food and entertainment is organised for you in a huge moving hotel. I've done cruises around the Mediterranean, Canaries and Caribbean, and look forward to doing more - hopefully around Scandinavia and the Greek Isles."
-        }
-    ],
-    "Therese": [
+            "lat": 41.1484013,
+            "lng": 5.59737833
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678217974/iwd_2023/krish_20171230_130351_710.jpg",
+        "description": "My family and I did our first little cruise from Miami in the summer of 2012, whilst on a trip around America, and we were hooked ever since! I love being able to see several cities in one trip, but all the travel, food and entertainment is organised for you in a huge moving hotel. I've done cruises around the Mediterranean, Canaries and Caribbean, and look forward to doing more - hopefully around Scandinavia and the Greek Isles."
+    }],
+    "Chloe": [
+    {
+        "title": "Hey, I'm Chloe!",
+        "address": "Data Analyst at Geolytix",
+        "location":
         {
-            "title": "Hi, I'm Therese",
-            "address": "",
+            "lat": 53.79889721,
+            "lng": -1.551897693
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678219224/iwd_2023/Cover_Photo_chloe.jpg",
+        "description": "Hey, I'm Chloe, a Data Analyst at Geolytix. I am based at the Leeds office at Park Square and I joined the team at the end of November 2022 so I'm a newbie! Prior to working at Geolytix I worked as a Site Research Analyst at JD Sports which is where I undertook my industrial placement year whilst at university."
+    },
+    {
+        "title": "Growing Up",
+        "address": "Blackburn, Lancashire",
+        "location":
+        {
+            "lat": 53.73859394,
+            "lng": -2.51974851
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678219224/iwd_2023/Blackburn_chloe.jpg",
+        "description": "I grew up in a small village in the town of Blackburn in Lancashire. Whilst I always enjoyed being close to nature growing up I think I've always been a city girl at heart. I still have a lot of family living in Blackburn so I enjoy making regular trips home to catch up with my family and have a detox from the fast paced city life when needed!"
+    },
+    {
+        "title": "Roundhay",
+        "address": "Leeds",
+        "location":
+        {
+            "lat": 53.83514878,
+            "lng": -1.49675853
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678219223/iwd_2023/Roundhay_chloe.jpg",
+        "description": "I am currently living in Roundhay in Leeds after making the decision to return to Leeds after just over a year and a half living in Manchester upon graduating. I am a regular visitor to Roundhay Park and spend many of my lunch breaks here. As well as a gorgeous park, you are spoilt for choice for lovely indpendent coffee shops, bars and restaurants. As a big foodie/coffee lover I am currently on a mission to try them all!"
+    },
+    {
+        "title": "Leeds University",
+        "address": "Years of Study",
+        "location":
+        {
+            "lat": 53.80670424,
+            "lng": -1.554827927
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678219613/iwd_2023/Graduation_chloe.jpg",
+        "description": "Like many others at Geolytix I studied Geography (BA) at the University of Leeds. It was at university where I developed my passion for spatial analysis after undertaking several modules related to retail geography and the applications of spatial data. I thoroughly enjoyed my time living in Leeds as a student and jumped at the opportunity to move back as a graduate."
+    },
+    {
+        "title": "Hobbies",
+        "address": "",
+        "location":
+        {
+            "lat": 46.00925785,
+            "lng": 9.285695783
+        },
+        "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1678219224/iwd_2023/Lake_Como_chloe.jpg",
+        "description": "In my spare time I enjoy walking, running, spending time with friends and family, cooking, reading and travelling. I was lucky enough to go on four holidays last year and managed to tick a number of locations off my bucket list, one of which was the beautiful Lake Como. I am keen to explore more of Italy this year and I'm hoping to book a trip in Summer to Rome with my brother who I have done a lot of travelling with over the years."
+    }],
+    "Urmi": [
+        {
+            "title": "Hi, I'm Urmi!",
+            "address": "Data Engineer at Geolytix",
             "location": {
-                "lat": 53.79856864, "lng": -1.553191602
+                "lat": 51.52500633,
+                "lng": -0.1071593906
             },
-            "description": "I’m a Data Analyst on industrial placement at Geolytix. I’m currently pursuing a MSc Data Science postgraduate degree at Manchester Metropolitan University. I didn’t study Geography at Uni of Leeds like so many of my colleagues but I have grown an appreciation for spatial data and I’m keen to increase my knowledge and skills.",
-            "img": "",
-            "profile": "https://res.cloudinary.com/dvx8vwneg/image/upload/v1678225538/iwd_2023/Hi_I_m_Therese.jpg"
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709755453/iwd_2023/urmi_intro.png",
+            "description": "I'm currently working as a Data Engineer at Geolytix. Originally from India, I made the move to the UK in 2022 for my master's education. Joined the Geolytix team in 2023 during my last semester and have been enjoying my time here ever since!"
         },
         {
             "title": "Growing Up",
-            "address": "Lowthers, Christ Church, Barbados",
-            "location": {"lat": 13.09603988, "lng": -59.50299869},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Growing_Up_therese.jpg",
-            "description": "I grew up on the beautiful island of Barbados in a very tight knit family. In fact, almost everyone who lives on my street is my blood relative so I grew up with plenty of playmates and there was always lots of noise and activity. I’ve always loved trying new things and as an energetic kid I dabbled in a bit of everything. I ran track, danced ballet, played the violin and did debate."
+            "address": "My Life in India",
+            "location": {
+                "lat": 22.30829793,
+                "lng": 70.75143904
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709755782/iwd_2023/urmi_1.png",
+            "description": "I was raised in Rajkot, a town in western India known for its delectable street food and rich royal heritage. Growing up, I lived just a stone's throw away from my grandparents' home, a privilege that made every weekend special. I hold a deep connection to family and traditions, making it a point to make at least one or two trips back home each year to stay grounded. "
         },
         {
             "title": "Moving to the UK",
-            "address": "University of Exeter, UK",
-            "location": {"lat": 50.73527564, "lng": -3.53370222},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Moving_to_the_UK_therese.jpg",
-            "description": "I had the opportunity to study abroad at 19 so I left Barbados and moved to Exeter to pursue an undergraduate degree. I was so homesick the first few months that I called my mom one day and she told me to stop calling her so often and go out and make friends. Haha! So I did and I enjoyed myself so much that when it was time to do my masters I returned to the UK."
-        },
-        {
-            "title": "What I'm up to these days",
-            "address": "Enterprise Beach, Barbados",
-            "location": {"lat": 13.06037031, "lng": -59.53998045},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/What_i_m_up_to_these_days_therese.jpg",
-            "description": "I enjoy watching sports—especially cycling. I enjoy dancing—on a night out, I’m on the dance floor all night long. I’ll even dance by myself if I must. I’ve recently started Bachata lessons and I fall more in love with this dance style every class. This year, I’m trying to improve my fitness. So far, it’s not going well and JD Gyms is making a huge profit on my membership.  I don’t enjoy the beach as much as you’d think but when I go home I do make sure to get a ‘sea bath’ and my friends usually drag me along since they love beach days."
+            "address": "University in London",
+            "location": {
+                "lat": 51.48304172,
+                "lng": -0.006367174304
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709756782/iwd_2023/urmi_2.png",
+            "description": "After finishing my Bachelor's in Computer Engineering from my hometown, I decided to pursue master's in Computer Science from university of greenwich in London. I instantly fell in love with the city and the cute red buses. While at the university, I landed on my first real part-time gig as an IT Service Desk Analyst, which not only added valuable work experience but also helped me expand my network in the city. The most exciting part of my university experience was exploring spatial data analysis for my dissertation, all in an effort to make route navigation easier for pedestrians!"
         },
         {
             "title": "Travels",
-            "address": "Paris, France",
-            "location": {"lat": 48.8610229, "lng": 2.335858756},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678225674/iwd_2023/Travels_therese.jpg",
-            "description": "I’m slowly getting around Europe. Here I am in Paris on the coldest day of their 2021 winter season."
+            "address": " Visiting Singapore",
+            "location": {
+                "lat": 1.387499612,
+                "lng": 103.9045415
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709758350/iwd_2023/urmi_5.png",
+            "description": "In 2018, I did my first family trip to Singapore to visit my niece and nephews. We explored the vibrant Gardens by the Bay, strolled through the historic neighborhoods of Chinatown, Little India and had a blast at the universal studios. Since we don't have any beaches in my hometown, I absolutely fell in with the beauty of Sentosa Islands!"
+        },
+        {
+            "title": "Travels",
+            "address": "Visiting East of UK",
+            "location": {
+                "lat": 51.13480953,
+                "lng": 1.2916963
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709758684/iwd_2023/urmi_4.png",
+            "description": "I aim to gradually explore all of the UK, and in August, I traveled to Canterbury and Dover to celebrate my friend's birthday. The weather was ideal for beach relaxation and city exploration. I thoroughly enjoyed the White Cliffs of Dover and the South Foreland Lighthouse. While strolling along the River Stour (though rain canceled our boat ride plans), I admired The Crooked House, the most photographed building in Canterbury after the Cathedral."
+        },
+        {
+            "title": "Travels",
+            "address": "Melbourne, Australia",
+            "location": {
+                "lat": -37.73433916,
+                "lng": 145.0033858
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709758850/iwd_2023/urmi_3.png",
+            "description": "Visiting my brother in Australia in 2023 was a brief but enjoyable experience. I made the most of my one-week stay in Melbourne, trying to explore every corner of the city. The zoo and Sea Life were captivating experiences, each offering a unique adventure. The Sky Deck's panoramic views were breathtaking, and delving into the city's famous fleece markets added a touch of local charm to an already unforgettable journey. "
+        },
+        {
+            "title": "Travels",
+            "address": "Gir, India",
+            "location": {
+                "lat": 21.12615887,
+                "lng": 70.82414386
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709759146/iwd_2023/urmi_22.png",
+            "description": "During my recent journey back home, we explored the Gir Jungle. Getting up close with lions, cheetahs, and deer was downright mesmerizing, but the real thrill kicked in when we had the chance to feed and spot crocs and monkeys. It was like a mini adventure right in the heart of the jungle!"
         }
     ],
-    "Chloe": [
+    "Lucy": [
         {
-            "title": "Hey, I'm Chloe!",
-            "address": "Data Analyst at Geolytix",
-            "location": {"lat": 53.79889721,   "lng": -1.551897693},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Cover_Photo_chloe.jpg",
-            "description": "Hey, I'm Chloe, a Data Analyst at Geolytix. I am based at the Leeds office at Park Square and I joined the team at the end of November 2022 so I'm a newbie! Prior to working at Geolytix I worked as a Site Research Analyst at JD Sports which is where I undertook my industrial placement year whilst at university."
+            "title": "Hi I'm Lucy",
+            "address": "People Manager at Geolytix",
+            "location": {
+                "lat": 50.72386792858243,
+                "lng": -2.8242528491127135
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761247/iwd_2023/Lucy_dorset.jpg",
+            "description": "At Geolytix I try my best to look after the people! I grew up in Dorset in a tiny village called Lower Bockhampton.  Dorest still continues to be a very special place and I try to visit as much as I can, just loving the scenery, the coast and a slower pace of life! This is photo is a of a family walk from West Bay to Seatown (which has one of my most favourite pubs right on the beach - The Anchor Inn)"
         },
         {
-            "title": "Growing Up",
-            "address": "Blackburn, Lancashire",
-            "location": {"lat": 53.73859394,  "lng": -2.51974851},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Blackburn_chloe.jpg",
-            "description": "I grew up in a small village in the town of Blackburn in Lancashire. Whilst I always enjoyed being close to nature growing up I think I've always been a city girl at heart. I still have a lot of family living in Blackburn so I enjoy making regular trips home to catch up with my family and have a detox from the fast paced city life when needed!"
-        },
-        {
-            "title": "Roundhay",
-            "address": "Leeds",
-            "location": {"lat": 53.83514878, "lng": -1.49675853},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219223/iwd_2023/Roundhay_chloe.jpg",
-            "description": "I am currently living in Roundhay in Leeds after making the decision to return to Leeds after just over a year and a half living in Manchester upon graduating. I am a regular visitor to Roundhay Park and spend many of my lunch breaks here. As well as a gorgeous park, you are spoilt for choice for lovely indpendent coffee shops, bars and restaurants. As a big foodie/coffee lover I am currently on a mission to try them all!"
-        },
-        {
-            "title": "Leeds University",
-            "address": "Years of Study",
-            "location": {"lat": 53.80670424, "lng": -1.554827927},
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219613/iwd_2023/Graduation_chloe.jpg",
-            "description": "Like many others at Geolytix I studied Geography (BA) at the University of Leeds. It was at university where I developed my passion for spatial analysis after undertaking several modules related to retail geography and the applications of spatial data. I thoroughly enjoyed my time living in Leeds as a student and jumped at the opportunity to move back as a graduate."
+            "title": "My Dog",
+            "address": "South Downs",
+            "location": {
+                "lat": 50.90068,
+                "lng": -0.130145
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761307/iwd_2023/Wurzel_South_Downs.jpg",
+            "description": "I'm at my happiest when walking my dog, Wurzel. I try to make time to walk up the South Downs as much as I can, either before or after work.  I feel really fortunate to live so close to the Downs with beauiful views of the countyside and sea."
         },
         {
             "title": "Hobbies",
+            "address": "Skiing",
+            "location": {
+                "lat": 42.52822488705736,
+                "lng": 1.705510622
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761442/iwd_2023/lucy_ski.jpg",
+            "description": "One of my all time favourite hobbies is skiing, unfortunately it only comes around once a year.  I love the fresh mountain air, being active all day, but also very fond of some apre ski! This photo was taken in the Pyrenees with friends and family."
+        },
+        {
+            "title": "Family Holidays",
+            "address": "Skopelos",
+            "location": {
+                "lat": 39.11054056751696,
+                "lng": 23.66367187
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761566/iwd_2023/lucy_skopelos.jpg",
+            "description": "When the children were tiny we took a chance on a holiday to Skopelos and we all loved it.  I'm really not someone who goes back to the same place twice, but we all adored our holidays here. Each time we'd make them slightly different, one year we hopped on a ferry to Alonissos for the night. Lots of very happy memories where made here."
+        },
+        {
+            "title": "Girls Weekends Away!",
+            "address": "Corfu Town",
+            "location": {
+                "lat": 39.62095992,
+                "lng": 19.92105549
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709761713/iwd_2023/lucy_corfu.jpg",
+            "description": "I spend a lot of time with my friends. Throughout the year we get up to a lot of crazy stuff, which usually involves, walking, eating, drinking and lots of laughs. Once a year we go off on a girls weekend away somewhere hot and sunny. My most memorable trip was a weekend in Corfu Town, which has the most beautiful Venetian architechture. Here we are a little frazzled from a day in the sun, ready for a night out!"
+        }
+    ],
+    "Sonia": [
+        {
+            "title": "Hi, I'm Sonia !",
+            "address": "Customer and Delivery Partner",
+            "location": {
+                "lat": 51.54211914,
+                "lng": -0.1888343408
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709766450/iwd_2023/sonia.jpg",
+            "description": "Hi, I'm Sonia and I've joined Geolytix in 2023 as a Customer and Delivery Partner. I am based at the London office and I've been living in London for the past 4 years. I came to London for my studies, initially for 6 months but ended up liking it here too much and decided to stay permanently. I preivously worked as a Growth Manager for a japanese fast casual dining company for 3 years overseeing the property strategy. I was a Geolytix customer for 3 years until I've decided to join the team and help other clients in their location planning questions !"
+        },
+        {
+            "title": "Growing up in France",
+            "address": "In the Loire Valley",
+            "location": {
+                "lat": 47.39505423,
+                "lng": 0.6848758611
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709766500/iwd_2023/tours.jpg",
+            "description": "I was born and grew up in France, in a town called Tours. I've spent the first 18 years of my life there. The region is well-known for its numerous castles and famous Loire river, it's a gorgeous city with many buildings which I've kept their unique character since Medieval times!"
+        },
+        {
+            "title": "Summers in Libreville",
+            "address": "The sound of Afrobeats and the smell of plaintain",
+            "location": {
+                "lat": 0.3889758554,
+                "lng": 9.444864444
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709766622/iwd_2023/libreville.jpg",
+            "description": "My dad lives in Libreville, in Gabon and I was lucky enough to spend a month or two there every summer. The country is extremely humid and hot as it's straight on the Ecuador line but it's an amazing place with beautiful forests, beaches and wildlife. The dance, music and food there are full of joy and spices, I can still smell the delicious scent of plantain in the kitchen !"
+        },
+        {
+            "title": "Studying across Europe",
+            "address": "Using that french passport to the fullest",
+            "location": {
+                "lat": 48.86436005,
+                "lng": 2.381000783
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709766844/iwd_2023/IMG_1606.jpg",
+            "description": "I did a Master in Management with a Renewables Energy and Social Impact Management at the ESCP Business school. This French business school has the specificity to have campus around Europe where you can study. I've chosen to study on the Paris, Madrid and London campuses.  "
+        },
+        {
+            "title": "Solo travel",
+            "address": "As a way to explore the world",
+            "location": {
+                "lat": 11.25906474,
+                "lng": -85.87454159
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709767198/iwd_2023/IMG_6717.jpg",
+            "description": "I've been lucky enough to have traveled extensively in Europe, Asia, America and Africa with family and friends. But my favorite way to travel is Solo ! I went to Costa Rica, Nicaragua, Singapore and Bali twice on my own. I like slow travel and taking my time to get the feel of a new place, a new country. I like leaving my comfort zone and meeting some other female solo travelers. Solo travel is rarely solo and I find it's the best way to meet new people and create new friendships so I always recommend giving it a try if you have never done it !"
+        },
+        {
+            "title": "Yoga",
+            "address": "As a way to explore my inner world",
+            "location": {
+                "lat": -8.654745859,
+                "lng": 115.1253916
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709767278/iwd_2023/sonia_185318.jpg",
+            "description": "Yoga is a huge part of my life. I started doing yoga 7 years ago and it's now part of my daily life. It's my way to process my thoughts and my emotions on a daily basis but also to meet new people ! When traveling alone, yoga communities are always so welcoming and allow you to find a home away from home. They are often associated with surf retreats which is another passion I have ! "
+        }
+    ],
+    "Jess": [
+        {
+            "title": "Hi I'm Jess",
             "address": "",
             "location": {
-                "lat": 46.00925785, "lng": 9.285695783
+                "lat": 53.8058891,
+                "lng": -1.7008811
             },
-            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_600,c_limit/v1678219224/iwd_2023/Lake_Como_chloe.jpg",
-            "description": "In my spare time I enjoy walking, running, spending time with friends and family, cooking, reading and travelling. I was lucky enough to go on four holidays last year and managed to tick a number of locations off my bucket list, one of which was the beautiful Lake Como. I am keen to explore more of Italy this year and I'm hoping to book a trip in Summer to Rome with my brother who I have done a lot of travelling with over the years."
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892617/iwd_2023/JESS_linkedin.jpg",
+            "description": "Hi I'm Jess, I joined Geolytix in July 2023 as a industrial placement working as a data anaylst based in the Leeds office. I am currently studying for my BA in Human Geography and minoring in GIS at the University of British Columbia."
+
+        },
+        {
+            "title": "Growing up in the Big Mango",
+            "address": "Bangkok, Thailand",
+            "location": {
+                "lat": 13.7243801,
+                "lng": 100.3027616
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892410/iwd_2023/Jess.jpg",
+            "description": "I grew up in the capital of Thailand in Bangkok. Bangkok was an amazing place to grow up with the amazing street food and beachesnot too far away! It also meant I have some interesting stories from growing up in the tropics like having a rescue snake 'Monty' as our school pet."
+
+        },
+        {
+            "title": "Moving for University",
+            "address": "Vancouver, Canada",
+            "location": {
+                "lat": 49.246292,
+                "lng": -123.116226
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892412/iwd_2023/jess_Vancouver.jpg",
+            "description": "After having my first year of university from Thailand due to COVID I moved to Vancouver, Canada for university to study geography. I have linked a photo of my friends and I embracing the Canadian spirit cheering on the Cancucks at Rogers Arena."
+
+        },
+        {
+            "title": "Moving to Leeds",
+            "address": "Leeds, England",
+            "location": {
+                "lat": 53.8058891,
+                "lng": -1.7008811
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709893806/iwd_2023/jess-in-leeds.jpg",
+            "description": "After living in Canada for two years I moved to Leeds, I currently live by the Headingley stadium so had to make the most of it and went to watch the rugby. I have also really enjoyed going to gigs and going on a few walks around roundhay park!"
+
+        },
+        {
+            "title": "Solo travel",
+            "address": "Algrave, Portugal",
+            "location": {
+                "lat": 37.2435847,
+                "lng": -8.8559952
+            },
+            "img": "https://res.cloudinary.com/dvx8vwneg/image/upload/w_1200,c_limit/v1709892416/iwd_2023/jess_lagos.jpg",
+            "description": "Before moving to Leeds, I left my two suitcases at a friends house and went on a solo trip! I've included a picture of me in Lagos, Portugal which was defiently my favourite part of the trip. There were some amazing food, beaches and lots of flix buses!"
+
         }
     ]
 }

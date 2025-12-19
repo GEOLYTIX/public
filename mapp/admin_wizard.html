@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="{{language}}">
+  <head data-dir="{{dir}}" data-login="{{login}}">
+    <title>MAPP | User Administration</title>
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{dir}}/public/icons/favicon.ico"
+    >
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    >
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/ol@v10.6.1/dist/ol.js"
+      integrity="sha384-R02sHnzL8yl/uvLZvMsfgBOMBIOOHLpuLNo4dLuWQWFun1sxEWJej+SPwiGxaeGd"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Load XYZ / MAPP stylesheet and library. -->
+    <!--<link rel="stylesheet" href="{{dir}}/public/css/mapp.css" /> not needed here -->
+    <link rel="stylesheet" href="{{dir}}/public/css/ui.css" />
+
+    <script type="module" src="{{dir}}/public/js/lib/mapp.js" defer></script>
+    <script type="module" src="{{dir}}/public/js/lib/ui.js" defer></script>
+
+    <script
+      type="module"
+      src="{{dir}}/public/js/tests/_mapp.test.js"
+      defer
+    ></script>
+
+    <style>
+
+      :root {
+        --color-notification: #FEFCE8;
+        --color-notification-contrast: #FDF08A;
+        --color-notification-hover: #FDE048;
+        --color-notification-font: #854D0F;
+        --box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        --border-radius: 5px;
+        --padding: 10px;
+        --box-shadow-prominent: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        --box-shadow-row: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+
+        --color-approved: #3C9040;
+        --color-verified: #9c27b0;
+        --color-locked: #b71c1c;
+        --color-blocked: #37474f;
+        --color-admin: #1257A5;
+        --color-api: #311b92;
+        --color-new: #F77F00;
+        --color-role: #FFF6C2;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .backdrop {
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .actions {
+          margin-top: 2em; 
+          display: inline-flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 4px;
+
+          button.danger {
+            color: var(--color-danger);
+            & > * {
+              color: var(--color-danger);
+            }
+          }
+      }
+
+      /* used for role pills displayed in user data */
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* font size for h1 inside header tags */
+      header h1 {
+        font-size: 140%;
+      }
+
+      /* user details dialog layout */
+      dialog.user-details {
+        padding: 2em;
+        width: 100%;
+        height: 100%;
+
+        .content {
+          max-width: 1440px;
+          margin: auto;
+        }
+
+        .account-details-grid { 
+          margin-top: 2em;
+          display: grid; 
+          grid-gap: 1em; 
+          grid-template-columns: repeat(2, 1fr); 
+        }
+
+        .card {
+          background-color: var(--color-base-tertiary);
+          border-radius: var(--border-radius);
+          padding: 0.5em 0.5em 1.5em 0.5em;
+          box-shadow: var(--box-shadow-prominent);
+        }
+
+        .details {
+          grid-template-columns: 1fr 2fr;
+          grid-template-rows: 4em;
+          margin-top: 2em;
+          display: grid; 
+
+          div {
+            padding: var(--padding);
+            border-bottom: 1px solid var(--color-border);
+            line-height: 2em;
+          }
+
+          label, input {
+            line-height: 1;
+          }
+
+          button.outlined {
+            line-height: 1;
+            &.approve {
+              border-color: var(--color-verified);
+              * {
+                font-weight: bold;
+                color: var(--color-verified);
+              }
+            }
+            &.approved {
+              pointer-events: none;
+              border-color: var(--color-approved);
+              * {
+                font-weight: bold;
+                color: var(--color-approved);
+              }
+            }
+
+            &.blocked {
+              pointer-events: none;
+              border-color: var(--color-blocked);
+              * {
+                font-weight: bold;
+                color: var(--color-blocked);
+              }
+            }
+
+            &.user-action {
+              pointer-events: none;
+              border-color: var(--color-active);
+              * {
+                font-weight: bold;
+                color: var(--color-active);
+              }
+            }
+          }
+      }
+
+      }
+
+      /* user roles dialog layout */
+      dialog.user-grant {
+        padding: 2em;
+        width: 100%;
+        height: 100%;
+        border: solid 1px var(--color-border);
+        
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .content {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          max-width: 1440px; 
+          margin: auto;
+
+          /* container for roles ui */
+
+          /* begin role assignment specific layout */
+          .role-assignment {
+            padding: 0.5em 1em;
+            margin: 1em 0;
+            border: solid 1px var(--color-border);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 1em;
+            flex-grow: 1;
+            min-height: 0;
+            row-gap: 0.5em;
+
+            h2 {
+              border-bottom: solid 1px var(--color-border);
+              box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+            }
+
+            & > div {
+              flex: 1;
+            }
+
+            .role-hierarchy {
+              /* for the role hierarchy target */
+              overflow-y: auto;
+            }
+
+            .role-preview {
+              overflow-y: auto;
+              padding: 0.5em;
+              background-color: rgb(from var(--color-notification) r g b / 0.5);
+              border-radius: var(--border-radius);
+              ul.preview-list {
+                li {
+                  border-bottom: solid 1px var(--color-border);
+                  padding: 1em 0.5em;
+                  font-family: monospace;
+                }
+              }
+            }
+
+            /* indent on nested lists */
+            ul {
+              padding-left: 0; 
+
+              ul {
+                padding-left: 2em;
+              }
+
+              button.material-symbols-outlined.disabled {
+                color: var(--color-font-mid);
+                cursor: default;
+              }  
+            }
+
+            .inline-flex {
+              display: inline-flex;
+              border-bottom: solid 1px var(--color-border);
+              padding: 0.2em;
+              width: 100%;
+
+              &.granted {
+                background-color: rgb(from var(--color-info) r g b / 0.1);
+                border-radius: 3px;
+              }
+            }
+
+            .expandable {
+              
+              button.material-symbols-outlined.caret::after {
+                content: 'arrow_right';
+                color: var(--color-font);
+              }
+
+              & > div > label {
+                font-weight: bold;
+              }
+
+              & ul {
+                /* list closed */
+                opacity: 0;
+                max-height: 0;
+                visibility: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+              }
+
+              &.expanded {
+
+                & > div > button.material-symbols-outlined.caret::after {
+                  content: 'arrow_drop_down';
+                  color: var(--color-font);
+                }
+
+                & > ul {
+                  /* list open */
+                  opacity: 1;
+                  max-height: unset;
+                  height: auto;
+                  visibility: visible;
+                  transition: max-height 0.3s ease, opacity 0.3s ease;
+                }
+              }
+            }
+          }
+          
+         /* end role assignment specific layout */
+        }
+      }
+
+
+      /* User details administrative action button */
+      button.admin {
+        border-radius: var(--border-radius);
+        border: solid 1px var(--color-border);
+        background-color: var(--color-base-tertiary);
+        min-width: 8em;
+        padding: 0.5em 1em;
+        white-space: nowrap;
+
+        * {
+          pointer-events: none;
+          color: inherit;
+        }
+
+        &.block {
+          .material-symbols-outlined::after {
+            content: 'block';
+          }
+        }
+
+         &.unblock {
+          .material-symbols-outlined::after {
+            content: 'autorenew';
+          }
+        }
+
+        &.blocked {
+          pointer-events: none;
+          border: solid 1px var(--color-blocked);
+          * {
+            color: var(--color-blocked);
+          }
+        }
+
+        &.disabled {
+          pointer-events: none;
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+
+        .label {
+          text-overflow: ellipsis;
+        }
+      }
+
+      /* status info dot */
+      .dot {
+        border-radius: 12px;
+        padding: 2px 8px;
+        background-color: var(--color-role);
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin: 1px;
+        box-shadow: var(--box-shadow-prominent);
+
+        &.plain {
+          background: transparent;
+          box-shadow: unset;
+          font-size: 0.9em;
+        }
+
+        &.email {
+          font-weight: bold;
+          color: var(--color-font-contrast);
+          background-color: var(--color-primary);
+        }
+
+        & > .material-symbols-outlined {
+          font-size: inherit;
+          color: inherit;
+        }
+
+      }
+
+      .inline-icon {
+        vertical-align: middle; 
+        font-size: inherit; 
+        cursor: pointer;
+      }
+
+      .status-info {
+        cursor: default !important;
+        border-radius: 12px;
+        * {
+          color: inherit;
+        }
+      }
+
+      button > .dot {
+        box-shadow: var(--box-shadow-prominent);
+      }
+
+      .ws-pre {
+        white-space: pre-line;
+      }
+      
+      /* inside viewport */
+      .viewport {
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-base);
+        
+        .content {
+          height: 100%;
+          background-color: var(--color-base-secondary);
+          border-radius: var(--border-radius);
+          margin: 1em;
+          box-shadow: var(--box-shadow);
+          padding: 1em;
+          display: flex;
+          flex-direction: column;
+
+          /* Maximum desired width */
+          max-width: 1440px; 
+
+          /* Center the container */
+          margin-left: auto;
+          margin-right: auto;
+
+          .admin-tools {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            column-gap: 1rem;
+            width: 100%;
+            margin: 1.2em 0;
+            background-color: var(--color-base);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 0.5em 1em 0.2em;
+
+            .flex-no-stretch {
+              flex: 0 0 auto;
+            }
+
+            .flex-stretch {
+              flex: 1;
+            }
+          }
+
+          /* begin user table */ 
+        
+          #users {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: auto;
+
+            table {
+              position: relative;
+              width: 100%;
+              display: table;
+              overflow: scroll;
+              table-layout: fixed;
+              user-select: none;
+
+              thead {
+                text-align: left;
+                font-weight: bold;
+                cursor: pointer;
+
+                th {
+                  position: sticky;
+                  user-select: none;
+                  top: 0;
+                  background-color: var(--color-base);
+                  padding: var(--padding);
+                  box-shadow: var(--box-shadow-row);
+
+                  &:first-child {
+                    border-top-left-radius: var(--border-radius);
+                  }
+
+                  &:last-child {
+                    border-top-right-radius: var(--border-radius);
+                  }
+
+                  &.tools {
+                    pointer-events: none;
+                    &::after {
+                      content: '';
+                    }
+                  }
+
+                  /* begin table sorting */
+
+                  &:after {
+                    content: '\25be';
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: rotate(270deg);
+                  }
+
+                  &.asc::after {
+                    margin-left: 2px;
+                    content: "\25be";
+                    transform: rotate(180deg);
+                  }
+
+                  &.desc::after {
+                    margin-left: 2px;
+                    content: "\25be";
+                    transform: unset;
+                    vertical-align: baseline;
+
+                  }
+
+                  /* end table sorting */
+                }
+              }
+
+              tbody {
+                tr {
+                  
+                  &:hover {
+                    background-color: var(--color-notification);
+                  }
+                  td {
+                    padding: var(--padding);
+                    border-bottom: 1px solid var(--color-border);
+
+                    button {
+                      background-color: var(--color-base-tertiary);
+
+                      & > * {
+                        pointer-events: none;
+                      }
+
+                      &.outlined {
+                        box-shadow: var(--box-shadow-prominent);
+                        border-color: transparent;
+                      }
+
+                      &.action {
+                        margin: 0.2em;
+                      }
+
+                      &.disabled {
+                        /* using class prevents new stacking context when opacity is applied on `disabled` property */
+                        pointer-events: none;
+                        cursor: not-allowed;
+                        * { 
+                          color: var(--color-font-mid);
+                        }
+                      }
+                    
+                    }
+
+                    &.user-email {
+                      width: max-content;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          /* end user table */ 
+
+        }
+
+      }
+
+      /* search */
+      .search {
+        width: 100%;
+        margin-bottom: 1em;
+        padding: 0.5em 1em;
+
+        .radio-group {
+          display: flex;
+          gap: 2em;
+          border: none;
+
+          input[type="search"] {
+            background-color: var(--color-base-tertiary);
+            border: solid 1px var(--color-border);
+            border-radius: var(--border-radius);
+            max-width: 400px;
+          }
+        }
+
+        /* Container for each individual radio button and its label */
+        .radio-option {
+          display: flex;
+          align-items: center;
+          gap: 8px; /* Space between the radio circle and its text */
+          white-space: nowrap;
+        }
+
+        input[type="radio"] {
+          accent-color: var(--color-primary); /* Changes the color of the selected dot */
+          width: 1.2em;
+          height: 1.2em;
+        }
+
+      }
+
+
+      /* rules for mobile */
+      @media only screen and (max-width: 768px) {
+
+        .desktop-only {
+          display: none !important;
+        }
+
+        /* only for orientation portrait */
+        @media (orientation: portrait) {
+          body,
+          {
+            margin: 0;
+            height: auto;
+          }
+
+          #users {
+            table {
+              table-layout: auto;
+            }
+          }
+
+          .admin-tools {
+            flex-wrap: wrap;
+            
+            .flex-no-stretch {
+              flex: 0 0 auto;
+            }
+
+            .flex-stretch {
+
+              .search {
+                border: solid 1px var(--color-border);
+                margin-top: 0.5em;
+                border-radius: var(--border-radius);
+
+                .radio-group {
+                  flex-direction: column;
+                  gap: 0.2em;
+                } 
+              }
+            }
+          }
+        }
+        
+        dialog.user-details {
+          height: auto;
+          
+          .account-details-grid {
+            grid-template-columns: 1fr;
+
+            .card .details {
+              grid-template-columns: repeat(2, 1fr);
+            }
+          }
+        }
+
+        dialog.user-grant {
+          & > header {
+            position: static;
+          }
+          .content > .role-assignment {
+            min-height: unset;
+            flex-direction: column;
+          }
+        }
+    }
+
+    </style>
+
+    <body>
+      <div class="viewport">
+        <div class="content">
+          <header></header>
+          <div class="admin-tools">
+            <div id="logout" class="flex-no-stretch"></div>
+            <div id="back_to_mapp" class="flex-no-stretch"></div>
+            <div id="search" class="flex-stretch"></div>
+          </div>
+          <div id="users"></div>
+        </div>
+      </div>
+      <div class="backdrop"></div>
+
+      <script type="module">
+        console.log(`MAPP v${mapp.version}`);
+        /* Set the maxWidth for mobile responsive display. */
+        mapp.utils.mobile(765);
+
+        mapp.utils.merge(mapp.dictionaries, {
+          en: {
+            admin_view: {
+              acc_details: "Account Details",
+              access: "Current Access",
+              access_log: "View Login History",
+              access_log_since: "Active since ",
+              access_log_caption: "Most recent logins",
+              access_log_label: "User Login History",
+              access_log_not_found: "No access log information found for this user account.",
+              access_log_total: "Total logins",
+              account_status: "Account Status",
+              active: "Active",
+              admin: "Administrator",
+              api: "API Access",
+              approve: "Approve User Account",
+              approve_alert: "Account has been approved.",
+              approve_confirm: "You are about to approve this user account.\nPlease confirm access roles have been assigned where required.",
+              approved: "Active",
+              approved_by: "Approved by",
+              approved_label: "Account approved by",
+              approved_on: "Account approved on",
+              back: "Back to Mapp",
+              block_account: "Block Account",
+              blocked: "Blocked",
+              cancel: "Cancel",
+              confirm: "Confirm",
+              confirm_block: "Are you sure you want to block this user account?",
+              confirm_unblock: "Are you sure to unblock this user account?",
+              delete: "Delete Account",
+              deleted: "Account for this user has been permanently deleted.",
+              email: "E-mail",
+              email_label: "Account e-mail address",
+              email_label_search: "e-mail address",
+              expiry_label: "Account Expiry Date",
+              failed_login: "Failed Login Attempts",
+              filter_status: "Filter status",
+              grant: "Set Roles",
+              grant_assignment: "Role Assignment",
+              header: "User Management Dashboard",
+              header_subtitle: "Overview of all users, their roles and account status.",
+              last_active: "Last seen",
+              locked: "Locked",
+              logout: "Logout",
+              manage: "Manage",
+              new: "Verification Pending",
+              roles: "User Access Roles",
+              roles_hierarchy: "Role Hierarchy",
+              roles_hierarchy_summary: "Assigned Roles Summary",
+              roles_label_search: "access role",
+              roles_more: "and more",
+              roles_no: "No roles have been set",
+              search_placeholder: "Search users by",
+              special_permissions: "Special Permissions",
+              status: "Status",
+              status_description: {
+                "Verified": "Check the box to immediately verify the user",
+                "Administrator": "Check the box to make the user an administrator",
+                "API": "Check the box to allow the user API access",
+                "Blocked": "check the box to block the user",
+              },
+              status_label_search: "status",
+              sure: "Are you sure you want to delete this user account?",
+              top_info: "Click on a row in the table to make changes to the users permissions and roles. Click on a table header to sort.",
+              unblock_account: "Unblock Account",
+              undone: "This cannot be undone.",
+              unknown: "Unknown",
+              verification: "E-mail verification",
+              verification_pending: "Awaiting Account Verification",
+              verified: "Awaiting Approval",
+              verify: "Verify",
+              withdraw: "Withdraw Access"
+            },
+            yes: "Yes"
+          }
+        });
+
+      /* Get list of available roles from workspace. */
+      const rolesList = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
+
+      console.log(rolesList);
+
+      /* Serialize roles into a tree in order to determine hierarchy */
+      const rolesTree = makeTree(rolesList);
+
+      /* Create header with all needed parameters, logged in as etc. TODO review header content */
+      const header = mapp.utils.html`<div>
+        <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
+        <h1>${mapp.dictionary.admin_view.header}</h1>
+        <p>${mapp.dictionary.admin_view.header_subtitle}</p>
+      </div>`;
+
+      mapp.utils.render(document.querySelector('header'), header);
+
+
+      /* create administrator actions */
+      const logout_btn = mapp.utils.html`<button class="action admin outlined"
+        onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
+          <span class="material-symbols-outlined notranslate">logout</span>
+          <span class="label">${mapp.dictionary.admin_view.logout}</span>
+        <button>`;
+
+      mapp.utils.render(document.getElementById('logout'), logout_btn);
+
+      const back_to_mapp_btn = mapp.utils.html`<button class="action admin outlined"
+        onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
+          <span class="material-symbols-outlined notranslate">exit_to_app</span>
+          <span class="label">${mapp.dictionary.admin_view.back}</span>
+        <button>`;
+
+      mapp.utils.render(document.getElementById('back_to_mapp'), back_to_mapp_btn);
+
+      /* create searchbox */
+      const search = mapp.utils.html`<div class="search">
+        <div class="radio-group">
+          <input type="search" placeholder="${mapp.dictionary.admin_view.search_placeholder}" oninput=${search_function}/>
+          <div class="radio-option">
+            <input type="radio" id="email" name="search" value="email" checked>
+            <label for="email">${mapp.dictionary.admin_view.email_label_search}</label>
+          </div>
+          <div class="radio-option desktop-only">
+            <input type="radio" id="role" name="search" value="role">
+            <label for="role">${mapp.dictionary.admin_view.roles_label_search}</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="status" name="search" value="status">
+            <label for="status">${mapp.dictionary.admin_view.status_label_search}</label>
+          </div>
+        </div>
+      `;
+
+      /* search function based on selected mode */ 
+      function search_function(e) {
+
+          const mode = e.target.closest(".radio-group")
+          .querySelector("input[type='radio'][name='search']:checked").value; 
+
+          const filter = e.target.value.toLowerCase();
+
+          const table = document.querySelector('#users table');
+
+          const trs = table.querySelectorAll("tbody tr");
+
+          for (const tr of trs) {
+
+            if(!e.target.value) {
+              tr.style.display = "";
+              continue;
+            }
+
+            const userData = JSON.parse(tr.dataset.user);
+
+            if(mode === 'role') {
+              // filter out roles that users may have outside current workspace
+              const roles_string = userData.roles.filter((role) => (rolesTree.hasOwnProperty(role))).join(',');
+              tr.style.display = roles_string.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            } else {
+              tr.style.display = userData[mode].toLowerCase().indexOf(filter) > -1 ? "" : "none";
+            }
+          }
+      } 
+
+      mapp.utils.render(document.getElementById('search'), search);
+
+      /* creates tree of roles list - should I remove nested roles that duplicate on the main level? */
+      function makeTree(list_of_roles) {
+
+        const rolesSet = new Set(list_of_roles);
+
+        const tree = {};
+
+        rolesSet.forEach((role) => {
+          const roles = role.split('.');
+          if (roles.length > 1) {
+            roles.reduce((accumulator, currentValue) => (accumulator[currentValue] ??= {}), tree);
+            // Pop last role from array into roleSet.
+            rolesSet.add(roles.pop());
+          } else {
+            tree[role] ??= {};
+          }
+        });
+
+        /* delete duplicates from root level */
+        const nested_keys = getAllNestedKeys(tree);
+        nested_keys.forEach(item => (delete tree[item]));
+
+        return tree;
+      }
+
+      /* this function finds keys nested inside role tree to ensure they're not treated as main level */
+      function getAllNestedKeys(obj) {
+        const nestedKeys = new Set();
+
+        function findKeys(currentObj) {
+        // We only care about plain objects (not arrays, null, etc.)
+          if (currentObj?.constructor !== Object) {
+            return;
+          }
+
+          for (const [key, value] of Object.entries(currentObj)) {
+          // Check if the value is itself a plain, non-array object
+            if (value?.constructor === Object) {
+            // This is a nested object. Add all its keys to our set.
+              Object.keys(value).forEach(k => nestedKeys.add(k));
+              // --- RECURSION ---
+              // Now, scan this nested object for *its own* nested objects.
+              findKeys(value);
+            }
+          }
+        }
+        // Start the recursive search on the main object
+        findKeys(obj);
+
+        return nestedKeys;
+      }
+
+      /* get users list */
+      async function getUserList() {
+        // Get user list from host.
+        const response = await mapp.utils.xhr(
+          `${document.head.dataset.dir}/api/user/list`
+        );
+
+        // Data must be an array if only 1 record returned in response.
+        const data = Array.isArray(response) ? response : [response];
+
+        // sort emails alphabetically ignoring case
+        data.sort((a, b) => a.email.toLowerCase().localeCompare(b.email.toLowerCase()));
+
+        return data;
+      }
+
+      // user list requested
+      const userList = await getUserList();
+
+      /* create user table */
+      const users = listTable({
+          data: userList,
+          createRow: createUserRow,
+          headers: [{
+            field: 'email',
+            label: mapp.dictionary.admin_view.email
+          },{
+            field: 'roles',
+            label: mapp.dictionary.admin_view.roles,
+            css_class: 'desktop-only'
+          }, {
+            field: 'last_active',
+            label: mapp.dictionary.admin_view.last_active,
+            css_class: 'desktop-only'
+          }, {
+            field: 'status',
+            label: mapp.dictionary.admin_view.status
+          }]
+      });
+      
+      // user table created
+      mapp.utils.render(document.getElementById('users'), users.table);
+
+      /* List table and its functionalities */
+      function listTable(params) {
+
+        if(!params.data) return;
+
+        if(params.table) return params.update(params);
+
+        params.heads = (params) => {
+
+          if(!params.headers) return;
+
+          const heads = params.headers.map((item, idx) => {
+            const th = mapp.utils.html.node`<th class=${item.css_class || ``}>${mapp.utils.html.node`${item.label}`}`
+
+            th.onclick = params.headerCellClick;
+
+            return th
+          });
+
+          return heads;
+        }
+
+        params.rows = (params) => {
+
+          params.data = Array.isArray(params.data) ? params.data : [params.data];
+
+          const rows = params.data.map((item) => params.createRow(item));
+
+          return rows;
+        };
+
+        params.sort = (column, asc = true) => {
+
+          const dirModifier = asc ? 1 : -1;
+          const tBody = params.table.tBodies[0];
+          const rows = Array.from(tBody.querySelectorAll("tr"));
+
+          // Sort each row
+          const sortedRows = rows.sort((a, b) => {
+            const td_a = a.querySelector(`td:nth-child(${column + 1})`);
+            const td_b = b.querySelector(`td:nth-child(${column + 1})`);
+            const aColText = td_a.textContent.trim().toLowerCase();
+            const bColText = td_b.textContent.trim().toLowerCase();
+
+            // check if column is a date
+            if (td_a.dataset.iso) {
+              return new Date(td_a.dataset.iso) > new Date(td_b.dataset.iso) ? 1 * dirModifier : -1 * dirModifier;
+            }
+
+            return aColText > bColText ? 1 * dirModifier : -1 * dirModifier;
+          });
+
+          tBody.replaceChildren();
+
+          tBody.append(...sortedRows);
+
+          params.table
+          .querySelectorAll("th")
+          .forEach((th) => th.classList.remove("asc", "desc"));
+
+          params.table
+          .querySelector(`th:nth-child(${column + 1})`)
+          .classList.toggle("asc", asc);
+          params.table
+          .querySelector(`th:nth-child(${column + 1})`)
+          .classList.toggle("desc", !asc);
+        };
+
+        params.update = (params) => {
+          const tBody = params.table.tBodies[0];
+          tBody.replaceChildren();
+          const rows = params.rows(params);
+          tBody.append(...rows);
+        };
+
+        params.headerCellClick = (e) => {
+          e.stopPropagation();
+          const headerIndex = Array.prototype.indexOf.call(e.target.parentElement.children, e.target);
+          const currentIsAscending = e.target.classList.contains("asc");
+          params.sort(headerIndex, !currentIsAscending);
+        };
+
+        params.ths = params.heads(params);
+
+        params.trs = params.rows(params);
+
+        params.thead = mapp.utils.html`<thead><tr>${params.ths}<th class="tools"></th>`
+
+        params.tbody = mapp.utils.html`<tbody>${params.trs}`;
+
+        params.table = mapp.utils.html.node`<table>${params.thead}${params.tbody}`;
+
+        return params;
+      }
+
+      /* this function creates user row content - separated in order to be able to update row after editing */
+      function user_row_content(user) {
+
+        const last_log_entry = user.access_log ? user.access_log.split("@")[0] : ``;
+
+        user.last_active = user.access_log
+            ? new Intl.DateTimeFormat('en-GB').format(new Date(last_log_entry))
+            : ``;
+
+        user.last_active_iso = user.last_active === "" ? null : last_log_entry;
+
+        const active_roles = show_user_roles_in_list(user);
+
+        const user_status = check_user_status(user);
+
+        const admin_label = user.admin ? mapp.utils.html`
+          <span title=${mapp.dictionary.admin_view.admin} 
+          style="color: var(--color-admin)"
+          class="material-symbols-outlined notranslate inline-icon desktop-only">crown` : ``;
+
+        const access_log_btn = mapp.utils.html`
+          <button class="action outlined access-log" 
+          title=${mapp.dictionary.admin_view.access_log}
+          data-user=${JSON.stringify(user)}
+          onclick=${userAccessLog}>
+            <span class="material-symbols-outlined" translate="no">pace</span>
+            ${user.last_active || mapp.dictionary.admin_view.unknown}
+          </button>`;
+
+        // disabled roles if user is blocked or no roles have been found in the workspace
+        const set_roles_btn = mapp.utils.html.node`<button
+            class="${'action outlined' + ((user.blocked || !rolesList.length) ? ' disabled' : '')}"
+            data-user=${JSON.stringify(user)}
+            onclick=${roleAssignment}>
+              <span class="material-symbols-outlined notranslate">shield_person</span>
+              <span>${mapp.dictionary.admin_view.grant}</span>
+            </button>`;
+
+        return mapp.utils.html`
+          <td class="user-email" title=${user.email}>${user.email} ${admin_label}</td>
+          <td class="desktop-only">${active_roles}</td>
+          <td class="desktop-only">${access_log_btn}</td>
+          <td>${user_status}</td>
+          <td>
+            <button class="action outlined" onclick=${user_details}>
+              <span class="material-symbols-outlined notranslate">manage_accounts</span>
+              <span>${mapp.dictionary.admin_view.manage}</span>
+            </button>
+            ${set_roles_btn}
+          </td>`;
+      }
+
+      /* this function creates each row in the user table */
+      function createUserRow(user) {
+
+        const content = user_row_content(user);
+
+        return mapp.utils.html.node`<tr 
+          data-email=${user.email} data-user=${JSON.stringify(user)}>
+          ${content}
+          </tr>`;
+      }
+
+       /* this function regenerates updated row in the user table */
+      function updateUserRow(user) {
+        const row = users.table.querySelector(`tr[data-email="${user.email}"]`);
+        // check if row is found
+        if(!row) return;
+        // delete row if account was deleted
+        if(user.delete) {
+          row.remove();
+          return;
+        }
+        // recreate row content with updated user
+        row.dataset.user = JSON.stringify(user);
+        mapp.utils.render(row, user_row_content(user));
+      }
+
+      /* this function will display user roles in account details */
+      function get_user_roles(user) {
+        if(!user.roles?.length) return mapp.utils.html`<div></div>`;
+        // exclude roles that users have that are not relevant in the workspace
+        const active_roles = user.roles
+        //.filter((role) => (rolesTree.hasOwnProperty(role))) // temporarily disabled to show all roles assigned the the user relevat or not
+        .map(role => {
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-role); color:var(--color-font)">${role}`
+        });
+
+        return mapp.utils.html`<div class="flex">${active_roles}</div>`;
+      }
+
+      /* this function will display user first 3 roles in users list */
+      function show_user_roles_in_list(user) {
+        if(!user.roles?.length) return mapp.utils.html`<div></div>`;
+        const active_roles = user.roles
+        .filter((role) => user.roles.indexOf(role) < 4)
+        .map((role, idx) => {
+          if(idx === 3) return mapp.utils.html`<span class="dot plain">${mapp.dictionary.admin_view.roles_more}</span>`;
+          return mapp.utils.html`<span class="dot" style="background-color: var(--color-role)">${role}`
+        });
+
+        return mapp.utils.html`<div class="flex">${active_roles}<div>`;
+      }
+
+      /* this function keeps users list up to date based on ongoing edits and closes details window */
+      function updateUsersList(params) {
+        const userDetails = document.querySelector('dialog.user-details');
+        // set user attribute for update
+        updateUserRow(params);
+        userDetails.close();
+      }
+
+      /* this function determines user status and returns state object */
+      function determine_user_status(user) {
+        let state = { label: mapp.dictionary.admin_view.new, color: "var(--color-new)", icon: 'mail' };
+        if (user.verified)
+          state = {
+            label: mapp.dictionary.admin_view.verified,
+            action: mapp.dictionary.admin_view.approve,
+            color: "var(--color-verified)",
+            icon: 'verified',
+            onclick: approveAccount
+          };
+        if (user.approved)
+          state = {
+            label: mapp.dictionary.admin_view.approved,
+            color: "var(--color-approved)",
+            icon: 'done_all'
+          };
+
+        if(user.approved && user.admin) 
+          state = {
+            label: `${mapp.dictionary.admin_view.approved} ${mapp.dictionary.admin_view.admin}`,
+            color: "var(--color-admin)",
+            icon: 'crown'
+          }
+
+        if (user.approved && user.failedattempts > 2)
+          state = {
+            label: mapp.dictionary.admin_view.locked,
+            color: "var(--color-locked)",
+            icon: 'lock'
+        };
+
+        if (user.blocked)
+          state = {
+            label: mapp.dictionary.admin_view.blocked,
+            color: "var(--color-blocked)",
+            icon: 'no_accounts'
+          };
+        return state;
+      }
+
+      /* this function creates a status indication element in the user table */
+      function check_user_status(user) {
+        const state = determine_user_status(user);
+        user.status = state.label;
+
+        return mapp.utils.html`<button class="outlined action status-info"
+          style=${'border-color: ' + state.color + '; color:' + state.color}
+          >
+          <span class="material-symbols-outlined notranslate inline-icon">${state.icon}</span>
+          <span class="desktop-only">${state.label}</span>`
+      }
+
+      /* creates window header with account email address */
+      function window_header(user) {
+        return mapp.utils.html`<div>
+          <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
+          </div>
+          <h1>
+            <span class="dot email">${user.email}</span>
+          </h1>`;
+      }
+
+      /* this function creates user details layout with actions */
+      function user_details(e) {
+
+        const user = JSON.parse(e.target.closest('tr').dataset.user);
+
+        const header = window_header(user);
+
+        const delete_actions = mapp.utils.html`
+        <div class="card"><h3>${mapp.dictionary.admin_view.withdraw}</h3>
+        <div class="actions">
+           <button class=${'admin action outlined danger ' + (user.blocked ? 'unblock' : 'block')} data-user=${JSON.stringify(user)}
+          onclick=${blockAccount}>
+            <span class="material-symbols-outlined" translate="no"></span>
+            <span class="label">${user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account}</span>
+          </button>
+          <button class="admin action outlined danger" data-email=${user.email} onclick=${deleteAccount}>
+            <span class="material-symbols-outlined" translate="no">account_circle_off</span>
+            <span class="label">${mapp.dictionary.admin_view.delete}</span>
+          </button>
+        </div>`;
+
+        const special_permissions = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.special_permissions}</h3>
+          ${special_permissions_content(user)}`;
+
+        const user_approval_layout = mapp.utils.html`<div class="details status">${user_approval_content(user)}`;
+
+        const user_details_layout = mapp.utils.html`<div class="details account">${user_details_content(user)}`;
+
+        const account_status = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.account_status}</h3>
+          ${user_approval_layout}`;
+
+        const account_details = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.acc_details}</h3>
+          ${user_details_layout}`;
+
+        const grid = mapp.utils.html`<div class="account-details-grid">${[
+          account_status, 
+          account_details,
+          special_permissions, 
+          delete_actions
+        ]}`;
+
+        const content = [
+          header,
+          grid
+        ];
+
+        const dialog = mapp.ui.elements.dialog({
+          target: document.body,
+          contained: true,
+          containedCentre: true,
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.acc_details}`,
+          class: 'user-details box-shadow',
+          closeBtn: true,
+          onClose: () => {
+            document.querySelector('.backdrop').style.display = 'none';
+          },
+          content,
+        });
+        document.querySelector('.backdrop').style.display = 'block';
+      }
+
+      /* Begin User Details Window Content */
+      /* updates elements in the account details window */
+      function updateUserDetailsHTML(user) {
+        // refresh user content while keeping the user details window on
+        mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+      }
+
+      /* creates special permissions section in user details window */
+      function special_permissions_content(user) {
+        const verification = mapp.ui.elements.chkbox({
+          disabled: user.verified,
+          checked: user.verified,
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["Verified"]}</span>`,
+          onchange: async (checked) => {
+            // prevent unchecking
+            if(!checked) return;
+            user.verified = checked;
+            // no longer editable after verification
+            verification.querySelector('input').disabled = checked;
+            
+            await updateUser({
+              email: user.email,
+              verified: user.verified
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+        const admin = mapp.ui.elements.chkbox({
+          checked: user.admin,
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["Administrator"]}</span>`,
+          onchange: async (checked) => {
+            user.admin = checked;
+            await updateUser({
+              email: user.email,
+              admin: user.admin
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+        const api_access = mapp.ui.elements.chkbox({
+          checked: user.api,
+          label: mapp.utils.html`<span class="desktop-only">${mapp.dictionary.admin_view.status_description["API"]}</span>`,
+          onchange: async (checked) => {
+            user.api = checked;
+            await updateUser({
+              email: user.email,
+              api: user.api
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }
+        });
+
+         return mapp.utils.html`<div class="permissions details">
+          <div>
+            <span title=${mapp.dictionary.admin_view.verification}
+            class="material-symbols-outlined notranslate inline-icon">mail</span>
+            <b>${mapp.dictionary.admin_view.verification}</b>
+          </div>
+          <div>${verification}</div>
+          <div>
+          <b><span title=${mapp.dictionary.admin_view.admin} 
+            class="material-symbols-outlined notranslate inline-icon">crown</span>
+            ${mapp.dictionary.admin_view.admin}
+          </b>
+          </div>
+          <div>${admin}</div>
+          <div>
+            <b><span title=${mapp.dictionary.admin_view.api} 
+            class="material-symbols-outlined notranslate inline-icon">deployed_code</span>
+            ${mapp.dictionary.admin_view.api}
+            </b>
+          </div>
+          <div>${api_access}</div>`
+      }
+
+      /* creates the elements to show in curent status section based on user account life cycle*/
+      function create_approval_element(user) {
+        const state = determine_user_status(user);
+        const element =  mapp.utils.html.node`<button 
+        onclick=${state.onclick}
+        class="admin action outline" data-user=${JSON.stringify(user)}
+        style=${'border-color:' + state.color + ';color:' + state.color}>
+        <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
+        ${state.action || state.label}`;
+        return element;
+      }
+
+      /* creates user prop content in the approval window. Used to rerender content after update */
+      function user_approval_content(user) {
+
+        const approval_element = create_approval_element(user);
+
+        const roles_granted = mapp.utils.html`<div>
+          <span class="material-symbols-outlined notranslate inline-icon">shield_person</span>
+          <b>Access Roles</b>
+        </div>
+        <div>
+          <span class="dot">
+            ${user.roles?.length > 0 ? mapp.dictionary.yes : mapp.dictionary.admin_view.roles_no}
+          </span>
+        </div>`;
+
+        const expiry_date = mapp.utils.temporal.date(parseInt(user.expires_on));
+
+        const expiry_date_input = mapp.utils.html.node`<input
+          type="date"
+          value="${expiry_date}"
+          min=${new Date().toISOString().slice(0, 10)}
+          onchange=${async (e) => {
+            
+            user.expires_on = mapp.utils.temporal.dateToUnixEpoch(e.target.value);
+
+            await updateUser({
+              email: user.email,
+              expires_on: user.expires_on
+            });
+            updateUserRow(user);
+            updateUserDetailsHTML(user);
+          }}>`;
+
+        if(user.expires_on === undefined) expiry_date_input.disabled = true;
+
+        const expiry_date_entry = mapp.utils.html`<div>
+          <span class="material-symbols-outlined notranslate inline-icon">hourglass</span>
+          <b>${mapp.dictionary.admin_view.expiry_label}</b>
+          </div>
+          <div>${expiry_date_input}</div>`;
+
+        return mapp.utils.html`
+            <div>
+              <span class="material-symbols-outlined notranslate inline-icon">star</span>
+              <b>${mapp.dictionary.admin_view.access}</b>
+            </div>
+            <div>${approval_element}</div>
+            ${roles_granted}
+          ${expiry_date_entry}
+        `;
+      }
+
+      /* creates HTML content for user account details section */
+      function user_details_content(user) {
+
+        const approved_by = user.approved_by ? 
+        `${user.approved_by.split('|')[0]}` : `-`;
+
+        const approved_on = user.approved_by?.split('|')[1] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(user.approved_by?.split('|')[1])) : `-`;
+
+        const login_failed_attempts = mapp.utils.html`
+          <div>
+            <span class="material-symbols-outlined notranslate inline-icon">warning</span>
+            <b>${mapp.dictionary.admin_view.failed_login}</b>
+          </div>
+          <div>${user.failedattempts > 0 ? user.failedattempts : '-'}</div>`;
+
+        return mapp.utils.html`
+          <div>
+            <span class="material-symbols-outlined notranslate inline-icon">person_check</span>
+            <b>${mapp.dictionary.admin_view.approved_label}</b>
+          </div>
+          <div>${approved_by}</div>
+          <div>
+            <span class="material-symbols-outlined notranslate inline-icon">calendar_today</span>
+            <b>${mapp.dictionary.admin_view.approved_on}</b>
+          </div>
+          <div>${approved_on}</div>
+          ${login_failed_attempts}
+        `;
+      }
+      /* End User Details Window Content */
+
+      /* Begin Workflow Events */
+      /* this function deletes user account after confirmation and returns to main view */
+      async function deleteAccount(e) {
+
+        const email = e.target.dataset.email;
+
+        const text = `${email}\n${mapp.dictionary.admin_view.sure}\n${mapp.dictionary.admin_view.undone}`;
+
+        const confirm = await mapp.ui.elements.confirm({ 
+          text
+        });
+
+        if(!confirm) return;
+
+        const response = await mapp.utils.xhr(`${document.head.dataset.dir}/api/user/delete?email=${email}`);
+        if (response?.err) return console.error(response.err);
+        // close details and refresh users table
+        updateUsersList({ delete: true, email });
+      }
+
+      /* this function blocks user account after confirmation */
+      async function blockAccount(e) {
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        const text = `${user.email}\n${user.blocked ? 
+          mapp.dictionary.admin_view.confirm_unblock : mapp.dictionary.admin_view.confirm_block}`;
+
+        const confirm = await mapp.ui.elements.confirm({ text });
+
+        if(!confirm) return;
+
+        user.blocked = !user.blocked;
+
+        await updateUser({
+          email: user.email, 
+          blocked: user.blocked
+        });
+
+        // refresh user content while keeping the user details window on
+        updateUserDetailsHTML(user);
+        // update button label
+        e.target.querySelector('.label').textContent = user.blocked ? mapp.dictionary.admin_view.unblock_account : mapp.dictionary.admin_view.block_account;
+        // update button icon
+        e.target.classList.toggle('block', 'unblock');
+        // reset user attribute 
+        e.target.dataset.user = JSON.stringify(user);
+        updateUserRow(user);
+      }
+
+      /* this function display user access log information */
+      async function userAccessLog(e) {
+
+        const user = JSON.parse(e.target.dataset.user);
+
+        const response = await mapp.utils.xhr(
+            `${document.head.dataset.dir}/api/user/log?email=${user.email}`
+          );
+        if (response.err) return console.error(response.err);
+        if (!response.access_log) {
+          mapp.ui.elements.alert({
+            text: mapp.dictionary.admin_view.access_log_not_found
+          });
+          return;
+        }
+
+        const len = response.access_log.length;
+        const first_visit = response.access_log[0] ? 
+        new Intl.DateTimeFormat('en-GB').format(new Date(response.access_log[0].split('@')[0])) : ``;
+        // include only last 10 timestamps
+        const log = len < 11
+              ? response.access_log
+              : response.access_log.slice(Math.max(len - 10, 0));
+
+        const content = mapp.utils.html`
+          <div><span class="dot email">${user.email}</span></div>
+          <b>${mapp.dictionary.admin_view.access_log_since + first_visit}</b>
+          <span><b>${mapp.dictionary.admin_view.access_log_total} </b><span class="dot email">${len}</span></span>
+          <span class="ws-pre">
+            <b>${mapp.dictionary.admin_view.access_log_caption}</b>
+            ${log.join('\n')}
+          </span>`
+
+        const text = len ? content : mapp.dictionary.admin_view.access_log_not_found;
+
+        mapp.ui.elements.alert({
+          title: mapp.dictionary.admin_view.access_log_label,
+          text,
+        });
+      }
+
+      /* this function modifies user account and returns to updated user details view. Called inside userApproval */
+      async function approveAccount(e) {
+
+        const user = JSON.parse(e.target.closest('button').dataset.user);
+
+        if(user.approved) return;
+
+        const confirm = await mapp.ui.elements.confirm({
+          text: mapp.dictionary.admin_view.approve_confirm
+        });
+
+        if(!confirm) return;
+
+        user.approved = true;
+
+        await updateUser({
+          email: user.email,
+          approved: user.approved
+        });
+
+        // refresh user content while keeping the user details window on
+        updateUserDetailsHTML(user);
+        // update users list and keep user details window on
+        updateUserRow(user);
+
+        mapp.ui.elements.alert({
+          text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
+        });
+      }
+      /* End Workflow Events */
+
+
+      /* role assignment window */
+      async function roleAssignment(event) {
+
+        // no roles found
+        if(!rolesList?.length) return;
+
+        const user = JSON.parse(event.target.dataset.user);
+
+        // creates document fragment to embed ui
+        const role_ui_container = mapp.utils.html.node`
+        <div class="role-assignment">
+          <div>
+            <h2>${mapp.dictionary.admin_view.roles_hierarchy}</h2>
+            <div class="role-hierarchy"></div>
+          </div>
+          <div>
+            <h2>${mapp.dictionary.admin_view.roles_hierarchy_summary}</h2>
+            <div class="role-preview"></div>
+        </div>`;
+
+        /* create hierarchy DOM element */
+        const listHierarchyDOM = listHierarchy(rolesTree, user);
+
+        /* assign attributes corresponding to roles */
+        assignAttributes(listHierarchyDOM);
+
+        /* set state on all checkboxes */
+        updateListDOM(user, listHierarchyDOM);
+
+        /* create list content */
+        mapp.utils.render(role_ui_container.querySelector('.role-hierarchy'), mapp.utils.html.node`<div>${listHierarchyDOM}`);
+        /* create preview windown content */
+        mapp.utils.render(role_ui_container.querySelector('.role-preview'), rolePreview(user));
+
+        const email_header = window_header(user);
+
+        const content = mapp.utils.html`
+            ${email_header}
+            ${role_ui_container}`;
+
+        const dialog = mapp.ui.elements.dialog({
+          containedCentre: true,
+          contained: true,
+          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant_assignment}`,
+          class: 'user-grant box-shadow',
+          closeBtn: true,
+          content,
+        });
+      }
+
+      /** Begin Role Assignment UI **/
+      /* creates the list hierarchy DOM */
+      function listHierarchy(obj, user, key) {
+        const ul = mapp.utils.html.node`<ul class="main-list">`;
+        key ? (ul.dataset.id = key) : (ul.classList.add('root'));
+        // Use Object.entries to get [key, value] pairs
+        for (const [key, value] of Object.entries(obj)) {
+          // Check if the value is an object with inner content
+          if (typeof value === 'object' && Object.keys(value).length > 0) {
+            // recurse into that object
+            const sublist = listHierarchy(value, user, key);
+            ul.append(listItem({ value: key, content: sublist, user }));
+          } else {
+            // "leaf" value
+            const li = listItem({ value: key, user });
+            ul.append(li);
+          }
+        }
+        return ul;
+      }
+
+      /* assigns concatenated role as dataset.id to a list item */
+      function assignAttributes(document_fragment, separator = '.') {
+        // Get all <li> elements within the root list
+        const allListItems = document_fragment.querySelectorAll('li');
+
+        allListItems.forEach(li => {
+          const pathParts = [];
+          let currentElement = li; // Start at the <li>
+
+          // Loop upwards until we're outside the rootUl
+          while (currentElement && document_fragment.contains(currentElement)) {
+          // Find the closest parent <ul>
+            const parentUl = currentElement.closest('ul');
+            if (parentUl === null) {
+              break; // Should not happen if li is in document_fragment, but safe.
+            }
+
+            // Check if this <ul> has the data attribute
+            if (parentUl.dataset.id) {
+              // Add to the *beginning* of the array
+              // This builds the path in top-down order (e.g., 'root' -> 'child')
+              pathParts.unshift(parentUl.dataset.id);
+            }
+
+            // Move up for the next loop.
+            // We look for the <li> that contains this <ul>
+            // then we'll find its parent <ul> in the next loop.
+            currentElement = parentUl.closest('li');
+
+            // If we've reached the root, add its ID and stop
+            if (parentUl === document_fragment) {
+              break;
+            }
+          }
+          // Set the new data attribute on the <li>
+          if (pathParts.length > 0) {
+            li.dataset.id = `${pathParts.join(separator)}.${li.dataset.id}`;
+          }
+        });
+      }
+
+      /* creates role item; params: user, content, value */
+      function listItem(params) {
+        const value = params.value;
+        const content = params.content;
+
+        const chkbox = mapp.ui.elements.chkbox({ 
+          label: value,
+          val: value,
+          onchange: async (state, val)=> {
+            setGrantedClass(chkbox, state);
+            await role_change(params.user);
+          },
+        });
+
+        if(!content) {
+          return mapp.utils.html.node`<li data-id=${value}>
+          <div class="inline-flex">
+          <button class="disabled material-symbols-outlined notranslate">shield_person</button>
+          ${chkbox}`;
+        }
+
+        const li = mapp.utils.html.node`<li class="expandable" data-id=${value}>
+        <div class="inline-flex">
+        <button class="material-symbols-outlined notranslate caret" onclick=${(e) => {
+          li.classList.toggle('expanded');
+        }}></button>
+        ${chkbox}
+        </div>
+        ${content}`;
+
+        return li;
+      }
+
+      /* runs inside checkbox change event, updates nested checkboxes; params: checkbox_elements, checked state */
+      function setGrantedClass(checkbox_element, state){
+        // switch granted class
+        checkbox_element.closest('div').classList.toggle('granted');
+        // if element is checked then exit
+        if(state) return;
+        // find any nested granted items
+        const nested_items = checkbox_element.closest('li').querySelectorAll('div.granted');
+        // exit if none found
+        if(!nested_items.length) return;
+        // remove granted from any nested items
+        for(const nested_item of nested_items) {
+          nested_item.classList.remove('granted');
+        }
+      }
+
+      /* runs inside checkbox change event, updates role; params: user */
+      async function role_change(user) {
+
+        const document_fragment = document.querySelector('.role-hierarchy');
+
+        const active_items = document_fragment.querySelectorAll('div.granted');
+
+        const updated_roles = [];
+
+        for(const div of active_items) {
+          const li = div.closest('li');
+          updated_roles.push(li.dataset.id);
+        }
+
+        // replace previous user roles
+        user.roles = updated_roles;
+
+        // update
+        await updateUser({
+          email: user.email,
+          roles: user.roles
+        });
+
+        /* update hierarchy DOM based on the new roles */
+        updateListDOM(user, document.querySelector('.role-hierarchy'));
+        // redraw the preview section
+        mapp.utils.render(document.querySelector('.role-preview'), rolePreview(user));
+        // update user row in the table
+        updateUserRow(user);
+      }
+
+      /* updates hierarchy DOM after change; user and document fragment to update */
+      /* handled separately from creation to prevent lists from closing by default */
+      function updateListDOM(user, document_fragment) {
+
+        // reset all checkboxes
+        const all_checkboxes = document_fragment.querySelectorAll('li input[type="checkbox"]');
+        for(const chk of all_checkboxes) chk.checked = false;
+
+        for(const role of user.roles) {
+
+          const this_li = document_fragment.querySelector(`li[data-id="${role}"]`);
+          if(!this_li) return;
+          this_li.querySelector('div').classList.add('granted');
+          this_li.querySelector('input').checked = true;
+
+          let root_lists = document_fragment.querySelectorAll('ul.main-list.root li');
+
+          root_lists = Array.from(root_lists).filter(item => {
+            return role.includes(item.dataset.id)
+          })
+
+          for(const list of root_lists) {
+            list.querySelector('div').classList.add('granted');
+            list.querySelector('input').checked = true;
+          }
+        }
+      }
+
+      /* draws role preview section content */
+      function rolePreview(user) {
+        const items = [];
+        for(const role of user.roles) {
+          items.push(mapp.utils.html`<li>${role}</li>`)
+        }
+        return mapp.utils.html`<ul class="preview-list">${items}`;
+      }
+
+      /** End Role Assignment UI **/
+
+      /* updates field for user entry */
+      async function updateUser(params) {
+
+        await fetch(`${document.head.dataset.dir}/api/user/update`, {
+          method: "POST",
+          body: JSON.stringify(params),
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+      }
+
+
+      </script>
+
+    </body>
+
+  </head>
