@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-  <head data-dir="${dir}">
+  <head data-dir="{{dir}}">
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,8 @@
 
   <link rel="icon" type="image/x-icon" href="https://geolytix.github.io/xyz/public/icons/favicon.ico" />
   <link rel="stylesheet" href="https://geolytix.github.io/public/mapp/app.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -29,30 +31,31 @@
             <h1 class="form-container__title">Login to your account</h1>
           </div>
 
-          <form action="${dir}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
-
-            <input style="display: none;" name="redirect" value="${redirect}">
+          <form action="{{dir}}/api/user/login" method="post" class="[ form-box panel ] [ flow ]">
     
             <input style="display: none;" name="login" value=true>
 
             <div class="form-field">
               <label>Email address</label>
-              <input name="email" type="email" required maxlength="50">
+              <input name="email" type="email" required maxlength="50" placeholder="Enter email">
             </div>
 
             <div class="form-field">
               <label>Password</label>
-              <input name="password" type="password" required minlength="10">
+              <div class="password-container">
+                <input type="password" id="password" class="password-input" required minlength="10" name="password" placeholder="Enter password">
+                <span id="toggle_password" class="toggle-password material-symbols-outlined">visibility_off</span>
+              </div>
             </div>
 
             <button type="submit" class="button">Login</button>
-            <p class="gap-top-700"><a href="${dir}/api/user/register?register=true">New to Geolytix MAPP? Sign up &rarr;</a></p>
+            <p class="gap-top-700"><a href="{{dir}}/api/user/register?register=true">New to Geolytix MAPP? Sign up &rarr;</a></p>
           </form>
 
-          <p class="msg">${msg}</p>
+          <p class="msg">{{msg}}</p>
 
           <div class="text-align-center">
-            <p class="text-300"><a href="${dir}/api/user/register?reset=true">Forgot your password?</a></p>
+            <p class="text-300"><a href="{{dir}}/api/user/register?reset=true">Forgot your password?</a></p>
           </div>
           <div class="text-align-center">
             <p class="text-300"><a href="https://github.com/GEOLYTIX/xyz">Powered By xyz</a></p>
@@ -64,5 +67,18 @@
     </div>
   </main>
 </body>
+<script>
+  const togglePasswordButton = document.getElementById('toggle_password');
+  const passwordInput = document.getElementById('password');
 
-</html
+  togglePasswordButton.addEventListener('click', function () {
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      togglePasswordButton.innerText = "visibility";
+    } else {
+      passwordInput.type = 'password';
+      togglePasswordButton.innerText = "visibility_off";
+    }
+  });
+</script>
+</html>
