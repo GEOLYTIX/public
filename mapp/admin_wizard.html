@@ -410,7 +410,7 @@
         justify-content: space-between;
       }
 
-      .anchor {
+      .link-anchor {
         font-size: 1.1em;
         a {
           text-decoration: underline;
@@ -806,14 +806,14 @@
       const rolesTree = makeTree(rolesList);
 
        /* create administrator actions */
-       const logout_anchor = mapp.utils.html`<div class="anchor">
+       const logout_anchor = mapp.utils.html`<div class="link-anchor">
         <a href=${window.location.origin + mapp.host + '?logout=true'}>
           <span style="color: var(--color-danger)" class="material-symbols-outlined notranslate">logout</span>
           Logout
         </a>
       </div>`;
 
-      const back_anchor = mapp.utils.html`<div class="anchor">
+      const back_anchor = mapp.utils.html`<div class="link-anchor">
       <a href=${window.location.origin + mapp.host}>MAPP</a>
       <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
       ${mapp.dictionary.admin_view.user_management}
@@ -1302,7 +1302,7 @@
         ];
 
         const navigation_header = mapp.utils.html`<div>
-        <div class="anchor">
+        <div class="link-anchor">
           MAPP
           <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
           ${mapp.dictionary.admin_view.user_management}
@@ -1666,7 +1666,7 @@
             ${role_ui_container}`;
 
         const header = mapp.utils.html`<div>
-        <div class="anchor">
+        <div class="link-anchor">
           MAPP
           <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
           ${mapp.dictionary.admin_view.user_management}
