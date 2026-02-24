@@ -403,6 +403,16 @@
         }
       }
 
+      .anchor {
+        a {
+          text-decoration: underline;
+        }
+        .material-symbols-outlined {
+          font-size: inherit;
+          vertical-align: middle;
+        }
+      }
+
       button > .dot {
         box-shadow: var(--box-shadow-prominent);
       }
@@ -789,32 +799,43 @@
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
 
+       /* create administrator actions */
+       const logout_anchor = mapp.utils.html`<div class="anchor">
+        <a href=${window.location.origin + mapp.host + '?logout=true'}>
+          <span style="color: var(--color-danger)" class="material-symbols-outlined notranslate">logout</span>
+          Logout
+        </a>
+      </div>`;
+
+      const back_anchor = mapp.utils.html`<div class="anchor">
+      <a href=${window.location.origin + mapp.host}>MAPP</a>
+      <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
+      User Management
+      </div>`;
+
       /* Create header with all needed parameters, logged in as etc. TODO review header content */
-      const header = mapp.utils.html`<div>
+      const header = mapp.utils.html`
+        <div style="margin-bottom: 0.5em; display: flex; flex-direction: row; justify-content: space-between">
+        ${back_anchor}
+        ${logout_anchor}
+        </div>
+        <div>
         <img src="https://geolytix.github.io/public/geolytix_mapp.svg" height="10"/>
         <h1>${mapp.dictionary.admin_view.header}</h1>
         <p>${mapp.dictionary.admin_view.header_subtitle}</p>
-      </div>`;
+        </div>
+      `;
 
       mapp.utils.render(document.querySelector('header'), header);
 
 
-      /* create administrator actions */
-      const logout_btn = mapp.utils.html`<button class="action admin outlined"
-        onclick="${() => (window.location.href = `${window.location.origin}{{dir}}?logout=true`)}">
-          <span class="material-symbols-outlined notranslate">logout</span>
-          <span class="label">${mapp.dictionary.admin_view.logout}</span>
-        <button>`;
+     
 
-      mapp.utils.render(document.getElementById('logout'), logout_btn);
+      //mapp.utils.render(document.getElementById('logout'), logout_btn);
 
-      const back_to_mapp_btn = mapp.utils.html`<button class="action admin outlined"
-        onclick=${() => (window.location.href = `${window.location.origin}{{dir}}`)}>
-          <span class="material-symbols-outlined notranslate">exit_to_app</span>
-          <span class="label">${mapp.dictionary.admin_view.back}</span>
-        <button>`;
+     
 
-      mapp.utils.render(document.getElementById('back_to_mapp'), back_to_mapp_btn);
+      //mapp.utils.render(document.getElementById('back_to_mapp'), back_to_mapp_btn);
 
       /* create searchbox */
       const search = mapp.utils.html`<div class="search">
