@@ -403,6 +403,13 @@
         }
       }
 
+      .anchor-bar {
+        margin-bottom: 0.5em; 
+        display: flex; 
+        flex-direction: row; 
+        justify-content: space-between;
+      }
+
       .anchor {
         font-size: 1.1em;
         a {
@@ -779,6 +786,7 @@
               unblock_account: "Unblock Account",
               undone: "This cannot be undone.",
               unknown: "Unknown",
+              user_management: 'User Management',
               verification: "E-mail verification",
               verification_pending: "Awaiting Account Verification",
               verified: "Awaiting Approval",
@@ -808,12 +816,12 @@
       const back_anchor = mapp.utils.html`<div class="anchor">
       <a href=${window.location.origin + mapp.host}>MAPP</a>
       <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
-      User Management
+      ${mapp.dictionary.admin_view.user_management}
       </div>`;
 
       /* Create header with all needed parameters, logged in as etc. TODO review header content */
       const header = mapp.utils.html`
-        <div style="margin-bottom: 0.5em; display: flex; flex-direction: row; justify-content: space-between">
+        <div class="anchor-bar">
         ${back_anchor}
         ${logout_anchor}
         </div>
@@ -826,14 +834,6 @@
 
       mapp.utils.render(document.querySelector('header'), header);
 
-
-     
-
-      //mapp.utils.render(document.getElementById('logout'), logout_btn);
-
-     
-
-      //mapp.utils.render(document.getElementById('back_to_mapp'), back_to_mapp_btn);
 
       /* create searchbox */
       const search = mapp.utils.html`<div class="search">
@@ -1301,11 +1301,20 @@
           grid
         ];
 
+        const navigation_header = mapp.utils.html`<div>
+        <div class="anchor">
+          MAPP
+          <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
+          ${mapp.dictionary.admin_view.user_management}
+          <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
+          ${mapp.dictionary.admin_view.acc_details}
+        </div>`;
+
         const dialog = mapp.ui.elements.dialog({
           target: document.body,
           contained: true,
           containedCentre: true,
-          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.acc_details}`,
+          header: navigation_header,
           class: 'user-details box-shadow',
           closeBtn: true,
           onClose: () => {
@@ -1656,10 +1665,19 @@
             ${email_header}
             ${role_ui_container}`;
 
+        const header = mapp.utils.html`<div>
+        <div class="anchor">
+          MAPP
+          <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
+          ${mapp.dictionary.admin_view.user_management}
+          <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
+          ${mapp.dictionary.admin_view.grant_assignment}
+        </div>`;
+
         const dialog = mapp.ui.elements.dialog({
           containedCentre: true,
           contained: true,
-          header: mapp.utils.html.node`<h1>${mapp.dictionary.admin_view.grant_assignment}`,
+          header,
           class: 'user-grant box-shadow',
           closeBtn: true,
           content,
