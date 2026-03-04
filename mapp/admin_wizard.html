@@ -110,7 +110,6 @@
         }
 
         .account-details-grid { 
-          margin-top: 2em;
           display: grid; 
           grid-gap: 1em; 
           grid-template-columns: repeat(2, 1fr); 
@@ -400,6 +399,7 @@
         * {
           color: inherit;
           font-size: inherit;
+          vertical-align: middle;
         }
       }
 
@@ -634,25 +634,21 @@
       }
       /* end inside viewport */
 
-      .color-pulse {
-        animation: colorPulse 0.7s ease-in-out infinite alternate;
-      }
 
-      .size-pulse {
-        animation: sizePulse 1s ease-in-out infinite alternate;
-      }
-
-      @keyframes colorPulse {
-        100% {
-          border-color: var(--color-danger);
-          color: var(--color-danger);
+      .approval-action {
+        margin: 10px 0; 
+        display: flex;
+        justify-content: flex-end;
+        button {
+          border-color: var(--color-approved);
+          background-color: var(--color-approved);
+          font-weight: bold;
+          color: var(--color-font-contrast);
+          * {
+            color: inherit;
+          }
         }
-      }
-
-      @keyframes sizePulse {
-        100% {
-          scale: 1.05;
-        }
+        
       }
 
 
@@ -1152,9 +1148,9 @@
           <td class="user-email" title=${user.email}>${user.email} ${admin_label}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${access_log_btn}</td>
-          <td class=${user.status === mapp.dictionary.admin_view.verified ? 'size-pulse' : ''}>${user_status}</td>
+          <td>${user_status}</td>
           <td>
-            <button class=${'action outlined' + (user.status === mapp.dictionary.admin_view.verified ? ' color-pulse' : '')} onclick=${user_details}>
+            <button class="action outlined" onclick=${user_details}>
               <span class="material-symbols-outlined notranslate">manage_accounts</span>
               <span>${mapp.dictionary.admin_view.manage}</span>
             </button>
@@ -1228,10 +1224,8 @@
         if (user.verified)
           state = {
             label: mapp.dictionary.admin_view.verified,
-            action: mapp.dictionary.admin_view.approve,
             color: "var(--color-verified)",
-            icon: 'hourglass',
-            onclick: approveAccount
+            icon: 'hourglass'
           };
         if (user.approved)
           state = {
@@ -1292,6 +1286,12 @@
 
         const header = window_header(user);
 
+        const approval_action = mapp.utils.html`<div class="approval-action" 
+        style=${'visibility:' + (user.approved ? 'hidden' : 'visible')}>
+        <button class="action outlined" onclick=${approveAccount} data-user=${JSON.stringify(user)}>
+        <span style="color: inherit" class="material-symbols-outlined notranslate">verified</span>
+        Approve User Account`;
+
         const delete_actions = mapp.utils.html`
         <div class="card"><h3>${mapp.dictionary.admin_view.withdraw}</h3>
         <div class="actions">
@@ -1331,6 +1331,7 @@
 
         const content = [
           header,
+          approval_action,
           grid
         ];
 
@@ -1442,12 +1443,11 @@
       /* creates the elements to show in curent status section based on user account life cycle*/
       function create_approval_element(user) {
         const state = determine_user_status(user);
-        const element =  mapp.utils.html.node`<button 
-        onclick=${state.onclick}
-        class="admin action outline" data-user=${JSON.stringify(user)}
+        const element =  mapp.utils.html.node`<span 
+        class="status-info" data-user=${JSON.stringify(user)}
         style=${'border-color:' + state.color + ';color:' + state.color}>
         <span style="color: inherit" class="material-symbols-outlined notranslate">${state.icon}</span>
-        ${state.action || state.label}`;
+        ${state.label}`;
         return element;
       }
 
@@ -1654,6 +1654,9 @@
         mapp.ui.elements.alert({
           text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
         });
+
+        // hide approval button as no longer needed
+        e.target.closest('.approval-action').style.visibility = 'hidden';
       }
       /* End Workflow Events */
 
