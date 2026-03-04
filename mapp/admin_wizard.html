@@ -37,9 +37,6 @@
 
       :root {
         --color-notification: #FEFCE8;
-        --color-notification-contrast: #FDF08A;
-        --color-notification-hover: #FDE048;
-        --color-notification-font: #854D0F;
         --box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
         --border-radius: 5px;
         --padding: 10px;
@@ -47,12 +44,12 @@
         --box-shadow-row: 0 10px 15px -5px rgba(0, 0, 0, 0.1);
 
         --color-approved: #3C9040;
-        --color-verified: #9c27b0;
         --color-locked: #b71c1c;
         --color-blocked: #37474f;
         --color-admin: #1257A5;
         --color-api: #311b92;
-        --color-new: #F77F00;
+        --color-new: #00897b;
+        --color-verified: var(--color-danger);
         --color-role: #FFF6C2;
       }
 
@@ -396,10 +393,13 @@
       }
 
       .status-info {
-        cursor: default !important;
+        display: inline-block;
         border-radius: 12px;
+        border: solid 1px;
+        padding: 0.2em 0.5em;
         * {
           color: inherit;
+          font-size: inherit;
         }
       }
 
@@ -428,8 +428,43 @@
       .ws-pre {
         white-space: pre-line;
       }
+
+      /* search */
+      .search {
+        width: 100%;
+        margin-bottom: 1em;
+        padding: 0.5em 1em;
+
+        .radio-group {
+          display: flex;
+          gap: 2em;
+          border: none;
+
+          input[type="search"] {
+            background-color: var(--color-base-tertiary);
+            border: solid 1px var(--color-border);
+            border-radius: var(--border-radius);
+            max-width: 400px;
+          }
+        }
+
+        /* Container for each individual radio button and its label */
+        .radio-option {
+          display: flex;
+          align-items: center;
+          gap: 8px; /* Space between the radio circle and its text */
+          white-space: nowrap;
+        }
+
+        input[type="radio"] {
+          accent-color: var(--color-primary); /* Changes the color of the selected dot */
+          width: 1.2em;
+          height: 1.2em;
+        }
+
+      }
       
-      /* inside viewport */
+      /* begin inside viewport */
       .viewport {
         width: 100%;
         height: 100%;
@@ -558,6 +593,7 @@
 
                       & > * {
                         pointer-events: none;
+                        color: inherit;
                       }
 
                       &.outlined {
@@ -596,40 +632,27 @@
         }
 
       }
+      /* end inside viewport */
 
-      /* search */
-      .search {
-        width: 100%;
-        margin-bottom: 1em;
-        padding: 0.5em 1em;
+      .color-pulse {
+        animation: colorPulse 0.7s ease-in-out infinite alternate;
+      }
 
-        .radio-group {
-          display: flex;
-          gap: 2em;
-          border: none;
+      .size-pulse {
+        animation: sizePulse 1s ease-in-out infinite alternate;
+      }
 
-          input[type="search"] {
-            background-color: var(--color-base-tertiary);
-            border: solid 1px var(--color-border);
-            border-radius: var(--border-radius);
-            max-width: 400px;
-          }
+      @keyframes colorPulse {
+        100% {
+          border-color: var(--color-danger);
+          color: var(--color-danger);
         }
+      }
 
-        /* Container for each individual radio button and its label */
-        .radio-option {
-          display: flex;
-          align-items: center;
-          gap: 8px; /* Space between the radio circle and its text */
-          white-space: nowrap;
+      @keyframes sizePulse {
+        100% {
+          scale: 1.05;
         }
-
-        input[type="radio"] {
-          accent-color: var(--color-primary); /* Changes the color of the selected dot */
-          width: 1.2em;
-          height: 1.2em;
-        }
-
       }
 
 
@@ -1014,6 +1037,12 @@
 
           const rows = params.data.map((item) => params.createRow(item));
 
+          // push pending accounts to the top
+          rows.sort((a, b) => {
+            if (a.dataset.status === mapp.dictionary.admin_view.verified && b.dataset.status !== mapp.dictionary.admin_view.verified) return -1;
+            if (b.dataset.status === mapp.dictionary.admin_view.verified && a.dataset.status !== mapp.dictionary.admin_view.verified) return 1;
+          });
+
           return rows;
         };
 
@@ -1123,9 +1152,9 @@
           <td class="user-email" title=${user.email}>${user.email} ${admin_label}</td>
           <td class="desktop-only">${active_roles}</td>
           <td class="desktop-only">${access_log_btn}</td>
-          <td>${user_status}</td>
+          <td class=${user.status === mapp.dictionary.admin_view.verified ? 'size-pulse' : ''}>${user_status}</td>
           <td>
-            <button class="action outlined" onclick=${user_details}>
+            <button class=${'action outlined' + (user.status === mapp.dictionary.admin_view.verified ? ' color-pulse' : '')} onclick=${user_details}>
               <span class="material-symbols-outlined notranslate">manage_accounts</span>
               <span>${mapp.dictionary.admin_view.manage}</span>
             </button>
@@ -1138,8 +1167,8 @@
 
         const content = user_row_content(user);
 
-        return mapp.utils.html.node`<tr 
-          data-email=${user.email} data-user=${JSON.stringify(user)}>
+        return mapp.utils.html.node`<tr
+          data-email=${user.email} data-status=${user.status} data-user=${JSON.stringify(user)}>
           ${content}
           </tr>`;
       }
@@ -1201,7 +1230,7 @@
             label: mapp.dictionary.admin_view.verified,
             action: mapp.dictionary.admin_view.approve,
             color: "var(--color-verified)",
-            icon: 'verified',
+            icon: 'hourglass',
             onclick: approveAccount
           };
         if (user.approved)
@@ -1239,7 +1268,7 @@
         const state = determine_user_status(user);
         user.status = state.label;
 
-        return mapp.utils.html`<button class="outlined action status-info"
+        return mapp.utils.html`<span class="status-info"
           style=${'border-color: ' + state.color + '; color:' + state.color}
           >
           <span class="material-symbols-outlined notranslate inline-icon">${state.icon}</span>
