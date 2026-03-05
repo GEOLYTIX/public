@@ -1279,6 +1279,24 @@
           </h1>`;
       }
 
+      /* Approval button with its actions and initial parameters */
+      function approve_button(user, callback) {
+
+        const btn = mapp.utils.html.node`
+        <button 
+        class=${'action outlined' + (user.approved ? ' display-none' : '')} 
+        onclick=${callback} 
+        data-user=${JSON.stringify(user)}>
+        <span style="color: inherit" class="material-symbols-outlined notranslate">verified</span>
+        ${mapp.dictionary.admin_view.approve}`;
+
+        if(!user.verified) btn.disabled = true;
+
+        return btn;
+
+      }
+
+
       /* this function creates user details layout with actions */
       function user_details(e) {
 
@@ -1286,11 +1304,7 @@
 
         const header = window_header(user);
 
-        const approval_action = mapp.utils.html`<div class="approval-action" 
-        style=${'visibility:' + (user.approved ? 'hidden' : 'visible')}>
-        <button class="action outlined" onclick=${approveAccount} data-user=${JSON.stringify(user)}>
-        <span style="color: inherit" class="material-symbols-outlined notranslate">verified</span>
-        Approve User Account`;
+        const approval_action = mapp.utils.html`<div class="approval-action">${approve_button(user, approveAccount)}`;
 
         const delete_actions = mapp.utils.html`
         <div class="card"><h3>${mapp.dictionary.admin_view.withdraw}</h3>
@@ -1360,11 +1374,12 @@
       }
 
       /* Begin User Details Window Content */
-      /* updates elements in the account details window */
+      /* updates elements in the account details window. Any post-update ui state should be added here */
       function updateUserDetailsHTML(user) {
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
         mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+        mapp.utils.render(document.querySelector('.approval-action'), approve_button(user, approveAccount));
       }
 
       /* creates special permissions section in user details window */
@@ -1654,9 +1669,6 @@
         mapp.ui.elements.alert({
           text: `${user.email}\n${mapp.dictionary.admin_view.approve_alert}`
         });
-
-        // hide approval button as no longer needed
-        e.target.closest('.approval-action').style.visibility = 'hidden';
       }
       /* End Workflow Events */
 
