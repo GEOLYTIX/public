@@ -47,9 +47,8 @@
         --color-locked: #b71c1c;
         --color-blocked: #37474f;
         --color-admin: #1257A5;
-        --color-api: #311b92;
-        --color-new: #00897b;
-        --color-verified: var(--color-danger);
+        --color-new: #EB9C0A;
+        --color-verified: #ff3d00;
         --color-role: #FFF6C2;
       }
 
@@ -141,41 +140,8 @@
 
           button.outlined {
             line-height: 1;
-            &.approve {
-              border-color: var(--color-verified);
-              * {
-                font-weight: bold;
-                color: var(--color-verified);
-              }
-            }
-            &.approved {
-              pointer-events: none;
-              border-color: var(--color-approved);
-              * {
-                font-weight: bold;
-                color: var(--color-approved);
-              }
-            }
-
-            &.blocked {
-              pointer-events: none;
-              border-color: var(--color-blocked);
-              * {
-                font-weight: bold;
-                color: var(--color-blocked);
-              }
-            }
-
-            &.user-action {
-              pointer-events: none;
-              border-color: var(--color-active);
-              * {
-                font-weight: bold;
-                color: var(--color-active);
-              }
-            }
           }
-      }
+        }
 
       }
 
@@ -334,14 +300,6 @@
          &.unblock {
           .material-symbols-outlined::after {
             content: 'autorenew';
-          }
-        }
-
-        &.blocked {
-          pointer-events: none;
-          border: solid 1px var(--color-blocked);
-          * {
-            color: var(--color-blocked);
           }
         }
 
@@ -635,6 +593,7 @@
       /* end inside viewport */
 
 
+      /* Approve button styling */
       .approval-action {
         margin: 10px 0; 
         display: flex;
@@ -648,7 +607,6 @@
             color: inherit;
           }
         }
-        
       }
 
 
@@ -721,7 +679,7 @@
             flex-direction: column;
           }
         }
-    }
+      }
 
     </style>
 
@@ -823,12 +781,14 @@
       /* Get list of available roles from workspace. */
       const rolesList = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
 
+      // log roles for sanity check
       console.log(rolesList);
 
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
 
-       /* create administrator actions */
+      /* create administrator actions */
+      /* logout link */
        const logout_anchor = mapp.utils.html`<div class="link-anchor">
         <a href=${window.location.origin + mapp.host + '?logout=true'}>
           <span style="color: var(--color-danger)" class="material-symbols-outlined notranslate">logout</span>
@@ -836,6 +796,7 @@
         </a>
       </div>`;
 
+      /* back to mapp link */
       const back_anchor = mapp.utils.html`<div class="link-anchor">
       <a href=${window.location.origin + mapp.host}>MAPP</a>
       <span class="material-symbols-outlined notranslate">keyboard_arrow_right</span>
@@ -855,6 +816,7 @@
         </div>
       `;
 
+      /* render header */
       mapp.utils.render(document.querySelector('header'), header);
 
 
@@ -908,9 +870,10 @@
           }
       } 
 
+      /* render search in the relevant container */
       mapp.utils.render(document.getElementById('search'), search);
 
-      /* creates tree of roles list - should I remove nested roles that duplicate on the main level? */
+      /* creates a tree of the roles list */
       function makeTree(list_of_roles) {
 
         const rolesSet = new Set(list_of_roles);
@@ -962,7 +925,7 @@
         return nestedKeys;
       }
 
-      /* get users list */
+      /* get users list, sort by email and return data */
       async function getUserList() {
         // Get user list from host.
         const response = await mapp.utils.xhr(
@@ -1005,7 +968,7 @@
       // user table created
       mapp.utils.render(document.getElementById('users'), users.table);
 
-      /* List table and its functionalities */
+      /* List table object and its functionalities */
       function listTable(params) {
 
         if(!params.data) return;
@@ -1158,7 +1121,7 @@
           </td>`;
       }
 
-      /* this function creates each row in the user table */
+      /* this function creates each user row in the user table */
       function createUserRow(user) {
 
         const content = user_row_content(user);
@@ -1187,7 +1150,7 @@
       /* this function will display user roles in account details */
       function get_user_roles(user) {
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
-        // exclude roles that users have that are not relevant in the workspace
+        // exclude roles that users have that are not relevant in the workspace if part of requirements
         const active_roles = user.roles
         //.filter((role) => (rolesTree.hasOwnProperty(role))) // temporarily disabled to show all roles assigned the the user relevat or not
         .map(role => {
@@ -1197,7 +1160,7 @@
         return mapp.utils.html`<div class="flex">${active_roles}</div>`;
       }
 
-      /* this function will display user first 3 roles in users list */
+      /* this function will display user first 3 roles in users list and wrap the rest */
       function show_user_roles_in_list(user) {
         if(!user.roles?.length) return mapp.utils.html`<div></div>`;
         const active_roles = user.roles
@@ -1257,7 +1220,7 @@
         return state;
       }
 
-      /* this function creates a status indication element in the user table */
+      /* this function creates a visual status indication element in the user table */
       function check_user_status(user) {
         const state = determine_user_status(user);
         user.status = state.label;
@@ -1269,7 +1232,7 @@
           <span class="desktop-only">${state.label}</span>`
       }
 
-      /* creates window header with account email address */
+      /* creates window header with account email address used both in user details and roles dialogs */
       function window_header(user) {
         return mapp.utils.html`<div>
           <span class="dot plain" style="color: var(--color-font)">${mapp.dictionary.admin_view.email_label}</span>
@@ -1293,11 +1256,10 @@
         if(!user.verified) btn.disabled = true;
 
         return btn;
-
       }
 
 
-      /* this function creates user details layout with actions */
+      /* this function creates user details layout with actions and creates a dialog window */
       function user_details(e) {
 
         const user = JSON.parse(e.target.closest('tr').dataset.user);
@@ -1374,7 +1336,7 @@
       }
 
       /* Begin User Details Window Content */
-      /* updates elements in the account details window. Any post-update ui state should be added here */
+      /* updates elements in the account details window. Any post-update ui state change should be added here */
       function updateUserDetailsHTML(user) {
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
@@ -1455,7 +1417,7 @@
           <div>${api_access}</div>`
       }
 
-      /* creates the elements to show in curent status section based on user account life cycle*/
+      /* creates the elements to show in curent status section based on user account life cycle */
       function create_approval_element(user) {
         const state = determine_user_status(user);
         const element =  mapp.utils.html.node`<span 
@@ -1466,7 +1428,7 @@
         return element;
       }
 
-      /* creates user prop content in the approval window. Used to rerender content after update */
+      /* creates user prop content in the approval window. Used to re-render content after update */
       function user_approval_content(user) {
 
         const approval_element = create_approval_element(user);
@@ -1673,7 +1635,7 @@
       /* End Workflow Events */
 
 
-      /* role assignment window */
+      /* Role assignment window */
       async function roleAssignment(event) {
 
         // no roles found
