@@ -1281,13 +1281,16 @@
           </button>
         </div>`;
 
-        const special_permissions = mapp.utils.html`<div class="card">
+        /*const special_permissions = mapp.utils.html`<div class="card">
           <h3>${mapp.dictionary.admin_view.special_permissions}</h3>
-          ${special_permissions_content(user)}`;
+          <div class="details permissions">
+          ${special_permissions_content(user)}`;*/
 
         const user_approval_layout = mapp.utils.html`<div class="details status">${user_approval_content(user)}`;
 
         const user_details_layout = mapp.utils.html`<div class="details account">${user_details_content(user)}`;
+
+        const user_permissions_layout = mapp.utils.html`<div class="details permissions">${special_permissions_content(user)}`;
 
         const account_status = mapp.utils.html`<div class="card">
           <h3>${mapp.dictionary.admin_view.account_status}</h3>
@@ -1297,10 +1300,14 @@
           <h3>${mapp.dictionary.admin_view.acc_details}</h3>
           ${user_details_layout}`;
 
+        const account_permissions = mapp.utils.html`<div class="card">
+          <h3>${mapp.dictionary.admin_view.special_permissions}</h3>
+          ${user_permissions_layout}`
+
         const grid = mapp.utils.html`<div class="account-details-grid">${[
           account_status, 
           account_details,
-          special_permissions, 
+          account_permissions,
           delete_actions
         ]}`;
 
@@ -1340,6 +1347,7 @@
         // refresh user content while keeping the user details window on
         mapp.utils.render(document.querySelector('.user-details .details.status'), user_approval_content(user));
         mapp.utils.render(document.querySelector('.user-details .details.account'), user_details_content(user));
+        mapp.utils.render(document.querySelector('.user-details .details.permissions'), special_permissions_content(user));
         mapp.utils.render(document.querySelector('.approval-action'), approve_button(user, approveAccount));
       }
 
@@ -1393,7 +1401,7 @@
           }
         });
 
-         return mapp.utils.html`<div class="permissions details">
+         return mapp.utils.html`
           <div>
             <span title=${mapp.dictionary.admin_view.verification}
             class="material-symbols-outlined notranslate inline-icon">mail</span>
