@@ -1247,13 +1247,12 @@
 
         const btn = mapp.utils.html.node`
         <button 
-        class=${'action outlined' + (user.approved ? ' display-none' : '')} 
+        class=${'action outlined' + ((!user.verified || user.approved) ? ' display-none' : '')} 
         onclick=${callback} 
         data-user=${JSON.stringify(user)}>
         <span style="color: inherit" class="material-symbols-outlined notranslate">verified</span>
         ${mapp.dictionary.admin_view.approve}`;
 
-        if(!user.verified) btn.disabled = true;
 
         return btn;
       }
@@ -1608,6 +1607,10 @@
 
         const user = JSON.parse(e.target.closest('button').dataset.user);
 
+        // reject unverified user
+        if(!user.verified) return;
+
+        // reject approved user
         if(user.approved) return;
 
         const confirm = await mapp.ui.elements.confirm({
