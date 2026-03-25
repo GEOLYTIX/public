@@ -1,0 +1,425 @@
+{
+  "locales": {
+    "UK": {
+      "showScaleBar": false,
+      "minZoom": 8,
+      "maxZoom": 18,
+      "view": {
+        "lat": 51.480613,
+        "lng": -0.0093601,
+        "z": 14
+      },
+      "layers": {
+        "Satellite": {
+          "canEdit": [],
+          "canView": [
+            "*"
+          ],
+          "canSwitch": [],
+          "canReorder": [],
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/andypols/ckp3yromf288917nt6qt69mfv",
+          "accessToken": "pk.eyJ1IjoiYW5keXBvbHMiLCJhIjoiY2ttMHQ3cnhqMG8yODJucjNyejRvaGVvaSJ9.RBSYVzv5pxlAgCCCjB9xoQ",
+          "display": false,
+          "key": "Satellite"
+        },
+        "Mapbox Base": {
+          "canEdit": [],
+          "canView": [
+            "*"
+          ],
+          "canSwitch": [],
+          "canReorder": [],
+          "format": "mbtiles",
+          "mbStyle": "mapbox://styles/andypols/ckm0tvy2p3knn17lh50xc87ly",
+          "accessToken": "pk.eyJ1IjoiYW5keXBvbHMiLCJhIjoiY2ttMHQ3cnhqMG8yODJucjNyejRvaGVvaSJ9.RBSYVzv5pxlAgCCCjB9xoQ",
+          "display": true,
+          "key": "Mapbox Base"
+        },
+        "Contributions": {
+          "key": "Contributions",
+          "cat_array": true,
+          "hover": true,
+          "canView": [
+            "*"
+          ],
+          "canEdit": [
+            "editMapLayers"
+          ],
+          "canSwitch": [
+            "switchMapLayers"
+          ],
+          "canReorder": [
+            "reorderMapLayers"
+          ],
+          "format": "cluster",
+          "dbs": "XYZ",
+          "table": "contributions",
+          "srid": "4326",
+          "geom": "geom",
+          "qID": "id",
+          "cluster_label": "id",
+          "cluster_kmeans": 0.5,
+          "cluster_dbscan": 0.02,
+          "display": true,
+          "neutralTreshold": 0,
+          "neutralStyle": {
+            "style": {
+              "strokeColor": "#a11515",
+              "fillColor": "#484848",
+              "colorMarker": "#484848",
+              "scale": 1.65,
+              "type": "circle"
+            }
+          },
+          "colorfulStyle": {
+            "0": {
+              "style": {
+                "strokeColor": "#E80030",
+                "fillColor": "#E80030",
+                "colorMarker": "#E80030",
+                "scale": 1.65,
+                "type": "circle"
+              }
+            },
+            "25": {
+              "style": {
+                "strokeColor": "#FF7700",
+                "fillColor": "#FF7700",
+                "colorMarker": "#FF7700",
+                "scale": 1.65,
+                "type": "circle"
+              }
+            },
+            "50": {
+              "style": {
+                "strokeColor": "#FEB000",
+                "fillColor": "#FEB000",
+                "colorMarker": "#FEB000",
+                "scale": 1.65,
+                "type": "circle"
+              }
+            },
+            "75": {
+              "style": {
+                "strokeColor": "#89C92D",
+                "fillColor": "#89C92D",
+                "colorMarker": "#89C92D",
+                "scale": 1.65,
+                "type": "circle"
+              }
+            },
+            "100": {
+              "style": {
+                "strokeColor": "#00AC5D",
+                "fillColor": "#00AC5D",
+                "colorMarker": "#00AC5D",
+                "scale": 1.65,
+                "type": "circle"
+              }
+            }
+          },
+          "style": {
+            "default": {
+              "type": "commonplacePin",
+              "pinColor": "#84258D",
+              "fillColor": "#828282",
+              "strokeColor": "#828282",
+              "scale": 2,
+              "cat": {
+                "Get Help": {
+                  "style": {
+                    "strokeColor": "#FF73A5",
+                    "fillColor": "#FF73A5",
+                    "colorMarker": "#FF73A5",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Creative": {
+                  "style": {
+                    "strokeColor": "#B674F2",
+                    "fillColor": "#B674F2",
+                    "colorMarker": "#B674F2",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Connected": {
+                  "style": {
+                    "strokeColor": "#37E11D",
+                    "fillColor": "#37E11D",
+                    "colorMarker": "#37E11D",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Learning": {
+                  "style": {
+                    "strokeColor": "#FFD00B",
+                    "fillColor": "#FFD00B",
+                    "colorMarker": "#FFD00B",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Active": {
+                  "style": {
+                    "strokeColor": "#93DCFC",
+                    "fillColor": "#93DCFC",
+                    "colorMarker": "#93DCFC",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                }
+              }
+            },
+            "cluster": {
+              "type": "clusterSummary",
+              "clusterScale": 0
+            },
+            "label": {
+              "display": false,
+              "count": true,
+              "font": "bold 17px sans-serif",
+              "title": "Cluster count"
+            },
+            "theme": {
+              "type": "categorized",
+              "field": "pivot",
+              "aggregate": "svg",
+              "cat": {
+                "75": {
+                  "style": {
+                    "strokeColor": "#89C92D",
+                    "fillColor": "#89C92D",
+                    "colorMarker": "#89C92D",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "100": {
+                  "style": {
+                    "strokeColor": "#00AC5D",
+                    "fillColor": "#00AC5D",
+                    "colorMarker": "#00AC5D",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Help": {
+                  "style": {
+                    "strokeColor": "#E80030",
+                    "fillColor": "#E80030",
+                    "colorMarker": "#E80030",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Creative": {
+                  "style": {
+                    "strokeColor": "#FF7700",
+                    "fillColor": "#FF7700",
+                    "colorMarker": "#FF7700",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                },
+                "Get Connected": {
+                  "style": {
+                    "strokeColor": "#FEB000",
+                    "fillColor": "#FEB000",
+                    "colorMarker": "#FEB000",
+                    "scale": 1.65,
+                    "type": "circle"
+                  }
+                }
+              }
+            }
+          },
+          "pivotQuestion": "62b3351f041a8f0012e96502",
+          "svgs": {
+            "Test 6": "svg",
+            "Test 5": "svg",
+            "Test 3": "svg",
+            "Test 2": "svg",
+            "Test 1": "svg",
+            "Test 4": "sag"
+          },
+          "edit": {
+            "point": true
+          },
+          "infoj": [
+            {
+              "title": "ID",
+              "field": "contribution_id"
+            }
+          ]
+        },
+        "Custom 4258": {
+          "canView": [
+            "*"
+          ],
+          "canEdit": [
+            "editMapLayers"
+          ],
+          "canSwitch": [
+            "switchMapLayers"
+          ],
+          "canReorder": [
+            "reorderMapLayers"
+          ],
+          "format": "mvt",
+          "dbs": "XYZ",
+          "table": "custom_layer_4258",
+          "srid": "4258",
+          "geom": "geom",
+          "qID": "id",
+          "display": true,
+          "hover": false,
+          "edit": {
+            "polygon": true,
+            "circle": true
+          },
+          "infoj": [
+            {
+              "title": "metadata",
+              "field": "metadata"
+            }
+          ],
+          "style": {
+            "default": {
+              "fillColor": "#412DC9"
+            },
+            "theme": {
+              "type": "categorized",
+              "field": "metadata"
+            }
+          }
+        },
+        "Custom": {
+          "canView": [
+            "*"
+          ],
+          "canEdit": [
+            "editMapLayers"
+          ],
+          "canSwitch": [
+            "switchMapLayers"
+          ],
+          "canReorder": [
+            "reorderMapLayers"
+          ],
+          "format": "mvt",
+          "dbs": "XYZ",
+          "table": "custom_layers",
+          "srid": "3857",
+          "geom": "geom_3857",
+          "qID": "id",
+          "display": true,
+          "hover": true,
+          "edit": {
+            "polygon": true,
+            "circle": true
+          },
+          "infoj": [
+            {
+              "title": "metadata",
+              "field": "metadata"
+            }
+          ],
+          "style": {
+            "default": {
+              "fillColor": "#412DC9"
+            },
+            "theme": {
+              "type": "categorized",
+              "field": "metadata"
+            }
+          },
+          "key": "Custom"
+        },
+        "3d View": {
+          "active": false,
+          "canView": [
+            "*"
+          ],
+          "canEdit": [
+            "editMapLayers"
+          ],
+          "canSwitch": [
+            "switchMapLayers"
+          ],
+          "canReorder": [
+            "reorderMapLayers"
+          ],
+          "format": "mvt",
+          "dbs": "XYZ",
+          "table": "image_3d",
+          "srid": "4326",
+          "geom": "geom_3857",
+          "qID": "id",
+          "display": false,
+          "infoj": [
+            {
+              "title": "URL",
+              "field": "url"
+            },
+            {
+              "title": "hotspots",
+              "field": "hotspots"
+            }
+          ],
+          "style": {
+            "default": {
+              "marker": {
+                "svg": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2210%22%20width%3D%2210%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%225%22%20cy%3D%225%22%20r%3D%225%22%20fill%3D%22%230258a0%22%2F%3E%3C%2Fsvg%3E"
+              }
+            },
+            "highlight": {
+              "marker": {
+                "svg": "data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M20%2040c11.0457%200%2020-8.9543%2020-20S31.0457%200%2020%200%200%208.9543%200%2020s8.9543%2020%2020%2020z%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.06268%2020.096c.13694.224.33592.5359.59492.9076.55026.7897%201.3664%201.8418%202.4281%202.8915%202.1341%202.1098%205.1831%204.1369%209.0103%204.1369%203.8272%200%206.8762-2.0271%209.0103-4.1369%201.0617-1.0497%201.8778-2.1018%202.4281-2.8915.259-.3717.458-.6836.5949-.9076-.1369-.224-.3359-.536-.5949-.9076-.5503-.7897-1.3664-1.8418-2.4281-2.8915-2.1341-2.1098-5.1831-4.1369-9.0103-4.1369-3.8272%200-6.8762%202.0271-9.0103%204.1369-1.0617%201.0497-1.87784%202.1018-2.4281%202.8915-.259.3716-.45798.6836-.59492.9076zm24.99332%200c.7041-.3798.7039-.3801.7038-.3804l-.0005-.0008-.0012-.0022-.0037-.0068-.0126-.0229c-.0107-.0193-.0261-.0467-.046-.0817-.0399-.0698-.0981-.1698-.1745-.2956-.1527-.2516-.3781-.6071-.6742-1.032-.5911-.8483-1.4686-1.9802-2.6159-3.1145C27.947%2012.9009%2024.516%2010.56%2020.096%2010.56c-4.42%200-7.851%202.3409-10.13517%204.5991-1.14735%201.1343-2.02488%202.2662-2.61597%203.1145-.29602.4249-.52147.7804-.67416%201.032-.07637.1258-.13464.2258-.17451.2956-.01993.035-.03528.0624-.046.0817l-.01262.0229-.0037.0068-.00119.0022-.00044.0008c-.00017.0003-.00032.0006.70376.3804l-.70408-.3798c-.12789.237-.12789.5226%200%20.7596l.70408-.3798c-.70408.3798-.70393.3801-.70376.3804l.00044.0008.00119.0022.0037.0068.01262.0229c.01072.0193.02607.0467.046.0817.03987.0698.09814.1698.17451.2956.15269.2516.37814.6071.67416%201.032.59109.8483%201.46862%201.9802%202.61597%203.1145C12.245%2027.2911%2015.676%2029.632%2020.096%2029.632c4.42%200%207.851-2.3409%2010.1352-4.5991%201.1473-1.1343%202.0248-2.2662%202.6159-3.1145.2961-.4249.5215-.7804.6742-1.032.0764-.1258.1346-.2258.1745-.2956.0199-.035.0353-.0624.046-.0817l.0126-.0229.0037-.0068.0012-.0022.0005-.0008c.0001-.0003.0003-.0006-.7038-.3804zm0%200l.7041.3798c.1279-.237.1279-.5226%200-.7596l-.7041.3798z%22%20fill%3D%22%230258A0%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M20.0611%2016.384c-2.0308%200-3.6771%201.6463-3.6771%203.6771%200%202.0308%201.6463%203.6771%203.6771%203.6771%202.0308%200%203.6771-1.6463%203.6771-3.6771%200-2.0308-1.6463-3.6771-3.6771-3.6771zm-5.2771%203.6771c0-2.9145%202.3626-5.2771%205.2771-5.2771%202.9144%200%205.2771%202.3626%205.2771%205.2771%200%202.9144-2.3627%205.2771-5.2771%205.2771-2.9145%200-5.2771-2.3627-5.2771-5.2771z%22%20fill%3D%22%230258A0%22%2F%3E%3C%2Fsvg%3E"
+              }
+            }
+          },
+          "key": "3d View"
+        },
+        "Postal district": {
+          "canView": [
+            "*"
+          ],
+          "canEdit": [
+            "editMapLayers"
+          ],
+          "canSwitch": [
+            "switchMapLayers"
+          ],
+          "canReorder": [
+            "reorderMapLayers"
+          ],
+          "format": "mvt",
+          "dbs": "XYZ",
+          "table": "data_delivery.uk_glx_open_postal_district",
+          "srid": "4326",
+          "geom": "geom_4326",
+          "qID": "id",
+          "display": false,
+          "infoj": [
+            {
+              "field": "postdist"
+            }
+          ],
+          "key": "Postal district"
+        }
+      },
+      "name": "UK",
+      "key": "UK",
+      "legends": [
+        {
+          "title": "Area of focus",
+          "color": "#80392F"
+        }
+      ]
+    }
+  }
+}
