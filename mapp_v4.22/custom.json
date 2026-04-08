@@ -1,0 +1,102 @@
+{
+  "register_view": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/register.html"
+  },
+  "password_reset_view": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/reset.html"
+  },
+  "login_view": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/login/login_en.html"
+  },
+  "verify_password_reset": {
+    "en": {
+      "subject": "Please verify your password reset for ${host}",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22mails/reset_password.html"
+    }
+  },
+  "verify_account": {
+    "en": {
+      "subject": "Please verify your account on ${host}",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/verify_registration.html"
+    }
+  },
+  "new_account_registered": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/confirm.html"
+  },
+  "admin_email": {
+    "en": {
+      "subject": "A new account has been verified on ${host}",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/admin_email.html"
+    }
+  },
+  "account_await_approval": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/msgs/account_await_approval.html"
+  },
+  "password_reset_verification": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/msgs/password_reset_verification.html"
+  },
+  "approved_account": {
+    "en": {
+      "subject": "This account has been approved on ${host}.",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/approved_account.html"
+    }
+  },
+  "deleted_account": {
+    "en": {
+      "subject": "This ${host} account has been deleted.",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/account_deleted.html"
+    }
+  },
+  "login_incorrect": {
+    "en": {
+      "subject": "A failed login attempt was made on ${host}",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/login_incorrect.html"
+    }
+  },
+  "locked_account": {
+    "en": {
+      "subject": "Too many failed login attempts occured on ${host}",
+      "text": null,
+      "html": "https://geolytix.github.io/public/mapp_v4.22/mails/locked_account.html"
+    }
+  },
+  "admin_approved": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/msgs/admin_approved.html"
+  },
+  "auth_failed": {
+    "en": "Your account or password is incorrect. If you don’t remember your password, reset it now."
+  },
+  "account_approved_no_admin": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/msgs/account_no_admin.html"
+  },
+  "token_not_found": {
+    "en": "https://geolytix.github.io/public/mapp_v4.22/msgs/token_not_found.html"
+  },
+  "no_locale": {
+    "en": "Your account has been verified and approved, but you do not have access to any locales. This is likely as an administrator has not given you the required roles. Please contact an administrator or GEOLYTIX to resolve this."
+  },
+  "no_locales": {
+    "en": "Your account has been verified and approved, but you do not have access to any locales. This is likely as an administrator has not given you the required roles. Please contact an administrator or GEOLYTIX to resolve this."
+  },
+  "user_not_verified": {
+    "en": "Your account has either not been verified or has not yet been approved by an administrator."
+  },
+  "user_locked": {
+    "en": "Your account has been locked due to 3 failed login attempts. Please reset your password to regain access."
+  },
+  "user_expired": {
+    "en": "Your account has expired. Please re-register to regain access."
+  },
+  "user_blocked": {
+    "en": "Your account has been blocked. Please contact an administrator or GEOLYTIX if you think this was an error."
+  },
+  "password_reset_ok": {
+    "en": "Your password has been successfully reset. Please login with your new password."
+  }
+}
