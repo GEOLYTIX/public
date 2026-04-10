@@ -138,7 +138,9 @@ img:not([alt]) {
   --color-light-gray: #F7F8FA;
   --color-regular-gray: #F0F0F0;
   --color-red: red;
-  --font-base: Inter, sans-serif;
+  --color-pink:#ffa8e1;
+  --color-yellow:#ffe261;
+  --font-base: "Mark Pro", Inter, sans-serif;
   --letter-spacing-normal: 0.1em;
   --radius-regular: 8px;
   --shadow-standard: 0px 4px 4px rgba(0, 0, 0, 0.05);
@@ -751,13 +753,15 @@ img:not([alt]) {
   white-space: nowrap;
   padding: var(--size-200) var(--size-400);
   text-decoration: none;
-  background: var(--button-background);
+  background: linear-gradient(90deg,var(--color-pink)0%,var(--color-yellow)100%);
   color: var(--button-foreground);
   border-radius: var(--radius-regular);
   transition: var(--transition-standard);
   border: none;
   cursor: pointer;
-  text-align: center
+  text-align: center;
+  font-family: bitblox, Inter;
+  margin-left: 25%;
 }
 
 .button.disabled {
@@ -766,10 +770,21 @@ img:not([alt]) {
 }
 
 .button:hover {
-  --button-background: var(--color-secondary-dark);
-  --button-foreground: var(--color-secondary);
-  box-shadow: none;
-  color: var(--button-foreground)
+  background:  linear-gradient(90deg,var(--color-yellow)0%,var(--color-pink)100%);
+}
+
+ .decor-holder{
+  float: left;
+  position: absolute;
+  top: -0%;
+  overflow: hidden;
+  height: 100%;
+ }
+
+.hex-decoration{
+  top: -1px;
+  position: relative;
+  rotate: 180deg;
 }
 
 .button--outline {
@@ -785,7 +800,11 @@ img:not([alt]) {
 
 .form-box .button {
   display: block;
-  width: 100%
+  width: 50%
+}
+
+.form-box div{
+
 }
 
 .form-box p {
@@ -809,7 +828,8 @@ img:not([alt]) {
 .form-container__inner {
   width: 100%;
   max-width: 30rem;
-  margin: 0 auto
+  margin: 0 auto;
+  isolation: isolate;
 }
 
 .form-container__title {
@@ -913,6 +933,30 @@ body {
   src: local(''), url(https://geolytix.github.io/public/fonts/inter-v2-latin-600.woff2) format('woff2'), url(https://geolytix.github.io/public/fonts/inter-v2-latin-600.woff) format('woff')
 }
 
+@font-face{
+  font-family: bitblox;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''), url('https://geolytix.github.io/public/fonts/bitblox_monospaced-webfont.woff2') format('woff2'), url('https://geolytix.github.io/public/fonts/bitblox_monospaced-webfont.woff') format('woff');
+}
+
+@font-face{
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local(''), url('https://geolytix.github.io/public/fonts/mark-pro.woff2') format('woff2'), url('https://geolytix.github.io/public/fonts//mark-pro.woff') format('woff');
+}
+
+@font-face{
+  font-family: "Mark Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''), url('https://geolytix.github.io/public/fonts/MarkPro-Bold.woff2') format('woff2'), url('https://geolytix.github.io/public/fonts/MarkPro-Bold.woff') format('woff');
+}
+
 body {
   font-family: var(--font-base);
   font-size: var(--step-0);
@@ -929,6 +973,7 @@ body {
   font-weight: bold;
   color: black;
   margin-bottom: 60px;
+  margin-top: 10px;
 }
 
 h1,
