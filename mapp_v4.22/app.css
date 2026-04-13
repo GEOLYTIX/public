@@ -129,7 +129,7 @@ img:not([alt]) {
   --color-primary: black;
   --color-primary-light: #9AABBC;
   --color-primary-mid: #4d5e71;
-  --color-secondary: #F79646;
+  --color-secondary: #ffc4a0;
   --color-secondary-dark: black;
   --color-light: #ffffff;
   --color-dark: #003D57;
@@ -695,6 +695,12 @@ img:not([alt]) {
   }
 }
 
+@media (max-width:45em){
+  .decor-holder{
+    display: none;
+  }
+}
+
 :root {
   --fluid-min-width: 320;
   --fluid-max-width: 1140;
@@ -1108,7 +1114,7 @@ a {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  padding-top: 2em;
+  padding-top: 0.5em;
   padding-right: 2em;
 }
 
