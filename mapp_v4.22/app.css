@@ -696,8 +696,16 @@ img:not([alt]) {
 }
 
 @media (max-width:45em){
-  .decor-holder{
+  .hex-decoration{
     display: none;
+  }
+}
+
+@media (min-width:3440px){
+  .hex-decoration{
+    scale: 2;
+    left: 287px;
+    top: 260px;
   }
 }
 
@@ -788,9 +796,8 @@ img:not([alt]) {
  }
 
 .hex-decoration{
-  top: -1px;
-  position: relative;
-  rotate: 180deg;
+  transform: scaleX(-1);
+  position: fixed;
 }
 
 .button--outline {
