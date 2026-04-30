@@ -778,10 +778,13 @@
         });
 
       /* Get list of available roles from workspace. */
-      const rolesList = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
+      const rolesListRaw = await mapp.utils.xhr(`${document.head.dataset.dir}/api/workspace/roles`);
 
       // log roles for sanity check
-      console.log(rolesList);
+      console.log(rolesListRaw);
+
+      /* filter out roles that do not contain 3 components */
+      const rolesList = rolesListRaw.filter(item => item.split('.').length >= 3);
 
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
