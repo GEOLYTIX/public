@@ -787,8 +787,8 @@
       const rolesList = rolesListRaw.filter(item => item.split('.').length >= 3);
 
       /* Demo Temporary Workaround: this is required to view special root role */
-      /* to resolved once we have distinction between nested and root roles */
-      rolesList.unshift('Overview');
+      /* to be resolved once we have distinction between nested and root roles */
+      if(rolesListRaw.includes('Overview')) rolesList.unshift('Overview');
 
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
