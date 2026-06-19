@@ -785,8 +785,13 @@
 
       /* Demo Temporary Workaround: this is required to view special root role */
       /* to be resolved once we have distinction between nested and root roles */
+      /* We also need to include any roles with Trial in the name */
       if(rolesListRaw.includes('Overview')) rolesList.unshift('Overview');
 
+      rolesListRaw.forEach(item => {
+        if(item.includes('Trial')) rolesList.push(item);
+      });
+      
       /* Serialize roles into a tree in order to determine hierarchy */
       const rolesTree = makeTree(rolesList);
 
